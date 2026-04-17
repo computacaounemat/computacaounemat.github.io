@@ -762,39 +762,44 @@
                         <!-- Left Column: Datas -->
                         <div>
                             <div class="bg-dark-800 rounded-xl border border-slate-700 overflow-hidden sticky top-8 shadow-2xl">
-                                <div class="bg-gradient-to-r from-brand-900 to-slate-800 p-5 border-b border-brand-500/50">
-                                    <h3 class="font-bold text-white text-xl flex items-center gap-3">
+                                <div class="bg-gradient-to-r from-brand-900 to-slate-800 p-4 lg:p-5 border-b border-brand-500/50">
+                                    <h3 class="font-bold text-white text-lg flex items-center gap-3">
                                         <i class="fa-regular fa-calendar-check text-brand-400"></i> Datas Importantes
                                     </h3>
                                 </div>
-                                <div class="p-0">
+                                <!-- Adicionado overflow-x-auto para garantir autoajuste -->
+                                <div class="p-0 overflow-x-auto">
                                     <table class="w-full text-left text-sm">
                                         <tbody class="divide-y divide-slate-700/50">
                                             <tr class="hover:bg-slate-700/30 transition-colors">
-                                                <td class="p-5 text-slate-300 font-medium">Submissão de Artigos (Completos e Curtos)</td>
-                                                <td class="p-5 text-right text-brand-400 font-mono font-bold whitespace-nowrap">
-                                                    <span class="line-through text-slate-500 text-xs mr-1 font-normal">18/04/2026</span><br class="md:hidden">Até 26/04/2026
+                                                <td class="p-4 text-slate-300 font-medium align-middle">Submissão de Artigos (Completos e Curtos)</td>
+                                                <td class="p-4 text-right text-brand-400 font-mono font-bold align-middle">
+                                                    <!-- Flex column para empilhar as datas e poupar espaço horizontal -->
+                                                    <div class="flex flex-col items-end justify-center">
+                                                        <span class="line-through text-slate-500 text-xs font-normal">18/04/2026</span>
+                                                        <span class="whitespace-nowrap">Até 26/04/2026</span>
+                                                    </div>
                                                 </td>
                                             </tr>
                                             <tr class="hover:bg-slate-700/30 transition-colors">
-                                                <td class="p-5 text-slate-300 font-medium">Submissão de Minicursos e Oficinas</td>
-                                                <td class="p-5 text-right text-brand-400 font-mono font-bold whitespace-nowrap">Até 26/04/2026</td>
+                                                <td class="p-4 text-slate-300 font-medium align-middle">Submissão de Minicursos e Oficinas</td>
+                                                <td class="p-4 text-right text-brand-400 font-mono font-bold align-middle whitespace-nowrap">Até 26/04/2026</td>
                                             </tr>
                                             <tr class="hover:bg-slate-700/30 transition-colors">
-                                                <td class="p-5 text-slate-300 font-medium">Período de Avaliação (<i>Blind Review</i>)</td>
-                                                <td class="p-5 text-right text-yellow-500 font-mono whitespace-nowrap">19/04 a 06/05</td>
+                                                <td class="p-4 text-slate-300 font-medium align-middle">Período de Avaliação (<i>Blind Review</i>)</td>
+                                                <td class="p-4 text-right text-yellow-500 font-mono align-middle whitespace-nowrap">19/04 a 06/05</td>
                                             </tr>
                                             <tr class="bg-brand-900/20 hover:bg-brand-900/40 transition-colors border-l-4 border-l-brand-500">
-                                                <td class="p-5 text-white font-bold">Divulgação de Resultados (Aceite)</td>
-                                                <td class="p-5 text-right text-brand-400 font-bold font-mono whitespace-nowrap">07/05/2026</td>
+                                                <td class="p-4 text-white font-bold align-middle">Divulgação de Resultados (Aceite)</td>
+                                                <td class="p-4 text-right text-brand-400 font-bold font-mono align-middle whitespace-nowrap">07/05/2026</td>
                                             </tr>
                                             <tr class="hover:bg-slate-700/30 transition-colors">
-                                                <td class="p-5 text-slate-300 font-medium">Versão Final (<i>Camera-ready</i>)</td>
-                                                <td class="p-5 text-right text-red-400 font-mono whitespace-nowrap">14/05/2026</td>
+                                                <td class="p-4 text-slate-300 font-medium align-middle">Versão Final (<i>Camera-ready</i>)</td>
+                                                <td class="p-4 text-right text-red-400 font-mono align-middle whitespace-nowrap">14/05/2026</td>
                                             </tr>
                                             <tr class="hover:bg-slate-700/30 transition-colors bg-purple-900/10">
-                                                <td class="p-5 text-purple-200 font-bold">Realização do Evento</td>
-                                                <td class="p-5 text-right text-purple-400 font-bold font-mono whitespace-nowrap">08 a 11/06</td>
+                                                <td class="p-4 text-purple-200 font-bold align-middle">Realização do Evento</td>
+                                                <td class="p-4 text-right text-purple-400 font-bold font-mono align-middle whitespace-nowrap">08 a 11/06</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -895,7 +900,7 @@
                                             </ul>
                                         </div>
                                     </details>
- 
+
                                     <details class="bg-slate-800/60 rounded-xl border border-slate-700 group transition-all">
                                         <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-slate-200 hover:text-brand-400">
                                             <span class="text-base"><span class="text-brand-500 mr-2">4.</span> Inovação, Educação e Tecnologias de Impacto Social</span>
@@ -917,7 +922,7 @@
                             <div class="bg-indigo-900/20 border border-indigo-500/30 p-8 rounded-2xl relative overflow-hidden">
                                 <div class="absolute -right-6 -bottom-6 opacity-10">
                                     <i class="fa-solid fa-book-journal-whills text-9xl"></i>
-                                </div> 
+                                </div>
                                 <h4 class="text-xl font-bold text-indigo-300 mb-4 flex items-center gap-2 relative z-10"><i class="fa-solid fa-scale-balanced"></i> Instruções aos Autores</h4>
                                 <div class="space-y-4 text-sm text-slate-300 leading-relaxed relative z-10">
                                     <p>
@@ -932,7 +937,7 @@
                                             <i class="fa-solid fa-download"></i> Baixar Modelo SBC (Template)
                                         </a>
                                         <a href="https://drive.google.com/file/d/1p4xgcuGNIgVfAJXvpVc8RRlckZBfzffM/view?usp=sharing" target="_blank" class="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-brand-400 border border-brand-500/30 px-5 py-3 rounded-lg font-bold transition-all shadow-lg hover:shadow-brand-500/20 text-center">
-                                            <i class="fa-solid fa-circle-info"></i> Orientações (Oficinas, Minicursos)
+                                            <i class="fa-solid fa-circle-info"></i> Edital, Temas e Formulários
                                         </a>
                                     </div>
                                     
