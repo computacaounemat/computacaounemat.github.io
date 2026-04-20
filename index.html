@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UNEMAT-Alto Araguaia/Rondonópolis</title>
 
-    <!-- O script do Tailwind DEVE vir antes da configuração -->
+    <!-- O script do Tailwind DEVE vir antes da configuração para evitar erros -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Tailwind Configuração -->
@@ -359,7 +359,9 @@
                             <span class="flex items-center gap-2 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700"><i class="fa-solid fa-location-dot text-brand-500"></i> UNEMAT Rondonópolis</span>
                             <span class="flex items-center gap-2 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700"><i class="fa-solid fa-clock text-brand-500"></i> 40 Horas de Carga Horária</span>
                             <span class="flex items-center gap-2 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700"><i class="fa-solid fa-users text-brand-500"></i> Evento Presencial</span>
-                            <span class="flex items-center gap-2 bg-blue-900/50 text-blue-200 px-3 py-1.5 rounded-lg border border-blue-500/50"><i class="fa-solid fa-handshake text-blue-400"></i> Apoio SBC</span>
+                            <a href="http://www.sbc.org.br" target="_blank" class="flex items-center gap-2 bg-blue-900/50 text-blue-200 px-3 py-1.5 rounded-lg border border-blue-500/50 hover:bg-blue-800/60 transition-colors">
+                                <i class="fa-solid fa-handshake text-blue-400"></i> Apoio SBC
+                            </a>
                         </div>
                         
                         <div class="flex flex-wrap gap-4">
@@ -767,14 +769,12 @@
                                         <i class="fa-regular fa-calendar-check text-brand-400"></i> Datas Importantes
                                     </h3>
                                 </div>
-                                <!-- Adicionado overflow-x-auto para garantir autoajuste -->
                                 <div class="p-0 overflow-x-auto">
                                     <table class="w-full text-left text-sm">
                                         <tbody class="divide-y divide-slate-700/50">
                                             <tr class="hover:bg-slate-700/30 transition-colors">
                                                 <td class="p-4 text-slate-300 font-medium align-middle">Submissão de Artigos (Completos e Curtos)</td>
                                                 <td class="p-4 text-right text-brand-400 font-mono font-bold align-middle">
-                                                    <!-- Flex column para empilhar as datas e poupar espaço horizontal -->
                                                     <div class="flex flex-col items-end justify-center">
                                                         <span class="line-through text-slate-500 text-xs font-normal">18/04/2026</span>
                                                         <span class="whitespace-nowrap">Até 26/04/2026</span>
@@ -845,7 +845,7 @@
                                         <h4 class="font-bold text-purple-400 mb-2 text-lg">Propostas de Oficinas</h4>
                                         <p class="text-sm text-slate-300 mb-4 leading-relaxed">Treinamento teórico ou prático focado numa tecnologia específica.</p>
                                         <div class="flex flex-wrap gap-2 text-[11px] font-mono">
-                                            <span class="bg-slate-900 px-2.5 py-1 rounded text-slate-300 border border-slate-700">Duração: 8 horas</span>
+                                            <span class="bg-slate-900 px-2.5 py-1 rounded text-slate-300 border border-slate-700">Duração: 4 horas</span>
                                             <span class="bg-slate-900 px-2.5 py-1 rounded text-slate-300 border border-slate-700">Plano Aula: Até 10 pág.</span>
                                         </div>
                                     </div>
@@ -970,36 +970,73 @@
                         <i class="fa-solid fa-handshake text-brand-400"></i> Realização e Parceiros
                     </h2>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center justify-items-center">
+                    <div class="flex flex-col md:flex-row justify-center items-center md:items-start gap-12 mb-16">
                         
-                        <!-- Coluna: Realização -->
-                        <div class="flex flex-col items-center gap-3 w-full">
+                        <!-- Realização -->
+                        <div class="flex flex-col items-center gap-4">
                             <span class="text-xs text-slate-400 uppercase tracking-widest font-bold">Realização</span>
-                            <div class="bg-white p-6 rounded-xl w-full max-w-[350px] h-36 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50">
-                                <img src="unemat.aia.roo.fundo.branco.png" alt="UNEMAT" class="max-w-full max-h-full object-contain">
+                            <div class="flex flex-wrap justify-center gap-4">
+                                <div class="bg-white p-3 rounded-xl w-40 h-28 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50">
+                                    <img src="unemat.aia.roo.fundo.branco.png" alt="UNEMAT" class="max-w-full max-h-full object-contain">
+                                </div>
+                                <div class="bg-white p-3 rounded-xl w-40 h-28 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50">
+                                    <img src="logo_aginov.png" alt="UNEMAT" class="max-w-full max-h-full object-contain">
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Coluna: Apoio Institucional -->
-                        <div class="flex flex-col items-center gap-3 w-full">
+                        <!-- Apoio Institucional -->
+                        <div class="flex flex-col items-center gap-4">
                             <span class="text-xs text-slate-400 uppercase tracking-widest font-bold">Apoio Institucional</span>
-                            <div class="bg-white p-6 rounded-xl w-full max-w-[220px] h-48 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50">
+                            <a href="http://www.sbc.org.br" target="_blank" class="bg-white p-3 rounded-xl w-40 h-28 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50 cursor-pointer">
                                 <img src="Logo SBC.png" alt="Sociedade Brasileira de Computação" class="max-w-full max-h-full object-contain">
-                            </div>
+                            </a>
                         </div>
 
-                        <!-- Coluna: Parceiros / Patrocinadores -->
-                        <div class="flex flex-col items-center gap-3 w-full">
-                            <span class="text-xs text-slate-400 uppercase tracking-widest font-bold">Parceiros</span>
-                            <!-- Aqui você pode adicionar as logos dos parceiros futuramente substituindo a div abaixo pela tag img equivalente -->
-                            <div class="border-2 border-dashed border-slate-600 rounded-xl w-full max-w-[350px] h-36 flex items-center justify-center bg-slate-800/30 hover:border-brand-500 hover:text-brand-400 transition-colors cursor-pointer group">
-                                <span class="text-slate-500 font-medium text-sm flex flex-col items-center gap-1 group-hover:text-brand-400 transition-colors">
-                                    <i class="fa-solid fa-plus text-lg"></i>
-                                    Seja um Parceiro
+                    </div>
+                    
+                    <!-- Parceiros -->
+                    <div class="flex flex-col items-center gap-4 w-full">
+                        <span class="text-xs text-slate-400 uppercase tracking-widest font-bold mb-2">Parceiros</span>
+                        
+                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 justify-items-center w-full max-w-5xl mx-auto">
+                            <!-- 10 Logos de Parceiros -->
+                            <div class="bg-white/5 border border-slate-600 rounded-xl w-full max-w-[160px] h-20 flex items-center justify-center hover:bg-white/10 transition-colors">
+                                <span class="text-slate-500 text-xs font-bold uppercase tracking-wider">Parceiro 1</span>
+                            </div>
+                            <div class="bg-white/5 border border-slate-600 rounded-xl w-full max-w-[160px] h-20 flex items-center justify-center hover:bg-white/10 transition-colors">
+                                <span class="text-slate-500 text-xs font-bold uppercase tracking-wider">Parceiro 2</span>
+                            </div>
+                            <div class="bg-white/5 border border-slate-600 rounded-xl w-full max-w-[160px] h-20 flex items-center justify-center hover:bg-white/10 transition-colors">
+                                <span class="text-slate-500 text-xs font-bold uppercase tracking-wider">Parceiro 3</span>
+                            </div>
+                            <div class="bg-white/5 border border-slate-600 rounded-xl w-full max-w-[160px] h-20 flex items-center justify-center hover:bg-white/10 transition-colors">
+                                <span class="text-slate-500 text-xs font-bold uppercase tracking-wider">Parceiro 4</span>
+                            </div>
+                            <div class="bg-white/5 border border-slate-600 rounded-xl w-full max-w-[160px] h-20 flex items-center justify-center hover:bg-white/10 transition-colors">
+                                <span class="text-slate-500 text-xs font-bold uppercase tracking-wider">Parceiro 5</span>
+                            </div>
+                            <div class="bg-white/5 border border-slate-600 rounded-xl w-full max-w-[160px] h-20 flex items-center justify-center hover:bg-white/10 transition-colors">
+                                <span class="text-slate-500 text-xs font-bold uppercase tracking-wider">Parceiro 6</span>
+                            </div>
+                            <div class="bg-white/5 border border-slate-600 rounded-xl w-full max-w-[160px] h-20 flex items-center justify-center hover:bg-white/10 transition-colors">
+                                <span class="text-slate-500 text-xs font-bold uppercase tracking-wider">Parceiro 7</span>
+                            </div>
+                            <div class="bg-white/5 border border-slate-600 rounded-xl w-full max-w-[160px] h-20 flex items-center justify-center hover:bg-white/10 transition-colors">
+                                <span class="text-slate-500 text-xs font-bold uppercase tracking-wider">Parceiro 8</span>
+                            </div>
+                            <div class="bg-white/5 border border-slate-600 rounded-xl w-full max-w-[160px] h-20 flex items-center justify-center hover:bg-white/10 transition-colors">
+                                <span class="text-slate-500 text-xs font-bold uppercase tracking-wider">Parceiro 9</span>
+                            </div>
+                            
+                            <!-- Botão "Seja um Parceiro" no 10º espaço -->
+                            <div class="border-2 border-dashed border-slate-600 rounded-xl w-full max-w-[160px] h-20 flex items-center justify-center bg-slate-800/30 hover:border-brand-500 hover:text-brand-400 transition-colors cursor-pointer group">
+                                <span class="text-slate-500 font-medium text-xs flex flex-col items-center gap-1 group-hover:text-brand-400 transition-colors text-center">
+                                    <i class="fa-solid fa-plus text-sm"></i>
+                                    Seja Parceiro
                                 </span>
                             </div>
                         </div>
-
                     </div>
                 </div>
                 
