@@ -97,12 +97,12 @@
 <body class="bg-dark-900 text-slate-200 h-screen flex overflow-hidden selection:bg-brand-500 selection:text-white relative">
 
     <!-- Overlay escuro para mobile quando o menu está aberto -->
-    <div id="sidebar-overlay" onclick="app.toggleSidebar()" class="fixed inset-0 bg-black/60 z-30 hidden md:hidden backdrop-blur-sm transition-opacity duration-300"></div>
+    <div id="sidebar-overlay" onclick="app.toggleSidebar()" aria-hidden="true" class="fixed inset-0 bg-black/60 z-30 hidden md:hidden backdrop-blur-sm transition-opacity duration-300"></div>
 
     <!-- Sidebar -->
-    <aside id="sidebar" class="fixed inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition-transform duration-300 ease-in-out w-64 bg-dark-800 border-r border-slate-700 flex flex-col z-40 shadow-2xl">
+    <aside id="sidebar" aria-label="Menu Lateral" class="fixed inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition-transform duration-300 ease-in-out w-64 bg-dark-800 border-r border-slate-700 flex flex-col z-40 shadow-2xl">
         <!-- Botão de fechar visível apenas no mobile -->
-        <button onclick="app.toggleSidebar()" class="md:hidden absolute top-4 right-4 text-slate-400 hover:text-white p-2 focus:outline-none">
+        <button onclick="app.toggleSidebar()" aria-label="Fechar menu" class="md:hidden absolute top-4 right-4 text-slate-400 hover:text-white p-2 focus:outline-none">
             <i class="fa-solid fa-xmark text-xl"></i>
         </button>
 
@@ -120,12 +120,12 @@
                 </div>
             </div>
             <div class="text-center">
-                <p class="text-xs text-slate-400 font-mono mt-1">UNEMAT - Alto Araguaia/ Rondonópolis</p>
+                <p class="text-xs text-slate-400 font-mono mt-1">UNEMAT - Alto Araguaia/Rondonópolis</p>
             </div>
         </div>
 
         <!-- Navigation -->
-        <nav class="flex-1 py-6 px-3 space-y-1 overflow-y-auto">
+        <nav aria-label="Navegação Principal" class="flex-1 py-6 px-3 space-y-1 overflow-y-auto">
             <p class="px-3 text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Menu Principal</p>
             
             <button onclick="app.navigate('schedule')" id="nav-schedule" class="nav-item w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-slate-400 hover:text-white hover:bg-slate-700/50 transition-all">
@@ -198,7 +198,7 @@
         <header class="md:hidden bg-dark-800 border-b border-slate-700 p-4 flex justify-between items-center z-10 shrink-0 shadow-md">
             <div class="flex items-center gap-4">
                 <!-- Botão Hamburger -->
-                <button onclick="app.toggleSidebar()" class="text-slate-300 hover:text-white focus:outline-none p-1">
+                <button id="btn-hamburger" onclick="app.toggleSidebar()" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar" class="text-slate-300 hover:text-white focus:outline-none p-1">
                     <i class="fa-solid fa-bars text-2xl"></i>
                 </button>
                 <span class="font-bold text-white text-sm truncate">UNEMAT-AIA/ROO</span>
@@ -1383,10 +1383,10 @@
     </main>
 
     <!-- ALXnder Announcement Modal -->
-    <div id="alxnder-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300" role="dialog" aria-modal="true">
+    <div id="alxnder-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="modal-alxnder-title">
         <div class="bg-slate-900 border border-brand-500/50 rounded-2xl w-full max-w-2xl shadow-2xl relative transform scale-95 transition-transform duration-300">
             <!-- Close Button -->
-            <button onclick="app.toggleModal('alxnder-modal', false)" class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors">
+            <button onclick="app.toggleModal('alxnder-modal', false)" aria-label="Fechar modal" class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors">
                 <i class="fa-solid fa-xmark text-xl"></i>
             </button>
             
@@ -1396,7 +1396,7 @@
                     <i class="fa-solid fa-robot"></i>
                 </div>
                 <div>
-                    <h3 class="text-lg sm:text-xl font-bold text-white">Plantão BCC UNEMAT Informa</h3>
+                    <h3 id="modal-alxnder-title" class="text-lg sm:text-xl font-bold text-white">Plantão BCC UNEMAT Informa</h3>
                     <p class="text-brand-400 text-[10px] sm:text-sm font-mono uppercase tracking-wider">Novo Assistente Virtual Inteligente</p>
                 </div>
             </div>
@@ -1456,7 +1456,7 @@
                         id: 3, label: '3ª Fase', link: 'https://bit.ly/BCC3aFase',
                         schedule: [
                             { d: 'Segunda', c: 'IRC', n: 'Introdução às Redes de Computadores' , p: 'Prof. Me. Wesley' },
-                            { d: 'Terça', c: 'AL', n: 'Álgebra Linear', p: 'Profa. Dra.Adriana' },
+                            { d: 'Terça', c: 'AL', n: 'Álgebra Linear', p: 'Profa. Dra. Adriana' },
                             { d: 'Quarta', c: 'TG', n: 'Teoria dos Grafos', p: 'Prof. Me. Antonio' },
                             { d: 'Quinta', c: 'ED1', n: 'Estrutura de Dados I', p: 'CANCELADA' },
                             { d: 'Sexta', c: 'CA2', n: 'Cálculo II', p: 'Prof. Me. Antonio' }
@@ -1470,7 +1470,7 @@
                             { d: 'Terça', c: 'GTI', n: 'Governança em TI', p: 'Prof. Me. Juvenal' },
                             { d: 'Quarta', c: 'SD', n: 'Sistemas Digitais', p: 'Prof. Dr. Obana' },
                             { d: 'Quinta', c: 'LFA', n: 'Linguagens Formais e Autômatos', p: 'CANCELADA' },
-                            { d: 'Sexta', c: 'LPOO', n: 'Lab. de Prog. Orientado a Objetos', p: 'Prof. Elton' }
+                            { d: 'Sexta', c: 'LPOO', n: 'Lab. de Prog. Orientada a Objetos', p: 'Prof. Elton' }
                         ],
                         modular: { c: 'LBD', n: 'Lab. Banco de Dados', p: 'Dr. Ubirajara', d: '30/03 a 01/04; 11/05 a 15/05; 15/06 a 19/06' }
                     },
@@ -1510,10 +1510,10 @@
                         id: 4, label: '4ª Fase', link: 'https://bit.ly/BCC4aFase',
                         schedule: [
                             { d: 'Segunda', c: 'F1', n: 'Física I', p: 'Prof. Dr. Everton' },
-                            { d: 'Terça', c: 'ED2', n: 'Estutura Dados II', p: 'Prof. Christhian' },
+                            { d: 'Terça', c: 'ED2', n: 'Estrutura de Dados II', p: 'Prof. Christhian' },
                             { d: 'Quarta', c: 'IBD', n: 'Introdução a Banco de Dados', p: 'Prof. Me. Breno' },
                             { d: 'Quinta', c: 'CN', n: 'Cálculo Numérico', p: 'Prof. Dr. Jemy' },
-                            { d: 'Sexta', c: 'ES1', n: 'Engenharia Software I', p: 'Prof. Humberto' }
+                            { d: 'Sexta', c: 'ES1', n: 'Engenharia de Software I', p: 'Prof. Humberto' }
                         ],
                         modular: { c: 'LRC', n: 'Laboratório de Redes', p: 'Pierre', d: '30/03 a 01/04; 11/05 a 15/05; 15/06 a 19/06' }
                     },
@@ -1578,12 +1578,15 @@
             toggleSidebar(forceClose = false) {
                 const sidebar = document.getElementById('sidebar');
                 const overlay = document.getElementById('sidebar-overlay');
+                const btnHamburger = document.getElementById('btn-hamburger');
                 
                 if (forceClose) {
                     this.state.isSidebarOpen = false;
                 } else {
                     this.state.isSidebarOpen = !this.state.isSidebarOpen;
                 }
+
+                if (btnHamburger) btnHamburger.setAttribute('aria-expanded', this.state.isSidebarOpen);
 
                 if (this.state.isSidebarOpen) {
                     sidebar.classList.remove('-translate-x-full');
@@ -1604,9 +1607,15 @@
                 }
                 
                 // Update nav classes
-                document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active', 'text-brand-500', 'bg-slate-800'));
+                document.querySelectorAll('.nav-item').forEach(el => {
+                    el.classList.remove('active', 'text-brand-500', 'bg-slate-800');
+                    el.removeAttribute('aria-current');
+                });
                 const activeNav = document.getElementById('nav-' + viewName);
-                if(activeNav) activeNav.classList.add('active');
+                if(activeNav) {
+                    activeNav.classList.add('active');
+                    activeNav.setAttribute('aria-current', 'page');
+                }
             },
 
             setCampus(code) {
