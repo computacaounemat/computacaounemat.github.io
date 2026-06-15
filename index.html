@@ -2103,7 +2103,7 @@
         // --- APP LOGIC ---
         const app = {
             state: {
-                view: 'secomp', // Abrir a SECOMP por padrão para visualização das alterações
+                view: 'schedule', // Abrir Horários por padrão
                 campus: 'AIA',
                 phaseIdx: 0,
                 chartInstance: null,
@@ -2336,7 +2336,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             app.init();
             // Default Nav para a vista aberta
-            document.getElementById('nav-secomp').classList.add('active');
+            document.getElementById('nav-schedule').classList.add('active');
         });
     </script>
 </body>
