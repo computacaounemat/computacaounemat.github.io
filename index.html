@@ -2121,7 +2121,7 @@
         // --- APP LOGIC ---
         const app = {
             state: {
-                view: 'schedule', // Abrir Horários por padrão
+                view: 'guide', // Abrir Guia do Estudante por padrão
                 campus: 'AIA',
                 phaseIdx: 0,
                 chartInstance: null,
@@ -2354,7 +2354,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             app.init();
             // Default Nav para a vista aberta
-            document.getElementById('nav-schedule').classList.add('active');
+            document.getElementById('nav-guide').classList.add('active');
         });
     </script>
 </body>
