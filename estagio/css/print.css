@@ -1,0 +1,57 @@
+/*
+  Guia do Estágio Supervisionado — UNEMAT
+  print.css — impressão limpa do checklist, etapas e resumo da jornada
+*/
+
+@media print {
+  .site-header,
+  .barra-jornada,
+  .menu-toggle,
+  .busca-form,
+  #busca-resultados,
+  .hero-acoes,
+  .banner-continuar,
+  .filtros-documentos,
+  .voltar-topo-wrap,
+  .nav-etapa,
+  .modal-overlay,
+  .botao,
+  .card a[href$=".docx"],
+  .card a[href$=".pdf"] {
+    display: none !important;
+  }
+
+  body {
+    color: #000;
+    background: #fff;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  .secao {
+    border-bottom: none;
+    page-break-inside: avoid;
+    padding: 0.75rem 0;
+  }
+
+  .card,
+  .checklist,
+  .alerta,
+  .acordeao {
+    border: 1px solid #999;
+    box-shadow: none;
+    break-inside: avoid;
+  }
+
+  .acordeao-conteudo[hidden] {
+    display: block !important;
+  }
+
+  .checklist input[type="checkbox"] {
+    -webkit-appearance: checkbox;
+    appearance: checkbox;
+  }
+}

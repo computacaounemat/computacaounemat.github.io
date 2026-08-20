@@ -1,0 +1,227 @@
+{
+  "fundamentos": {
+    "prerequisito_es1": {
+      "tipo": "norma",
+      "documento": "Resolução nº 028/2012-CONEPE",
+      "artigo": "Art. 34",
+      "texto": "Para matricular-se no Estágio Curricular Supervisionado, o acadêmico deve ter cumprido no mínimo 50% dos créditos do curso e respeitar os pré-requisitos estabelecidos nas matrizes curriculares do curso."
+    },
+    "prerequisito_es2": {
+      "tipo": "procedimento",
+      "documento": "Projeto Pedagógico do Curso (PPC) — Bacharelado em Ciência da Computação",
+      "artigo": "Matriz curricular",
+      "texto": "A exigência de aprovação em Estágio Supervisionado I como pré-requisito para Estágio Supervisionado II consta da matriz curricular do PPC. O documento do PPC não está entre os arquivos disponibilizados para este Guia; em caso de dúvida, confirme com a Coordenação do Curso."
+    },
+    "documentos_necessarios": {
+      "tipo": "norma",
+      "documento": "Resolução nº 028/2012-CONEPE",
+      "artigo": "Art. 6º",
+      "texto": "Os documentos necessários para a realização do Estágio Curricular Supervisionado são: o plano de atividades, o termo de compromisso do estágio e o instrumento jurídico firmado com o cedente."
+    },
+    "estagio_dentro_unemat": {
+      "tipo": "norma",
+      "documento": "Resolução nº 028/2012-CONEPE",
+      "artigo": "Art. 5º",
+      "texto": "O Estágio Curricular Supervisionado pode ser realizado em instituições públicas, privadas, organizações não governamentais ou na própria instituição."
+    },
+    "estagio_fora_semestre": {
+      "tipo": "norma",
+      "documento": "Resolução nº 028/2012-CONEPE",
+      "artigo": "Art. 33",
+      "texto": "Os cursos podem prever o Estágio Curricular Supervisionado em período que não coincida com o semestre letivo, mediante inscrição formal junto à coordenação do estágio e termo de aceite do Professor Supervisor, condicionado à disponibilidade de professor e da instituição concedente."
+    },
+    "convalidacao_12_meses": {
+      "tipo": "norma",
+      "documento": "Resolução nº 028/2012-CONEPE",
+      "artigo": "Art. 9º",
+      "texto": "Poderá ser solicitada a convalidação de atividade profissional como estágio, desde que o acadêmico comprove tempo mínimo de 12 meses ininterruptos de atividade profissional na área do curso e cumpra os demais pré-requisitos do estágio."
+    },
+    "convalidacao_documentos": {
+      "tipo": "norma",
+      "documento": "Resolução nº 028/2012-CONEPE",
+      "artigo": "Art. 10",
+      "texto": "Para avaliação do pedido de convalidação, o acadêmico deve apresentar: declaração da instituição em que atua (com cargo e funções), comprovação do vínculo profissional, plano de atividades e relatório circunstanciado das atividades desenvolvidas."
+    },
+    "convalidacao_relatorio_seminario": {
+      "tipo": "norma",
+      "documento": "Resolução nº 028/2012-CONEPE",
+      "artigo": "Art. 13",
+      "texto": "O relatório de convalidação será avaliado com base em relatório escrito e apresentação de seminário. A entrega do relatório escrito é pré-requisito para a apresentação do seminário."
+    },
+    "convalidacao_indeferida": {
+      "tipo": "norma",
+      "documento": "Resolução nº 028/2012-CONEPE",
+      "artigo": "Art. 14",
+      "texto": "Uma vez indeferida a convalidação, o acadêmico está sujeito ao cumprimento de todas as etapas e atividades relativas ao Estágio Supervisionado regular."
+    },
+    "extensao_nao_substitui": {
+      "tipo": "norma",
+      "documento": "Resolução nº 028/2012-CONEPE",
+      "artigo": "Art. 9º, inciso I",
+      "texto": "Atividades de extensão, monitoria e iniciação científica somente podem ser equiparadas ao estágio em caso de previsão expressa no Projeto Pedagógico do Curso."
+    },
+    "eliminar_por_prova": {
+      "tipo": "norma",
+      "documento": "Resolução nº 001/2024-CONEPE (Normatização Acadêmica)",
+      "artigo": "Art. 66, §2º",
+      "texto": "A solicitação de extraordinário aproveitamento de estudos não se aplica às atividades de estágio curricular supervisionado."
+    },
+    "regime_domiciliar": {
+      "tipo": "norma",
+      "documento": "Resolução nº 001/2024-CONEPE (Normatização Acadêmica)",
+      "artigo": "Art. 48",
+      "texto": "O regime domiciliar não se aplica a atividades como o estágio curricular obrigatório e outras atividades predominantemente práticas que exijam a presença física do estudante."
+    },
+    "registro_atividades": {
+      "tipo": "norma",
+      "documento": "Resolução nº 028/2012-CONEPE",
+      "artigo": "Art. 23",
+      "texto": "As formas de registro das atividades de estágio deverão assegurar a fidedignidade e a idoneidade de todo o processo. As atividades desenvolvidas na instituição-campo deverão estar assinadas pelo responsável da unidade."
+    },
+    "avaliacao_criterios": {
+      "tipo": "norma",
+      "documento": "Resolução nº 028/2012-CONEPE",
+      "artigo": "Art. 25",
+      "texto": "O Estágio Curricular Supervisionado é avaliado considerando: coerência e aplicabilidade do plano de atividades; pontualidade e assiduidade; coerência dos relatórios parciais; relatório da instituição cedente; e coerência do relatório final."
+    },
+    "avaliacao_responsavel": {
+      "tipo": "norma",
+      "documento": "Resolução nº 028/2012-CONEPE",
+      "artigo": "Art. 21, inciso XIV",
+      "texto": "Compete ao professor supervisor avaliar o relatório final do acadêmico, emitir parecer e atribuir a nota do Estágio Curricular Supervisionado."
+    },
+    "relatorio_final_estrutura": {
+      "tipo": "norma",
+      "documento": "Resolução nº 028/2012-CONEPE",
+      "artigo": "Art. 24, parágrafo único",
+      "texto": "O relatório final deve obedecer à estrutura: introdução, objetivos, atividades desenvolvidas, sugestões e recomendações, considerações finais, referências e anexos."
+    },
+    "aprovacao_indispensavel": {
+      "tipo": "norma",
+      "documento": "Resolução nº 028/2012-CONEPE",
+      "artigo": "Art. 29",
+      "texto": "A aprovação no Estágio Curricular Supervisionado é indispensável para a conclusão do curso."
+    },
+    "papel_professor_supervisor": {
+      "tipo": "norma",
+      "documento": "Resolução nº 028/2012-CONEPE",
+      "artigo": "Art. 21",
+      "texto": "Ao professor supervisor compete, entre outras atribuições: orientar o acadêmico, analisar e aprovar o plano de atividades, acompanhar o desenvolvimento do estágio e avaliar o relatório final, atribuindo a nota."
+    },
+    "papel_aluno": {
+      "tipo": "norma",
+      "documento": "Resolução nº 028/2012-CONEPE",
+      "artigo": "Art. 22",
+      "texto": "Ao acadêmico compete, entre outros deveres: cumprir as atividades do plano de trabalho, comparecer às sessões de orientação e apresentar relatórios parciais e o relatório final dentro dos prazos fixados."
+    },
+    "papel_coordenacao": {
+      "tipo": "norma",
+      "documento": "Resolução nº 028/2012-CONEPE",
+      "artigo": "Art. 17",
+      "texto": "Compete à Coordenação do Estágio Curricular Supervisionado cumprir e fazer cumprir a política de estágios da UNEMAT, orientar professores e acadêmicos e manter atualizado o arquivo de oportunidades de estágio."
+    }
+  },
+  "areas": [
+    {
+      "id": "programacao",
+      "nome": "Programação",
+      "descricao": "Uma das quatro áreas de desenvolvimento de projetos de estágio previstas no Projeto Pedagógico do Bacharelado em Ciência da Computação (Anexo VIII)."
+    },
+    {
+      "id": "computacao-aplicada",
+      "nome": "Computação Aplicada",
+      "descricao": "Uma das quatro áreas de desenvolvimento de projetos de estágio previstas no Projeto Pedagógico do Bacharelado em Ciência da Computação (Anexo VIII)."
+    },
+    {
+      "id": "computacao-tecnologica",
+      "nome": "Computação Tecnológica",
+      "descricao": "Uma das quatro áreas de desenvolvimento de projetos de estágio previstas no Projeto Pedagógico do Bacharelado em Ciência da Computação (Anexo VIII)."
+    },
+    {
+      "id": "computacao-educacional",
+      "nome": "Computação Educacional",
+      "descricao": "Uma das quatro áreas de desenvolvimento de projetos de estágio previstas no Projeto Pedagógico do Bacharelado em Ciência da Computação (Anexo VIII)."
+    }
+  ],
+  "areasTextoOficial": "Os projetos de estágio devem atender uma das diversas áreas previstas no Projeto Pedagógico do curso de Bacharelado em Ciência da Computação, sendo elas: Programação, Computação Aplicada, Computação Tecnológica e Computação Educacional. O Anexo VIII não traz uma descrição individual detalhada de cada área — para o enquadramento do seu projeto, converse com o Professor Supervisor.",
+  "papeis": [
+    {
+      "id": "aluno",
+      "nome": "Aluno(a) / Estagiário(a)",
+      "descricao": "Estudante regularmente matriculado no componente de Estágio Supervisionado, responsável por cumprir o plano de atividades, registrar sua carga horária e apresentar os relatórios dentro dos prazos.",
+      "fundamento": "papel_aluno"
+    },
+    {
+      "id": "professor-supervisor",
+      "nome": "Professor Supervisor de Estágio",
+      "descricao": "Docente da UNEMAT responsável pelo acompanhamento acadêmico do estágio: orienta o estudante, aprova o Plano de Atividades, acompanha o desenvolvimento das atividades e avalia o relatório final, atribuindo a nota.",
+      "fundamento": "papel_professor_supervisor"
+    },
+    {
+      "id": "supervisor-campo",
+      "nome": "Supervisor(a) de Campo / Orientador(a)",
+      "descricao": "Profissional da empresa/instituição concedente responsável pelo acompanhamento das atividades do(a) estagiário(a) no local do estágio. Não deve ser confundido(a) com o Professor Supervisor.",
+      "fundamento": null
+    },
+    {
+      "id": "coordenacao-curso",
+      "nome": "Coordenação do Curso / Coordenação de Estágio",
+      "descricao": "Responsável por cumprir e fazer cumprir a política de estágios da UNEMAT, orientar professores e acadêmicos sobre o regulamento e manter atualizado o arquivo de oportunidades de estágio.",
+      "fundamento": "papel_coordenacao"
+    },
+    {
+      "id": "organizacao-concedente",
+      "nome": "Organização Concedente",
+      "descricao": "Instituição pública, privada, organização não governamental ou a própria UNEMAT, que recebe o(a) estudante como estagiário(a) e formaliza o instrumento jurídico do estágio.",
+      "fundamento": "estagio_dentro_unemat"
+    }
+  ],
+  "avisos": {
+    "regularizacao": "Não inicie as atividades sem confirmar com o Professor Supervisor que a documentação necessária está regularizada.",
+    "checklist": "As marcações deste guia são salvas apenas neste navegador e não substituem documentos, assinaturas ou registros oficiais da disciplina.",
+    "reiniciar": "Isso apagará apenas as marcações deste Guia armazenadas neste navegador. Nenhum registro acadêmico será afetado.",
+    "conclusaoJornada": "Você concluiu todas as orientações deste Guia.",
+    "conclusaoAviso": "Isso não significa que seu Estágio Supervisionado esteja academicamente concluído. A conclusão depende da avaliação e dos registros oficiais da disciplina.",
+    "convalidacaoIndeferida": "Em caso de indeferimento da convalidação, o estudante deverá cumprir o estágio regular conforme orientação acadêmica.",
+    "convalidacaoRelatorio": "A entrega do relatório escrito é pré-requisito para a apresentação do seminário.",
+    "professorSupervisor": "Professor Supervisor do semestre: consulte a turma de Estágio no SIGAA ou a Coordenação do Curso.",
+    "semLocalStorage": "Seu navegador não permite salvar o progresso localmente. O Guia continua funcionando, mas suas marcações não serão preservadas ao recarregar a página.",
+    "documentoIndisponivel": "Arquivo ainda não disponibilizado."
+  },
+  "rodape": {
+    "ultimaAtualizacao": "11/08/2026",
+    "baseNormativa": [
+      "PPC vigente do Bacharelado em Ciência da Computação",
+      "Resolução nº 028/2012-CONEPE",
+      "Resolução nº 001/2024-CONEPE (Normatização Acadêmica)"
+    ]
+  },
+  "links": {
+    "sigaaUrl": "",
+    "contatoCoordenacaoUrl": ""
+  },
+  "legislacao": [
+    {
+      "id": "res-028-2012",
+      "titulo": "Resolução nº 028/2012-CONEPE",
+      "descricao": "Dispõe sobre o Estágio Curricular Supervisionado dos cursos de graduação de Bacharelado nas diferentes modalidades de ensino oferecidos pela UNEMAT.",
+      "arquivo": "legislacao/3475_res_conepe_28_2012.pdf",
+      "disponivel": true
+    },
+    {
+      "id": "res-001-2024",
+      "titulo": "Resolução nº 001/2024-CONEPE",
+      "descricao": "Institui a Normatização Acadêmica da UNEMAT Carlos Alberto Reyes Maldonado, incluindo regras sobre frequência, regime domiciliar e aproveitamento de estudos aplicáveis ao estágio.",
+      "arquivo": "legislacao/Normatização Acadêmica 001-2024 CONEPE.pdf",
+      "disponivel": true
+    },
+    {
+      "id": "ppc-computacao",
+      "titulo": "Projeto Pedagógico do Curso (PPC) — Bacharelado em Ciência da Computação",
+      "descricao": "Documento que estabelece a carga horária, os créditos e os pré-requisitos específicos de Estágio Supervisionado I e II no curso.",
+      "arquivo": "",
+      "disponivel": false,
+      "observacao": "Arquivo ainda não disponibilizado para este Guia. Consulte a Coordenação do Curso para acesso ao PPC vigente."
+    }
+  ]
+}

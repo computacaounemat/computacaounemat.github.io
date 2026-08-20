@@ -1,0 +1,56 @@
+[
+  {
+    "id": "faq-01",
+    "pergunta": "Posso começar antes de entregar os documentos?",
+    "resposta": "Não. Não inicie as atividades de estágio sem antes confirmar com o Professor Supervisor que a documentação necessária (Plano de Atividades e Termo de Compromisso) está regularizada.",
+    "fundamento": "documentos_necessarios"
+  },
+  {
+    "id": "faq-02",
+    "pergunta": "Posso fazer estágio dentro da UNEMAT?",
+    "resposta": "Sim. O Estágio Curricular Supervisionado pode ser realizado na própria instituição, com o Termo de Compromisso específico para estágio interno (Anexo IV).",
+    "fundamento": "estagio_dentro_unemat"
+  },
+  {
+    "id": "faq-03",
+    "pergunta": "Posso fazer estágio fora do semestre letivo?",
+    "resposta": "Sim, é possível, desde que formalizado junto à Coordenação de Estágio e mediante termo de aceite do Professor Supervisor, respeitando a disponibilidade de professor e da instituição concedente.",
+    "fundamento": "estagio_fora_semestre"
+  },
+  {
+    "id": "faq-04",
+    "pergunta": "Já trabalho na área. Posso solicitar convalidação?",
+    "resposta": "Pode ser possível, se você comprovar pelo menos 12 meses ininterruptos de atividade profissional na área de Ciência da Computação e cumprir os demais pré-requisitos da disciplina. Consulte o fluxo de convalidação neste Guia.",
+    "fundamento": "convalidacao_12_meses"
+  },
+  {
+    "id": "faq-05",
+    "pergunta": "Projeto de extensão vale como estágio?",
+    "resposta": "Atividades de extensão, monitoria ou iniciação científica só podem ser equiparadas ao estágio se houver previsão expressa no Projeto Pedagógico do Curso (PPC). Este Guia não afirma que essas atividades substituem o estágio — confirme com o Professor Supervisor ou a Coordenação do Curso.",
+    "fundamento": "extensao_nao_substitui"
+  },
+  {
+    "id": "faq-06",
+    "pergunta": "Posso eliminar ES I ou ES II por prova?",
+    "resposta": "Não. O extraordinário aproveitamento de estudos (dispensa de disciplina por avaliação) não se aplica às atividades de estágio curricular supervisionado.",
+    "fundamento": "eliminar_por_prova"
+  },
+  {
+    "id": "faq-07",
+    "pergunta": "Regime domiciliar se aplica ao estágio?",
+    "resposta": "Não. O regime domiciliar não se aplica ao estágio curricular obrigatório nem a outras atividades que exigem presença física do estudante.",
+    "fundamento": "regime_domiciliar"
+  },
+  {
+    "id": "faq-08",
+    "pergunta": "Posso trocar de local durante o estágio?",
+    "resposta": "Converse antes com o Professor Supervisor. Este Guia não define regras específicas para troca de local — trata-se de uma orientação geral, e a decisão depende da avaliação acadêmica do seu caso.",
+    "fundamento": null
+  },
+  {
+    "id": "faq-09",
+    "pergunta": "Quem devo procurar se tiver problemas?",
+    "resposta": "Procure primeiro o seu Professor Supervisor de Estágio. Para questões que ele não possa resolver, procure a Coordenação do Curso.",
+    "fundamento": null
+  }
+]

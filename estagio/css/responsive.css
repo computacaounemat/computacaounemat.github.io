@@ -1,0 +1,102 @@
+/*
+  Guia do Estágio Supervisionado — UNEMAT
+  responsive.css — ajustes progressivos acima do baseline mobile (main.css)
+  Breakpoints: 576px, 768px, 992px, 1200px
+*/
+
+/* ===== >= 576px : telefones grandes ===== */
+@media (min-width: 576px) {
+  .hero-acoes {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .opcoes-local {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .modal-caixa {
+    padding: 2rem;
+  }
+}
+
+/* ===== >= 768px : tablets ===== */
+@media (min-width: 768px) {
+  h1 { font-size: 2.4rem; }
+  h2 { font-size: 1.8rem; }
+  h3 { font-size: 1.3rem; }
+
+  .header-inner {
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-principal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: auto;
+    flex: 1;
+  }
+
+  .nav-principal > ul {
+    flex-direction: row;
+    gap: 0.25rem;
+    margin-right: 1rem;
+  }
+
+  .busca-form {
+    width: 14rem;
+  }
+
+  #busca-resultados {
+    position: absolute;
+    top: calc(100% + 0.3rem);
+    right: 0;
+    width: 20rem;
+    box-shadow: var(--sombra);
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cards-inicio {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .filtros-documentos {
+    justify-content: flex-start;
+  }
+}
+
+/* ===== >= 992px : desktop ===== */
+@media (min-width: 992px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cards-inicio {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .secao {
+    padding: 3.5rem 0;
+  }
+
+  .painel-progresso {
+    max-width: 34rem;
+  }
+}
+
+/* ===== >= 1200px : telas grandes ===== */
+@media (min-width: 1200px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
