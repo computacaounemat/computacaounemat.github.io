@@ -1,37 +1,40 @@
 /*
   Guia do Estágio Supervisionado — UNEMAT
   main.css — estilos base (mobile-first)
-  Paleta inspirada na identidade institucional da UNEMAT (verde/azul).
-  Ajuste as variáveis abaixo quando os ativos oficiais de marca forem fornecidos.
+  Paleta alinhada à identidade visual do site principal (tema escuro,
+  azul "brand" #0ea5e9 e tons "slate"). Ver index.html (raiz) para a
+  configuração original do Tailwind que serviu de referência.
 */
 
 :root {
-  --cor-primaria: #1b5e3a;
-  --cor-primaria-escura: #123f27;
-  --cor-primaria-clara: #e5f2ea;
-  --cor-secundaria: #0b3d66;
-  --cor-secundaria-clara: #e6eef5;
+  --cor-primaria: #0ea5e9;
+  --cor-primaria-escura: #0284c7;
+  --cor-primaria-clara: rgba(14, 165, 233, 0.15);
+  --cor-secundaria: #38bdf8;
+  --cor-secundaria-clara: rgba(14, 165, 233, 0.1);
 
-  --cor-concluido: #1b7a3d;
-  --cor-concluido-bg: #e6f4ea;
-  --cor-atual: #0b3d66;
-  --cor-atual-bg: #e6eef5;
-  --cor-atencao: #8a6100;
-  --cor-atencao-bg: #fff4d6;
-  --cor-impedimento: #9b1c1c;
-  --cor-impedimento-bg: #fbe7e7;
-  --cor-pendente: #5a5a5a;
-  --cor-pendente-bg: #eeeeee;
+  --cor-concluido: #34d399;
+  --cor-concluido-bg: rgba(16, 185, 129, 0.12);
+  --cor-atual: #38bdf8;
+  --cor-atual-bg: rgba(14, 165, 233, 0.15);
+  --cor-atencao: #fbbf24;
+  --cor-atencao-bg: rgba(245, 158, 11, 0.12);
+  --cor-impedimento: #f87171;
+  --cor-impedimento-bg: rgba(239, 68, 68, 0.12);
+  --cor-pendente: #94a3b8;
+  --cor-pendente-bg: rgba(51, 65, 85, 0.5);
 
-  --cor-texto: #1c1c1c;
-  --cor-texto-secundario: #4a4a4a;
-  --cor-fundo: #ffffff;
-  --cor-fundo-alt: #f6f8f7;
-  --cor-borda: #dcdfdd;
+  --cor-titulo: #f8fafc;
+  --cor-texto: #e2e8f0;
+  --cor-texto-secundario: #94a3b8;
+  --cor-fundo: #0f172a;
+  --cor-fundo-alt: #1e293b;
+  --cor-borda: #334155;
 
   --raio: 10px;
-  --sombra: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
-  --fonte: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --sombra: 0 4px 12px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+  --fonte: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --fonte-mono: "JetBrains Mono", monospace;
   --largura-maxima: 72rem;
 }
 
@@ -64,7 +67,7 @@ body {
 
 h1, h2, h3, h4 {
   line-height: 1.25;
-  color: var(--cor-primaria-escura);
+  color: var(--cor-titulo);
 }
 
 h1 { font-size: 1.9rem; }
@@ -118,20 +121,44 @@ a { color: var(--cor-secundaria); }
   display: none !important;
 }
 
+::selection {
+  background: var(--cor-primaria);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cor-fundo);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cor-borda);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cor-texto-secundario);
+}
+
 /* ===================== HEADER ===================== */
 
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--cor-fundo);
+  background: rgba(30, 41, 59, 0.85);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--cor-borda);
 }
 
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 1rem;
   padding: 0.75rem 1.1rem;
 }
@@ -141,6 +168,18 @@ a { color: var(--cor-secundaria); }
   flex-direction: column;
   text-decoration: none;
   line-height: 1.2;
+  margin-right: auto;
+}
+
+.link-portal {
+  color: var(--cor-texto-secundario);
+  text-decoration: none;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.link-portal:hover {
+  color: var(--cor-secundaria);
 }
 
 .brand-unemat {
@@ -270,7 +309,8 @@ a { color: var(--cor-secundaria); }
 }
 
 #busca-resultados mark {
-  background: #fff2a8;
+  background: var(--cor-atencao);
+  color: #1c1c1c;
   padding: 0 0.1em;
 }
 
@@ -342,7 +382,7 @@ a { color: var(--cor-secundaria); }
 .botao-primario:hover { background: var(--cor-primaria-escura); border-color: var(--cor-primaria-escura); }
 
 .botao-secundario {
-  background: #fff;
+  background: transparent;
   color: var(--cor-primaria);
   border-color: var(--cor-primaria);
 }
@@ -388,7 +428,7 @@ a { color: var(--cor-secundaria); }
 /* ===================== HERO ===================== */
 
 .hero {
-  background: linear-gradient(180deg, var(--cor-primaria-clara), #fff 65%);
+  background: linear-gradient(180deg, var(--cor-primaria-clara), var(--cor-fundo) 65%);
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
   text-align: center;
@@ -441,7 +481,7 @@ a { color: var(--cor-secundaria); }
 }
 
 .card {
-  background: var(--cor-fundo);
+  background: var(--cor-fundo-alt);
   border: 1px solid var(--cor-borda);
   border-radius: var(--raio);
   box-shadow: var(--sombra);
@@ -451,8 +491,8 @@ a { color: var(--cor-secundaria); }
 .card h2, .card h3 { margin-top: 0; }
 
 .card-destaque {
-  background: var(--cor-fundo-alt);
-  border-color: var(--cor-borda);
+  background: var(--cor-primaria-clara);
+  border-color: var(--cor-primaria);
 }
 
 .card-lista {
@@ -522,6 +562,7 @@ a { color: var(--cor-secundaria); }
   font-size: 0.8rem;
   font-weight: 700;
   color: var(--cor-secundaria);
+  font-family: var(--fonte-mono);
 }
 
 .pergunta-titulo {
@@ -598,7 +639,7 @@ a { color: var(--cor-secundaria); }
 .alerta-atencao {
   background: var(--cor-atencao-bg);
   border-color: var(--cor-atencao);
-  color: #5c4300;
+  color: var(--cor-texto);
 }
 
 .alerta-atencao strong {
@@ -677,7 +718,7 @@ a { color: var(--cor-secundaria); }
 /* ===================== PROGRESSO ===================== */
 
 .painel-progresso {
-  background: var(--cor-fundo);
+  background: var(--cor-fundo-alt);
   border: 1px solid var(--cor-borda);
   border-radius: var(--raio);
   padding: 1.25rem;
@@ -705,7 +746,7 @@ a { color: var(--cor-secundaria); }
   max-width: 30rem;
   margin: 0 auto;
   background: var(--cor-atencao-bg);
-  color: #5c4300;
+  color: var(--cor-texto);
   border-radius: var(--raio);
   padding: 0.75rem 1rem;
   font-size: 0.85rem;
@@ -786,7 +827,7 @@ a { color: var(--cor-secundaria); }
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -795,7 +836,8 @@ a { color: var(--cor-secundaria); }
 }
 
 .modal-caixa {
-  background: #fff;
+  background: var(--cor-fundo-alt);
+  border: 1px solid var(--cor-borda);
   border-radius: var(--raio);
   padding: 1.5rem;
   max-width: 26rem;
