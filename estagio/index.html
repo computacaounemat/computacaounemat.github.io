@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  // Impede a rolagem automática nativa do navegador para o âncora da URL
+  // (que ocorreria antes do conteúdo dinâmico ser renderizado, resultando em
+  // posição incorreta). app.js aplica a rolagem correta após renderizar tudo.
+  (function () {
+    if (window.location.hash) {
+      window.__guiaHashInicial = window.location.hash;
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState(null, "", window.location.pathname + window.location.search);
+      }
+    }
+  })();
+</script>
+<title>Guia do Estágio Supervisionado — Bacharelado em Ciência da Computação — UNEMAT</title>
+<meta name="description" content="Guia interativo de orientação para o Estágio Curricular Supervisionado do Bacharelado em Ciência da Computação da UNEMAT, Campus Universitário de Alto Araguaia.">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body>
+<a class="skip-link" href="index.html#conteudo-principal">Pular para o conteúdo</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html#inicio">
+      <span class="brand-unemat">UNEMAT</span>
+      <span class="brand-titulo">Guia do Estágio Supervisionado</span>
+    </a>
+    <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-principal">
+      <span class="sr-only">Abrir menu</span>
+      <span class="menu-icon" aria-hidden="true"></span>
+    </button>
+    <nav class="nav-principal" id="nav-principal" aria-label="Navegação principal">
+      <ul>
+        <li><a href="index.html#inicio">Início</a></li>
+        <li><a href="index.html#requisitos">Jornada</a></li>
+        <li><a href="index.html#convalidacao">Convalidação</a></li>
+        <li><a href="index.html#documentos">Meus documentos</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="index.html#legislacao">Legislação</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+      </ul>
+      <form class="busca-form" id="busca-form" role="search">
+        <label class="sr-only" for="busca-input">Buscar no Guia</label>
+        <input type="search" id="busca-input" name="busca" placeholder="🔎 Buscar no Guia">
+        <button type="submit">Buscar</button>
+      </form>
+    </nav>
+  </div>
+</header>
+
+<nav class="barra-jornada" id="barra-jornada" aria-label="Progresso da jornada do estágio" hidden>
+  <div class="container barra-jornada-inner">
+    <ol id="lista-jornada">
+      <li data-etapa-item="requisitos"><a href="index.html#requisitos"><span class="etapa-icone" aria-hidden="true">○</span><span class="etapa-nome">Requisitos</span></a></li>
+      <li data-etapa-item="local"><a href="index.html#local"><span class="etapa-icone" aria-hidden="true">○</span><span class="etapa-nome">Local</span></a></li>
+      <li data-etapa-item="regularizacao"><a href="index.html#regularizacao"><span class="etapa-icone" aria-hidden="true">○</span><span class="etapa-nome">Regularização</span></a></li>
+      <li data-etapa-item="planejamento"><a href="index.html#planejamento"><span class="etapa-icone" aria-hidden="true">○</span><span class="etapa-nome">Planejamento</span></a></li>
+      <li data-etapa-item="execucao"><a href="index.html#execucao"><span class="etapa-icone" aria-hidden="true">○</span><span class="etapa-nome">Execução</span></a></li>
+      <li data-etapa-item="registros"><a href="index.html#registros"><span class="etapa-icone" aria-hidden="true">○</span><span class="etapa-nome">Registros</span></a></li>
+      <li data-etapa-item="relatorio"><a href="index.html#relatorio"><span class="etapa-icone" aria-hidden="true">○</span><span class="etapa-nome">Relatório</span></a></li>
+      <li data-etapa-item="conclusao"><a href="index.html#conclusao"><span class="etapa-icone" aria-hidden="true">○</span><span class="etapa-nome">Conclusão</span></a></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="conteudo-principal">
+
+  <!-- ===================== INÍCIO ===================== -->
+  <section id="inicio" class="secao hero" aria-labelledby="hero-titulo">
+    <div class="container">
+      <p class="hero-instituicao">UNEMAT · Bacharelado em Ciência da Computação</p>
+      <h1 id="hero-titulo">GUIA DO ESTÁGIO SUPERVISIONADO</h1>
+      <p class="hero-texto">Tudo o que você precisa saber para realizar seu estágio, passo a passo.</p>
+      <div class="hero-acoes">
+        <button type="button" class="botao botao-primario" id="btn-comecar-jornada">Começar minha jornada</button>
+        <a class="botao botao-secundario" href="index.html#convalidacao">Já trabalho na área — ver convalidação</a>
+      </div>
+
+      <div class="banner-continuar is-hidden" id="banner-continuar">
+        <p id="banner-continuar-texto">Você já tem progresso salvo neste navegador.</p>
+        <button type="button" class="botao botao-primario" id="btn-continuar">Continuar de onde parei</button>
+      </div>
+
+      <div class="cards-grid cards-inicio">
+        <article class="card" data-jornada-card="es1">
+          <h2>Estágio Supervisionado I</h2>
+          <ul class="card-lista">
+            <li>60 horas</li>
+            <li>Pré-requisito: 50% dos créditos do curso</li>
+          </ul>
+          <button type="button" class="botao botao-outline" data-escolher-jornada="es1">Ver orientações</button>
+        </article>
+        <article class="card" data-jornada-card="es2">
+          <h2>Estágio Supervisionado II</h2>
+          <ul class="card-lista">
+            <li>60 horas</li>
+            <li>Pré-requisito: aprovação em Estágio Supervisionado I</li>
+          </ul>
+          <button type="button" class="botao botao-outline" data-escolher-jornada="es2">Ver orientações</button>
+        </article>
+        <article class="card" data-jornada-card="convalidacao">
+          <h2>Já trabalho na área</h2>
+          <ul class="card-lista">
+            <li>Pode haver possibilidade de convalidação</li>
+          </ul>
+          <a class="botao botao-outline" href="index.html#convalidacao">Ver requisitos</a>
+        </article>
+      </div>
+
+      <div class="painel-progresso" id="painel-progresso" hidden>
+        <h2>Seu progresso</h2>
+        <p id="progresso-texto">0 de 0 tarefas concluídas — 0%</p>
+        <div class="barra-progresso" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="barra-progresso-visual">
+          <div class="barra-progresso-preenchida" id="barra-progresso-preenchida"></div>
+        </div>
+        <button type="button" class="botao botao-texto" id="btn-reiniciar-checklist">Reiniciar meu checklist</button>
+      </div>
+
+      <p class="aviso-storage is-hidden" id="aviso-sem-storage" role="status"></p>
+    </div>
+  </section>
+
+  <!-- ===================== ETAPA 1 — REQUISITOS ===================== -->
+  <section id="requisitos" class="secao etapa" data-etapa="requisitos" aria-labelledby="requisitos-titulo">
+    <div class="container">
+      <p class="etapa-rotulo">Etapa 1 de 8</p>
+      <h2 id="requisitos-titulo">Posso fazer o estágio?</h2>
+      <p>Antes de procurar uma empresa ou preencher documentos, verifique se você atende aos requisitos acadêmicos.</p>
+
+      <div class="cards-grid">
+        <article class="card" data-jornada-card="es1">
+          <h3>Estágio Supervisionado I</h3>
+          <ul class="card-lista">
+            <li>60 horas</li>
+            <li>Pré-requisito: 50% dos créditos do curso</li>
+          </ul>
+        </article>
+        <article class="card" data-jornada-card="es2">
+          <h3>Estágio Supervisionado II</h3>
+          <ul class="card-lista">
+            <li>60 horas</li>
+            <li>Pré-requisito: aprovação em Estágio Supervisionado I</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="checklist" data-checklist-etapa="requisitos">
+        <p class="checklist-titulo">Antes de seguir, confirme:</p>
+        <ul>
+          <li><label><input type="checkbox" data-check-id="req-1"> Sei qual componente vou cursar</label></li>
+          <li><label><input type="checkbox" data-check-id="req-2"> Conferi meus pré-requisitos</label></li>
+          <li><label><input type="checkbox" data-check-id="req-3"> Estou regularmente matriculado</label></li>
+          <li><label><input type="checkbox" data-check-id="req-4"> Sei quem é o Professor Supervisor</label></li>
+        </ul>
+      </div>
+      <p class="aviso-checklist">As marcações deste guia são salvas apenas neste navegador e não substituem documentos, assinaturas ou registros oficiais da disciplina.</p>
+
+      <button type="button" class="botao botao-primario" data-proxima-etapa="local">Estou pronto para a próxima etapa</button>
+
+      <div class="acordeao">
+        <h3><button type="button" class="acordeao-toggle" aria-expanded="false" aria-controls="acc-requisitos">Ver fundamento normativo</button></h3>
+        <div id="acc-requisitos" class="acordeao-conteudo" hidden>
+          <div data-render="fundamento" data-fundamento-key="prerequisito_es1"></div>
+          <div data-render="fundamento" data-fundamento-key="prerequisito_es2"></div>
+        </div>
+      </div>
+
+      <nav class="nav-etapa" aria-label="Navegação entre etapas">
+        <a class="botao botao-texto" href="index.html#inicio">← Etapa anterior</a>
+        <a class="botao botao-texto" href="index.html#local">Próxima etapa →</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ===================== ETAPA 2 — LOCAL ===================== -->
+  <section id="local" class="secao etapa" data-etapa="local" aria-labelledby="local-titulo">
+    <div class="container">
+      <p class="etapa-rotulo">Etapa 2 de 8</p>
+      <h2 id="local-titulo">Defina onde será seu estágio</h2>
+      <p>O estágio deve envolver atividades relacionadas à área de Ciência da Computação.</p>
+
+      <p class="pergunta-titulo">Onde você pretende estagiar?</p>
+      <div class="opcoes-local" role="group" aria-label="Onde você pretende estagiar?">
+        <button type="button" class="botao botao-outline" data-escolher-local-pretendido="fora">Empresa ou instituição externa</button>
+        <button type="button" class="botao botao-outline" data-escolher-local-pretendido="dentro">Dentro da própria UNEMAT</button>
+      </div>
+
+      <div class="checklist" data-checklist-etapa="local">
+        <p class="checklist-titulo">Checklist desta etapa:</p>
+        <ul>
+          <li><label><input type="checkbox" data-check-id="local-1"> Conversei com o Professor Supervisor</label></li>
+          <li><label><input type="checkbox" data-check-id="local-2"> Identifiquei uma organização/local adequado</label></li>
+          <li><label><input type="checkbox" data-check-id="local-3"> Tenho um Supervisor de Campo/Orientador</label></li>
+        </ul>
+      </div>
+      <p class="aviso-checklist">As marcações deste guia são salvas apenas neste navegador e não substituem documentos, assinaturas ou registros oficiais da disciplina.</p>
+
+      <h3>Quem é quem?</h3>
+      <div class="cards-grid" data-render="papeis"></div>
+
+      <h3>Documentos desta etapa</h3>
+      <div class="cards-grid" data-render="documentos" data-etapa-documentos="local"></div>
+
+      <div class="acordeao">
+        <h3><button type="button" class="acordeao-toggle" aria-expanded="false" aria-controls="acc-local">Ver fundamento normativo</button></h3>
+        <div id="acc-local" class="acordeao-conteudo" hidden>
+          <div data-render="fundamento" data-fundamento-key="estagio_dentro_unemat"></div>
+          <div data-render="fundamento" data-fundamento-key="documentos_necessarios"></div>
+        </div>
+      </div>
+
+      <nav class="nav-etapa" aria-label="Navegação entre etapas">
+        <a class="botao botao-texto" href="index.html#requisitos">← Etapa anterior</a>
+        <a class="botao botao-texto" href="index.html#regularizacao">Próxima etapa →</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ===================== ETAPA 3 — REGULARIZAÇÃO ===================== -->
+  <section id="regularizacao" class="secao etapa" data-etapa="regularizacao" aria-labelledby="regularizacao-titulo">
+    <div class="container">
+      <p class="etapa-rotulo">Etapa 3 de 8</p>
+      <h2 id="regularizacao-titulo">Regularize seu estágio</h2>
+
+      <div class="alerta alerta-atencao" role="alert">
+        <strong>⚠ Atenção</strong>
+        <p>Não inicie as atividades sem confirmar com o Professor Supervisor que a documentação necessária está regularizada.</p>
+      </div>
+
+      <p class="pergunta-titulo">Onde será realizado seu estágio?</p>
+      <div class="opcoes-local" role="group" aria-label="Onde será realizado seu estágio?">
+        <button type="button" class="botao botao-outline" data-escolher-local="fora">Fora da UNEMAT</button>
+        <button type="button" class="botao botao-outline" data-escolher-local="dentro">Dentro da UNEMAT</button>
+      </div>
+
+      <div class="regularizacao-bloco is-hidden" data-local="fora">
+        <h3>Anexo IV — Termo de Compromisso para estágio externo</h3>
+        <div class="cards-grid" data-render="documentos" data-documento-id="anexo-04-externo"></div>
+        <div class="checklist" data-checklist-etapa="regularizacao">
+          <ul>
+            <li><label><input type="checkbox" data-check-id="reg-ext-1"> Documento preenchido</label></li>
+            <li><label><input type="checkbox" data-check-id="reg-ext-2"> Assinado pelo estudante</label></li>
+            <li><label><input type="checkbox" data-check-id="reg-ext-3"> Assinado pela concedente</label></li>
+            <li><label><input type="checkbox" data-check-id="reg-ext-4"> Regularização institucional conferida</label></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="regularizacao-bloco is-hidden" data-local="dentro">
+        <h3>Anexo IV — Termo de Compromisso para estágio dentro da UNEMAT</h3>
+        <div class="cards-grid" data-render="documentos" data-documento-id="anexo-04-interno"></div>
+        <div class="checklist" data-checklist-etapa="regularizacao">
+          <ul>
+            <li><label><input type="checkbox" data-check-id="reg-int-1"> Documento preenchido</label></li>
+            <li><label><input type="checkbox" data-check-id="reg-int-2"> Assinaturas necessárias obtidas</label></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="regularizacao-vazio" data-regularizacao-vazio>Escolha uma das opções acima para ver o Termo de Compromisso correspondente.</p>
+      <p class="aviso-checklist">As marcações deste guia são salvas apenas neste navegador e não substituem documentos, assinaturas ou registros oficiais da disciplina.</p>
+
+      <div class="card card-destaque">
+        <h3>Situação do convênio</h3>
+        <p>Antes de começar, confirme com o Professor Supervisor se o local está devidamente regularizado para receber o estágio.</p>
+      </div>
+
+      <div class="acordeao">
+        <h3><button type="button" class="acordeao-toggle" aria-expanded="false" aria-controls="acc-regularizacao">Ver fundamento normativo</button></h3>
+        <div id="acc-regularizacao" class="acordeao-conteudo" hidden>
+          <div data-render="fundamento" data-fundamento-key="documentos_necessarios"></div>
+        </div>
+      </div>
+
+      <nav class="nav-etapa" aria-label="Navegação entre etapas">
+        <a class="botao botao-texto" href="index.html#local">← Etapa anterior</a>
+        <a class="botao botao-texto" href="index.html#planejamento">Próxima etapa →</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ===================== ETAPA 4 — PLANEJAMENTO ===================== -->
+  <section id="planejamento" class="secao etapa" data-etapa="planejamento" aria-labelledby="planejamento-titulo">
+    <div class="container">
+      <p class="etapa-rotulo">Etapa 4 de 8</p>
+      <h2 id="planejamento-titulo">Planeje o que você vai fazer</h2>
+      <p>As atividades devem ser definidas antes da execução e precisam ser compatíveis com a área de Ciência da Computação.</p>
+
+      <h3>Qual área mais se aproxima das suas atividades?</h3>
+      <div class="cards-grid" id="cards-areas" data-render="areas"></div>
+      <div class="area-detalhe is-hidden" id="area-detalhe" role="region" aria-live="polite"></div>
+      <p>Não encontrou um enquadramento adequado? Converse com o Professor Supervisor.</p>
+      <a class="botao botao-outline" href="documentos/anexo-08-areas-estagio.docx">Consultar documento oficial — Anexo VIII</a>
+
+      <h3>Anexo V — Plano de Atividades</h3>
+      <div class="cards-grid" data-render="documentos" data-documento-id="anexo-05"></div>
+
+      <div class="checklist" data-checklist-etapa="planejamento">
+        <ul>
+          <li><label><input type="checkbox" data-check-id="plan-1"> Defini as atividades com meu Supervisor de Campo</label></li>
+          <li><label><input type="checkbox" data-check-id="plan-2"> Preenchi o Plano</label></li>
+          <li><label><input type="checkbox" data-check-id="plan-3"> Apresentei ao Professor Supervisor</label></li>
+          <li><label><input type="checkbox" data-check-id="plan-4"> Fiz as correções solicitadas</label></li>
+          <li><label><input type="checkbox" data-check-id="plan-5"> O Plano foi aprovado</label></li>
+        </ul>
+      </div>
+      <p class="aviso-checklist">As marcações deste guia são salvas apenas neste navegador e não substituem documentos, assinaturas ou registros oficiais da disciplina.</p>
+
+      <div class="acordeao">
+        <h3><button type="button" class="acordeao-toggle" aria-expanded="false" aria-controls="acc-planejamento">Ver fundamento normativo</button></h3>
+        <div id="acc-planejamento" class="acordeao-conteudo" hidden>
+          <div data-render="fundamento" data-fundamento-key="documentos_necessarios"></div>
+        </div>
+      </div>
+
+      <nav class="nav-etapa" aria-label="Navegação entre etapas">
+        <a class="botao botao-texto" href="index.html#regularizacao">← Etapa anterior</a>
+        <a class="botao botao-texto" href="index.html#execucao">Próxima etapa →</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ===================== ETAPA 5 — EXECUÇÃO ===================== -->
+  <section id="execucao" class="secao etapa" data-etapa="execucao" aria-labelledby="execucao-titulo">
+    <div class="container">
+      <p class="etapa-rotulo">Etapa 5 de 8</p>
+      <h2 id="execucao-titulo">Realize seu estágio</h2>
+      <p>Agora começa a execução das atividades previstas no seu Plano.</p>
+
+      <div class="checklist" data-checklist-etapa="execucao">
+        <ul>
+          <li><label><input type="checkbox" data-check-id="exec-1"> Cumpro os dias e horários definidos</label></li>
+          <li><label><input type="checkbox" data-check-id="exec-2"> Executo as atividades previstas no Plano</label></li>
+          <li><label><input type="checkbox" data-check-id="exec-3"> Participo das orientações na UNEMAT</label></li>
+          <li><label><input type="checkbox" data-check-id="exec-4"> Mantenho contato com meu Supervisor de Campo</label></li>
+          <li><label><input type="checkbox" data-check-id="exec-5"> Informo problemas ao Professor Supervisor</label></li>
+        </ul>
+      </div>
+      <p class="aviso-checklist">As marcações deste guia são salvas apenas neste navegador e não substituem documentos, assinaturas ou registros oficiais da disciplina.</p>
+
+      <div class="card card-destaque">
+        <h3>Durante o estágio</h3>
+        <ul class="card-lista">
+          <li>Mantenha postura profissional</li>
+          <li>Cumpra horários</li>
+          <li>Respeite as regras da organização</li>
+          <li>Preserve informações reservadas</li>
+          <li>Procure orientação quando precisar</li>
+        </ul>
+      </div>
+
+      <div class="acordeao">
+        <h3><button type="button" class="acordeao-toggle" aria-expanded="false" aria-controls="acc-execucao">Ver fundamento normativo</button></h3>
+        <div id="acc-execucao" class="acordeao-conteudo" hidden>
+          <div data-render="fundamento" data-fundamento-key="papel_aluno"></div>
+        </div>
+      </div>
+
+      <nav class="nav-etapa" aria-label="Navegação entre etapas">
+        <a class="botao botao-texto" href="index.html#planejamento">← Etapa anterior</a>
+        <a class="botao botao-texto" href="index.html#registros">Próxima etapa →</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ===================== ETAPA 6 — REGISTROS ===================== -->
+  <section id="registros" class="secao etapa" data-etapa="registros" aria-labelledby="registros-titulo">
+    <div class="container">
+      <p class="etapa-rotulo">Etapa 6 de 8</p>
+      <h2 id="registros-titulo">Registre suas atividades</h2>
+
+      <h3>Anexo VI — Ficha de Acompanhamento</h3>
+      <div class="cards-grid" data-render="documentos" data-documento-id="anexo-06"></div>
+      <p>Ela registra: data, horário de início, horário de término, atividade realizada, carga horária e assinatura do responsável, quando aplicável.</p>
+
+      <div class="checklist" data-checklist-etapa="registros">
+        <ul>
+          <li><label><input type="checkbox" data-check-id="regist-1"> Estou registrando as atividades regularmente</label></li>
+          <li><label><input type="checkbox" data-check-id="regist-2"> Minha carga horária está atualizada</label></li>
+          <li><label><input type="checkbox" data-check-id="regist-3"> As atividades correspondem ao Plano</label></li>
+          <li><label><input type="checkbox" data-check-id="regist-4"> Obtive as assinaturas necessárias</label></li>
+          <li><label><input type="checkbox" data-check-id="regist-5"> Entreguei relatórios parciais quando solicitados</label></li>
+        </ul>
+      </div>
+      <p class="aviso-checklist">As marcações deste guia são salvas apenas neste navegador e não substituem documentos, assinaturas ou registros oficiais da disciplina.</p>
+
+      <div class="alerta alerta-atencao">
+        <p>Evite deixar todos os registros para o final. Mantenha sua ficha atualizada durante o estágio.</p>
+      </div>
+
+      <div class="acordeao">
+        <h3><button type="button" class="acordeao-toggle" aria-expanded="false" aria-controls="acc-registros">Ver fundamento normativo</button></h3>
+        <div id="acc-registros" class="acordeao-conteudo" hidden>
+          <div data-render="fundamento" data-fundamento-key="registro_atividades"></div>
+        </div>
+      </div>
+
+      <nav class="nav-etapa" aria-label="Navegação entre etapas">
+        <a class="botao botao-texto" href="index.html#execucao">← Etapa anterior</a>
+        <a class="botao botao-texto" href="index.html#relatorio">Próxima etapa →</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ===================== ETAPA 7 — RELATÓRIO ===================== -->
+  <section id="relatorio" class="secao etapa" data-etapa="relatorio" aria-labelledby="relatorio-titulo">
+    <div class="container">
+      <p class="etapa-rotulo">Etapa 7 de 8</p>
+      <h2 id="relatorio-titulo">Finalize o estágio</h2>
+
+      <div class="checklist" data-checklist-etapa="relatorio">
+        <p class="checklist-titulo">Checklist preliminar:</p>
+        <ul>
+          <li><label><input type="checkbox" data-check-id="rel-1"> Completei a carga horária</label></li>
+          <li><label><input type="checkbox" data-check-id="rel-2"> Minha ficha de acompanhamento está completa</label></li>
+          <li><label><input type="checkbox" data-check-id="rel-3"> As atividades estão devidamente registradas</label></li>
+          <li><label><input type="checkbox" data-check-id="rel-4"> Conferi assinaturas e documentos</label></li>
+        </ul>
+      </div>
+      <p class="aviso-checklist">As marcações deste guia são salvas apenas neste navegador e não substituem documentos, assinaturas ou registros oficiais da disciplina.</p>
+
+      <h3>Anexo VII — Relatório Final</h3>
+      <div class="cards-grid" data-render="documentos" data-documento-id="anexo-07"></div>
+      <p>O relatório deve apresentar de forma clara as atividades desenvolvidas e a carga horária.</p>
+
+      <div class="acordeao">
+        <h3><button type="button" class="acordeao-toggle" aria-expanded="false" aria-controls="acc-relatorio-estrutura">Ver checklist de revisão — estrutura mínima do relatório</button></h3>
+        <div id="acc-relatorio-estrutura" class="acordeao-conteudo" hidden>
+          <div class="checklist" data-checklist-etapa="relatorio-estrutura" data-checklist-optional="true">
+            <ul>
+              <li><label><input type="checkbox" data-check-id="relest-1"> Introdução</label></li>
+              <li><label><input type="checkbox" data-check-id="relest-2"> Objetivos</label></li>
+              <li><label><input type="checkbox" data-check-id="relest-3"> Atividades desenvolvidas</label></li>
+              <li><label><input type="checkbox" data-check-id="relest-4"> Sugestões e recomendações</label></li>
+              <li><label><input type="checkbox" data-check-id="relest-5"> Considerações finais</label></li>
+              <li><label><input type="checkbox" data-check-id="relest-6"> Referências</label></li>
+              <li><label><input type="checkbox" data-check-id="relest-7"> Anexos</label></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="acordeao">
+        <h3><button type="button" class="acordeao-toggle" aria-expanded="false" aria-controls="acc-relatorio">Ver fundamento normativo</button></h3>
+        <div id="acc-relatorio" class="acordeao-conteudo" hidden>
+          <div data-render="fundamento" data-fundamento-key="relatorio_final_estrutura"></div>
+        </div>
+      </div>
+
+      <nav class="nav-etapa" aria-label="Navegação entre etapas">
+        <a class="botao botao-texto" href="index.html#registros">← Etapa anterior</a>
+        <a class="botao botao-texto" href="index.html#conclusao">Próxima etapa →</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ===================== ETAPA 8 — AVALIAÇÃO E CONCLUSÃO ===================== -->
+  <section id="conclusao" class="secao etapa" data-etapa="conclusao" aria-labelledby="conclusao-titulo">
+    <div class="container">
+      <p class="etapa-rotulo">Etapa 8 de 8</p>
+      <h2 id="conclusao-titulo">Avaliação e conclusão</h2>
+
+      <h3>O que pode ser considerado na avaliação?</h3>
+      <ul class="card-lista">
+        <li>Plano de Atividades</li>
+        <li>Pontualidade e assiduidade</li>
+        <li>Relatórios parciais</li>
+        <li>Acompanhamento/avaliação da concedente</li>
+        <li>Relatório Final</li>
+      </ul>
+
+      <div class="card card-destaque">
+        <h3>Quem atribui a nota?</h3>
+        <p>O Professor Supervisor é responsável pela avaliação acadêmica do estágio.</p>
+      </div>
+
+      <div class="acordeao">
+        <h3><button type="button" class="acordeao-toggle" aria-expanded="false" aria-controls="acc-conclusao">Ver fundamento normativo</button></h3>
+        <div id="acc-conclusao" class="acordeao-conteudo" hidden>
+          <div data-render="fundamento" data-fundamento-key="avaliacao_criterios"></div>
+          <div data-render="fundamento" data-fundamento-key="avaliacao_responsavel"></div>
+          <div data-render="fundamento" data-fundamento-key="aprovacao_indispensavel"></div>
+        </div>
+      </div>
+
+      <div class="bloco-conclusao-jornada is-hidden" id="bloco-conclusao-jornada">
+        <h3 id="conclusao-jornada-titulo"></h3>
+        <p class="aviso-forte" id="conclusao-jornada-aviso"></p>
+      </div>
+
+      <nav class="nav-etapa" aria-label="Navegação entre etapas">
+        <a class="botao botao-texto" href="index.html#relatorio">← Etapa anterior</a>
+        <a class="botao botao-texto" href="index.html#documentos">Ver meus documentos →</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ===================== CONVALIDAÇÃO ===================== -->
+  <section id="convalidacao" class="secao" aria-labelledby="convalidacao-titulo">
+    <div class="container">
+      <h2 id="convalidacao-titulo">Já trabalho na área? Conheça a convalidação</h2>
+
+      <div class="conv-passo" data-conv-step="1">
+        <p class="pergunta-titulo">Você possui pelo menos 12 meses ininterruptos de atividade profissional na área de Ciência da Computação?</p>
+        <div class="opcoes-local" role="group" aria-label="Você possui pelo menos 12 meses ininterruptos de atividade profissional na área?">
+          <button type="button" class="botao botao-outline" data-conv-resposta="1:sim">Sim</button>
+          <button type="button" class="botao botao-outline" data-conv-resposta="1:nao">Não</button>
+        </div>
+      </div>
+
+      <div class="conv-passo is-hidden" data-conv-step="reprovado">
+        <p>O requisito mínimo para convalidação não foi atendido.</p>
+        <a class="botao botao-outline" href="index.html#requisitos">Ver estágio regular</a>
+      </div>
+
+      <div class="conv-passo is-hidden" data-conv-step="2">
+        <p class="pergunta-titulo">Você cumpre o pré-requisito da disciplina?</p>
+        <div class="opcoes-local" role="group" aria-label="Você cumpre o pré-requisito da disciplina?">
+          <button type="button" class="botao botao-outline" data-conv-resposta="2:sim">Sim</button>
+          <button type="button" class="botao botao-outline" data-conv-resposta="2:nao">Não</button>
+        </div>
+      </div>
+
+      <div class="conv-passo is-hidden" data-conv-step="bloqueio">
+        <p>Você ainda não atende a este requisito para seguir com a convalidação. Fale com o Professor Supervisor ou a Coordenação do Curso antes de prosseguir.</p>
+        <a class="botao botao-outline" href="index.html#requisitos">Ver estágio regular</a>
+      </div>
+
+      <div class="conv-passo is-hidden" data-conv-step="3">
+        <p class="pergunta-titulo">Você está matriculado no componente de Estágio Supervisionado?</p>
+        <div class="opcoes-local" role="group" aria-label="Você está matriculado no componente de Estágio Supervisionado?">
+          <button type="button" class="botao botao-outline" data-conv-resposta="3:sim">Sim</button>
+          <button type="button" class="botao botao-outline" data-conv-resposta="3:nao">Não</button>
+        </div>
+      </div>
+
+      <div class="conv-passo is-hidden" data-conv-step="4">
+        <h3>Qual etapa deseja solicitar?</h3>
+        <div class="opcoes-local" role="group" aria-label="Qual etapa deseja solicitar?">
+          <button type="button" class="botao botao-outline" data-conv-etapa="es1">Estágio Supervisionado I</button>
+          <button type="button" class="botao botao-outline" data-conv-etapa="es2">Estágio Supervisionado II</button>
+        </div>
+        <p class="texto-secundario">Se precisar de convalidação para ambos os componentes, faça uma solicitação separada para cada etapa.</p>
+      </div>
+
+      <div class="conv-passo is-hidden" data-conv-step="documentos">
+        <h3>Documentação necessária</h3>
+        <div class="checklist" data-checklist-etapa="convalidacao">
+          <ul>
+            <li><label><input type="checkbox" data-check-id="conv-1"> Requerimento de convalidação</label></li>
+            <li><label><input type="checkbox" data-check-id="conv-2"> Declaração da instituição com cargo e funções</label></li>
+            <li><label><input type="checkbox" data-check-id="conv-3"> Comprovação do vínculo profissional</label></li>
+            <li><label><input type="checkbox" data-check-id="conv-4"> Plano das atividades profissionais</label></li>
+            <li><label><input type="checkbox" data-check-id="conv-5"> Relatório circunstanciado</label></li>
+          </ul>
+        </div>
+        <p class="aviso-checklist">As marcações deste guia são salvas apenas neste navegador e não substituem documentos, assinaturas ou registros oficiais da disciplina.</p>
+
+        <div class="cards-grid" data-render="documentos" data-documento-id="anexo-09"></div>
+
+        <h3>Como funciona o processo</h3>
+        <ol class="fluxo-convalidacao">
+          <li>Documentos</li>
+          <li>Análise do Professor Supervisor</li>
+          <li>Relatório escrito</li>
+          <li>Seminário</li>
+          <li>Parecer</li>
+        </ol>
+
+        <div class="alerta alerta-atencao">
+          <p>A entrega do relatório escrito é pré-requisito para a apresentação do seminário.</p>
+        </div>
+        <p class="texto-secundario">Em caso de indeferimento da convalidação, o estudante deverá cumprir o estágio regular conforme orientação acadêmica.</p>
+
+        <div class="acordeao">
+          <h3><button type="button" class="acordeao-toggle" aria-expanded="false" aria-controls="acc-convalidacao">Ver fundamento normativo</button></h3>
+          <div id="acc-convalidacao" class="acordeao-conteudo" hidden>
+            <div data-render="fundamento" data-fundamento-key="convalidacao_12_meses"></div>
+            <div data-render="fundamento" data-fundamento-key="convalidacao_documentos"></div>
+            <div data-render="fundamento" data-fundamento-key="convalidacao_relatorio_seminario"></div>
+            <div data-render="fundamento" data-fundamento-key="convalidacao_indeferida"></div>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="botao botao-texto" id="btn-reiniciar-convalidacao">Reiniciar esta consulta</button>
+    </div>
+  </section>
+
+  <!-- ===================== MEUS DOCUMENTOS ===================== -->
+  <section id="documentos" class="secao" aria-labelledby="documentos-titulo">
+    <div class="container">
+      <h2 id="documentos-titulo">Meus documentos</h2>
+      <div class="filtros-documentos" role="group" aria-label="Filtrar documentos por etapa" id="filtros-documentos">
+        <button type="button" class="filtro-chip is-ativo" data-filtro-categoria="todos">Todos</button>
+        <button type="button" class="filtro-chip" data-filtro-categoria="antes-de-comecar">Antes de começar</button>
+        <button type="button" class="filtro-chip" data-filtro-categoria="regularizacao">Regularização</button>
+        <button type="button" class="filtro-chip" data-filtro-categoria="planejamento">Planejamento</button>
+        <button type="button" class="filtro-chip" data-filtro-categoria="durante">Durante</button>
+        <button type="button" class="filtro-chip" data-filtro-categoria="finalizacao">Finalização</button>
+        <button type="button" class="filtro-chip" data-filtro-categoria="convalidacao">Convalidação</button>
+      </div>
+      <div id="painel-documentos" data-render="documentos-painel"></div>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section id="faq" class="secao" aria-labelledby="faq-titulo">
+    <div class="container">
+      <h2 id="faq-titulo">Perguntas frequentes</h2>
+      <div id="lista-faq" data-render="faq"></div>
+    </div>
+  </section>
+
+  <!-- ===================== LEGISLAÇÃO ===================== -->
+  <section id="legislacao" class="secao" aria-labelledby="legislacao-titulo">
+    <div class="container">
+      <h2 id="legislacao-titulo">Base normativa</h2>
+      <p>Este Guia foi elaborado com base nos documentos institucionais que regulamentam o Estágio Supervisionado.</p>
+      <div class="cards-grid" id="lista-legislacao" data-render="legislacao"></div>
+      <div class="alerta alerta-atencao">
+        <p>Em caso de divergência entre este Guia e documento institucional vigente, prevalece o documento normativo oficial.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTATO ===================== -->
+  <section id="contato" class="secao" aria-labelledby="contato-titulo">
+    <div class="container">
+      <h2 id="contato-titulo">Contato e links institucionais</h2>
+      <div class="cards-grid">
+        <article class="card" id="card-sigaa">
+          <h3>SIGAA</h3>
+          <p id="texto-sigaa">Link ainda não configurado.</p>
+        </article>
+        <article class="card" id="card-coordenacao">
+          <h3>Coordenação do Curso</h3>
+          <p id="texto-coordenacao">Link ainda não configurado.</p>
+        </article>
+        <article class="card">
+          <h3>Professor Supervisor</h3>
+          <p id="texto-professor-supervisor"></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="voltar-topo-wrap">
+  <a href="index.html#inicio" class="botao-voltar-topo" id="btn-voltar-topo">Voltar ao topo</a>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p><strong>UNEMAT</strong><br>Universidade do Estado de Mato Grosso</p>
+    <p><strong>Bacharelado em Ciência da Computação</strong><br>Campus Universitário de Alto Araguaia</p>
+    <p>Guia de Orientação do Estágio Supervisionado</p>
+    <p class="rodape-aviso">Este guia possui caráter orientativo e não substitui as normas institucionais vigentes.</p>
+    <p class="rodape-aviso">Em situações não previstas, procure o Professor Supervisor ou a Coordenação do Curso.</p>
+    <p id="rodape-ultima-atualizacao"></p>
+    <p id="rodape-base-normativa"></p>
+  </div>
+</footer>
+
+<div class="modal-overlay is-hidden" id="modal-confirmacao" role="dialog" aria-modal="true" aria-labelledby="modal-confirmacao-titulo">
+  <div class="modal-caixa">
+    <h2 id="modal-confirmacao-titulo">Confirmar</h2>
+    <p id="modal-confirmacao-texto"></p>
+    <div class="modal-acoes">
+      <button type="button" class="botao botao-outline" id="modal-confirmacao-cancelar">Cancelar</button>
+      <button type="button" class="botao botao-primario" id="modal-confirmacao-confirmar">Confirmar</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/checklist.js"></script>
+<script src="js/progresso.js"></script>
+<script src="js/documentos.js"></script>
+<script src="js/navegacao.js"></script>
+<script src="js/busca.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
