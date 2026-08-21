@@ -131,6 +131,9 @@
     font-family:'JetBrains Mono',monospace; font-size:0.75rem; padding:4px 10px; border-radius:20px;
     margin:3px 6px 3px 0;
   }
+  a.doc-pill{text-decoration:none; cursor:pointer; transition:background-color .15s ease;}
+  a.doc-pill:hover{background:rgba(52,211,153,0.3); color:var(--teal);}
+  .doc-pill-indisponivel{background:transparent; border:1px dashed var(--line); color:var(--ink-soft); cursor:default;}
 
   details{margin-top:14px; border-top:1px solid var(--line); padding-top:12px;}
   summary{cursor:pointer; font-family:'JetBrains Mono',monospace; font-size:0.82rem; color:var(--brand); text-transform:uppercase; letter-spacing:0.04em;}
@@ -294,8 +297,10 @@
     </ul>
 
     <div>
-      <span class="doc-pill">📄 Anexo A · Termo de Aceite de Orientação</span>
-      <span class="doc-pill">📄 Anexo B · Termo de Aceite de Coorientação (se houver)</span>
+      <a class="doc-pill" href="documentos/anexo-a-b-termo-aceite-orientacao.docx" download>📄 Anexo A · Termo de Aceite de Orientação</a>
+      <a class="doc-pill" href="documentos/anexo-a-b-termo-aceite-orientacao.docx" download>📄 Anexo B · Termo de Aceite de Coorientação (se houver)</a>
+      <a class="doc-pill" href="documentos/modelo-projeto-monografia.docx" download>📄 Modelo do Projeto de TCC</a>
+      <a class="doc-pill" href="documentos/termo-encaminhamento-projeto.odt" download>📄 Termo de Encaminhamento do Projeto</a>
     </div>
 
     <details>
@@ -322,12 +327,16 @@
       <li><input type="checkbox" id="c2-6"><label for="c2-6">Se pesquisa envolver pessoas ou animais: verificar se precisa de parecer do CEP e/ou CEUA</label></li>
     </ul>
 
+    <div>
+      <a class="doc-pill" href="documentos/controle-frequencia-orientacoes.docx" download>📄 Controle de Frequência das Orientações</a>
+    </div>
+
     <details>
       <summary>Quer trocar de orientador(a)?</summary>
       <p>Se você quiser trocar de orientador(a), ou se o(a) orientador(a) desistir da orientação, é preciso formalizar isso junto ao Colegiado de Curso, indicando um novo orientador(a).</p>
       <div>
-        <span class="doc-pill">📄 Anexo D · Termo de Desistência de Orientação</span>
-        <span class="doc-pill">📄 Anexo E · Termo de Substituição de Orientação</span>
+        <a class="doc-pill" href="documentos/anexo-d-termo-desistencia-orientacao.odt" download>📄 Anexo D · Termo de Desistência de Orientação</a>
+        <span class="doc-pill doc-pill-indisponivel" title="Arquivo ainda não disponibilizado">📄 Anexo E · Termo de Substituição de Orientação</span>
       </div>
     </details>
 
@@ -351,7 +360,11 @@
       <li><input type="checkbox" id="c3-6"><label for="c3-6">Aguardar o conceito da banca: Aprovado ou Reprovado</label></li>
     </ul>
 
-    <div><span class="doc-pill">📄 Anexo F · Autorização para Defesa</span> <span class="doc-pill">📄 Anexo C · Ata de Avaliação</span></div>
+    <div>
+      <a class="doc-pill" href="documentos/anexo-f-autorizacao-defesa.odt" download>📄 Anexo F · Autorização para Defesa</a>
+      <a class="doc-pill" href="documentos/anexo-c-ficha-avaliacao.odt" download>📄 Anexo C · Ata de Avaliação</a>
+      <a class="doc-pill" href="documentos/convite-banca-tcc.docx" download>📄 Convite para Banca</a>
+    </div>
 
     <div class="note"><b class="note-label">Importante</b> O conceito dado pela banca é definitivo — a Resolução não prevê recurso (Art. 24, Parágrafo Único). A banca só pode iniciar os trabalhos com todos os membros presentes; se algum membro faltar por caso fortuito ou força maior, uma nova data será marcada.</div>
   </section>

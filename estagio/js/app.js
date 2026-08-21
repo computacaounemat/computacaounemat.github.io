@@ -134,12 +134,6 @@
         ? '<a href="' + escapar(conteudo.links.sigaaUrl) + '" target="_blank" rel="noopener">Acessar SIGAA</a>'
         : "Link ainda não configurado.";
     }
-    var coordenacao = document.getElementById("texto-coordenacao");
-    if (coordenacao) {
-      coordenacao.innerHTML = conteudo.links.contatoCoordenacaoUrl
-        ? '<a href="' + escapar(conteudo.links.contatoCoordenacaoUrl) + '" target="_blank" rel="noopener">Contato da Coordenação</a>'
-        : "Link ainda não configurado.";
-    }
     var professor = document.getElementById("texto-professor-supervisor");
     if (professor) professor.textContent = (conteudo.avisos && conteudo.avisos.professorSupervisor) || "";
 

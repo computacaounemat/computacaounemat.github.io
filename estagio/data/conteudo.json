@@ -10,7 +10,7 @@
       "tipo": "procedimento",
       "documento": "Projeto Pedagógico do Curso (PPC) — Bacharelado em Ciência da Computação",
       "artigo": "Matriz curricular",
-      "texto": "A exigência de aprovação em Estágio Supervisionado I como pré-requisito para Estágio Supervisionado II consta da matriz curricular do PPC. O documento do PPC não está entre os arquivos disponibilizados para este Guia; em caso de dúvida, confirme com a Coordenação do Curso."
+      "texto": "A exigência de aprovação em Estágio Supervisionado I como pré-requisito para Estágio Supervisionado II consta da matriz curricular do PPC. O documento do PPC está entre os arquivos disponibilizados no Guia do Estudante (aqui mesmo no site)."
     },
     "documentos_necessarios": {
       "tipo": "norma",
@@ -165,7 +165,7 @@
     },
     {
       "id": "coordenacao-curso",
-      "nome": "Coordenação do Curso / Coordenação de Estágio",
+      "nome": "Coordenação de Estágio",
       "descricao": "Responsável por cumprir e fazer cumprir a política de estágios da UNEMAT, orientar professores e acadêmicos sobre o regulamento e manter atualizado o arquivo de oportunidades de estágio.",
       "fundamento": "papel_coordenacao"
     },
@@ -184,7 +184,7 @@
     "conclusaoAviso": "Isso não significa que seu Estágio Supervisionado esteja academicamente concluído. A conclusão depende da avaliação e dos registros oficiais da disciplina.",
     "convalidacaoIndeferida": "Em caso de indeferimento da convalidação, o estudante deverá cumprir o estágio regular conforme orientação acadêmica.",
     "convalidacaoRelatorio": "A entrega do relatório escrito é pré-requisito para a apresentação do seminário.",
-    "professorSupervisor": "Professor Supervisor do semestre: consulte a turma de Estágio no SIGAA ou a Coordenação do Curso.",
+    "professorSupervisor": "Professor Supervisor do semestre: consulte a turma de Estágio no SIGAA.",
     "semLocalStorage": "Seu navegador não permite salvar o progresso localmente. O Guia continua funcionando, mas suas marcações não serão preservadas ao recarregar a página.",
     "documentoIndisponivel": "Arquivo ainda não disponibilizado."
   },
@@ -197,8 +197,7 @@
     ]
   },
   "links": {
-    "sigaaUrl": "",
-    "contatoCoordenacaoUrl": ""
+    "sigaaUrl": ""
   },
   "legislacao": [
     {
@@ -218,10 +217,9 @@
     {
       "id": "ppc-computacao",
       "titulo": "Projeto Pedagógico do Curso (PPC) — Bacharelado em Ciência da Computação",
-      "descricao": "Documento que estabelece a carga horária, os créditos e os pré-requisitos específicos de Estágio Supervisionado I e II no curso.",
-      "arquivo": "",
-      "disponivel": false,
-      "observacao": "Arquivo ainda não disponibilizado para este Guia. Consulte a Coordenação do Curso para acesso ao PPC vigente."
+      "descricao": "Documento que estabelece a carga horária, os créditos e os pré-requisitos específicos de Estágio Supervisionado I e II no curso. Disponível no card \"Projetos Pedagógicos (PPC)\" do Guia do Estudante deste site (resoluções de Rondonópolis e Alto Araguaia).",
+      "arquivo": "../index.html",
+      "disponivel": true
     }
   ]
 }

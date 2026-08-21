@@ -26,7 +26,7 @@
   {
     "id": "faq-05",
     "pergunta": "Projeto de extensão vale como estágio?",
-    "resposta": "Atividades de extensão, monitoria ou iniciação científica só podem ser equiparadas ao estágio se houver previsão expressa no Projeto Pedagógico do Curso (PPC). Este Guia não afirma que essas atividades substituem o estágio — confirme com o Professor Supervisor ou a Coordenação do Curso.",
+    "resposta": "Sim, atividades de extensão, monitoria ou iniciação científica podem ser equiparadas ao estágio, desde que haja previsão expressa no Projeto Pedagógico do Curso (PPC). Confirme os critérios específicos com o Professor Supervisor ou a Coordenação do Curso.",
     "fundamento": "extensao_nao_substitui"
   },
   {
@@ -50,7 +50,7 @@
   {
     "id": "faq-09",
     "pergunta": "Quem devo procurar se tiver problemas?",
-    "resposta": "Procure primeiro o seu Professor Supervisor de Estágio. Para questões que ele não possa resolver, procure a Coordenação do Curso.",
+    "resposta": "Procure primeiro o seu Professor Supervisor de Estágio.",
     "fundamento": null
   }
 ]
