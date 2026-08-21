@@ -149,10 +149,10 @@
                 Agenda de Laboratórios
             </a>
 
-            <a href="estagio/" class="w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-slate-400 hover:text-white hover:bg-slate-700/50 transition-all group">
-                <i class="fa-solid fa-briefcase w-5 text-center text-slate-500 group-hover:text-white"></i>
+            <button onclick="app.navigate('estagio')" id="nav-estagio" class="nav-item w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-slate-400 hover:text-white hover:bg-slate-700/50 transition-all">
+                <i class="fa-solid fa-briefcase w-5 text-center"></i>
                 Guia de Estágio
-            </a>
+            </button>
 
             <p class="px-3 text-xs font-bold text-slate-500 uppercase tracking-wider mt-6 mb-2">Links Externos</p>
 
@@ -387,6 +387,11 @@
                         </a>
                     </div>
                 </div>
+            </div>
+
+            <!-- VIEW: GUIA DE ESTÁGIO (embutido, mesmo painel do Guia do Estudante) -->
+            <div id="view-estagio" class="hidden max-w-5xl mx-auto animate-fade-in">
+                <iframe src="estagio/index.html" title="Guia do Estágio Supervisionado" class="w-full h-[80vh] md:h-[85vh] rounded-2xl border border-slate-700 shadow-lg bg-dark-800"></iframe>
             </div>
 
             <!-- VIEW: SECOMP 2026 LANDING PAGE -->
@@ -2250,7 +2255,7 @@
             },
 
             updateView() {
-                const views = ['schedule', 'guide', 'secomp'];
+                const views = ['schedule', 'guide', 'secomp', 'estagio'];
                 views.forEach(v => {
                     const el = document.getElementById('view-' + v);
                     if(el) el.classList.add('hidden');
