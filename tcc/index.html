@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia do TCC — Ciência da Computação — UNEMAT</title>
+<meta name="description" content="Guia prático do Trabalho de Conclusão de Curso do Bacharelado em Ciência da Computação da UNEMAT: da proposta à defesa.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0f172a;
+    --card:rgba(30,41,59,0.7);
+    --card-hover:rgba(51,65,85,0.8);
+    --card-border:rgba(255,255,255,0.06);
+    --ink:#f8fafc;
+    --ink-soft:#94a3b8;
+    --ink-body:#cbd5e1;
+    --brand:#38bdf8;
+    --brand-strong:#0ea5e9;
+    --brand-soft:rgba(56,189,248,0.15);
+    --teal:#34d399;
+    --teal-soft:rgba(52,211,153,0.15);
+    --amber:#fbbf24;
+    --amber-soft:rgba(251,191,36,0.12);
+    --line:rgba(148,163,184,0.18);
+    --line-solid:#334155;
+    --mono:#94a3b8;
+    --raio:0.75rem;
+    --raio-grande:1rem;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink-body);
+    font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height:1.65;
+  }
+  h1,h2,h3,.display{
+    font-family:'Inter', sans-serif;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+    font-weight:700;
+  }
+  .tag{
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:0.72rem; text-transform:uppercase; letter-spacing:0.08em;
+    color:var(--brand);
+  }
+  a{color:var(--brand); transition:color .15s ease;}
+  a:hover{color:var(--brand-strong);}
+
+  ::-webkit-scrollbar{width:6px;height:6px;}
+  ::-webkit-scrollbar-track{background:var(--bg);}
+  ::-webkit-scrollbar-thumb{background:var(--line-solid);border-radius:3px;}
+  ::-webkit-scrollbar-thumb:hover{background:#475569;}
+
+  /* HERO / PIPELINE */
+  header{
+    padding:56px 24px 40px; text-align:center;
+    background:radial-gradient(60% 100% at 50% 0%, rgba(14,165,233,0.12), transparent 70%), var(--bg);
+    border-bottom:1px solid var(--line-solid);
+  }
+  header .tag{margin-bottom:10px;}
+  header h1{font-size:2.1rem; margin:0 0 10px; max-width:720px; margin-inline:auto;}
+  header p{max-width:580px; margin:0 auto; color:var(--ink-soft); font-size:1.02rem;}
+
+  .pipeline{
+    display:flex; justify-content:center; gap:0; margin:40px auto 0; max-width:900px;
+    flex-wrap:wrap;
+  }
+  .node{
+    flex:1; min-width:150px; background:var(--card); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    border:1px solid var(--card-border);
+    border-radius:var(--raio); padding:16px 14px; position:relative; margin:8px;
+    text-align:left; transition:background-color .2s ease;
+  }
+  .node:hover{background:var(--card-hover);}
+  .node .num{
+    font-family:'JetBrains Mono',monospace; font-size:0.7rem; color:var(--brand);
+    background:var(--brand-soft); display:inline-block; padding:2px 8px; border-radius:20px;
+    margin-bottom:8px;
+  }
+  .node h3{font-size:0.98rem; margin:0 0 4px; color:var(--ink);}
+  .node p{font-size:0.85rem; color:var(--ink-soft); margin:0;}
+  .node a.jump{font-size:0.78rem; display:inline-block; margin-top:8px; text-decoration:none; color:var(--brand); font-family:'JetBrains Mono',monospace;}
+
+  main{max-width:820px; margin:0 auto; padding:48px 24px 100px;}
+
+  .note{
+    background:var(--amber-soft); border-left:4px solid var(--amber);
+    padding:14px 18px; border-radius:6px; font-size:0.92rem; margin:18px 0;
+    color:#fde68a;
+  }
+  .note b.note-label{display:block; font-family:'JetBrains Mono',monospace; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:4px; color:var(--amber);}
+  .note strong{color:#fff; font-weight:700;}
+
+  section.stage{
+    background:var(--card); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    border:1px solid var(--card-border); border-radius:var(--raio-grande);
+    padding:30px 30px 22px; margin:34px 0; scroll-margin-top:76px;
+  }
+  section.stage .stage-head{display:flex; align-items:center; gap:14px; margin-bottom:6px;}
+  section.stage .stage-head .badge{
+    font-family:'JetBrains Mono',monospace; background:var(--brand-soft); color:var(--brand);
+    border-radius:50%; width:34px; height:34px; display:flex; align-items:center; justify-content:center;
+    font-size:0.95rem; flex-shrink:0;
+  }
+  section.stage h2{font-size:1.3rem; margin:0;}
+  section.stage .basis{color:var(--mono); font-size:0.78rem; margin:2px 0 18px 48px; font-family:'JetBrains Mono',monospace;}
+
+  .checklist{list-style:none; padding:0; margin:0 0 6px;}
+  .checklist li{
+    display:flex; align-items:flex-start; gap:10px; padding:9px 4px;
+    border-bottom:1px dashed var(--line); font-size:0.96rem; color:var(--ink-body);
+  }
+  .checklist li:last-child{border-bottom:none;}
+  .checklist input{margin-top:4px; width:16px; height:16px; accent-color:var(--brand-strong); flex-shrink:0;}
+  .checklist label{cursor:pointer;}
+  .checklist input:checked + label{color:var(--ink-soft); text-decoration:line-through;}
+
+  .doc-pill{
+    display:inline-flex; align-items:center; gap:6px; background:var(--teal-soft); color:var(--teal);
+    font-family:'JetBrains Mono',monospace; font-size:0.75rem; padding:4px 10px; border-radius:20px;
+    margin:3px 6px 3px 0;
+  }
+
+  details{margin-top:14px; border-top:1px solid var(--line); padding-top:12px;}
+  summary{cursor:pointer; font-family:'JetBrains Mono',monospace; font-size:0.82rem; color:var(--brand); text-transform:uppercase; letter-spacing:0.04em;}
+  summary:hover{color:var(--brand-strong);}
+  details p, details ul{font-size:0.93rem; color:var(--ink-soft);}
+
+  .glossary{background:var(--card); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border:1px solid var(--card-border); border-radius:var(--raio-grande); padding:30px;}
+  .glossary h2{font-size:1.2rem;}
+  .gterm{margin-bottom:14px;}
+  .gterm b{font-family:'Inter',sans-serif; color:var(--ink);}
+  .gterm span{display:block; color:var(--ink-soft); font-size:0.93rem;}
+
+  .toolbar{
+    position:sticky; top:0; z-index:5; background:rgba(30,41,59,0.85); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line-solid); padding:10px 20px; display:flex; gap:16px; justify-content:center;
+    flex-wrap:wrap; font-family:'JetBrains Mono',monospace; font-size:0.78rem;
+  }
+  .toolbar a{color:var(--ink-soft); text-decoration:none; padding:4px 10px; border-radius:6px;}
+  .toolbar a:hover{background:var(--brand-soft); color:var(--brand);}
+
+  footer{text-align:center; padding:30px; color:var(--mono); font-size:0.8rem; font-family:'JetBrains Mono',monospace;}
+
+  /* CRONOGRAMA */
+  .cronograma-card{
+    background:linear-gradient(135deg, rgba(12,74,110,0.35), var(--card));
+    border:1px solid rgba(14,165,233,0.25); border-left:4px solid var(--brand-strong);
+    border-radius:var(--raio-grande); padding:26px 28px; margin:34px 0; scroll-margin-top:76px;
+    box-shadow:0 10px 15px -3px rgba(0,0,0,.35), 0 4px 6px -4px rgba(0,0,0,.3);
+  }
+  .cronograma-card h2{font-size:1.3rem; margin:0 0 8px; display:flex; align-items:center; gap:10px;}
+  .cronograma-card > p{margin:0 0 18px; color:var(--ink-body);}
+  .cronograma-meta{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px;}
+  .botao-download{
+    display:inline-flex; align-items:center; gap:8px; background:var(--brand-strong); color:#fff;
+    font-weight:700; font-size:0.95rem; padding:12px 20px; border-radius:0.5rem; text-decoration:none;
+    transition:background-color .15s ease, box-shadow .15s ease;
+  }
+  .botao-download:hover{background:var(--brand); box-shadow:0 8px 16px -6px rgba(14,165,233,.4); color:#fff;}
+  .cronograma-lista{list-style:none; margin:18px 0 0; padding:0; font-size:0.92rem;}
+  .cronograma-lista li{display:flex; gap:12px; padding:8px 0; border-bottom:1px dashed var(--line);}
+  .cronograma-lista li:last-child{border-bottom:none;}
+  .cronograma-lista .data{font-family:'JetBrains Mono',monospace; color:var(--brand); font-size:0.82rem; white-space:nowrap; flex-shrink:0; min-width:6.5rem;}
+  .cronograma-lista .desc{color:var(--ink-body);}
+
+  @media print{
+    .toolbar{display:none;}
+    section.stage, .cronograma-card{break-inside:avoid;}
+  }
+
+  @media (max-width:600px){
+    .cronograma-lista li{flex-direction:column; gap:2px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <a href="#etapa1">1 · Proposta</a>
+  <a href="#etapa2">2 · Orientação</a>
+  <a href="#cronograma">Cronograma</a>
+  <a href="#etapa3">3 · Banca</a>
+  <a href="#etapa4">4 · Entrega final</a>
+  <a href="#glossario">Glossário</a>
+  <a href="#regras">Regras que reprovam</a>
+</div>
+
+<header>
+  <div class="tag">Curso de Bacharelado em Ciência da Computação · UNEMAT</div>
+  <h1>Guia do TCC: da proposta à defesa</h1>
+  <p>Este guia traduz a Resolução nº 047/2025-CONEPE em passos práticos. Use os checklists para acompanhar seu progresso em cada etapa. Ele não substitui a resolução oficial — só facilita o dia a dia.</p>
+
+  <div class="pipeline">
+    <div class="node">
+      <span class="num">01</span>
+      <h3>Proposta</h3>
+      <p>Definir tema e orientador(a)</p>
+      <a class="jump" href="#etapa1">ver etapa →</a>
+    </div>
+    <div class="node">
+      <span class="num">02</span>
+      <h3>Orientação</h3>
+      <p>Desenvolver o trabalho</p>
+      <a class="jump" href="#etapa2">ver etapa →</a>
+    </div>
+    <div class="node">
+      <span class="num">03</span>
+      <h3>Banca</h3>
+      <p>Apresentar e ser avaliado</p>
+      <a class="jump" href="#etapa3">ver etapa →</a>
+    </div>
+    <div class="node">
+      <span class="num">04</span>
+      <h3>Entrega final</h3>
+      <p>Corrigir e arquivar</p>
+      <a class="jump" href="#etapa4">ver etapa →</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <div class="note">
+    <b class="note-label">Antes de começar</b>
+    Para se matricular na disciplina de TCC você precisa ter concluído no mínimo <strong>50% dos créditos do curso</strong> e estar em dia com os pré-requisitos do PPC (Art. 9º). Confirme sua situação com a coordenação antes de definir tema e orientador. No curso de Ciência da Computação, o <strong>TCC é individual</strong>.
+  </div>
+
+  <!-- CRONOGRAMA -->
+  <section class="cronograma-card" id="cronograma">
+    <h2>📅 Cronograma TCC I e II — 2026/2</h2>
+    <p>Datas oficiais divulgadas pelo Professor(a) de TCC para o semestre 2026/2. Os encontros de orientação com o(a) orientador(a) têm periodicidade <b>mensal</b>.</p>
+    <div class="cronograma-meta">
+      <span class="doc-pill">📄 PDF · 1 página</span>
+      <span class="doc-pill">🗓️ Válido para TCC I e TCC II</span>
+    </div>
+    <a class="botao-download" href="documentos/cronograma-tcc-2026-2.pdf" download>⬇ Baixar Cronograma TCC 2026/2 (PDF)</a>
+
+    <details>
+      <summary>Ver todas as datas</summary>
+      <ul class="cronograma-lista">
+        <li><span class="data">19/08/2026</span><span class="desc">Apresentação da documentação de TCC</span></li>
+        <li><span class="data">26/08/2026</span><span class="desc">Postar Termo de Aceite e Projeto aprovado, com assinatura do orientador e do aluno; relatório de orientação de julho (TCC II)</span></li>
+        <li><span class="data">02/09/2026</span><span class="desc">Reunião com alunos (TCC I e TCC II)</span></li>
+        <li><span class="data">02/09/2026</span><span class="desc">Envio do Plano de Curso de TCC para apreciação do Colegiado de Curso (TCC I e TCC II)</span></li>
+        <li><span class="data">09/09/2026</span><span class="desc">Relatório de orientação de agosto (TCC I e TCC II)</span></li>
+        <li><span class="data">09/09/2026</span><span class="desc">Divulgação da lista de discentes disponíveis para orientação e suas linhas de pesquisa; divulgação da listagem de orientação em andamento (TCC I e TCC II)</span></li>
+        <li><span class="data">16/09/2026</span><span class="desc">Reunião com alunos (TCC I e TCC II)</span></li>
+        <li><span class="data">07/10/2026</span><span class="desc">Relatório de orientação de setembro (TCC I e TCC II)</span></li>
+        <li><span class="data">14/10/2026</span><span class="desc">Reunião com alunos (TCC I e TCC II)</span></li>
+        <li><span class="data">04/11/2026</span><span class="desc">Relatório de orientação de outubro (TCC I e TCC II)</span></li>
+        <li><span class="data">11/11/2026</span><span class="desc">Reunião com alunos (TCC I e TCC II)</span></li>
+        <li><span class="data">11/11/2026</span><span class="desc">Termo de Encaminhamento para Apresentação e Defesa da Monografia (TCC II)</span></li>
+        <li><span class="data">16/11/2026</span><span class="desc">Entrega da Monografia para os membros da Banca, orientador e orientando (TCC II)</span></li>
+        <li><span class="data">30/11 a 05/12/2026</span><span class="desc">Período de Bancas</span></li>
+        <li><span class="data">02/12/2026</span><span class="desc">Reunião com alunos (TCC I e TCC II)</span></li>
+        <li><span class="data">02/12/2026</span><span class="desc">Relatório de orientação de novembro (TCC I e TCC II)</span></li>
+        <li><span class="data">02/12/2026</span><span class="desc">Termo de Encaminhamento do Projeto da Monografia (TCC I)</span></li>
+        <li><span class="data">05/01/2027</span><span class="desc">Prazo final para entrega da versão final da monografia, com assinaturas e ficha catalográfica, à coordenação de curso (TCC II)</span></li>
+      </ul>
+    </details>
+  </section>
+
+  <!-- ETAPA 1 -->
+  <section class="stage" id="etapa1">
+    <div class="stage-head">
+      <div class="badge">1</div>
+      <h2>Elaboração da proposta</h2>
+    </div>
+    <div class="basis">Base legal: Art. 2º, 4º, 5º, 9º e 19, I</div>
+
+    <ul class="checklist">
+      <li><input type="checkbox" id="c1-1"><label for="c1-1">Verificar se já cumpri 50% dos créditos do curso</label></li>
+      <li><input type="checkbox" id="c1-2"><label for="c1-2">Escolher, com apoio do(a) orientador(a), o tema do TCC</label></li>
+      <li><input type="checkbox" id="c1-3"><label for="c1-3">Estou ciente de que o TCC é individual, conforme o PPC do curso</label></li>
+      <li><input type="checkbox" id="c1-4"><label for="c1-4">Confirmar com a coordenação qual(is) formato(s) de TCC o curso de Ciência da Computação aceita neste PPC</label></li>
+      <li><input type="checkbox" id="c1-5"><label for="c1-5">Preencher e assinar o Termo de Aceite de Orientação com o(a) orientador(a)</label></li>
+      <li><input type="checkbox" id="c1-6"><label for="c1-6">Entregar o Termo assinado ao Professor(a) de TCC</label></li>
+      <li><input type="checkbox" id="c1-7"><label for="c1-7">Se houver coorientador(a), providenciar também o Termo de Aceite de Coorientação</label></li>
+    </ul>
+
+    <div>
+      <span class="doc-pill">📄 Anexo A · Termo de Aceite de Orientação</span>
+      <span class="doc-pill">📄 Anexo B · Termo de Aceite de Coorientação (se houver)</span>
+    </div>
+
+    <details>
+      <summary>Formatos possíveis de TCC (previstos na Resolução)</summary>
+      <p>A Resolução (Art. 5º, Parágrafo Único) admite: artigo científico, relatório técnico, produto educacional, produto técnico ou tecnológico, produção artística ou cultural, portfólio, estudo de caso, monografia — entre outros previstos no PPC.</p>
+      <div class="note"><b class="note-label">Nota da coordenação</b> A escolha do formato aceito especificamente no curso de Ciência da Computação (por exemplo, um produto técnico/tecnológico ligado a desenvolvimento de software) deve estar definida no PPC ou em instrumento normativo próprio do curso — confirme com a coordenação qual(is) estão vigentes.</div>
+    </details>
+  </section>
+
+  <!-- ETAPA 2 -->
+  <section class="stage" id="etapa2">
+    <div class="stage-head">
+      <div class="badge">2</div>
+      <h2>Acompanhamento e orientação</h2>
+    </div>
+    <div class="basis">Base legal: Art. 10 a 18, 19-II</div>
+
+    <ul class="checklist">
+      <li><input type="checkbox" id="c2-1"><label for="c2-1">Montar, com o(a) orientador(a), um cronograma de encontros</label></li>
+      <li><input type="checkbox" id="c2-2"><label for="c2-2">Comparecer aos encontros de orientação com periodicidade mensal, conforme o Termo de Aceite</label></li>
+      <li><input type="checkbox" id="c2-3"><label for="c2-3">Cumprir o <a href="#cronograma">cronograma geral</a> divulgado pelo Professor(a) de TCC</label></li>
+      <li><input type="checkbox" id="c2-4"><label for="c2-4">Desenvolver as atividades propostas pelo(a) orientador(a) dentro dos prazos</label></li>
+      <li><input type="checkbox" id="c2-5"><label for="c2-5">Comparecer às reuniões convocadas pelo Professor(a) de TCC ou orientador(a)</label></li>
+      <li><input type="checkbox" id="c2-6"><label for="c2-6">Se pesquisa envolver pessoas ou animais: verificar se precisa de parecer do CEP e/ou CEUA</label></li>
+    </ul>
+
+    <details>
+      <summary>Quer trocar de orientador(a)?</summary>
+      <p>Se você quiser trocar de orientador(a), ou se o(a) orientador(a) desistir da orientação, é preciso formalizar isso junto ao Colegiado de Curso, indicando um novo orientador(a).</p>
+      <div>
+        <span class="doc-pill">📄 Anexo D · Termo de Desistência de Orientação</span>
+        <span class="doc-pill">📄 Anexo E · Termo de Substituição de Orientação</span>
+      </div>
+    </details>
+
+    <div class="note"><b class="note-label">Atenção</b> Todo o material que você entrega ao orientador precisa ser seu próprio texto/código: em caso de plágio comprovado, a reprovação é automática (Art. 29), além de possíveis responsabilidades civis e criminais.</div>
+  </section>
+
+  <!-- ETAPA 3 -->
+  <section class="stage" id="etapa3">
+    <div class="stage-head">
+      <div class="badge">3</div>
+      <h2>Apresentação e avaliação pela banca</h2>
+    </div>
+    <div class="basis">Base legal: Art. 19-III, 21 a 26</div>
+
+    <ul class="checklist">
+      <li><input type="checkbox" id="c3-1"><label for="c3-1">Finalizar a versão do trabalho a ser apresentada</label></li>
+      <li><input type="checkbox" id="c3-2"><label for="c3-2">Obter do orientador(a) a autorização formal para a defesa</label></li>
+      <li><input type="checkbox" id="c3-3"><label for="c3-3">Confirmar a composição da banca: orientador(a) + coorientador(a) (se houver) + 2 membros convidados da área</label></li>
+      <li><input type="checkbox" id="c3-4"><label for="c3-4">Confirmar data, horário e local (presencial, ou online/híbrido com justificativa)</label></li>
+      <li><input type="checkbox" id="c3-5"><label for="c3-5">Comparecer no dia marcado — a apresentação é pública</label></li>
+      <li><input type="checkbox" id="c3-6"><label for="c3-6">Aguardar o conceito da banca: Aprovado ou Reprovado</label></li>
+    </ul>
+
+    <div><span class="doc-pill">📄 Anexo F · Autorização para Defesa</span> <span class="doc-pill">📄 Anexo C · Ata de Avaliação</span></div>
+
+    <div class="note"><b class="note-label">Importante</b> O conceito dado pela banca é definitivo — a Resolução não prevê recurso (Art. 24, Parágrafo Único). A banca só pode iniciar os trabalhos com todos os membros presentes; se algum membro faltar por caso fortuito ou força maior, uma nova data será marcada.</div>
+  </section>
+
+  <!-- ETAPA 4 -->
+  <section class="stage" id="etapa4">
+    <div class="stage-head">
+      <div class="badge">4</div>
+      <h2>Entrega da versão final</h2>
+    </div>
+    <div class="basis">Base legal: Art. 10-VII, 13-VIII, 19-IV</div>
+
+    <ul class="checklist">
+      <li><input type="checkbox" id="c4-1"><label for="c4-1">Fazer as correções apontadas pela banca</label></li>
+      <li><input type="checkbox" id="c4-2"><label for="c4-2">Enviar a versão corrigida ao Professor(a) de TCC dentro do prazo do cronograma</label></li>
+      <li><input type="checkbox" id="c4-3"><label for="c4-3">Verificar se toda a documentação (atas e termos) foi assinada e entregue</label></li>
+      <li><input type="checkbox" id="c4-4"><label for="c4-4">Confirmar que o Professor(a) de TCC encaminhou a versão final à biblioteca do campus</label></li>
+    </ul>
+
+    <div class="note"><b class="note-label">Fica de olho</b> Não cumprir todas as etapas do Art. 19 leva à reprovação automática na disciplina (Art. 27). Se você tem Necessidades Educacionais Especiais, o TCC deve ser adaptado conforme seu Plano de Ensino Individualizado — converse com a coordenação (Art. 28).</div>
+  </section>
+
+  <!-- GLOSSARIO -->
+  <section class="glossary" id="glossario">
+    <h2>Quem é quem no TCC</h2>
+    <div class="gterm"><b>Discente</b><span>Você, matriculado(a) na disciplina de TCC.</span></div>
+    <div class="gterm"><b>Orientando(a)</b><span>Você depois de assinar o Termo de Aceite de Orientação com um(a) docente.</span></div>
+    <div class="gterm"><b>Orientador(a)</b><span>Docente ou profissional técnico responsável por te acompanhar do início ao fim.</span></div>
+    <div class="gterm"><b>Coorientador(a)</b><span>Apoia o(a) orientador(a) em pontos específicos; pode ser externo à UNEMAT, sempre em caráter voluntário.</span></div>
+    <div class="gterm"><b>Professor(a) de TCC</b><span>Docente responsável pela disciplina em si — organiza cronogramas gerais, sugere orientadores e encaminha a papelada.</span></div>
+    <div class="gterm"><b>Banca Examinadora</b><span>Grupo que avalia sua apresentação final: orientador(a), coorientador(a) (se houver) e dois membros convidados.</span></div>
+  </section>
+
+  <section class="glossary" id="regras" style="margin-top:24px;">
+    <h2>3 regras que levam à reprovação automática</h2>
+    <div class="gterm"><b>1. Não cumprir todas as etapas do Art. 19</b><span>Proposta → orientação → banca → entrega final — pular qualquer uma reprova (Art. 27).</span></div>
+    <div class="gterm"><b>2. Plágio comprovado</b><span>Reprovação automática, sem prejuízo de outras responsabilidades (Art. 29).</span></div>
+    <div class="gterm"><b>3. Perder o prazo da versão corrigida</b><span>A entrega da versão final após a banca tem prazo no cronograma (Art. 13-VIII) — atrasar compromete a conclusão da disciplina.</span></div>
+  </section>
+
+</main>
+
+<footer>
+  Guia elaborado com base na Resolução nº 047/2025-CONEPE (UNEMAT) · válida a partir do semestre 2026/2 · Este material é um apoio informal — em caso de dúvida, a Resolução oficial e a coordenação do curso prevalecem.
+</footer>
+
+</body>
+</html>

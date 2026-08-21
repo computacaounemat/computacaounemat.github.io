@@ -154,6 +154,11 @@
                 Guia de Estágio
             </button>
 
+            <button onclick="app.navigate('tcc')" id="nav-tcc" class="nav-item w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-slate-400 hover:text-white hover:bg-slate-700/50 transition-all">
+                <i class="fa-solid fa-graduation-cap w-5 text-center"></i>
+                Guia de TCC
+            </button>
+
             <p class="px-3 text-xs font-bold text-slate-500 uppercase tracking-wider mt-6 mb-2">Links Externos</p>
 
             <a href="https://sigaa.unemat.br/sigaa/verTelaLogin.do" target="_blank" class="w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-slate-400 hover:text-brand-500 hover:bg-slate-700/50 transition-all group">
@@ -392,6 +397,11 @@
             <!-- VIEW: GUIA DE ESTÁGIO (embutido, mesmo painel do Guia do Estudante) -->
             <div id="view-estagio" class="hidden max-w-5xl mx-auto animate-fade-in">
                 <iframe src="estagio/index.html" title="Guia do Estágio Supervisionado" class="w-full h-[80vh] md:h-[85vh] rounded-2xl border border-slate-700 shadow-lg bg-dark-800"></iframe>
+            </div>
+
+            <!-- VIEW: GUIA DE TCC (embutido, mesmo painel do Guia do Estudante) -->
+            <div id="view-tcc" class="hidden max-w-5xl mx-auto animate-fade-in">
+                <iframe src="tcc/index.html" title="Guia do TCC" class="w-full h-[80vh] md:h-[85vh] rounded-2xl border border-slate-700 shadow-lg bg-dark-800"></iframe>
             </div>
 
             <!-- VIEW: SECOMP 2026 LANDING PAGE -->
@@ -2255,7 +2265,7 @@
             },
 
             updateView() {
-                const views = ['schedule', 'guide', 'secomp', 'estagio'];
+                const views = ['schedule', 'guide', 'secomp', 'estagio', 'tcc'];
                 views.forEach(v => {
                     const el = document.getElementById('view-' + v);
                     if(el) el.classList.add('hidden');
