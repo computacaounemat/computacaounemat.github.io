@@ -469,18 +469,6 @@ a:hover { color: var(--cor-primaria-escura); }
   font-size: 0.85rem;
 }
 
-.hero h1 {
-  margin: 0.5rem 0;
-  color: #ffffff;
-}
-
-.hero-texto {
-  font-size: 1.05rem;
-  color: var(--cor-texto-secundario);
-  max-width: 40rem;
-  margin: 0 auto 1.5rem;
-}
-
 .hero-acoes {
   display: flex;
   flex-direction: column;
@@ -489,22 +477,17 @@ a:hover { color: var(--cor-primaria-escura); }
   margin-bottom: 2rem;
 }
 
-.banner-continuar {
-  background: linear-gradient(90deg, rgba(12, 74, 110, 0.5), var(--cor-fundo-alt));
-  border: 1px solid var(--cor-borda);
-  border-left: 4px solid var(--cor-primaria-escura);
-  border-radius: var(--raio-cartao);
-  padding: 1.25rem;
-  margin: 0 auto 2rem;
-  max-width: 30rem;
-  box-shadow: var(--sombra);
-}
-
-.banner-continuar p {
-  color: #e2e8f0;
-}
-
 /* ===================== CARDS ===================== */
+
+/* Utilitário equivalente ao ".glass-panel" do painel principal — usado nos
+   cards de visão geral (topo/hero), que agora reutilizam as mesmas classes
+   Tailwind do Guia do Estudante. */
+.glass-panel {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
 
 .cards-grid {
   display: grid;
@@ -538,6 +521,7 @@ a:hover { color: var(--cor-primaria-escura); }
 }
 
 .card-lista {
+  list-style: disc;
   padding-left: 1.1rem;
   color: var(--cor-texto-secundario);
 }
@@ -563,7 +547,8 @@ a:hover { color: var(--cor-primaria-escura); }
   font-size: 0.85rem;
 }
 
-.card.is-escolhida {
+.card.is-escolhida,
+[data-jornada-card].is-escolhida {
   border-color: var(--cor-primaria-escura);
   box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.35), var(--sombra);
 }
@@ -852,6 +837,7 @@ a:hover { color: var(--cor-primaria-escura); }
 }
 
 .fluxo-convalidacao {
+  list-style: decimal;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;

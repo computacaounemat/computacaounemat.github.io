@@ -18,6 +18,22 @@
 </script>
 <title>Guia do Estágio Supervisionado — Bacharelado em Ciência da Computação — UNEMAT</title>
 <meta name="description" content="Guia interativo de orientação para o Estágio Curricular Supervisionado do Bacharelado em Ciência da Computação da UNEMAT, Campus Universitário de Alto Araguaia.">
+<!-- Tailwind (mesma config do painel principal) usado apenas no cabeçalho e nos cards de visão geral, para reproduzir exatamente o layout do Guia do Estudante -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: { 50: '#f0f9ff', 100: '#e0f2fe', 500: '#0ea5e9', 600: '#0284c7', 900: '#0c4a6e', 950: '#082f49' },
+          dark: { 800: '#1e293b', 900: '#0f172a' }
+        },
+        fontFamily: { sans: ['Inter', 'sans-serif'] }
+      }
+    }
+  };
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/responsive.css">
 <link rel="stylesheet" href="css/print.css" media="print">
@@ -74,48 +90,60 @@
   <!-- ===================== INÍCIO ===================== -->
   <section id="inicio" class="secao hero" aria-labelledby="hero-titulo">
     <div class="container">
-      <p class="hero-instituicao">UNEMAT · Bacharelado em Ciência da Computação</p>
-      <h1 id="hero-titulo">GUIA DO ESTÁGIO SUPERVISIONADO</h1>
-      <p class="hero-texto">Tudo o que você precisa saber para realizar seu estágio, passo a passo.</p>
+      <div class="text-center mb-6 md:mb-8">
+        <p class="hero-instituicao">UNEMAT · Bacharelado em Ciência da Computação</p>
+        <h1 id="hero-titulo" class="text-2xl md:text-3xl font-bold text-white mb-2">Guia do Estágio Supervisionado</h1>
+        <p class="text-sm md:text-base text-slate-400">Tudo o que você precisa saber para realizar seu estágio, passo a passo.</p>
+      </div>
+
       <div class="hero-acoes">
         <button type="button" class="botao botao-primario" id="btn-comecar-jornada">Começar minha jornada</button>
         <a class="botao botao-secundario" href="index.html#convalidacao">Já trabalho na área — ver convalidação</a>
       </div>
 
-      <div class="banner-continuar is-hidden" id="banner-continuar">
-        <p id="banner-continuar-texto">Você já tem progresso salvo neste navegador.</p>
+      <div class="bg-gradient-to-r from-brand-900/50 to-slate-800 rounded-2xl p-5 sm:p-6 border-l-4 border-brand-500 shadow-lg text-left is-hidden" id="banner-continuar">
+        <p id="banner-continuar-texto" class="text-sm sm:text-base text-slate-300 mb-3">Você já tem progresso salvo neste navegador.</p>
         <button type="button" class="botao botao-primario" id="btn-continuar">Continuar de onde parei</button>
       </div>
 
-      <div class="cards-grid cards-inicio">
-        <article class="card" data-jornada-card="es1">
-          <h2>Estágio Supervisionado I</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 text-left mb-6 md:mb-8">
+        <div class="glass-panel p-5 sm:p-6 rounded-2xl hover:bg-slate-800/80 transition-colors" data-jornada-card="es1">
+          <div class="w-10 h-10 bg-blue-500/20 text-blue-400 rounded-lg flex items-center justify-center mb-4 text-xl">
+            <i class="fa-solid fa-file-signature"></i>
+          </div>
+          <h2 class="text-lg font-bold text-white mb-3 mt-0">Estágio Supervisionado I</h2>
           <ul class="card-lista">
             <li>60 horas</li>
             <li>Pré-requisito: 50% dos créditos do curso</li>
           </ul>
-          <button type="button" class="botao botao-outline" data-escolher-jornada="es1">Ver orientações</button>
-        </article>
-        <article class="card" data-jornada-card="es2">
-          <h2>Estágio Supervisionado II</h2>
+          <button type="button" class="botao botao-outline mt-4" data-escolher-jornada="es1">Ver orientações</button>
+        </div>
+        <div class="glass-panel p-5 sm:p-6 rounded-2xl hover:bg-slate-800/80 transition-colors" data-jornada-card="es2">
+          <div class="w-10 h-10 bg-purple-500/20 text-purple-400 rounded-lg flex items-center justify-center mb-4 text-xl">
+            <i class="fa-solid fa-diagram-project"></i>
+          </div>
+          <h2 class="text-lg font-bold text-white mb-3 mt-0">Estágio Supervisionado II</h2>
           <ul class="card-lista">
             <li>60 horas</li>
             <li>Pré-requisito: aprovação em Estágio Supervisionado I</li>
           </ul>
-          <button type="button" class="botao botao-outline" data-escolher-jornada="es2">Ver orientações</button>
-        </article>
-        <article class="card" data-jornada-card="convalidacao">
-          <h2>Já trabalho na área</h2>
+          <button type="button" class="botao botao-outline mt-4" data-escolher-jornada="es2">Ver orientações</button>
+        </div>
+        <div class="md:col-span-2 glass-panel p-5 sm:p-6 rounded-2xl hover:bg-slate-800/80 transition-colors" data-jornada-card="convalidacao">
+          <div class="w-10 h-10 bg-indigo-500/20 text-indigo-400 rounded-lg flex items-center justify-center mb-4 text-xl">
+            <i class="fa-solid fa-scale-balanced"></i>
+          </div>
+          <h2 class="text-lg font-bold text-white mb-3 mt-0">Já trabalho na área</h2>
           <ul class="card-lista">
             <li>Pode haver possibilidade de convalidação</li>
           </ul>
-          <a class="botao botao-outline" href="index.html#convalidacao">Ver requisitos</a>
-        </article>
+          <a class="botao botao-outline mt-4 inline-flex" href="index.html#convalidacao">Ver requisitos</a>
+        </div>
       </div>
 
-      <div class="painel-progresso" id="painel-progresso" hidden>
-        <h2>Seu progresso</h2>
-        <p id="progresso-texto">0 de 0 tarefas concluídas — 0%</p>
+      <div class="bg-gradient-to-br from-brand-900/40 to-slate-800 p-5 sm:p-6 rounded-2xl border border-brand-500/30 relative overflow-hidden text-left" id="painel-progresso" hidden>
+        <h2 class="text-xl font-bold text-white mb-3 mt-0">Seu progresso</h2>
+        <p id="progresso-texto" class="text-sm text-slate-300 mb-3">0 de 0 tarefas concluídas — 0%</p>
         <div class="barra-progresso" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="barra-progresso-visual">
           <div class="barra-progresso-preenchida" id="barra-progresso-preenchida"></div>
         </div>
