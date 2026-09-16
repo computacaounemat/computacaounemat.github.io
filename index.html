@@ -2052,7 +2052,7 @@
 
     <script>
 // --- DATA ---
-        const data = {
+        let data = {
             'AIA': {
                 name: 'Alto Araguaia',
                 phases: [
@@ -2063,17 +2063,17 @@
                             { d: 'Terça', c: 'GA', n: 'Geometria Analítica', p: 'Profa. Adriana' },
                             { d: 'Quarta', c: 'PIPDD', n: 'Prop. Intelectual, Prot. Dados e Direitos', p: 'Prof. Elton' },
                             { d: 'Quinta', c: 'CA1', n: 'Cálculo I', p: 'Prof. Antonio' },
-                            { d: 'Sexta', c: 'TMP', n: 'Teoria e Métodos de Pesquisa', p: 'Profa. Iza' }
+                            { d: 'Sexta', c: 'TMP', n: 'Teoria e Métodos de Pesquisa', p: 'SELETIVO' }
                         ],
                         modular: { c: 'ALP2', n: 'Algoritmos e Lab. de Prog. II', p: 'Prof. Lucas', d: '31/08 a 04/09; 21/09 a 25/09; 27/10 a 30/10' }
                     },
                     {
                         id: 4, label: '4ª Fase', link: 'https://bit.ly/BCC4aFase',
                         schedule: [
-                            { d: 'Segunda', c: 'IBD', n: 'Introdução a Banco de Dados', p: 'Prof. Lucas' },
+                            { d: 'Segunda', c: 'IBD', n: 'Introdução a Banco de Dados', p: 'SELETIVO' },
                             { d: 'Terça', c: 'ES', n: 'Engenharia de Software', p: 'Profa. Iza' },
                             { d: 'Quarta', c: 'CN', n: 'Cálculo Numérico', p: 'Prof. Antonio' },
-                            { d: 'Quinta', c: 'CF', n: 'Computação Forense', p: 'Profa. Iza' },
+                            { d: 'Quinta', c: 'ED2', n: 'Estrutura de Dados II', p: 'Prof. Lucas' },
                             { d: 'Sexta', c: 'F1', n: 'Física I', p: 'Prof. Antonio' }
                         ],
                         modular: { c: 'LRC', n: 'Laboratório de Redes', p: 'Prof. Wesley', d: '31/08 a 04/09; 21/09 a 25/09; 27/10 a 30/10' }
@@ -2096,7 +2096,7 @@
                             { d: 'Terça', c: 'IA', n: 'Inteligência Artificial', p: 'Prof. Wesley' },
                             { d: 'Quarta', c: 'SD', n: 'Sistemas Distribuídos', p: 'Prof. Juvenal' },
                             { d: 'Quinta', c: 'CF', n: 'Computação Forense', p: 'Profa. Iza' },
-                            { d: 'Sexta', c: 'PI', n: 'Processamento de Imagem', p: 'SELETIVO' }
+                            { d: 'Sexta', c: 'PI', n: 'Processamento de Imagem', p: 'Profa. Iza' }
                         ],
                         extras: [
                             { c: 'TCC I', n: 'Trabalho de Conclusão I', p: 'Prof. Fernando' },
@@ -2115,31 +2115,31 @@
                         schedule: [
                             { d: 'Segunda', c: 'IC', n: 'Introdução à Computação', p: 'Prof. Adriano' },
                             { d: 'Terça', c: 'FME', n: 'Fundamentos da Matemática Elementar', p: 'Prof. Everton' },
-                            { d: 'Quarta', c: 'PTL', n: 'Produção de Texto e Leitura', p: 'Prof. Jeremias' },
+                            { d: 'Quarta', c: 'PTL', n: 'Produção de Texto e Leitura', p: 'LETRAS' },
                             { d: 'Quinta', c: 'MD', n: 'Matemática Discreta', p: 'Prof. Jemy' },
-                            { d: 'Sexta', c: 'II', n: 'Inglês Instrumental', p: 'Prof. Jeremias' }
+                            { d: 'Sexta', c: 'II', n: 'Inglês Instrumental', p: 'LETRAS' }
                         ],
                         modular: { c: 'ALP1', n: 'Algoritmos e Lab. de Prog. I', p: 'Prof. Chrystian', d: '31/08 a 04/09; 21/09 a 25/09; 27/10 a 30/10' }
                     },
                     {
                         id: 3, label: '3ª Fase', link: 'https://bit.ly/BCC3aFase',
                         schedule: [
-                            { d: 'Segunda', c: 'IRC', n: 'Introdução a Redes de Computadores', p: 'Prof. Pierre' },
-                            { d: 'Terça', c: 'AL', n: 'Álgebra Linear', p: 'Prof. Jemy' },
-                            { d: 'Quarta', c: 'TG', n: 'Teoria dos Grafos', p: 'Prof. Jemy' },
+                            { d: 'Segunda', c: 'CA2', n: 'Cálculo II', p: 'Prof. Everton' },
+                            { d: 'Terça', c: 'IRC', n: 'Introdução a Redes de Computadores', p: 'Prof. Pierre' },
+                            { d: 'Quarta', c: 'AL', n: 'Álgebra Linear', p: 'Prof. Jemy' },
                             { d: 'Quinta', c: 'ED1', n: 'Estrutura de Dados I', p: 'Prof. Chrystian' },
-                            { d: 'Sexta', c: 'CA2', n: 'Cálculo II', p: 'Prof. Everton' }
+                            { d: 'Sexta', c: 'TG', n: 'Teoria dos Grafos', p: 'Prof. Jemy' }
                         ],
                         modular: { c: 'FE', n: 'Fundamentos da Eletrônica', p: 'Prof. Max', d: '31/08 a 04/09; 21/09 a 25/09; 27/10 a 30/10' }
                     },
                     {
                         id: 5, label: '5ª Fase', link: 'https://bit.ly/BCC5aFase',
                         schedule: [
-                            { d: 'Segunda', c: 'PE', n: 'Probabilidade e Estatística', p: 'Prof. Everton' },
-                            { d: 'Terça', c: 'GTI', n: 'Governança em TI', p: 'Prof. Pierre' },
-                            { d: 'Quarta', c: 'SD', n: 'Sistemas Digitais', p: 'Prof. Adriano' },
+                            { d: 'Segunda', c: 'GTI', n: 'Governança em TI', p: 'Prof. Pierre' },
+                            { d: 'Terça', c: 'LPOO', n: 'Lab. de Programação Orientada à Objetos', p: 'Prof. Adriano' },
+                            { d: 'Quarta', c: 'PE', n: 'Probabilidade e Estatística', p: 'Prof. Everton' },
                             { d: 'Quinta', c: 'LFA', n: 'Linguagens Formais e Autômatos', p: 'Prof. Humberto' },
-                            { d: 'Sexta', c: 'LPOO', n: 'Lab. de Programação Orientada à Objetos', p: 'Prof. Adriano' }
+                            { d: 'Sexta', c: 'SD', n: 'Sistemas Digitais', p: 'Prof. Adriano' }
                         ],
                         modular: { c: 'LBD', n: 'Laboratório de Banco de Dados', p: 'Prof. Breno', d: '31/08 a 04/09; 21/09 a 25/09; 27/10 a 30/10' }
                     },
@@ -2173,7 +2173,15 @@
                 isSidebarOpen: false
             },
 
-            init() {
+            async init() {
+                try {
+                    const res = await fetch('./data/horarios.json');
+                    if (res.ok) {
+                        data = await res.json();
+                    }
+                } catch (e) {
+                    console.warn('Usando dados de horários embutidos de fallback:', e);
+                }
                 this.updateView();
                 // Ocultamos o modal no início para não atrapalhar a visualização da landpage da SECOMP
                 // setTimeout(() => this.toggleModal('alxnder-modal', true), 1000);
