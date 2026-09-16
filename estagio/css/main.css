@@ -1,49 +1,48 @@
 /*
   Guia do Estágio Supervisionado — UNEMAT
   main.css — estilos base (mobile-first)
-  Paleta e componentes alinhados ao "Guia do Estudante" do painel principal
-  (tema escuro, glassmorphism, acentos em azul "brand"/sky).
+  Paleta e tipografia oficiais do BCC (ciano #009EE0, verde #8DC63F,
+  Mesmerize) — mesmos tokens do painel principal, para a view rodar
+  embutida nativamente em index.html (sem iframe).
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
 :root {
-  /* Acentos (equivalentes ao "brand" do painel principal) */
-  --cor-primaria: #0284c7;        /* brand-600 — base dos botões/links de ação */
-  --cor-primaria-escura: #0ea5e9; /* brand-500 — tom mais claro usado no hover (acende, não escurece) */
-  --cor-primaria-clara: rgba(14, 165, 233, 0.12);
-  --cor-secundaria: #38bdf8;      /* brand-400 — links e destaques de texto */
-  --cor-secundaria-clara: rgba(56, 189, 248, 0.12);
+  /* Acentos (ciano/verde oficiais do Manual de Identidade Visual BCC 2025) */
+  --cor-primaria: #007db2;        /* brand-600 — base dos botões/links de ação */
+  --cor-primaria-escura: #009EE0; /* brand-500 — ciano oficial, tom usado no hover */
+  --cor-primaria-clara: rgba(0, 158, 224, 0.12);
+  --cor-secundaria: #33b3e8;      /* brand-400 — links e destaques de texto */
+  --cor-secundaria-clara: rgba(0, 158, 224, 0.12);
 
-  --cor-concluido: #34d399;
-  --cor-concluido-bg: rgba(52, 211, 153, 0.15);
-  --cor-atual: #38bdf8;
-  --cor-atual-bg: rgba(56, 189, 248, 0.15);
+  --cor-concluido: #8DC63F;       /* verde oficial — usado para estados de conclusão */
+  --cor-concluido-bg: rgba(141, 198, 63, 0.15);
+  --cor-atual: #009EE0;
+  --cor-atual-bg: rgba(0, 158, 224, 0.15);
   --cor-atencao: #fbbf24;
   --cor-atencao-bg: rgba(251, 191, 36, 0.12);
   --cor-impedimento: #f87171;
   --cor-impedimento-bg: rgba(248, 113, 113, 0.12);
-  --cor-pendente: #94a3b8;
-  --cor-pendente-bg: rgba(148, 163, 184, 0.12);
+  --cor-pendente: #9aa0a6;
+  --cor-pendente-bg: rgba(154, 160, 166, 0.12);
 
-  /* Base tipográfica e de fundo (equivalente a dark-900/dark-800/slate) */
-  --cor-texto: #cbd5e1;
-  --cor-texto-secundario: #94a3b8;
-  --cor-titulo: #f8fafc;
-  --cor-fundo: #0f172a;
-  --cor-fundo-alt: #1e293b;
-  --cor-borda: rgba(148, 163, 184, 0.18);
-  --cor-borda-solida: #334155;
+  /* Base tipográfica e de fundo (mesmo neutro quente do painel principal) */
+  --cor-texto: #cfd3d6;
+  --cor-texto-secundario: #9aa0a6;
+  --cor-titulo: #f4f5f6;
+  --cor-fundo: #0b0d0f;
+  --cor-fundo-alt: #16191c;
+  --cor-borda: rgba(255, 255, 255, 0.1);
+  --cor-borda-solida: #2a2e33;
 
   /* Painéis em vidro fosco (glass-panel) */
-  --vidro-fundo: rgba(30, 41, 59, 0.7);
-  --vidro-fundo-hover: rgba(51, 65, 85, 0.8);
+  --vidro-fundo: rgba(22, 25, 28, 0.7);
+  --vidro-fundo-hover: rgba(42, 46, 51, 0.8);
   --vidro-borda: rgba(255, 255, 255, 0.06);
 
   --raio: 0.5rem;
   --raio-cartao: 1rem;
   --sombra: 0 10px 15px -3px rgba(0, 0, 0, 0.35), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
-  --fonte: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --fonte: 'Mesmerize', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --largura-maxima: 64rem;
 }
 
@@ -82,7 +81,7 @@ body {
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: var(--cor-fundo); }
 ::-webkit-scrollbar-thumb { background: var(--cor-borda-solida); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #475569; }
+::-webkit-scrollbar-thumb:hover { background: #3a3f45; }
 
 h1, h2, h3, h4 {
   line-height: 1.25;

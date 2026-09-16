@@ -7,7 +7,7 @@
     "categoria": "antes-de-comecar",
     "descricao": "Formulário com os dados de identificação do(a) estudante e da empresa/instituição concedente do estágio.",
     "quandoUsar": "Preencha ao definir o local do estágio, antes de iniciar a regularização.",
-    "arquivo": "documentos/anexo-01-ficha-identificacao.docx",
+    "arquivo": "estagio/documentos/anexo-01-ficha-identificacao.docx",
     "disponivel": true
   },
   {
@@ -18,7 +18,7 @@
     "categoria": "antes-de-comecar",
     "descricao": "Carta assinada pelo Professor Supervisor apresentando o(a) estudante à empresa/instituição pretendida para o estágio.",
     "quandoUsar": "Use para se apresentar formalmente à organização onde pretende estagiar.",
-    "arquivo": "documentos/anexo-02-carta-apresentacao.docx",
+    "arquivo": "estagio/documentos/anexo-02-carta-apresentacao.docx",
     "disponivel": true
   },
   {
@@ -29,7 +29,7 @@
     "categoria": "antes-de-comecar",
     "descricao": "Requerimento à Coordenação de Estágio solicitando autorização para o Plano de Atividades, com aceite do Professor Supervisor, do Supervisor de Campo/Orientador e do(a) estudante.",
     "quandoUsar": "Preencha depois de identificar o local de estágio e o Supervisor de Campo/Orientador.",
-    "arquivo": "documentos/anexo-03-requerimento-aceite.docx",
+    "arquivo": "estagio/documentos/anexo-03-requerimento-aceite.docx",
     "disponivel": true
   },
   {
@@ -41,7 +41,7 @@
     "tipoLocal": "fora",
     "descricao": "Termo firmado entre a empresa/instituição concedente, a UNEMAT e o(a) estudante, nos termos da Lei nº 11.788/2008, regularizando o estágio realizado fora da UNEMAT.",
     "quandoUsar": "Use quando o estágio for realizado em empresa ou instituição externa à UNEMAT.",
-    "arquivo": "documentos/anexo-04-termo-externo.docx",
+    "arquivo": "estagio/documentos/anexo-04-termo-externo.docx",
     "disponivel": true
   },
   {
@@ -53,7 +53,7 @@
     "tipoLocal": "dentro",
     "descricao": "Termo firmado entre a UNEMAT (na condição de concedente) e o(a) estudante, nos termos da Lei nº 11.788/2008, regularizando o estágio realizado dentro da própria UNEMAT.",
     "quandoUsar": "Use quando o estágio for realizado dentro da própria UNEMAT.",
-    "arquivo": "documentos/anexo-04-termo-interno.docx",
+    "arquivo": "estagio/documentos/anexo-04-termo-interno.docx",
     "disponivel": true
   },
   {
@@ -64,7 +64,7 @@
     "categoria": "planejamento",
     "descricao": "Cronograma das atividades a serem desenvolvidas durante o estágio, assinado pelo(a) estagiário(a), pelo Supervisor de Campo/Orientador e pelo Professor Supervisor.",
     "quandoUsar": "Preencha antes de iniciar as atividades, com base nas áreas descritas no Anexo VIII.",
-    "arquivo": "documentos/anexo-05-plano-atividades.docx",
+    "arquivo": "estagio/documentos/anexo-05-plano-atividades.docx",
     "disponivel": true
   },
   {
@@ -75,7 +75,7 @@
     "categoria": "durante",
     "descricao": "Planilha para registrar data, horário de início e término, atividades realizadas e carga horária cumprida no estágio.",
     "quandoUsar": "Preencha regularmente durante a execução do estágio — evite deixar tudo para o final.",
-    "arquivo": "documentos/anexo-06-ficha-acompanhamento.docx",
+    "arquivo": "estagio/documentos/anexo-06-ficha-acompanhamento.docx",
     "disponivel": true
   },
   {
@@ -86,7 +86,7 @@
     "categoria": "finalizacao",
     "descricao": "Modelo do relatório final, com a estrutura obrigatória: introdução, objetivos, atividades desenvolvidas, sugestões e recomendações, considerações finais, referências e anexos.",
     "quandoUsar": "Preencha ao concluir a carga horária e os registros do estágio.",
-    "arquivo": "documentos/anexo-07-relatorio-final.docx",
+    "arquivo": "estagio/documentos/anexo-07-relatorio-final.docx",
     "disponivel": true
   },
   {
@@ -97,7 +97,7 @@
     "categoria": "planejamento",
     "descricao": "Documento que define as áreas do curso às quais o projeto de estágio deve estar vinculado: Programação, Computação Aplicada, Computação Tecnológica e Computação Educacional.",
     "quandoUsar": "Consulte antes de preencher o Plano de Atividades (Anexo V).",
-    "arquivo": "documentos/anexo-08-areas-estagio.docx",
+    "arquivo": "estagio/documentos/anexo-08-areas-estagio.docx",
     "disponivel": true,
     "navegavel": true
   },
@@ -109,7 +109,7 @@
     "categoria": "convalidacao",
     "descricao": "Requerimento utilizado para solicitar a convalidação de atividade profissional como Estágio Supervisionado.",
     "quandoUsar": "Use ao solicitar a convalidação, após confirmar que atende aos requisitos. Atenção: o texto já vem redigido especificamente para o Estágio Supervisionado II (120 horas) — se sua convalidação for para o Estágio Supervisionado I, confirme com o Professor Supervisor se é necessário ajustar o texto antes de preencher.",
-    "arquivo": "documentos/anexo-09-requerimento-convalidacao.docx",
+    "arquivo": "estagio/documentos/anexo-09-requerimento-convalidacao.docx",
     "disponivel": true
   }
 ]

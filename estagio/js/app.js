@@ -344,9 +344,9 @@
     mostrarAvisoStorageSeNecessario();
 
     Promise.all([
-      fetch("data/documentos.json").then(function (r) { return r.json(); }),
-      fetch("data/faq.json").then(function (r) { return r.json(); }),
-      fetch("data/conteudo.json").then(function (r) { return r.json(); })
+      fetch("estagio/data/documentos.json").then(function (r) { return r.json(); }),
+      fetch("estagio/data/faq.json").then(function (r) { return r.json(); }),
+      fetch("estagio/data/conteudo.json").then(function (r) { return r.json(); })
     ])
       .then(function (resultados) {
         var documentos = resultados[0];

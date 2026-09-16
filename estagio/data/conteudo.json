@@ -204,21 +204,21 @@
       "id": "res-028-2012",
       "titulo": "Resolução nº 028/2012-CONEPE",
       "descricao": "Dispõe sobre o Estágio Curricular Supervisionado dos cursos de graduação de Bacharelado nas diferentes modalidades de ensino oferecidos pela UNEMAT.",
-      "arquivo": "legislacao/3475_res_conepe_28_2012.pdf",
+      "arquivo": "estagio/legislacao/3475_res_conepe_28_2012.pdf",
       "disponivel": true
     },
     {
       "id": "res-001-2024",
       "titulo": "Resolução nº 001/2024-CONEPE",
       "descricao": "Institui a Normatização Acadêmica da UNEMAT Carlos Alberto Reyes Maldonado, incluindo regras sobre frequência, regime domiciliar e aproveitamento de estudos aplicáveis ao estágio.",
-      "arquivo": "legislacao/Normatização Acadêmica 001-2024 CONEPE.pdf",
+      "arquivo": "estagio/legislacao/Normatização Acadêmica 001-2024 CONEPE.pdf",
       "disponivel": true
     },
     {
       "id": "ppc-computacao",
       "titulo": "Projeto Pedagógico do Curso (PPC) — Bacharelado em Ciência da Computação",
       "descricao": "Documento que estabelece a carga horária, os créditos e os pré-requisitos específicos de Estágio Supervisionado I e II no curso. Disponível no card \"Projetos Pedagógicos (PPC)\" do Guia do Estudante deste site (resoluções de Rondonópolis e Alto Araguaia).",
-      "arquivo": "../index.html",
+      "arquivo": "index.html",
       "disponivel": true
     }
   ]
