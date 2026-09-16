@@ -470,7 +470,7 @@
                       </div>
                       <h2 class="text-lg font-bold text-white mb-3 mt-0">Estágio Supervisionado I</h2>
                       <ul class="card-lista">
-                        <li>60 horas</li>
+                        <li>120 horas</li>
                         <li>Pré-requisito: 50% dos créditos do curso</li>
                       </ul>
                       <button type="button" class="botao botao-outline mt-4" data-escolher-jornada="es1">Ver orientações</button>
@@ -481,7 +481,7 @@
                       </div>
                       <h2 class="text-lg font-bold text-white mb-3 mt-0">Estágio Supervisionado II</h2>
                       <ul class="card-lista">
-                        <li>60 horas</li>
+                        <li>120 horas</li>
                         <li>Pré-requisito: aprovação em Estágio Supervisionado I</li>
                       </ul>
                       <button type="button" class="botao botao-outline mt-4" data-escolher-jornada="es2">Ver orientações</button>
@@ -527,14 +527,14 @@
                     <article class="card" data-jornada-card="es1">
                       <h3>Estágio Supervisionado I</h3>
                       <ul class="card-lista">
-                        <li>60 horas</li>
+                        <li>120 horas</li>
                         <li>Pré-requisito: 50% dos créditos do curso</li>
                       </ul>
                     </article>
                     <article class="card" data-jornada-card="es2">
                       <h3>Estágio Supervisionado II</h3>
                       <ul class="card-lista">
-                        <li>60 horas</li>
+                        <li>120 horas</li>
                         <li>Pré-requisito: aprovação em Estágio Supervisionado I</li>
                       </ul>
                     </article>
@@ -987,6 +987,7 @@
               <section id="documentos" class="secao" aria-labelledby="documentos-titulo">
                 <div class="container">
                   <h2 id="documentos-titulo">Meus documentos</h2>
+                  <p id="texto-formularios-estagio"></p>
                   <div class="filtros-documentos" role="group" aria-label="Filtrar documentos por etapa" id="filtros-documentos">
                     <button type="button" class="filtro-chip is-ativo" data-filtro-categoria="todos">Todos</button>
                     <button type="button" class="filtro-chip" data-filtro-categoria="antes-de-comecar">Antes de começar</button>
@@ -1020,6 +1021,15 @@
                 </div>
               </section>
 
+              <!-- ===================== VÍDEOS E MATERIAIS DE APOIO ===================== -->
+              <section id="videos" class="secao" aria-labelledby="videos-titulo">
+                <div class="container">
+                  <h2 id="videos-titulo">Vídeos e materiais de apoio</h2>
+                  <p id="texto-playlist-videos"></p>
+                  <div class="cards-grid" id="lista-videos" data-render="videos"></div>
+                </div>
+              </section>
+
               <!-- ===================== CONTATO ===================== -->
               <section id="contato" class="secao" aria-labelledby="contato-titulo">
                 <div class="container">
@@ -1029,11 +1039,9 @@
                       <h3>SIGAA</h3>
                       <p id="texto-sigaa">Link ainda não configurado.</p>
                     </article>
-                    <article class="card">
-                      <h3>Professor Supervisor</h3>
-                      <p id="texto-professor-supervisor"></p>
-                    </article>
                   </div>
+                  <h3>Coordenação e supervisão do Estágio</h3>
+                  <div class="cards-grid" id="lista-contatos" data-render="contatos"></div>
                 </div>
               </section>
 

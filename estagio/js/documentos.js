@@ -23,7 +23,21 @@
       partes.push('<p class="texto-secundario"><strong>Quando usar:</strong> ' + escaparHtml(doc.quandoUsar) + "</p>");
     }
     if (doc.disponivel) {
+      partes.push('<div class="card-acoes">');
       partes.push('<a class="botao botao-outline" href="' + escaparHtml(doc.arquivo) + '" download>Baixar</a>');
+      if (doc.arquivoOdt) {
+        partes.push('<a class="botao botao-outline" href="' + escaparHtml(doc.arquivoOdt) + '" target="_blank" rel="noopener">Baixar (OpenOffice)</a>');
+      }
+      if (doc.arquivoExemplo) {
+        partes.push('<a class="botao botao-outline" href="' + escaparHtml(doc.arquivoExemplo) + '" target="_blank" rel="noopener">Ver exemplo preenchido</a>');
+      }
+      if (doc.formularioOnline) {
+        partes.push('<a class="botao botao-outline" href="' + escaparHtml(doc.formularioOnline) + '" target="_blank" rel="noopener">Formulário on-line</a>');
+      }
+      if (doc.video) {
+        partes.push('<a class="botao botao-outline" href="' + escaparHtml(doc.video) + '" target="_blank" rel="noopener">▶ Vídeo explicativo</a>');
+      }
+      partes.push('</div>');
     } else {
       partes.push('<p class="card-indisponivel-aviso">Arquivo ainda não disponibilizado.</p>');
       if (doc.observacao) {

@@ -8,7 +8,8 @@
     "descricao": "Formulário com os dados de identificação do(a) estudante e da empresa/instituição concedente do estágio.",
     "quandoUsar": "Preencha ao definir o local do estágio, antes de iniciar a regularização.",
     "arquivo": "estagio/documentos/anexo-01-ficha-identificacao.docx",
-    "disponivel": true
+    "disponivel": true,
+    "video": "https://youtu.be/LRU2rdtWqbI"
   },
   {
     "id": "anexo-02",
@@ -19,7 +20,8 @@
     "descricao": "Carta assinada pelo Professor Supervisor apresentando o(a) estudante à empresa/instituição pretendida para o estágio.",
     "quandoUsar": "Use para se apresentar formalmente à organização onde pretende estagiar.",
     "arquivo": "estagio/documentos/anexo-02-carta-apresentacao.docx",
-    "disponivel": true
+    "disponivel": true,
+    "video": "https://youtu.be/roFg1rz3Nj4"
   },
   {
     "id": "anexo-03",
@@ -30,7 +32,8 @@
     "descricao": "Requerimento à Coordenação de Estágio solicitando autorização para o Plano de Atividades, com aceite do Professor Supervisor, do Supervisor de Campo/Orientador e do(a) estudante.",
     "quandoUsar": "Preencha depois de identificar o local de estágio e o Supervisor de Campo/Orientador.",
     "arquivo": "estagio/documentos/anexo-03-requerimento-aceite.docx",
-    "disponivel": true
+    "disponivel": true,
+    "video": "https://youtu.be/cNOT03DUDjs"
   },
   {
     "id": "anexo-04-externo",
@@ -65,7 +68,8 @@
     "descricao": "Cronograma das atividades a serem desenvolvidas durante o estágio, assinado pelo(a) estagiário(a), pelo Supervisor de Campo/Orientador e pelo Professor Supervisor.",
     "quandoUsar": "Preencha antes de iniciar as atividades, com base nas áreas descritas no Anexo VIII.",
     "arquivo": "estagio/documentos/anexo-05-plano-atividades.docx",
-    "disponivel": true
+    "disponivel": true,
+    "video": "https://youtu.be/3yZCml7T5Ek?si=z_sPEOLSDc4BHfto"
   },
   {
     "id": "anexo-06",
@@ -76,7 +80,8 @@
     "descricao": "Planilha para registrar data, horário de início e término, atividades realizadas e carga horária cumprida no estágio.",
     "quandoUsar": "Preencha regularmente durante a execução do estágio — evite deixar tudo para o final.",
     "arquivo": "estagio/documentos/anexo-06-ficha-acompanhamento.docx",
-    "disponivel": true
+    "disponivel": true,
+    "video": "https://youtu.be/r7d9kE8Xlck"
   },
   {
     "id": "anexo-07",
@@ -99,7 +104,8 @@
     "quandoUsar": "Consulte antes de preencher o Plano de Atividades (Anexo V).",
     "arquivo": "estagio/documentos/anexo-08-areas-estagio.docx",
     "disponivel": true,
-    "navegavel": true
+    "navegavel": true,
+    "formularioOnline": "https://bit.ly/FormAreasProjetos"
   },
   {
     "id": "anexo-09",
@@ -110,6 +116,8 @@
     "descricao": "Requerimento utilizado para solicitar a convalidação de atividade profissional como Estágio Supervisionado.",
     "quandoUsar": "Use ao solicitar a convalidação, após confirmar que atende aos requisitos. Atenção: o texto já vem redigido especificamente para o Estágio Supervisionado II (120 horas) — se sua convalidação for para o Estágio Supervisionado I, confirme com o Professor Supervisor se é necessário ajustar o texto antes de preencher.",
     "arquivo": "estagio/documentos/anexo-09-requerimento-convalidacao.docx",
-    "disponivel": true
+    "disponivel": true,
+    "arquivoOdt": "https://bit.ly/FormConvalidaODT",
+    "arquivoExemplo": "https://bit.ly/FormConvalidaExemplo"
   }
 ]

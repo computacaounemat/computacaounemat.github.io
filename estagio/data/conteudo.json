@@ -184,7 +184,7 @@
     "conclusaoAviso": "Isso não significa que seu Estágio Supervisionado esteja academicamente concluído. A conclusão depende da avaliação e dos registros oficiais da disciplina.",
     "convalidacaoIndeferida": "Em caso de indeferimento da convalidação, o estudante deverá cumprir o estágio regular conforme orientação acadêmica.",
     "convalidacaoRelatorio": "A entrega do relatório escrito é pré-requisito para a apresentação do seminário.",
-    "professorSupervisor": "Professor Supervisor do semestre: consulte a turma de Estágio no SIGAA.",
+    "professorSupervisor": "Veja os contatos da Coordenação de Estágio na seção Contato deste Guia.",
     "semLocalStorage": "Seu navegador não permite salvar o progresso localmente. O Guia continua funcionando, mas suas marcações não serão preservadas ao recarregar a página.",
     "documentoIndisponivel": "Arquivo ainda não disponibilizado."
   },
@@ -197,7 +197,9 @@
     ]
   },
   "links": {
-    "sigaaUrl": ""
+    "sigaaUrl": "https://sigaa.unemat.br/sigaa/verTelaLogin.do",
+    "formulariosUrl": "https://bit.ly/FormulariosEstagioBCC",
+    "guiaVideosUrl": "https://bit.ly/EstagioECSBCCAIAROO"
   },
   "legislacao": [
     {
@@ -220,6 +222,50 @@
       "descricao": "Documento que estabelece a carga horária, os créditos e os pré-requisitos específicos de Estágio Supervisionado I e II no curso. Disponível no card \"Projetos Pedagógicos (PPC)\" do Guia do Estudante deste site (resoluções de Rondonópolis e Alto Araguaia).",
       "arquivo": "index.html",
       "disponivel": true
+    }
+  ],
+  "contatos": [
+    {
+      "papel": "Coordenador do Curso de Ciência da Computação",
+      "nome": "Prof. Dr. Carlos Alex Sander Juvêncio Gulo",
+      "email": "computacao.aia@unemat.br"
+    },
+    {
+      "papel": "Coordenador de Estágio",
+      "nome": "Prof. Chrystian Jheimes dos Santos",
+      "email": "chrystian.jheimes@unemat.br"
+    },
+    {
+      "papel": "Supervisor de Estágio I",
+      "nome": "Prof. Dr. Carlos Alex Sander Juvêncio Gulo",
+      "email": "computacao.aia@unemat.br"
+    },
+    {
+      "papel": "Supervisor de Estágio II",
+      "nome": "Prof. Chrystian Jheimes dos Santos",
+      "email": "chrystian.jheimes@unemat.br"
+    },
+    {
+      "papel": "Diretora Política, Pedagógica e Financeira (DPPF) — Campus de Alto Araguaia",
+      "nome": "Profa. Dra. Marilena Inácio de Souza",
+      "email": "dppf.aia@unemat.br"
+    }
+  ],
+  "videos": [
+    {
+      "titulo": "Apresentação sobre o Estágio na UNEMAT de Alto Araguaia",
+      "url": "https://youtu.be/cIBXZzCX1z8",
+      "observacao": "A carga horária mencionada no vídeo foi atualizada para 120 horas (Estágio I e II)."
+    },
+    {
+      "titulo": "Leis de Estágio — Dúvidas Frequentes",
+      "url": "https://youtu.be/2j3JhnplhwY",
+      "observacao": null
+    },
+    {
+      "titulo": "Estágio Supervisionado: Obrigação ou Oportunidade",
+      "url": "https://youtu.be/9mn0PDdvB5w",
+      "observacao": null
     }
   ]
 }

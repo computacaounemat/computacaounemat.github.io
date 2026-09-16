@@ -134,8 +134,52 @@
         ? '<a href="' + escapar(conteudo.links.sigaaUrl) + '" target="_blank" rel="noopener">Acessar SIGAA</a>'
         : "Link ainda não configurado.";
     }
-    var professor = document.getElementById("texto-professor-supervisor");
-    if (professor) professor.textContent = (conteudo.avisos && conteudo.avisos.professorSupervisor) || "";
+
+    var contatosContainer = document.getElementById("lista-contatos");
+    if (contatosContainer && conteudo.contatos) {
+      contatosContainer.innerHTML = conteudo.contatos
+        .map(function (c) {
+          var partes = [];
+          partes.push('<article class="card">');
+          partes.push('<span class="card-badge">' + escapar(c.papel) + "</span>");
+          partes.push("<h4>" + escapar(c.nome) + "</h4>");
+          if (c.email) {
+            partes.push('<a class="botao botao-outline" href="mailto:' + escapar(c.email) + '">' + escapar(c.email) + "</a>");
+          }
+          partes.push("</article>");
+          return partes.join("");
+        })
+        .join("");
+    }
+
+    var formularios = document.getElementById("texto-formularios-estagio");
+    if (formularios && conteudo.links.formulariosUrl) {
+      formularios.innerHTML =
+        '<a class="botao botao-outline" href="' + escapar(conteudo.links.formulariosUrl) +
+        '" target="_blank" rel="noopener">Central de formulários de Estágio</a>';
+    }
+
+    var playlist = document.getElementById("texto-playlist-videos");
+    if (playlist && conteudo.links.guiaVideosUrl) {
+      playlist.innerHTML =
+        'Lista completa de vídeos explicativos: <a href="' + escapar(conteudo.links.guiaVideosUrl) +
+        '" target="_blank" rel="noopener">bit.ly/EstagioECSBCCAIAROO</a>';
+    }
+
+    var videosContainer = document.getElementById("lista-videos");
+    if (videosContainer && conteudo.videos) {
+      videosContainer.innerHTML = conteudo.videos
+        .map(function (v) {
+          var partes = [];
+          partes.push('<article class="card">');
+          partes.push("<h3>" + escapar(v.titulo) + "</h3>");
+          if (v.observacao) partes.push('<p class="texto-secundario">' + escapar(v.observacao) + "</p>");
+          partes.push('<a class="botao botao-outline" href="' + escapar(v.url) + '" target="_blank" rel="noopener">▶ Assistir</a>');
+          partes.push("</article>");
+          return partes.join("");
+        })
+        .join("");
+    }
 
     var atualizacao = document.getElementById("rodape-ultima-atualizacao");
     if (atualizacao) atualizacao.textContent = "Última atualização do Guia: " + ((conteudo.rodape && conteudo.rodape.ultimaAtualizacao) || "");

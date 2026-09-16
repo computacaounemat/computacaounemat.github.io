@@ -392,7 +392,7 @@ a:hover { color: var(--cor-primaria-escura); }
 .botao-primario:hover {
   background: var(--cor-primaria-escura);
   border-color: var(--cor-primaria-escura);
-  box-shadow: 0 8px 16px -6px rgba(14, 165, 233, 0.4);
+  box-shadow: 0 8px 16px -6px rgba(0, 158, 224, 0.4);
 }
 
 .botao-secundario {
@@ -453,7 +453,7 @@ a:hover { color: var(--cor-primaria-escura); }
 
 .hero {
   background:
-    radial-gradient(60% 100% at 50% 0%, rgba(14, 165, 233, 0.12), transparent 70%),
+    radial-gradient(60% 100% at 50% 0%, rgba(0, 158, 224, 0.12), transparent 70%),
     var(--cor-fundo);
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
@@ -513,9 +513,18 @@ a:hover { color: var(--cor-primaria-escura); }
 
 .card h2, .card h3 { margin-top: 0; }
 
+.card-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+}
+
+.card-acoes .botao { width: auto; }
+
 .card-destaque {
-  background: linear-gradient(135deg, rgba(12, 74, 110, 0.35), var(--cor-fundo-alt));
-  border: 1px solid rgba(14, 165, 233, 0.25);
+  background: linear-gradient(135deg, rgba(0, 71, 102, 0.35), var(--cor-fundo-alt));
+  border: 1px solid rgba(0, 158, 224, 0.25);
   border-left: 4px solid var(--cor-primaria-escura);
 }
 
@@ -549,7 +558,7 @@ a:hover { color: var(--cor-primaria-escura); }
 .card.is-escolhida,
 [data-jornada-card].is-escolhida {
   border-color: var(--cor-primaria-escura);
-  box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.35), var(--sombra);
+  box-shadow: 0 0 0 2px rgba(0, 158, 224, 0.35), var(--sombra);
 }
 
 .card-badge-escolha {
@@ -766,8 +775,8 @@ a:hover { color: var(--cor-primaria-escura); }
 /* ===================== PROGRESSO ===================== */
 
 .painel-progresso {
-  background: linear-gradient(135deg, rgba(12, 74, 110, 0.35), var(--cor-fundo-alt));
-  border: 1px solid rgba(14, 165, 233, 0.25);
+  background: linear-gradient(135deg, rgba(0, 71, 102, 0.35), var(--cor-fundo-alt));
+  border: 1px solid rgba(0, 158, 224, 0.25);
   border-left: 4px solid var(--cor-primaria-escura);
   border-radius: var(--raio-cartao);
   padding: 1.25rem 1.4rem;
