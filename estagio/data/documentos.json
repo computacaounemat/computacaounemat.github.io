@@ -43,7 +43,7 @@
     "categoria": "regularizacao",
     "tipoLocal": "fora",
     "descricao": "Termo firmado entre a empresa/instituição concedente, a UNEMAT e o(a) estudante, nos termos da Lei nº 11.788/2008, regularizando o estágio realizado fora da UNEMAT.",
-    "quandoUsar": "Use quando o estágio for realizado em empresa ou instituição externa à UNEMAT.",
+    "quandoUsar": "Use quando o estágio for realizado em empresa ou instituição externa à UNEMAT. A assinatura pela UNEMAT é de responsabilidade da Diretoria Política, Pedagógica e Financeira (DPPF) — dppf.aia@unemat.br.",
     "arquivo": "estagio/documentos/anexo-04-termo-externo.docx",
     "disponivel": true
   },
@@ -55,7 +55,7 @@
     "categoria": "regularizacao",
     "tipoLocal": "dentro",
     "descricao": "Termo firmado entre a UNEMAT (na condição de concedente) e o(a) estudante, nos termos da Lei nº 11.788/2008, regularizando o estágio realizado dentro da própria UNEMAT.",
-    "quandoUsar": "Use quando o estágio for realizado dentro da própria UNEMAT.",
+    "quandoUsar": "Use quando o estágio for realizado dentro da própria UNEMAT. A assinatura pela UNEMAT é de responsabilidade da Diretoria Política, Pedagógica e Financeira (DPPF) — dppf.aia@unemat.br.",
     "arquivo": "estagio/documentos/anexo-04-termo-interno.docx",
     "disponivel": true
   },
