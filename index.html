@@ -25,20 +25,23 @@
                 extend: {
                     colors: {
                         brand: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            500: '#0ea5e9', // Sky 500
-                            600: '#0284c7',
-                            900: '#0c4a6e',
-                            950: '#082f49',
+                            50: '#e5f7ff',
+                            100: '#c2edff',
+                            500: '#009EE0', // Ciano oficial BCC (Manual de Identidade Visual 2025)
+                            600: '#007db2',
+                            900: '#004766',
+                            950: '#002e42',
+                        },
+                        accent: {
+                            green: '#8DC63F', // Verde oficial BCC
                         },
                         dark: {
-                            800: '#1e293b',
-                            900: '#0f172a',
+                            800: '#16191c',
+                            900: '#0b0d0f',
                         }
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['Mesmerize', 'system-ui', 'sans-serif'],
                         mono: ['JetBrains Mono', 'monospace'],
                     },
                     animation: {
@@ -67,25 +70,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        /* Mesmerize — tipografia oficial da marca (Manual de Identidade Visual BCC 2025) */
+        @font-face {
+            font-family: 'Mesmerize';
+            src: url('assets/fonts/mesmerize/mesmerize-light.ttf') format('truetype');
+            font-weight: 300;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Mesmerize';
+            src: url('assets/fonts/mesmerize/mesmerize-bold.ttf') format('truetype');
+            font-weight: 700;
+            font-display: swap;
+        }
+        body { font-family: 'Mesmerize', system-ui, sans-serif; font-weight: 300; }
         .glass-panel {
-            background: rgba(30, 41, 59, 0.7);
+            background: rgba(22, 25, 28, 0.7);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
         .nav-item.active {
-            background: rgba(14, 165, 233, 0.15);
-            color: #38bdf8;
-            border-right: 3px solid #38bdf8;
+            background: rgba(0, 158, 224, 0.15);
+            color: #009EE0;
+            border-right: 3px solid #009EE0;
         }
         /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #0f172a; }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+        ::-webkit-scrollbar-track { background: #0b0d0f; }
+        ::-webkit-scrollbar-thumb { background: #2a2e33; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3a3f45; }
         
         /* Modal Animation */
         .modal-enter { opacity: 0; transform: scale(0.95); }
@@ -2386,7 +2402,7 @@
                         datasets: [{
                             label: 'Aulas',
                             data: Object.values(counts),
-                            backgroundColor: '#0ea5e9',
+                            backgroundColor: '#009EE0',
                             borderRadius: 6,
                             barThickness: 30
                         }]
@@ -2396,7 +2412,7 @@
                         maintainAspectRatio: false,
                         plugins: { legend: { display: false } },
                         scales: {
-                            y: { beginAtZero: true, max: 2, ticks: { color: '#94a3b8', stepSize: 1 }, grid: { color: '#334155' } },
+                            y: { beginAtZero: true, max: 2, ticks: { color: '#94a3b8', stepSize: 1 }, grid: { color: '#2a2e33' } },
                             x: { ticks: { color: '#94a3b8' }, grid: { display: false } }
                         }
                     }
