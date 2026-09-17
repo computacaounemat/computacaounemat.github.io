@@ -114,7 +114,7 @@
     "etapa": "convalidacao",
     "categoria": "convalidacao",
     "descricao": "Requerimento utilizado para solicitar a convalidação de atividade profissional como Estágio Supervisionado.",
-    "quandoUsar": "Use ao solicitar a convalidação, após confirmar que atende aos requisitos. Atenção: o texto já vem redigido especificamente para o Estágio Supervisionado II (120 horas) — se sua convalidação for para o Estágio Supervisionado I, confirme com o Professor Supervisor se é necessário ajustar o texto antes de preencher.",
+    "quandoUsar": "Use ao solicitar a convalidação, após confirmar que atende aos requisitos. Atenção: o texto já vem redigido especificamente para o Estágio Supervisionado II (60 horas) — se sua convalidação for para o Estágio Supervisionado I, confirme com o Professor Supervisor se é necessário ajustar o texto antes de preencher.",
     "arquivo": "estagio/documentos/anexo-09-requerimento-convalidacao.docx",
     "disponivel": true,
     "arquivoOdt": "https://bit.ly/FormConvalidaODT",
