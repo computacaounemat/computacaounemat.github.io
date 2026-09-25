@@ -52,5 +52,23 @@
     "pergunta": "Quem devo procurar se tiver problemas?",
     "resposta": "Procure primeiro o seu Professor Supervisor de Estágio.",
     "fundamento": null
+  },
+  {
+    "id": "faq-10",
+    "pergunta": "Qual plataforma devo usar para colher as assinaturas eletrônicas?",
+    "resposta": "Devido a instabilidades frequentes no portal Gov.br, a Coordenação recomenda utilizar a plataforma Autentique (https://autentique.com.br/), que é gratuita, muito mais prática, ágil e estável. Lembre-se de posicionar a caixa de assinatura EXATAMENTE sobre a linha designada para cada signatário, evitando que fique fora do campo ou cubra textos do documento.",
+    "fundamento": "assinatura_eletronica"
+  },
+  {
+    "id": "faq-11",
+    "pergunta": "Vou fazer estágio dentro da UNEMAT. O que devo observar no Termo de Compromisso?",
+    "resposta": "Para estágio dentro da própria UNEMAT (Anexo IV interno), é obrigatório indicar o nome específico do laboratório ou setor de atuação (ex.: Laboratório PIXEL, Laboratório de Informática). Além disso, o e-mail de contato deve ser obrigatoriamente o e-mail institucional do Supervisor de Campo — isto é, o contato de quem acompanhará diretamente as suas atividades na rotina, e não um e-mail genérico da universidade.",
+    "fundamento": "preenchimento_estagio_interno"
+  },
+  {
+    "id": "faq-12",
+    "pergunta": "O que devo revisar nos modelos antes de enviar para evitar que sejam devolvidos?",
+    "resposta": "Os documentos são autoexplicativos, mas exigem zelo formal: 1) Adequação de gênero: sempre que constar marcação como 'Prof.(a)' ou 'o(a) estagiário(a)', edite o texto para a forma definitiva ('Profa.', 'Prof.', 'o estagiário' ou 'a estagiária'); 2) Textos instrutivos: onde houver orientações entre parênteses como '(insira o nome do Coordenador de Estágio)', apague os parênteses e insira o nome real da autoridade; 3) Vídeos e dúvidas: assista aos vídeos tutoriais explicativos e tire suas dúvidas no grupo oficial de WhatsApp antes de recolher assinaturas e tramitar os arquivos.",
+    "fundamento": "revisao_modelos_devolucao"
   }
 ]

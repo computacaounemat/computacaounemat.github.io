@@ -387,10 +387,32 @@
   document.addEventListener("DOMContentLoaded", function () {
     mostrarAvisoStorageSeNecessario();
 
+    function carregarJson(arquivo) {
+      var caminhos = [
+        "data/" + arquivo,
+        "estagio/data/" + arquivo,
+        "/estagio/data/" + arquivo
+      ];
+      function tentar(index) {
+        if (index >= caminhos.length) {
+          return Promise.reject(new Error("Falha ao carregar " + arquivo));
+        }
+        return fetch(caminhos[index]).then(function (r) {
+          if (!r.ok) {
+            return tentar(index + 1);
+          }
+          return r.json();
+        }).catch(function () {
+          return tentar(index + 1);
+        });
+      }
+      return tentar(0);
+    }
+
     Promise.all([
-      fetch("estagio/data/documentos.json").then(function (r) { return r.json(); }),
-      fetch("estagio/data/faq.json").then(function (r) { return r.json(); }),
-      fetch("estagio/data/conteudo.json").then(function (r) { return r.json(); })
+      carregarJson("documentos.json"),
+      carregarJson("faq.json"),
+      carregarJson("conteudo.json")
     ])
       .then(function (resultados) {
         var documentos = resultados[0];

@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia Rápido de Preenchimento e Assinatura de Documentos — Estágio Supervisionado BCC UNEMAT</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 10mm 13mm 10mm 13mm;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1e293b;
+    background: #fff;
+    line-height: 1.38;
+    font-size: 8.8pt;
+  }
+  .header {
+    border-bottom: 2px solid #009EE0;
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-mini {
+    border-bottom: 1.5px solid #009EE0;
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 7.8pt;
+    color: #64748b;
+  }
+  .header-left {
+    flex: 1;
+  }
+  .header-inst {
+    font-size: 8pt;
+    font-weight: 700;
+    color: #0c4a6e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .header-course {
+    font-size: 11pt;
+    font-weight: 800;
+    color: #0284c7;
+    margin-top: 1px;
+  }
+  .header-subtitle {
+    font-size: 7.6pt;
+    color: #64748b;
+  }
+  .header-badge {
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    color: #0369a1;
+    font-size: 7.5pt;
+    font-weight: 700;
+    padding: 3px 7px;
+    border-radius: 5px;
+    text-align: right;
+  }
+  .main-title {
+    text-align: center;
+    background: linear-gradient(135deg, #0c4a6e, #0369a1);
+    color: #ffffff;
+    padding: 9px 12px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+  }
+  .main-title h1 {
+    font-size: 11.5pt;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+  }
+  .main-title p {
+    font-size: 7.8pt;
+    opacity: 0.92;
+    margin-top: 2px;
+  }
+  .intro-box {
+    background: #f8fafc;
+    border-left: 3.5px solid #009EE0;
+    padding: 6px 10px;
+    font-size: 8.2pt;
+    color: #334155;
+    margin-bottom: 8px;
+    border-radius: 0 5px 5px 0;
+  }
+  .grid-tips {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .tip-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 11px;
+    background: #ffffff;
+    page-break-inside: avoid;
+  }
+  .tip-card.destaque {
+    border-color: #7dd3fc;
+    background: #f0f9ff;
+  }
+  .tip-header {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 4px;
+  }
+  .tip-num {
+    background: #009EE0;
+    color: #ffffff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 8.2pt;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .tip-title {
+    font-size: 9.2pt;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .tip-tag {
+    margin-left: auto;
+    font-size: 6.8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .tag-atencao { background: #fef3c7; color: #92400e; }
+  .tag-pratico { background: #dbeafe; color: #1e40af; }
+  .tag-obrigatorio { background: #fee2e2; color: #991b1b; }
+  .tip-body {
+    font-size: 8.2pt;
+    color: #334155;
+    padding-left: 27px;
+  }
+  .tip-body p {
+    margin-bottom: 3px;
+  }
+  .tip-body p:last-child {
+    margin-bottom: 0;
+  }
+  .tip-exemplo {
+    background: #ffffff;
+    border: 1px dashed #cbd5e1;
+    border-radius: 5px;
+    padding: 5px 8px;
+    margin-top: 5px;
+    font-size: 7.8pt;
+    color: #475569;
+  }
+  .tip-exemplo code {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 7.5pt;
+    background: #f1f5f9;
+    padding: 1px 3px;
+    border-radius: 3px;
+  }
+  .errado { color: #dc2626; font-weight: 600; text-decoration: line-through; }
+  .certo { color: #16a34a; font-weight: 700; }
+  
+  .page-break {
+    page-break-before: always;
+  }
+  
+  /* TABELA SÍNTESE SIGAA */
+  .sigaa-box {
+    border: 1.5px solid #0284c7;
+    background: #f0f9ff;
+    border-radius: 6px;
+    padding: 7px 10px;
+    margin-top: 8px;
+    page-break-inside: avoid;
+  }
+  .sigaa-title {
+    font-size: 8.8pt;
+    font-weight: 800;
+    color: #0c4a6e;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .sigaa-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 7.6pt;
+    background: #ffffff;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .sigaa-table th {
+    background: #0284c7;
+    color: #ffffff;
+    text-align: left;
+    padding: 4px 6px;
+    font-weight: 700;
+  }
+  .sigaa-table td {
+    padding: 4px 6px;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: top;
+    color: #334155;
+  }
+  .sigaa-table tr:last-child td {
+    border-bottom: none;
+  }
+  .sigaa-obs {
+    margin-top: 4px;
+    font-size: 7.3pt;
+    color: #0369a1;
+    font-weight: 600;
+  }
+
+  .checklist-box {
+    border: 1px solid #009EE0;
+    background: #f8fafc;
+    border-radius: 6px;
+    padding: 7px 10px;
+    margin-top: 8px;
+    page-break-inside: avoid;
+  }
+  .checklist-title {
+    font-size: 8.8pt;
+    font-weight: 800;
+    color: #0c4a6e;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .checklist-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 7.7pt;
+  }
+  .checklist-table td {
+    padding: 3px 5px;
+    vertical-align: middle;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .checklist-table tr:last-child td {
+    border-bottom: none;
+  }
+  .box-check {
+    width: 12px;
+    height: 12px;
+    border: 1.5px solid #64748b;
+    border-radius: 2px;
+    display: inline-block;
+  }
+
+  .contacts-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 6px 10px;
+    margin-top: 7px;
+    font-size: 7.5pt;
+  }
+  .contacts-title {
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 3px;
+    font-size: 8pt;
+  }
+  .contacts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px 10px;
+    color: #334155;
+  }
+
+  .footer-institucional {
+    margin-top: 8px;
+    border-top: 1px solid #cbd5e1;
+    padding-top: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 7pt;
+    color: #64748b;
+  }
+  .footer-links a {
+    color: #0284c7;
+    text-decoration: none;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+  <!-- ==================== PÁGINA 1 ==================== -->
+
+  <!-- CABEÇALHO INSTITUCIONAL -->
+  <header class="header">
+    <div class="header-left">
+      <div class="header-inst">Universidade do Estado de Mato Grosso · UNEMAT</div>
+      <div class="header-course">Bacharelado em Ciência da Computação</div>
+      <div class="header-subtitle">Coordenação de Estágio Curricular Supervisionado · Campi Alto Araguaia e Rondonópolis</div>
+    </div>
+    <div class="header-badge">
+      <div>ESTÁGIO SUPERVISIONADO</div>
+      <div>Vigência 2026/2027</div>
+    </div>
+  </header>
+
+  <!-- TÍTULO PRINCIPAL -->
+  <div class="main-title">
+    <h1>GUIA RÁPIDO DE PREENCHIMENTO E ASSINATURA</h1>
+    <p>Recomendações Práticas da Coordenação para Prevenção de Devoluções e Agilidade na Tramitação</p>
+  </div>
+
+  <div class="intro-box">
+    <strong>Prezado(a) Acadêmico(a):</strong> A quase totalidade das devoluções de documentos de Estágio Supervisionado decorre de descuidos formais e de preenchimento. Observe com atenção as orientações abaixo antes de recolher assinaturas e tramitar seus arquivos no SIGAA.
+  </div>
+
+  <div class="grid-tips">
+
+    <!-- DICA 1 -->
+    <div class="tip-card destaque">
+      <div class="tip-header">
+        <span class="tip-num">1</span>
+        <span class="tip-title">Assinatura Eletrônica e Posicionamento dos Campos</span>
+        <span class="tip-tag tag-atencao">Muito Importante</span>
+      </div>
+      <div class="tip-body">
+        <p>• <strong>Instabilidade no Gov.br:</strong> Em muitos momentos de assinatura coletiva, o portal Gov.br apresenta instabilidades severas e fica fora do ar.</p>
+        <p>• <strong>Recomendação Oficial:</strong> Utilize a plataforma <strong>Autentique</strong> (<a href="https://autentique.com.br/" style="color:#0284c7; text-decoration:none; font-weight:bold;">https://autentique.com.br/</a>). Ela é gratuita, prática, funcional e muito mais ágil para todos os signatários.</p>
+        <p>• <strong>Posicionamento Exato:</strong> Ao configurar o documento na plataforma de assinatura, posicione as caixas de assinatura <strong>EXATAMENTE</strong> sobre as linhas designadas para cada signatário no rodapé ou no final do termo. Assinaturas sobrepostas ao texto legal, fora de margem ou sobrepostas a outros campos anulam a formalidade do documento e exigirão reemissão.</p>
+      </div>
+    </div>
+
+    <!-- DICA 2 -->
+    <div class="tip-card">
+      <div class="tip-header">
+        <span class="tip-num">2</span>
+        <span class="tip-title">Estágio Dentro da UNEMAT (Estágio Interno)</span>
+        <span class="tip-tag tag-obrigatorio">Obrigatório</span>
+      </div>
+      <div class="tip-body">
+        <p>Para quem realiza estágio dentro da própria instituição (Anexo IV — Termo de Compromisso Interno):</p>
+        <p>• <strong>Nome do Laboratório / Setor:</strong> É obrigatório identificar expressamente o nome do laboratório ou setor onde cumprirá suas horas práticas (ex.: <em>Laboratório de Inovação em IA e Computação Aplicada — PIXEL Lab</em>, <em>Laboratório de Informática</em>, <em>Secretaria de Apoio Acadêmico</em>, etc.).</p>
+        <p>• <strong>E-mail Institucional do Supervisor de Campo:</strong> O e-mail de contato no termo deve ser <strong>obrigatoriamente o e-mail institucional de quem vai acompanhar diretamente o(a) estagiário(a)</strong> na rotina diária de atividades. Não preencha com e-mails genéricos da Reitoria ou de outros setores da universidade.</p>
+      </div>
+    </div>
+
+    <!-- DICA 3 -->
+    <div class="tip-card">
+      <div class="tip-header">
+        <span class="tip-num">3</span>
+        <span class="tip-title">Edição Ativa dos Modelos e Adequação de Gênero</span>
+        <span class="tip-tag tag-pratico">Zelo Textual</span>
+      </div>
+      <div class="tip-body">
+        <p>• Os modelos em Word (<code>.docx</code>) disponibilizados trazem barras e parênteses de gênero como modelo genérico. <strong>Você deve editá-los para a forma definitiva antes de gerar o PDF</strong>.</p>
+        <div class="tip-exemplo">
+          <span class="errado">Prof.(a) Fulana</span> &nbsp;→&nbsp; <span class="certo">Profa. Fulana</span> &nbsp;&nbsp;|&nbsp;&nbsp;
+          <span class="errado">Prof.(a) Fulano</span> &nbsp;→&nbsp; <span class="certo">Prof. Fulano</span><br>
+          <span class="errado">o(a) estagiário(a) cumpriu</span> &nbsp;→&nbsp; <span class="certo">o estagiário cumpriu</span> (ou <em>a estagiária cumpriu</em>)<br>
+          <span class="errado">do(a) acadêmico(a)</span> &nbsp;→&nbsp; <span class="certo">do acadêmico</span> (ou <em>da acadêmica</em>)
+        </div>
+        <p style="margin-top:3px;">Deixar marcações brutas demonstra falta de cuidado e revisão formal do documento.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-institucional">
+    <div>UNEMAT · Bacharelado em Ciência da Computação · Guia Rápido de Estágio</div>
+    <div>Página 1 de 2</div>
+  </footer>
+
+  <!-- ==================== QUEBRA DE PÁGINA ==================== -->
+  <div class="page-break"></div>
+
+  <!-- ==================== PÁGINA 2 ==================== -->
+
+  <header class="header-mini">
+    <div><strong>UNEMAT · Bacharelado em Ciência da Computação</strong> — Guia Rápido de Preenchimento e Assinatura</div>
+    <div>Página 2 de 2</div>
+  </header>
+
+  <div class="grid-tips">
+
+    <!-- DICA 4 -->
+    <div class="tip-card">
+      <div class="tip-header">
+        <span class="tip-num">4</span>
+        <span class="tip-title">Substituição Obrigatória de Textos Instrutivos</span>
+        <span class="tip-tag tag-obrigatorio">Sem Parênteses</span>
+      </div>
+      <div class="tip-body">
+        <p>• Onde estiver escrito instruções entre parênteses nos anexos, <strong>retire o <code>(</code> e o <code>)</code> e substitua todo o texto explicativo pelo nome real</strong> da autoridade, instituição ou cargo.</p>
+        <div class="tip-exemplo">
+          <span class="errado">(insira o nome do Coordenador de Estágio)</span> &nbsp;→&nbsp; <span class="certo">Prof. Me. Chrystian Jheimes dos Santos</span><br>
+          <span class="errado">(insira o nome do Coordenador de Curso)</span> &nbsp;→&nbsp; <span class="certo">Prof. Dr. Carlos Alex Sander Juvêncio Gulo</span><br>
+          <span class="errado">(nome da empresa concedente)</span> &nbsp;→&nbsp; <span class="certo">Prefeitura Municipal de Alto Araguaia</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- DICA 5 -->
+    <div class="tip-card destaque">
+      <div class="tip-header">
+        <span class="tip-num">5</span>
+        <span class="tip-title">Cronograma sem Feriados e Envio Exclusivo em PDF no SIGAA</span>
+        <span class="tip-tag tag-atencao">Regra Rigorosa</span>
+      </div>
+      <div class="tip-body">
+        <p>• <strong>Sem Feriados no Plano de Atividades:</strong> No cronograma do Plano (Anexo V), <strong>NÃO DEVE CONSTAR FERIADOS</strong> ou dias não úteis como dias letivos de estágio. A inclusão invalida o cronograma.</p>
+        <p>• <strong>Exclusivamente em PDF:</strong> Somente são aceitos formulários oficiais obtidos no AVA (SIGAA). Todas as submissões devem ser <strong>obrigatoriamente postadas em formato PDF</strong>.</p>
+        <p>• <strong>Vídeos e Dúvidas Prévias:</strong> Assista aos vídeos explicativos do Guia com exemplos reais. Havendo dúvidas, <strong>pergunte no grupo oficial de WhatsApp de Estágio antes de colher assinaturas</strong> para evitar retrabalho e devolução.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- QUADRO SÍNTESE SIGAA -->
+  <div class="sigaa-box">
+    <div class="sigaa-title">
+      <span>📅 Tarefas, Prazos e Critérios Oficiais no SIGAA (2026/2)</span>
+      <span style="font-size:7pt; color:#0369a1; font-weight:normal;">Somente versão PDF</span>
+    </div>
+    <table class="sigaa-table">
+      <thead>
+        <tr>
+          <th style="width:18%;">Tarefa / Período</th>
+          <th style="width:38%;">Documentos Exigidos</th>
+          <th style="width:44%;">Critérios de Avaliação e Pontuação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Tarefa 1</strong><br><span style="color:#d97706; font-weight:bold;">27/08 a 30/11</span></td>
+          <td>Planejamento: Ficha (Anexo I), Requerimento e Aceite (III), Carta (II), Termo (IV) e Plano (V).</td>
+          <td>Coerência do Plano com áreas do BCC (<strong>5,00</strong>) + Aplicabilidade na Computação (<strong>5,00</strong>) = <strong>10,00 pts</strong>.<br><em>Obs.: Não conter feriados.</em></td>
+        </tr>
+        <tr>
+          <td><strong>Tarefa 2</strong><br><span style="color:#d97706; font-weight:bold;">27/08 a 30/11</span></td>
+          <td>Ficha de Acompanhamento das Atividades Desenvolvidas (Anexo VI).</td>
+          <td>Assiduidade (<strong>2,50</strong>) + Coerência dos relatórios (<strong>4,00</strong>) + Consistência (<strong>3,50</strong>) = <strong>10,00 pts</strong> (verificação pelo supervisor).</td>
+        </tr>
+        <tr>
+          <td><strong>Tarefa 3</strong><br><span style="color:#d97706; font-weight:bold;">30/09 a 30/11</span></td>
+          <td>Relatório Final de Estágio Supervisionado (Anexo VII).</td>
+          <td>Aspectos gerais/ABNT (<strong>2,50</strong>) + Teórico (<strong>2,00</strong>) + Metodológico (<strong>2,00</strong>) + Analítico (<strong>3,50</strong>) = <strong>10,00 pts</strong>.</td>
+        </tr>
+        <tr>
+          <td><strong>Convalidação</strong><br><span style="color:#d97706; font-weight:bold;">27/08 a 30/11</span></td>
+          <td>Declaração com cargo/função, CTPS/Contrato, Plano e Relatório circunstanciado (Res. 028/2012).</td>
+          <td>Relatório circunstanciado (<strong>pré-requisito obrigatório</strong>) + Apresentação de Seminário perante banca.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- CHECKLIST RÁPIDO -->
+  <div class="checklist-box">
+    <div class="checklist-title">
+      <span>☑</span> Checklist do(a) Acadêmico(a) Antes de Enviar ao SIGAA
+    </div>
+    <table class="checklist-table">
+      <tr>
+        <td style="width:18px;"><span class="box-check"></span></td>
+        <td><strong>Placeholders e Gênero:</strong> Instruções entre parênteses foram apagadas e marcas como <em>Prof.(a)</em> ajustadas para <em>Profa.</em>/<em>Prof.</em>?</td>
+      </tr>
+      <tr>
+        <td><span class="box-check"></span></td>
+        <td><strong>Estágio Interno UNEMAT:</strong> Constaram o nome do laboratório/setor e o e-mail institucional do supervisor direto de campo?</td>
+      </tr>
+      <tr>
+        <td><span class="box-check"></span></td>
+        <td><strong>Cronograma sem Feriados:</strong> No Plano de Atividades conferi se NÃO constam feriados como dias de estágio?</td>
+      </tr>
+      <tr>
+        <td><span class="box-check"></span></td>
+        <td><strong>Assinatura no Autentique:</strong> As caixas de assinatura foram posicionadas exatamente sobre as linhas designadas?</td>
+      </tr>
+      <tr>
+        <td><span class="box-check"></span></td>
+        <td><strong>Formato PDF Obrigatório:</strong> O arquivo gerado a partir do formulário do AVA está exportado exclusivamente em formato PDF?</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- CONTATOS DE REFERÊNCIA -->
+  <div class="contacts-box">
+    <div class="contacts-title">Contatos Institucionais da Coordenação de Estágio</div>
+    <div class="contacts-grid">
+      <div><strong>Coordenação de Estágio:</strong> Prof. Chrystian Jheimes dos Santos (<code>chrystian.jheimes@unemat.br</code>)</div>
+      <div><strong>Coordenação de Curso:</strong> Prof. Dr. Carlos Alex Sander Juvêncio Gulo (<code>computacao.aia@unemat.br</code>)</div>
+      <div><strong>DPPF (Alto Araguaia):</strong> Profa. Dra. Marilena Inácio de Souza (<code>dppf.aia@unemat.br</code>)</div>
+      <div><strong>Portal de Estágio:</strong> <a href="https://ialxnder.fly.dev/estagio/entrar" style="color:#0284c7; text-decoration:none;">https://ialxnder.fly.dev/estagio/entrar</a></div>
+    </div>
+  </div>
+
+  <!-- RODAPÉ INSTITUCIONAL -->
+  <footer class="footer-institucional">
+    <div>UNEMAT · Bacharelado em Ciência da Computação · Coordenação de Estágio</div>
+    <div class="footer-links">Site Oficial: <a href="https://computacaounemat.github.io/">computacaounemat.github.io</a></div>
+  </footer>
+
+</body>
+</html>

@@ -119,6 +119,24 @@
       "documento": "Resolução nº 028/2012-CONEPE",
       "artigo": "Art. 17",
       "texto": "Compete à Coordenação do Estágio Curricular Supervisionado cumprir e fazer cumprir a política de estágios da UNEMAT, orientar professores e acadêmicos e manter atualizado o arquivo de oportunidades de estágio."
+    },
+    "assinatura_eletronica": {
+      "tipo": "orientacao",
+      "documento": "Coordenação de Estágio de Ciência da Computação — UNEMAT",
+      "artigo": "Orientações de Assinatura Digital",
+      "texto": "Devido a instabilidades frequentes no portal Gov.br, recomenda-se utilizar a plataforma Autentique (https://autentique.com.br/), que é gratuita, ágil e altamente funcional. Certifique-se de posicionar as caixas de assinatura exatamente sobre as linhas reservadas para cada signatário no documento."
+    },
+    "preenchimento_estagio_interno": {
+      "tipo": "procedimento",
+      "documento": "Coordenação de Estágio de Ciência da Computação — UNEMAT",
+      "artigo": "Termo de Compromisso — Estágio na UNEMAT",
+      "texto": "Para estágio realizado dentro da própria UNEMAT, é obrigatório indicar o nome específico do laboratório ou setor no Termo de Compromisso (Anexo IV interno) e preencher o e-mail de contato com o e-mail institucional do supervisor de campo que acompanhará diretamente o(a) estagiário(a)."
+    },
+    "revisao_modelos_devolucao": {
+      "tipo": "orientacao",
+      "documento": "Coordenação de Estágio de Ciência da Computação — UNEMAT",
+      "artigo": "Zelo Formal e Prevenção de Devoluções",
+      "texto": "Ao preencher os documentos, realize a edição textual necessária: adeque marcações genéricas como 'Prof.(a)' para 'Profa.' ou 'Prof.' e remova os parênteses e textos instrutivos como '(insira o nome do Coordenador de Estágio)', inserindo o nome real. Assista aos vídeos explicativos e tire dúvidas no grupo oficial antes de assinar."
     }
   },
   "areas": [
@@ -189,7 +207,7 @@
     "documentoIndisponivel": "Arquivo ainda não disponibilizado."
   },
   "rodape": {
-    "ultimaAtualizacao": "11/08/2026",
+    "ultimaAtualizacao": "25/09/2026",
     "baseNormativa": [
       "PPC vigente do Bacharelado em Ciência da Computação",
       "Resolução nº 028/2012-CONEPE",
@@ -199,7 +217,9 @@
   "links": {
     "sigaaUrl": "https://sigaa.unemat.br/sigaa/verTelaLogin.do",
     "formulariosUrl": "https://bit.ly/FormulariosEstagioBCC",
-    "guiaVideosUrl": "https://bit.ly/EstagioECSBCCAIAROO"
+    "guiaVideosUrl": "https://bit.ly/EstagioECSBCCAIAROO",
+    "autentiqueUrl": "https://autentique.com.br/",
+    "portalEstagioUrl": "https://ialxnder.fly.dev/estagio/entrar"
   },
   "legislacao": [
     {
@@ -266,6 +286,94 @@
       "titulo": "Estágio Supervisionado: Obrigação ou Oportunidade",
       "url": "https://youtu.be/9mn0PDdvB5w",
       "observacao": null
+    }
+  ],
+  "tarefasSigaa": [
+    {
+      "id": "tarefa-1",
+      "numero": "Tarefa 1",
+      "titulo": "Entrega da Documentação para Registro do Planejamento de Estágio",
+      "periodo": "27/08/2026 às 00h00 a 30/11/2026 às 23h59",
+      "objetivo": "Apresentar em formulários específicos o registro do Planejamento das atividades de estágio a serem desenvolvidas no período.",
+      "documentos": [
+        "Ficha de identificação do estagiário (Anexo I)*",
+        "Requerimento (Anexo III)*",
+        "Aceite de orientação de estágio supervisionado (Anexo III)*",
+        "Carta de Apresentação (Anexo II)*",
+        "Termo de Compromisso (Anexo IV — externo ou interno)*",
+        "Plano de atividades do acadêmico (Anexo V)"
+      ],
+      "criterios": [
+        { "item": "Coerência do Plano de Atividades com as áreas do conhecimento do curso de Ciência da Computação", "pontos": "5,00" },
+        { "item": "Aplicabilidade do Plano de Atividades na área de Computação", "pontos": "5,00" }
+      ],
+      "totalPontos": "10,00",
+      "observacoes": [
+        "Lembre-se: no Plano de Atividades NÃO DEVE CONSTAR FERIADOS.",
+        "Somente serão aceitos os formulários obtidos no Ambiente Virtual de Aprendizagem (SIGAA).",
+        "Postar somente a versão PDF dos formulários (ENVIAR SOMENTE ARQUIVOS EM PDF)."
+      ]
+    },
+    {
+      "id": "tarefa-2",
+      "numero": "Tarefa 2",
+      "titulo": "Acompanhamento das Atividades Desenvolvidas (Ficha de Atividades)",
+      "periodo": "27/08/2026 às 00h00 a 30/11/2026 às 23h59",
+      "objetivo": "Desenvolvimento das atividades em órgãos públicos ou instituições de direito privado cedente de estágio, acompanhadas pelo professor de estágio por meio da análise e avaliação da Ficha de Atividades Desenvolvidas entregue dentro do prazo, com nota atribuída após verificação pelo supervisor de campo.",
+      "documentos": [
+        "Ficha de acompanhamento das atividades desenvolvidas (Anexo VI)"
+      ],
+      "criterios": [
+        { "item": "Assiduidade (pontualidade e assiduidade do acadêmico em seus compromissos, tanto com a instituição cedente quanto com a UNEMAT)", "pontos": "2,50" },
+        { "item": "Coerência (coerência dos relatórios parciais de atividades)", "pontos": "4,00" },
+        { "item": "Consistência (consistência dos relatórios parciais de atividades)", "pontos": "3,50" }
+      ],
+      "totalPontos": "10,00",
+      "observacoes": [
+        "ENVIAR SOMENTE ARQUIVOS EM PDF."
+      ]
+    },
+    {
+      "id": "tarefa-3",
+      "numero": "Tarefa 3",
+      "titulo": "Entrega do Relatório Final de Estágio Supervisionado",
+      "periodo": "30/09/2026 às 00h00 a 30/11/2026 às 23h59",
+      "objetivo": "Apresentar registro claro e conciso das atividades e carga horária desenvolvidas na instituição através do relatório final, de acordo com as normas da ABNT. Avaliado pelo professor de estágio e pelo supervisor de campo.",
+      "documentos": [
+        "Relatório Final de Estágio Supervisionado (Anexo VII)"
+      ],
+      "criterios": [
+        { "item": "1- Aspectos gerais (estrutura formal, digitação, organização, coesão, coerência, adequação ao gênero)", "pontos": "2,50" },
+        { "item": "2- Aspecto teórico (domínio de conceitos e uso correto de terminologia técnica)", "pontos": "2,00" },
+        { "item": "3- Aspecto metodológico (adequação do objetivo)", "pontos": "2,00" },
+        { "item": "4- Aspecto analítico (consistência da análise, consistência teórica)", "pontos": "3,50" }
+      ],
+      "totalPontos": "10,00",
+      "observacoes": [
+        "ENVIAR SOMENTE ARQUIVOS EM PDF."
+      ]
+    },
+    {
+      "id": "convalidacao-sigaa",
+      "numero": "Convalidação",
+      "titulo": "Solicitação de Convalidação de Atividades Profissionais",
+      "periodo": "27/08/2026 às 00h00 a 30/11/2026 às 23h59",
+      "objetivo": "Conforme Resolução nº 028/2012-CONEPE, arts. 10 a 15, solicitação de convalidação de atividade profissional na área do curso com tempo mínimo de 12 meses ininterruptos.",
+      "documentos": [
+        "I. Declaração da instituição em que atua (papel timbrado, assinada por representante, indicando cargo e funções);",
+        "II. Cópia autenticada da CTPS (qualificação civil, identificação, contrato de trabalho e alterações) OU Contrato Social registrado + cartão CNPJ atualizado + comprovação de empresa ativa se sócio;",
+        "III. Plano de atividades obedecendo o Art. 6º;",
+        "IV. Relatório circunstanciado das atividades desenvolvidas obedecendo o Art. 24."
+      ],
+      "criterios": [
+        { "item": "I – Relatório escrito circunstanciado", "pontos": "Avaliação pré-requisito" },
+        { "item": "II – Apresentação de seminário (a entrega do relatório escrito é pré-requisito para o seminário)", "pontos": "Avaliação final" }
+      ],
+      "totalPontos": "Parecer de Convalidação",
+      "observacoes": [
+        "A entrega do relatório escrito é pré-requisito para a apresentação do seminário.",
+        "ENVIAR SOMENTE ARQUIVOS EM PDF."
+      ]
     }
   ]
 }

@@ -55,7 +55,7 @@
     "categoria": "regularizacao",
     "tipoLocal": "dentro",
     "descricao": "Termo firmado entre a UNEMAT (na condição de concedente) e o(a) estudante, nos termos da Lei nº 11.788/2008, regularizando o estágio realizado dentro da própria UNEMAT.",
-    "quandoUsar": "Use quando o estágio for realizado dentro da própria UNEMAT. A assinatura pela UNEMAT é de responsabilidade da Diretoria Política, Pedagógica e Financeira (DPPF) — dppf.aia@unemat.br.",
+    "quandoUsar": "Use quando o estágio for realizado dentro da própria UNEMAT. É obrigatório indicar o nome específico do laboratório/setor de lotação e o e-mail institucional do Supervisor de Campo (quem acompanhará diretamente o acadêmico). A assinatura pela UNEMAT é de responsabilidade da Diretoria Política, Pedagógica e Financeira (DPPF) — dppf.aia@unemat.br.",
     "arquivo": "estagio/documentos/anexo-04-termo-interno.docx",
     "disponivel": true
   },
@@ -119,5 +119,16 @@
     "disponivel": true,
     "arquivoOdt": "https://bit.ly/FormConvalidaODT",
     "arquivoExemplo": "https://bit.ly/FormConvalidaExemplo"
+  },
+  {
+    "id": "guia-rapido-preenchimento",
+    "titulo": "Guia Rápido de Preenchimento e Assinatura de Documentos",
+    "anexo": "Guia Prático",
+    "etapa": "regularizacao",
+    "categoria": "antes-de-comecar",
+    "descricao": "Orientações essenciais da Coordenação para preenchimento dos anexos, assinatura eletrônica via Autentique, identificação de estágio interno na UNEMAT e prevenção de devoluções.",
+    "quandoUsar": "Consulte e baixe antes de preencher os documentos do estágio para evitar retrabalho e devolução.",
+    "arquivo": "estagio/documentos/guia-rapido-preenchimento-estagio.pdf",
+    "disponivel": true
   }
 ]
