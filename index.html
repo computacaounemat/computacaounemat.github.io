@@ -180,6 +180,11 @@
                 Guia de Estágio
             </button>
 
+            <button onclick="app.navigate('tcc')" id="nav-tcc" class="nav-item w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-slate-400 hover:text-white hover:bg-slate-700/50 transition-all">
+                <i class="fa-solid fa-graduation-cap w-5 text-center text-amber-400"></i>
+                Guia do TCC
+            </button>
+
             <a href="https://sistema-unemat.vercel.app/" target="_blank" class="w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-slate-400 hover:text-brand-500 hover:bg-slate-700/50 transition-all group">
                 <i class="fa-solid fa-computer w-5 text-center text-slate-500 group-hover:text-brand-500"></i>
                 Agenda de Laboratórios
@@ -252,6 +257,7 @@
                 <span class="font-bold text-white text-sm truncate">UNEMAT-AIA/ROO</span>
             </div>
             <div class="flex gap-4">
+                <button onclick="app.navigate('tcc')" class="text-amber-400 p-1 hover:bg-slate-700 rounded transition-colors" title="Guia do TCC"><i class="fa-solid fa-graduation-cap"></i></button>
                 <button onclick="app.navigate('secomp')" class="text-purple-400 p-1 hover:bg-slate-700 rounded transition-colors"><i class="fa-solid fa-microchip"></i></button>
                 <button onclick="app.navigate('schedule')" class="text-brand-400 p-1 hover:bg-slate-700 rounded transition-colors"><i class="fa-solid fa-calendar-days"></i></button>
             </div>
@@ -387,6 +393,41 @@
                                     <i class="fa-solid fa-file-pdf text-slate-500 group-hover:text-purple-400"></i>
                                 </div>
                             </a>
+                        </div>
+                    </div>
+
+                    <!-- Card: Guia Oficial do TCC -->
+                    <div class="md:col-span-2 bg-gradient-to-br from-amber-950/40 via-slate-800 to-slate-900 p-5 sm:p-6 rounded-2xl border border-amber-500/30 relative overflow-hidden">
+                        <div class="absolute right-0 top-0 p-6 opacity-5 pointer-events-none">
+                            <i class="fa-solid fa-graduation-cap text-9xl"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-3">
+                                <div class="w-12 h-12 bg-amber-500/20 border border-amber-500/40 rounded-full flex items-center justify-center text-amber-400 text-2xl shadow-lg shadow-amber-500/10 shrink-0">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <h3 class="text-xl font-bold text-white">Guia Oficial do TCC</h3>
+                                        <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">IN nº 001/2026</span>
+                                    </div>
+                                    <p class="text-slate-300 text-sm">Trabalho de Conclusão de Curso I e II — da proposta à defesa pública perante banca.</p>
+                                </div>
+                            </div>
+                            <p class="text-slate-300 text-sm mb-4 max-w-2xl">
+                                Acesse todas as etapas regulamentadas, prazos regimentais, modelos de documentos e preenchimento online integrado ao portal com emissão em Word (.docx) e PDF para assinatura digital no <code>gov.br</code>.
+                            </p>
+                            <div class="flex flex-wrap items-center gap-3">
+                                <button onclick="app.navigate('tcc')" class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-4 py-2 rounded-lg text-sm transition-all shadow-md">
+                                    <i class="fa-solid fa-book-open"></i> Acessar Guia de TCC
+                                </button>
+                                <a href="tcc/" target="_blank" class="inline-flex items-center gap-2 bg-slate-700/80 hover:bg-slate-600 text-slate-200 px-4 py-2 rounded-lg text-sm font-semibold transition-colors border border-slate-600">
+                                    <i class="fa-solid fa-up-right-from-square"></i> Abrir em Nova Aba
+                                </a>
+                                <a href="https://ialxnder.fly.dev/tcc" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors border border-brand-400">
+                                    <i class="fa-solid fa-bolt"></i> Portal TCC Online (Fly.io)
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -1345,9 +1386,25 @@
             </div>
             </div>
 
-            <!-- VIEW: GUIA DE TCC (embutido, mesmo painel do Guia do Estudante) -->
-            <div id="view-tcc" class="hidden max-w-5xl mx-auto animate-fade-in">
-                <iframe src="tcc/index.html" title="Guia do TCC" class="w-full h-[80vh] md:h-[85vh] rounded-2xl border border-slate-700 shadow-lg bg-dark-800"></iframe>
+            <!-- VIEW: GUIA DE TCC (embutido, com controles de tela cheia e portal) -->
+            <div id="view-tcc" class="hidden max-w-5xl mx-auto animate-fade-in space-y-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-slate-800/90 p-4 sm:p-5 rounded-2xl border border-slate-700 shadow-lg">
+                    <div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-graduation-cap text-amber-400"></i> Guia Oficial do TCC
+                        </h2>
+                        <p class="text-xs sm:text-sm text-slate-400 mt-1">Trabalho de Conclusão de Curso I e II · Pautado na IN nº 001/2026–Colegiado/BCC e Resolução nº 047/2025–CONEPE</p>
+                    </div>
+                    <div class="flex items-center gap-2 shrink-0">
+                        <a href="tcc/" target="_blank" class="px-3.5 py-2 bg-slate-700 hover:bg-slate-600 text-slate-200 text-xs font-semibold rounded-lg flex items-center gap-1.5 transition-colors border border-slate-600">
+                            <i class="fa-solid fa-up-right-from-square"></i> Abrir em Nova Aba
+                        </a>
+                        <a href="https://ialxnder.fly.dev/tcc" target="_blank" rel="noopener" class="px-4 py-2 bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold rounded-lg flex items-center gap-1.5 transition-colors shadow-md border border-brand-400">
+                            <i class="fa-solid fa-bolt"></i> Portal TCC Online (Fly.io)
+                        </a>
+                    </div>
+                </div>
+                <iframe src="tcc/index.html" title="Guia do TCC" class="w-full h-[80vh] md:h-[85vh] rounded-2xl border border-slate-700 shadow-xl bg-dark-800"></iframe>
             </div>
 
             <!-- VIEW: SECOMP 2026 LANDING PAGE -->
@@ -3178,10 +3235,22 @@
                 } catch (e) {
                     console.warn('Usando dados de horários embutidos de fallback:', e);
                 }
-                this.updateView();
-                // Ocultamos o modal no início para não atrapalhar a visualização da landpage da SECOMP
-                // setTimeout(() => this.toggleModal('alxnder-modal', true), 1000);
-                // setTimeout(() => this.toggleModal('info-modal', true), 800);
+
+                // Detecta rota inicial por hash na URL (ex: #tcc, #estagio, #secomp, #schedule, #guide)
+                const rawHash = window.__guiaHashInicial || window.location.hash;
+                const cleanHash = rawHash ? rawHash.replace('#', '').trim().toLowerCase() : '';
+
+                if (cleanHash === 'tcc') {
+                    this.navigate('tcc', false);
+                } else if (cleanHash === 'estagio' || cleanHash === 'requisitos' || cleanHash === 'local' || cleanHash === 'regularizacao' || cleanHash === 'planejamento' || cleanHash === 'execucao' || cleanHash === 'convalidacao') {
+                    this.navigate('estagio', false);
+                } else if (cleanHash === 'secomp') {
+                    this.navigate('secomp', false);
+                } else if (cleanHash === 'schedule') {
+                    this.navigate('schedule', false);
+                } else {
+                    this.navigate(this.state.view || 'guide', false);
+                }
             },
 
             toggleModal(id, show) {
@@ -3217,7 +3286,7 @@
                 }
             },
 
-            navigate(viewName) {
+            navigate(viewName, updateHash = true) {
                 this.state.view = viewName;
                 this.updateView();
                 
@@ -3235,6 +3304,10 @@
                 if(activeNav) {
                     activeNav.classList.add('active');
                     activeNav.setAttribute('aria-current', 'page');
+                }
+
+                if (updateHash && window.history && window.history.replaceState) {
+                    window.history.replaceState(null, '', '#' + viewName);
                 }
             },
 
@@ -3402,8 +3475,14 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             app.init();
-            // Default Nav para a vista aberta
-            document.getElementById('nav-guide').classList.add('active');
+        });
+
+        window.addEventListener('hashchange', () => {
+            const rawHash = window.location.hash;
+            const h = rawHash ? rawHash.replace('#', '').trim().toLowerCase() : '';
+            if (['schedule', 'guide', 'secomp', 'estagio', 'tcc'].includes(h)) {
+                app.navigate(h, false);
+            }
         });
     </script>
 
