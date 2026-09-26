@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia Oficial do Estudante — Ciência da Computação — UNEMAT</title>
+<meta name="description" content="Recursos, calendários, PPCs, horários, tutoriais e orientações essenciais para a jornada acadêmica no Bacharelado em Ciência da Computação da UNEMAT (Alto Araguaia e Rondonópolis).">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: { 50: '#f0f9ff', 100: '#e0f2fe', 500: '#0ea5e9', 600: '#0284c7', 900: '#0c4a6e', 950: '#082f49' },
+          dark: { 800: '#1e293b', 900: '#0f172a' }
+        },
+        fontFamily: { sans: ['Inter', 'sans-serif'] }
+      }
+    }
+  };
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0f172a;
+    --card:rgba(30,41,59,0.7);
+    --card-hover:rgba(51,65,85,0.8);
+    --card-border:rgba(255,255,255,0.06);
+    --ink:#f8fafc;
+    --ink-soft:#94a3b8;
+    --ink-body:#cbd5e1;
+    --brand:#38bdf8;
+    --brand-strong:#0ea5e9;
+    --brand-soft:rgba(56,189,248,0.15);
+    --teal:#34d399;
+    --teal-soft:rgba(52,211,153,0.15);
+    --amber:#fbbf24;
+    --amber-soft:rgba(251,191,36,0.12);
+    --line:rgba(148,163,184,0.18);
+    --line-solid:#334155;
+    --mono:#94a3b8;
+    --raio:0.75rem;
+    --raio-grande:1rem;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink-body);
+    font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height:1.65;
+  }
+  h1,h2,h3,.display{
+    font-family:'Inter', sans-serif;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+    font-weight:700;
+  }
+  .tag{
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:0.72rem; text-transform:uppercase; letter-spacing:0.08em;
+    color:var(--brand);
+  }
+  a{color:var(--brand); transition:color .15s ease;}
+  a:hover{color:var(--brand-strong);}
+
+  ::-webkit-scrollbar{width:6px;height:6px;}
+  ::-webkit-scrollbar-track{background:var(--bg);}
+  ::-webkit-scrollbar-thumb{background:var(--line-solid);border-radius:3px;}
+  ::-webkit-scrollbar-thumb:hover{background:#475569;}
+
+  header{
+    padding:56px 24px 40px; text-align:center;
+    background:radial-gradient(60% 100% at 50% 0%, rgba(14,165,233,0.12), transparent 70%), var(--bg);
+    border-bottom:1px solid var(--line-solid);
+  }
+  header .tag{margin-bottom:10px;}
+  header h1{max-width:820px; margin-inline:auto;}
+  header .text-center > p{max-width:680px; margin:0 auto;}
+
+  .glass-panel{
+    background:var(--card); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    border:1px solid var(--card-border);
+  }
+
+  main{max-width:960px; margin:0 auto; padding:40px 24px 100px;}
+
+  .toolbar{
+    position:sticky; top:0; z-index:50; background:rgba(15,23,42,0.92); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line-solid); padding:10px 20px; display:flex; gap:16px; justify-content:center;
+    flex-wrap:wrap; font-family:'JetBrains Mono',monospace; font-size:0.78rem;
+  }
+  .toolbar a{color:var(--ink-soft); text-decoration:none; padding:4px 10px; border-radius:6px;}
+  .toolbar a:hover{background:var(--brand-soft); color:var(--brand);}
+  .toolbar a.highlight{background:var(--brand-strong); color:#fff; font-weight:700;}
+
+  footer{text-align:center; padding:40px 20px; color:var(--mono); font-size:0.8rem; font-family:'JetBrains Mono',monospace; border-top:1px solid var(--line-solid);}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <a href="../" style="color:var(--brand); font-weight:700;"><i class="fa-solid fa-arrow-left"></i> Início do Site</a>
+  <a href="https://bit.ly/iALXnderBETA" target="_blank" rel="noopener" class="highlight">⚡ Assistente iALXnder</a>
+  <a href="../#schedule">Horários</a>
+  <a href="../estagio/">Guia de Estágio</a>
+  <a href="../tcc/">Guia do TCC</a>
+  <a href="../secomp/">SECOMP 2026</a>
+</div>
+
+<header>
+  <div class="tag">Curso de Bacharelado em Ciência da Computação · UNEMAT</div>
+  <div class="text-center mb-6 md:mb-8">
+    <h1 class="text-2xl md:text-4xl font-bold text-white mb-2">Guia Oficial do Estudante</h1>
+    <p class="text-sm md:text-base text-slate-400">Recursos, links, calendários acadêmicos, projetos pedagógicos (PPC) e orientações essenciais para a sua jornada universitária.</p>
+  </div>
+</header>
+
+<main class="space-y-8">
+
+  <!-- Welcome Card -->
+  <div class="bg-gradient-to-r from-brand-900/50 to-slate-800 rounded-2xl p-6 sm:p-7 border-l-4 border-brand-500 shadow-xl">
+    <h3 class="text-xl font-bold text-white mb-3">📢 Mensagem de Boas-vindas</h3>
+    <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+      Caros estudantes,<br>
+      Sejam bem-vindos à nossa comunidade acadêmica! 💙 Para apoiar a sua jornada universitária no Bacharelado em Ciência da Computação (Câmpus de Alto Araguaia e Câmpus de Rondonópolis), reunimos aqui as informações e serviços que facilitam o seu dia a dia.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+    <!-- Card: Tutoriais -->
+    <div class="glass-panel p-6 rounded-2xl hover:bg-slate-800/80 transition-colors">
+      <div class="w-10 h-10 bg-blue-500/20 text-blue-400 rounded-lg flex items-center justify-center mb-4 text-xl">
+        <i class="fa-solid fa-laptop-file"></i>
+      </div>
+      <h3 class="text-lg font-bold text-white mb-4">Tutoriais e Orientações</h3>
+      <ul class="space-y-3 text-sm">
+        <li>
+          <a href="https://bit.ly/tutoriaisSIGAA" target="_blank" rel="noopener" class="flex justify-between items-center text-slate-300 hover:text-brand-400 group">
+            <span>Uso do SIGAA (Matrículas e Notas)</span>
+            <i class="fa-solid fa-arrow-up-right-from-square opacity-70 group-hover:opacity-100 transition-opacity"></i>
+          </a>
+        </li>
+        <li class="border-t border-slate-700/50 pt-2">
+          <a href="https://bit.ly/EstudanteNEE" target="_blank" rel="noopener" class="flex justify-between items-center text-slate-300 hover:text-brand-400 group">
+            <span>Estudantes com NEE (Acessibilidade)</span>
+            <i class="fa-solid fa-arrow-up-right-from-square opacity-70 group-hover:opacity-100 transition-opacity"></i>
+          </a>
+        </li>
+        <li class="border-t border-slate-700/50 pt-2">
+          <a href="https://bit.ly/CAESTUnematAIA" target="_blank" rel="noopener" class="flex justify-between items-center text-slate-300 hover:text-brand-400 group">
+            <span>CAEST – Assuntos Estudantis & Auxílios</span>
+            <i class="fa-solid fa-arrow-up-right-from-square opacity-70 group-hover:opacity-100 transition-opacity"></i>
+          </a>
+        </li>
+        <li class="border-t border-slate-700/50 pt-2">
+          <a href="../assets/files/bcc_wallpaper.zip" target="_blank" class="flex justify-between items-center text-slate-300 hover:text-brand-400 group">
+            <span>Papel de Parede Oficial do Curso</span>
+            <i class="fa-solid fa-download opacity-70 group-hover:opacity-100 transition-opacity"></i>
+          </a>
+        </li>
+        <li class="border-t border-slate-700/50 pt-2">
+          <a href="../assets/files/Horario.AIA.zip" target="_blank" class="flex justify-between items-center text-slate-300 hover:text-brand-400 group">
+            <span>Grade de Horários · Alto Araguaia</span>
+            <i class="fa-solid fa-download opacity-70 group-hover:opacity-100 transition-opacity"></i>
+          </a>
+        </li>
+        <li class="border-t border-slate-700/50 pt-2">
+          <a href="../assets/files/Horario.ROO.zip" target="_blank" class="flex justify-between items-center text-slate-300 hover:text-brand-400 group">
+            <span>Grade de Horários · Rondonópolis</span>
+            <i class="fa-solid fa-download opacity-70 group-hover:opacity-100 transition-opacity"></i>
+          </a>
+        </li>
+        <li class="border-t border-slate-700/50 pt-2">
+          <a href="https://cms.unemat.br/download/documentos/bloco-documento-arquivo/HajJ4c8t4MTzU4ZcwDV0lOCOFbhENiW5xZNu1pvm/Calendario-Academico-Para-o-Ano-Letivo-de-2026.pdf" target="_blank" rel="noopener" class="flex justify-between items-center text-slate-300 hover:text-brand-400 group">
+            <span>Calendário Acadêmico Oficial UNEMAT 2026</span>
+            <i class="fa-solid fa-file-pdf text-brand-400 opacity-70 group-hover:opacity-100 transition-opacity"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Card: PPCs -->
+    <div class="glass-panel p-6 rounded-2xl hover:bg-slate-800/80 transition-colors">
+      <div class="w-10 h-10 bg-purple-500/20 text-purple-400 rounded-lg flex items-center justify-center mb-4 text-xl">
+        <i class="fa-solid fa-file-contract"></i>
+      </div>
+      <h3 class="text-lg font-bold text-white mb-4">Projetos Pedagógicos (PPC)</h3>
+      <p class="text-xs text-slate-400 mb-4 leading-relaxed">Consulte a matriz curricular, ementas das disciplinas, perfil do egresso e regulamentações oficiais aprovadas pelo CONEPE.</p>
+      <div class="space-y-3">
+        <a href="http://www.unemat.br/resolucoes/resolucoes/conepe/5300_res_conepe_61_2023.pdf" target="_blank" rel="noopener" class="block bg-slate-900/60 hover:bg-slate-700 p-3.5 rounded-lg border border-slate-700 hover:border-purple-500/50 transition-all group">
+          <div class="flex items-center justify-between">
+            <div>
+              <span class="text-sm font-semibold text-slate-200 block">PPC · Rondonópolis</span>
+              <span class="text-[11px] text-slate-400 font-mono">Resolução nº 061/2023–CONEPE</span>
+            </div>
+            <i class="fa-solid fa-file-pdf text-slate-400 group-hover:text-purple-400"></i>
+          </div>
+        </a>
+        <a href="https://www.unemat.br/resolucoes/resolucoes/conepe/5298_res_conepe_58_2023.pdf" target="_blank" rel="noopener" class="block bg-slate-900/60 hover:bg-slate-700 p-3.5 rounded-lg border border-slate-700 hover:border-purple-500/50 transition-all group">
+          <div class="flex items-center justify-between">
+            <div>
+              <span class="text-sm font-semibold text-slate-200 block">PPC · Alto Araguaia</span>
+              <span class="text-[11px] text-slate-400 font-mono">Resolução nº 058/2023–CONEPE</span>
+            </div>
+            <i class="fa-solid fa-file-pdf text-slate-400 group-hover:text-purple-400"></i>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Card: Guia Oficial de Estágio -->
+    <div class="glass-panel p-6 rounded-2xl border border-sky-500/30 relative overflow-hidden bg-gradient-to-br from-sky-950/40 via-slate-800 to-slate-900">
+      <div class="w-10 h-10 bg-sky-500/20 text-sky-400 rounded-lg flex items-center justify-center mb-4 text-xl">
+        <i class="fa-solid fa-briefcase"></i>
+      </div>
+      <div class="flex items-center gap-2 mb-2">
+        <h3 class="text-lg font-bold text-white">Guia Oficial de Estágio</h3>
+        <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-500/30">Lei 11.788</span>
+      </div>
+      <p class="text-slate-300 text-xs sm:text-sm mb-4 leading-relaxed">
+        Passo a passo completo do Estágio Curricular Supervisionado (Obrigatório e Não Obrigatório), modelos de TCE, prazos e convalidação profissional.
+      </p>
+      <div class="flex flex-wrap gap-2.5">
+        <a href="../estagio/" class="inline-flex items-center gap-2 bg-sky-600 hover:bg-sky-500 text-white font-bold px-3.5 py-1.5 rounded-lg text-xs transition-colors shadow">
+          <i class="fa-solid fa-book-open"></i> Acessar Guia de Estágio
+        </a>
+        <a href="https://ialxnder.fly.dev/estagio" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-slate-700/80 hover:bg-slate-600 text-slate-200 px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors border border-slate-600">
+          <i class="fa-solid fa-bolt text-sky-400"></i> Portal Estágio Online
+        </a>
+      </div>
+    </div>
+
+    <!-- Card: Guia Oficial de TCC -->
+    <div class="glass-panel p-6 rounded-2xl border border-amber-500/30 relative overflow-hidden bg-gradient-to-br from-amber-950/40 via-slate-800 to-slate-900">
+      <div class="w-10 h-10 bg-amber-500/20 text-amber-400 rounded-lg flex items-center justify-center mb-4 text-xl">
+        <i class="fa-solid fa-graduation-cap"></i>
+      </div>
+      <div class="flex items-center gap-2 mb-2">
+        <h3 class="text-lg font-bold text-white">Guia Oficial do TCC</h3>
+        <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">IN 001/2026</span>
+      </div>
+      <p class="text-slate-300 text-xs sm:text-sm mb-4 leading-relaxed">
+        TCC I e TCC II: da proposta à defesa pública. Regulamentações, modelos de Monografia ABNT, Artigo SBC e geração online de documentos.
+      </p>
+      <div class="flex flex-wrap gap-2.5">
+        <a href="../tcc/" class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-3.5 py-1.5 rounded-lg text-xs transition-colors shadow">
+          <i class="fa-solid fa-book-open"></i> Acessar Guia do TCC
+        </a>
+        <a href="https://ialxnder.fly.dev/tcc" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-slate-700/80 hover:bg-slate-600 text-slate-200 px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors border border-slate-600">
+          <i class="fa-solid fa-bolt text-amber-400"></i> Portal TCC Online
+        </a>
+      </div>
+    </div>
+
+    <!-- Card: iALXnder Assistente -->
+    <div class="md:col-span-2 bg-gradient-to-br from-brand-900/40 to-slate-800 p-6 rounded-2xl border border-brand-500/30 relative overflow-hidden">
+      <div class="absolute right-0 top-0 p-6 opacity-5 pointer-events-none">
+        <i class="fa-solid fa-robot text-9xl"></i>
+      </div>
+      <div class="relative z-10">
+        <div class="flex items-center gap-4 mb-3">
+          <div class="w-12 h-12 bg-brand-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg shadow-brand-500/30 shrink-0">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-brand-300">Assistente Virtual iALXnder</h3>
+            <p class="text-slate-300 text-sm">Seu copiloto acadêmico para tirar dúvidas sobre o curso de Ciência da Computação.</p>
+          </div>
+        </div>
+        <p class="text-slate-300 text-sm mb-4 max-w-2xl">
+          O iALXnder foi treinado com o PPC do curso, a Normatização Acadêmica da UNEMAT, regulamentos de estágio, TCC e resoluções institucionais para responder suas perguntas de forma rápida e precisa.
+        </p>
+        <a href="https://bit.ly/iALXnderBETA" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white px-5 py-2.5 rounded-lg text-sm font-bold transition-all shadow hover:shadow-brand-500/20">
+          Conversar com a IA <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Card: Rights -->
+    <div class="md:col-span-2 bg-gradient-to-br from-indigo-900/40 to-slate-800 p-6 rounded-2xl border border-indigo-500/30 relative overflow-hidden">
+      <div class="absolute right-0 top-0 p-6 opacity-5 pointer-events-none">
+        <i class="fa-solid fa-scale-balanced text-9xl"></i>
+      </div>
+      <h3 class="text-xl font-bold text-indigo-300 mb-2 flex items-center gap-2">
+        <i class="fa-solid fa-gavel"></i> Direitos e Deveres dos Estudantes
+      </h3>
+      <p class="text-slate-300 text-sm mb-4 max-w-2xl leading-relaxed">
+        Leitura essencial para alinhar expectativas com a vida universitária. Contém regras oficiais sobre avaliações, notas, frequência, trancamento, regime domiciliar e normas de conduta acadêmica (Resolução nº 047/2025–CONEPE).
+      </p>
+      <a href="https://bit.ly/DireitoseDeveresUNEMAT" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-lg text-sm font-bold transition-all shadow hover:shadow-indigo-500/20">
+        Ler Documento Oficial <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+
+  </div>
+
+</main>
+
+<footer>
+  Coordenação do Bacharelado em Ciência da Computação · UNEMAT Câmpus de Alto Araguaia e Câmpus de Rondonópolis.
+</footer>
+
+</body>
+</html>

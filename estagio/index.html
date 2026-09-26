@@ -3,22 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>
-  // Impede a rolagem automática nativa do navegador para o âncora da URL
-  // (que ocorreria antes do conteúdo dinâmico ser renderizado, resultando em
-  // posição incorreta). app.js aplica a rolagem correta após renderizar tudo.
-  (function () {
-    if (window.location.hash) {
-      window.__guiaHashInicial = window.location.hash;
-      if (window.history && window.history.replaceState) {
-        window.history.replaceState(null, "", window.location.pathname + window.location.search);
-      }
-    }
-  })();
-</script>
-<title>Guia do Estágio Supervisionado — Bacharelado em Ciência da Computação — UNEMAT</title>
-<meta name="description" content="Guia interativo de orientação para o Estágio Curricular Supervisionado do Bacharelado em Ciência da Computação da UNEMAT, Campus Universitário de Alto Araguaia.">
-<!-- Tailwind (mesma config do painel principal) usado apenas no cabeçalho e nos cards de visão geral, para reproduzir exatamente o layout do Guia do Estudante -->
+<title>Guia Oficial do Estágio Supervisionado — Ciência da Computação — UNEMAT</title>
+<meta name="description" content="Guia prático e oficial do Estágio Curricular Supervisionado do Bacharelado em Ciência da Computação da UNEMAT (Alto Araguaia e Rondonópolis): da matrícula e TCE ao relatório final e convalidação.">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
@@ -34,963 +20,431 @@
   };
 </script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/responsive.css">
-<link rel="stylesheet" href="css/print.css" media="print">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0f172a;
+    --card:rgba(30,41,59,0.7);
+    --card-hover:rgba(51,65,85,0.8);
+    --card-border:rgba(255,255,255,0.06);
+    --ink:#f8fafc;
+    --ink-soft:#94a3b8;
+    --ink-body:#cbd5e1;
+    --brand:#38bdf8;
+    --brand-strong:#0ea5e9;
+    --brand-soft:rgba(56,189,248,0.15);
+    --teal:#34d399;
+    --teal-soft:rgba(52,211,153,0.15);
+    --amber:#fbbf24;
+    --amber-soft:rgba(251,191,36,0.12);
+    --line:rgba(148,163,184,0.18);
+    --line-solid:#334155;
+    --mono:#94a3b8;
+    --raio:0.75rem;
+    --raio-grande:1rem;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink-body);
+    font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height:1.65;
+  }
+  h1,h2,h3,.display{
+    font-family:'Inter', sans-serif;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+    font-weight:700;
+  }
+  .tag{
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:0.72rem; text-transform:uppercase; letter-spacing:0.08em;
+    color:var(--brand);
+  }
+  a{color:var(--brand); transition:color .15s ease;}
+  a:hover{color:var(--brand-strong);}
+
+  ::-webkit-scrollbar{width:6px;height:6px;}
+  ::-webkit-scrollbar-track{background:var(--bg);}
+  ::-webkit-scrollbar-thumb{background:var(--line-solid);border-radius:3px;}
+  ::-webkit-scrollbar-thumb:hover{background:#475569;}
+
+  header{
+    padding:56px 24px 40px; text-align:center;
+    background:radial-gradient(60% 100% at 50% 0%, rgba(14,165,233,0.12), transparent 70%), var(--bg);
+    border-bottom:1px solid var(--line-solid);
+  }
+  header .tag{margin-bottom:10px;}
+  header h1{max-width:820px; margin-inline:auto;}
+  header .text-center > p{max-width:700px; margin:0 auto;}
+
+  .glass-panel{
+    background:var(--card); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    border:1px solid var(--card-border);
+  }
+  .node-icon{
+    width:2.5rem; height:2.5rem; border-radius:0.5rem; display:flex; align-items:center; justify-content:center;
+    margin-bottom:1rem; font-size:1.25rem;
+  }
+  .jump{font-size:0.78rem; display:inline-block; margin-top:8px; text-decoration:none; color:var(--brand); font-family:'JetBrains Mono',monospace;}
+
+  main{max-width:880px; margin:0 auto; padding:40px 24px 100px;}
+
+  .portal-hero-card {
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.2), rgba(16, 185, 129, 0.1));
+    border: 2px solid rgba(56, 189, 248, 0.5);
+    border-radius: var(--raio-grande);
+    padding: 26px 28px;
+    margin-bottom: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  }
+
+  .note{
+    background:var(--amber-soft); border-left:4px solid var(--amber);
+    padding:14px 18px; border-radius:6px; font-size:0.92rem; margin:18px 0;
+    color:#fde68a;
+  }
+  .note b.note-label{display:block; font-family:'JetBrains Mono',monospace; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:4px; color:var(--amber);}
+  .note strong{color:#fff; font-weight:700;}
+
+  section.stage{
+    background:var(--card); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    border:1px solid var(--card-border); border-radius:var(--raio-grande);
+    padding:30px 30px 22px; margin:34px 0; scroll-margin-top:76px;
+  }
+  section.stage .stage-head{display:flex; align-items:center; gap:14px; margin-bottom:6px;}
+  section.stage .stage-head .badge{
+    font-family:'JetBrains Mono',monospace; background:var(--brand-soft); color:var(--brand);
+    border-radius:50%; width:34px; height:34px; display:flex; align-items:center; justify-content:center;
+    font-size:0.95rem; flex-shrink:0; font-weight:700;
+  }
+  section.stage h2{font-size:1.3rem; margin:0;}
+  section.stage .basis{color:var(--mono); font-size:0.78rem; margin:2px 0 18px 48px; font-family:'JetBrains Mono',monospace;}
+
+  .checklist{list-style:none; padding:0; margin:0 0 6px;}
+  .checklist li{
+    display:flex; align-items:flex-start; gap:10px; padding:9px 4px;
+    border-bottom:1px dashed var(--line); font-size:0.96rem; color:var(--ink-body);
+  }
+  .checklist li:last-child{border-bottom:none;}
+  .checklist input{margin-top:4px; width:16px; height:16px; accent-color:var(--brand-strong); flex-shrink:0;}
+  .checklist label{cursor:pointer;}
+  .checklist input:checked + label{color:var(--ink-soft); text-decoration:line-through;}
+
+  .doc-pill{
+    display:inline-flex; align-items:center; gap:6px; background:var(--teal-soft); color:var(--teal);
+    font-family:'JetBrains Mono',monospace; font-size:0.75rem; padding:5px 12px; border-radius:20px;
+    margin:4px 6px 4px 0; text-decoration:none; transition:all .15s ease;
+  }
+  .doc-pill:hover{background:rgba(52,211,153,0.3); color:#fff;}
+  .doc-pill.norma { background: rgba(56, 189, 248, 0.15); color: var(--brand); }
+  .doc-pill.norma:hover { background: rgba(56, 189, 248, 0.3); }
+
+  details{margin-top:14px; border-top:1px solid var(--line); padding-top:12px;}
+  summary{cursor:pointer; font-family:'JetBrains Mono',monospace; font-size:0.82rem; color:var(--brand); text-transform:uppercase; letter-spacing:0.04em;}
+  summary:hover{color:var(--brand-strong);}
+  details p, details ul{font-size:0.93rem; color:var(--ink-soft);}
+
+  .glossary{background:var(--card); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border:1px solid var(--card-border); border-radius:var(--raio-grande); padding:30px;}
+  .glossary h2{font-size:1.2rem;}
+  .gterm{margin-bottom:14px;}
+  .gterm b{font-family:'Inter',sans-serif; color:var(--ink);}
+  .gterm span{display:block; color:var(--ink-soft); font-size:0.93rem;}
+
+  .toolbar{
+    position:sticky; top:0; z-index:50; background:rgba(15,23,42,0.92); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line-solid); padding:10px 20px; display:flex; gap:16px; justify-content:center;
+    flex-wrap:wrap; font-family:'JetBrains Mono',monospace; font-size:0.78rem;
+  }
+  .toolbar a{color:var(--ink-soft); text-decoration:none; padding:4px 10px; border-radius:6px;}
+  .toolbar a:hover{background:var(--brand-soft); color:var(--brand);}
+  .toolbar a.highlight{background:var(--brand-strong); color:#fff; font-weight:700;}
+
+  footer{text-align:center; padding:40px 20px; color:var(--mono); font-size:0.8rem; font-family:'JetBrains Mono',monospace; border-top:1px solid var(--line-solid);}
+
+  @media print{
+    .toolbar{display:none;}
+    section.stage{break-inside:avoid;}
+  }
+</style>
 </head>
 <body>
-<a class="skip-link" href="index.html#conteudo-principal">Pular para o conteúdo</a>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="index.html#inicio">
-      <span class="brand-unemat">UNEMAT</span>
-      <span class="brand-titulo">Guia do Estágio Supervisionado</span>
-    </a>
-    <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-principal">
-      <span class="sr-only">Abrir menu</span>
-      <span class="menu-icon" aria-hidden="true"></span>
-    </button>
-    <nav class="nav-principal" id="nav-principal" aria-label="Navegação principal">
-      <ul>
-        <li><a href="index.html#inicio">Início</a></li>
-        <li><a href="index.html#tarefas">Tarefas SIGAA</a></li>
-        <li><a href="index.html#requisitos">Jornada</a></li>
-        <li><a href="index.html#convalidacao">Convalidação</a></li>
-        <li><a href="index.html#documentos">Meus documentos</a></li>
-        <li><a href="index.html#faq">FAQ</a></li>
-        <li><a href="index.html#legislacao">Legislação</a></li>
-        <li><a href="index.html#videos">Vídeos</a></li>
-        <li><a href="index.html#contato">Contato</a></li>
-      </ul>
-      <form class="busca-form" id="busca-form" role="search">
-        <label class="sr-only" for="busca-input">Buscar no Guia</label>
-        <input type="search" id="busca-input" name="busca" placeholder="🔎 Buscar no Guia">
-        <button type="submit">Buscar</button>
-      </form>
-    </nav>
+<div class="toolbar">
+  <a href="../" style="color:var(--brand); font-weight:700;"><i class="fa-solid fa-arrow-left"></i> Início do Site</a>
+  <a href="https://ialxnder.fly.dev/estagio" target="_blank" rel="noopener" class="highlight">⚡ Portal Estágio Online</a>
+  <a href="#etapa1">1 · Requisitos</a>
+  <a href="#etapa2">2 · Concedente</a>
+  <a href="#etapa3">3 · Regularização (TCE)</a>
+  <a href="#etapa4">4 · Plano de Atividades</a>
+  <a href="#etapa5">5 · Execução</a>
+  <a href="#etapa6">6 · Relatório & Convalidação</a>
+  <a href="#downloads">Downloads & Modelos</a>
+  <a href="#regras">Regras Normativas</a>
+</div>
+
+<header>
+  <div class="tag">Curso de Bacharelado em Ciência da Computação · UNEMAT</div>
+  <div class="text-center mb-6 md:mb-8">
+    <h1 class="text-2xl md:text-4xl font-bold text-white mb-2">Guia Oficial do Estágio Supervisionado: do Planejamento à Convalidação</h1>
+    <p class="text-sm md:text-base text-slate-400">Pautado na Lei Federal nº 11.788/2008, Resolução nº 009/2020–CONEPE e Resolução nº 047/2025–CONEPE. Siga as orientações oficiais para cumprimento da jornada, documentação e submissão no SIGAA.</p>
   </div>
 </header>
 
-<nav class="barra-jornada" id="barra-jornada" aria-label="Progresso da jornada do estágio" hidden>
-  <div class="container barra-jornada-inner">
-    <ol id="lista-jornada">
-      <li data-etapa-item="requisitos"><a href="index.html#requisitos"><span class="etapa-icone" aria-hidden="true">○</span><span class="etapa-nome">Requisitos</span></a></li>
-      <li data-etapa-item="local"><a href="index.html#local"><span class="etapa-icone" aria-hidden="true">○</span><span class="etapa-nome">Local</span></a></li>
-      <li data-etapa-item="regularizacao"><a href="index.html#regularizacao"><span class="etapa-icone" aria-hidden="true">○</span><span class="etapa-nome">Regularização</span></a></li>
-      <li data-etapa-item="planejamento"><a href="index.html#planejamento"><span class="etapa-icone" aria-hidden="true">○</span><span class="etapa-nome">Planejamento</span></a></li>
-      <li data-etapa-item="execucao"><a href="index.html#execucao"><span class="etapa-icone" aria-hidden="true">○</span><span class="etapa-nome">Execução</span></a></li>
-      <li data-etapa-item="registros"><a href="index.html#registros"><span class="etapa-icone" aria-hidden="true">○</span><span class="etapa-nome">Registros</span></a></li>
-      <li data-etapa-item="relatorio"><a href="index.html#relatorio"><span class="etapa-icone" aria-hidden="true">○</span><span class="etapa-nome">Relatório</span></a></li>
-      <li data-etapa-item="conclusao"><a href="index.html#conclusao"><span class="etapa-icone" aria-hidden="true">○</span><span class="etapa-nome">Conclusão</span></a></li>
-    </ol>
+<main>
+
+  <!-- NOVIDADE: PORTAL DE PREENCHIMENTO ONLINE DE ESTÁGIO -->
+  <div class="portal-hero-card">
+    <div>
+      <span class="tag" style="background:#0ea5e9; color:#fff; padding:3px 8px; border-radius:4px; font-weight:700;">🚀 NOVIDADE · SISTEMA ONLINE</span>
+      <h2 style="font-size: 1.35rem; color: #fff; margin: 8px 0 4px;">Portal de Preenchimento Online de Documentos de Estágio</h2>
+      <p style="color: #cbd5e1; font-size: 0.95rem; margin: 0; max-width: 580px;">
+        Preencha os dados do seu estágio online diretamente no sistema da coordenação. O portal gera todos os anexos oficiais em <strong>PDF e Word (DOCX)</strong> preenchidos, prontos para assinatura digital no <code>gov.br</code> e postagem no SIGAA.
+      </p>
+    </div>
+    <a href="https://ialxnder.fly.dev/estagio" target="_blank" rel="noopener" style="background: #0ea5e9; color: #fff; font-weight: 700; padding: 12px 22px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-size: 0.98rem; box-shadow: 0 4px 14px rgba(14,165,233,0.4); white-space:nowrap;">
+      Acessar Portal de Estágio →
+    </a>
   </div>
-</nav>
 
-<main id="conteudo-principal">
-
-  <!-- ===================== INÍCIO ===================== -->
-  <section id="inicio" class="secao hero" aria-labelledby="hero-titulo">
-    <div class="container">
-      <div class="text-center mb-6 md:mb-8">
-        <p class="hero-instituicao">UNEMAT · Bacharelado em Ciência da Computação</p>
-        <h1 id="hero-titulo" class="text-2xl md:text-3xl font-bold text-white mb-2">Guia do Estágio Supervisionado</h1>
-        <p class="text-sm md:text-base text-slate-400">Tudo o que você precisa saber para realizar seu estágio, passo a passo.</p>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 text-left mb-6 md:mb-8">
+    <div class="glass-panel p-5 sm:p-6 rounded-2xl hover:bg-slate-800/80 transition-colors">
+      <div class="node-icon bg-blue-500/20 text-blue-400">
+        <i class="fa-solid fa-briefcase"></i>
       </div>
-
-      <div class="bg-gradient-to-r from-brand-900/50 to-slate-800 rounded-2xl p-5 sm:p-6 border-l-4 border-brand-500 shadow-lg text-left mb-6 md:mb-8">
-        <h3 class="text-xl font-bold text-white mb-3 mt-0">👋 Comece por aqui</h3>
-        <p class="text-sm sm:text-base text-slate-300 leading-relaxed mb-4">
-          Use o Portal de Estágio para preencher seus dados, manter o processo e gerar os documentos. Consulte também a jornada abaixo, com checklists e o embasamento normativo de cada etapa.
-        </p>
-        <div class="hero-acoes !mb-0">
-          <a class="botao botao-primario" href="https://ialxnder.fly.dev/estagio/entrar" aria-label="Acessar o Portal de Estágio Supervisionado">Acessar o Portal de Estágio</a>
-          <button type="button" class="botao botao-secundario" id="btn-comecar-jornada">Consultar a jornada</button>
-          <a class="botao botao-secundario" href="index.html#convalidacao">Já trabalho na área — ver convalidação</a>
-        </div>
+      <h3 class="text-lg font-bold text-white mb-2 mt-0">Estágio Obrigatório (I e II)</h3>
+      <p class="text-sm text-slate-400 mb-0">Componente curricular obrigatório da matriz pedagógica do curso. Exige cumprimento de carga horária prática mínima com plano de atividades e supervisão docente.</p>
+      <a class="jump" href="#etapa1">ver requisitos e etapas →</a>
+    </div>
+    <div class="glass-panel p-5 sm:p-6 rounded-2xl hover:bg-slate-800/80 transition-colors">
+      <div class="node-icon bg-emerald-500/20 text-emerald-400">
+        <i class="fa-solid fa-award"></i>
       </div>
+      <h3 class="text-lg font-bold text-white mb-2 mt-0">Convalidação Profissional</h3>
+      <p class="text-sm text-slate-400 mb-0">Aproveitamento de atuação profissional formal na área de TI (CLT, servidor público ou bolsista de desenvolvimento e pesquisa) como dispensa de estágio.</p>
+      <a class="jump" href="#convalidacao">ver regras de convalidação →</a>
+    </div>
+  </div>
 
-      <!-- DICAS ESSENCIAIS DE PREENCHIMENTO E ASSINATURA -->
-      <div class="bg-gradient-to-r from-cyan-950/60 to-slate-800 rounded-2xl p-5 sm:p-6 border border-cyan-500/40 shadow-xl text-left mb-6 md:mb-8">
-        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xl flex-shrink-0">
-              <i class="fa-solid fa-lightbulb"></i>
-            </div>
-            <div>
-              <h3 class="text-lg sm:text-xl font-bold text-white mb-0">💡 Dicas de Preenchimento e Assinatura (Evite Devoluções)</h3>
-              <p class="text-xs sm:text-sm text-cyan-300">5 recomendações práticas da Coordenação para agilizar a aprovação dos seus documentos</p>
-            </div>
-          </div>
-          <a class="botao botao-primario inline-flex items-center gap-2 text-xs sm:text-sm py-2.5 px-4 shadow-md shadow-cyan-500/20 flex-shrink-0" href="documentos/guia-rapido-preenchimento-estagio.pdf" download target="_blank" rel="noopener">
-            <i class="fa-solid fa-file-pdf"></i> Baixar Guia Rápido (PDF)
-          </a>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs sm:text-sm text-slate-300">
-          <div class="bg-slate-900/60 p-3.5 rounded-xl border border-slate-700/50">
-            <strong class="text-cyan-400 block mb-1">✍️ Assinatura Eletrônica (Autentique):</strong>
-            Devido a instabilidades recorrentes no Gov.br, a Coordenação recomenda assinar pelo <a href="https://autentique.com.br/" target="_blank" rel="noopener" class="text-cyan-300 underline font-semibold">Autentique</a>. Posicione as caixas de assinatura <em>rigorosamente</em> sobre as linhas demarcadas no rodapé de cada signatário.
-          </div>
-          <div class="bg-slate-900/60 p-3.5 rounded-xl border border-slate-700/50">
-            <strong class="text-cyan-400 block mb-1">🏛️ Estágio na UNEMAT (Interno):</strong>
-            No Termo de Compromisso (Anexo IV), é obrigatório especificar o <strong>nome do laboratório/setor</strong> (ex.: <em>Laboratório PIXEL</em>) e o <strong>e-mail institucional do Supervisor de Campo</strong> (quem acompanhará diretamente o acadêmico).
-          </div>
-          <div class="bg-slate-900/60 p-3.5 rounded-xl border border-slate-700/50">
-            <strong class="text-cyan-400 block mb-1">✏️ Edição Ativa de Gênero:</strong>
-            Edite sempre marcações genéricas como <code>Prof.(a)</code> para <code>Profa.</code> ou <code>Prof.</code>, e <code>o(a) estagiário(a)</code> para a forma definitiva correspondente antes de gerar o PDF.
-          </div>
-          <div class="bg-slate-900/60 p-3.5 rounded-xl border border-slate-700/50">
-            <strong class="text-cyan-400 block mb-1">🚫 Remova Textos Instrutivos:</strong>
-            Onde houver <code>(insira o nome do Coordenador de Estágio)</code>, apague os parênteses e insira o nome real: <em>Prof. Me. Chrystian Jheimes dos Santos</em>.
-          </div>
-        </div>
-        <div class="mt-3 pt-3 border-t border-slate-700/40 flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs text-slate-400 gap-2">
-          <span>🎬 Assista aos vídeos explicativos do Guia com exemplos práticos de preenchimento.</span>
-          <span class="text-cyan-400 font-medium">💬 Em caso de dúvidas, consulte o grupo oficial de WhatsApp de Estágio antes de assinar!</span>
-        </div>
-      </div>
+  <div class="note">
+    <b class="note-label">Legislação e Diretrizes Fundamentais (Lei 11.788/2008 & Res. 009/2020)</b>
+    O estágio não cria vínculo empregatício de qualquer natureza, desde que observados os requisitos legais: matrícula e frequência regular, celebração de <strong>Termo de Compromisso de Estágio (TCE)</strong> tripartite, seguro obrigatório contra acidentes pessoais e compatibilidade estrita entre as atividades desenvolvidas e o <strong>Projeto Pedagógico do Curso (PPC)</strong>. A jornada máxima permitida é de <strong>6 horas diárias e 30 horas semanais</strong>.
+  </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 text-left mb-6 md:mb-8">
-        <div class="glass-panel p-5 sm:p-6 rounded-2xl hover:bg-slate-800/80 transition-colors" data-jornada-card="es1">
-          <div class="w-10 h-10 bg-blue-500/20 text-blue-400 rounded-lg flex items-center justify-center mb-4 text-xl">
-            <i class="fa-solid fa-file-signature"></i>
-          </div>
-          <h2 class="text-lg font-bold text-white mb-3 mt-0">Estágio Supervisionado I</h2>
-          <ul class="card-lista">
-            <li>60 horas</li>
-            <li>Pré-requisito: 50% dos créditos do curso</li>
-          </ul>
-          <button type="button" class="botao botao-outline mt-4" data-escolher-jornada="es1">Ver orientações</button>
-        </div>
-        <div class="glass-panel p-5 sm:p-6 rounded-2xl hover:bg-slate-800/80 transition-colors" data-jornada-card="es2">
-          <div class="w-10 h-10 bg-purple-500/20 text-purple-400 rounded-lg flex items-center justify-center mb-4 text-xl">
-            <i class="fa-solid fa-diagram-project"></i>
-          </div>
-          <h2 class="text-lg font-bold text-white mb-3 mt-0">Estágio Supervisionado II</h2>
-          <ul class="card-lista">
-            <li>60 horas</li>
-            <li>Pré-requisito: aprovação em Estágio Supervisionado I</li>
-          </ul>
-          <button type="button" class="botao botao-outline mt-4" data-escolher-jornada="es2">Ver orientações</button>
-        </div>
-        <div class="md:col-span-2 glass-panel p-5 sm:p-6 rounded-2xl hover:bg-slate-800/80 transition-colors" data-jornada-card="convalidacao">
-          <div class="w-10 h-10 bg-indigo-500/20 text-indigo-400 rounded-lg flex items-center justify-center mb-4 text-xl">
-            <i class="fa-solid fa-scale-balanced"></i>
-          </div>
-          <h2 class="text-lg font-bold text-white mb-3 mt-0">Já trabalho na área</h2>
-          <ul class="card-lista">
-            <li>Pode haver possibilidade de convalidação</li>
-          </ul>
-          <a class="botao botao-outline mt-4 inline-flex" href="index.html#convalidacao">Ver requisitos</a>
-        </div>
-      </div>
+  <!-- ETAPA 1 -->
+  <section class="stage" id="etapa1">
+    <div class="stage-head">
+      <div class="badge">1</div>
+      <h2>Requisitos Iniciais e Matrícula</h2>
+    </div>
+    <div class="basis">Base legal: Lei nº 11.788/2008, Art. 3º | Resolução nº 009/2020–CONEPE, Art. 4º | PPC BCC</div>
 
-      <div class="bg-gradient-to-r from-brand-900/50 to-slate-800 rounded-2xl p-5 sm:p-6 border-l-4 border-brand-500 shadow-lg text-left mb-6 md:mb-8 is-hidden" id="banner-continuar">
-        <p id="banner-continuar-texto" class="text-sm sm:text-base text-slate-300 mb-3">Você já tem progresso salvo neste navegador.</p>
-        <button type="button" class="botao botao-primario" id="btn-continuar">Continuar de onde parei</button>
-      </div>
+    <ul class="checklist">
+      <li><input type="checkbox" id="e1-1"><label for="e1-1">Verificar se você atingiu a carga horária mínima integralizada exigida para matrícula na disciplina de Estágio no PPC do seu câmpus</label></li>
+      <li><input type="checkbox" id="e1-2"><label for="e1-2">Estar regularmente matriculado na disciplina de Estágio Supervisionado no SIGAA</label></li>
+      <li><input type="checkbox" id="e1-3"><label for="e1-3">Preencher a <strong>Ficha de Identificação do Estagiário (Anexo I)</strong> com seus dados acadêmicos e contatos atualizados</label></li>
+      <li><input type="checkbox" id="e1-4"><label for="e1-4">Conferir se você optará pela realização de estágio em campo ou por pedido de <strong>Convalidação de Atividades Profissionais</strong></label></li>
+    </ul>
 
-      <div class="bg-gradient-to-br from-brand-900/40 to-slate-800 p-5 sm:p-6 rounded-2xl border border-brand-500/30 relative overflow-hidden text-left" id="painel-progresso" hidden>
-        <h2 class="text-xl font-bold text-white mb-3 mt-0">Seu progresso</h2>
-        <p id="progresso-texto" class="text-sm text-slate-300 mb-3">0 de 0 tarefas concluídas — 0%</p>
-        <div class="barra-progresso" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="barra-progresso-visual">
-          <div class="barra-progresso-preenchida" id="barra-progresso-preenchida"></div>
-        </div>
-        <button type="button" class="botao botao-texto" id="btn-reiniciar-checklist">Reiniciar meu checklist</button>
-      </div>
-
-      <p class="aviso-storage is-hidden" id="aviso-sem-storage" role="status"></p>
+    <div style="margin-top:14px;">
+      <a class="doc-pill" href="documentos/anexo-01-ficha-identificacao.docx" download>📄 Anexo I · Ficha de Identificação (DOCX)</a>
+      <a class="doc-pill" href="https://ialxnder.fly.dev/estagio" target="_blank" rel="noopener">⚡ Preencher Online no Portal Estágio</a>
     </div>
   </section>
 
-  <!-- ===================== TAREFAS OFICIAIS SIGAA ===================== -->
-  <section id="tarefas" class="secao" aria-labelledby="tarefas-titulo">
-    <div class="container">
-      <div class="text-center mb-6 md:mb-8">
-        <span class="inline-block px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-bold uppercase tracking-wider mb-2">Ambiente Virtual (SIGAA) · 2026/2</span>
-        <h2 id="tarefas-titulo" class="text-2xl md:text-3xl font-bold text-white mb-2">Tarefas, Prazos e Critérios de Avaliação</h2>
-        <p class="text-sm md:text-base text-slate-400">Confira os prazos oficiais de envio no SIGAA, os documentos exigidos e as rubricas exatas de pontuação.</p>
-      </div>
+  <!-- ETAPA 2 -->
+  <section class="stage" id="etapa2">
+    <div class="stage-head">
+      <div class="badge">2</div>
+      <h2>Unidade Concedente e Supervisor de Campo</h2>
+    </div>
+    <div class="basis">Base legal: Lei nº 11.788/2008, Art. 9º | Resolução nº 009/2020–CONEPE, Arts. 7º e 8º</div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 mb-6">
-        
-        <!-- CARD TAREFA 1 -->
-        <article class="glass-panel p-5 sm:p-6 rounded-2xl border border-cyan-500/30 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between gap-2 mb-3">
-              <span class="bg-cyan-500 text-white text-xs font-bold px-2.5 py-1 rounded-lg">Tarefa 1</span>
-              <span class="text-xs text-amber-300 bg-amber-500/20 px-2.5 py-1 rounded-lg font-mono">📅 27/08/2026 a 30/11/2026 (23h59)</span>
-            </div>
-            <h3 class="text-lg font-bold text-white mb-2">Registro do Planejamento de Estágio</h3>
-            <p class="text-xs sm:text-sm text-slate-300 mb-3">
-              Apresentar em formulários específicos o registro do Planejamento das atividades de estágio a serem desenvolvidas no período.
-            </p>
-            <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700/60 mb-3 text-xs text-slate-300">
-              <strong class="text-cyan-400 block mb-1">Documentos para entrega:</strong>
-              <ul class="list-disc pl-4 space-y-0.5">
-                <li>Ficha de identificação do estagiário (Anexo I)*</li>
-                <li>Requerimento (Anexo III)*</li>
-                <li>Aceite de orientação de estágio supervisionado (Anexo III)*</li>
-                <li>Carta de Apresentação (Anexo II)*</li>
-                <li>Termo de Compromisso (Anexo IV — externo ou interno na UNEMAT)*</li>
-                <li>Plano de atividades do acadêmico (Anexo V)</li>
-              </ul>
-            </div>
-            <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700/60 mb-3 text-xs text-slate-300">
-              <strong class="text-cyan-400 block mb-1">Critérios de Avaliação (Total: 10,00 pontos):</strong>
-              <div class="flex justify-between py-1 border-b border-slate-800">
-                <span>Coerência do Plano com áreas do BCC:</span>
-                <strong class="text-emerald-400">5,00 pts</strong>
-              </div>
-              <div class="flex justify-between py-1">
-                <span>Aplicabilidade do Plano na área de Computação:</span>
-                <strong class="text-emerald-400">5,00 pts</strong>
-              </div>
-            </div>
-          </div>
-          <div class="alerta alerta-atencao text-xs mt-2 mb-0">
-            <strong>⚠ OBSERVAÇÕES OBRIGATÓRIAS:</strong>
-            <p class="mt-1">1. No Plano de Atividades <strong>NÃO DEVE CONSTAR FERIADOS</strong>.</p>
-            <p>2. Somente serão aceitos formulários obtidos no AVA (SIGAA). <strong>ENVIAR SOMENTE EM PDF.</strong></p>
-          </div>
-        </article>
+    <ul class="checklist">
+      <li><input type="checkbox" id="e2-1"><label for="e2-1">Identificar uma unidade concedente (pessoa jurídica de direito privado, órgão da administração pública ou setor/laboratório da UNEMAT)</label></li>
+      <li><input type="checkbox" id="e2-2"><label for="e2-2">Verificar se a concedente possui convênio formalizado com a UNEMAT ou celebrar o convênio junto ao setor competente</label></li>
+      <li><input type="checkbox" id="e2-3"><label for="e2-3">Emitir a <strong>Carta de Apresentação (Anexo II)</strong> assinada pela Coordenação de Curso ou Coordenador de Estágio</label></li>
+      <li><input type="checkbox" id="e2-4"><label for="e2-4">Garantir a designação de um <strong>Supervisor de Campo</strong> pertencente ao quadro da empresa, com formação ou experiência comprovada na área de Computação/TI</label></li>
+      <li><input type="checkbox" id="e2-5"><label for="e2-5">Obter da empresa o <strong>Requerimento de Aceite do Estagiário (Anexo III)</strong> devidamente assinado</label></li>
+    </ul>
 
-        <!-- CARD TAREFA 2 -->
-        <article class="glass-panel p-5 sm:p-6 rounded-2xl border border-cyan-500/30 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between gap-2 mb-3">
-              <span class="bg-cyan-500 text-white text-xs font-bold px-2.5 py-1 rounded-lg">Tarefa 2</span>
-              <span class="text-xs text-amber-300 bg-amber-500/20 px-2.5 py-1 rounded-lg font-mono">📅 27/08/2026 a 30/11/2026 (23h59)</span>
-            </div>
-            <h3 class="text-lg font-bold text-white mb-2">Ficha de Acompanhamento das Atividades</h3>
-            <p class="text-xs sm:text-sm text-slate-300 mb-3">
-              Desenvolvimento das atividades no local de estágio, acompanhadas por meio da Ficha de Atividades Desenvolvidas, com nota atribuída após verificação pelo supervisor de campo.
-            </p>
-            <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700/60 mb-3 text-xs text-slate-300">
-              <strong class="text-cyan-400 block mb-1">Documento para entrega:</strong>
-              <p>• Ficha de acompanhamento das atividades desenvolvidas (Anexo VI)</p>
-              <strong class="text-cyan-400 block mt-2 mb-1">Objetivo:</strong>
-              <p>Verificar o andamento das atividades, assiduidade e desenvolvimento coerente com as propostas.</p>
-            </div>
-            <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700/60 mb-3 text-xs text-slate-300">
-              <strong class="text-cyan-400 block mb-1">Critérios de Avaliação (Total: 10,00 pontos):</strong>
-              <div class="flex justify-between py-1 border-b border-slate-800">
-                <span>Assiduidade e pontualidade (cedente e UNEMAT):</span>
-                <strong class="text-emerald-400">2,50 pts</strong>
-              </div>
-              <div class="flex justify-between py-1 border-b border-slate-800">
-                <span>Coerência dos relatórios parciais:</span>
-                <strong class="text-emerald-400">4,00 pts</strong>
-              </div>
-              <div class="flex justify-between py-1">
-                <span>Consistência dos relatórios parciais:</span>
-                <strong class="text-emerald-400">3,50 pts</strong>
-              </div>
-            </div>
-          </div>
-          <div class="alerta alerta-atencao text-xs mt-2 mb-0">
-            <strong>⚠ ATENÇÃO:</strong> Entregar dentro do prazo estabelecido. <strong>ENVIAR SOMENTE ARQUIVOS EM PDF.</strong>
-          </div>
-        </article>
-
-        <!-- CARD TAREFA 3 -->
-        <article class="glass-panel p-5 sm:p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between gap-2 mb-3">
-              <span class="bg-purple-500 text-white text-xs font-bold px-2.5 py-1 rounded-lg">Tarefa 3</span>
-              <span class="text-xs text-amber-300 bg-amber-500/20 px-2.5 py-1 rounded-lg font-mono">📅 30/09/2026 a 30/11/2026 (23h59)</span>
-            </div>
-            <h3 class="text-lg font-bold text-white mb-2">Relatório Final de Estágio Supervisionado</h3>
-            <p class="text-xs sm:text-sm text-slate-300 mb-3">
-              Apresentar registro claro e conciso das atividades e carga horária desenvolvidas, de acordo com as normas da ABNT. Avaliado pelo professor supervisor e pelo supervisor de campo.
-            </p>
-            <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700/60 mb-3 text-xs text-slate-300">
-              <strong class="text-purple-400 block mb-1">Documento para entrega:</strong>
-              <p>• Relatório de Estágio (Anexo VII)</p>
-            </div>
-            <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700/60 mb-3 text-xs text-slate-300">
-              <strong class="text-purple-400 block mb-1">Critérios de Avaliação (Total: 10,00 pontos):</strong>
-              <div class="flex justify-between py-1 border-b border-slate-800">
-                <span>1- Aspectos gerais (estrutura formal, digitação, ABNT, coesão):</span>
-                <strong class="text-emerald-400">2,50 pts</strong>
-              </div>
-              <div class="flex justify-between py-1 border-b border-slate-800">
-                <span>2- Aspecto teórico (domínio de conceitos e terminologia):</span>
-                <strong class="text-emerald-400">2,00 pts</strong>
-              </div>
-              <div class="flex justify-between py-1 border-b border-slate-800">
-                <span>3- Aspecto metodológico (adequação do objetivo):</span>
-                <strong class="text-emerald-400">2,00 pts</strong>
-              </div>
-              <div class="flex justify-between py-1">
-                <span>4- Aspecto analítico (consistência da análise teórica/prática):</span>
-                <strong class="text-emerald-400">3,50 pts</strong>
-              </div>
-            </div>
-          </div>
-          <div class="alerta alerta-atencao text-xs mt-2 mb-0">
-            <strong>⚠ ATENÇÃO:</strong> Seguir a estrutura formal da ABNT. <strong>ENVIAR SOMENTE ARQUIVOS EM PDF.</strong>
-          </div>
-        </article>
-
-        <!-- CARD CONVALIDAÇÃO -->
-        <article class="glass-panel p-5 sm:p-6 rounded-2xl border border-indigo-500/30 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between gap-2 mb-3">
-              <span class="bg-indigo-500 text-white text-xs font-bold px-2.5 py-1 rounded-lg">Convalidação</span>
-              <span class="text-xs text-amber-300 bg-amber-500/20 px-2.5 py-1 rounded-lg font-mono">📅 27/08/2026 a 30/11/2026 (23h59)</span>
-            </div>
-            <h3 class="text-lg font-bold text-white mb-2">Convalidação de Atividades Profissionais</h3>
-            <p class="text-xs sm:text-sm text-slate-300 mb-3">
-              Conforme a Resolução nº 028/2012-CONEPE (arts. 10 a 15), acadêmicos com 12+ meses ininterruptos de atuação na área de Computação podem solicitar convalidação.
-            </p>
-            <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700/60 mb-3 text-xs text-slate-300">
-              <strong class="text-indigo-400 block mb-1">Documentos para encaminhar (Arts. 10 e 11):</strong>
-              <ul class="list-disc pl-4 space-y-0.5">
-                <li>I. Declaração da instituição em papel timbrado com cargo e funções;</li>
-                <li>II. Cópia autenticada da CTPS ou Contrato Social + cartão CNPJ ativo;</li>
-                <li>III. Plano de atividades desenvolvido (obedecendo Art. 6º);</li>
-                <li>IV. Relatório circunstanciado das atividades (obedecendo Art. 24).</li>
-              </ul>
-            </div>
-            <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700/60 mb-3 text-xs text-slate-300">
-              <strong class="text-indigo-400 block mb-1">Rito de Avaliação (Art. 13):</strong>
-              <p>I – Relatório escrito circunstanciado;</p>
-              <p>II – Apresentação de seminário perante a banca/supervisor.</p>
-              <p class="text-cyan-300 mt-1"><em>Parágrafo Único: A entrega do relatório escrito é pré-requisito para o seminário.</em></p>
-            </div>
-          </div>
-          <div class="alerta alerta-atencao text-xs mt-2 mb-0">
-            <strong>⚠ ATENÇÃO:</strong> <strong>ENVIAR SOMENTE ARQUIVOS EM PDF.</strong>
-          </div>
-        </article>
-
-      </div>
+    <div style="margin-top:14px;">
+      <a class="doc-pill" href="documentos/anexo-02-carta-apresentacao.docx" download>📄 Anexo II · Carta de Apresentação (DOCX)</a>
+      <a class="doc-pill" href="documentos/anexo-03-requerimento-aceite.docx" download>📄 Anexo III · Requerimento de Aceite (DOCX)</a>
+      <a class="doc-pill" href="documentos/anexo-08-areas-estagio.docx" download>📋 Anexo VIII · Áreas de Estágio Aprovadas (DOCX)</a>
     </div>
   </section>
 
-  <!-- ===================== ETAPA 1 — REQUISITOS ===================== -->
-  <section id="requisitos" class="secao etapa" data-etapa="requisitos" aria-labelledby="requisitos-titulo">
-    <div class="container">
-      <p class="etapa-rotulo">Etapa 1 de 8</p>
-      <h2 id="requisitos-titulo">Posso fazer o estágio?</h2>
-      <p>Antes de procurar uma empresa ou preencher documentos, verifique se você atende aos requisitos acadêmicos.</p>
+  <!-- ETAPA 3 -->
+  <section class="stage" id="etapa3">
+    <div class="stage-head">
+      <div class="badge">3</div>
+      <h2>Termo de Compromisso de Estágio (TCE) e Seguro</h2>
+    </div>
+    <div class="basis">Base legal: Lei nº 11.788/2008, Arts. 3º e 9º, IV | Resolução nº 009/2020–CONEPE, Art. 9º</div>
 
-      <div class="cards-grid">
-        <article class="card" data-jornada-card="es1">
-          <h3>Estágio Supervisionado I</h3>
-          <ul class="card-lista">
-            <li>60 horas</li>
-            <li>Pré-requisito: 50% dos créditos do curso</li>
-          </ul>
-        </article>
-        <article class="card" data-jornada-card="es2">
-          <h3>Estágio Supervisionado II</h3>
-          <ul class="card-lista">
-            <li>60 horas</li>
-            <li>Pré-requisito: aprovação em Estágio Supervisionado I</li>
-          </ul>
-        </article>
-      </div>
+    <ul class="checklist">
+      <li><input type="checkbox" id="e3-1"><label for="e3-1">Celebrar o <strong>Termo de Compromisso de Estágio - TCE (Anexo IV)</strong> antes do início de qualquer atividade prática</label></li>
+      <li><input type="checkbox" id="e3-2"><label for="e3-2">Contratar ou comprovar a vigência de <strong>Apólice de Seguro contra Acidentes Pessoais</strong> (número da apólice e seguradora devem constar obrigatoriamente no TCE)</label></li>
+      <li><input type="checkbox" id="e3-3"><label for="e3-3">Colher as assinaturas digitais no <code>gov.br</code> das três partes: Discente, Representante Legal da Concedente e Coordenação do Curso / UNEMAT</label></li>
+      <li><input type="checkbox" id="e3-4"><label for="e3-4">Submeter o TCE assinado no SIGAA para homologação formal pelo professor supervisor/orientador da UNEMAT</label></li>
+    </ul>
 
-      <div class="checklist" data-checklist-etapa="requisitos">
-        <p class="checklist-titulo">Antes de seguir, confirme:</p>
-        <ul>
-          <li><label><input type="checkbox" data-check-id="req-1"> Sei qual componente vou cursar</label></li>
-          <li><label><input type="checkbox" data-check-id="req-2"> Conferi meus pré-requisitos</label></li>
-          <li><label><input type="checkbox" data-check-id="req-3"> Estou regularmente matriculado</label></li>
-          <li><label><input type="checkbox" data-check-id="req-4"> Sei quem é o Professor Supervisor</label></li>
-        </ul>
-      </div>
-      <p class="aviso-checklist">As marcações deste guia são salvas apenas neste navegador e não substituem documentos, assinaturas ou registros oficiais da disciplina.</p>
+    <div style="margin-top:14px;">
+      <a class="doc-pill" href="documentos/anexo-04-termo-externo.docx" download>📄 Anexo IV · Termo de Compromisso Externo (DOCX)</a>
+      <a class="doc-pill" href="documentos/anexo-04-termo-interno.docx" download>📄 Anexo IV · Termo de Compromisso Interno UNEMAT (DOCX)</a>
+      <a class="doc-pill" href="https://ialxnder.fly.dev/estagio" target="_blank" rel="noopener">⚡ Gerar TCE no Portal Estágio</a>
+    </div>
 
-      <button type="button" class="botao botao-primario" data-proxima-etapa="local">Estou pronto para a próxima etapa</button>
+    <details>
+      <summary>Atenção: Nenhuma hora é computada antes da assinatura do TCE</summary>
+      <p>A Lei Federal nº 11.788/2008 estabelece expressamente que qualquer atividade exercida sem termo de compromisso devidamente formalizado e apólice de seguro ativa é nula para fins acadêmicos e gera descaracterização do estágio perante a legislação trabalhista.</p>
+    </details>
+  </section>
 
-      <div class="acordeao">
-        <h3><button type="button" class="acordeao-toggle" aria-expanded="false" aria-controls="acc-requisitos">Ver fundamento normativo</button></h3>
-        <div id="acc-requisitos" class="acordeao-conteudo" hidden>
-          <div data-render="fundamento" data-fundamento-key="prerequisito_es1"></div>
-          <div data-render="fundamento" data-fundamento-key="prerequisito_es2"></div>
-        </div>
-      </div>
+  <!-- ETAPA 4 -->
+  <section class="stage" id="etapa4">
+    <div class="stage-head">
+      <div class="badge">4</div>
+      <h2>Plano de Atividades de Estágio</h2>
+    </div>
+    <div class="basis">Base legal: Lei nº 11.788/2008, Art. 7º, parágrafo único | PPC do Bacharelado em Ciência da Computação</div>
 
-      <nav class="nav-etapa" aria-label="Navegação entre etapas">
-        <a class="botao botao-texto" href="index.html#inicio">← Etapa anterior</a>
-        <a class="botao botao-texto" href="index.html#local">Próxima etapa →</a>
-      </nav>
+    <ul class="checklist">
+      <li><input type="checkbox" id="e4-1"><label for="e4-1">Elaborar o <strong>Plano de Atividades de Estágio (Anexo V)</strong> em conjunto com o Supervisor de Campo</label></li>
+      <li><input type="checkbox" id="e4-2"><label for="e4-2">Assegurar que as tarefas programadas sejam estritamente condizentes com a formação em Ciência da Computação (desenvolvimento de software, redes, banco de dados, IA, segurança, infraestrutura ou suporte avançado)</label></li>
+      <li><input type="checkbox" id="e4-3"><label for="e4-3">Definir o cronograma estimado de execução e a distribuição da carga horária semanal</label></li>
+      <li><input type="checkbox" id="e4-4"><label for="e4-4">Submeter o plano para aprovação prévia do professor supervisor docente da UNEMAT e colher as assinaturas no gov.br</label></li>
+    </ul>
+
+    <div style="margin-top:14px;">
+      <a class="doc-pill" href="documentos/anexo-05-plano-atividades.docx" download>📄 Anexo V · Plano de Atividades (DOCX)</a>
+      <a class="doc-pill" href="https://ialxnder.fly.dev/estagio" target="_blank" rel="noopener">⚡ Preencher Plano Online</a>
     </div>
   </section>
 
-  <!-- ===================== ETAPA 2 — LOCAL ===================== -->
-  <section id="local" class="secao etapa" data-etapa="local" aria-labelledby="local-titulo">
-    <div class="container">
-      <p class="etapa-rotulo">Etapa 2 de 8</p>
-      <h2 id="local-titulo">Defina onde será seu estágio</h2>
-      <p>O estágio deve envolver atividades relacionadas à área de Ciência da Computação.</p>
+  <!-- ETAPA 5 -->
+  <section class="stage" id="etapa5">
+    <div class="stage-head">
+      <div class="badge">5</div>
+      <h2>Execução, Jornada e Ficha de Acompanhamento</h2>
+    </div>
+    <div class="basis">Base legal: Lei nº 11.788/2008, Art. 10 | Resolução nº 009/2020–CONEPE, Art. 12</div>
 
-      <p class="pergunta-titulo">Onde você pretende estagiar?</p>
-      <div class="opcoes-local" role="group" aria-label="Onde você pretende estagiar?">
-        <button type="button" class="botao botao-outline" data-escolher-local-pretendido="fora">Empresa ou instituição externa</button>
-        <button type="button" class="botao botao-outline" data-escolher-local-pretendido="dentro">Dentro da própria UNEMAT</button>
-      </div>
+    <ul class="checklist">
+      <li><input type="checkbox" id="e5-1"><label for="e5-1">Cumprir rigorosamente o limite de até <strong>6 horas diárias e 30 horas semanais</strong>, sem conflito de horário com as aulas presenciais da graduação</label></li>
+      <li><input type="checkbox" id="e5-2"><label for="e5-2">Registrar as datas, horários de entrada/saída e descrição das atividades técnicas na <strong>Ficha de Acompanhamento (Anexo VI)</strong></label></li>
+      <li><input type="checkbox" id="e5-3"><label for="e5-3">Colher periodicamente o visto do Supervisor de Campo nas atividades registradas</label></li>
+      <li><input type="checkbox" id="e5-4"><label for="e5-4">Participar dos encontros de orientação pedagógica e acompanhamento com o professor supervisor docente da UNEMAT</label></li>
+    </ul>
 
-      <div class="checklist" data-checklist-etapa="local">
-        <p class="checklist-titulo">Checklist desta etapa:</p>
-        <ul>
-          <li><label><input type="checkbox" data-check-id="local-1"> Conversei com o Professor Supervisor</label></li>
-          <li><label><input type="checkbox" data-check-id="local-2"> Identifiquei uma organização/local adequado</label></li>
-          <li><label><input type="checkbox" data-check-id="local-3"> Tenho um Supervisor de Campo/Orientador</label></li>
-        </ul>
-      </div>
-      <p class="aviso-checklist">As marcações deste guia são salvas apenas neste navegador e não substituem documentos, assinaturas ou registros oficiais da disciplina.</p>
-
-      <h3>Quem é quem?</h3>
-      <div class="cards-grid" data-render="papeis"></div>
-
-      <h3>Documentos desta etapa</h3>
-      <div class="cards-grid" data-render="documentos" data-etapa-documentos="local"></div>
-
-      <div class="acordeao">
-        <h3><button type="button" class="acordeao-toggle" aria-expanded="false" aria-controls="acc-local">Ver fundamento normativo</button></h3>
-        <div id="acc-local" class="acordeao-conteudo" hidden>
-          <div data-render="fundamento" data-fundamento-key="estagio_dentro_unemat"></div>
-          <div data-render="fundamento" data-fundamento-key="documentos_necessarios"></div>
-        </div>
-      </div>
-
-      <nav class="nav-etapa" aria-label="Navegação entre etapas">
-        <a class="botao botao-texto" href="index.html#requisitos">← Etapa anterior</a>
-        <a class="botao botao-texto" href="index.html#regularizacao">Próxima etapa →</a>
-      </nav>
+    <div style="margin-top:14px;">
+      <a class="doc-pill" href="documentos/anexo-06-ficha-acompanhamento.docx" download>📄 Anexo VI · Ficha de Acompanhamento (DOCX)</a>
+      <a class="doc-pill" href="https://ialxnder.fly.dev/estagio" target="_blank" rel="noopener">⚡ Lançar Atividades no Portal</a>
     </div>
   </section>
 
-  <!-- ===================== ETAPA 3 — REGULARIZAÇÃO ===================== -->
-  <section id="regularizacao" class="secao etapa" data-etapa="regularizacao" aria-labelledby="regularizacao-titulo">
-    <div class="container">
-      <p class="etapa-rotulo">Etapa 3 de 8</p>
-      <h2 id="regularizacao-titulo">Regularize seu estágio</h2>
+  <!-- ETAPA 6 -->
+  <section class="stage" id="etapa6">
+    <div class="stage-head">
+      <div class="badge">6</div>
+      <h2>Relatório Final e Avaliação de Desempenho</h2>
+    </div>
+    <div class="basis">Base legal: Lei nº 11.788/2008, Art. 9º, VII | Resolução nº 009/2020–CONEPE, Arts. 15 a 18</div>
 
-      <div class="alerta alerta-atencao" role="alert">
-        <strong>⚠ Atenção</strong>
-        <p>Não inicie as atividades sem confirmar com o Professor Supervisor que a documentação necessária está regularizada.</p>
-      </div>
+    <ul class="checklist">
+      <li><input type="checkbox" id="e6-1"><label for="e6-1">Elaborar o <strong>Relatório Final de Estágio Supervisionado (Anexo VII)</strong> com síntese das atividades, resultados alcançados e autoavaliação</label></li>
+      <li><input type="checkbox" id="e6-2"><label for="e6-2">Obter a avaliação formal e nota atribuída pelo Supervisor da Unidade Concedente</label></li>
+      <li><input type="checkbox" id="e6-3"><label for="e6-3">Colher as assinaturas digitais finais (discente, supervisor de campo e professor supervisor docente)</label></li>
+      <li><input type="checkbox" id="e6-4"><label for="e6-4">Submeter o dossiê conclusivo no SIGAA dentro dos prazos fixados pelo calendário acadêmico da UNEMAT para homologação e lançamento da nota</label></li>
+    </ul>
 
-      <p class="pergunta-titulo">Onde será realizado seu estágio?</p>
-      <div class="opcoes-local" role="group" aria-label="Onde será realizado seu estágio?">
-        <button type="button" class="botao botao-outline" data-escolher-local="fora">Fora da UNEMAT</button>
-        <button type="button" class="botao botao-outline" data-escolher-local="dentro">Dentro da UNEMAT</button>
-      </div>
-
-      <div class="regularizacao-bloco is-hidden" data-local="fora">
-        <h3>Anexo IV — Termo de Compromisso para estágio externo</h3>
-        <div class="cards-grid" data-render="documentos" data-documento-id="anexo-04-externo"></div>
-        <div class="checklist" data-checklist-etapa="regularizacao">
-          <ul>
-            <li><label><input type="checkbox" data-check-id="reg-ext-1"> Documento preenchido</label></li>
-            <li><label><input type="checkbox" data-check-id="reg-ext-2"> Assinado pelo estudante</label></li>
-            <li><label><input type="checkbox" data-check-id="reg-ext-3"> Assinado pela concedente</label></li>
-            <li><label><input type="checkbox" data-check-id="reg-ext-4"> Regularização institucional conferida</label></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="regularizacao-bloco is-hidden" data-local="dentro">
-        <h3>Anexo IV — Termo de Compromisso para estágio dentro da UNEMAT</h3>
-        <div class="cards-grid" data-render="documentos" data-documento-id="anexo-04-interno"></div>
-        <div class="checklist" data-checklist-etapa="regularizacao">
-          <ul>
-            <li><label><input type="checkbox" data-check-id="reg-int-1"> Documento preenchido</label></li>
-            <li><label><input type="checkbox" data-check-id="reg-int-2"> Assinaturas necessárias obtidas</label></li>
-          </ul>
-        </div>
-        <div class="alerta alerta-atencao">
-          <strong>Regras obrigatórias para estágio interno na UNEMAT:</strong>
-          <p>1. <strong>Identificação do Local:</strong> Indique o nome específico do laboratório ou setor de atuação (ex.: <em>Laboratório PIXEL</em>) no termo.</p>
-          <p>2. <strong>E-mail Institucional:</strong> O e-mail informado deve ser o do Supervisor de Campo (quem acompanhará diretamente o acadêmico no laboratório).</p>
-        </div>
-      </div>
-
-      <p class="regularizacao-vazio" data-regularizacao-vazio>Escolha uma das opções acima para ver o Termo de Compromisso correspondente.</p>
-      <p class="aviso-checklist">As marcações deste guia são salvas apenas neste navegador e não substituem documentos, assinaturas ou registros oficiais da disciplina.</p>
-
-      <div class="card card-destaque">
-        <h3>Situação do convênio e assinatura digital</h3>
-        <p>Antes de começar, confirme com o Professor Supervisor se o local está devidamente regularizado para receber o estágio.</p>
-        <p class="mt-2"><strong>Assinatura Eletrônica Recomendada:</strong> Devido a instabilidades frequentes no Gov.br, recomendamos colher as assinaturas pela plataforma <a href="https://autentique.com.br/" target="_blank" rel="noopener" class="underline font-bold text-cyan-400">Autentique</a>. Posicione as caixas de assinatura exatamente sobre as linhas demarcadas no rodapé de cada signatário para evitar devoluções.</p>
-      </div>
-
-      <div class="acordeao">
-        <h3><button type="button" class="acordeao-toggle" aria-expanded="false" aria-controls="acc-regularizacao">Ver fundamento normativo</button></h3>
-        <div id="acc-regularizacao" class="acordeao-conteudo" hidden>
-          <div data-render="fundamento" data-fundamento-key="documentos_necessarios"></div>
-          <div data-render="fundamento" data-fundamento-key="assinatura_eletronica"></div>
-          <div data-render="fundamento" data-fundamento-key="preenchimento_estagio_interno"></div>
-          <div data-render="fundamento" data-fundamento-key="revisao_modelos_devolucao"></div>
-        </div>
-      </div>
-
-      <nav class="nav-etapa" aria-label="Navegação entre etapas">
-        <a class="botao botao-texto" href="index.html#local">← Etapa anterior</a>
-        <a class="botao botao-texto" href="index.html#planejamento">Próxima etapa →</a>
-      </nav>
+    <div style="margin-top:14px;">
+      <a class="doc-pill" href="documentos/anexo-07-relatorio-final.docx" download>📄 Anexo VII · Relatório Final de Estágio (DOCX)</a>
+      <a class="doc-pill" href="https://ialxnder.fly.dev/estagio" target="_blank" rel="noopener">⚡ Gerar Relatório no Portal Estágio</a>
     </div>
   </section>
 
-  <!-- ===================== ETAPA 4 — PLANEJAMENTO ===================== -->
-  <section id="planejamento" class="secao etapa" data-etapa="planejamento" aria-labelledby="planejamento-titulo">
-    <div class="container">
-      <p class="etapa-rotulo">Etapa 4 de 8</p>
-      <h2 id="planejamento-titulo">Planeje o que você vai fazer</h2>
-      <p>As atividades devem ser definidas antes da execução e precisam ser compatíveis com a área de Ciência da Computação.</p>
+  <!-- CONVALIDAÇÃO -->
+  <section class="stage" id="convalidacao">
+    <div class="stage-head">
+      <div class="badge"><i class="fa-solid fa-award"></i></div>
+      <h2>Convalidação de Atividades Profissionais</h2>
+    </div>
+    <div class="basis">Base legal: Resolução nº 009/2020–CONEPE, Art. 20 | Resolução nº 047/2025–CONEPE</div>
 
-      <h3>Qual área mais se aproxima das suas atividades?</h3>
-      <div class="cards-grid" id="cards-areas" data-render="areas"></div>
-      <div class="area-detalhe is-hidden" id="area-detalhe" role="region" aria-live="polite"></div>
-      <p>Não encontrou um enquadramento adequado? Converse com o Professor Supervisor.</p>
-      <a class="botao botao-outline" href="documentos/anexo-08-areas-estagio.docx">Consultar documento oficial — Anexo VIII</a>
+    <p style="font-size:0.95rem; color:#cbd5e1; margin-bottom:16px;">
+      Acadêmicos que já exerçam atividade profissional comprovada na área de Tecnologia da Informação ou participem de projetos institucionais de pesquisa/extensão podem solicitar a dispensa do estágio mediante convalidação formal.
+    </p>
 
-      <h3>Anexo V — Plano de Atividades</h3>
-      <div class="cards-grid" data-render="documentos" data-documento-id="anexo-05"></div>
+    <ul class="checklist">
+      <li><input type="checkbox" id="ev-1"><label for="ev-1">Estar regularmente matriculado na disciplina de Estágio Supervisionado no semestre</label></li>
+      <li><input type="checkbox" id="ev-2"><label for="ev-2">Comprovar vínculo empregatício em carteira de trabalho (CLT) ou posse em cargo público de TI há no mínimo 6 meses</label></li>
+      <li><input type="checkbox" id="ev-3"><label for="ev-3">Preencher o <strong>Requerimento de Convalidação (Anexo IX)</strong> descrevendo detalhadamente as atribuições exercidas na área de computação</label></li>
+      <li><input type="checkbox" id="ev-4"><label for="ev-4">Anexar declaração da empresa/órgão com CNPJ, atribuições detalhadas do cargo e ciência da chefia imediata</label></li>
+      <li><input type="checkbox" id="ev-5"><label for="ev-5">Submeter o processo à apreciação da Comissão de Estágio e Colegiado de Curso para deliberação</label></li>
+    </ul>
 
-      <div class="checklist" data-checklist-etapa="planejamento">
-        <ul>
-          <li><label><input type="checkbox" data-check-id="plan-1"> Defini as atividades com meu Supervisor de Campo</label></li>
-          <li><label><input type="checkbox" data-check-id="plan-2"> Preenchi o Plano</label></li>
-          <li><label><input type="checkbox" data-check-id="plan-3"> Apresentei ao Professor Supervisor</label></li>
-          <li><label><input type="checkbox" data-check-id="plan-4"> Fiz as correções solicitadas</label></li>
-          <li><label><input type="checkbox" data-check-id="plan-5"> O Plano foi aprovado</label></li>
-        </ul>
-      </div>
-      <p class="aviso-checklist">As marcações deste guia são salvas apenas neste navegador e não substituem documentos, assinaturas ou registros oficiais da disciplina.</p>
-
-      <div class="card card-destaque mt-4">
-        <div class="flex items-center justify-between gap-2 mb-2">
-          <strong class="text-cyan-400 font-bold">📅 Tarefa 1 no SIGAA — Registro do Planejamento</strong>
-          <span class="text-xs bg-amber-500/20 text-amber-300 font-mono px-2 py-0.5 rounded">27/08 a 30/11/2026 (23h59)</span>
-        </div>
-        <p class="text-xs sm:text-sm text-slate-300"><strong>Critérios de Avaliação (10,0 pontos):</strong> Coerência do Plano com áreas do BCC (5,00) + Aplicabilidade na Computação (5,00).</p>
-        <div class="alerta alerta-atencao text-xs mt-3 mb-0">
-          <strong>⚠ OBSERVAÇÕES MANDATÓRIAS:</strong>
-          <p class="mt-1">1. No Plano de Atividades <strong>NÃO DEVE CONSTAR FERIADOS</strong>.</p>
-          <p>2. Somente serão aceitos os formulários obtidos no AVA (SIGAA). <strong>Postar somente a versão PDF dos formulários.</strong></p>
-        </div>
-      </div>
-
-      <div class="acordeao">
-        <h3><button type="button" class="acordeao-toggle" aria-expanded="false" aria-controls="acc-planejamento">Ver fundamento normativo</button></h3>
-        <div id="acc-planejamento" class="acordeao-conteudo" hidden>
-          <div data-render="fundamento" data-fundamento-key="documentos_necessarios"></div>
-        </div>
-      </div>
-
-      <nav class="nav-etapa" aria-label="Navegação entre etapas">
-        <a class="botao botao-texto" href="index.html#regularizacao">← Etapa anterior</a>
-        <a class="botao botao-texto" href="index.html#execucao">Próxima etapa →</a>
-      </nav>
+    <div style="margin-top:14px;">
+      <a class="doc-pill" href="documentos/anexo-09-requerimento-convalidacao.docx" download>📄 Anexo IX · Requerimento de Convalidação (DOCX)</a>
     </div>
   </section>
 
-  <!-- ===================== ETAPA 5 — EXECUÇÃO ===================== -->
-  <section id="execucao" class="secao etapa" data-etapa="execucao" aria-labelledby="execucao-titulo">
-    <div class="container">
-      <p class="etapa-rotulo">Etapa 5 de 8</p>
-      <h2 id="execucao-titulo">Realize seu estágio</h2>
-      <p>Agora começa a execução das atividades previstas no seu Plano.</p>
+  <!-- DOWNLOADS GERAIS -->
+  <section class="stage" id="downloads">
+    <h2>Acervo Completo de Documentos e Modelos Oficiais</h2>
+    <p class="lead" style="color:var(--ink-soft); font-size:0.93rem;">Modelos e formulários oficiais do Estágio Supervisionado do curso de Ciência da Computação da UNEMAT.</p>
 
-      <div class="checklist" data-checklist-etapa="execucao">
-        <ul>
-          <li><label><input type="checkbox" data-check-id="exec-1"> Cumpro os dias e horários definidos</label></li>
-          <li><label><input type="checkbox" data-check-id="exec-2"> Executo as atividades previstas no Plano</label></li>
-          <li><label><input type="checkbox" data-check-id="exec-3"> Participo das orientações na UNEMAT</label></li>
-          <li><label><input type="checkbox" data-check-id="exec-4"> Mantenho contato com meu Supervisor de Campo</label></li>
-          <li><label><input type="checkbox" data-check-id="exec-5"> Informo problemas ao Professor Supervisor</label></li>
-        </ul>
-      </div>
-      <p class="aviso-checklist">As marcações deste guia são salvas apenas neste navegador e não substituem documentos, assinaturas ou registros oficiais da disciplina.</p>
+    <h3 style="font-size:1.05rem; margin-top:16px;">Legislação e Normas Vigentes</h3>
+    <div>
+      <a class="doc-pill norma" href="http://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm" target="_blank" rel="noopener">📜 Lei Federal nº 11.788/2008 (Lei do Estágio)</a>
+      <a class="doc-pill norma" href="http://portal.unemat.br/media/files/resolucoes/2020/conepe/5000_res_conepe_09_2020.pdf" target="_blank" rel="noopener">📜 Resolução nº 009/2020–CONEPE (Normas de Estágio UNEMAT)</a>
+      <a class="doc-pill norma" href="https://www.unemat.br/resolucoes/resolucoes/conepe/5957_res_conepe_47_2025.pdf" target="_blank" rel="noopener">📜 Resolução nº 047/2025–CONEPE (Normatização Acadêmica)</a>
+      <a class="doc-pill norma" href="documentos/guia-rapido-preenchimento-estagio.pdf" download>📖 Guia Rápido de Preenchimento de Estágio (PDF)</a>
+    </div>
 
-      <div class="card card-destaque">
-        <h3>Durante o estágio</h3>
-        <ul class="card-lista">
-          <li>Mantenha postura profissional</li>
-          <li>Cumpra horários</li>
-          <li>Respeite as regras da organização</li>
-          <li>Preserve informações reservadas</li>
-          <li>Procure orientação quando precisar</li>
-        </ul>
-      </div>
-
-      <div class="acordeao">
-        <h3><button type="button" class="acordeao-toggle" aria-expanded="false" aria-controls="acc-execucao">Ver fundamento normativo</button></h3>
-        <div id="acc-execucao" class="acordeao-conteudo" hidden>
-          <div data-render="fundamento" data-fundamento-key="papel_aluno"></div>
-        </div>
-      </div>
-
-      <nav class="nav-etapa" aria-label="Navegação entre etapas">
-        <a class="botao botao-texto" href="index.html#planejamento">← Etapa anterior</a>
-        <a class="botao botao-texto" href="index.html#registros">Próxima etapa →</a>
-      </nav>
+    <h3 style="font-size:1.05rem; margin-top:20px;">Formulários Editáveis (DOCX)</h3>
+    <div>
+      <a class="doc-pill" href="documentos/anexo-01-ficha-identificacao.docx" download>📄 Anexo I · Ficha de Identificação</a>
+      <a class="doc-pill" href="documentos/anexo-02-carta-apresentacao.docx" download>📄 Anexo II · Carta de Apresentação</a>
+      <a class="doc-pill" href="documentos/anexo-03-requerimento-aceite.docx" download>📄 Anexo III · Requerimento de Aceite</a>
+      <a class="doc-pill" href="documentos/anexo-04-termo-externo.docx" download>📄 Anexo IV · Termo de Compromisso Externo</a>
+      <a class="doc-pill" href="documentos/anexo-04-termo-interno.docx" download>📄 Anexo IV · Termo de Compromisso Interno UNEMAT</a>
+      <a class="doc-pill" href="documentos/anexo-05-plano-atividades.docx" download>📄 Anexo V · Plano de Atividades</a>
+      <a class="doc-pill" href="documentos/anexo-06-ficha-acompanhamento.docx" download>📄 Anexo VI · Ficha de Acompanhamento</a>
+      <a class="doc-pill" href="documentos/anexo-07-relatorio-final.docx" download>📄 Anexo VII · Relatório Final</a>
+      <a class="doc-pill" href="documentos/anexo-08-areas-estagio.docx" download>📋 Anexo VIII · Áreas de Estágio</a>
+      <a class="doc-pill" href="documentos/anexo-09-requerimento-convalidacao.docx" download>📄 Anexo IX · Requerimento de Convalidação</a>
     </div>
   </section>
 
-  <!-- ===================== ETAPA 6 — REGISTROS ===================== -->
-  <section id="registros" class="secao etapa" data-etapa="registros" aria-labelledby="registros-titulo">
-    <div class="container">
-      <p class="etapa-rotulo">Etapa 6 de 8</p>
-      <h2 id="registros-titulo">Registre suas atividades</h2>
-
-      <h3>Anexo VI — Ficha de Acompanhamento</h3>
-      <div class="cards-grid" data-render="documentos" data-documento-id="anexo-06"></div>
-      <p>Ela registra: data, horário de início, horário de término, atividade realizada, carga horária e assinatura do responsável, quando aplicável.</p>
-
-      <div class="checklist" data-checklist-etapa="registros">
-        <ul>
-          <li><label><input type="checkbox" data-check-id="regist-1"> Estou registrando as atividades regularmente</label></li>
-          <li><label><input type="checkbox" data-check-id="regist-2"> Minha carga horária está atualizada</label></li>
-          <li><label><input type="checkbox" data-check-id="regist-3"> As atividades correspondem ao Plano</label></li>
-          <li><label><input type="checkbox" data-check-id="regist-4"> Obtive as assinaturas necessárias</label></li>
-          <li><label><input type="checkbox" data-check-id="regist-5"> Entreguei relatórios parciais quando solicitados</label></li>
-        </ul>
-      </div>
-      <p class="aviso-checklist">As marcações deste guia são salvas apenas neste navegador e não substituem documentos, assinaturas ou registros oficiais da disciplina.</p>
-
-      <div class="alerta alerta-atencao">
-        <p>Evite deixar todos os registros para o final. Mantenha sua ficha atualizada durante o estágio.</p>
-      </div>
-
-      <div class="card card-destaque mt-4">
-        <div class="flex items-center justify-between gap-2 mb-2">
-          <strong class="text-cyan-400 font-bold">📅 Tarefa 2 no SIGAA — Ficha de Acompanhamento das Atividades</strong>
-          <span class="text-xs bg-amber-500/20 text-amber-300 font-mono px-2 py-0.5 rounded">27/08 a 30/11/2026 (23h59)</span>
-        </div>
-        <p class="text-xs sm:text-sm text-slate-300"><strong>Critérios de Avaliação (10,0 pontos):</strong> Assiduidade e pontualidade (2,50) + Coerência dos relatórios parciais (4,00) + Consistência (3,50).</p>
-        <p class="text-xs text-cyan-300 mt-2"><strong>Atenção:</strong> A nota será atribuída após verificação pelo supervisor de campo. <strong>ENVIAR SOMENTE ARQUIVOS EM PDF.</strong></p>
-      </div>
-
-      <div class="acordeao">
-        <h3><button type="button" class="acordeao-toggle" aria-expanded="false" aria-controls="acc-registros">Ver fundamento normativo</button></h3>
-        <div id="acc-registros" class="acordeao-conteudo" hidden>
-          <div data-render="fundamento" data-fundamento-key="registro_atividades"></div>
-        </div>
-      </div>
-
-      <nav class="nav-etapa" aria-label="Navegação entre etapas">
-        <a class="botao botao-texto" href="index.html#execucao">← Etapa anterior</a>
-        <a class="botao botao-texto" href="index.html#relatorio">Próxima etapa →</a>
-      </nav>
-    </div>
+  <!-- GLOSSARIO -->
+  <section class="glossary" id="glossario">
+    <h2>Quem é quem no Estágio Supervisionado</h2>
+    <div class="gterm"><b>Discente Estagiário(a)</b><span>Acadêmico regularmente matriculado no curso que realiza atividades práticas supervisionadas no campo.</span></div>
+    <div class="gterm"><b>Unidade Concedente</b><span>Instituição pública ou privada conveniada que acolhe o estagiário e proporciona o campo de prática profissional.</span></div>
+    <div class="gterm"><b>Supervisor(a) de Campo</b><span>Profissional da concedente com formação ou experiência na área responsável pelo acompanhamento diário do estagiário.</span></div>
+    <div class="gterm"><b>Professor(a) Supervisor Docente</b><span>Docente da UNEMAT responsável pela supervisão acadêmica, acompanhamento do plano e validação dos relatórios.</span></div>
+    <div class="gterm"><b>Coordenação de Curso</b><span>Responsável pela homologação dos convênios, validação dos termos de compromisso e coordenação geral do processo.</span></div>
   </section>
 
-  <!-- ===================== ETAPA 7 — RELATÓRIO ===================== -->
-  <section id="relatorio" class="secao etapa" data-etapa="relatorio" aria-labelledby="relatorio-titulo">
-    <div class="container">
-      <p class="etapa-rotulo">Etapa 7 de 8</p>
-      <h2 id="relatorio-titulo">Finalize o estágio</h2>
-
-      <div class="checklist" data-checklist-etapa="relatorio">
-        <p class="checklist-titulo">Checklist preliminar:</p>
-        <ul>
-          <li><label><input type="checkbox" data-check-id="rel-1"> Completei a carga horária</label></li>
-          <li><label><input type="checkbox" data-check-id="rel-2"> Minha ficha de acompanhamento está completa</label></li>
-          <li><label><input type="checkbox" data-check-id="rel-3"> As atividades estão devidamente registradas</label></li>
-          <li><label><input type="checkbox" data-check-id="rel-4"> Conferi assinaturas e documentos</label></li>
-        </ul>
-      </div>
-      <p class="aviso-checklist">As marcações deste guia são salvas apenas neste navegador e não substituem documentos, assinaturas ou registros oficiais da disciplina.</p>
-
-      <h3>Anexo VII — Relatório Final</h3>
-      <div class="cards-grid" data-render="documentos" data-documento-id="anexo-07"></div>
-      <p>O relatório deve apresentar de forma clara as atividades desenvolvidas e a carga horária.</p>
-
-      <div class="acordeao">
-        <h3><button type="button" class="acordeao-toggle" aria-expanded="false" aria-controls="acc-relatorio-estrutura">Ver checklist de revisão — estrutura mínima do relatório</button></h3>
-        <div id="acc-relatorio-estrutura" class="acordeao-conteudo" hidden>
-          <div class="checklist" data-checklist-etapa="relatorio-estrutura" data-checklist-optional="true">
-            <ul>
-              <li><label><input type="checkbox" data-check-id="relest-1"> Introdução</label></li>
-              <li><label><input type="checkbox" data-check-id="relest-2"> Objetivos</label></li>
-              <li><label><input type="checkbox" data-check-id="relest-3"> Atividades desenvolvidas</label></li>
-              <li><label><input type="checkbox" data-check-id="relest-4"> Sugestões e recomendações</label></li>
-              <li><label><input type="checkbox" data-check-id="relest-5"> Considerações finais</label></li>
-              <li><label><input type="checkbox" data-check-id="relest-6"> Referências</label></li>
-              <li><label><input type="checkbox" data-check-id="relest-7"> Anexos</label></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="acordeao">
-        <h3><button type="button" class="acordeao-toggle" aria-expanded="false" aria-controls="acc-relatorio">Ver fundamento normativo</button></h3>
-        <div id="acc-relatorio" class="acordeao-conteudo" hidden>
-          <div data-render="fundamento" data-fundamento-key="relatorio_final_estrutura"></div>
-        </div>
-      </div>
-
-      <nav class="nav-etapa" aria-label="Navegação entre etapas">
-        <a class="botao botao-texto" href="index.html#registros">← Etapa anterior</a>
-        <a class="botao botao-texto" href="index.html#conclusao">Próxima etapa →</a>
-      </nav>
-    </div>
-  </section>
-
-  <!-- ===================== ETAPA 8 — AVALIAÇÃO E CONCLUSÃO ===================== -->
-  <section id="conclusao" class="secao etapa" data-etapa="conclusao" aria-labelledby="conclusao-titulo">
-    <div class="container">
-      <p class="etapa-rotulo">Etapa 8 de 8</p>
-      <h2 id="conclusao-titulo">Avaliação e conclusão</h2>
-
-      <div class="card card-destaque mb-4">
-        <div class="flex items-center justify-between gap-2 mb-2">
-          <strong class="text-purple-400 font-bold">📅 Tarefa 3 no SIGAA — Relatório Final de Estágio</strong>
-          <span class="text-xs bg-amber-500/20 text-amber-300 font-mono px-2 py-0.5 rounded">30/09 a 30/11/2026 (23h59)</span>
-        </div>
-        <p class="text-xs sm:text-sm text-slate-300 mb-2">Avaliado pelo professor de estágio e pelo supervisor de campo com base nos seguintes aspectos formais e acadêmicos:</p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300">
-          <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
-            <strong>1- Aspectos gerais (estrutura formal, ABNT, digitação, coesão):</strong>
-            <span class="text-emerald-400 font-bold block mt-1">2,50 pts</span>
-          </div>
-          <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
-            <strong>2- Aspecto teórico (domínio de conceitos e terminologia técnica):</strong>
-            <span class="text-emerald-400 font-bold block mt-1">2,00 pts</span>
-          </div>
-          <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
-            <strong>3- Aspecto metodológico (adequação do objetivo):</strong>
-            <span class="text-emerald-400 font-bold block mt-1">2,00 pts</span>
-          </div>
-          <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
-            <strong>4- Aspecto analítico (consistência da análise teórica/prática):</strong>
-            <span class="text-emerald-400 font-bold block mt-1">3,50 pts</span>
-          </div>
-        </div>
-        <p class="text-xs text-cyan-300 mt-2"><strong>Atenção:</strong> <strong>ENVIAR SOMENTE ARQUIVOS EM PDF.</strong></p>
-      </div>
-
-      <div class="card card-destaque">
-        <h3>Quem atribui a nota?</h3>
-        <p>O Professor Supervisor é responsável pela avaliação acadêmica do estágio, com base no relatório final e no acompanhamento da concedente.</p>
-      </div>
-
-      <div class="acordeao">
-        <h3><button type="button" class="acordeao-toggle" aria-expanded="false" aria-controls="acc-conclusao">Ver fundamento normativo</button></h3>
-        <div id="acc-conclusao" class="acordeao-conteudo" hidden>
-          <div data-render="fundamento" data-fundamento-key="avaliacao_criterios"></div>
-          <div data-render="fundamento" data-fundamento-key="avaliacao_responsavel"></div>
-          <div data-render="fundamento" data-fundamento-key="aprovacao_indispensavel"></div>
-        </div>
-      </div>
-
-      <div class="bloco-conclusao-jornada is-hidden" id="bloco-conclusao-jornada">
-        <h3 id="conclusao-jornada-titulo"></h3>
-        <p class="aviso-forte" id="conclusao-jornada-aviso"></p>
-      </div>
-
-      <nav class="nav-etapa" aria-label="Navegação entre etapas">
-        <a class="botao botao-texto" href="index.html#relatorio">← Etapa anterior</a>
-        <a class="botao botao-texto" href="index.html#documentos">Ver meus documentos →</a>
-      </nav>
-    </div>
-  </section>
-
-  <!-- ===================== CONVALIDAÇÃO ===================== -->
-  <section id="convalidacao" class="secao" aria-labelledby="convalidacao-titulo">
-    <div class="container">
-      <h2 id="convalidacao-titulo">Já trabalho na área? Conheça a convalidação</h2>
-
-      <div class="card card-destaque mb-5">
-        <div class="flex items-center justify-between gap-2 mb-2">
-          <strong class="text-indigo-400 font-bold">📅 Tarefa de Convalidação no SIGAA (2026/2)</strong>
-          <span class="text-xs bg-amber-500/20 text-amber-300 font-mono px-2 py-0.5 rounded">27/08 a 30/11/2026 (23h59)</span>
-        </div>
-        <p class="text-xs sm:text-sm text-slate-300">
-          De acordo com a Resolução nº 028/2012-CONEPE (arts. 10 a 15), acadêmicos com 12+ meses ininterruptos de atividade profissional na área de Computação podem solicitar convalidação. A submissão da documentação comprobatória completa deve ser realizada pelo SIGAA dentro do prazo.
-        </p>
-        <p class="text-xs text-cyan-300 mt-2"><strong>Atenção:</strong> A entrega do relatório escrito circunstanciado é pré-requisito obrigatório para a apresentação do seminário. <strong>ENVIAR SOMENTE ARQUIVOS EM PDF.</strong></p>
-      </div>
-
-      <div class="conv-passo" data-conv-step="1">
-        <p class="pergunta-titulo">Você possui pelo menos 12 meses ininterruptos de atividade profissional na área de Ciência da Computação?</p>
-        <div class="opcoes-local" role="group" aria-label="Você possui pelo menos 12 meses ininterruptos de atividade profissional na área?">
-          <button type="button" class="botao botao-outline" data-conv-resposta="1:sim">Sim</button>
-          <button type="button" class="botao botao-outline" data-conv-resposta="1:nao">Não</button>
-        </div>
-      </div>
-
-      <div class="conv-passo is-hidden" data-conv-step="reprovado">
-        <p>O requisito mínimo para convalidação não foi atendido.</p>
-        <a class="botao botao-outline" href="index.html#requisitos">Ver estágio regular</a>
-      </div>
-
-      <div class="conv-passo is-hidden" data-conv-step="2">
-        <p class="pergunta-titulo">Você cumpre o pré-requisito da disciplina?</p>
-        <div class="opcoes-local" role="group" aria-label="Você cumpre o pré-requisito da disciplina?">
-          <button type="button" class="botao botao-outline" data-conv-resposta="2:sim">Sim</button>
-          <button type="button" class="botao botao-outline" data-conv-resposta="2:nao">Não</button>
-        </div>
-      </div>
-
-      <div class="conv-passo is-hidden" data-conv-step="bloqueio">
-        <p>Você ainda não atende a este requisito para seguir com a convalidação. Fale com o Professor Supervisor antes de prosseguir.</p>
-        <a class="botao botao-outline" href="index.html#requisitos">Ver estágio regular</a>
-      </div>
-
-      <div class="conv-passo is-hidden" data-conv-step="3">
-        <p class="pergunta-titulo">Você está matriculado no componente de Estágio Supervisionado?</p>
-        <div class="opcoes-local" role="group" aria-label="Você está matriculado no componente de Estágio Supervisionado?">
-          <button type="button" class="botao botao-outline" data-conv-resposta="3:sim">Sim</button>
-          <button type="button" class="botao botao-outline" data-conv-resposta="3:nao">Não</button>
-        </div>
-      </div>
-
-      <div class="conv-passo is-hidden" data-conv-step="4">
-        <h3>Qual etapa deseja solicitar?</h3>
-        <div class="opcoes-local" role="group" aria-label="Qual etapa deseja solicitar?">
-          <button type="button" class="botao botao-outline" data-conv-etapa="es1">Estágio Supervisionado I</button>
-          <button type="button" class="botao botao-outline" data-conv-etapa="es2">Estágio Supervisionado II</button>
-        </div>
-        <p class="texto-secundario">Se precisar de convalidação para ambos os componentes, faça uma solicitação separada para cada etapa.</p>
-      </div>
-
-      <div class="conv-passo is-hidden" data-conv-step="documentos">
-        <h3>Documentação necessária</h3>
-        <div class="checklist" data-checklist-etapa="convalidacao">
-          <ul>
-            <li><label><input type="checkbox" data-check-id="conv-1"> Requerimento de convalidação</label></li>
-            <li><label><input type="checkbox" data-check-id="conv-2"> Declaração da instituição com cargo e funções</label></li>
-            <li><label><input type="checkbox" data-check-id="conv-3"> Comprovação do vínculo profissional</label></li>
-            <li><label><input type="checkbox" data-check-id="conv-4"> Plano das atividades profissionais</label></li>
-            <li><label><input type="checkbox" data-check-id="conv-5"> Relatório circunstanciado</label></li>
-          </ul>
-        </div>
-        <p class="aviso-checklist">As marcações deste guia são salvas apenas neste navegador e não substituem documentos, assinaturas ou registros oficiais da disciplina.</p>
-
-        <div class="cards-grid" data-render="documentos" data-documento-id="anexo-09"></div>
-
-        <h3>Como funciona o processo</h3>
-        <ol class="fluxo-convalidacao">
-          <li>Documentos</li>
-          <li>Análise do Professor Supervisor</li>
-          <li>Relatório escrito</li>
-          <li>Seminário</li>
-          <li>Parecer</li>
-        </ol>
-
-        <div class="alerta alerta-atencao">
-          <p>A entrega do relatório escrito é pré-requisito para a apresentação do seminário.</p>
-        </div>
-        <p class="texto-secundario">Em caso de indeferimento da convalidação, o estudante deverá cumprir o estágio regular conforme orientação acadêmica.</p>
-
-        <div class="acordeao">
-          <h3><button type="button" class="acordeao-toggle" aria-expanded="false" aria-controls="acc-convalidacao">Ver fundamento normativo</button></h3>
-          <div id="acc-convalidacao" class="acordeao-conteudo" hidden>
-            <div data-render="fundamento" data-fundamento-key="convalidacao_12_meses"></div>
-            <div data-render="fundamento" data-fundamento-key="convalidacao_documentos"></div>
-            <div data-render="fundamento" data-fundamento-key="convalidacao_relatorio_seminario"></div>
-            <div data-render="fundamento" data-fundamento-key="convalidacao_indeferida"></div>
-          </div>
-        </div>
-      </div>
-
-      <button type="button" class="botao botao-texto" id="btn-reiniciar-convalidacao">Reiniciar esta consulta</button>
-    </div>
-  </section>
-
-  <!-- ===================== MEUS DOCUMENTOS ===================== -->
-  <section id="documentos" class="secao" aria-labelledby="documentos-titulo">
-    <div class="container">
-      <h2 id="documentos-titulo">Meus documentos</h2>
-      <div class="filtros-documentos" role="group" aria-label="Filtrar documentos por etapa" id="filtros-documentos">
-        <button type="button" class="filtro-chip is-ativo" data-filtro-categoria="todos">Todos</button>
-        <button type="button" class="filtro-chip" data-filtro-categoria="antes-de-comecar">Antes de começar</button>
-        <button type="button" class="filtro-chip" data-filtro-categoria="regularizacao">Regularização</button>
-        <button type="button" class="filtro-chip" data-filtro-categoria="planejamento">Planejamento</button>
-        <button type="button" class="filtro-chip" data-filtro-categoria="durante">Durante</button>
-        <button type="button" class="filtro-chip" data-filtro-categoria="finalizacao">Finalização</button>
-        <button type="button" class="filtro-chip" data-filtro-categoria="convalidacao">Convalidação</button>
-      </div>
-      <div id="painel-documentos" data-render="documentos-painel"></div>
-    </div>
-  </section>
-
-  <!-- ===================== FAQ ===================== -->
-  <section id="faq" class="secao" aria-labelledby="faq-titulo">
-    <div class="container">
-      <h2 id="faq-titulo">Perguntas frequentes</h2>
-      <div id="lista-faq" data-render="faq"></div>
-    </div>
-  </section>
-
-  <!-- ===================== LEGISLAÇÃO ===================== -->
-  <section id="legislacao" class="secao" aria-labelledby="legislacao-titulo">
-    <div class="container">
-      <h2 id="legislacao-titulo">Base normativa</h2>
-      <p>Este Guia foi elaborado com base nos documentos institucionais que regulamentam o Estágio Supervisionado.</p>
-      <div class="cards-grid" id="lista-legislacao" data-render="legislacao"></div>
-      <div class="alerta alerta-atencao">
-        <p>Em caso de divergência entre este Guia e documento institucional vigente, prevalece o documento normativo oficial.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== VÍDEOS ===================== -->
-  <section id="videos" class="secao" aria-labelledby="videos-titulo">
-    <div class="container">
-      <h2 id="videos-titulo">Vídeos explicativos</h2>
-      <p id="texto-playlist-videos"></p>
-      <div class="cards-grid" id="lista-videos" data-render="videos"></div>
-    </div>
-  </section>
-
-  <!-- ===================== CONTATO ===================== -->
-  <section id="contato" class="secao" aria-labelledby="contato-titulo">
-    <div class="container">
-      <h2 id="contato-titulo">Contato e links institucionais</h2>
-      <div class="cards-grid">
-        <article class="card" id="card-sigaa">
-          <h3>SIGAA</h3>
-          <p id="texto-sigaa">Link ainda não configurado.</p>
-        </article>
-      </div>
-      <h3>Coordenação e supervisão do Estágio</h3>
-      <div class="cards-grid" id="lista-contatos" data-render="contatos"></div>
-    </div>
+  <section class="glossary" id="regras" style="margin-top:24px;">
+    <h2>Diretrizes e Regras Essenciais (Lei 11.788 e Res. 009/2020)</h2>
+    <div class="gterm"><b>1. Seguro Obrigatório</b><span>Nenhum estágio pode iniciar sem a contratação e número da apólice de seguro contra acidentes pessoais válida.</span></div>
+    <div class="gterm"><b>2. Limite da Jornada</b><span>Máximo de 6 horas diárias e 30 horas semanais. Em períodos de avaliação presencial, a carga horária pode ser reduzida à metade conforme a lei.</span></div>
+    <div class="gterm"><b>3. Recesso Remunerado</b><span>É assegurado ao estagiário recesso remunerado de 30 dias a cada 12 meses de estágio na mesma empresa, preferencialmente coincidente com as férias acadêmicas.</span></div>
+    <div class="gterm"><b>4. Assinaturas Digitais</b><span>Todos os termos devem ser assinados via conta <code>gov.br</code> (nível Prata ou Ouro) com certificado digital oficial.</span></div>
   </section>
 
 </main>
 
-<div class="voltar-topo-wrap">
-  <a href="index.html#inicio" class="botao-voltar-topo" id="btn-voltar-topo">Voltar ao topo</a>
-</div>
-
-<footer class="site-footer">
-  <div class="container">
-    <p><strong>UNEMAT</strong><br>Universidade do Estado de Mato Grosso</p>
-    <p><strong>Bacharelado em Ciência da Computação</strong><br>Campus Universitário de Alto Araguaia</p>
-    <p>Guia de Orientação do Estágio Supervisionado</p>
-    <p class="rodape-aviso">Este guia possui caráter orientativo e não substitui as normas institucionais vigentes.</p>
-    <p class="rodape-aviso">Em situações não previstas, procure o Professor Supervisor.</p>
-    <p id="rodape-ultima-atualizacao"></p>
-    <p id="rodape-base-normativa"></p>
-  </div>
+<footer>
+  Guia elaborado em conformidade com a Lei Federal nº 11.788/2008, Resolução nº 009/2020–CONEPE e Resolução nº 047/2025–CONEPE · UNEMAT Câmpus de Alto Araguaia e Câmpus de Rondonópolis.
 </footer>
 
-<div class="modal-overlay is-hidden" id="modal-confirmacao" role="dialog" aria-modal="true" aria-labelledby="modal-confirmacao-titulo">
-  <div class="modal-caixa">
-    <h2 id="modal-confirmacao-titulo">Confirmar</h2>
-    <p id="modal-confirmacao-texto"></p>
-    <div class="modal-acoes">
-      <button type="button" class="botao botao-outline" id="modal-confirmacao-cancelar">Cancelar</button>
-      <button type="button" class="botao botao-primario" id="modal-confirmacao-confirmar">Confirmar</button>
-    </div>
-  </div>
-</div>
-
-<script src="js/checklist.js"></script>
-<script src="js/progresso.js"></script>
-<script src="js/documentos.js"></script>
-<script src="js/navegacao.js"></script>
-<script src="js/busca.js"></script>
-<script src="js/app.js"></script>
 </body>
 </html>

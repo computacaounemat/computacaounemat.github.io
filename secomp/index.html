@@ -1,590 +1,71 @@
 <!DOCTYPE html>
-<html lang="pt-BR"> 
-<head> 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YKYPX7JBTP"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-YKYPX7JBTP');
-    </script>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNEMAT-Alto Araguaia/Rondonópolis</title>
-
-    <!-- Guia de Estágio: impede a rolagem automática nativa do navegador para o
-         âncora da URL antes do conteúdo dinâmico do guia ser renderizado. -->
-    <script>
-      (function () {
-        if (window.location.hash) {
-          window.__guiaHashInicial = window.location.hash;
-          if (window.history && window.history.replaceState) {
-            window.history.replaceState(null, "", window.location.pathname + window.location.search);
-          }
-        }
-      })();
-    </script>
-
-    <!-- O script do Tailwind DEVE vir antes da configuração para evitar erros -->
-    <script src="https://cdn.tailwindcss.com"></script>
- 
-    <!-- Tailwind Configuração -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            50: '#e5f7ff',
-                            100: '#c2edff',
-                            500: '#009EE0', // Ciano oficial BCC (Manual de Identidade Visual 2025)
-                            600: '#007db2',
-                            900: '#004766',
-                            950: '#002e42',
-                        },
-                        accent: {
-                            green: '#8DC63F', // Verde oficial BCC
-                        },
-                        dark: {
-                            800: '#16191c',
-                            900: '#0b0d0f',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Mesmerize', 'system-ui', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.5s ease-out',
-                        'slide-up': 'slideUp 0.5s ease-out',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        slideUp: {
-                            '0%': { transform: 'translateY(20px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' },
-                        }
-                    }
-                }
-            }
-        };
-    </script>
-    
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-
-    <style>
-        /* Mesmerize é mais condensada que a Inter no mesmo tamanho em px — compensa a
-           legibilidade escalando toda a escala rem do Tailwind (texto, espaçamentos, ícones). */
-        html { font-size: 112.5%; }
-        /* Mesmerize — tipografia oficial da marca (Manual de Identidade Visual BCC 2025) */
-        @font-face {
-            font-family: 'Mesmerize';
-            src: url('assets/fonts/mesmerize/mesmerize-light.ttf') format('truetype');
-            font-weight: 300;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'Mesmerize';
-            src: url('assets/fonts/mesmerize/mesmerize-bold.ttf') format('truetype');
-            font-weight: 700;
-            font-display: swap;
-        }
-        body { font-family: 'Mesmerize', system-ui, sans-serif; font-weight: 300; }
-        .glass-panel {
-            background: rgba(22, 25, 28, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .nav-item.active {
-            background: rgba(0, 158, 224, 0.15);
-            color: #009EE0;
-            border-right: 3px solid #009EE0;
-        }
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #0b0d0f; }
-        ::-webkit-scrollbar-thumb { background: #2a2e33; border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: #3a3f45; }
-        
-        /* Modal Animation */
-        .modal-enter { opacity: 0; transform: scale(0.95); }
-        .modal-enter-active { opacity: 1; transform: scale(1); transition: opacity 300ms, transform 300ms; }
-        .modal-exit { opacity: 1; transform: scale(1); }
-        .modal-exit-active { opacity: 0; transform: scale(0.95); transition: opacity 200ms, transform 200ms; }
-    </style>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VII SECOMP 2026 — Semana de Computação — UNEMAT</title>
+<meta name="description" content="VII Semana de Computação da UNEMAT (SECOMP 2026) em Rondonópolis. Conectando Inteligências: Do Campus ao Ecossistema Global.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: { 50: "#f0f9ff", 100: "#e0f2fe", 400: "#38bdf8", 500: "#0ea5e9", 600: "#0284c7", 900: "#0c4a6e", 950: "#082f49" },
+          dark: { 800: "#1e293b", 900: "#0f172a" }
+        },
+        fontFamily: { sans: ["Inter", "sans-serif"] }
+      }
+    }
+  };
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0f172a;
+    --card:rgba(30,41,59,0.7);
+    --card-border:rgba(255,255,255,0.06);
+    --ink:#f8fafc;
+    --ink-soft:#94a3b8;
+    --ink-body:#cbd5e1;
+    --brand:#38bdf8;
+    --brand-strong:#0ea5e9;
+    --brand-soft:rgba(56,189,248,0.15);
+    --line-solid:#334155;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink-body);
+    font-family:"Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height:1.65;
+  }
+  .toolbar{
+    position:sticky; top:0; z-index:50; background:rgba(15,23,42,0.92); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line-solid); padding:10px 20px; display:flex; gap:16px; justify-content:center;
+    flex-wrap:wrap; font-family:"JetBrains Mono",monospace; font-size:0.78rem;
+  }
+  .toolbar a{color:var(--ink-soft); text-decoration:none; padding:4px 10px; border-radius:6px;}
+  .toolbar a:hover{background:var(--brand-soft); color:var(--brand);}
+  .toolbar a.highlight{background:var(--brand-strong); color:#fff; font-weight:700;}
+  footer{text-align:center; padding:40px 20px; color:#94a3b8; font-size:0.8rem; font-family:"JetBrains Mono",monospace; border-top:1px solid var(--line-solid);}
+</style>
 </head>
-<body class="bg-dark-900 text-slate-200 h-screen flex overflow-hidden selection:bg-brand-500 selection:text-white relative">
+<body class="bg-dark-900 text-slate-200">
 
-    <!-- Overlay escuro para mobile quando o menu está aberto -->
-    <div id="sidebar-overlay" onclick="app.toggleSidebar()" aria-hidden="true" class="fixed inset-0 bg-black/60 z-30 hidden md:hidden backdrop-blur-sm transition-opacity duration-300"></div>
+<div class="toolbar">
+  <a href="../" style="color:var(--brand); font-weight:700;"><i class="fa-solid fa-arrow-left"></i> Início do Site</a>
+  <a href="https://ialxnder.fly.dev/camisetas" target="_blank" rel="noopener" class="highlight">👕 Camiseta Oficial (R$ 35)</a>
+  <a href="https://meuevento.unemat.br/viisecomp/" target="_blank" rel="noopener" style="background:#0284c7; color:#fff; font-weight:700;">🎟️ Inscrições</a>
+  <a href="#programacao">Programação</a>
+  <a href="#chamada-trabalhos">Submissões</a>
+  <a href="#minicursos">Minicursos</a>
+  <a href="#apoiadores">Apoio SBC & Parceiros</a>
+  <a href="#mapa">Localização</a>
+</div>
 
-    <!-- Sidebar -->
-    <aside id="sidebar" aria-label="Menu Lateral" class="fixed inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition-transform duration-300 ease-in-out w-64 bg-dark-800 border-r border-slate-700 flex flex-col z-40 shadow-2xl">
-        <!-- Botão de fechar visível apenas no mobile -->
-        <button onclick="app.toggleSidebar()" aria-label="Fechar menu" class="md:hidden absolute top-4 right-4 text-slate-400 hover:text-white p-2 focus:outline-none">
-            <i class="fa-solid fa-xmark text-xl"></i>
-        </button>
-
-        <!-- Header / Logo -->
-        <div class="p-6 flex flex-col items-center justify-center border-b border-slate-700/50 mt-4 md:mt-0">
-            <div class="w-24 h-24 mb-3 relative">
-                <!-- Logo Image Placeholder -->
-                <img src="assets/img/logo_bcc_vertical_fundo_transparente_texto_branco.png" 
-                     alt="BCC Logo" 
-                     class="w-full h-full object-contain drop-shadow-lg"
-                     onerror="this.style.display='none'; document.getElementById('fallback-logo').style.display='flex'">
+<main class="max-w-6xl mx-auto p-4 sm:p-6 md:p-8 space-y-8 sm:space-y-12">
                 
-                <div id="fallback-logo" class="hidden w-full h-full bg-brand-500/10 rounded-xl items-center justify-center border border-brand-500/20 text-brand-500 text-2xl">
-                    <i class="fa-solid fa-code"></i>
-                </div>
-            </div>
-            <div class="text-center">
-                <p class="text-xs text-slate-400 font-mono mt-1">UNEMAT - Alto Araguaia/Rondonópolis</p>
-            </div>
-        </div>
-
-        <!-- Navigation -->
-        <nav aria-label="Navegação Principal" class="flex-1 py-6 px-3 space-y-1 overflow-y-auto">
-            <p class="px-3 text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Menu Principal</p>
-            
-            <button onclick="app.navigate('schedule')" id="nav-schedule" class="nav-item w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-slate-400 hover:text-white hover:bg-slate-700/50 transition-all">
-                <i class="fa-regular fa-calendar-days w-5 text-center"></i>
-                Horários 2026/2
-            </button>
-
-            <button onclick="app.navigate('guide')" id="nav-guide" class="nav-item w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-slate-400 hover:text-white hover:bg-slate-700/50 transition-all">
-                <i class="fa-solid fa-book-open-reader w-5 text-center"></i>
-                Guia do Estudante
-            </button>
-
-            <button onclick="app.navigate('estagio')" id="nav-estagio" class="nav-item w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-slate-400 hover:text-white hover:bg-slate-700/50 transition-all">
-                <i class="fa-solid fa-briefcase w-5 text-center"></i>
-                Guia de Estágio
-            </button>
-
-            <button onclick="app.navigate('tcc')" id="nav-tcc" class="nav-item w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-slate-400 hover:text-white hover:bg-slate-700/50 transition-all">
-                <i class="fa-solid fa-graduation-cap w-5 text-center text-amber-400"></i>
-                Guia do TCC
-            </button>
-
-            <a href="https://sistema-unemat.vercel.app/" target="_blank" class="w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-slate-400 hover:text-brand-500 hover:bg-slate-700/50 transition-all group">
-                <i class="fa-solid fa-computer w-5 text-center text-slate-500 group-hover:text-brand-500"></i>
-                Agenda de Laboratórios
-            </a>
-
-            <!-- NOVO MENU: SECOMP 2026 -->
-            <button onclick="app.navigate('secomp')" id="nav-secomp" class="nav-item w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-slate-400 hover:text-white hover:bg-slate-700/50 transition-all">
-                <i class="fa-solid fa-microchip w-5 text-center text-purple-400"></i>
-                SECOMP 2026
-            </button>
-
-            <!-- NOVO MENU: Camiseta SECOMP 2026 -->
-            <a href="https://ialxnder.fly.dev/camisetas" target="_blank" rel="noopener" class="w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 hover:bg-cyan-500/20 transition-all group">
-                <i class="fa-solid fa-shirt w-5 text-center text-cyan-400"></i>
-                Camiseta BCC <span class="text-[10px] bg-cyan-500 text-white font-bold px-1.5 py-0.5 rounded ml-auto">R$ 35</span>
-            </a>
-
-            <p class="px-3 text-xs font-bold text-slate-500 uppercase tracking-wider mt-6 mb-2">Links Externos</p>
-
-            <a href="https://sigaa.unemat.br/sigaa/verTelaLogin.do" target="_blank" class="w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-slate-400 hover:text-brand-500 hover:bg-slate-700/50 transition-all group">
-                <i class="fa-solid fa-globe w-5 text-center text-slate-500 group-hover:text-brand-500"></i>
-                Sistema Acadêmico
-            </a>
-            
-            <a href="https://bit.ly/CalAcademico" target="_blank" class="w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-slate-400 hover:text-brand-500 hover:bg-slate-700/50 transition-all group">
-                <i class="fa-solid fa-calendar-check w-5 text-center text-slate-500 group-hover:text-brand-500"></i>
-                Calendário Institucional
-            </a>
-
-            <a href="https://caest-informa.manus.space/" target="_blank" class="w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-slate-400 hover:text-brand-500 hover:bg-slate-700/50 transition-all group">
-                <i class="fa-solid fa-user-group w-5 text-center text-slate-500 group-hover:text-brand-500"></i>
-                CAEST
-            </a>
-
-            <!-- ALXnderBETA Link -->
-            <a href="https://bit.ly/iALXnderBETA" target="_blank" class="w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-brand-400 bg-brand-500/10 border border-brand-500/20 hover:bg-brand-500/20 transition-all group mt-4">
-                <i class="fa-solid fa-robot w-5 text-center text-brand-500"></i>
-                Dúvidas? <span class="text-[10px] bg-brand-500 text-white px-1.5 rounded ml-auto">IA</span>
-            </a>
-        </nav>
-
-        <!-- Footer Info -->
-        <div class="p-4 bg-slate-900/50 border-t border-slate-700/50 text-xs">
-            <div class="flex items-center gap-2 text-brand-500 font-bold mb-2">
-                <i class="fa-solid fa-clock"></i> Atendimento (Seg-Sex)
-            </div>
-            <div class="space-y-2 text-slate-400">
-                <div class="flex justify-between">
-                    <span>Rondonópolis:</span>
-                    <span class="text-slate-200">07h-11h45 / 18h-21h</span>
-                </div>
-                <div class="flex justify-between">
-                    <span>Alto Araguaia:</span>
-                    <span class="text-slate-200">8h-18h</span>
-                </div>
-            </div>
-        </div>
-    </aside>
-
-    <!-- Main Content Area -->
-    <main class="flex-1 flex flex-col min-w-0 bg-dark-900 relative">
-        
-        <!-- Header Mobile com Botão de Menu -->
-        <header class="md:hidden bg-dark-800 border-b border-slate-700 p-4 flex justify-between items-center z-10 shrink-0 shadow-md">
-            <div class="flex items-center gap-4">
-                <!-- Botão Hamburger -->
-                <button id="btn-hamburger" onclick="app.toggleSidebar()" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar" class="text-slate-300 hover:text-white focus:outline-none p-1">
-                    <i class="fa-solid fa-bars text-2xl"></i>
-                </button>
-                <span class="font-bold text-white text-sm truncate">UNEMAT-AIA/ROO</span>
-            </div>
-            <div class="flex gap-3 sm:gap-4">
-                <button onclick="app.navigate('estagio')" class="text-sky-400 p-1 hover:bg-slate-700 rounded transition-colors" title="Guia de Estágio"><i class="fa-solid fa-briefcase"></i></button>
-                <button onclick="app.navigate('tcc')" class="text-amber-400 p-1 hover:bg-slate-700 rounded transition-colors" title="Guia do TCC"><i class="fa-solid fa-graduation-cap"></i></button>
-                <button onclick="app.navigate('secomp')" class="text-purple-400 p-1 hover:bg-slate-700 rounded transition-colors" title="SECOMP 2026"><i class="fa-solid fa-microchip"></i></button>
-                <button onclick="app.navigate('schedule')" class="text-brand-400 p-1 hover:bg-slate-700 rounded transition-colors" title="Horários"><i class="fa-solid fa-calendar-days"></i></button>
-            </div>
-        </header>
-
-        <!-- Scrollable Content -->
-        <div class="flex-1 overflow-y-auto p-3 sm:p-4 md:p-8 scroll-smooth" id="main-scroll">
-            
-            <!-- VIEW: SCHEDULE (Grades) -->
-            <div id="view-schedule" class="max-w-6xl mx-auto space-y-8 animate-fade-in hidden">
-                <!-- Campus Toggles -->
-                <div class="flex justify-center mb-6 md:mb-8">
-                    <div class="bg-slate-800 p-1 rounded-xl inline-flex shadow-lg border border-slate-700">
-                        <button onclick="app.setCampus('AIA')" id="tab-aia" class="px-4 sm:px-6 py-2 rounded-lg text-sm font-bold transition-all duration-200 flex items-center gap-2">
-                            <i class="fa-solid fa-location-dot"></i> Alto Araguaia
-                        </button>
-                        <button onclick="app.setCampus('ROO')" id="tab-roo" class="px-4 sm:px-6 py-2 rounded-lg text-sm font-bold transition-all duration-200 flex items-center gap-2">
-                            <i class="fa-solid fa-building-columns"></i> Rondonópolis
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Phase Tabs -->
-                <div class="overflow-x-auto pb-2">
-                    <div class="flex md:justify-center gap-2 min-w-max px-2" id="phase-tabs">
-                        <!-- JS injected -->
-                    </div>
-                </div>
-
-                <!-- Schedule Content -->
-                <div id="schedule-container" class="space-y-6">
-                    <!-- JS injected -->
-                </div>
-
-                <!-- Chart Section -->
-                <div class="glass-panel rounded-2xl p-5 sm:p-8 mt-8">
-                    <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                        <i class="fa-solid fa-chart-simple text-brand-500"></i> Carga Horária Semanal
-                    </h3>
-                    <div class="chart-container mx-auto">
-                        <canvas id="workloadChart"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <!-- VIEW: STUDENT GUIDE -->
-            <div id="view-guide" class="hidden max-w-5xl mx-auto space-y-8 animate-fade-in">
-                
-                <!-- Barra de Ferramentas / Página Direta -->
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-slate-800/90 p-4 sm:p-5 rounded-2xl border border-slate-700 shadow-lg">
-                    <div>
-                        <h2 class="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
-                            <i class="fa-solid fa-book-open-reader text-brand-400"></i> Guia Oficial do Estudante
-                        </h2>
-                        <p class="text-xs sm:text-sm text-slate-400 mt-1">Recursos, links, calendários acadêmicos e orientações essenciais para sua jornada.</p>
-                    </div>
-                    <div class="flex items-center gap-2 shrink-0">
-                        <a href="guia/" target="_blank" class="px-3.5 py-2 bg-slate-700 hover:bg-slate-600 text-slate-200 text-xs font-semibold rounded-lg flex items-center gap-1.5 transition-colors border border-slate-600">
-                            <i class="fa-solid fa-up-right-from-square"></i> Abrir em Nova Aba
-                        </a>
-                        <a href="https://bit.ly/iALXnderBETA" target="_blank" rel="noopener" class="px-4 py-2 bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold rounded-lg flex items-center gap-1.5 transition-colors shadow-md border border-brand-400">
-                            <i class="fa-solid fa-robot"></i> Assistente iALXnder
-                        </a>
-                    </div>
-                </div>
-
-                <div class="text-center mb-6 md:mb-8">
-                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-2">Guia do Estudante</h2>
-                    <p class="text-sm md:text-base text-slate-400">Recursos, links e orientações essenciais para a sua jornada.</p>
-                </div>
-
-                <!-- Welcome Card -->
-                <div class="bg-gradient-to-r from-brand-900/50 to-slate-800 rounded-2xl p-5 sm:p-6 border-l-4 border-brand-500 shadow-lg">
-                    <h3 class="text-xl font-bold text-white mb-3">📢 Mensagem de Boas-vindas</h3>
-                    <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                        Caros estudantes,<br>
-                        Sejam bem-vindos à nossa comunidade acadêmica! 💙 Para apoiar a sua jornada universitária, reunimos informações essenciais que vão facilitar o seu dia a dia.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
-                    
-                    <!-- Card: Tutoriais -->
-                    <div class="glass-panel p-5 sm:p-6 rounded-2xl hover:bg-slate-800/80 transition-colors">
-                        <div class="w-10 h-10 bg-blue-500/20 text-blue-400 rounded-lg flex items-center justify-center mb-4 text-xl">
-                            <i class="fa-solid fa-laptop-file"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-4">Tutoriais e Orientações</h3>
-                        <ul class="space-y-3 text-sm">
-                            <li>
-                                <a href="https://bit.ly/tutoriaisSIGAA" target="_blank" class="flex justify-between items-center text-slate-300 hover:text-brand-400 group">
-                                    <span>Uso do SIGAA</span>
-                                    <i class="fa-solid fa-arrow-up-right-from-square opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                                </a>
-                            </li>
-                            <li class="border-t border-slate-700/50 pt-2">
-                                <a href="https://bit.ly/EstudanteNEE" target="_blank" class="flex justify-between items-center text-slate-300 hover:text-brand-400 group">
-                                    <span>Estudantes com NEE</span>
-                                    <i class="fa-solid fa-arrow-up-right-from-square opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                                </a>
-                            </li>
-                            <li class="border-t border-slate-700/50 pt-2">
-                                <a href="https://bit.ly/CAESTUnematAIA" target="_blank" class="flex justify-between items-center text-slate-300 hover:text-brand-400 group">
-                                    <span>CAEST – Assuntos Estudantis</span>
-                                    <i class="fa-solid fa-arrow-up-right-from-square opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                                </a>
-                            </li>
-                            <li class="border-t border-slate-700/50 pt-2">
-                                <a href="assets/files/bcc_wallpaper.zip" target="_blank" class="flex justify-between items-center text-slate-300 hover:text-brand-400 group">
-                                    <span>Papel de Parede (Curso)</span>
-                                    <i class="fa-solid fa-download opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                                </a>
-                            </li>
-                            <li class="border-t border-slate-700/50 pt-2">
-                                <a href="assets/files/Horario.AIA.zip" target="_blank" class="flex justify-between items-center text-slate-300 hover:text-brand-400 group">
-                                    <span>Horário de Alto Araguaia</span>
-                                    <i class="fa-solid fa-download opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                                </a>
-                            </li>
-                            <li class="border-t border-slate-700/50 pt-2">
-                                <a href="assets/files/Horario.ROO.zip" target="_blank" class="flex justify-between items-center text-slate-300 hover:text-brand-400 group">
-                                    <span>Horário de Rondonópolis</span>
-                                    <i class="fa-solid fa-download opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                                </a>
-                            </li>
-                            <li class="border-t border-slate-700/50 pt-2">
-                                <a href="https://cms.unemat.br/download/documentos/bloco-documento-arquivo/HajJ4c8t4MTzU4ZcwDV0lOCOFbhENiW5xZNu1pvm/Calendario-Academico-Para-o-Ano-Letivo-de-2026.pdf" target="_blank" class="flex justify-between items-center text-slate-300 hover:text-brand-400 group">
-                                    <span>Calendário Oficial - 2026</span>
-                                    <i class="fa-solid fa-download opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Card: PPCs -->
-                    <div class="glass-panel p-5 sm:p-6 rounded-2xl hover:bg-slate-800/80 transition-colors">
-                        <div class="w-10 h-10 bg-purple-500/20 text-purple-400 rounded-lg flex items-center justify-center mb-4 text-xl">
-                            <i class="fa-solid fa-file-contract"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-4">Projetos Pedagógicos (PPC)</h3>
-                        <div class="space-y-3">
-                            <a href="http://www.unemat.br/resolucoes/resolucoes/conepe/5300_res_conepe_61_2023.pdf" target="_blank" class="block bg-slate-900/50 hover:bg-slate-700 p-3 rounded-lg border border-slate-700 hover:border-purple-500/50 transition-all group">
-                                <div class="flex items-center justify-between">
-                                    <span class="text-sm font-semibold text-slate-200">Rondonópolis</span>
-                                    <i class="fa-solid fa-file-pdf text-slate-500 group-hover:text-purple-400"></i>
-                                </div>
-                            </a>
-                            <a href="https://www.unemat.br/resolucoes/resolucoes/conepe/5298_res_conepe_58_2023.pdf" target="_blank" class="block bg-slate-900/50 hover:bg-slate-700 p-3 rounded-lg border border-slate-700 hover:border-purple-500/50 transition-all group">
-                                <div class="flex items-center justify-between">
-                                    <span class="text-sm font-semibold text-slate-200">Alto Araguaia</span>
-                                    <i class="fa-solid fa-file-pdf text-slate-500 group-hover:text-purple-400"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Card: Guia Oficial de Estágio -->
-                    <div class="md:col-span-2 bg-gradient-to-br from-sky-950/40 via-slate-800 to-slate-900 p-5 sm:p-6 rounded-2xl border border-sky-500/30 relative overflow-hidden">
-                        <div class="absolute right-0 top-0 p-6 opacity-5 pointer-events-none">
-                            <i class="fa-solid fa-briefcase text-9xl"></i>
-                        </div>
-                        <div class="relative z-10">
-                            <div class="flex items-center gap-4 mb-3">
-                                <div class="w-12 h-12 bg-sky-500/20 border border-sky-500/40 rounded-full flex items-center justify-center text-sky-400 text-2xl shadow-lg shadow-sky-500/10 shrink-0">
-                                    <i class="fa-solid fa-briefcase"></i>
-                                </div>
-                                <div>
-                                    <div class="flex items-center gap-2">
-                                        <h3 class="text-xl font-bold text-white">Guia Oficial de Estágio</h3>
-                                        <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-500/30">Lei 11.788</span>
-                                    </div>
-                                    <p class="text-slate-300 text-sm">Estágio Supervisionado Obrigatório (I e II) e Não Obrigatório — do planejamento ao relatório final.</p>
-                                </div>
-                            </div>
-                            <p class="text-slate-300 text-sm mb-4 max-w-2xl">
-                                Acesse requisitos legais, formalização do TCE com apólice de seguro obrigatória, modelos de documentos e preenchimento online integrado com emissão em Word (.docx) e PDF para assinatura digital no <code>gov.br</code>.
-                            </p>
-                            <div class="flex flex-wrap items-center gap-3">
-                                <button onclick="app.navigate('estagio')" class="inline-flex items-center gap-2 bg-sky-600 hover:bg-sky-500 text-white font-bold px-4 py-2 rounded-lg text-sm transition-all shadow-md">
-                                    <i class="fa-solid fa-book-open"></i> Acessar Guia de Estágio
-                                </button>
-                                <a href="estagio/" target="_blank" class="inline-flex items-center gap-2 bg-slate-700/80 hover:bg-slate-600 text-slate-200 px-4 py-2 rounded-lg text-sm font-semibold transition-colors border border-slate-600">
-                                    <i class="fa-solid fa-up-right-from-square"></i> Abrir em Nova Aba
-                                </a>
-                                <a href="https://ialxnder.fly.dev/estagio" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors border border-brand-400">
-                                    <i class="fa-solid fa-bolt"></i> Portal Estágio Online
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card: Guia Oficial do TCC -->
-                    <div class="md:col-span-2 bg-gradient-to-br from-amber-950/40 via-slate-800 to-slate-900 p-5 sm:p-6 rounded-2xl border border-amber-500/30 relative overflow-hidden">
-                        <div class="absolute right-0 top-0 p-6 opacity-5 pointer-events-none">
-                            <i class="fa-solid fa-graduation-cap text-9xl"></i>
-                        </div>
-                        <div class="relative z-10">
-                            <div class="flex items-center gap-4 mb-3">
-                                <div class="w-12 h-12 bg-amber-500/20 border border-amber-500/40 rounded-full flex items-center justify-center text-amber-400 text-2xl shadow-lg shadow-amber-500/10 shrink-0">
-                                    <i class="fa-solid fa-graduation-cap"></i>
-                                </div>
-                                <div>
-                                    <div class="flex items-center gap-2">
-                                        <h3 class="text-xl font-bold text-white">Guia Oficial do TCC</h3>
-                                        <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">IN nº 001/2026</span>
-                                    </div>
-                                    <p class="text-slate-300 text-sm">Trabalho de Conclusão de Curso I e II — da proposta à defesa pública perante banca.</p>
-                                </div>
-                            </div>
-                            <p class="text-slate-300 text-sm mb-4 max-w-2xl">
-                                Acesse todas as etapas regulamentadas, prazos regimentais, modelos de documentos e preenchimento online integrado ao portal com emissão em Word (.docx) e PDF para assinatura digital no <code>gov.br</code>.
-                            </p>
-                            <div class="flex flex-wrap items-center gap-3">
-                                <button onclick="app.navigate('tcc')" class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-4 py-2 rounded-lg text-sm transition-all shadow-md">
-                                    <i class="fa-solid fa-book-open"></i> Acessar Guia de TCC
-                                </button>
-                                <a href="tcc/" target="_blank" class="inline-flex items-center gap-2 bg-slate-700/80 hover:bg-slate-600 text-slate-200 px-4 py-2 rounded-lg text-sm font-semibold transition-colors border border-slate-600">
-                                    <i class="fa-solid fa-up-right-from-square"></i> Abrir em Nova Aba
-                                </a>
-                                <a href="https://ialxnder.fly.dev/tcc" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors border border-brand-400">
-                                    <i class="fa-solid fa-bolt"></i> Portal TCC Online
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card: iALXnder -->
-                    <div class="md:col-span-2 bg-gradient-to-br from-brand-900/40 to-slate-800 p-5 sm:p-6 rounded-2xl border border-brand-500/30 relative overflow-hidden">
-                        <div class="absolute right-0 top-0 p-6 opacity-5 pointer-events-none">
-                            <i class="fa-solid fa-robot text-9xl"></i>
-                        </div>
-                        <div class="relative z-10">
-                            <div class="flex items-center gap-4 mb-3">
-                                <div class="w-12 h-12 bg-brand-500 rounded-full flex items-center justify-center text-white text-2xl animate-pulse shadow-lg shadow-brand-500/30 shrink-0">
-                                    <i class="fa-solid fa-robot"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-bold text-brand-300">Assistente Virtual iALXnder</h3>
-                                    <p class="text-slate-300 text-sm">Seu copiloto acadêmico para dúvidas sobre o curso.</p>
-                                </div>
-                            </div>
-                            <p class="text-slate-300 text-sm mb-4 max-w-2xl">
-                                O iALXnder foi treinado com o PPC do curso, a Normatização Acadêmica, regulamentos de estágio, TCC e outros documentos para responder suas perguntas de forma rápida e precisa.
-                            </p>
-                            <a href="https://bit.ly/iALXnderBETA" target="_blank" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white px-5 py-2 rounded-lg text-sm font-bold transition-shadow hover:shadow-lg hover:shadow-brand-500/20">
-                                Conversar com a IA <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Card: Rights -->
-                    <div class="md:col-span-2 bg-gradient-to-br from-indigo-900/40 to-slate-800 p-5 sm:p-6 rounded-2xl border border-indigo-500/30 relative overflow-hidden">
-                        <div class="absolute right-0 top-0 p-6 opacity-5 pointer-events-none">
-                            <i class="fa-solid fa-scale-balanced text-9xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-indigo-300 mb-2 flex items-center gap-2">
-                            <i class="fa-solid fa-gavel"></i> Direitos e Deveres
-                        </h3>
-                        <p class="text-slate-300 text-sm mb-4 max-w-2xl">
-                            Leitura essencial para alinhar expectativas. Contém regras sobre avaliações, notas, frequência, conduta e normas acadêmicas.
-                        </p>
-                        <a href="https://bit.ly/DireitoseDeveresUNEMAT" target="_blank" class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2 rounded-lg text-sm font-bold transition-shadow hover:shadow-lg hover:shadow-indigo-500/20">
-                            Ler Documento Oficial <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- VIEW: GUIA DE ESTÁGIO (embutido, com controles de tela cheia e portal) -->
-            <div id="view-estagio" class="hidden max-w-5xl mx-auto animate-fade-in space-y-4">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-slate-800/90 p-4 sm:p-5 rounded-2xl border border-slate-700 shadow-lg">
-                    <div>
-                        <h2 class="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
-                            <i class="fa-solid fa-briefcase text-brand-400"></i> Guia Oficial do Estágio Supervisionado
-                        </h2>
-                        <p class="text-xs sm:text-sm text-slate-400 mt-1">Estágio Obrigatório e Não Obrigatório · Lei nº 11.788/2008 e Resoluções CONEPE nº 009/2020 e nº 047/2025</p>
-                    </div>
-                    <div class="flex items-center gap-2 shrink-0">
-                        <a href="estagio/" target="_blank" class="px-3.5 py-2 bg-slate-700 hover:bg-slate-600 text-slate-200 text-xs font-semibold rounded-lg flex items-center gap-1.5 transition-colors border border-slate-600">
-                            <i class="fa-solid fa-up-right-from-square"></i> Abrir em Nova Aba
-                        </a>
-                        <a href="https://ialxnder.fly.dev/estagio" target="_blank" rel="noopener" class="px-4 py-2 bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold rounded-lg flex items-center gap-1.5 transition-colors shadow-md border border-brand-400">
-                            <i class="fa-solid fa-bolt"></i> Portal Estágio Online
-                        </a>
-                    </div>
-                </div>
-                <iframe src="estagio/index.html" title="Guia do Estágio" class="w-full h-[80vh] md:h-[85vh] rounded-2xl border border-slate-700 shadow-xl bg-dark-800"></iframe>
-            </div>
-
-            <!-- VIEW: GUIA DE TCC (embutido, com controles de tela cheia e portal) -->
-            <div id="view-tcc" class="hidden max-w-5xl mx-auto animate-fade-in space-y-4">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-slate-800/90 p-4 sm:p-5 rounded-2xl border border-slate-700 shadow-lg">
-                    <div>
-                        <h2 class="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
-                            <i class="fa-solid fa-graduation-cap text-amber-400"></i> Guia Oficial do TCC
-                        </h2>
-                        <p class="text-xs sm:text-sm text-slate-400 mt-1">Trabalho de Conclusão de Curso I e II · Pautado na IN nº 001/2026–Colegiado/BCC e Resolução nº 047/2025–CONEPE</p>
-                    </div>
-                    <div class="flex items-center gap-2 shrink-0">
-                        <a href="tcc/" target="_blank" class="px-3.5 py-2 bg-slate-700 hover:bg-slate-600 text-slate-200 text-xs font-semibold rounded-lg flex items-center gap-1.5 transition-colors border border-slate-600">
-                            <i class="fa-solid fa-up-right-from-square"></i> Abrir em Nova Aba
-                        </a>
-                        <a href="https://ialxnder.fly.dev/tcc" target="_blank" rel="noopener" class="px-4 py-2 bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold rounded-lg flex items-center gap-1.5 transition-colors shadow-md border border-brand-400">
-                            <i class="fa-solid fa-bolt"></i> Portal TCC Online
-                        </a>
-                    </div>
-                </div>
-                <iframe src="tcc/index.html" title="Guia do TCC" class="w-full h-[80vh] md:h-[85vh] rounded-2xl border border-slate-700 shadow-xl bg-dark-800"></iframe>
-            </div>
-
-            <!-- VIEW: SECOMP 2026 LANDING PAGE -->
-            <div id="view-secomp" class="max-w-6xl mx-auto space-y-8 sm:space-y-12 animate-fade-in">
-                
-                <!-- Barra Superior SECOMP / Página Direta -->
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-slate-800/90 p-4 sm:p-5 rounded-2xl border border-slate-700 shadow-lg">
-                    <div>
-                        <h2 class="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
-                            <i class="fa-solid fa-microchip text-purple-400"></i> VII SECOMP 2026
-                        </h2>
-                        <p class="text-xs sm:text-sm text-slate-400 mt-1">VII Semana de Computação · 06 a 11 de Junho de 2026 · UNEMAT Rondonópolis</p>
-                    </div>
-                    <div class="flex items-center gap-2 shrink-0">
-                        <a href="secomp/" target="_blank" class="px-3.5 py-2 bg-slate-700 hover:bg-slate-600 text-slate-200 text-xs font-semibold rounded-lg flex items-center gap-1.5 transition-colors border border-slate-600">
-                            <i class="fa-solid fa-up-right-from-square"></i> Abrir em Nova Aba
-                        </a>
-                        <a href="https://ialxnder.fly.dev/camisetas" target="_blank" rel="noopener" class="px-4 py-2 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white text-xs font-bold rounded-lg flex items-center gap-1.5 transition-colors shadow-md border border-cyan-400">
-                            <i class="fa-solid fa-shirt"></i> Camiseta Oficial (R$ 35)
-                        </a>
-                    </div>
-                </div>
-
                 <!-- Hero Section -->
                 <div class="relative bg-gradient-to-br from-purple-900 via-dark-800 to-brand-900 rounded-3xl p-6 sm:p-8 md:p-16 overflow-hidden border border-purple-500/30 shadow-2xl">
                     <div class="absolute top-0 right-0 -mt-10 -mr-10 opacity-5 pointer-events-none">
@@ -623,7 +104,7 @@
                             <a href="#programacao" class="w-full sm:w-auto justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-dark-800 border border-slate-600 hover:border-purple-500 text-white font-bold transition-all flex items-center gap-3 text-base sm:text-lg">
                                 <i class="fa-solid fa-list"></i> Ver Programação
                             </a>
-                            <a href="assets/files/wallpapers.zip" target="_blank" class="w-full sm:w-auto justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-dark-800 border border-slate-600 hover:border-pink-500 text-white font-bold transition-all flex items-center gap-3 text-base sm:text-lg">
+                            <a href="../assets/files/wallpapers.zip" target="_blank" class="w-full sm:w-auto justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-dark-800 border border-slate-600 hover:border-pink-500 text-white font-bold transition-all flex items-center gap-3 text-base sm:text-lg">
                                 <i class="fa-solid fa-image"></i> Papéis de Parede
                             </a>
                             <a href="https://bit.ly/MapaSECOMP2026" target="_blank" class="w-full sm:w-auto justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-dark-800 border border-slate-600 hover:border-emerald-500 text-white font-bold transition-all flex items-center gap-3 text-base sm:text-lg">
@@ -637,7 +118,7 @@
                 <div class="relative bg-gradient-to-r from-cyan-950/80 via-dark-800 to-slate-900 rounded-3xl p-6 sm:p-8 border border-cyan-500/40 shadow-2xl overflow-hidden">
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
                         <div class="md:col-span-4 text-center">
-                            <img src="assets/camisetas/camiseta_mockup.jpg" alt="Camiseta Oficial VII SECOMP 2026" class="w-full max-w-[280px] mx-auto rounded-2xl shadow-2xl border border-slate-700/80 hover:scale-105 transition-transform duration-300">
+                            <img src="../assets/camisetas/camiseta_mockup.jpg" alt="Camiseta Oficial VII SECOMP 2026" class="w-full max-w-[280px] mx-auto rounded-2xl shadow-2xl border border-slate-700/80 hover:scale-105 transition-transform duration-300">
                             <span class="inline-block mt-3 px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-bold uppercase tracking-wider border border-cyan-500/30">
                                 Edição Oficial VII SECOMP 2026
                             </span>
@@ -900,8 +381,8 @@
                                                         <li><strong class="text-pink-400">🎟️ Ingresso:</strong> R$ 10,00 + 1kg de alimento não perecível (Ação Solidária!).</li>
                                                         <li><strong class="text-pink-400">👗 Link:</strong> <a href="https://forms.gle/yh4mDwvWQvqqbgb17" target="_blank" class="underline hover:text-pink-300 transition-colors">Clique aqui para acessar o formulário de inscrição e pagamento</a>.</li>
                                                         <li><strong class="text-pink-400">🏆 Premiação:</strong> Os valores arrecadados serão revertidos em premiação.</li>
-                                                        <li><strong class="text-pink-400">📜 Regulamento:</strong> <a href="assets/docs/regulamento_cosplay.pdf" target="_blank" class="underline hover:text-pink-300 transition-colors">Leia o regulamento completo (PDF)</a>.</li>
-                                                        <li><strong class="text-pink-400">👶 Menores de 18 anos:</strong> <a href="assets/docs/termo_autorizacao_menores_secomp.pdf" target="_blank" class="underline hover:text-pink-300 transition-colors">Baixe o termo de autorização obrigatório (PDF)</a>.</li>
+                                                        <li><strong class="text-pink-400">📜 Regulamento:</strong> <a href="../assets/docs/regulamento_cosplay.pdf" target="_blank" class="underline hover:text-pink-300 transition-colors">Leia o regulamento completo (PDF)</a>.</li>
+                                                        <li><strong class="text-pink-400">👶 Menores de 18 anos:</strong> <a href="../assets/docs/termo_autorizacao_menores_secomp.pdf" target="_blank" class="underline hover:text-pink-300 transition-colors">Baixe o termo de autorização obrigatório (PDF)</a>.</li>
                                                     </ul> 
                                                     <br>
                                                 <a href="https://www.instagram.com/reel/DYWQFDpuk9-/?igsh=bzd6YzdpenJicDQ5" target="_blank" class="inline-flex items-center gap-2 text-pink-400 hover:text-pink-300 text-xs sm:text-sm font-bold transition-colors w-max">
@@ -1579,7 +1060,7 @@
                                         <strong class="text-white flex items-center gap-2 mb-2"><i class="fa-solid fa-robot text-yellow-400"></i> Exposição de Robôs</strong>
                                         <p class="text-slate-400 text-xs sm:text-sm">Interaja de perto com as máquinas desenvolvidas pelo ecossistema acadêmico.</p>
                                     </div>
-                                    <a href="assets/docs/regulamento_jogos.pdf" target="_blank" class="block bg-purple-900/20 p-4 rounded-lg border border-purple-500/40 hover:border-purple-400 hover:bg-purple-900/40 transition-all group shadow-lg shadow-purple-500/10">
+                                    <a href="../assets/docs/regulamento_jogos.pdf" target="_blank" class="block bg-purple-900/20 p-4 rounded-lg border border-purple-500/40 hover:border-purple-400 hover:bg-purple-900/40 transition-all group shadow-lg shadow-purple-500/10">
                                         <strong class="text-purple-200 flex items-center gap-2 mb-2 group-hover:text-white transition-colors"><i class="fa-solid fa-gamepad text-purple-400"></i> Competição Jogos Digitais <i class="fa-solid fa-file-pdf text-purple-400 ml-auto animate-pulse group-hover:animate-none text-sm sm:text-base"></i></strong>
                                         <p class="text-slate-300 text-xs sm:text-sm mb-3">Verifique os horários na grade diária e acesse o regulamento oficial.</p>
                                         <span class="inline-flex items-center gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-purple-300 bg-purple-500/30 px-2.5 py-1 rounded border border-purple-500/50 group-hover:bg-purple-500/50 transition-colors"><i class="fa-solid fa-download"></i> Baixar Regulamento</span>
@@ -1986,13 +1467,13 @@
                                         <a href="https://www.sbc.org.br/wp-content/uploads/2024/07/modelosparapublicaodeartigos.zip" target="_blank" class="inline-flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-4 sm:px-5 py-3 rounded-lg font-bold transition-all shadow-lg hover:shadow-indigo-500/20 text-center text-sm">
                                             <i class="fa-solid fa-download"></i> Baixar Modelo SBC (Template)
                                         </a>
-                                        <a href="assets/files/programa.apresentacoes.slides.pptx" target="_blank" class="inline-flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-500 text-white px-4 sm:px-5 py-3 rounded-lg font-bold transition-all shadow-lg hover:shadow-orange-500/20 text-center text-sm">
+                                        <a href="../assets/files/programa.apresentacoes.slides.pptx" target="_blank" class="inline-flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-500 text-white px-4 sm:px-5 py-3 rounded-lg font-bold transition-all shadow-lg hover:shadow-orange-500/20 text-center text-sm">
                                             <i class="fa-solid fa-file-powerpoint"></i> Modelo de Slides (.pptx)
                                         </a>
                                         <a href="https://drive.google.com/file/d/1p4xgcuGNIgVfAJXvpVc8RRlckZBfzffM/view?usp=sharing" target="_blank" class="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-brand-400 border border-brand-500/30 px-4 sm:px-5 py-3 rounded-lg font-bold transition-all shadow-lg hover:shadow-brand-500/20 text-center text-sm">
                                             <i class="fa-solid fa-circle-info"></i> Edital, Temas e Formulários
                                         </a>
-                                        <a href="assets/docs//programa.apresentacoes.orientacoes.pdf" target="_blank" class="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-600/80 px-4 sm:px-5 py-3 rounded-lg font-bold transition-all text-center text-sm">
+                                        <a href="../assets/docs//programa.apresentacoes.orientacoes.pdf" target="_blank" class="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-600/80 px-4 sm:px-5 py-3 rounded-lg font-bold transition-all text-center text-sm">
                                             <i class="fa-solid fa-book-reader"></i> Orientações de Apresentação
                                         </a>
                                     </div>
@@ -2048,7 +1529,7 @@
                             <span class="text-xs sm:text-sm text-slate-300 uppercase tracking-widest font-bold">Realização</span>
                             <div class="flex flex-row justify-center gap-3 sm:gap-4">
                                 <div class="bg-white p-0 rounded-2xl w-32 sm:w-40 h-24 sm:h-28 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50 overflow-hidden">
-                                    <img src="assets/img/logo_bcc.png" alt="BCC" class="w-full h-full object-contain scale-[1.0]">
+                                    <img src="../assets/img/logo_bcc.png" alt="BCC" class="w-full h-full object-contain scale-[1.0]">
                                 </div>
                             </div>
                         </div>
@@ -2058,13 +1539,13 @@
                             <span class="text-xs sm:text-sm text-slate-300 uppercase tracking-widest font-bold">Apoio Institucional</span>
                             <div class="flex flex-row flex-wrap justify-center gap-3 sm:gap-4">
                                 <div class="bg-white p-0 rounded-2xl w-32 sm:w-40 h-24 sm:h-28 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50 overflow-hidden">
-                                    <img src="assets/img/unemat.aia.roo.fundo.branco.png" alt="UNEMAT" class="w-full h-full object-contain scale-105">
+                                    <img src="../assets/img/unemat.aia.roo.fundo.branco.png" alt="UNEMAT" class="w-full h-full object-contain scale-105">
                                 </div>
                                 <div class="bg-white p-0 rounded-2xl w-32 sm:w-40 h-24 sm:h-28 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50 overflow-hidden">
-                                    <img src="assets/img/logo_aginov.jpg" alt="AGINOV" class="w-full h-full object-contain scale-[2.5]">
+                                    <img src="../assets/img/logo_aginov.jpg" alt="AGINOV" class="w-full h-full object-contain scale-[2.5]">
                                 </div>
                                 <a href="http://www.sbc.org.br" target="_blank" class="bg-white p-0 rounded-2xl w-32 sm:w-40 h-24 sm:h-28 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50 cursor-pointer overflow-hidden">
-                                    <img src="assets/img/Logo SBC.png" alt="Sociedade Brasileira de Computação" class="w-full h-full object-contain scale-90">
+                                    <img src="../assets/img/Logo SBC.png" alt="Sociedade Brasileira de Computação" class="w-full h-full object-contain scale-90">
                                 </a>
                             </div>
                         </div>
@@ -2078,67 +1559,67 @@
                         <div class="flex flex-wrap justify-center gap-3 sm:gap-4 w-full max-w-5xl mx-auto">
                             <!-- Logos de Parceiros -->
                             <div class="bg-white p-0 rounded-xl w-[calc(50%-0.5rem)] sm:w-[160px] h-16 sm:h-20 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50 overflow-hidden">
-                                <img src="assets/img/logo_pixel.png" alt="PIXEL" class="w-full h-full object-contain scale-[0.95]">
+                                <img src="../assets/img/logo_pixel.png" alt="PIXEL" class="w-full h-full object-contain scale-[0.95]">
                             </div>
                             <div class="bg-white p-0 rounded-xl w-[calc(50%-0.5rem)] sm:w-[160px] h-16 sm:h-20 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50 overflow-hidden">
-                                <img src="assets/img/logo_leia.png" alt="LEIA" class="w-full h-full object-contain scale-[0.95]">
+                                <img src="../assets/img/logo_leia.png" alt="LEIA" class="w-full h-full object-contain scale-[0.95]">
                             </div>
                             <div class="bg-white p-0 rounded-xl w-[calc(50%-0.5rem)] sm:w-[160px] h-16 sm:h-20 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50 overflow-hidden">
-                                <img src="assets/img/logo_lese.png" alt="LESE" class="w-full h-full object-contain scale-[0.95]">
+                                <img src="../assets/img/logo_lese.png" alt="LESE" class="w-full h-full object-contain scale-[0.95]">
                             </div>
                             <div class="bg-white p-0 rounded-xl w-[calc(50%-0.5rem)] sm:w-[160px] h-16 sm:h-20 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50 overflow-hidden">
-                                <img src="assets/img/logo_criar.png" alt="CRIAR" class="w-full h-full object-contain scale-[0.95]">
+                                <img src="../assets/img/logo_criar.png" alt="CRIAR" class="w-full h-full object-contain scale-[0.95]">
                             </div>
                             <div class="bg-white p-0 rounded-xl w-[calc(50%-0.5rem)] sm:w-[160px] h-16 sm:h-20 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50 overflow-hidden">
-                                <img src="assets/img/logo_recycling.png" alt="e-Recycling" class="w-full h-full object-contain scale-[0.95]">
+                                <img src="../assets/img/logo_recycling.png" alt="e-Recycling" class="w-full h-full object-contain scale-[0.95]">
                             </div>
                             <div class="bg-white p-0 rounded-xl w-[calc(50%-0.5rem)] sm:w-[160px] h-16 sm:h-20 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50 overflow-hidden">
-                                <img src="assets/img/logo_iris.png" alt="IRIS" class="w-full h-full object-contain scale-[0.95]">
+                                <img src="../assets/img/logo_iris.png" alt="IRIS" class="w-full h-full object-contain scale-[0.95]">
                             </div>
                             <div class="bg-white p-0 rounded-xl w-[calc(50%-0.5rem)] sm:w-[160px] h-16 sm:h-20 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50 overflow-hidden">
-                                <img src="assets/img/logo_citroo.jpg" alt="CITROO" class="w-full h-full object-contain scale-[1.35]">
+                                <img src="../assets/img/logo_citroo.jpg" alt="CITROO" class="w-full h-full object-contain scale-[1.35]">
                             </div>
                             <div class="bg-white p-0 rounded-xl w-[calc(50%-0.5rem)] sm:w-[160px] h-16 sm:h-20 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50 overflow-hidden">
-                                <img src="assets/img/logo_sebrae.jpg" alt="SEBRAE" class="w-full h-full object-contain scale-[1.3]">
+                                <img src="../assets/img/logo_sebrae.jpg" alt="SEBRAE" class="w-full h-full object-contain scale-[1.3]">
                             </div>
                             <div class="bg-white p-0 rounded-xl w-[calc(50%-0.5rem)] sm:w-[160px] h-16 sm:h-20 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50 overflow-hidden">
-                                <img src="assets/img/LOGO_ATTO_POSITIVA.png" alt="ATTO Sementes" class="w-full h-full object-contain scale-[0.95]">
+                                <img src="../assets/img/LOGO_ATTO_POSITIVA.png" alt="ATTO Sementes" class="w-full h-full object-contain scale-[0.95]">
                             </div>
                             <div class="bg-white p-0 rounded-xl w-[calc(50%-0.5rem)] sm:w-[160px] h-16 sm:h-20 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50 overflow-hidden">
-                                <img src="assets/img/logo_patrocinio_lucas.png" alt="Patrocinador" class="w-full h-full object-contain scale-[0.95]">
+                                <img src="../assets/img/logo_patrocinio_lucas.png" alt="Patrocinador" class="w-full h-full object-contain scale-[0.95]">
                             </div>
                             <div class="bg-white p-0 rounded-xl w-[calc(50%-0.5rem)] sm:w-[160px] h-16 sm:h-20 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50 overflow-hidden">
-                                <img src="assets/img/logo_sekai.png" alt="SEKAI XP" class="w-full h-full object-contain scale-[0.95]">
+                                <img src="../assets/img/logo_sekai.png" alt="SEKAI XP" class="w-full h-full object-contain scale-[0.95]">
                             </div>
                             <div class="bg-white p-0 rounded-xl w-[calc(50%-0.5rem)] sm:w-[160px] h-16 sm:h-20 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50 overflow-hidden">
-                                <img src="assets/img/logo_caest.png" alt="CAEST" class="w-full h-full object-contain scale-[0.95]">
+                                <img src="../assets/img/logo_caest.png" alt="CAEST" class="w-full h-full object-contain scale-[0.95]">
                             </div>
                             <div class="bg-white p-0 rounded-xl w-[calc(50%-0.5rem)] sm:w-[160px] h-16 sm:h-20 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50 overflow-hidden">
-                                <img src="assets/img/logo_prefeitura.jpg" alt="Prefeitura de Rondonópolis" class="w-full h-full object-contain scale-[0.95]">
+                                <img src="../assets/img/logo_prefeitura.jpg" alt="Prefeitura de Rondonópolis" class="w-full h-full object-contain scale-[0.95]">
                             </div>
                             <div class="bg-white p-0 rounded-xl w-[calc(50%-0.5rem)] sm:w-[160px] h-16 sm:h-20 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50 overflow-hidden">
-                                <img src="assets/img/restaurante.comper.jpeg" alt="Restaurante Comper" class="w-full h-full object-contain scale-[0.95]">
+                                <img src="../assets/img/restaurante.comper.jpeg" alt="Restaurante Comper" class="w-full h-full object-contain scale-[0.95]">
                             </div>
                             <div class="bg-white p-0 rounded-xl w-[calc(50%-0.5rem)] sm:w-[160px] h-16 sm:h-20 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50 overflow-hidden">
-                                <img src="assets/img/mister.pao.jpeg" alt="Mister Pão" class="w-full h-full object-contain scale-[0.95]">
+                                <img src="../assets/img/mister.pao.jpeg" alt="Mister Pão" class="w-full h-full object-contain scale-[0.95]">
                             </div>
                             <div class="bg-white p-0 rounded-xl w-[calc(50%-0.5rem)] sm:w-[160px] h-16 sm:h-20 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50 overflow-hidden">
-                                <img src="assets/img/mercado.da.vila.jpeg" alt="Mercado da Vila" class="w-full h-full object-contain scale-[0.95]">
+                                <img src="../assets/img/mercado.da.vila.jpeg" alt="Mercado da Vila" class="w-full h-full object-contain scale-[0.95]">
                             </div>
                             <div class="bg-white p-0 rounded-xl w-[calc(50%-0.5rem)] sm:w-[160px] h-16 sm:h-20 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50 overflow-hidden">
-                                <img src="assets/img/makerbot.jpeg" alt="Makerbot" class="w-full h-full object-contain scale-[0.95]">
+                                <img src="../assets/img/makerbot.jpeg" alt="Makerbot" class="w-full h-full object-contain scale-[0.95]">
                             </div>
                             <div class="bg-white p-0 rounded-xl w-[calc(50%-0.5rem)] sm:w-[160px] h-16 sm:h-20 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50 overflow-hidden">
-                                <img src="assets/img/gente.de.fibra.jpeg" alt="Gente de Fibra" class="w-full h-full object-contain scale-[0.95]">
+                                <img src="../assets/img/gente.de.fibra.jpeg" alt="Gente de Fibra" class="w-full h-full object-contain scale-[0.95]">
                             </div>
                             <div class="bg-white p-0 rounded-xl w-[calc(50%-0.5rem)] sm:w-[160px] h-16 sm:h-20 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50 overflow-hidden">
-                                <img src="assets/img/Coraci.jpeg" alt="Instituto Professora Coraci" class="w-full h-full object-contain scale-[0.95]">
+                                <img src="../assets/img/Coraci.jpeg" alt="Instituto Professora Coraci" class="w-full h-full object-contain scale-[0.95]">
                             </div>
                             <div class="bg-white p-0 rounded-xl w-[calc(50%-0.5rem)] sm:w-[160px] h-16 sm:h-20 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50 overflow-hidden">
-                                <img src="assets/img/conexao.roo.jpeg" alt="Conexão Rondonópolis" class="w-full h-full object-contain scale-[0.95]">
+                                <img src="../assets/img/conexao.roo.jpeg" alt="Conexão Rondonópolis" class="w-full h-full object-contain scale-[0.95]">
                             </div>
                             <div class="bg-white p-0 rounded-xl w-[calc(50%-0.5rem)] sm:w-[160px] h-16 sm:h-20 flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-black/50 overflow-hidden">
-                                <img src="assets/img/biosag.jpeg" alt="BioSag" class="w-full h-full object-contain scale-[0.95]">
+                                <img src="../assets/img/biosag.jpeg" alt="BioSag" class="w-full h-full object-contain scale-[0.95]">
                             </div>
                             
                             <!-- Botão "Seja um Parceiro" -->
@@ -2164,7 +1645,7 @@
                         </div>
                         <!-- QR Code -->
                         <div class="bg-white p-2 rounded-xl shadow-lg mt-2 group-hover:scale-105 transition-transform">
-                            <img src="assets/img/instag_bcc.jpg" alt="QR Code do Instagram" class="w-24 h-24 sm:w-28 sm:h-28 object-contain" onerror="this.style.display='none'; this.parentElement.style.display='none';">
+                            <img src="../assets/img/instag_bcc.jpg" alt="QR Code do Instagram" class="w-24 h-24 sm:w-28 sm:h-28 object-contain" onerror="this.style.display='none'; this.parentElement.style.display='none';">
                         </div>
                     </a>
 
@@ -2179,490 +1660,12 @@
                     </a>
                 </div>
 
-            </div>
 
-        </div>
-    </main>
+</main>
 
-    <!-- ALXnder Announcement Modal -->
-    <div id="alxnder-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="modal-alxnder-title">
-        <div class="bg-slate-900 border border-brand-500/50 rounded-2xl w-full max-w-2xl shadow-2xl relative transform scale-95 transition-transform duration-300">
-            <!-- Close Button -->
-            <button onclick="app.toggleModal('alxnder-modal', false)" aria-label="Fechar modal" class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors">
-                <i class="fa-solid fa-xmark text-xl"></i>
-            </button>
-            
-            <!-- Header -->
-            <div class="p-4 sm:p-6 border-b border-slate-700 bg-brand-900/20 rounded-t-2xl flex items-center gap-4">
-                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-brand-500 rounded-full flex items-center justify-center text-white text-xl sm:text-2xl animate-pulse shadow-lg shadow-brand-500/30 shrink-0">
-                    <i class="fa-solid fa-robot"></i>
-                </div>
-                <div>
-                    <h3 id="modal-alxnder-title" class="text-lg sm:text-xl font-bold text-white">Plantão BCC UNEMAT Informa</h3>
-                    <p class="text-brand-400 text-[10px] sm:text-sm font-mono uppercase tracking-wider">Novo Assistente Virtual Inteligente</p>
-                </div>
-            </div>
-
-            <!-- Body -->
-            <div class="p-4 sm:p-6 space-y-4 sm:space-y-5 text-sm sm:text-base text-slate-300 leading-relaxed max-h-[60vh] overflow-y-auto">
-                <p class="text-base sm:text-lg"><strong class="text-white">🤖 Atenção, equipe (Docentes e Discentes)!</strong></p>
-                <p>A Coordenação acaba de dar um upgrade no sistema. Conheçam o <strong class="text-brand-400">ALXnder</strong>, o nosso novo copiloto virtual.</p>
-                
-                <div class="bg-slate-800/50 p-4 sm:p-5 rounded-xl border border-slate-700 space-y-3 text-xs sm:text-sm">
-                    <p class="flex items-start gap-3">
-                        <i class="fa-solid fa-database text-brand-500 mt-1"></i> 
-                        <span><strong>Treinado com:</strong> O novo PPC, a Normatização Acadêmica 2024, regulamentos de Estágio, TCC e muito mais.</span>
-                    </p>
-                    <p class="flex items-start gap-3">
-                        <i class="fa-solid fa-bolt text-yellow-400 mt-1"></i> 
-                        <span><strong>A ideia?</strong> Chega de perder horas procurando uma regra específica em PDFs gigantes. Agilize a burocracia com respostas rápidas.</span>
-                    </p>
-                </div>
-
-                <div class="flex items-center gap-3 text-xs sm:text-sm italic text-slate-400 border-l-4 border-brand-500 pl-4 py-1">
-                    <span class="text-xl sm:text-2xl">🚀</span>
-                    <p><strong>FASE BETA LIBERADA!</strong> O sistema está aberto para testes e precisamos da ajuda de vocês para calibrar a precisão das respostas.</p>
-                </div>
-                
-                <p class="text-center font-bold text-brand-300 text-xs sm:text-sm">… ao infinito e além… 😇😉🚀</p>
-            </div>
-
-            <!-- Footer -->
-            <div class="p-4 sm:p-6 border-t border-slate-700 flex flex-col sm:flex-row justify-end gap-3 bg-slate-800/50 rounded-b-2xl">
-                <button onclick="app.toggleModal('alxnder-modal', false)" class="w-full sm:w-auto px-4 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-700 transition-colors order-2 sm:order-1">Fechar</button>
-                <a href="https://bit.ly/iALXnderBETA" target="_blank" class="w-full sm:w-auto justify-center px-6 py-2 rounded-lg bg-brand-600 hover:bg-brand-500 text-white font-bold shadow-lg shadow-brand-500/20 transition-all flex items-center gap-2 hover:scale-105 order-1 sm:order-2">
-                    Acessar e Testar <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Info Modal - Avisos de Inscrições e Trabalhos -->
-    <div id="info-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="modal-info-title">
-        <div class="bg-slate-900 border border-brand-500/50 rounded-2xl w-full max-w-2xl shadow-2xl relative transform scale-95 transition-transform duration-300">
-            <!-- Close Button -->
-            <button onclick="app.toggleModal('info-modal', false)" aria-label="Fechar modal" class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors">
-                <i class="fa-solid fa-xmark text-xl"></i>
-            </button>
-            
-            <!-- Header -->
-            <div class="p-4 sm:p-6 border-b border-slate-700 bg-brand-900/20 rounded-t-2xl flex items-center gap-4">
-                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-brand-500 rounded-full flex items-center justify-center text-white text-xl sm:text-2xl shadow-lg shadow-brand-500/30 shrink-0">
-                    <i class="fa-solid fa-circle-exclamation animate-pulse"></i>
-                </div>
-                <div>
-                    <h3 id="modal-info-title" class="text-lg sm:text-xl font-bold text-white">Avisos Importantes - SECOMP</h3>
-                    <p class="text-brand-400 text-[10px] sm:text-sm font-mono uppercase tracking-wider">Inscrições e Publicações</p>
-                </div>
-            </div>
-
-            <!-- Body -->
-            <div class="p-4 sm:p-6 space-y-4 sm:space-y-5 text-sm sm:text-base text-slate-300 leading-relaxed max-h-[60vh] overflow-y-auto">
-                <div class="bg-slate-800/50 p-4 sm:p-5 rounded-xl border border-slate-700 space-y-3 text-xs sm:text-sm">
-                    <p class="flex items-start gap-3">
-                        <i class="fa-solid fa-file-contract text-brand-500 mt-1"></i> 
-                        <span>Cada trabalho aprovado deve ter <strong>pelo menos 1 inscrição (EM ATIVIDADES)</strong> no evento para garantir sua publicação na plataforma SBC.</span>
-                    </p>
-                </div>
-
-                <div class="flex items-start gap-3 text-xs sm:text-sm text-slate-300 border-l-4 border-yellow-500 pl-4 py-1 bg-yellow-500/10 p-3 rounded-r-lg">
-                    <i class="fa-solid fa-triangle-exclamation text-yellow-500 text-lg mt-0.5 shrink-0"></i>
-                    <p><strong>Atenção:</strong> Não basta se inscrever no evento, é necessário inscrever-se em <strong>CADA ATIVIDADE</strong> de interesse individualmente para garantir sua vaga e seu certificado, respeitando o limite de lotação de cada sala/laboratório. Todas as atividades têm limite de vagas.</p>
-                </div>
-            </div>
-
-            <!-- Footer -->
-            <div class="p-4 sm:p-6 border-t border-slate-700 flex justify-end bg-slate-800/50 rounded-b-2xl">
-                <button onclick="app.toggleModal('info-modal', false)" class="px-6 py-2 rounded-lg bg-brand-600 hover:bg-brand-500 text-white font-bold shadow-lg shadow-brand-500/20 transition-all">Entendi</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-// --- DATA ---
-        let data = {
-            'AIA': {
-                name: 'Alto Araguaia',
-                phases: [
-                    {
-                        id: 2, label: '2ª Fase', link: 'https://bit.ly/BCC2aFase',
-                        schedule: [
-                            { d: 'Segunda', c: 'AOC', n: 'Arq. e Org. de Computadores', p: 'Prof. Juvenal' },
-                            { d: 'Terça', c: 'GA', n: 'Geometria Analítica', p: 'Profa. Adriana' },
-                            { d: 'Quarta', c: 'PIPDD', n: 'Prop. Intelectual, Prot. Dados e Direitos', p: 'Prof. Elton' },
-                            { d: 'Quinta', c: 'CA1', n: 'Cálculo I', p: 'Prof. Antonio' },
-                            { d: 'Sexta', c: 'TMP', n: 'Teoria e Métodos de Pesquisa', p: 'SELETIVO' }
-                        ],
-                        modular: { c: 'ALP2', n: 'Algoritmos e Lab. de Prog. II', p: 'Prof. Lucas', d: '31/08 a 04/09; 21/09 a 25/09; 27/10 a 30/10' }
-                    },
-                    {
-                        id: 4, label: '4ª Fase', link: 'https://bit.ly/BCC4aFase',
-                        schedule: [
-                            { d: 'Segunda', c: 'IBD', n: 'Introdução a Banco de Dados', p: 'SELETIVO' },
-                            { d: 'Terça', c: 'ES', n: 'Engenharia de Software', p: 'Profa. Iza' },
-                            { d: 'Quarta', c: 'CN', n: 'Cálculo Numérico', p: 'Prof. Antonio' },
-                            { d: 'Quinta', c: 'ED2', n: 'Estrutura de Dados II', p: 'Prof. Lucas' },
-                            { d: 'Sexta', c: 'F1', n: 'Física I', p: 'Prof. Antonio' }
-                        ],
-                        modular: { c: 'LRC', n: 'Laboratório de Redes', p: 'Prof. Wesley', d: '31/08 a 04/09; 21/09 a 25/09; 27/10 a 30/10' }
-                    },
-                    {
-                        id: 6, label: '6ª Fase', link: 'https://bit.ly/BCC6aFase',
-                        schedule: [
-                            { d: 'Segunda', c: 'SM', n: 'Sistemas Multimídia', p: 'Prof. Wesley' },
-                            { d: 'Terça', c: 'SO', n: 'Sistemas Operacionais', p: 'Prof. Juvenal' },
-                            { d: 'Quarta', c: 'SE', n: 'Sistemas Embarcados', p: 'Prof. Fernando' },
-                            { d: 'Quinta', c: 'DSW', n: 'Desenvolvimento de Sistemas WEB', p: 'Prof. Elton' },
-                            { d: 'Sexta', c: 'PAD', n: 'Processamento de Alto Desempenho', p: 'Prof. Lucas' }
-                        ],
-                        modular: null
-                    },
-                    {
-                        id: 8, label: '8ª Fase', link: 'https://bit.ly/BCC8aFase',
-                        schedule: [
-                            { d: 'Segunda', c: 'RVA', n: 'Realidade Virtual e Aumentada', p: 'Prof. Elton' },
-                            { d: 'Terça', c: 'IA', n: 'Inteligência Artificial', p: 'Prof. Wesley' },
-                            { d: 'Quarta', c: 'SD', n: 'Sistemas Distribuídos', p: 'Prof. Juvenal' },
-                            { d: 'Quinta', c: 'CF', n: 'Computação Forense', p: 'Profa. Iza' },
-                            { d: 'Sexta', c: 'PI', n: 'Processamento de Imagem', p: 'Profa. Iza' }
-                        ],
-                        extras: [
-                            { c: 'TCC I', n: 'Trabalho de Conclusão I', p: 'Prof. Fernando' },
-                            { c: 'TCC II', n: 'Trabalho de Conclusão II', p: 'Prof. Fernando' },
-                            { c: 'ESS I', n: 'Estágio Supervisionado I', p: 'Prof. Chrystian' },
-                            { c: 'ESS II', n: 'Estágio Supervisionado II', p: 'Prof. Carlos' }
-                        ]
-                    }
-                ]
-            },
-            'ROO': {
-                name: 'Rondonópolis',
-                phases: [
-                    {
-                        id: 1, label: '1ª Fase', link: 'https://bit.ly/BCC1aFase',
-                        schedule: [
-                            { d: 'Segunda', c: 'IC', n: 'Introdução à Computação', p: 'Prof. Adriano' },
-                            { d: 'Terça', c: 'FME', n: 'Fundamentos da Matemática Elementar', p: 'Prof. Everton' },
-                            { d: 'Quarta', c: 'PTL', n: 'Produção de Texto e Leitura', p: 'LETRAS' },
-                            { d: 'Quinta', c: 'MD', n: 'Matemática Discreta', p: 'Prof. Jemy' },
-                            { d: 'Sexta', c: 'II', n: 'Inglês Instrumental', p: 'LETRAS' }
-                        ],
-                        modular: { c: 'ALP1', n: 'Algoritmos e Lab. de Prog. I', p: 'Prof. Chrystian', d: '31/08 a 04/09; 21/09 a 25/09; 27/10 a 30/10' }
-                    },
-                    {
-                        id: 3, label: '3ª Fase', link: 'https://bit.ly/BCC3aFase',
-                        schedule: [
-                            { d: 'Segunda', c: 'CA2', n: 'Cálculo II', p: 'Prof. Everton' },
-                            { d: 'Terça', c: 'IRC', n: 'Introdução a Redes de Computadores', p: 'Prof. Pierre' },
-                            { d: 'Quarta', c: 'AL', n: 'Álgebra Linear', p: 'Prof. Jemy' },
-                            { d: 'Quinta', c: 'ED1', n: 'Estrutura de Dados I', p: 'Prof. Chrystian' },
-                            { d: 'Sexta', c: 'TG', n: 'Teoria dos Grafos', p: 'Prof. Jemy' }
-                        ],
-                        modular: { c: 'FE', n: 'Fundamentos da Eletrônica', p: 'Prof. Max', d: '31/08 a 04/09; 21/09 a 25/09; 27/10 a 30/10' }
-                    },
-                    {
-                        id: 5, label: '5ª Fase', link: 'https://bit.ly/BCC5aFase',
-                        schedule: [
-                            { d: 'Segunda', c: 'GTI', n: 'Governança em TI', p: 'Prof. Pierre' },
-                            { d: 'Terça', c: 'LPOO', n: 'Lab. de Programação Orientada à Objetos', p: 'Prof. Adriano' },
-                            { d: 'Quarta', c: 'PE', n: 'Probabilidade e Estatística', p: 'Prof. Everton' },
-                            { d: 'Quinta', c: 'LFA', n: 'Linguagens Formais e Autômatos', p: 'Prof. Humberto' },
-                            { d: 'Sexta', c: 'SD', n: 'Sistemas Digitais', p: 'Prof. Adriano' }
-                        ],
-                        modular: { c: 'LBD', n: 'Laboratório de Banco de Dados', p: 'Prof. Breno', d: '31/08 a 04/09; 21/09 a 25/09; 27/10 a 30/10' }
-                    },
-                    {
-                        id: 7, label: '7ª Fase', link: 'https://bit.ly/BCC7aFase',
-                        schedule: [
-                            { d: 'Segunda', c: 'DSDM', n: 'Desenv. Sist. para Dispositivos Móveis', p: 'Prof. Breno' },
-                            { d: 'Terça', c: 'CG', n: 'Computação Gráfica', p: 'Prof. Breno' },
-                            { d: 'Quarta', c: 'CO', n: 'Compiladores', p: 'Prof. Humberto' },
-                            { d: 'Quinta', c: 'QTS', n: 'Qualidade e Teste de Software', p: 'Prof. Pierre' },
-                            { d: 'Sexta', c: 'IHC', n: 'Interação Homem Computador', p: 'Prof. Humberto' }
-                        ],
-                        extras: [
-                            { c: 'TCC I', n: 'Trabalho de Conclusão I', p: 'Prof. Fernando' },
-                            { c: 'TCC II', n: 'Trabalho de Conclusão II', p: 'Prof. Fernando' },
-                            { c: 'ESS I', n: 'Estágio Supervisionado I', p: 'Prof. Carlos' },
-                            { c: 'ESS II', n: 'Estágio Supervisionado II', p: 'Prof. Chrystian' }
-                        ]
-                    }
-                ]
-            }
-        };
-
-        // --- APP LOGIC ---
-        const app = {
-            state: {
-                view: 'guide', // Abrir Guia do Estudante por padrão
-                campus: 'AIA',
-                phaseIdx: 0,
-                chartInstance: null,
-                isSidebarOpen: false
-            },
-
-            async init() {
-                try {
-                    const res = await fetch('./data/horarios.json');
-                    if (res.ok) {
-                        data = await res.json();
-                    }
-                } catch (e) {
-                    console.warn('Usando dados de horários embutidos de fallback:', e);
-                }
-
-                // Detecta rota inicial por hash na URL (ex: #tcc, #estagio, #secomp, #schedule, #guide)
-                const rawHash = window.__guiaHashInicial || window.location.hash;
-                const cleanHash = rawHash ? rawHash.replace('#', '').trim().toLowerCase() : '';
-
-                if (cleanHash === 'guia' || cleanHash === 'guide') {
-                    this.navigate('guide', false);
-                } else if (cleanHash === 'tcc') {
-                    this.navigate('tcc', false);
-                } else if (cleanHash === 'estagio' || cleanHash === 'requisitos' || cleanHash === 'local' || cleanHash === 'regularizacao' || cleanHash === 'planejamento' || cleanHash === 'execucao' || cleanHash === 'convalidacao') {
-                    this.navigate('estagio', false);
-                } else if (cleanHash === 'secomp') {
-                    this.navigate('secomp', false);
-                } else if (cleanHash === 'schedule') {
-                    this.navigate('schedule', false);
-                } else {
-                    this.navigate(this.state.view || 'guide', false);
-                }
-            },
-
-            toggleModal(id, show) {
-                const el = document.getElementById(id);
-                if (show) {
-                    el.classList.remove('pointer-events-none');
-                    el.classList.remove('opacity-0');
-                } else {
-                    el.classList.add('opacity-0');
-                    el.classList.add('pointer-events-none');
-                }
-            },
-
-            toggleSidebar(forceClose = false) {
-                const sidebar = document.getElementById('sidebar');
-                const overlay = document.getElementById('sidebar-overlay');
-                const btnHamburger = document.getElementById('btn-hamburger');
-                
-                if (forceClose) {
-                    this.state.isSidebarOpen = false;
-                } else {
-                    this.state.isSidebarOpen = !this.state.isSidebarOpen;
-                }
-
-                if (btnHamburger) btnHamburger.setAttribute('aria-expanded', this.state.isSidebarOpen);
-
-                if (this.state.isSidebarOpen) {
-                    sidebar.classList.remove('-translate-x-full');
-                    overlay.classList.remove('hidden');
-                } else {
-                    sidebar.classList.add('-translate-x-full');
-                    overlay.classList.add('hidden');
-                }
-            },
-
-            navigate(viewName, updateHash = true) {
-                this.state.view = viewName;
-                this.updateView();
-                
-                // Fecha o menu no mobile após clicar
-                if (window.innerWidth < 768) {
-                    this.toggleSidebar(true);
-                }
-                
-                // Update nav classes
-                document.querySelectorAll('.nav-item').forEach(el => {
-                    el.classList.remove('active', 'text-brand-500', 'bg-slate-800');
-                    el.removeAttribute('aria-current');
-                });
-                const activeNav = document.getElementById('nav-' + viewName);
-                if(activeNav) {
-                    activeNav.classList.add('active');
-                    activeNav.setAttribute('aria-current', 'page');
-                }
-
-                if (updateHash && window.history && window.history.replaceState) {
-                    window.history.replaceState(null, '', '#' + viewName);
-                }
-            },
-
-            setCampus(code) {
-                this.state.campus = code;
-                this.state.phaseIdx = 0;
-                this.renderSchedule();
-                
-                // Toggle Tab Styles
-                const btnAIA = document.getElementById('tab-aia');
-                const btnROO = document.getElementById('tab-roo');
-                const activeClass = 'bg-brand-600 text-white shadow-md';
-                const inactiveClass = 'text-slate-400 hover:text-white';
-
-                if(code === 'AIA') {
-                    btnAIA.className = `px-4 sm:px-6 py-2 rounded-lg text-sm font-bold transition-all ${activeClass}`;
-                    btnROO.className = `px-4 sm:px-6 py-2 rounded-lg text-sm font-bold transition-all ${inactiveClass}`;
-                } else {
-                    btnAIA.className = `px-4 sm:px-6 py-2 rounded-lg text-sm font-bold transition-all ${inactiveClass}`;
-                    btnROO.className = `px-4 sm:px-6 py-2 rounded-lg text-sm font-bold transition-all ${activeClass}`;
-                }
-            },
-
-            setPhase(idx) {
-                this.state.phaseIdx = idx;
-                this.renderSchedule();
-            },
-
-            updateView() {
-                const views = ['schedule', 'guide', 'secomp', 'estagio', 'tcc'];
-                views.forEach(v => {
-                    const el = document.getElementById('view-' + v);
-                    if(el) el.classList.add('hidden');
-                });
-                
-                const activeEl = document.getElementById('view-' + this.state.view);
-                if(activeEl) activeEl.classList.remove('hidden');
-
-                if(this.state.view === 'schedule') {
-                    this.setCampus(this.state.campus); // trigger render
-                }
-            },
-
-            renderSchedule() {
-                const dataSet = data[this.state.campus];
-                const phase = dataSet.phases[this.state.phaseIdx];
-                const container = document.getElementById('schedule-container');
-                const tabsContainer = document.getElementById('phase-tabs');
-
-                // Render Tabs
-                tabsContainer.innerHTML = dataSet.phases.map((p, i) => `
-                    <button onclick="app.setPhase(${i})" 
-                        class="px-4 py-2 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all border ${i === this.state.phaseIdx ? 'bg-brand-500 border-brand-500 text-white shadow-lg shadow-brand-500/25' : 'bg-slate-800 border-slate-700 text-slate-400 hover:border-slate-500 hover:text-white'}">
-                        ${p.label}
-                    </button>
-                `).join('');
-
-                // Render Content
-                let html = `
-                    <div class="glass-panel rounded-2xl p-5 sm:p-6 relative overflow-hidden animate-slide-up">
-                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-500 to-cyan-400"></div>
-                        
-                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
-                            <div>
-                                <h2 class="text-xl sm:text-2xl font-bold text-white">${phase.label}</h2>
-                                <span class="text-slate-400 text-xs sm:text-sm font-mono"><i class="fa-regular fa-clock text-brand-500"></i> 19h00 - 22h30</span>
-                                
-                                <div class="mt-2">
-                                    <p class="text-[9px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">ADICIONAR NA SUA AGENDA GOOGLE:</p>
-                                    <a href="${phase.link}" target="_blank" class="inline-flex items-center gap-2 text-brand-400 hover:text-white bg-brand-500/10 hover:bg-brand-500/20 px-3 py-1 rounded text-[10px] sm:text-xs font-mono transition-colors border border-brand-500/20 break-all w-full sm:w-auto">
-                                        <i class="fa-solid fa-link shrink-0"></i> <span class="truncate">${phase.link}</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="overflow-x-auto rounded-xl border border-slate-700/50">
-                            <table class="w-full text-left border-collapse min-w-[500px]">
-                                <thead>
-                                    <tr class="bg-slate-800/80 text-slate-400 text-[10px] sm:text-xs uppercase tracking-wider border-b border-slate-700">
-                                        <th class="p-3 sm:p-4">Dia</th>
-                                        <th class="p-3 sm:p-4">Sigla</th>
-                                        <th class="p-3 sm:p-4">Disciplina</th>
-                                        <th class="p-3 sm:p-4">Professor</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="divide-y divide-slate-700/50 text-xs sm:text-sm bg-slate-900/40">
-                                    ${phase.schedule.map(s => `
-                                        <tr class="hover:bg-slate-800/50 transition-colors">
-                                            <td class="p-3 sm:p-4 font-mono text-brand-400">${s.d}</td>
-                                            <td class="p-3 sm:p-4 font-bold text-white">${s.c}</td>
-                                            <td class="p-3 sm:p-4 text-slate-300">${s.n}</td>
-                                            <td class="p-3 sm:p-4 text-slate-400"><i class="fa-regular fa-user mr-1 opacity-50"></i> ${s.p}</td>
-                                        </tr>
-                                    `).join('')}
-                                </tbody>
-                            </table>
-                        </div>
-
-                        ${phase.modular ? `
-                        <div class="mt-4 bg-emerald-900/20 border border-emerald-500/20 rounded-xl p-4 flex items-start gap-3 sm:gap-4">
-                            <div class="text-emerald-400 text-lg sm:text-xl shrink-0"><i class="fa-solid fa-cubes-stacked"></i></div>
-                            <div>
-                                <h4 class="text-emerald-400 font-bold text-[10px] sm:text-xs uppercase tracking-wider mb-1">Disciplina Modular</h4>
-                                <p class="text-white font-semibold text-sm sm:text-base">${phase.modular.c} - ${phase.modular.n}</p>
-                                <p class="text-slate-400 text-[10px] sm:text-xs mt-1">Prof. ${phase.modular.p} • <span class="text-emerald-200 font-mono block sm:inline">${phase.modular.d}</span></p>
-                            </div>
-                        </div>` : ''}
-
-                        ${phase.extras ? `
-                        <div class="mt-4 bg-indigo-900/20 border border-indigo-500/20 rounded-xl p-4">
-                            <h4 class="text-indigo-400 font-bold text-[10px] sm:text-xs uppercase tracking-wider mb-3"><i class="fa-solid fa-graduation-cap mr-1"></i> TCC & Estágio (Contraturno)</h4>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                ${phase.extras.map(e => `
-                                    <div class="bg-indigo-950/30 p-2 sm:p-3 rounded border border-indigo-500/10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1 sm:gap-0">
-                                        <span class="text-indigo-200 text-xs sm:text-sm font-semibold">${e.c}</span>
-                                        <span class="text-slate-400 text-[10px] sm:text-xs">${e.p}</span>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        </div>` : ''}
-                    </div>
-                `;
-
-                container.innerHTML = html;
-                this.updateChart(phase);
-            },
-
-            updateChart(phase) {
-                const ctx = document.getElementById('workloadChart');
-                if(!ctx) return;
-
-                if(this.state.chartInstance) {
-                    this.state.chartInstance.destroy();
-                }
-
-                // Count classes per day
-                const counts = { 'Segunda': 0, 'Terça': 0, 'Quarta': 0, 'Quinta': 0, 'Sexta': 0 };
-                phase.schedule.forEach(s => counts[s.d]++);
-
-                this.state.chartInstance = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: Object.keys(counts),
-                        datasets: [{
-                            label: 'Aulas',
-                            data: Object.values(counts),
-                            backgroundColor: '#009EE0',
-                            borderRadius: 6,
-                            barThickness: 30
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: { legend: { display: false } },
-                        scales: {
-                            y: { beginAtZero: true, max: 2, ticks: { color: '#94a3b8', stepSize: 1 }, grid: { color: '#2a2e33' } },
-                            x: { ticks: { color: '#94a3b8' }, grid: { display: false } }
-                        }
-                    }
-                });
-            }
-        };
-
-        document.addEventListener('DOMContentLoaded', () => {
-            app.init();
-        });
-
-        window.addEventListener('hashchange', () => {
-            const rawHash = window.location.hash;
-            const h = rawHash ? rawHash.replace('#', '').trim().toLowerCase() : '';
-            if (['schedule', 'guide', 'guia', 'secomp', 'estagio', 'tcc'].includes(h)) {
-                app.navigate(h === 'guia' ? 'guide' : h, false);
-            }
-        });
-    </script>
-
+<footer>
+  VII SECOMP 2026 · Semana de Computação · UNEMAT Câmpus de Rondonópolis · Sociedade Brasileira de Computação (SBC).
+</footer>
 
 </body>
 </html>
