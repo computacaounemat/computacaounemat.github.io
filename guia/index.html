@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Guia Oficial do Estudante — Ciência da Computação — UNEMAT</title>
-<meta name="description" content="Recursos, calendários, PPCs, horários, tutoriais e orientações essenciais para a jornada acadêmica no Bacharelado em Ciência da Computação da UNEMAT (Alto Araguaia e Rondonópolis).">
+<meta name="description" content="Guia prático e oficial do estudante do Bacharelado em Ciência da Computação da UNEMAT (Alto Araguaia e Rondonópolis): da matrícula e horários aos PPCs, direitos, estágio e TCC.">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
@@ -75,14 +75,85 @@
   }
   header .tag{margin-bottom:10px;}
   header h1{max-width:820px; margin-inline:auto;}
-  header .text-center > p{max-width:680px; margin:0 auto;}
+  header .text-center > p{max-width:700px; margin:0 auto;}
 
   .glass-panel{
     background:var(--card); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
     border:1px solid var(--card-border);
   }
+  .node-icon{
+    width:2.5rem; height:2.5rem; border-radius:0.5rem; display:flex; align-items:center; justify-content:center;
+    margin-bottom:1rem; font-size:1.25rem;
+  }
+  .jump{font-size:0.78rem; display:inline-block; margin-top:8px; text-decoration:none; color:var(--brand); font-family:'JetBrains Mono',monospace;}
 
-  main{max-width:960px; margin:0 auto; padding:40px 24px 100px;}
+  main{max-width:880px; margin:0 auto; padding:40px 24px 100px;}
+
+  .portal-hero-card {
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.2), rgba(16, 185, 129, 0.1));
+    border: 2px solid rgba(56, 189, 248, 0.5);
+    border-radius: var(--raio-grande);
+    padding: 26px 28px;
+    margin-bottom: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  }
+
+  .note{
+    background:var(--amber-soft); border-left:4px solid var(--amber);
+    padding:14px 18px; border-radius:6px; font-size:0.92rem; margin:18px 0;
+    color:#fde68a;
+  }
+  .note b.note-label{display:block; font-family:'JetBrains Mono',monospace; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:4px; color:var(--amber);}
+  .note strong{color:#fff; font-weight:700;}
+
+  section.stage{
+    background:var(--card); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    border:1px solid var(--card-border); border-radius:var(--raio-grande);
+    padding:30px 30px 22px; margin:34px 0; scroll-margin-top:76px;
+  }
+  section.stage .stage-head{display:flex; align-items:center; gap:14px; margin-bottom:6px;}
+  section.stage .stage-head .badge{
+    font-family:'JetBrains Mono',monospace; background:var(--brand-soft); color:var(--brand);
+    border-radius:50%; width:34px; height:34px; display:flex; align-items:center; justify-content:center;
+    font-size:0.95rem; flex-shrink:0; font-weight:700;
+  }
+  section.stage h2{font-size:1.3rem; margin:0;}
+  section.stage .basis{color:var(--mono); font-size:0.78rem; margin:2px 0 18px 48px; font-family:'JetBrains Mono',monospace;}
+
+  .checklist{list-style:none; padding:0; margin:0 0 6px;}
+  .checklist li{
+    display:flex; align-items:flex-start; gap:10px; padding:9px 4px;
+    border-bottom:1px dashed var(--line); font-size:0.96rem; color:var(--ink-body);
+  }
+  .checklist li:last-child{border-bottom:none;}
+  .checklist input{margin-top:4px; width:16px; height:16px; accent-color:var(--brand-strong); flex-shrink:0;}
+  .checklist label{cursor:pointer;}
+  .checklist input:checked + label{color:var(--ink-soft); text-decoration:line-through;}
+
+  .doc-pill{
+    display:inline-flex; align-items:center; gap:6px; background:var(--teal-soft); color:var(--teal);
+    font-family:'JetBrains Mono',monospace; font-size:0.75rem; padding:5px 12px; border-radius:20px;
+    margin:4px 6px 4px 0; text-decoration:none; transition:all .15s ease;
+  }
+  .doc-pill:hover{background:rgba(52,211,153,0.3); color:#fff;}
+  .doc-pill.norma { background: rgba(56, 189, 248, 0.15); color: var(--brand); }
+  .doc-pill.norma:hover { background: rgba(56, 189, 248, 0.3); }
+
+  details{margin-top:14px; border-top:1px solid var(--line); padding-top:12px;}
+  summary{cursor:pointer; font-family:'JetBrains Mono',monospace; font-size:0.82rem; color:var(--brand); text-transform:uppercase; letter-spacing:0.04em;}
+  summary:hover{color:var(--brand-strong);}
+  details p, details ul{font-size:0.93rem; color:var(--ink-soft);}
+
+  .glossary{background:var(--card); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border:1px solid var(--card-border); border-radius:var(--raio-grande); padding:30px;}
+  .glossary h2{font-size:1.2rem;}
+  .gterm{margin-bottom:14px;}
+  .gterm b{font-family:'Inter',sans-serif; color:var(--ink);}
+  .gterm span{display:block; color:var(--ink-soft); font-size:0.93rem;}
 
   .toolbar{
     position:sticky; top:0; z-index:50; background:rgba(15,23,42,0.92); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
@@ -94,6 +165,11 @@
   .toolbar a.highlight{background:var(--brand-strong); color:#fff; font-weight:700;}
 
   footer{text-align:center; padding:40px 20px; color:var(--mono); font-size:0.8rem; font-family:'JetBrains Mono',monospace; border-top:1px solid var(--line-solid);}
+
+  @media print{
+    .toolbar{display:none;}
+    section.stage{break-inside:avoid;}
+  }
 </style>
 </head>
 <body>
@@ -101,199 +177,236 @@
 <div class="toolbar">
   <a href="../" style="color:var(--brand); font-weight:700;"><i class="fa-solid fa-arrow-left"></i> Início do Site</a>
   <a href="https://bit.ly/iALXnderBETA" target="_blank" rel="noopener" class="highlight">⚡ Assistente iALXnder</a>
-  <a href="../#schedule">Horários</a>
-  <a href="../estagio/">Guia de Estágio</a>
-  <a href="../tcc/">Guia do TCC</a>
-  <a href="../secomp/">SECOMP 2026</a>
+  <a href="#etapa1">1 · Boas-Vindas</a>
+  <a href="#etapa2">2 · SIGAA & Sistemas</a>
+  <a href="#etapa3">3 · Calendário & Horários</a>
+  <a href="#etapa4">4 · PPC & Currículo</a>
+  <a href="#etapa5">5 · Apoio Estudantil</a>
+  <a href="#etapa6">6 · Estágio & TCC</a>
+  <a href="#downloads">Downloads & Normas</a>
+  <a href="#regras">Direitos & Deveres</a>
 </div>
 
 <header>
   <div class="tag">Curso de Bacharelado em Ciência da Computação · UNEMAT</div>
   <div class="text-center mb-6 md:mb-8">
-    <h1 class="text-2xl md:text-4xl font-bold text-white mb-2">Guia Oficial do Estudante</h1>
-    <p class="text-sm md:text-base text-slate-400">Recursos, links, calendários acadêmicos, projetos pedagógicos (PPC) e orientações essenciais para a sua jornada universitária.</p>
+    <h1 class="text-2xl md:text-4xl font-bold text-white mb-2">Guia Oficial do Estudante: da Matrícula à Formatura</h1>
+    <p class="text-sm md:text-base text-slate-400">Pautado na Resolução nº 047/2025–CONEPE (Normatização Acadêmica) e nos Projetos Pedagógicos de Curso (PPCs). Orientações práticas para o seu dia a dia acadêmico na UNEMAT (Alto Araguaia e Rondonópolis).</p>
   </div>
 </header>
 
-<main class="space-y-8">
+<main>
 
-  <!-- Welcome Card -->
-  <div class="bg-gradient-to-r from-brand-900/50 to-slate-800 rounded-2xl p-6 sm:p-7 border-l-4 border-brand-500 shadow-xl">
-    <h3 class="text-xl font-bold text-white mb-3">📢 Mensagem de Boas-vindas</h3>
-    <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-      Caros estudantes,<br>
-      Sejam bem-vindos à nossa comunidade acadêmica! 💙 Para apoiar a sua jornada universitária no Bacharelado em Ciência da Computação (Câmpus de Alto Araguaia e Câmpus de Rondonópolis), reunimos aqui as informações e serviços que facilitam o seu dia a dia.
-    </p>
+  <!-- NOVIDADE: ASSISTENTE VIRTUAL IALXNDER -->
+  <div class="portal-hero-card">
+    <div>
+      <span class="tag" style="background:#0ea5e9; color:#fff; padding:3px 8px; border-radius:4px; font-weight:700;">🚀 COPILOTO INTELIGENTE · IA OFICIAL</span>
+      <h2 style="font-size: 1.35rem; color: #fff; margin: 8px 0 4px;">Assistente Virtual iALXnder — Tire Dúvidas do Curso 24h</h2>
+      <p style="color: #cbd5e1; font-size: 0.95rem; margin: 0; max-width: 580px;">
+        O iALXnder foi treinado com o PPC do curso, a Normatização Acadêmica da UNEMAT, regulamentos de estágio, TCC e resoluções do CONEPE para responder suas dúvidas com rapidez e rigor institucional.
+      </p>
+    </div>
+    <a href="https://bit.ly/iALXnderBETA" target="_blank" rel="noopener" style="background: #0ea5e9; color: #fff; font-weight: 700; padding: 12px 22px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-size: 0.98rem; box-shadow: 0 4px 14px rgba(14,165,233,0.4); white-space:nowrap;">
+      Conversar com a IA →
+    </a>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-    <!-- Card: Tutoriais -->
-    <div class="glass-panel p-6 rounded-2xl hover:bg-slate-800/80 transition-colors">
-      <div class="w-10 h-10 bg-blue-500/20 text-blue-400 rounded-lg flex items-center justify-center mb-4 text-xl">
-        <i class="fa-solid fa-laptop-file"></i>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 text-left mb-6 md:mb-8">
+    <div class="glass-panel p-5 sm:p-6 rounded-2xl hover:bg-slate-800/80 transition-colors">
+      <div class="node-icon bg-blue-500/20 text-blue-400">
+        <i class="fa-solid fa-calendar-days"></i>
       </div>
-      <h3 class="text-lg font-bold text-white mb-4">Tutoriais e Orientações</h3>
-      <ul class="space-y-3 text-sm">
-        <li>
-          <a href="https://bit.ly/tutoriaisSIGAA" target="_blank" rel="noopener" class="flex justify-between items-center text-slate-300 hover:text-brand-400 group">
-            <span>Uso do SIGAA (Matrículas e Notas)</span>
-            <i class="fa-solid fa-arrow-up-right-from-square opacity-70 group-hover:opacity-100 transition-opacity"></i>
-          </a>
-        </li>
-        <li class="border-t border-slate-700/50 pt-2">
-          <a href="https://bit.ly/EstudanteNEE" target="_blank" rel="noopener" class="flex justify-between items-center text-slate-300 hover:text-brand-400 group">
-            <span>Estudantes com NEE (Acessibilidade)</span>
-            <i class="fa-solid fa-arrow-up-right-from-square opacity-70 group-hover:opacity-100 transition-opacity"></i>
-          </a>
-        </li>
-        <li class="border-t border-slate-700/50 pt-2">
-          <a href="https://bit.ly/CAESTUnematAIA" target="_blank" rel="noopener" class="flex justify-between items-center text-slate-300 hover:text-brand-400 group">
-            <span>CAEST – Assuntos Estudantis & Auxílios</span>
-            <i class="fa-solid fa-arrow-up-right-from-square opacity-70 group-hover:opacity-100 transition-opacity"></i>
-          </a>
-        </li>
-        <li class="border-t border-slate-700/50 pt-2">
-          <a href="../assets/files/bcc_wallpaper.zip" target="_blank" class="flex justify-between items-center text-slate-300 hover:text-brand-400 group">
-            <span>Papel de Parede Oficial do Curso</span>
-            <i class="fa-solid fa-download opacity-70 group-hover:opacity-100 transition-opacity"></i>
-          </a>
-        </li>
-        <li class="border-t border-slate-700/50 pt-2">
-          <a href="../assets/files/Horario.AIA.zip" target="_blank" class="flex justify-between items-center text-slate-300 hover:text-brand-400 group">
-            <span>Grade de Horários · Alto Araguaia</span>
-            <i class="fa-solid fa-download opacity-70 group-hover:opacity-100 transition-opacity"></i>
-          </a>
-        </li>
-        <li class="border-t border-slate-700/50 pt-2">
-          <a href="../assets/files/Horario.ROO.zip" target="_blank" class="flex justify-between items-center text-slate-300 hover:text-brand-400 group">
-            <span>Grade de Horários · Rondonópolis</span>
-            <i class="fa-solid fa-download opacity-70 group-hover:opacity-100 transition-opacity"></i>
-          </a>
-        </li>
-        <li class="border-t border-slate-700/50 pt-2">
-          <a href="https://cms.unemat.br/download/documentos/bloco-documento-arquivo/HajJ4c8t4MTzU4ZcwDV0lOCOFbhENiW5xZNu1pvm/Calendario-Academico-Para-o-Ano-Letivo-de-2026.pdf" target="_blank" rel="noopener" class="flex justify-between items-center text-slate-300 hover:text-brand-400 group">
-            <span>Calendário Acadêmico Oficial UNEMAT 2026</span>
-            <i class="fa-solid fa-file-pdf text-brand-400 opacity-70 group-hover:opacity-100 transition-opacity"></i>
-          </a>
-        </li>
-      </ul>
+      <h3 class="text-lg font-bold text-white mb-2 mt-0">Horários e Calendário 2026</h3>
+      <p class="text-sm text-slate-400 mb-0">Grade semanal das fases letivas (AIA e ROO), 13 datas presenciais nos sábados e calendário aprovado pelo CONEPE.</p>
+      <a class="jump" href="#etapa3">ver horários e calendário →</a>
     </div>
-
-    <!-- Card: PPCs -->
-    <div class="glass-panel p-6 rounded-2xl hover:bg-slate-800/80 transition-colors">
-      <div class="w-10 h-10 bg-purple-500/20 text-purple-400 rounded-lg flex items-center justify-center mb-4 text-xl">
-        <i class="fa-solid fa-file-contract"></i>
-      </div>
-      <h3 class="text-lg font-bold text-white mb-4">Projetos Pedagógicos (PPC)</h3>
-      <p class="text-xs text-slate-400 mb-4 leading-relaxed">Consulte a matriz curricular, ementas das disciplinas, perfil do egresso e regulamentações oficiais aprovadas pelo CONEPE.</p>
-      <div class="space-y-3">
-        <a href="http://www.unemat.br/resolucoes/resolucoes/conepe/5300_res_conepe_61_2023.pdf" target="_blank" rel="noopener" class="block bg-slate-900/60 hover:bg-slate-700 p-3.5 rounded-lg border border-slate-700 hover:border-purple-500/50 transition-all group">
-          <div class="flex items-center justify-between">
-            <div>
-              <span class="text-sm font-semibold text-slate-200 block">PPC · Rondonópolis</span>
-              <span class="text-[11px] text-slate-400 font-mono">Resolução nº 061/2023–CONEPE</span>
-            </div>
-            <i class="fa-solid fa-file-pdf text-slate-400 group-hover:text-purple-400"></i>
-          </div>
-        </a>
-        <a href="https://www.unemat.br/resolucoes/resolucoes/conepe/5298_res_conepe_58_2023.pdf" target="_blank" rel="noopener" class="block bg-slate-900/60 hover:bg-slate-700 p-3.5 rounded-lg border border-slate-700 hover:border-purple-500/50 transition-all group">
-          <div class="flex items-center justify-between">
-            <div>
-              <span class="text-sm font-semibold text-slate-200 block">PPC · Alto Araguaia</span>
-              <span class="text-[11px] text-slate-400 font-mono">Resolução nº 058/2023–CONEPE</span>
-            </div>
-            <i class="fa-solid fa-file-pdf text-slate-400 group-hover:text-purple-400"></i>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <!-- Card: Guia Oficial de Estágio -->
-    <div class="glass-panel p-6 rounded-2xl border border-sky-500/30 relative overflow-hidden bg-gradient-to-br from-sky-950/40 via-slate-800 to-slate-900">
-      <div class="w-10 h-10 bg-sky-500/20 text-sky-400 rounded-lg flex items-center justify-center mb-4 text-xl">
-        <i class="fa-solid fa-briefcase"></i>
-      </div>
-      <div class="flex items-center gap-2 mb-2">
-        <h3 class="text-lg font-bold text-white">Guia Oficial de Estágio</h3>
-        <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-500/30">Lei 11.788</span>
-      </div>
-      <p class="text-slate-300 text-xs sm:text-sm mb-4 leading-relaxed">
-        Passo a passo completo do Estágio Curricular Supervisionado (Obrigatório e Não Obrigatório), modelos de TCE, prazos e convalidação profissional.
-      </p>
-      <div class="flex flex-wrap gap-2.5">
-        <a href="../estagio/" class="inline-flex items-center gap-2 bg-sky-600 hover:bg-sky-500 text-white font-bold px-3.5 py-1.5 rounded-lg text-xs transition-colors shadow">
-          <i class="fa-solid fa-book-open"></i> Acessar Guia de Estágio
-        </a>
-        <a href="https://ialxnder.fly.dev/estagio" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-slate-700/80 hover:bg-slate-600 text-slate-200 px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors border border-slate-600">
-          <i class="fa-solid fa-bolt text-sky-400"></i> Portal Estágio Online
-        </a>
-      </div>
-    </div>
-
-    <!-- Card: Guia Oficial de TCC -->
-    <div class="glass-panel p-6 rounded-2xl border border-amber-500/30 relative overflow-hidden bg-gradient-to-br from-amber-950/40 via-slate-800 to-slate-900">
-      <div class="w-10 h-10 bg-amber-500/20 text-amber-400 rounded-lg flex items-center justify-center mb-4 text-xl">
+    <div class="glass-panel p-5 sm:p-6 rounded-2xl hover:bg-slate-800/80 transition-colors">
+      <div class="node-icon bg-emerald-500/20 text-emerald-400">
         <i class="fa-solid fa-graduation-cap"></i>
       </div>
-      <div class="flex items-center gap-2 mb-2">
-        <h3 class="text-lg font-bold text-white">Guia Oficial do TCC</h3>
-        <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">IN 001/2026</span>
-      </div>
-      <p class="text-slate-300 text-xs sm:text-sm mb-4 leading-relaxed">
-        TCC I e TCC II: da proposta à defesa pública. Regulamentações, modelos de Monografia ABNT, Artigo SBC e geração online de documentos.
-      </p>
-      <div class="flex flex-wrap gap-2.5">
-        <a href="../tcc/" class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-3.5 py-1.5 rounded-lg text-xs transition-colors shadow">
-          <i class="fa-solid fa-book-open"></i> Acessar Guia do TCC
-        </a>
-        <a href="https://ialxnder.fly.dev/tcc" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-slate-700/80 hover:bg-slate-600 text-slate-200 px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors border border-slate-600">
-          <i class="fa-solid fa-bolt text-amber-400"></i> Portal TCC Online
-        </a>
-      </div>
+      <h3 class="text-lg font-bold text-white mb-2 mt-0">Estágio Supervisionado e TCC</h3>
+      <p class="text-sm text-slate-400 mb-0">Portais oficiais para preenchimento de documentos online, prazos de entrega, defesas públicas e modelos ABNT/SBC.</p>
+      <a class="jump" href="#etapa6">ver estágio e tcc →</a>
     </div>
-
-    <!-- Card: iALXnder Assistente -->
-    <div class="md:col-span-2 bg-gradient-to-br from-brand-900/40 to-slate-800 p-6 rounded-2xl border border-brand-500/30 relative overflow-hidden">
-      <div class="absolute right-0 top-0 p-6 opacity-5 pointer-events-none">
-        <i class="fa-solid fa-robot text-9xl"></i>
-      </div>
-      <div class="relative z-10">
-        <div class="flex items-center gap-4 mb-3">
-          <div class="w-12 h-12 bg-brand-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg shadow-brand-500/30 shrink-0">
-            <i class="fa-solid fa-robot"></i>
-          </div>
-          <div>
-            <h3 class="text-xl font-bold text-brand-300">Assistente Virtual iALXnder</h3>
-            <p class="text-slate-300 text-sm">Seu copiloto acadêmico para tirar dúvidas sobre o curso de Ciência da Computação.</p>
-          </div>
-        </div>
-        <p class="text-slate-300 text-sm mb-4 max-w-2xl">
-          O iALXnder foi treinado com o PPC do curso, a Normatização Acadêmica da UNEMAT, regulamentos de estágio, TCC e resoluções institucionais para responder suas perguntas de forma rápida e precisa.
-        </p>
-        <a href="https://bit.ly/iALXnderBETA" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white px-5 py-2.5 rounded-lg text-sm font-bold transition-all shadow hover:shadow-brand-500/20">
-          Conversar com a IA <i class="fa-solid fa-arrow-right"></i>
-        </a>
-      </div>
-    </div>
-
-    <!-- Card: Rights -->
-    <div class="md:col-span-2 bg-gradient-to-br from-indigo-900/40 to-slate-800 p-6 rounded-2xl border border-indigo-500/30 relative overflow-hidden">
-      <div class="absolute right-0 top-0 p-6 opacity-5 pointer-events-none">
-        <i class="fa-solid fa-scale-balanced text-9xl"></i>
-      </div>
-      <h3 class="text-xl font-bold text-indigo-300 mb-2 flex items-center gap-2">
-        <i class="fa-solid fa-gavel"></i> Direitos e Deveres dos Estudantes
-      </h3>
-      <p class="text-slate-300 text-sm mb-4 max-w-2xl leading-relaxed">
-        Leitura essencial para alinhar expectativas com a vida universitária. Contém regras oficiais sobre avaliações, notas, frequência, trancamento, regime domiciliar e normas de conduta acadêmica (Resolução nº 047/2025–CONEPE).
-      </p>
-      <a href="https://bit.ly/DireitoseDeveresUNEMAT" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-lg text-sm font-bold transition-all shadow hover:shadow-indigo-500/20">
-        Ler Documento Oficial <i class="fa-solid fa-arrow-right"></i>
-      </a>
-    </div>
-
   </div>
+
+  <div class="note">
+    <b class="note-label">Regras Fundamentais da Vida Acadêmica (Resolução nº 047/2025–CONEPE)</b>
+    A frequência mínima obrigatória para aprovação em qualquer componente curricular é de <strong>75%</strong> das aulas ministradas. A média mínima para aprovação direta é <strong>7,0</strong>; discentes com média entre <strong>4,0 e 6,9</strong> realizam Exame Final, exigindo média ponderada final igual ou superior a <strong>5,0</strong>. Acompanhe seus prazos no SIGAA e mantenha seus dados atualizados.
+  </div>
+
+  <!-- ETAPA 1 -->
+  <section class="stage" id="etapa1">
+    <div class="stage-head">
+      <div class="badge">1</div>
+      <h2>Boas-Vindas e Integração Acadêmica</h2>
+    </div>
+    <div class="basis">Base normativa: Colegiado de Curso | PPC do Bacharelado em Ciência da Computação</div>
+
+    <ul class="checklist">
+      <li><input type="checkbox" id="g1-1"><label for="g1-1">Participar da Aula Inaugural e das atividades de acolhimento aos calouros da Coordenação</label></li>
+      <li><input type="checkbox" id="g1-2"><label for="g1-2">Conhecer a infraestrutura do Câmpus: salas de aula, biblioteca universitária e laboratórios de informática</label></li>
+      <li><input type="checkbox" id="g1-3"><label for="g1-3">Conhecer os laboratórios de pesquisa, inovação e extensão do curso (PIXEL Lab, LEIA, LESE, CRIAR)</label></li>
+      <li><input type="checkbox" id="g1-4"><label for="g1-4">Acompanhar os comunicados e avisos oficiais nos murais, site e grupos de comunicação da Coordenação</label></li>
+    </ul>
+
+    <div style="margin-top:14px;">
+      <a class="doc-pill" href="../assets/files/bcc_wallpaper.zip" target="_blank">🖼️ Papel de Parede Oficial do Curso (ZIP)</a>
+      <a class="doc-pill" href="https://bit.ly/iALXnderBETA" target="_blank" rel="noopener">⚡ Tirar Dúvidas com o iALXnder</a>
+    </div>
+  </section>
+
+  <!-- ETAPA 2 -->
+  <section class="stage" id="etapa2">
+    <div class="stage-head">
+      <div class="badge">2</div>
+      <h2>Acesso aos Sistemas Institucionais e SIGAA</h2>
+    </div>
+    <div class="basis">Base normativa: Instrução Normativa PROEG | Diretoria de TI da UNEMAT</div>
+
+    <ul class="checklist">
+      <li><input type="checkbox" id="g2-1"><label for="g2-1">Ativar o e-mail institucional oficial <code>@unemat.br</code> e a conta de acesso ao SIGAA</label></li>
+      <li><input type="checkbox" id="g2-2"><label for="g2-2">Realizar a renovação de matrícula (rematrícula online) dentro dos prazos estabelecidos pelo calendário letivo</label></li>
+      <li><input type="checkbox" id="g2-3"><label for="g2-3">Acompanhar a frequência lançada pelos docentes, notas de avaliações parciais e planos de ensino no SIGAA</label></li>
+      <li><input type="checkbox" id="g2-4"><label for="g2-4">Protocolar requerimentos acadêmicos (aproveitamento de estudos, trancamento de matrícula e declarações) diretamente no sistema</label></li>
+    </ul>
+
+    <div style="margin-top:14px;">
+      <a class="doc-pill" href="https://bit.ly/tutoriaisSIGAA" target="_blank" rel="noopener">📖 Tutorial Oficial de Uso do SIGAA</a>
+      <a class="doc-pill" href="https://sigaa.unemat.br/sigaa/verTelaLogin.do" target="_blank" rel="noopener">🌐 Portal SIGAA UNEMAT</a>
+    </div>
+  </section>
+
+  <!-- ETAPA 3 -->
+  <section class="stage" id="etapa3">
+    <div class="stage-head">
+      <div class="badge">3</div>
+      <h2>Calendário Acadêmico Oficial e Grades de Horários</h2>
+    </div>
+    <div class="basis">Base normativa: Calendário Acadêmico 2026 aprovado pelo CONEPE | Coordenação de Curso</div>
+
+    <ul class="checklist">
+      <li><input type="checkbox" id="g3-1"><label for="g3-1">Baixar o Calendário Acadêmico Oficial para consultar início e término de semestre, recessos e feriados</label></li>
+      <li><input type="checkbox" id="g3-2"><label for="g3-2">Conferir a grade horária semanal da sua fase letiva (19h00 às 22h30) no câmpus correspondente</label></li>
+      <li><input type="checkbox" id="g3-3"><label for="g3-3">Acompanhar as 13 datas letivas presenciais nos sábados e disciplinas modulares intensivas</label></li>
+      <li><input type="checkbox" id="g3-4"><label for="g3-4">Importar a grade de horários da sua fase para o Google Agenda via link direto</label></li>
+    </ul>
+
+    <div style="margin-top:14px;">
+      <a class="doc-pill norma" href="https://cms.unemat.br/download/documentos/bloco-documento-arquivo/HajJ4c8t4MTzU4ZcwDV0lOCOFbhENiW5xZNu1pvm/Calendario-Academico-Para-o-Ano-Letivo-de-2026.pdf" target="_blank" rel="noopener">📜 Calendário Acadêmico Oficial 2026 (PDF)</a>
+      <a class="doc-pill" href="../assets/files/Horario.AIA.zip" target="_blank">📅 Horários · Alto Araguaia (ZIP)</a>
+      <a class="doc-pill" href="../assets/files/Horario.ROO.zip" target="_blank">📅 Horários · Rondonópolis (ZIP)</a>
+      <a class="doc-pill" href="../#schedule">🗓️ Ver Grade Interativa no Site</a>
+    </div>
+  </section>
+
+  <!-- ETAPA 4 -->
+  <section class="stage" id="etapa4">
+    <div class="stage-head">
+      <div class="badge">4</div>
+      <h2>Matriz Curricular e Projetos Pedagógicos (PPC)</h2>
+    </div>
+    <div class="basis">Base normativa: Resolução nº 058/2023–CONEPE (AIA) | Resolução nº 061/2023–CONEPE (ROO)</div>
+
+    <ul class="checklist">
+      <li><input type="checkbox" id="g4-1"><label for="g4-1">Conhecer o Projeto Pedagógico do Curso (PPC) do seu câmpus: ementas, bibliografias e competências formativas</label></li>
+      <li><input type="checkbox" id="g4-2"><label for="g4-2">Planejar a integralização das disciplinas obrigatórias e optativas observando pré-requisitos formais</label></li>
+      <li><input type="checkbox" id="g4-3"><label for="g4-3">Compreender a distribuição das quatro grandes áreas: Fundamentos, Engenharia de Software, Sistemas Inteligentes e Redes/Infraestrutura</label></li>
+      <li><input type="checkbox" id="g4-4"><label for="g4-4">Cumprir as Atividades Complementares (ACC) ao longo da graduação (cursos, eventos, semanas acadêmicas, publicações)</label></li>
+    </ul>
+
+    <div style="margin-top:14px;">
+      <a class="doc-pill norma" href="https://www.unemat.br/resolucoes/resolucoes/conepe/5298_res_conepe_58_2023.pdf" target="_blank" rel="noopener">📜 PPC Alto Araguaia · Res. 058/2023 (PDF)</a>
+      <a class="doc-pill norma" href="http://www.unemat.br/resolucoes/resolucoes/conepe/5300_res_conepe_61_2023.pdf" target="_blank" rel="noopener">📜 PPC Rondonópolis · Res. 061/2023 (PDF)</a>
+    </div>
+  </section>
+
+  <!-- ETAPA 5 -->
+  <section class="stage" id="etapa5">
+    <div class="stage-head">
+      <div class="badge">5</div>
+      <h2>Apoio Estudantil, Acessibilidade e Oportunidades</h2>
+    </div>
+    <div class="basis">Base normativa: Pró-Reitoria de Assuntos Estudantis (PRAE/CAEST) | Diretoria de Acessibilidade</div>
+
+    <ul class="checklist">
+      <li><input type="checkbox" id="g5-1"><label for="g5-1">Acompanhar editais da CAEST para auxílio-alimentação, auxílio-moradia e bolsas de permanência estudantil</label></li>
+      <li><input type="checkbox" id="g5-2"><label for="g5-2">Solicitar suporte pedagógico e adaptações metodológicas junto ao Núcleo de Estudantes com NEE caso necessário</label></li>
+      <li><input type="checkbox" id="g5-3"><label for="g5-3">Candidatar-se a editais de Monitoria Remunerada e Voluntária nas disciplinas do departamento</label></li>
+      <li><input type="checkbox" id="g5-4"><label for="g5-4">Participar de projetos de Iniciação Científica (PIBIC/FAPEMAT/CNPq) e extensão universitária</label></li>
+    </ul>
+
+    <div style="margin-top:14px;">
+      <a class="doc-pill" href="https://bit.ly/CAESTUnematAIA" target="_blank" rel="noopener">🏛️ CAEST – Assuntos Estudantis</a>
+      <a class="doc-pill" href="https://bit.ly/EstudanteNEE" target="_blank" rel="noopener">♿ Estudantes com NEE (Acessibilidade)</a>
+    </div>
+  </section>
+
+  <!-- ETAPA 6 -->
+  <section class="stage" id="etapa6">
+    <div class="stage-head">
+      <div class="badge">6</div>
+      <h2>Estágio Supervisionado e Trabalho de Conclusão de Curso (TCC)</h2>
+    </div>
+    <div class="basis">Base normativa: Lei nº 11.788/2008 | IN nº 001/2026–Colegiado/BCC | Resoluções CONEPE nº 009/2020 e nº 047/2025</div>
+
+    <ul class="checklist">
+      <li><input type="checkbox" id="g6-1"><label for="g6-1">Consultar o <strong>Guia Oficial de Estágio</strong> ao atingir os requisitos mínimos de matrícula</label></li>
+      <li><input type="checkbox" id="g6-2"><label for="g6-2">Utilizar o <strong>Portal Estágio Online</strong> para preenchimento de TCE, plano de atividades e fichas em DOCX/PDF com assinatura gov.br</label></li>
+      <li><input type="checkbox" id="g6-3"><label for="g6-3">Consultar o <strong>Guia Oficial do TCC</strong> para as etapas de TCC I (projeto) e TCC II (monografia ABNT ou artigo SBC)</label></li>
+      <li><input type="checkbox" id="g6-4"><label for="g6-4">Utilizar o <strong>Portal TCC Online</strong> para emissão de termos de aceite, controle quinzenal de frequência e atas de defesa</label></li>
+    </ul>
+
+    <div style="margin-top:14px;">
+      <a class="doc-pill" href="../estagio/">📋 Acessar Guia Oficial de Estágio</a>
+      <a class="doc-pill" href="../tcc/">🎓 Acessar Guia Oficial do TCC</a>
+      <a class="doc-pill" href="https://ialxnder.fly.dev/estagio" target="_blank" rel="noopener">⚡ Portal Estágio Online</a>
+      <a class="doc-pill" href="https://ialxnder.fly.dev/tcc" target="_blank" rel="noopener">⚡ Portal TCC Online</a>
+    </div>
+  </section>
+
+  <!-- DOWNLOADS GERAIS -->
+  <section class="stage" id="downloads">
+    <h2>Acervo Completo de Documentos, Normas e Links do Estudante</h2>
+    <p class="lead" style="color:var(--ink-soft); font-size:0.93rem;">Documentos institucionais e regulamentos vigentes do Bacharelado em Ciência da Computação da UNEMAT.</p>
+
+    <h3 style="font-size:1.05rem; margin-top:16px;">Legislação e Normas Vigentes</h3>
+    <div>
+      <a class="doc-pill norma" href="https://www.unemat.br/resolucoes/resolucoes/conepe/5957_res_conepe_47_2025.pdf" target="_blank" rel="noopener">📜 Resolução nº 047/2025–CONEPE (Normatização Acadêmica)</a>
+      <a class="doc-pill norma" href="https://www.unemat.br/resolucoes/resolucoes/conepe/5298_res_conepe_58_2023.pdf" target="_blank" rel="noopener">📜 PPC Alto Araguaia · Res. 058/2023 (PDF)</a>
+      <a class="doc-pill norma" href="http://www.unemat.br/resolucoes/resolucoes/conepe/5300_res_conepe_61_2023.pdf" target="_blank" rel="noopener">📜 PPC Rondonópolis · Res. 061/2023 (PDF)</a>
+      <a class="doc-pill norma" href="https://cms.unemat.br/download/documentos/bloco-documento-arquivo/HajJ4c8t4MTzU4ZcwDV0lOCOFbhENiW5xZNu1pvm/Calendario-Academico-Para-o-Ano-Letivo-de-2026.pdf" target="_blank" rel="noopener">📜 Calendário Acadêmico Oficial 2026 (PDF)</a>
+    </div>
+
+    <h3 style="font-size:1.05rem; margin-top:20px;">Recursos e Portais de Autoatendimento</h3>
+    <div>
+      <a class="doc-pill" href="https://bit.ly/iALXnderBETA" target="_blank" rel="noopener">🤖 Assistente Virtual iALXnder</a>
+      <a class="doc-pill" href="../estagio/">💼 Guia do Estágio Supervisionado</a>
+      <a class="doc-pill" href="../tcc/">🎓 Guia do Trabalho de Conclusão (TCC)</a>
+      <a class="doc-pill" href="../secomp/">🚀 VII SECOMP 2026</a>
+      <a class="doc-pill" href="../assets/files/Horario.AIA.zip" target="_blank">📅 Horários · Alto Araguaia (ZIP)</a>
+      <a class="doc-pill" href="../assets/files/Horario.ROO.zip" target="_blank">📅 Horários · Rondonópolis (ZIP)</a>
+      <a class="doc-pill" href="../assets/files/bcc_wallpaper.zip" target="_blank">🖼️ Papéis de Parede Oficiais (ZIP)</a>
+    </div>
+  </section>
+
+  <!-- GLOSSARIO -->
+  <section class="glossary" id="glossario">
+    <h2>Quem é quem na vida acadêmica da UNEMAT</h2>
+    <div class="gterm"><b>Coordenação do Curso</b><span>Responsável pela gestão acadêmica, horários, atribuição docente, atendimento ao corpo discente e homologações de estágio/TCC.</span></div>
+    <div class="gterm"><b>Colegiado de Curso</b><span>Órgão deliberativo máximo do curso de graduação, composto por docentes e representação discente.</span></div>
+    <div class="gterm"><b>Núcleo Docente Estruturante (NDE)</b><span>Comissão de docentes responsável pela concepção, consolidação e contínua atualização do Projeto Pedagógico (PPC).</span></div>
+    <div class="gterm"><b>Secretaria Acadêmica (SAA)</b><span>Setor do câmpus responsável pela emissão oficial de históricos, atestados de matrícula e diplomas.</span></div>
+    <div class="gterm"><b>Centro Acadêmico (CA)</b><span>Entidade de representação estudantil legítima dos estudantes de Ciência da Computação.</span></div>
+  </section>
+
+  <section class="glossary" id="regras" style="margin-top:24px;">
+    <h2>Direitos, Deveres e Normas Acadêmicas Essenciais (Resolução nº 047/2025)</h2>
+    <div class="gterm"><b>1. Frequência Obrigatória</b><span>Exigência legal inegociável de no mínimo 75% de frequência nas aulas. Faltas não são "justificadas" com abono, exceto nos casos estritos de regime domiciliar previstos na norma.</span></div>
+    <div class="gterm"><b>2. Regime Domiciliar</b><span>Concedido mediante requerimento formal tempestivo (até 5 dias úteis do evento) instruído com atestado médico oficial em casos de tratamento de saúde prolongado, licença-maternidade ou serviço militar obrigatório.</span></div>
+    <div class="gterm"><b>3. Avaliação e Segunda Chamada</b><span>O acadêmico tem direito a requerer segunda chamada de avaliação presencial mediante justificativa documentalmente comprovada protocolada no prazo regimental.</span></div>
+    <div class="gterm"><b>4. Trancamento de Matrícula</b><span>Permitido respeitados os prazos do calendário acadêmico, desde que o estudante não esteja em seu primeiro semestre letivo de ingresso no curso.</span></div>
+  </section>
 
 </main>
 
