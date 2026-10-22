@@ -3,10 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Prévia · Horários 2027/1 · BCC UNEMAT</title>
+<title>Prévia · Horários e Datas 2027/1 · BCC UNEMAT</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 /* Mesmo tema escuro do site principal (computacaounemat.github.io/index.html):
    brand-500 #009EE0 (ciano oficial BCC), verde #8DC63F, dark-900/800, fonte Mesmerize. */
@@ -52,60 +53,67 @@ body { margin: 0; font-family: var(--fonte); font-weight: 300; font-size: 15px; 
 a { color: var(--brand); text-decoration: none; }
 button { cursor: pointer; font: inherit; color: inherit; }
 .mono { font-family: var(--mono); }
-::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: #0b0d0f; }
 ::-webkit-scrollbar-thumb { background: #2a2e33; border-radius: 3px; }
 
+/* Top bar global */
 .ialx-global-bar { background: var(--canvas); border-bottom: 1px solid var(--border); color: var(--text); position: sticky; top: 0; z-index: 9999; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
-.ialx-bar-inner { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 8px 16px; gap: 12px; flex-wrap: wrap; }
+.ialx-bar-inner { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; gap: 12px; flex-wrap: wrap; }
 .ialx-brand { display: flex; align-items: center; gap: 8px; color: #fff; font-weight: 700; font-size: 1.05rem; }
 .ialx-brand .ialx-logo-badge { background: var(--brand); color: #fff; padding: 3px 8px; border-radius: 6px; font-size: .82rem; font-weight: 800; letter-spacing: .5px; }
 .ialx-brand .ialx-brand-sub { font-size: .78rem; color: var(--muted); font-weight: 500; border-left: 1px solid rgba(255,255,255,.2); padding-left: 8px; }
-.ialx-role-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--yellow-soft); color: var(--yellow-text); border: 1px solid rgba(245,158,11,.4); padding: 3px 9px; border-radius: 999px; font-size: .75rem; font-weight: 600; }
+.ialx-role-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--yellow-soft); color: var(--yellow-text); border: 1px solid rgba(245,158,11,.4); padding: 4px 10px; border-radius: 999px; font-size: .75rem; font-weight: 600; }
+.btn-voltar { font-size: 12.5px; color: var(--muted); display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 8px; border: 1px solid var(--border); transition: all .15s ease; }
+.btn-voltar:hover { color: #fff; border-color: var(--brand); background: var(--brand-soft); }
 
 .shell { max-width: 1280px; margin: 0 auto; padding: 24px 16px 80px; }
-.page-head { margin-bottom: 18px; }
-.page-head h1 { margin: 0 0 4px; font-size: 1.65rem; font-weight: 750; letter-spacing: -.3px; }
-.page-head .meta { margin: 0; font-size: .9rem; color: var(--muted); }
+.page-head { margin-bottom: 20px; }
+.page-head h1 { margin: 0 0 6px; font-size: 1.75rem; font-weight: 750; letter-spacing: -.3px; }
+.page-head .meta { margin: 0; font-size: .92rem; color: var(--muted); }
 
 .aviso { padding: 12px 16px; border-radius: 10px; font-size: 14px; display: flex; gap: 10px; align-items: flex-start; margin-bottom: 20px; }
 .aviso.info { background: var(--yellow-soft); color: var(--yellow-text); border: 1px solid rgba(255,206,0,.4); }
-.aviso.ok { background: var(--green-soft); color: #355312; border: 1px solid rgba(141,198,63,.3); }
 
+/* Abas de navegação */
 .aloc-tabs { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 6px 10px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,.03); }
 .aloc-tabs-inner { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
-.tabs-group { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+.tabs-group { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
 .tab-item { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border: none; background: none; border-radius: 8px; font-size: .9rem; font-weight: 500; color: var(--muted); white-space: nowrap; transition: all .15s ease; }
 .tab-item:hover { color: var(--brand); background: var(--brand-soft); }
 .tab-item.ativo { color: #fff; background: var(--brand); font-weight: 600; }
-.tab-item.verde.ativo { background: var(--green-dark); }
-.tab-item.fase-ativo { color: #fff; font-weight: 700; }
-.mes-aba { min-height: 36px; padding: 0 14px; border-radius: 20px; border: 1px solid var(--border-strong); background: var(--panel); font-size: 13px; }
+.tab-item.verde.ativo { background: var(--green-dark); color: #0b0d0f; font-weight: 700; }
+.tab-item.fase-ativo { font-weight: 700; }
+.mes-aba { min-height: 36px; padding: 0 14px; border-radius: 20px; border: 1px solid var(--border-strong); background: var(--panel); font-size: 13px; color: var(--text-2); transition: all .15s ease; }
+.mes-aba:hover { border-color: var(--brand); color: #fff; }
 .mes-aba.ativo { background: var(--green-dark); border-color: var(--green-dark); color: #0b0d0f; font-weight: 700; }
 
 .caixa { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: 0 1px 3px rgba(0,0,0,.04); }
 h2 { margin: 0; font-size: 1.15rem; font-weight: 700; }
 
-/* ---- View 1: lista por fase + mini-calendário lateral ---- */
+/* ---- View 1: Lista por fase ---- */
 .duas-colunas { display: grid; grid-template-columns: minmax(0,1fr) 330px; gap: 24px; align-items: start; }
-.bloco { display: grid; grid-template-columns: 110px minmax(0,1fr); border-top: 2px solid var(--border); }
+.bloco { display: grid; grid-template-columns: 130px minmax(0,1fr); border-top: 2px solid var(--border); }
 .bloco:first-child { border-top: none; }
+.bloco-cabecalho { display: flex; flex-direction: column; align-items: stretch; justify-content: space-between; }
 .bloco-rotulo { padding: 14px; display: flex; flex-direction: column; gap: 4px; color: #fff; border: none; width: 100%; text-align: left; cursor: pointer; font: inherit; }
 .bloco-rotulo:hover { filter: brightness(1.08); }
 .bloco-rotulo b { font-size: 15px; }
 .bloco-rotulo small { font-size: 11px; opacity: .85; }
 .bloco-rotulo .ir { font-size: 10px; opacity: .85; margin-top: 2px; }
-.linha { display: grid; grid-template-columns: 100px 140px minmax(0,1fr) 190px; align-items: center; min-height: 52px; border-top: 1px solid var(--border); background: var(--panel); }
+.linha { display: grid; grid-template-columns: 90px 140px minmax(0,1fr) 190px; align-items: center; min-height: 52px; border-top: 1px solid var(--border); background: var(--panel); }
 .linha:first-child { border-top: none; }
 .linha:hover { background: rgba(255,255,255,0.04); }
 .linha > span { padding: 8px 12px; }
-.linha .dsem { font-weight: 600; font-size: 14px; }
+.linha .dsem { font-weight: 600; font-size: 14px; color: #fff; }
 .linha .cod { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.linha .nome { color: var(--text-2); }
+.linha .nome b { color: #fff; }
 .linha .prof { font-size: 12.5px; color: var(--muted); }
 .linha .prof.pend { color: var(--yellow-text); font-weight: 700; }
-.pausa { margin: 0; padding: 9px 62px; display: flex; gap: 10px; flex-wrap: wrap; font-size: 13px; background: var(--listra); color: #334155; border-top: 1px dashed var(--border-strong); }
+.pausa { margin: 0; padding: 10px 48px; display: flex; gap: 10px; flex-wrap: wrap; font-size: 13px; background: var(--listra); color: #334155; border-top: 1px dashed var(--border-strong); }
 .pausa.modular { background: var(--yellow-soft); color: var(--yellow-text); }
-.extras-wrap { margin: 0; padding: 12px 62px 14px; background: rgba(99,102,241,.10); border-top: 1px dashed var(--border-strong); }
+.extras-wrap { margin: 0; padding: 12px 48px 14px; background: rgba(99,102,241,.10); border-top: 1px dashed var(--border-strong); }
 .extras-wrap b { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: #a5b4fc; margin-bottom: 8px; }
 .extras-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; }
 .extra-item { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; display: flex; justify-content: space-between; gap: 8px; font-size: 12px; }
@@ -127,26 +135,56 @@ h2 { margin: 0; font-size: 1.15rem; font-weight: 700; }
 .legenda span { display: flex; align-items: center; gap: 8px; }
 .legenda i { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; display: inline-block; }
 
-/* ---- View 2: por fase, calendário colorido por disciplina ---- */
-.legenda-cores { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-bottom: 16px; padding: 12px 16px; }
+/* ---- View 2: Grade Semanal & Calendário Colorido ---- */
+.grade-semanal-wrap { display: flex; flex-direction: column; gap: 18px; }
+.grade-fase-topo { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding: 16px 20px; background: var(--panel); border: 1px solid var(--border); border-radius: 14px; }
+.grade-fase-topo h2 { font-size: 1.25rem; font-weight: 800; color: #fff; margin: 0; display: flex; align-items: center; gap: 10px; }
+.grade-fase-topo p { margin: 4px 0 0; font-size: 12.5px; color: var(--muted); }
+.disc-sigla { font-family: var(--mono); font-size: 12px; font-weight: 800; padding: 3px 8px; border-radius: 6px; }
+
+.grade-semanal-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 1024px) { .grade-semanal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .grade-semanal-grid { grid-template-columns: 1fr; } }
+
+.dia-col { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: border-color .15s ease, transform .15s ease; }
+.dia-col:hover { border-color: var(--brand); transform: translateY(-2px); }
+.dia-col-head { padding: 10px 14px; font-weight: 700; font-size: 13.5px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.02); }
+.dia-col-body { padding: 14px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.dia-col-body .sigla { display: inline-block; padding: 3px 8px; border-radius: 6px; font-size: 12px; font-weight: 800; color: #0b0d0f; width: fit-content; }
+.dia-col-body .nome { font-weight: 600; font-size: 13.5px; color: #f8fafc; line-height: 1.3; }
+.dia-col-body .cod { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+.dia-col-body .prof { font-size: 12px; color: #94a3b8; margin-top: auto; padding-top: 8px; border-top: 1px dashed rgba(255,255,255,0.08); }
+.dia-col-body .prof.pend { color: var(--yellow-text); font-weight: 700; }
+.dates-pills { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+.date-pill { font-family: var(--mono); font-size: 10.5px; background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; color: #cbd5e1; }
+.date-pill.sab { background: rgba(14,165,233,0.22); color: #38bdf8; font-weight: 700; border: 1px solid rgba(14,165,233,0.3); }
+
+.datas-box { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; }
+.datas-box h3 { margin: 0 0 8px 0; font-size: 1rem; font-weight: 700; color: #fff; }
+.datas-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.datas-table th, .datas-table td { padding: 10px 12px; text-align: left; border-top: 1px solid var(--border); }
+.datas-table th { font-weight: 700; color: var(--muted); font-size: 11.5px; text-transform: uppercase; letter-spacing: .05em; border-top: none; }
+
+/* Calendário dos meses colorido por disciplina */
+.legenda-cores { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-bottom: 16px; padding: 14px 18px; }
 .legenda-cores span { display: flex; align-items: center; gap: 7px; font-size: 12.5px; }
 .legenda-cores i { width: 13px; height: 13px; border-radius: 3px; flex-shrink: 0; }
 .meses-grandes { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
-.mes-grande { padding: 14px 16px; }
-.mes-grande > b { font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: var(--text-2); display: block; margin-bottom: 8px; }
+.mes-grande { padding: 14px 16px; background: rgba(255,255,255,0.015); border: 1px solid var(--border); border-radius: 12px; }
+.mes-grande > b { font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: var(--text-2); display: block; margin-bottom: 10px; }
 .cal-mini-grade { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 3px; }
 .cal-mini-grade span, .cal-mini-grade button { height: 26px; font-family: var(--mono); font-size: 11px; display: flex; align-items: center; justify-content: center; border-radius: 5px; color: #94a3b8; font-weight: 600; border: none; background: none; padding: 0; }
 .cal-mini-grade button { cursor: pointer; }
 .cal-mini-grade button:hover { outline: 2px solid var(--brand); outline-offset: 1px; }
-.cal-mini-grade .cab { color: var(--muted); height: 16px; font-family: var(--fonte); font-weight: 500; }
+.cal-mini-grade .cab { color: var(--muted); height: 16px; font-family: var(--fonte); font-weight: 500; font-size: 10px; }
 .cal-mini-grade .off { background: var(--listra); color: var(--muted); }
 
-/* ---- View 3: calendário do semestre com painel do dia ---- */
+/* ---- View 3: Calendário Interativo do Semestre & Agenda ---- */
 .cal-layout { display: grid; grid-template-columns: minmax(0,1fr) 340px; gap: 20px; align-items: start; }
 .cal-grade { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 8px; }
 .cal-cab { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; padding: 0 4px; }
-.dia { min-height: 92px; padding: 9px 10px; border-radius: 10px; border: 1px solid var(--border); background: var(--panel); display: flex; flex-direction: column; gap: 5px; text-align: left; cursor: pointer; }
-.dia:hover { border-color: var(--brand); }
+.dia { min-height: 92px; padding: 9px 10px; border-radius: 10px; border: 1px solid var(--border); background: var(--panel); display: flex; flex-direction: column; gap: 5px; text-align: left; cursor: pointer; transition: all .15s ease; }
+.dia:hover { border-color: var(--brand); transform: translateY(-1px); }
 .dia .num { font-family: var(--mono); font-size: 14px; font-weight: 700; }
 .dia .info { font-size: 10.5px; color: var(--muted); line-height: 1.25; }
 .dia .pontos { display: flex; gap: 4px; margin-top: auto; }
@@ -157,10 +195,10 @@ h2 { margin: 0; font-size: 1.15rem; font-weight: 700; }
 .dia.fora { background: transparent; border-style: dashed; color: #94a3b8; cursor: default; }
 .dia.sel { box-shadow: 0 0 0 3px var(--brand); border-color: var(--brand); }
 .painel-dia { position: sticky; top: 70px; overflow: hidden; }
-.painel-dia .topo { padding: 18px 20px 12px; }
+.painel-dia .topo { padding: 18px 20px 12px; border-bottom: 1px solid var(--border); }
 .painel-dia .topo small { color: var(--muted); font-size: 13px; text-transform: capitalize; }
 .painel-dia .topo h2 { font-size: 19px; margin-top: 2px; }
-.aula-item { display: grid; grid-template-columns: auto minmax(0,1fr); gap: 12px; align-items: center; padding: 12px 20px; border-top: 1px solid var(--border); border-left: none; border-right: none; border-bottom: none; width: 100%; text-align: left; background: none; cursor: pointer; font: inherit; color: inherit; }
+.aula-item { display: grid; grid-template-columns: auto minmax(0,1fr); gap: 12px; align-items: center; padding: 12px 20px; border-top: 1px solid var(--border); border-left: none; border-right: none; border-bottom: none; width: 100%; text-align: left; background: none; cursor: pointer; font: inherit; color: inherit; transition: background .15s ease; }
 .aula-item:hover { background: rgba(255,255,255,0.04); }
 .aula-item .fase { padding: 3px 8px; border-radius: 6px; font-size: 11px; font-weight: 700; color: #fff; white-space: nowrap; }
 .aula-item .nome { font-weight: 600; font-size: 13.5px; }
@@ -168,11 +206,28 @@ h2 { margin: 0; font-size: 1.15rem; font-weight: 700; }
 .aula-item .quem { font-size: 11.5px; color: var(--muted); }
 .painel-dia .vazio { padding: 16px 20px; color: var(--muted); font-size: 13.5px; }
 
+/* Agenda timeline */
+.agenda-timeline { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+.agenda-card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 14px 18px; display: grid; grid-template-columns: 88px 1fr; gap: 16px; align-items: center; transition: all .15s ease; }
+.agenda-card:hover { border-color: var(--brand); background: rgba(255,255,255,0.03); }
+.agenda-card.feriado { border-left: 4px solid #ef4444; background: rgba(239,68,68,0.05); }
+.agenda-card.sabado { border-left: 4px solid var(--brand); background: rgba(0,158,224,0.04); }
+.agenda-card.modular { border-left: 4px solid #eab308; background: rgba(234,179,8,0.05); }
+.agenda-card-date { text-align: center; border-right: 1px solid var(--border); padding-right: 14px; }
+.agenda-card-date .num { font-family: var(--mono); font-size: 22px; font-weight: 800; color: #fff; line-height: 1; }
+.agenda-card-date .dia-semana { font-size: 11px; text-transform: uppercase; font-weight: 700; color: var(--brand); margin-top: 4px; }
+.agenda-card-aulas { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.agenda-aula-pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); font-size: 12px; }
+.agenda-aula-pill .fase-tag { font-weight: 800; font-size: 11px; padding: 2px 7px; border-radius: 4px; color: #fff; }
+.agenda-aula-pill .disc-txt { color: #f1f5f9; font-weight: 600; }
+.agenda-aula-pill .prof-txt { color: #94a3b8; font-size: 11.5px; }
+
 @media (max-width: 1100px) {
   .duas-colunas, .cal-layout { grid-template-columns: minmax(0,1fr); }
   .lateral, .painel-dia { position: static; }
   .bloco { grid-template-columns: minmax(0,1fr); }
-  .bloco-rotulo { flex-direction: row; align-items: baseline; gap: 10px; }
+  .bloco-cabecalho { flex-direction: row; align-items: center; flex-wrap: wrap; }
+  .bloco-rotulo { flex-direction: row; align-items: baseline; gap: 10px; width: auto; }
   .linha { grid-template-columns: minmax(0,1fr); padding: 6px 12px; }
   .pausa, .extras-wrap { padding-left: 14px; padding-right: 14px; }
   .meses-grandes { grid-template-columns: repeat(2, minmax(0,1fr)); }
@@ -183,33 +238,36 @@ h2 { margin: 0; font-size: 1.15rem; font-weight: 700; }
 
 <header class="ialx-global-bar">
   <div class="ialx-bar-inner">
-    <span class="ialx-brand">
-      <span class="ialx-logo-badge">iALXnder</span>
-      <span class="ialx-brand-sub">Coordenação BCC · UNEMAT</span>
-    </span>
-    <span class="ialx-role-badge">👤 Coordenador — Prévia interna, não divulgar</span>
+    <a href="../" class="ialx-brand" title="Voltar ao Portal do BCC">
+      <span class="ialx-logo-badge">BCC</span>
+      <span class="ialx-brand-sub">Coordenação · UNEMAT</span>
+    </a>
+    <div style="display:flex; align-items:center; gap:10px">
+      <a href="../" class="btn-voltar"><i class="fa-solid fa-arrow-left"></i> Início</a>
+      <span class="ialx-role-badge"><i class="fa-solid fa-lock"></i> Prévia Interna · 2027/1 (Não Divulgar)</span>
+    </div>
   </div>
 </header>
 
 <div class="shell">
   <div class="aviso info">
     <span>⚠️</span>
-    <span><b>Rascunho interno — não divulgar.</b> Prévia da grade 2027/1 a partir do Quadro Oficial de Atribuição e dos PDFs de Datas homologados. Sujeita a ajustes antes de qualquer publicação.</span>
+    <span><b>Rascunho interno — não divulgar.</b> Prévia da grade horária e do calendário 2027/1 a partir do Quadro Oficial de Atribuição Docente (Resolução nº 041/2026–CONEPE). Documento de apoio para conferência e planejamento pedagógico da Coordenação de Curso.</span>
   </div>
 
   <div class="page-head">
-    <h1>Horários 2027/1</h1>
-    <p class="meta">Três visões: lista por fase, calendário colorido por disciplina dentro de uma fase, e calendário do semestre com o dia selecionável.</p>
+    <h1>Horários e Datas Letivas · 2027/1</h1>
+    <p class="meta">Distribuição semanal de aulas, calendário colorido de disciplinas, datas presenciais e calendário mensal interativo para Alto Araguaia e Rondonópolis.</p>
   </div>
 
-  <nav class="aloc-tabs" aria-label="Câmpus">
+  <nav class="aloc-tabs" aria-label="Câmpus e Visões">
     <div class="aloc-tabs-inner">
       <div class="tabs-group" id="tabsCampus"></div>
       <div class="tabs-group" id="tabsView"></div>
     </div>
   </nav>
 
-  <nav class="aloc-tabs" id="subNavWrap" aria-label="Sub-navegação" style="display:none">
+  <nav class="aloc-tabs" id="subNavWrap" aria-label="Sub-navegação de Fases" style="display:none">
     <div class="aloc-tabs-inner">
       <div class="tabs-group" id="subNav"></div>
     </div>
@@ -229,35 +287,38 @@ const WEEK = {
 const MOD13 = ["22/03","23/03","24/03","10/05","11/05","12/05","13/05","14/05","14/06","15/06","16/06","17/06","18/06"];
 const LBD14 = MOD13.concat(["29/06"]);
 const LRC15 = MOD13.concat(["28/06","29/06"]);
-const LPOO15 = WEEK.sexta.concat(["28/06","30/06"]);
-const DSDM15 = WEEK.sexta.concat(["14/05","18/06"]);
+const LPOO15 = ["26/02","05/03","12/03","19/03","02/04","09/04","16/04","23/04","30/04","07/05","21/05","04/06","25/06","28/06","30/06"];
+const DSDM15 = ["26/02","05/03","12/03","19/03","02/04","09/04","16/04","23/04","30/04","07/05","14/05","21/05","04/06","18/06","25/06"];
+
+const FERIADOS_MAP_2027_1 = {
+  "2027-03-25": "Quinta-feira Santa (Não letivo)",
+  "2027-03-26": "Sexta-feira da Paixão (Feriado Nacional)",
+  "2027-03-27": "Sábado de Aleluia (Não letivo)",
+  "2027-04-19": "Recesso Ponte Tiradentes (Não letivo)",
+  "2027-04-20": "Recesso Ponte Tiradentes (Não letivo)",
+  "2027-04-21": "Tiradentes (Feriado Nacional)",
+  "2027-05-01": "Dia do Trabalhador (Feriado Nacional)",
+  "2027-05-27": "Corpus Christi (Feriado Municipal/Ponto Facultativo)",
+  "2027-05-28": "Recesso Corpus Christi (Não letivo)",
+  "2027-06-07": "Semana da SECOMP 2027 / Avaliações",
+  "2027-06-08": "Semana da SECOMP 2027 / Avaliações",
+  "2027-06-09": "Semana da SECOMP 2027 / Avaliações",
+  "2027-06-10": "Semana da SECOMP 2027 / Avaliações",
+  "2027-06-11": "Semana da SECOMP 2027 / Avaliações"
+};
 const HOLIDAYS_DDMM = ["25/03","26/03","19/04","20/04","21/04","27/05","28/05","07/06","08/06","09/06","10/06","11/06"];
 const MODWEEK_DDMM = MOD13;
-// Paletas validadas com o método da skill dataviz (node scripts/validate_palette.js),
-// ancoradas nas duas cores oficiais da marca BCC (Manual de Identidade Visual 2025:
-// Ciano #00ADEF/#009EE0 e Verde #8DC63F) — a marca só define essas 2 cores + preto,
-// então os demais tons vêm da paleta categórica padrão da skill (validada para
-// separação sob daltonismo), nunca escolhidos de olho.
-// 6 cores para "Por fase" (dias da semana + modular) — pares ADJACENTES validados
-// (a ordem Seg->Sex é fixa, então só vizinhos precisam ser distintos):
-// Passos "modo escuro" re-validados contra a superfície real do site (--panel #16191c) —
-// não é um espelhamento automático da versão clara: laranja/aqua/amarelo/magenta viram
-// os passos documentados da própria skill para escuro, e o verde da marca foi escurecido
-// (mantendo o matiz) até caber na faixa de luminosidade OKLCH exigida em modo escuro.
+
 const CORES_DIA = ['#009EE0', '#d95926', '#199e70', '#c98500', '#d55181', '#6b9c1f'];
-// 4 cores para "Por dia" (selos/pontos de fase) — pares QUAISQUER validados em modo escuro
-// (fases variam de um dia para outro, então duas quaisquer podem ficar lado a lado):
 const CORES_FASE = ['#009EE0', '#d95926', '#199e70', '#6b5bc4'];
-// Texto legível sobre cada cor de fase (preto para a maioria, branco só para o roxo —
-// checado com o mesmo validador, contrast(cor, '#fff'/'#000')).
 const TXT_FASE = ['#0b0d0f', '#0b0d0f', '#0b0d0f', '#ffffff'];
 function corTextoFase(i) { return TXT_FASE[i % TXT_FASE.length]; }
 const DIA_NOMES = ["Segunda","Terça","Quarta","Quinta","Sexta"];
 
-function profTxt(p) { return /SELETIVO|LETRAS/i.test(p) ? "Pendente" : p; }
-function cell(d, c, cod, n, p) {
+function profTxt(p) { return /SELETIVO|LETRAS/i.test(p) ? "Docente Seletivo (A Definir)" : p; }
+function cell(d, c, cod, n, p, dates) {
   const pending = /SELETIVO|LETRAS/i.test(p);
-  return { d, c, cod, n, p: pending ? "Pendente" : p, pend: pending };
+  return { d, c, cod, n, p: pending ? "Docente Seletivo (A Definir)" : p, pend: pending, dates: dates || [] };
 }
 
 const DADOS = {
@@ -265,129 +326,76 @@ const DADOS = {
     nome: "Alto Araguaia",
     fases: [
       { label: "1ª Fase", cells: [
-          cell("Segunda","IC","FALECT-CC-006","Introdução à Computação","Juvenal Silva Neto"),
-          cell("Terça","II","FALECT-CC-001","Inglês Instrumental","LETRAS"),
-          cell("Quarta","MD","FALECT-CC-004","Matemática Discreta","Adriana de Oliveira Dias"),
-          cell("Quinta","FME","FALECT-CC-003","Fundamentos da Matemática Elementar","Antonio Divino Santos de Souza"),
-          cell("Sexta","PTL","FALECT-CC-002","Produção de Texto e Leitura","LETRAS")
-        ], modular: { c:"ALP1", cod:"FALECT-CC-005", n:"Algoritmos e Laboratório de Programação I", p:"Lucas Kriesel Sperotto", d:"22 a 24/03 · 10 a 14/05 · 14 a 18/06" }, extras: null },
+          cell("Segunda","IC","FALECT-CC-006","Introdução à Computação","Juvenal Silva Neto", WEEK.segunda),
+          cell("Terça","II","FALECT-CC-001","Inglês Instrumental","LETRAS", WEEK.terca),
+          cell("Quarta","MD","FALECT-CC-004","Matemática Discreta","Adriana de Oliveira Dias", WEEK.quarta),
+          cell("Quinta","FME","FALECT-CC-003","Fundamentos da Matemática Elementar","Antonio Divino Santos de Souza", WEEK.quinta),
+          cell("Sexta","PTL","FALECT-CC-002","Produção de Texto e Leitura","LETRAS", WEEK.sexta)
+        ], modular: { c:"ALP1", cod:"FALECT-CC-005", n:"Algoritmos e Laboratório de Programação I", p:"Lucas Kriesel Sperotto", d:"22 a 24/03 · 10 a 14/05 · 14 a 18/06", dates: MOD13 }, extras: null },
       { label: "3ª Fase", cells: [
-          cell("Segunda","IRC","FALECT-CC-018","Introdução a Redes de Computadores","Wesley Barbosa Thereza"),
-          cell("Terça","AL","FALECT-CC-013","Álgebra Linear","Adriana de Oliveira Dias"),
-          cell("Quarta","TG","FALECT-CC-015","Teoria dos Grafos","Antonio Divino Santos de Souza"),
-          cell("Quinta","ED1","FALECT-CC-016","Estrutura de Dados I","Lucas Kriesel Sperotto"),
-          cell("Sexta","CA2","FALECT-CC-014","Cálculo II","Antonio Divino Santos de Souza")
-        ], modular: { c:"FE", cod:"FALECT-CC-017", n:"Fundamentos da Eletrônica", p:"Fernando Yoiti Obana", d:"22 a 24/03 · 10 a 14/05 · 14 a 18/06" }, extras: null },
+          cell("Segunda","IRC","FALECT-CC-018","Introdução a Redes de Computadores","Wesley Barbosa Thereza", WEEK.segunda),
+          cell("Terça","AL","FALECT-CC-013","Álgebra Linear","Adriana de Oliveira Dias", WEEK.terca),
+          cell("Quarta","TG","FALECT-CC-015","Teoria dos Grafos","Antonio Divino Santos de Souza", WEEK.quarta),
+          cell("Quinta","ED1","FALECT-CC-016","Estrutura de Dados I","Lucas Kriesel Sperotto", WEEK.quinta),
+          cell("Sexta","CA2","FALECT-CC-014","Cálculo II","Antonio Divino Santos de Souza", WEEK.sexta)
+        ], modular: { c:"FE", cod:"FALECT-CC-017", n:"Fundamentos da Eletrônica", p:"Fernando Yoiti Obana", d:"22 a 24/03 · 10 a 14/05 · 14 a 18/06", dates: MOD13 }, extras: null },
       { label: "5ª Fase", cells: [
-          cell("Segunda","PE","FALECT-CC-025","Probabilidade e Estatística","Adriana de Oliveira Dias"),
-          cell("Terça","GTI","FALECT-CC-026","Governança em Tecnologia da Informação","Juvenal Silva Neto"),
-          cell("Quarta","SD","FALECT-CC-029","Sistemas Digitais","Fernando Yoiti Obana"),
-          cell("Quinta","LFA","FALECT-CC-028","Linguagens Formais e Autômatos","Elton Ricelli Ferreira de Rezende"),
-          cell("Sexta","LPOO","FALECT-CC-027","Lab. de Programação Orientada a Objetos","Lucas Kriesel Sperotto")
-        ], modular: { c:"LBD", cod:"FALECT-CC-030", n:"Laboratório de Banco de Dados", p:"Ubirajara Martin Coelho", d:"22 a 24/03 · 10 a 14/05 · 14 a 18/06 · +29/06 e 01/07 (?)" }, extras: null },
+          cell("Segunda","PE","FALECT-CC-025","Probabilidade e Estatística","Adriana de Oliveira Dias", WEEK.segunda),
+          cell("Terça","GTI","FALECT-CC-026","Governança em Tecnologia da Informação","Juvenal Silva Neto", WEEK.terca),
+          cell("Quarta","SD","FALECT-CC-029","Sistemas Digitais","Fernando Yoiti Obana", WEEK.quarta),
+          cell("Quinta","LFA","FALECT-CC-028","Linguagens Formais e Autômatos","Elton Ricelli Ferreira de Rezende", WEEK.quinta),
+          cell("Sexta","LPOO","FALECT-CC-027","Lab. de Programação Orientada a Objetos","Lucas Kriesel Sperotto", LPOO15)
+        ], modular: { c:"LBD", cod:"FALECT-CC-030", n:"Laboratório de Banco de Dados", p:"Ubirajara Martin Coelho", d:"22 a 24/03 · 10 a 14/05 · 14 a 18/06 · +29/06", dates: LBD14 }, extras: null },
       { label: "7ª Fase", cells: [
-          cell("Segunda","CO","FALECT-CC-037","Compiladores","Elton Ricelli Ferreira de Rezende"),
-          cell("Terça","CG","FALECT-CC-038","Computação Gráfica","Wesley Barbosa Thereza"),
-          cell("Quarta","IHC","FALECT-CC-039","Interação Homem-Computador","Juvenal Silva Neto"),
-          cell("Quinta","QTS","FALECT-CC-041","Qualidade e Teste de Software","Ubirajara Martin Coelho"),
-          cell("Sexta","DSDM","FALECT-CC-040","Dev. de Software p/ Disp. Móveis","Elton Ricelli Ferreira de Rezende")
+          cell("Segunda","CO","FALECT-CC-037","Compiladores","Elton Ricelli Ferreira de Rezende", WEEK.segunda),
+          cell("Terça","CG","FALECT-CC-038","Computação Gráfica","Wesley Barbosa Thereza", WEEK.terca),
+          cell("Quarta","IHC","FALECT-CC-039","Interação Homem-Computador","Juvenal Silva Neto", WEEK.quarta),
+          cell("Quinta","QTS","FALECT-CC-041","Qualidade e Teste de Software","Ubirajara Martin Coelho", WEEK.quinta),
+          cell("Sexta","DSDM","FALECT-CC-040","Dev. de Software p/ Disp. Móveis","Elton Ricelli Ferreira de Rezende", DSDM15)
         ], modular: null, extras: [
-          { cod:"FALECT-CC-043", c:"TCC I", p:"Wesley Barbosa Thereza" },
-          { cod:"FALECT-CC-048", c:"TCC II", p:"Fernando Yoiti Obana" },
-          { cod:"FALECT-CC-036", c:"ESS II", p:"Ubirajara Martin Coelho" },
-          { cod:"FALECT-CC-042", c:"ESS I", p:"Chrystian Jheimes dos Santos" }
+          { cod:"FALECT-CC-043", c:"TCC I", n:"Trabalho de Conclusão de Curso I", p:"Wesley Barbosa Thereza" },
+          { cod:"FALECT-CC-048", c:"TCC II", n:"Trabalho de Conclusão de Curso II", p:"Fernando Yoiti Obana" },
+          { cod:"FALECT-CC-036", c:"ESS II", n:"Estágio Supervisionado II", p:"Ubirajara Martin Coelho" },
+          { cod:"FALECT-CC-042", c:"ESS I", n:"Estágio Supervisionado I", p:"Chrystian Jheimes dos Santos" }
         ] }
-    ],
-    serieCalendario: [
-      { cod:"FALECT-CC-006", c:"IC", dates: WEEK.segunda },
-      { cod:"FALECT-CC-001", c:"II", dates: WEEK.terca },
-      { cod:"FALECT-CC-004", c:"MD", dates: WEEK.quarta },
-      { cod:"FALECT-CC-003", c:"FME", dates: WEEK.quinta },
-      { cod:"FALECT-CC-002", c:"PTL", dates: WEEK.sexta },
-      { cod:"FALECT-CC-005", c:"ALP1", dates: MOD13 },
-      { cod:"FALECT-CC-018", c:"IRC", dates: WEEK.segunda },
-      { cod:"FALECT-CC-013", c:"AL", dates: WEEK.terca },
-      { cod:"FALECT-CC-015", c:"TG", dates: WEEK.quarta },
-      { cod:"FALECT-CC-016", c:"ED1", dates: WEEK.quinta },
-      { cod:"FALECT-CC-014", c:"CA2", dates: WEEK.sexta },
-      { cod:"FALECT-CC-017", c:"FE", dates: MOD13 },
-      { cod:"FALECT-CC-025", c:"PE", dates: WEEK.segunda },
-      { cod:"FALECT-CC-026", c:"GTI", dates: WEEK.terca },
-      { cod:"FALECT-CC-029", c:"SD", dates: WEEK.quarta },
-      { cod:"FALECT-CC-028", c:"LFA", dates: WEEK.quinta },
-      { cod:"FALECT-CC-027", c:"LPOO", dates: LPOO15 },
-      { cod:"FALECT-CC-030", c:"LBD", dates: LBD14 },
-      { cod:"FALECT-CC-037", c:"CO", dates: WEEK.segunda },
-      { cod:"FALECT-CC-038", c:"CG", dates: WEEK.terca },
-      { cod:"FALECT-CC-039", c:"IHC", dates: WEEK.quarta },
-      { cod:"FALECT-CC-041", c:"QTS", dates: WEEK.quinta },
-      { cod:"FALECT-CC-040", c:"DSDM", dates: DSDM15 }
     ]
   },
   ROO: {
     nome: "Rondonópolis",
     fases: [
       { label: "2ª Fase", cells: [
-          cell("Segunda","AOC","FALECT-CC-012","Arquitetura e Organização de Computadores","Pierre Inácio de Freitas"),
-          cell("Terça","PIPDD","FALECT-CC-008","Prop. Intelectual, Prot. de Dados e Direitos","Éverton Neves dos Santos"),
-          cell("Quarta","CA1","FALECT-CC-009","Cálculo I","Jemy Alex Mandujano Valle"),
-          cell("Quinta","TMP","FALECT-CC-007","Teoria e Métodos de Pesquisa","Breno Felix de Sousa"),
-          cell("Sexta","GA","FALECT-CC-010","Geometria Analítica","Jemy Alex Mandujano Valle")
-        ], modular: { c:"ALP2", cod:"FALECT-CC-011", n:"Algoritmos e Laboratório de Programação II", p:"SELETIVO", d:"22 a 24/03 · 10 a 14/05 · 14 a 18/06" }, extras: null },
+          cell("Segunda","AOC","FALECT-CC-012","Arquitetura e Organização de Computadores","Pierre Inácio de Freitas", WEEK.segunda),
+          cell("Terça","PIPDD","FALECT-CC-008","Prop. Intelectual, Prot. de Dados e Direitos","Éverton Neves dos Santos", WEEK.terca),
+          cell("Quarta","CA1","FALECT-CC-009","Cálculo I","Jemy Alex Mandujano Valle", WEEK.quarta),
+          cell("Quinta","TMP","FALECT-CC-007","Teoria e Métodos de Pesquisa","Breno Felix de Sousa", WEEK.quinta),
+          cell("Sexta","GA","FALECT-CC-010","Geometria Analítica","Jemy Alex Mandujano Valle", WEEK.sexta)
+        ], modular: { c:"ALP2", cod:"FALECT-CC-011", n:"Algoritmos e Laboratório de Programação II", p:"SELETIVO", d:"22 a 24/03 · 10 a 14/05 · 14 a 18/06", dates: MOD13 }, extras: null },
       { label: "4ª Fase", cells: [
-          cell("Segunda","F1","FALECT-CC-020","Física I","Éverton Neves dos Santos"),
-          cell("Terça","ED2","FALECT-CC-022","Estrutura de Dados II","SELETIVO"),
-          cell("Quarta","IBD","FALECT-CC-023","Introdução a Banco de Dados","Breno Felix de Sousa"),
-          cell("Quinta","CN","FALECT-CC-019","Cálculo Numérico","Jemy Alex Mandujano Valle"),
-          cell("Sexta","ES1","FALECT-CC-021","Engenharia de Software I","Humberto Roque Kuhn")
-        ], modular: { c:"LRC", cod:"FALECT-CC-024", n:"Laboratório de Redes de Computadores", p:"Pierre Inácio de Freitas", d:"22 a 24/03 · 10 a 14/05 · 14 a 18/06 · +28/06 e 29/06" }, extras: null },
+          cell("Segunda","F1","FALECT-CC-020","Física I","Éverton Neves dos Santos", WEEK.segunda),
+          cell("Terça","ED2","FALECT-CC-022","Estrutura de Dados II","SELETIVO", WEEK.terca),
+          cell("Quarta","IBD","FALECT-CC-023","Introdução a Banco de Dados","Breno Felix de Sousa", WEEK.quarta),
+          cell("Quinta","CN","FALECT-CC-019","Cálculo Numérico","Jemy Alex Mandujano Valle", WEEK.quinta),
+          cell("Sexta","ES1","FALECT-CC-021","Engenharia de Software I","Humberto Roque Kuhn", WEEK.sexta)
+        ], modular: { c:"LRC", cod:"FALECT-CC-024", n:"Laboratório de Redes de Computadores", p:"Pierre Inácio de Freitas", d:"22 a 24/03 · 10 a 14/05 · 14 a 18/06 · +28/06 e 29/06", dates: LRC15 }, extras: null },
       { label: "6ª Fase", cells: [
-          cell("Segunda","DSW","FALECT-CC-031","Desenvolvimento de Sistemas Web","Adriano Perceguini dos Santos"),
-          cell("Terça","SO","FALECT-CC-033","Sistemas Operacionais","Pierre Inácio de Freitas"),
-          cell("Quarta","SE","FALECT-CC-034","Sistemas Embarcados","Max Robert Marinho"),
-          cell("Quinta","PAD","FALECT-CC-035","Processamento de Alto Desempenho","Humberto Roque Kuhn"),
-          cell("Sexta","SM","FALECT-CC-032","Sistemas Multimídia","Breno Felix de Sousa")
+          cell("Segunda","DSW","FALECT-CC-031","Desenvolvimento de Sistemas Web","Adriano Perceguini dos Santos", WEEK.segunda),
+          cell("Terça","SO","FALECT-CC-033","Sistemas Operacionais","Pierre Inácio de Freitas", WEEK.terca),
+          cell("Quarta","SE","FALECT-CC-034","Sistemas Embarcados","Max Robert Marinho", WEEK.quarta),
+          cell("Quinta","PAD","FALECT-CC-035","Processamento de Alto Desempenho","Humberto Roque Kuhn", WEEK.quinta),
+          cell("Sexta","SM","FALECT-CC-032","Sistemas Multimídia","Breno Felix de Sousa", WEEK.sexta)
         ], modular: null, extras: null },
       { label: "8ª Fase", cells: [
-          cell("Segunda","PI","FALECT-CC-046","Processamento de Imagem","Chrystian Jheimes dos Santos"),
-          cell("Terça","IA","FALECT-CC-044","Inteligência Artificial","Adriano Perceguini dos Santos"),
-          cell("Quarta","SD","FALECT-CC-045","Sistemas Distribuídos","Humberto Roque Kuhn"),
-          cell("Quinta","CF","ROO50DELE06","Computação Forense (eletiva)","SELETIVO"),
-          cell("Sexta","RVA","FALECT-CC-047","Realidade Virtual e Aumentada","Adriano Perceguini dos Santos")
+          cell("Segunda","PI","FALECT-CC-046","Processamento de Imagem","Chrystian Jheimes dos Santos", WEEK.segunda),
+          cell("Terça","IA","FALECT-CC-044","Inteligência Artificial","Adriano Perceguini dos Santos", WEEK.terca),
+          cell("Quarta","SD","FALECT-CC-045","Sistemas Distribuídos","Humberto Roque Kuhn", WEEK.quarta),
+          cell("Quinta","CF","ROO50DELE06","Computação Forense (eletiva)","SELETIVO", WEEK.quinta),
+          cell("Sexta","RVA","FALECT-CC-047","Realidade Virtual e Aumentada","Adriano Perceguini dos Santos", WEEK.sexta)
         ], modular: null, extras: [
-          { cod:"FALECT-CC-043", c:"TCC I", p:"Éverton Neves dos Santos" },
-          { cod:"FALECT-CC-048", c:"TCC II", p:"Chrystian Jheimes dos Santos" },
-          { cod:"FALECT-CC-036", c:"ESS I", p:"Chrystian Jheimes dos Santos" },
-          { cod:"FALECT-CC-042", c:"ESS II", p:"Ubirajara Martin Coelho" }
+          { cod:"FALECT-CC-043", c:"TCC I", n:"Trabalho de Conclusão de Curso I", p:"Éverton Neves dos Santos" },
+          { cod:"FALECT-CC-048", c:"TCC II", n:"Trabalho de Conclusão de Curso II", p:"Chrystian Jheimes dos Santos" },
+          { cod:"FALECT-CC-036", c:"ESS I", n:"Estágio Supervisionado I", p:"Chrystian Jheimes dos Santos" },
+          { cod:"FALECT-CC-042", c:"ESS II", n:"Estágio Supervisionado II", p:"Ubirajara Martin Coelho" }
         ] }
-    ],
-    serieCalendario: [
-      { cod:"FALECT-CC-012", c:"AOC", dates: WEEK.segunda },
-      { cod:"FALECT-CC-008", c:"PIPDD", dates: WEEK.terca },
-      { cod:"FALECT-CC-009", c:"CA1", dates: WEEK.quarta },
-      { cod:"FALECT-CC-007", c:"TMP", dates: WEEK.quinta },
-      { cod:"FALECT-CC-010", c:"GA", dates: WEEK.sexta },
-      { cod:"FALECT-CC-011", c:"ALP2", dates: MOD13 },
-      { cod:"FALECT-CC-020", c:"F1", dates: WEEK.segunda },
-      { cod:"FALECT-CC-022", c:"ED2", dates: WEEK.terca },
-      { cod:"FALECT-CC-023", c:"IBD", dates: WEEK.quarta },
-      { cod:"FALECT-CC-019", c:"CN", dates: WEEK.quinta },
-      { cod:"FALECT-CC-021", c:"ES1", dates: WEEK.sexta },
-      { cod:"FALECT-CC-024", c:"LRC", dates: LRC15 },
-      { cod:"FALECT-CC-031", c:"DSW", dates: WEEK.segunda },
-      { cod:"FALECT-CC-033", c:"SO", dates: WEEK.terca },
-      { cod:"FALECT-CC-034", c:"SE", dates: WEEK.quarta },
-      { cod:"FALECT-CC-035", c:"PAD", dates: WEEK.quinta },
-      { cod:"FALECT-CC-032", c:"SM", dates: WEEK.sexta },
-      { cod:"FALECT-CC-046", c:"PI", dates: WEEK.segunda },
-      { cod:"FALECT-CC-044", c:"IA", dates: WEEK.terca },
-      { cod:"FALECT-CC-045", c:"SD", dates: WEEK.quarta },
-      { cod:"ROO50DELE06", c:"CF", dates: WEEK.quinta },
-      { cod:"FALECT-CC-047", c:"RVA", dates: WEEK.sexta },
-      { cod:"FALECT-CC-043", c:"TCC I", dates: WEEK.segunda },
-      { cod:"FALECT-CC-048", c:"TCC II", dates: WEEK.terca },
-      { cod:"FALECT-CC-036", c:"ESS I", dates: WEEK.quarta },
-      { cod:"FALECT-CC-042", c:"ESS II", dates: WEEK.quinta }
     ]
   }
 };
@@ -401,33 +409,6 @@ const HOLIDAY_SET = new Set(HOLIDAYS_DDMM.map(iso));
 const MODWEEK_SET = new Set(MODWEEK_DDMM.map(iso));
 const MONTH_NAMES = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho"];
 const MONTH_IDXS = [1,2,3,4,5,6]; // Fev..Jul (0-indexado)
-
-/* Eventos consolidados: cada disciplina (semanal, modular ou contraturno) com fase/slot/cor. */
-function eventosDoCampus(campus) {
-  const d = DADOS[campus];
-  const porCod = {};
-  d.serieCalendario.forEach(s => { porCod[s.cod] = s; });
-  const eventos = [];
-  d.fases.forEach((fase, faseIdx) => {
-    fase.cells.forEach((c, slot) => {
-      const s = porCod[c.cod];
-      eventos.push({ faseIdx, faseLabel: fase.label, slot, cod: c.cod, sigla: c.c, nome: c.n, professor: c.p, dates: s ? s.dates : [], tipo: 'semanal' });
-    });
-    if (fase.modular) {
-      const s = porCod[fase.modular.cod];
-      eventos.push({ faseIdx, faseLabel: fase.label, slot: 5, cod: fase.modular.cod, sigla: fase.modular.c, nome: fase.modular.n, professor: profTxt(fase.modular.p), dates: s ? s.dates : [], tipo: 'modular' });
-    }
-    if (fase.extras) {
-      fase.extras.forEach(e => {
-        const s = porCod[e.cod];
-        if (s && s.dates && s.dates.length) {
-          eventos.push({ faseIdx, faseLabel: fase.label, slot: 6, cod: e.cod, sigla: e.c, nome: e.c, professor: e.p, dates: s.dates, tipo: 'contraturno' });
-        }
-      });
-    }
-  });
-  return eventos;
-}
 
 function corPorFase(faseIdx) { return CORES_FASE[faseIdx % CORES_FASE.length]; }
 function corPorSlot(slot) { return CORES_DIA[slot % CORES_DIA.length]; }
@@ -453,13 +434,44 @@ function linhasDoMes(y, mi) {
 }
 function chaveISO(mi, d) { const mm = mi+1; return `${YEAR}-${String(mm).padStart(2,"0")}-${String(d).padStart(2,"0")}`; }
 
-/* ---------- Estado ---------- */
-let ST = { campus: 'AIA', view: 'lista', faseIdx: 0, mesIdx: 1, diaSel: null };
+function esc(s) {
+  if (s == null) return '';
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
 
-/* ---------- View 1: lista por fase + mini-calendário lateral ---------- */
+/* Eventos consolidados: cada disciplina com datas */
+function eventosDoCampus(campus) {
+  const d = DADOS[campus];
+  const eventos = [];
+  d.fases.forEach((fase, faseIdx) => {
+    fase.cells.forEach((c, slot) => {
+      eventos.push({ faseIdx, faseLabel: fase.label, slot, cod: c.cod, sigla: c.c, nome: c.n, professor: c.p, dates: c.dates || [], tipo: 'semanal' });
+    });
+    if (fase.modular) {
+      eventos.push({ faseIdx, faseLabel: fase.label, slot: 5, cod: fase.modular.cod, sigla: fase.modular.c, nome: fase.modular.n, professor: profTxt(fase.modular.p), dates: fase.modular.dates || [], tipo: 'modular' });
+    }
+  });
+  return eventos;
+}
+
+/* ---------- Estado ---------- */
+let ST = {
+  campus: 'AIA',
+  view: 'fase',
+  faseIdx: 0,
+  mesIdx: 1, // Fevereiro
+  diaSel: null,
+  faseSubView: 'grade', // 'grade', 'calendario', 'ambos'
+  diaSubView: 'calendario' // 'calendario', 'agenda'
+};
+
+/* ---------- View 1: Lista por fase ---------- */
 function diaSetComAula(campus) {
   const set = new Set();
-  DADOS[campus].serieCalendario.forEach(s => s.dates.forEach(d => set.add(iso(d))));
+  DADOS[campus].fases.forEach(f => {
+    f.cells.forEach(c => (c.dates || []).forEach(d => set.add(iso(d))));
+    if (f.modular) (f.modular.dates || []).forEach(d => set.add(iso(d)));
+  });
   return set;
 }
 function renderMesesLateral(campus) {
@@ -475,7 +487,7 @@ function renderMesesLateral(campus) {
         if (HOLIDAY_SET.has(key)) cls = 'off';
         else if (MODWEEK_SET.has(key)) cls = 'mod';
         else if (aulaSet.has(key)) cls = 'aula';
-        grade += `<button class="${cls}" title="Ver ${d}/${mi+1} em Por dia" onclick="irParaDia('${campus}', ${mi}, '${key}')">${d}</button>`;
+        grade += `<button class="${cls}" title="Ver ${d}/${mi+1} na Agenda" onclick="irParaDia('${campus}', ${mi}, '${key}')">${d}</button>`;
       });
     });
     grade += '</div>';
@@ -489,7 +501,7 @@ function renderListaFases(campus) {
   let html = '<div class="duas-colunas"><div class="caixa">';
   d.fases.forEach((fase, i) => {
     const cor = corPorFase(i);
-    html += `<div class="bloco"><button class="bloco-rotulo" style="background:${cor};color:${corTextoFase(i)}" onclick="irParaFase('${campus}', ${i})" title="Ver ${fase.label} no calendário colorido"><b>${fase.label}</b><small>${d.nome}</small><small class="ir">Ver calendário →</small></button><div>`;
+    html += `<div class="bloco"><div class="bloco-cabecalho" style="background:${cor};color:${corTextoFase(i)}"><button class="bloco-rotulo" onclick="irParaFase('${campus}', ${i})" title="Ver ${fase.label} na Grade Semanal"><b>${fase.label}</b><small>${d.nome}</small><small class="ir">Ver grade semanal →</small></button></div><div>`;
     fase.cells.forEach(c => {
       html += `<div class="linha">
         <span class="dsem">${c.d}</span>
@@ -501,7 +513,7 @@ function renderListaFases(campus) {
     if (fase.modular) html += `<div class="pausa modular"><b>📦 Modular — ${fase.modular.cod}:</b> ${fase.modular.c} — ${fase.modular.n} · ${profTxt(fase.modular.p)} · <span class="mono">${fase.modular.d}</span></div>`;
     if (fase.extras) {
       html += '<div class="extras-wrap"><b>🎓 TCC &amp; Estágio (contraturno)</b><div class="extras-grid">';
-      fase.extras.forEach(e => { html += `<div class="extra-item"><span class="cod">${e.cod} - ${e.c}</span><span>${profTxt(e.p)}</span></div>`; });
+      fase.extras.forEach(e => { html += `<div class="extra-item"><span class="cod">${e.cod} · ${e.c}</span><span>${profTxt(e.p)}</span></div>`; });
       html += '</div></div>';
     }
     html += '</div></div>';
@@ -513,25 +525,184 @@ function renderListaFases(campus) {
   return html;
 }
 
-/* ---------- View 2: por fase, calendário colorido por disciplina ---------- */
+/* ---------- View 2: Grade Semanal & Calendário Colorido ---------- */
 function renderPorFase(campus) {
+  const sub = ST.faseSubView || 'grade';
+  let topBar = `<div class="aloc-tabs" style="margin-bottom:14px"><div class="aloc-tabs-inner"><div class="tabs-group">
+    <span style="font-size:12px; color:var(--muted); font-weight:700; text-transform:uppercase; letter-spacing:.05em; margin-right:6px">Exibição:</span>
+    <button class="tab-item ${sub==='grade'?'ativo':''}" onclick="setFaseSubView('grade')"><i class="fa-solid fa-table-columns"></i> Grade semanal (Seg-Sex)</button>
+    <button class="tab-item verde ${sub==='calendario'?'ativo':''}" onclick="setFaseSubView('calendario')"><i class="fa-solid fa-calendar-days"></i> Calendário dos meses (colorido)</button>
+    <button class="tab-item ${sub==='ambos'?'ativo':''}" onclick="setFaseSubView('ambos')"><i class="fa-solid fa-layer-group"></i> Exibir ambas</button>
+  </div></div></div>`;
+
+  if (sub === 'calendario') {
+    return topBar + renderCalendarioFase(campus);
+  } else if (sub === 'ambos') {
+    return topBar + renderGradeSemanal(campus) + '<div style="margin:24px 0; border-top:1px solid var(--border)"></div>' + renderCalendarioFase(campus);
+  } else {
+    return topBar + renderGradeSemanal(campus);
+  }
+}
+
+function renderGradeSemanal(campus) {
   const d = DADOS[campus];
+  if (!d || !Array.isArray(d.fases)) return '';
+  if (ST.faseIdx >= d.fases.length) ST.faseIdx = 0;
   const fase = d.fases[ST.faseIdx];
+  const corFase = corPorFase(ST.faseIdx);
+  const txtFase = corTextoFase(ST.faseIdx);
+
+  let html = '<div class="grade-semanal-wrap">';
+
+  // Topo da Fase
+  html += `<div class="grade-fase-topo">
+    <div>
+      <h2><span class="disc-sigla" style="background:${corFase};color:${txtFase}">${esc(fase.label)}</span> Grade Semanal · Câmpus ${esc(d.nome)}</h2>
+      <p>Horário Regular de Aulas (Segunda a Sexta-feira) · Semestre Letivo 2027/1 (Res. nº 041/2026–CONEPE)</p>
+    </div>
+  </div>`;
+
+  // Grade semanal em 5 colunas (Segunda a Sexta)
+  html += '<div class="grade-semanal-grid">';
+  fase.cells.forEach((c, slot) => {
+    const corSlot = corPorSlot(slot);
+    const dates = c.dates || [];
+    html += `<div class="dia-col">
+      <div class="dia-col-head">
+        <span>${esc(c.d)}</span>
+        <span style="width:10px;height:10px;border-radius:50%;background:${corSlot};display:inline-block"></span>
+      </div>
+      <div class="dia-col-body">
+        <span class="sigla" style="background:${corSlot};color:#0b0d0f">${esc(c.c)}</span>
+        <div class="nome">${esc(c.n)}</div>
+        <div class="cod">${esc(c.cod)}</div>
+        <div class="prof ${c.pend ? 'pend' : ''}">👤 ${esc(c.p)}</div>
+        <div style="margin-top:6px; font-size:11px; color:var(--muted)">
+          <div style="display:flex; justify-content:space-between; margin-bottom:4px">
+            <b>Datas no Semestre:</b>
+            <span style="color:var(--brand)">${dates.length} aulas</span>
+          </div>
+          <div class="dates-pills">
+            ${dates.slice(0, 4).map(dt => `<span class="date-pill">${dt}</span>`).join('')}
+            ${dates.length > 4 ? `<span class="date-pill">+${dates.length - 4}</span>` : ''}
+          </div>
+        </div>
+      </div>
+    </div>`;
+  });
+  html += '</div>';
+
+  // Bloco Modular
+  if (fase.modular) {
+    const m = fase.modular;
+    html += `<div class="datas-box" style="border-left:4px solid #eab308; background:rgba(234,179,8,0.06)">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px">
+        <div>
+          <span class="disc-sigla" style="background:#eab308; color:#0b0d0f; font-size:11px; font-weight:800; padding:2px 8px; border-radius:4px">📦 Disciplina Modular</span>
+          <h3 style="margin:8px 0 3px; color:#fff">${esc(m.c)} — ${esc(m.n)} (${esc(m.cod)})</h3>
+          <p style="font-size:12.5px; color:#cbd5e1; margin:0">Docente: <b>${esc(profTxt(m.p))}</b> · Semanas intensivas de imersão: <span class="mono" style="color:#fde047; font-weight:600">${esc(m.d)}</span></p>
+        </div>
+        <span style="font-size:12px; background:rgba(234,179,8,0.2); color:#fde047; font-weight:700; padding:6px 12px; border-radius:8px; border:1px solid rgba(234,179,8,0.3)">${(m.dates||[]).length} Dias Letivos</span>
+      </div>
+    </div>`;
+  }
+
+  // Extras (TCC / Estágio)
+  if (fase.extras && fase.extras.length) {
+    html += `<div class="datas-box" style="border-left:4px solid #6366f1; background:rgba(99,102,241,0.06)">
+      <h3 style="color:#a5b4fc; font-size:13px; text-transform:uppercase; letter-spacing:.05em; margin-bottom:10px">🎓 Estágio Curricular Supervisionado e TCC (Contraturno / Defesas)</h3>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:10px">
+        ${fase.extras.map(e => `<div style="padding:10px 12px; border-radius:8px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); font-size:12px">
+          <b style="color:#a5b4fc">${esc(e.c)} · ${esc(e.cod)}</b>
+          <div style="color:#f1f5f9; margin-top:2px; font-weight:600">${esc(e.n || e.c)}</div>
+          <div style="color:var(--muted); font-size:11.5px; margin-top:4px">👤 ${esc(profTxt(e.p))}</div>
+        </div>`).join('')}
+      </div>
+    </div>`;
+  }
+
+  // Quadro Detalhado com as datas presenciais
+  html += `<div class="datas-box">
+    <div style="margin-bottom:12px">
+      <h3>Quadro Oficial das Datas Presenciais — ${esc(fase.label)}</h3>
+      <p style="font-size:12px; color:var(--muted); margin:0">Conferido rigorosamente com o Calendário Acadêmico Oficial (Resolução nº 041/2026–CONEPE). Total de encontros presenciais em dias úteis sem sábados letivos.</p>
+    </div>
+    <div style="overflow-x:auto">
+      <table class="datas-table">
+        <thead>
+          <tr>
+            <th style="width:90px">Dia</th>
+            <th style="width:130px">Código</th>
+            <th>Componente Curricular</th>
+            <th style="width:180px">Docente</th>
+            <th>Datas Letivas Presenciais</th>
+          </tr>
+        </thead>
+        <tbody>`;
+
+  fase.cells.forEach(c => {
+    html += `<tr>
+      <td style="font-weight:700; color:#fff">${esc(c.d)}</td>
+      <td class="mono" style="color:var(--muted)">${esc(c.cod)}</td>
+      <td><b style="color:#fff">${esc(c.c)}</b> · <span style="color:#cbd5e1">${esc(c.n)}</span></td>
+      <td style="color:#94a3b8">👤 ${esc(c.p)}</td>
+      <td>
+        <div class="dates-pills">
+          ${(c.dates || []).map(dt => `<span class="date-pill">${dt}</span>`).join('')}
+        </div>
+      </td>
+    </tr>`;
+  });
+
+  if (fase.modular) {
+    const m = fase.modular;
+    html += `<tr>
+      <td style="font-weight:700; color:#eab308">Modular</td>
+      <td class="mono" style="color:var(--muted)">${esc(m.cod)}</td>
+      <td><b style="color:#eab308">${esc(m.c)}</b> · <span style="color:#cbd5e1">${esc(m.n)}</span></td>
+      <td style="color:#94a3b8">👤 ${esc(profTxt(m.p))}</td>
+      <td>
+        <div class="dates-pills">
+          ${(m.dates || []).map(dt => `<span class="date-pill" style="background:rgba(234,179,8,0.18);color:#fde047;border:1px solid rgba(234,179,8,0.3)">${dt}</span>`).join('')}
+        </div>
+      </td>
+    </tr>`;
+  }
+
+  html += `</tbody></table></div></div>`;
+  html += '</div>'; // fim .grade-semanal-wrap
+  return html;
+}
+
+function renderCalendarioFase(campus) {
+  const d = DADOS[campus];
+  if (!d || !Array.isArray(d.fases)) return '';
+  if (ST.faseIdx >= d.fases.length) ST.faseIdx = 0;
+  const fase = d.fases[ST.faseIdx];
+  const corFase = corPorFase(ST.faseIdx);
+  const txtFase = corTextoFase(ST.faseIdx);
   const eventos = eventosDoCampus(campus).filter(e => e.faseIdx === ST.faseIdx);
-  const dataCor = {}; // iso -> {cor, off}
-  eventos.forEach(e => { const cor = e.tipo==='modular' ? CORES_DIA[5] : corPorSlot(e.slot); e.dates.forEach(dd => { dataCor[iso(dd)] = cor; }); });
+  const dataCor = {};
+  eventos.forEach(e => {
+    const cor = e.tipo === 'modular' ? CORES_DIA[5] : corPorSlot(e.slot);
+    e.dates.forEach(dd => { dataCor[iso(dd)] = cor; });
+  });
 
   let legenda = '<div class="caixa legenda-cores">';
-  fase.cells.forEach((c,slot) => { legenda += `<span><i style="background:${corPorSlot(slot)}"></i><b>${c.d}</b> — ${c.cod} · ${c.c} — ${c.n}</span>`; });
-  if (fase.modular) legenda += `<span><i style="background:${CORES_DIA[5]}"></i><b>Modular</b> — ${fase.modular.cod} · ${fase.modular.c} — ${fase.modular.n}</span>`;
+  fase.cells.forEach((c, slot) => {
+    legenda += `<span><i style="background:${corPorSlot(slot)}"></i><b>${esc(c.d)}</b> — ${esc(c.cod)} · ${esc(c.c)} — ${esc(c.n)}</span>`;
+  });
+  if (fase.modular) {
+    legenda += `<span><i style="background:${CORES_DIA[5]}"></i><b>Modular</b> — ${esc(fase.modular.cod)} · ${esc(fase.modular.c)} — ${esc(fase.modular.n)}</span>`;
+  }
   legenda += '</div>';
 
   let grid = '<div class="caixa" style="padding:16px 18px"><div class="meses-grandes">';
   MONTH_IDXS.forEach(mi => {
-    let g = '<div class="cal-mini-grade">' + DIA_NOMES.map(x=>x.slice(0,3)).map(x => `<span class="cab">${x}</span>`).join('');
+    let g = '<div class="cal-mini-grade">' + DIA_NOMES.map(x => x.slice(0,3)).map(x => `<span class="cab">${x}</span>`).join('');
     linhasDoMes(YEAR, mi).forEach(row => {
       row.forEach(d0 => {
-        if (d0===null) { g += '<span></span>'; return; }
+        if (d0 === null) { g += '<span></span>'; return; }
         const key = chaveISO(mi, d0);
         const clique = `onclick="irParaDia('${campus}', ${mi}, '${key}')" title="Ver ${d0}/${mi+1} em Por dia"`;
         if (HOLIDAY_SET.has(key)) { g += `<button class="off" ${clique}>${d0}</button>`; return; }
@@ -543,33 +714,68 @@ function renderPorFase(campus) {
     grid += `<div class="mes-grande"><b>${MONTH_NAMES[mi]}</b>${g}</div>`;
   });
   grid += '</div></div>';
-  return legenda + grid;
+
+  return `<div class="grade-semanal-wrap">
+    <div class="grade-fase-topo">
+      <div>
+        <h2><span class="disc-sigla" style="background:${corFase};color:${txtFase}">${esc(fase.label)}</span> Calendário Mensal Colorido · Câmpus ${esc(d.nome)}</h2>
+        <p>Dias do semestre destacados com a cor de cada disciplina da ${esc(fase.label)}. Clique em qualquer dia para abrir a visão do dia correspondente.</p>
+      </div>
+    </div>
+    ${legenda}
+    ${grid}
+  </div>`;
 }
 
-/* ---------- View 3: calendário do semestre com painel do dia ---------- */
+/* ---------- View 3: Calendário Interativo do Semestre & Agenda ---------- */
 function renderPorDia(campus) {
+  const sub = ST.diaSubView || 'calendario';
+  let topBar = `<div class="aloc-tabs" style="margin-bottom:14px"><div class="aloc-tabs-inner"><div class="tabs-group">
+    <span style="font-size:12px; color:var(--muted); font-weight:700; text-transform:uppercase; letter-spacing:.05em; margin-right:6px">Exibição:</span>
+    <button class="tab-item verde ${sub==='calendario'?'ativo':''}" onclick="setDiaSubView('calendario')"><i class="fa-solid fa-calendar-days"></i> Calendário do mês (interativo)</button>
+    <button class="tab-item ${sub==='agenda'?'ativo':''}" onclick="setDiaSubView('agenda')"><i class="fa-solid fa-list-timeline"></i> Linha do tempo (agenda)</button>
+  </div></div></div>`;
+
+  if (sub === 'agenda') {
+    return topBar + renderAgenda(campus);
+  } else {
+    return topBar + renderCalendarioDia(campus);
+  }
+}
+
+function renderCalendarioDia(campus) {
   const eventos = eventosDoCampus(campus);
   const porDia = {};
-  eventos.forEach(e => { e.dates.forEach(dd => { const k = iso(dd); (porDia[k] = porDia[k] || []).push(e); }); });
-  if (ST.diaSel === null) {
-    const dias = diasUteisDoMes(YEAR, ST.mesIdx);
-    ST.diaSel = chaveISO(ST.mesIdx, dias[0]);
+  eventos.forEach(e => {
+    e.dates.forEach(dd => {
+      const k = iso(dd);
+      (porDia[k] = porDia[k] || []).push(e);
+    });
+  });
+
+  if (ST.mesIdx === undefined || ST.mesIdx === -1) {
+    ST.mesIdx = MONTH_IDXS[0];
   }
-  let mesesTabs = '<nav class="aloc-tabs"><div class="aloc-tabs-inner"><div class="tabs-group">' +
-    MONTH_IDXS.map(mi => `<button class="mes-aba ${mi===ST.mesIdx?'ativo':''}" onclick="setMes(${mi})">${MONTH_NAMES[mi]}</button>`).join('') +
+  if (!ST.diaSel) {
+    const dias = diasUteisDoMes(YEAR, ST.mesIdx);
+    ST.diaSel = chaveISO(ST.mesIdx, dias[0] || 1);
+  }
+
+  let mesesTabs = '<nav class="aloc-tabs" style="margin-bottom:14px"><div class="aloc-tabs-inner"><div class="tabs-group">' +
+    MONTH_IDXS.map(mi => `<button class="mes-aba ${mi === ST.mesIdx ? 'ativo' : ''}" onclick="setMes(${mi})">${MONTH_NAMES[mi]}</button>`).join('') +
     '</div></div></nav>';
 
   let grade = '<div class="cal-grade">' + DIA_NOMES.map(x => `<span class="cal-cab">${x}</span>`).join('');
   linhasDoMes(YEAR, ST.mesIdx).forEach(row => {
     row.forEach(d => {
-      if (d===null) { grade += '<span></span>'; return; }
+      if (d === null) { grade += '<span></span>'; return; }
       const key = chaveISO(ST.mesIdx, d);
       const lista = porDia[key] || [];
       let cls = 'dia';
       if (HOLIDAY_SET.has(key)) cls += ' off';
-      else if (lista.length && lista.every(e => e.tipo==='modular')) cls += ' mod';
+      else if (lista.length && lista.every(e => e.tipo === 'modular')) cls += ' mod';
       if (key === ST.diaSel) cls += ' sel';
-      const info = HOLIDAY_SET.has(key) ? 'Não letivo' : (lista.length ? lista.length + (lista.length>1?' aulas':' aula') : 'Sem aula');
+      const info = HOLIDAY_SET.has(key) ? 'Não letivo' : (lista.length ? lista.length + (lista.length > 1 ? ' aulas' : ' aula') : 'Sem aula');
       const pontos = lista.map(e => `<i style="background:${corPorFase(e.faseIdx)}"></i>`).join('');
       grade += `<button class="${cls}" onclick="setDia('${key}')"><span class="num">${d}</span><span class="info">${info}</span><span class="pontos">${pontos}</span></button>`;
     });
@@ -577,16 +783,17 @@ function renderPorDia(campus) {
   grade += '</div>';
 
   const dSel = new Date(ST.diaSel + 'T00:00:00');
-  const nomeDiaSel = DIA_NOMES[(dSel.getDay()+6)%7] || '';
-  const listaSel = (porDia[ST.diaSel] || []).slice().sort((a,b)=>a.faseIdx-b.faseIdx);
+  const dowIdx = (dSel.getDay() + 6) % 7;
+  const nomeDiaSel = DIA_NOMES[dowIdx] || 'Sábado';
+  const listaSel = (porDia[ST.diaSel] || []).slice().sort((a,b) => a.faseIdx - b.faseIdx);
   let painel = '<aside class="caixa painel-dia"><div class="topo"><small>' + nomeDiaSel + '</small><h2>' + dSel.getDate() + ' de ' + MONTH_NAMES[dSel.getMonth()].toLowerCase() + '</h2></div>';
   if (HOLIDAY_SET.has(ST.diaSel)) {
-    painel += '<div class="painel-dia vazio">Dia não letivo (feriado, recesso ou Semana da SECOMP).</div>';
+    painel += '<div class="painel-dia vazio"><i class="fa-solid fa-calendar-xmark text-red-400 mr-1.5"></i> Dia não letivo (feriado, recesso ou SECOMP).</div>';
   } else if (!listaSel.length) {
-    painel += '<div class="painel-dia vazio">Nenhuma aula neste dia.</div>';
+    painel += '<div class="painel-dia vazio">Nenhuma aula regular neste dia.</div>';
   } else {
     listaSel.forEach(e => {
-      painel += `<button class="aula-item" onclick="irParaFase('${campus}', ${e.faseIdx})" title="Ver ${e.faseLabel} no calendário colorido"><span class="fase" style="background:${corPorFase(e.faseIdx)};color:${corTextoFase(e.faseIdx)}">${e.faseLabel}</span><span><span class="nome">${e.cod} - ${e.sigla}</span><br><span class="disc">${e.nome}</span><br><span class="quem">👤 ${e.professor}</span></span></button>`;
+      painel += `<button class="aula-item" onclick="irParaFase('${campus}', ${e.faseIdx})" title="Ver ${esc(e.faseLabel)} na grade"><span class="fase" style="background:${corPorFase(e.faseIdx)};color:${corTextoFase(e.faseIdx)}">${esc(e.faseLabel)}</span><span><span class="nome">${esc(e.cod)} · ${esc(e.sigla)}</span><br><span class="disc">${esc(e.nome)}</span><br><span class="quem">👤 ${esc(e.professor)}</span></span></button>`;
     });
   }
   painel += '</aside>';
@@ -594,16 +801,149 @@ function renderPorDia(campus) {
   return mesesTabs + '<div class="cal-layout">' + grade + painel + '</div>';
 }
 
-/* ---------- Navegação / render ---------- */
-function setCampus(c) { ST.campus = c; ST.faseIdx = 0; ST.diaSel = null; render(); }
-function setView(v) { ST.view = v; ST.diaSel = null; render(); }
+function renderAgenda(campus) {
+  const eventos = eventosDoCampus(campus);
+  const mapaDatas = {};
+
+  // Mapeia todas as aulas
+  eventos.forEach(ev => {
+    ev.dates.forEach(ddmm => {
+      const isod = iso(ddmm);
+      if (!mapaDatas[isod]) {
+        const [dia, mes] = ddmm.split("/").map(Number);
+        const dtObj = new Date(YEAR, mes - 1, dia);
+        const dowIdx = (dtObj.getDay() + 6) % 7; // Seg=0 ... Dom=6
+        mapaDatas[isod] = {
+          iso: isod,
+          ddmm,
+          dia,
+          mesIdx: mes - 1,
+          mesNome: MONTH_NAMES[mes - 1] || '',
+          dowNome: DIA_NOMES[dowIdx] || 'Sábado',
+          dowIdx,
+          aulas: []
+        };
+      }
+      mapaDatas[isod].aulas.push(ev);
+    });
+  });
+
+  // Mapeia feriados institucionais de 2027/1
+  Object.entries(FERIADOS_MAP_2027_1).forEach(([isod, nomeFeriado]) => {
+    if (!mapaDatas[isod]) {
+      const [y, m, dia] = isod.split("-").map(Number);
+      const dtObj = new Date(y, m - 1, dia);
+      const dowIdx = (dtObj.getDay() + 6) % 7;
+      const ddmm = `${String(dia).padStart(2,"0")}/${String(m).padStart(2,"0")}`;
+      mapaDatas[isod] = {
+        iso: isod,
+        ddmm,
+        dia,
+        mesIdx: m - 1,
+        mesNome: MONTH_NAMES[m - 1] || '',
+        dowNome: DIA_NOMES[dowIdx] || (dowIdx===5?'Sábado':'Domingo'),
+        dowIdx,
+        isFeriado: true,
+        nomeFeriado,
+        aulas: []
+      };
+    } else {
+      mapaDatas[isod].isFeriado = true;
+      mapaDatas[isod].nomeFeriado = nomeFeriado;
+    }
+  });
+
+  const chavesOrdenadas = Object.keys(mapaDatas).sort();
+
+  // Filtro de mês (-1 = todos)
+  const mesSel = ST.mesIdx;
+  let chavesFiltradas = chavesOrdenadas;
+  if (mesSel !== -1) {
+    chavesFiltradas = chavesOrdenadas.filter(k => mapaDatas[k].mesIdx === mesSel);
+  }
+
+  let html = '<div style="display:flex; flex-direction:column; gap:16px">';
+
+  // Barra de abas de meses
+  html += '<nav class="aloc-tabs"><div class="aloc-tabs-inner"><div class="tabs-group">';
+  html += `<button class="mes-aba ${mesSel === -1 ? 'ativo' : ''}" onclick="setMes(-1)">Todos os Meses</button>`;
+  MONTH_IDXS.forEach(mi => {
+    html += `<button class="mes-aba ${mi === mesSel ? 'ativo' : ''}" onclick="setMes(${mi})">${MONTH_NAMES[mi]}</button>`;
+  });
+  html += '</div></div></nav>';
+
+  // Timeline de cards
+  html += '<div class="agenda-timeline">';
+  if (!chavesFiltradas.length) {
+    html += '<div class="caixa" style="padding:32px; text-align:center; color:var(--muted)">Nenhuma atividade registrada para o período selecionado.</div>';
+  } else {
+    chavesFiltradas.forEach(isod => {
+      const item = mapaDatas[isod];
+      const isSab = item.dowIdx === 5;
+      const isMod = item.aulas.some(a => a.tipo === 'modular');
+      let cardCls = 'agenda-card';
+      if (item.isFeriado) cardCls += ' feriado';
+      else if (isMod) cardCls += ' modular';
+      else if (isSab) cardCls += ' sabado';
+
+      html += `<div class="${cardCls}">
+        <div class="agenda-card-date">
+          <div class="num">${item.dia}</div>
+          <div class="dia-semana" style="${item.isFeriado ? 'color:#ef4444' : ''}">${item.dowNome.slice(0,3)} · ${item.mesNome.slice(0,3)}</div>
+        </div>
+        <div>`;
+
+      if (item.isFeriado) {
+        html += `<div style="display:flex; align-items:center; gap:8px; font-size:12px; font-weight:700; color:#f87171; margin-bottom:4px">
+          <i class="fa-solid fa-calendar-xmark"></i> Feriado / Recesso: ${esc(item.nomeFeriado)}
+        </div>`;
+      }
+
+      if (isMod) {
+        html += `<div style="font-size:11px; font-weight:700; color:#fbbf24; margin-bottom:4px; display:flex; align-items:center; gap:6px">
+          <i class="fa-solid fa-box-archive"></i> Semana de Bloco Modular
+        </div>`;
+      }
+
+      if (item.aulas.length) {
+        html += '<div class="agenda-card-aulas" style="margin-top:4px">';
+        item.aulas.slice().sort((a,b) => a.faseIdx - b.faseIdx).forEach(a => {
+          const corFase = corPorFase(a.faseIdx);
+          const txtFase = corTextoFase(a.faseIdx);
+          html += `<div class="agenda-aula-pill">
+            <span class="fase-tag" style="background:${corFase};color:${txtFase}">${esc(a.faseLabel)}</span>
+            <span class="disc-txt">${esc(a.sigla)} — ${esc(a.nome)}</span>
+            <span class="prof-txt">(${esc(a.professor)})</span>
+          </div>`;
+        });
+        html += '</div>';
+      } else if (!item.isFeriado) {
+        html += '<div style="font-size:12px; color:var(--muted)">Sem aulas programadas.</div>';
+      }
+
+      html += `</div></div>`;
+    });
+  }
+  html += '</div>'; // fim .agenda-timeline
+  html += '</div>';
+  return html;
+}
+
+/* ---------- Navegação / Render ---------- */
+function setCampus(c) { ST.campus = c; ST.faseIdx = 0; render(); }
+function setView(v) { ST.view = v; render(); }
 function setFase(i) { ST.faseIdx = i; render(); }
 function setMes(mi) { ST.mesIdx = mi; ST.diaSel = null; render(); }
-function setDia(k) { ST.diaSel = k; render(); }
+function setDia(key) { ST.diaSel = key; render(); }
+function setFaseSubView(sub) { ST.faseSubView = sub; render(); }
+function setDiaSubView(sub) { ST.diaSubView = sub; render(); }
 
-/* Links entre visões */
-function irParaFase(campus, i) { ST.campus = campus; ST.view = 'porFase'; ST.faseIdx = i; render(); window.scrollTo({top:0, behavior:'instant'}); }
-function irParaDia(campus, mesIdx, key) { ST.campus = campus; ST.view = 'porDia'; ST.mesIdx = mesIdx; ST.diaSel = key; render(); window.scrollTo({top:0, behavior:'instant'}); }
+function irParaFase(campus, i) {
+  ST.campus = campus; ST.view = 'fase'; ST.faseIdx = i; render(); window.scrollTo({top:0, behavior:'smooth'});
+}
+function irParaDia(campus, mesIdx, isod) {
+  ST.campus = campus; ST.view = 'dia'; ST.mesIdx = mesIdx; ST.diaSel = isod; ST.diaSubView = 'calendario'; render(); window.scrollTo({top:0, behavior:'smooth'});
+}
 
 function render() {
   document.getElementById('tabsCampus').innerHTML = `
@@ -612,23 +952,44 @@ function render() {
   `;
   document.getElementById('tabsView').innerHTML = `
     <button class="tab-item ${ST.view==='lista'?'ativo':''}" onclick="setView('lista')">📋 Lista por fase</button>
-    <button class="tab-item ${ST.view==='porFase'?'ativo':''}" onclick="setView('porFase')">🎨 Por fase (calendário)</button>
-    <button class="tab-item verde ${ST.view==='porDia'?'ativo':''}" onclick="setView('porDia')">📅 Por dia (semestre)</button>
+    <button class="tab-item verde ${ST.view==='fase'?'ativo':''}" onclick="setView('fase')">📅 Grade semanal</button>
+    <button class="tab-item verde ${ST.view==='dia'?'ativo':''}" onclick="setView('dia')">🗓️ Agenda de datas</button>
   `;
+
   const subWrap = document.getElementById('subNavWrap');
-  if (ST.view === 'porFase') {
+  if (ST.view === 'fase') {
     subWrap.style.display = '';
-    document.getElementById('subNav').innerHTML = DADOS[ST.campus].fases.map((f,i) =>
-      `<button class="tab-item ${i===ST.faseIdx?'fase-ativo':''}" style="${i===ST.faseIdx?('background:'+corPorFase(i)+';color:'+corTextoFase(i)):''}" onclick="setFase(${i})">${f.label}</button>`
-    ).join('');
+    document.getElementById('subNav').innerHTML = DADOS[ST.campus].fases.map((f,i) => {
+      const ativo = i === ST.faseIdx;
+      const estilo = ativo ? `style="background:${corPorFase(i)};color:${corTextoFase(i)}"` : '';
+      return `<button class="tab-item fase-ativo ${ativo?'ativo':''}" ${estilo} onclick="setFase(${i})">${esc(f.label)}</button>`;
+    }).join('');
   } else {
     subWrap.style.display = 'none';
   }
+
   const el = document.getElementById('conteudo');
   if (ST.view === 'lista') el.innerHTML = renderListaFases(ST.campus);
-  else if (ST.view === 'porFase') el.innerHTML = renderPorFase(ST.campus);
+  else if (ST.view === 'fase') el.innerHTML = renderPorFase(ST.campus);
   else el.innerHTML = renderPorDia(ST.campus);
 }
+
+// Suporte a hash
+window.addEventListener('hashchange', () => {
+  const h = window.location.hash.toLowerCase();
+  if (h.includes('grade') || h.includes('semanal') || h.includes('fase')) setView('fase');
+  else if (h.includes('agenda') || h.includes('data') || h.includes('dia')) setView('dia');
+  else if (h.includes('lista')) setView('lista');
+});
+
+// Inicialização com checagem de hash
+if (window.location.hash) {
+  const h = window.location.hash.toLowerCase();
+  if (h.includes('grade') || h.includes('semanal') || h.includes('fase')) ST.view = 'fase';
+  else if (h.includes('agenda') || h.includes('data') || h.includes('dia')) ST.view = 'dia';
+  else if (h.includes('lista')) ST.view = 'lista';
+}
+
 render();
 </script>
 </body>

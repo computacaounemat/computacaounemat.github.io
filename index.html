@@ -248,6 +248,45 @@
             #view-schedule .pausa, #view-schedule .extras-wrap { padding-left: 14px; padding-right: 14px; }
             #view-schedule .meses-grandes { grid-template-columns: repeat(2, minmax(0,1fr)); }
         }
+
+        /* Novas visualizações: Grade Semanal e Agenda de Datas */
+        #view-schedule .grade-semanal-wrap { display: flex; flex-direction: column; gap: 18px; }
+        #view-schedule .grade-fase-topo { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding: 16px 20px; background: var(--panel); border: 1px solid var(--border); border-radius: 14px; }
+        #view-schedule .grade-fase-topo h2 { font-size: 1.25rem; font-weight: 800; color: #fff; margin: 0; display: flex; align-items: center; gap: 10px; }
+        #view-schedule .grade-semanal-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+        @media (max-width: 1024px) { #view-schedule .grade-semanal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        @media (max-width: 640px) { #view-schedule .grade-semanal-grid { grid-template-columns: 1fr; } }
+        #view-schedule .dia-col { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: border-color .15s ease, transform .15s ease; }
+        #view-schedule .dia-col:hover { border-color: #009EE0; transform: translateY(-2px); }
+        #view-schedule .dia-col-head { padding: 10px 14px; font-weight: 700; font-size: 13.5px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.02); }
+        #view-schedule .dia-col-body { padding: 14px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+        #view-schedule .dia-col-body .sigla { display: inline-block; padding: 3px 8px; border-radius: 6px; font-size: 12px; font-weight: 800; color: #fff; width: fit-content; }
+        #view-schedule .dia-col-body .nome { font-weight: 600; font-size: 13.5px; color: #f8fafc; line-height: 1.3; }
+        #view-schedule .dia-col-body .cod { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+        #view-schedule .dia-col-body .prof { font-size: 12px; color: #94a3b8; margin-top: auto; padding-top: 8px; border-top: 1px dashed rgba(255,255,255,0.08); }
+        #view-schedule .dia-col-body .prof.pend { color: var(--yellow-text); font-weight: 700; }
+        #view-schedule .dates-pills { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+        #view-schedule .date-pill { font-family: var(--mono); font-size: 10px; background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; color: #cbd5e1; }
+        #view-schedule .date-pill.sab { background: rgba(14,165,233,0.22); color: #38bdf8; font-weight: 700; border: 1px solid rgba(14,165,233,0.3); }
+        #view-schedule .datas-box { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; }
+        #view-schedule .datas-box h3 { margin: 0 0 10px 0; font-size: 1rem; font-weight: 700; color: #fff; }
+        #view-schedule .datas-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+        #view-schedule .datas-table th, #view-schedule .datas-table td { padding: 10px 12px; text-align: left; border-top: 1px solid var(--border); }
+        #view-schedule .datas-table th { font-weight: 700; color: var(--muted); font-size: 11.5px; text-transform: uppercase; letter-spacing: .05em; border-top: none; }
+        #view-schedule .agenda-timeline { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+        #view-schedule .agenda-card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 14px 18px; display: grid; grid-template-columns: 88px 1fr; gap: 16px; align-items: center; transition: all .15s ease; }
+        #view-schedule .agenda-card:hover { border-color: #009EE0; background: rgba(255,255,255,0.03); }
+        #view-schedule .agenda-card.feriado { border-left: 4px solid #ef4444; background: rgba(239,68,68,0.05); }
+        #view-schedule .agenda-card.sabado { border-left: 4px solid #009EE0; background: rgba(0,158,224,0.04); }
+        #view-schedule .agenda-card.modular { border-left: 4px solid #eab308; background: rgba(234,179,8,0.05); }
+        #view-schedule .agenda-card-date { text-align: center; border-right: 1px solid var(--border); padding-right: 14px; }
+        #view-schedule .agenda-card-date .num { font-family: var(--mono); font-size: 22px; font-weight: 800; color: #fff; line-height: 1; }
+        #view-schedule .agenda-card-date .dia-semana { font-size: 11px; text-transform: uppercase; font-weight: 700; color: #009EE0; margin-top: 4px; }
+        #view-schedule .agenda-card-aulas { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+        #view-schedule .agenda-aula-pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); font-size: 12px; }
+        #view-schedule .agenda-aula-pill .fase-tag { font-weight: 800; font-size: 11px; padding: 2px 7px; border-radius: 4px; color: #fff; }
+        #view-schedule .agenda-aula-pill .disc-txt { color: #f1f5f9; font-weight: 600; }
+        #view-schedule .agenda-aula-pill .prof-txt { color: #94a3b8; font-size: 11.5px; }
     </style>
 </head>
 <body class="bg-dark-900 text-slate-200 h-screen flex overflow-hidden selection:bg-brand-500 selection:text-white relative">
@@ -262,9 +301,9 @@
             <i class="fa-solid fa-xmark text-xl"></i>
         </button>
 
-        <!-- Header / Logo -->
-        <div class="p-6 flex flex-col items-center justify-center border-b border-slate-700/50 mt-4 md:mt-0">
-            <div class="w-24 h-24 mb-3 relative">
+        <!-- Header / Logo (Retornar ao Início) -->
+        <a href="./" title="Voltar à Página Inicial" class="p-6 flex flex-col items-center justify-center border-b border-slate-700/50 mt-4 md:mt-0 hover:bg-slate-800/40 transition-colors group">
+            <div class="w-24 h-24 mb-3 relative group-hover:scale-105 transition-transform">
                 <!-- Logo Image Placeholder -->
                 <img src="assets/img/logo_bcc_vertical_fundo_transparente_texto_branco.png" 
                      alt="BCC Logo" 
@@ -276,14 +315,19 @@
                 </div>
             </div>
             <div class="text-center">
-                <p class="text-xs text-slate-400 font-mono mt-1">UNEMAT - Alto Araguaia/Rondonópolis</p>
+                <p class="text-xs text-slate-400 font-mono mt-1 group-hover:text-brand-400 transition-colors">UNEMAT - Alto Araguaia/Rondonópolis</p>
             </div>
-        </div>
+        </a>
 
         <!-- Navigation -->
         <nav aria-label="Navegação Principal" class="flex-1 py-6 px-3 space-y-1 overflow-y-auto">
             <p class="px-3 text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Menu Principal</p>
             
+            <a href="./" id="nav-home" class="nav-item w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-slate-400 hover:text-white hover:bg-slate-700/50 transition-all">
+                <i class="fa-solid fa-house w-5 text-center text-brand-400"></i>
+                Início
+            </a>
+
             <button onclick="app.navigate('schedule')" id="nav-schedule" class="nav-item w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-slate-400 hover:text-white hover:bg-slate-700/50 transition-all">
                 <i class="fa-regular fa-calendar-days w-5 text-center"></i>
                 Horários 2026/2
@@ -316,9 +360,9 @@
             </button>
 
             <!-- NOVO MENU: Camiseta SECOMP 2026 -->
-            <a href="https://ialxnder.fly.dev/camisetas" target="_blank" rel="noopener" class="w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 hover:bg-cyan-500/20 transition-all group">
+            <a href="https://ialxnder.fly.dev/camisetas" target="_blank" rel="noopener" class="w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-slate-400 hover:text-white hover:bg-slate-700/50 transition-all group">
                 <i class="fa-solid fa-shirt w-5 text-center text-cyan-400"></i>
-                Camiseta BCC <span class="text-[10px] bg-cyan-500 text-white font-bold px-1.5 py-0.5 rounded ml-auto">R$ 35</span>
+                Camiseta BCC <span class="text-[10px] bg-slate-700 text-slate-300 font-bold px-1.5 py-0.5 rounded ml-auto">R$ 35</span>
             </a>
 
             <p class="px-3 text-xs font-bold text-slate-500 uppercase tracking-wider mt-6 mb-2">Links Externos</p>
@@ -338,15 +382,15 @@
                 CAEST
             </a>
 
-            <!-- Portal iALXnder e Sistemas -->
+            <!-- Portal da Coordenação e Assistente Virtual destacados em sequência -->
             <a href="https://ialxnder.fly.dev/" target="_blank" rel="noopener" class="w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-brand-400 bg-brand-500/10 border border-brand-500/20 hover:bg-brand-500/20 transition-all group mt-3">
                 <i class="fa-solid fa-cube w-5 text-center text-brand-500"></i>
-                Portal iALXnder <span class="text-[10px] bg-brand-500 text-white px-1.5 rounded ml-auto">Sistemas</span>
+                Portal da Coordenação <span class="text-[10px] bg-brand-500 text-white font-bold px-1.5 py-0.5 rounded ml-auto">Sistemas</span>
             </a>
 
-            <a href="https://ialxnder.fly.dev/planos" target="_blank" rel="noopener" class="w-full flex items-center gap-3 px-3 py-2.5 text-xs font-medium rounded-lg text-slate-400 hover:text-white hover:bg-slate-700/50 transition-all group">
-                <i class="fa-solid fa-file-circle-check w-5 text-center text-slate-500 group-hover:text-emerald-400"></i>
-                Validador de Planos (Docentes)
+            <a href="https://bit.ly/iALXnderBETA" target="_blank" rel="noopener" class="w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 transition-all group">
+                <i class="fa-solid fa-robot w-5 text-center text-emerald-400"></i>
+                Assistente Virtual <span class="text-[10px] bg-emerald-500 text-white font-bold px-1.5 py-0.5 rounded ml-auto">IA 24h</span>
             </a>
         </nav>
 
@@ -421,7 +465,7 @@
                             <i class="fa-solid fa-up-right-from-square"></i> Abrir em Nova Aba
                         </a>
                         <a href="https://bit.ly/iALXnderBETA" target="_blank" rel="noopener" class="px-4 py-2 bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold rounded-lg flex items-center gap-1.5 transition-colors shadow-md border border-brand-400">
-                            <i class="fa-solid fa-robot"></i> Assistente iALXnder
+                            <i class="fa-solid fa-robot"></i> Assistente Virtual
                         </a>
                     </div>
                 </div>
@@ -2253,6 +2297,16 @@
         function schCorSlot(s) { return SCH_CORES_DIA[s % SCH_CORES_DIA.length]; }
         function schTxtFase(i) { return SCH_TXT_FASE[i % SCH_TXT_FASE.length]; }
         function schDiasUteis(y, mi) { const n = new Date(y, mi+1, 0).getDate(); const out = []; for (let d=1; d<=n; d++) { if (new Date(y, mi, d).getDay() !== 0) out.push(d); } return out; }
+                function schDiasUteisDoMes(y, mi) {
+            const n = new Date(y, mi + 1, 0).getDate();
+            const out = [];
+            for (let d = 1; d <= n; d++) {
+                const dow = new Date(y, mi, d).getDay();
+                if (dow !== 0) out.push(d); // Inclui Seg a Sáb
+            }
+            return out;
+        }
+
         function schLinhasDoMes(y, mi) {
             const n = new Date(y, mi+1, 0).getDate();
             const rows = []; let cur = [null,null,null,null,null,null]; let lc = -1;
@@ -2353,20 +2407,358 @@
         }
 
         function schRenderPorFase(campus) {
+            const sub = app.state.schFaseSubView || 'grade';
+            let topBar = `<div class="sch-tabs mb-4"><div class="sch-tabs-inner"><div class="sch-tabs-group">
+                <span class="text-xs text-slate-400 font-bold uppercase tracking-wider mr-2 hidden sm:inline">Exibição:</span>
+                <button class="tab-item ${sub==='grade'?'ativo':''}" onclick="app.setFaseSubView('grade')"><i class="fa-solid fa-table-columns"></i> Grade semanal (Seg-Sex)</button>
+                <button class="tab-item verde ${sub==='calendario'?'ativo':''}" onclick="app.setFaseSubView('calendario')"><i class="fa-solid fa-calendar-days"></i> Calendário dos meses (colorido)</button>
+                <button class="tab-item ${sub==='ambos'?'ativo':''}" onclick="app.setFaseSubView('ambos')"><i class="fa-solid fa-layer-group"></i> Exibir ambas</button>
+            </div></div></div>`;
+
+            if (sub === 'calendario') {
+                return topBar + schRenderCalendarioFase(campus);
+            } else if (sub === 'ambos') {
+                return topBar + schRenderGradeSemanal(campus) + '<div class="my-6 border-t border-slate-700/60"></div>' + schRenderCalendarioFase(campus);
+            } else {
+                return topBar + schRenderGradeSemanal(campus);
+            }
+        }
+
+        function schRenderGradeSemanal(campus) {
             const d = data[campus];
+            if (!d || !Array.isArray(d.phases)) return '';
+            if (app.state.schFaseIdx >= d.phases.length) app.state.schFaseIdx = 0;
             const fase = d.phases[app.state.schFaseIdx];
+            const corFase = schCorFase(app.state.schFaseIdx);
+            const txtFase = schTxtFase(app.state.schFaseIdx);
+            const codesFase = (SCH_CODES[campus] && SCH_CODES[campus][fase.label]) || {};
+            const link = schSafeLink(fase.link);
+            const agendaBtn = link ? `<a href="${link}" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-lg bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold transition-all flex items-center gap-2 shrink-0 shadow-md"><i class="fa-regular fa-calendar-plus"></i> Google Agenda (${schEsc(fase.label)})</a>` : '';
+
+            let html = '<div class="grade-semanal-wrap">';
+
+            // Topo da Fase selecionada
+            html += `<div class="grade-fase-topo">
+                <div>
+                    <h2><span class="disc-sigla" style="background:${corFase};color:${txtFase}">${schEsc(fase.label)}</span> Grade Semanal · Câmpus ${schEsc(d.name)}</h2>
+                    <p class="text-xs text-slate-400 mt-1">Horário Regular de Aulas (Segunda a Sexta-feira) · Semestre Letivo 2026/2</p>
+                </div>
+                ${agendaBtn}
+            </div>`;
+
+            // Grade semanal: colunas de Segunda a Sexta
+            html += '<div class="grade-semanal-grid">';
+            fase.schedule.forEach((s, slot) => {
+                const info = (codesFase.dias && codesFase.dias[s.d]) || {};
+                const cod = info.cod || '—';
+                const dates = info.dates || [];
+                const pend = /pendente/i.test(schProfTxt(s.p));
+                const corSlot = schCorSlot(slot);
+
+                html += `<div class="dia-col">
+                    <div class="dia-col-head">
+                        <span>${schEsc(s.d)}</span>
+                        <span style="width:10px;height:10px;border-radius:50%;background:${corSlot};display:inline-block"></span>
+                    </div>
+                    <div class="dia-col-body">
+                        <span class="sigla" style="background:${corSlot};color:#0b0d0f">${schEsc(s.c)}</span>
+                        <div class="nome">${schEsc(s.n)}</div>
+                        <div class="cod">${schEsc(cod)}</div>
+                        <div class="prof ${pend ? 'pend' : ''}">👤 ${schEsc(schProfTxt(s.p))}</div>
+                        <div style="margin-top:6px; font-size:11px; color:var(--muted)">
+                            <div class="flex items-center justify-between text-[11px] mb-1">
+                                <b>13 Datas no Semestre:</b>
+                                <span class="text-brand-400">${dates.length} aulas</span>
+                            </div>
+                            <div class="dates-pills">
+                                ${dates.slice(0, 4).map(dt => {
+                                    const isSab = ["22/08","29/08","12/09","19/09","12/12"].includes(dt);
+                                    return `<span class="date-pill ${isSab?'sab':''}">${dt}${isSab?'*':''}</span>`;
+                                }).join('')}
+                                ${dates.length > 4 ? `<span class="date-pill">+${dates.length - 4}</span>` : ''}
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+            });
+            html += '</div>';
+
+            // Bloco Modular (se houver)
+            if (fase.modular) {
+                const modInfo = codesFase.modular || {};
+                const modCod = modInfo.cod || '—';
+                html += `<div class="datas-box" style="border-left:4px solid #eab308; background:rgba(234,179,8,0.06)">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div>
+                            <span class="disc-sigla" style="background:#eab308; color:#0b0d0f; font-size:11px; font-weight:800; padding:2px 8px; border-radius:4px">📦 Disciplina Modular</span>
+                            <h3 style="margin:8px 0 3px; color:#fff">${schEsc(fase.modular.c)} — ${schEsc(fase.modular.n)} (${schEsc(modCod)})</h3>
+                            <p style="font-size:12.5px; color:#cbd5e1; margin:0">Docente: <b>${schEsc(schProfTxt(fase.modular.p))}</b> · Semanas intensivas de imersão: <span class="mono text-yellow-300 font-semibold">${schEsc(fase.modular.d)}</span></p>
+                        </div>
+                        <span class="text-xs bg-yellow-500/20 text-yellow-300 font-bold px-3 py-1.5 rounded-lg border border-yellow-500/30 whitespace-nowrap self-start sm:self-center">13 Dias Letivos</span>
+                    </div>
+                </div>`;
+            }
+
+            // Extras (TCC / Estágio)
+            if (fase.extras && fase.extras.length) {
+                html += `<div class="datas-box" style="border-left:4px solid #6366f1; background:rgba(99,102,241,0.06)">
+                    <h3 style="color:#a5b4fc; font-size:13px; text-transform:uppercase; letter-spacing:.05em; margin-bottom:8px">🎓 Estágio Curricular Supervisionado e TCC (Contraturno / Defesas)</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5">
+                        ${fase.extras.map(e => `<div class="p-2.5 rounded-lg bg-dark-800/80 border border-slate-700/60 text-xs">
+                            <b class="text-indigo-300">${schEsc(e.c)}</b>
+                            <div class="text-slate-200 mt-0.5 font-medium">${schEsc(e.n)}</div>
+                            <div class="text-slate-400 text-[11px] mt-1">👤 ${schEsc(schProfTxt(e.p))}</div>
+                        </div>`).join('')}
+                    </div>
+                </div>`;
+            }
+
+            // Quadro Detalhado com as 13 datas presenciais de cada disciplina
+            html += `<div class="datas-box">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                    <div>
+                        <h3>Quadro Oficial das 13 Datas Presenciais — ${schEsc(fase.label)}</h3>
+                        <p class="text-xs text-slate-400 m-0">Conferido com o Calendário Acadêmico Oficial (Res. nº 030/2025–CONEPE). As datas marcadas em azul indicam reposições em sábados letivos.</p>
+                    </div>
+                </div>
+                <div style="overflow-x:auto">
+                    <table class="datas-table">
+                        <thead>
+                            <tr>
+                                <th style="width:90px">Dia</th>
+                                <th style="width:130px">Código</th>
+                                <th>Componente Curricular</th>
+                                <th style="width:160px">Docente</th>
+                                <th>13 Datas Letivas Presenciais</th>
+                            </tr>
+                        </thead>
+                        <tbody>`;
+
+            fase.schedule.forEach(s => {
+                const info = (codesFase.dias && codesFase.dias[s.d]) || {};
+                const dates = info.dates || [];
+                html += `<tr>
+                    <td style="font-weight:700; color:#fff">${schEsc(s.d)}</td>
+                    <td class="mono" style="color:var(--muted)">${schEsc(info.cod || '—')}</td>
+                    <td><b style="color:#fff">${schEsc(s.c)}</b> · <span style="color:#cbd5e1">${schEsc(s.n)}</span></td>
+                    <td style="color:#94a3b8">👤 ${schEsc(schProfTxt(s.p))}</td>
+                    <td>
+                        <div class="dates-pills">
+                            ${dates.map(dt => {
+                                const isSab = ["22/08","29/08","12/09","19/09","12/12"].includes(dt);
+                                return `<span class="date-pill ${isSab ? 'sab' : ''}" title="${isSab?'Sábado letivo':''}">${dt}${isSab ? ' (Sáb)' : ''}</span>`;
+                            }).join('')}
+                        </div>
+                    </td>
+                </tr>`;
+            });
+
+            if (fase.modular) {
+                const modInfo = codesFase.modular || {};
+                html += `<tr>
+                    <td style="font-weight:700; color:#eab308">Modular</td>
+                    <td class="mono" style="color:var(--muted)">${schEsc(modInfo.cod || '—')}</td>
+                    <td><b style="color:#eab308">${schEsc(fase.modular.c)}</b> · <span style="color:#cbd5e1">${schEsc(fase.modular.n)}</span></td>
+                    <td style="color:#94a3b8">👤 ${schEsc(schProfTxt(fase.modular.p))}</td>
+                    <td>
+                        <div class="dates-pills">
+                            ${(modInfo.dates || []).map(dt => `<span class="date-pill" style="background:rgba(234,179,8,0.18);color:#fde047;border:1px solid rgba(234,179,8,0.3)">${dt}</span>`).join('')}
+                        </div>
+                    </td>
+                </tr>`;
+            }
+
+            html += `</tbody>
+                    </table>
+                </div>
+            </div>`;
+
+            html += '</div>'; // fim .grade-semanal-wrap
+            return html;
+        }
+
+        function schRenderPorDia(campus) {
+            const sub = app.state.schDiaSubView || 'calendario';
+            let topBar = `<div class="sch-tabs mb-4"><div class="sch-tabs-inner"><div class="sch-tabs-group">
+                <span class="text-xs text-slate-400 font-bold uppercase tracking-wider mr-2 hidden sm:inline">Exibição:</span>
+                <button class="tab-item verde ${sub==='calendario'?'ativo':''}" onclick="app.setDiaSubView('calendario')"><i class="fa-solid fa-calendar-days"></i> Calendário do mês (interativo)</button>
+                <button class="tab-item ${sub==='agenda'?'ativo':''}" onclick="app.setDiaSubView('agenda')"><i class="fa-solid fa-list-timeline"></i> Linha do tempo (agenda)</button>
+            </div></div></div>`;
+
+            if (sub === 'agenda') {
+                return topBar + schRenderAgenda(campus);
+            } else {
+                return topBar + schRenderCalendarioDia(campus);
+            }
+        }
+
+        function schRenderAgenda(campus) {
+            const eventos = schEventosDoCampus(campus);
+            const mapaDatas = {};
+
+            // Mapeia todas as aulas
+            eventos.forEach(ev => {
+                ev.dates.forEach(ddmm => {
+                    const iso = schIso(ddmm);
+                    if (!mapaDatas[iso]) {
+                        const [dia, mes] = ddmm.split("/").map(Number);
+                        const dtObj = new Date(SCH_YEAR, mes - 1, dia);
+                        const dowIdx = (dtObj.getDay() + 6) % 7; // Seg=0 ... Dom=6
+                        mapaDatas[iso] = {
+                            iso,
+                            ddmm,
+                            dia,
+                            mesIdx: mes - 1,
+                            mesNome: SCH_MONTH_NAMES[mes - 1],
+                            dowNome: SCH_DIA_NOMES[dowIdx] || 'Domingo',
+                            dowIdx,
+                            aulas: []
+                        };
+                    }
+                    mapaDatas[iso].aulas.push(ev);
+                });
+            });
+
+            // Mapeia feriados institucionais
+            const feriadosMap = {
+                "2026-09-07": "Independência do Brasil",
+                "2026-10-12": "Nossa Sra. Aparecida (Padroeira do Brasil)",
+                "2026-10-28": "Dia do Servidor Público",
+                "2026-11-02": "Finados",
+                "2026-11-20": "Dia Nacional de Zumbi e da Consciência Negra"
+            };
+
+            Object.entries(feriadosMap).forEach(([iso, nomeFeriado]) => {
+                if (!mapaDatas[iso]) {
+                    const [y, m, dia] = iso.split("-").map(Number);
+                    const dtObj = new Date(y, m - 1, dia);
+                    const dowIdx = (dtObj.getDay() + 6) % 7;
+                    const ddmm = `${String(dia).padStart(2,"0")}/${String(m).padStart(2,"0")}`;
+                    mapaDatas[iso] = {
+                        iso,
+                        ddmm,
+                        dia,
+                        mesIdx: m - 1,
+                        mesNome: SCH_MONTH_NAMES[m - 1],
+                        dowNome: SCH_DIA_NOMES[dowIdx] || 'Domingo',
+                        dowIdx,
+                        isFeriado: true,
+                        nomeFeriado,
+                        aulas: []
+                    };
+                } else {
+                    mapaDatas[iso].isFeriado = true;
+                    mapaDatas[iso].nomeFeriado = nomeFeriado;
+                }
+            });
+
+            const chavesOrdenadas = Object.keys(mapaDatas).sort();
+
+            // Filtro por mês selecionado (-1 = todos)
+            if (app.state.schMesIdx === undefined) app.state.schMesIdx = SCH_MONTH_IDXS[0];
+            const mesSel = app.state.schMesIdx;
+            let chavesFiltradas = chavesOrdenadas;
+            if (mesSel !== -1) {
+                chavesFiltradas = chavesOrdenadas.filter(k => mapaDatas[k].mesIdx === mesSel);
+            }
+
+            let html = '<div class="space-y-4">';
+
+            // Barra de abas de meses
+            html += '<nav class="sch-tabs"><div class="sch-tabs-inner"><div class="sch-tabs-group">';
+            html += `<button class="mes-aba ${mesSel === -1 ? 'ativo' : ''}" onclick="app.setMes(-1)">Todos os Meses</button>`;
+            SCH_MONTH_IDXS.forEach(mi => {
+                html += `<button class="mes-aba ${mi === mesSel ? 'ativo' : ''}" onclick="app.setMes(${mi})">${SCH_MONTH_NAMES[mi]}</button>`;
+            });
+            html += '</div></div></nav>';
+
+            // Linha do tempo de cards
+            html += '<div class="agenda-timeline">';
+            if (!chavesFiltradas.length) {
+                html += '<div class="caixa p-8 text-center text-slate-400">Nenhuma atividade registrada para o período selecionado.</div>';
+            } else {
+                chavesFiltradas.forEach(iso => {
+                    const item = mapaDatas[iso];
+                    const isSab = item.dowIdx === 5;
+                    const isMod = item.aulas.some(a => a.tipo === 'modular');
+                    let cardCls = 'agenda-card';
+                    if (item.isFeriado) cardCls += ' feriado';
+                    else if (isMod) cardCls += ' modular';
+                    else if (isSab) cardCls += ' sabado';
+
+                    html += `<div class="${cardCls}">
+                        <div class="agenda-card-date">
+                            <div class="num">${item.dia}</div>
+                            <div class="dia-semana" style="${isSab ? 'color:#009EE0' : (item.isFeriado ? 'color:#ef4444' : '')}">${item.dowNome.slice(0,3)} · ${item.mesNome.slice(0,3)}</div>
+                        </div>
+                        <div>`;
+
+                    if (item.isFeriado) {
+                        html += `<div class="flex items-center gap-2 text-xs font-bold text-red-400 mb-1">
+                            <i class="fa-solid fa-calendar-xmark"></i> Feriado / Recesso: ${schEsc(item.nomeFeriado)}
+                        </div>`;
+                    }
+
+                    if (isSab && !item.isFeriado) {
+                        html += `<div class="text-[11px] font-bold text-sky-400 mb-1 flex items-center gap-1.5">
+                            <i class="fa-solid fa-calendar-check"></i> Sábado Letivo (Reposição Presencial)
+                        </div>`;
+                    }
+
+                    if (isMod) {
+                        html += `<div class="text-[11px] font-bold text-yellow-400 mb-1 flex items-center gap-1.5">
+                            <i class="fa-solid fa-box-archive"></i> Semana de Bloco Modular
+                        </div>`;
+                    }
+
+                    if (item.aulas.length) {
+                        html += '<div class="agenda-card-aulas mt-1">';
+                        item.aulas.slice().sort((a,b) => a.faseIdx - b.faseIdx).forEach(a => {
+                            const corFase = schCorFase(a.faseIdx);
+                            const txtFase = schTxtFase(a.faseIdx);
+                            html += `<div class="agenda-aula-pill">
+                                <span class="fase-tag" style="background:${corFase};color:${txtFase}">${schEsc(a.faseLabel)}</span>
+                                <span class="disc-txt">${schEsc(a.sigla)} — ${schEsc(a.nome)}</span>
+                                <span class="prof-txt">(${schEsc(a.professor)})</span>
+                            </div>`;
+                        });
+                        html += '</div>';
+                    } else if (!item.isFeriado) {
+                        html += '<div class="text-xs text-slate-400">Sem aulas programadas.</div>';
+                    }
+
+                    html += `</div></div>`;
+                });
+            }
+            html += '</div>'; // fim .agenda-timeline
+            html += '</div>';
+
+            return html;
+        }
+
+        
+        function schRenderCalendarioFase(campus) {
+            const d = data[campus];
+            if (!d || !Array.isArray(d.phases)) return '';
+            if (app.state.schFaseIdx >= d.phases.length) app.state.schFaseIdx = 0;
+            const fase = d.phases[app.state.schFaseIdx];
+            const corFase = schCorFase(app.state.schFaseIdx);
+            const txtFase = schTxtFase(app.state.schFaseIdx);
             const eventos = schEventosDoCampus(campus).filter(e => e.faseIdx === app.state.schFaseIdx);
             const dataCor = {};
-            eventos.forEach(e => { const cor = e.tipo === 'modular' ? SCH_CORES_DIA[5] : schCorSlot(e.slot); e.dates.forEach(dd => { dataCor[schIso(dd)] = cor; }); });
+            eventos.forEach(e => {
+                const cor = e.tipo === 'modular' ? SCH_CORES_DIA[5] : schCorSlot(e.slot);
+                e.dates.forEach(dd => { dataCor[schIso(dd)] = cor; });
+            });
 
             let legenda = '<div class="caixa legenda-cores">';
             fase.schedule.forEach((s, slot) => {
                 const codeInfo = (SCH_CODES[campus][fase.label] && SCH_CODES[campus][fase.label].dias[s.d]) || {};
-                legenda += `<span><i style="background:${schCorSlot(slot)}"></i><b>${schEsc(s.d)}</b> — ${schEsc(codeInfo.cod || '—')} · ${schEsc(s.c)} — ${schEsc(s.n)}</span>`;
+                legenda += `<span><i style="background:${schCorSlot(slot)}"></i><b>${schEsc(s.d)}</b> — ${schEsc(codeInfo.cod || '')} · ${schEsc(s.c)} — ${schEsc(s.n)}</span>`;
             });
             if (fase.modular) {
-                const modCod = (SCH_CODES[campus][fase.label] && SCH_CODES[campus][fase.label].modular && SCH_CODES[campus][fase.label].modular.cod) || '—';
-                legenda += `<span><i style="background:${SCH_CORES_DIA[5]}"></i><b>Modular</b> — ${schEsc(modCod)} · ${schEsc(fase.modular.c)} — ${schEsc(fase.modular.n)}</span>`;
+                const modInfo = (SCH_CODES[campus][fase.label] && SCH_CODES[campus][fase.label].modular) || {};
+                legenda += `<span><i style="background:${SCH_CORES_DIA[5]}"></i><b>Modular</b> — ${schEsc(modInfo.cod || '')} · ${schEsc(fase.modular.c)} — ${schEsc(fase.modular.n)}</span>`;
             }
             legenda += '</div>';
 
@@ -2387,19 +2779,39 @@
                 grid += `<div class="mes-grande"><b>${SCH_MONTH_NAMES[mi]}</b>${g}</div>`;
             });
             grid += '</div></div>';
-            return legenda + grid;
+
+            return `<div class="space-y-4">
+                <div class="grade-fase-topo">
+                    <div>
+                        <h2><span class="disc-sigla" style="background:${corFase};color:${txtFase}">${schEsc(fase.label)}</span> Calendário Mensal Colorido · Câmpus ${schEsc(d.name)}</h2>
+                        <p class="text-xs text-slate-400 mt-1">Dias do semestre destacados com a cor oficial de cada disciplina da ${schEsc(fase.label)}. Clique em qualquer dia para inspecioná-lo.</p>
+                    </div>
+                </div>
+                ${legenda}
+                ${grid}
+            </div>`;
         }
 
-        function schRenderPorDia(campus) {
+        function schRenderCalendarioDia(campus) {
             const eventos = schEventosDoCampus(campus);
             const porDia = {};
-            eventos.forEach(e => { e.dates.forEach(dd => { const k = schIso(dd); (porDia[k] = porDia[k] || []).push(e); }); });
-            if (app.state.schDiaSel === null) {
-                const dias = schDiasUteis(SCH_YEAR, app.state.schMesIdx);
-                app.state.schDiaSel = schChaveISO(app.state.schMesIdx, dias[0]);
+            eventos.forEach(e => {
+                e.dates.forEach(dd => {
+                    const k = schIso(dd);
+                    (porDia[k] = porDia[k] || []).push(e);
+                });
+            });
+
+            if (app.state.schMesIdx === undefined || app.state.schMesIdx === -1) {
+                app.state.schMesIdx = SCH_MONTH_IDXS[0];
             }
-            let mesesTabs = '<nav class="sch-tabs"><div class="sch-tabs-inner"><div class="sch-tabs-group">' +
-                SCH_MONTH_IDXS.map(mi => `<button class="mes-aba ${mi===app.state.schMesIdx?'ativo':''}" onclick="app.setMes(${mi})">${SCH_MONTH_NAMES[mi]}</button>`).join('') +
+            if (!app.state.schDiaSel) {
+                const dias = schDiasUteisDoMes(SCH_YEAR, app.state.schMesIdx);
+                app.state.schDiaSel = schChaveISO(app.state.schMesIdx, dias[0] || 1);
+            }
+
+            let mesesTabs = '<nav class="sch-tabs mb-4"><div class="sch-tabs-inner"><div class="sch-tabs-group">' +
+                SCH_MONTH_IDXS.map(mi => `<button class="mes-aba ${mi === app.state.schMesIdx ? 'ativo' : ''}" onclick="app.setMes(${mi})">${SCH_MONTH_NAMES[mi]}</button>`).join('') +
                 '</div></div></nav>';
 
             let grade = '<div class="cal-grade">' + SCH_DIA_NOMES.map(x => `<span class="cal-cab">${x}</span>`).join('');
@@ -2412,7 +2824,7 @@
                     if (SCH_HOLIDAY_SET.has(key)) cls += ' off';
                     else if (lista.length && lista.every(e => e.tipo === 'modular')) cls += ' mod';
                     if (key === app.state.schDiaSel) cls += ' sel';
-                    const info = SCH_HOLIDAY_SET.has(key) ? 'Não letivo' : (lista.length ? lista.length + (lista.length>1?' aulas':' aula') : 'Sem aula');
+                    const info = SCH_HOLIDAY_SET.has(key) ? 'Não letivo' : (lista.length ? lista.length + (lista.length > 1 ? ' aulas' : ' aula') : 'Sem aula');
                     const pontos = lista.map(e => `<i style="background:${schCorFase(e.faseIdx)}"></i>`).join('');
                     grade += `<button class="${cls}" onclick="app.setDia('${key}')"><span class="num">${d}</span><span class="info">${info}</span><span class="pontos">${pontos}</span></button>`;
                 });
@@ -2420,16 +2832,17 @@
             grade += '</div>';
 
             const dSel = new Date(app.state.schDiaSel + 'T00:00:00');
-            const nomeDiaSel = SCH_DIA_NOMES[(dSel.getDay()+6)%7] || '';
+            const dowIdx = (dSel.getDay() + 6) % 7;
+            const nomeDiaSel = SCH_DIA_NOMES[dowIdx] || 'Sábado';
             const listaSel = (porDia[app.state.schDiaSel] || []).slice().sort((a,b) => a.faseIdx - b.faseIdx);
             let painel = '<aside class="caixa painel-dia"><div class="topo"><small>' + nomeDiaSel + '</small><h2>' + dSel.getDate() + ' de ' + SCH_MONTH_NAMES[dSel.getMonth()].toLowerCase() + '</h2></div>';
             if (SCH_HOLIDAY_SET.has(app.state.schDiaSel)) {
-                painel += '<div class="painel-dia vazio">Dia não letivo (feriado ou recesso).</div>';
+                painel += '<div class="painel-dia vazio"><i class="fa-solid fa-calendar-xmark text-red-400 mr-1.5"></i> Dia não letivo (feriado ou recesso institucional).</div>';
             } else if (!listaSel.length) {
-                painel += '<div class="painel-dia vazio">Nenhuma aula neste dia.</div>';
+                painel += '<div class="painel-dia vazio">Nenhuma aula regular neste dia.</div>';
             } else {
                 listaSel.forEach(e => {
-                    painel += `<button class="aula-item" onclick="app.irParaFase('${campus}', ${e.faseIdx})" title="Ver ${schEsc(e.faseLabel)} no calendário colorido"><span class="fase" style="background:${schCorFase(e.faseIdx)};color:${schTxtFase(e.faseIdx)}">${schEsc(e.faseLabel)}</span><span><span class="nome">${schEsc(e.cod)} - ${schEsc(e.sigla)}</span><br><span class="disc">${schEsc(e.nome)}</span><br><span class="quem">👤 ${schEsc(e.professor)}</span></span></button>`;
+                    painel += `<button class="aula-item" onclick="app.irParaFase('${campus}', ${e.faseIdx})" title="Ver ${schEsc(e.faseLabel)} na grade"><span class="fase" style="background:${schCorFase(e.faseIdx)};color:${schTxtFase(e.faseIdx)}">${schEsc(e.faseLabel)}</span><span><span class="nome">${schEsc(e.cod)} · ${schEsc(e.sigla)}</span><br><span class="disc">${schEsc(e.nome)}</span><br><span class="quem">👤 ${schEsc(e.professor)}</span></span></button>`;
                 });
             }
             painel += '</aside>';
@@ -2474,7 +2887,14 @@
                     this.navigate('estagio', false);
                 } else if (cleanHash === 'secomp') {
                     this.navigate('secomp', false);
-                } else if (cleanHash === 'schedule') {
+                } else if (cleanHash.startsWith('schedule') || cleanHash === 'horarios' || cleanHash === 'grade') {
+                    if (cleanHash.includes('grade') || cleanHash.includes('semanal') || cleanHash.includes('fase')) {
+                        this.state.schView = 'fase';
+                    } else if (cleanHash.includes('agenda') || cleanHash.includes('datas') || cleanHash.includes('dia')) {
+                        this.state.schView = 'dia';
+                    } else {
+                        this.state.schView = 'lista';
+                    }
                     this.navigate('schedule', false);
                 } else {
                     this.navigate(this.state.view || 'guide', false);
@@ -2552,6 +2972,16 @@
                 this.renderSchedule();
             },
 
+            setFaseSubView(sub) {
+                this.state.schFaseSubView = sub;
+                this.renderSchedule();
+            },
+
+            setDiaSubView(sub) {
+                this.state.schDiaSubView = sub;
+                this.renderSchedule();
+            },
+
             setFase(idx) {
                 this.state.schFaseIdx = idx;
                 this.renderSchedule();
@@ -2578,6 +3008,7 @@
             irParaDia(campus, mi, key) {
                 this.state.campus = campus;
                 this.state.schView = 'dia';
+                this.state.schDiaSubView = 'calendario';
                 this.state.schMesIdx = mi;
                 this.state.schDiaSel = key;
                 this.renderSchedule();
@@ -2614,7 +3045,7 @@
                     `).join('');
                 }
 
-                const views = [['lista', 'Lista por fase'], ['fase', 'Por fase'], ['dia', 'Por dia']];
+                const views = [['lista', 'Lista por fase'], ['fase', 'Grade semanal'], ['dia', 'Agenda de datas']];
                 const tabsView = document.getElementById('sch-tabsView');
                 if (tabsView) {
                     tabsView.innerHTML = views.map(([v, label]) => `
@@ -2654,7 +3085,14 @@
         window.addEventListener('hashchange', () => {
             const rawHash = window.location.hash;
             const h = rawHash ? rawHash.replace('#', '').trim().toLowerCase() : '';
-            if (['schedule', 'guide', 'guia', 'secomp', 'estagio', 'tcc'].includes(h)) {
+            if (h.startsWith('schedule') || h === 'horarios' || h === 'grade') {
+                if (h.includes('grade') || h.includes('semanal') || h.includes('fase')) {
+                    app.state.schView = 'fase';
+                } else if (h.includes('agenda') || h.includes('datas') || h.includes('dia')) {
+                    app.state.schView = 'dia';
+                }
+                app.navigate('schedule', false);
+            } else if (['guide', 'guia', 'secomp', 'estagio', 'tcc'].includes(h)) {
                 app.navigate(h === 'guia' ? 'guide' : h, false);
             }
         });
