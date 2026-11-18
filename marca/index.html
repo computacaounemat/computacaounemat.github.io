@@ -42,6 +42,10 @@ figcaption span{font-size:.82rem;color:var(--soft)}
 .tipo{font-family:'Mesmerize','Inter',sans-serif;font-weight:300;font-size:2rem;color:var(--ink);margin:6px 0}
 .vet{display:flex;flex-wrap:wrap;gap:10px}
 .vet a{border:1px solid var(--line);background:var(--card);color:var(--ciano);padding:9px 14px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.88rem}
+.vinheta{display:flex;flex-wrap:wrap;gap:24px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.vinheta video{width:min(100%,270px);aspect-ratio:9/16;border-radius:12px;background:#000;display:block}
+.vinheta .txt{flex:1;min-width:240px}.vinheta h3{margin:0 0 6px;color:var(--ink);font-size:1.05rem}.vinheta p{margin:0 0 10px}
+.vinheta ul{margin:0 0 14px;padding-left:18px;color:var(--soft);font-size:.9rem}
 footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);font-size:.85rem;color:var(--soft)}
 </style>
 </head>
@@ -83,6 +87,17 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);font-si
 <section><h2>UNEMAT e curso, lado a lado</h2><p class="lead">Assinatura conjunta com a marca da UNEMAT (Câmpus de Alto Araguaia e Câmpus Avançado de Rondonópolis) e a do curso.</p><div class="grade"><figure class="card"><div class="amostra claro"><img src="arquivos/logo_unemat_bcc_horizontal_fundo_branco_texto_preto.png" alt="UNEMAT + curso — fundo branco" loading="lazy"></div>
 <figcaption><strong>UNEMAT + curso — fundo branco</strong><span>Para fundos claros</span><a class="bt" href="arquivos/logo_unemat_bcc_horizontal_fundo_branco_texto_preto.png" download>Baixar PNG</a></figcaption></figure><figure class="card"><div class="amostra escuro"><img src="arquivos/logo_unemat_bcc_horizontal_fundo_preto_texto_branco.png" alt="UNEMAT + curso — fundo preto" loading="lazy"></div>
 <figcaption><strong>UNEMAT + curso — fundo preto</strong><span>Para fundos escuros</span><a class="bt" href="arquivos/logo_unemat_bcc_horizontal_fundo_preto_texto_branco.png" download>Baixar PNG</a></figcaption></figure></div></section>
+
+<section>
+<h2>Vinheta animada</h2>
+<p class="lead">Abertura animada da marca para vídeos, transmissões e apresentações do curso.</p>
+<div class="vinheta">
+<video controls playsinline preload="metadata" poster="arquivos/vinheta-bcc-capa.jpg" aria-label="Vinheta animada da marca do curso de Ciência da Computação"><source src="arquivos/vinheta-bcc.mp4" type="video/mp4"></video>
+<div class="txt"><h3>Vinheta do curso</h3>
+<p>Formato vertical (1080 × 1920 px), 3 segundos, com áudio. Termina na marca do curso com “UNEMAT - Alto Araguaia &amp; Rondonópolis”.</p>
+<a class="botao" href="arquivos/vinheta-bcc.mp4" download>Baixar vinheta (MP4)</a></div>
+</div>
+</section>
 
 <section>
 <h2>Arquivos vetoriais (SVG)</h2>
