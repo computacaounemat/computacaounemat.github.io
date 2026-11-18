@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   width="141.95782mm"
+   height="48.166233mm"
+   id="svg47"
+   viewBox="-20 -20 482.73748 163.79263"
+   sodipodi:docname="logo_bcc_horizontal.svg"
+   inkscape:version="1.3 (0e150ed, 2023-07-21)"
+   inkscape:export-filename="logo_bcc_horizontal_fundo_preto_texto_branco.png"
+   inkscape:export-xdpi="600"
+   inkscape:export-ydpi="600"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview47"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.3850022"
+     inkscape:cx="241.15485"
+     inkscape:cy="157.76148"
+     inkscape:window-width="1600"
+     inkscape:window-height="872"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg47"
+     inkscape:document-units="pt"
+     showguides="false">
+    <sodipodi:guide
+       position="-1.9368424,163.88924"
+       orientation="0,562.51378"
+       id="guide44"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="504.17596,163.88924"
+       orientation="182.87515,0"
+       id="guide45"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="504.17596,-0.6497695"
+       orientation="0,-562.51378"
+       id="guide46"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-1.9368424,-0.6497695"
+       orientation="-182.87515,0"
+       id="guide47"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="8.4571816,-2.4151487"
+       orientation="1,0"
+       id="guide48"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="160.46978,-47.239374"
+       orientation="1,0"
+       id="guide49"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="474.23936,-53.735638"
+       orientation="1,0"
+       id="guide50"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="316.38013,154.14484"
+       orientation="0,-1"
+       id="guide51"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="233.87757,9.278128"
+       orientation="0,-1"
+       id="guide52"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="152.67426,-79.720696"
+       orientation="1,0"
+       id="guide53"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <defs
+     id="defs24">
+    <rect
+       x="89.810699"
+       y="223.07819"
+       width="399.80246"
+       height="146.30452"
+       id="rect47" />
+    <linearGradient
+       id="grad3">
+      <stop
+         offset="0%"
+         stop-color="#009ee0"
+         stop-opacity="1.0000"
+         id="stop23" />
+      <stop
+         offset="100%"
+         stop-color="#95bf0b"
+         stop-opacity="1.0000"
+         id="stop24" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#grad3"
+       id="grad4"
+       x1="228.47086"
+       y1="216.19876"
+       x2="228.47086"
+       y2="361.23065"
+       gradientTransform="matrix(0.99999104,0,0,1.000009,-240.40564,-226.2973)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       id="grad1"
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="0">
+      <stop
+         offset="0%"
+         stop-color="#7cc242"
+         id="stop1" />
+      <stop
+         offset="100%"
+         stop-color="#00b0c9"
+         id="stop2" />
+    </linearGradient>
+    <rect
+       x="89.810699"
+       y="223.07819"
+       width="399.80246"
+       height="146.30452"
+       id="rect25" />
+    <rect
+       x="89.810699"
+       y="223.07819"
+       width="421.45667"
+       height="30.237926"
+       id="rect25-7" />
+    <rect
+       x="89.810699"
+       y="223.07819"
+       width="421.45667"
+       height="30.237926"
+       id="rect53" />
+    <rect
+       x="89.810699"
+       y="223.07819"
+       width="399.80246"
+       height="146.30452"
+       id="rect59" />
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="g60"
+     inkscape:label="fundo.preto"
+     style="display:none;stroke-width:1.04761"
+     transform="matrix(1.626703,0,0,0.56013055,-5.9250327,-15.908304)">
+    <rect
+       style="display:inline;fill:#000000;fill-rule:evenodd;stroke-width:0.830833"
+       id="rect60"
+       width="296.75821"
+       height="292.41867"
+       x="-8.6524506"
+       y="-7.3048978"
+       rx="17.464626"
+       ry="50.719891" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g61"
+     inkscape:label="fundo.branco"
+     style="display:inline;fill:#f9f9f9;stroke-width:1.04761"
+     transform="matrix(1.626703,0,0,0.56013055,-5.9250327,-15.908304)">
+    <rect
+       style="display:inline;fill:#f9f9f9;fill-rule:evenodd;stroke-width:0.830833"
+       id="rect61"
+       width="296.75821"
+       height="292.41867"
+       x="-8.6524506"
+       y="-7.3048978"
+       rx="17.464626"
+       ry="50.719891" />
+  </g>
+  <path
+     d="M 133.09376,-10.096596 H -11.936842 V 134.9366 H 133.09376 Z M 22.008561,23.849704 H 99.148058 V 100.9903 H 22.008561 Z"
+     style="display:inline;fill:url(#grad4)"
+     id="path24"
+     inkscape:label="logo.externo" />
+  <defs
+     id="defs26">
+    <linearGradient
+       id="grad5"
+       gradientTransform="matrix(0.99996716,0,0,1.0000328,-240.40564,-226.2973)"
+       x1="270.54578"
+       y1="258.25952"
+       x2="331.4422"
+       y2="258.25952"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0%"
+         stop-color="#009ee0"
+         stop-opacity="1.0000"
+         id="stop25" />
+      <stop
+         offset="100%"
+         stop-color="#95bf0b"
+         stop-opacity="1.0000"
+         id="stop26" />
+    </linearGradient>
+  </defs>
+  <path
+     d="m 44.383861,46.224704 h 32.3889 v 32.3906 h -32.3889 z m -14.2526,46.6444 h 60.8944 v -60.8984 h -60.8944 z"
+     style="display:inline;fill:url(#grad5)"
+     id="path26"
+     inkscape:label="logo.interno" />
+  <text
+     xml:space="preserve"
+     transform="matrix(0.75,0,0,0.75,71.971024,-50.457568)"
+     id="text25-7"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.3934px;line-height:1.05;font-family:Mesmerize;-inkscape-font-specification:Mesmerize;text-align:start;letter-spacing:0.15px;white-space:pre;shape-inside:url(#rect25-7);shape-padding:0;display:inline;fill:#f9f9f9"
+     inkscape:label="texto.unemat.aia.roo.branco"
+     x="2.1629335e-06"
+     y="0"><tspan
+       x="89.810547"
+       y="241.37353"
+       id="tspan20"><tspan
+         style="font-weight:300;-inkscape-font-specification:'Mesmerize Light'"
+         id="tspan19">UNEMAT - Alto Araguaia &amp; Rondonópolis</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     transform="matrix(0.79831189,0,0,0.79831189,67.14485,-186.64068)"
+     id="text59"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.3333px;line-height:1.05;font-family:Mesmerize;-inkscape-font-specification:Mesmerize;text-align:start;letter-spacing:0.15px;white-space:pre;shape-inside:url(#rect59);shape-padding:0;display:inline;fill:#f9f9f9;stroke-width:0.939482"
+     inkscape:label="texto.ciencia.branco"
+     x="2.1629335e-06"
+     y="0"><tspan
+       x="89.810547"
+       y="277.54482"
+       id="tspan24"><tspan
+   style="font-weight:300;font-size:66.6667px;-inkscape-font-specification:'Mesmerize Light'"
+   id="tspan21">C</tspan><tspan
+   style="font-weight:300;-inkscape-font-specification:'Mesmerize Light'"
+   id="tspan22">IÊNCIA </tspan><tspan
+   style="font-weight:300;font-size:33.3333px;-inkscape-font-specification:'Mesmerize Light'"
+   id="tspan23">DA</tspan> </tspan><tspan
+       x="89.810547"
+       y="347.54485"
+       id="tspan27"><tspan
+         style="font-weight:300;font-size:66.6667px;-inkscape-font-specification:'Mesmerize Light'"
+         id="tspan25">C</tspan><tspan
+         style="font-weight:300;-inkscape-font-specification:'Mesmerize Light'"
+         id="tspan26">OMPUTAÇÃO</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     transform="matrix(0.79831189,0,0,0.79831189,67.14485,-186.64068)"
+     id="text25"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.3333px;line-height:1.05;font-family:Mesmerize;-inkscape-font-specification:Mesmerize;text-align:start;letter-spacing:0.15px;white-space:pre;shape-inside:url(#rect25);shape-padding:0;display:inline;stroke-width:0.939482"
+     inkscape:label="texto.ciencia.preto"
+     x="2.1629335e-06"
+     y="0"><tspan
+       x="89.810547"
+       y="277.54482"
+       id="tspan31"><tspan
+   style="font-weight:300;font-size:66.6667px;-inkscape-font-specification:'Mesmerize Light'"
+   id="tspan28">C</tspan><tspan
+   style="font-weight:300;-inkscape-font-specification:'Mesmerize Light'"
+   id="tspan29">IÊNCIA </tspan><tspan
+   style="font-weight:300;font-size:33.3333px;-inkscape-font-specification:'Mesmerize Light'"
+   id="tspan30">DA</tspan> </tspan><tspan
+       x="89.810547"
+       y="347.54485"
+       id="tspan34"><tspan
+         style="font-weight:300;font-size:66.6667px;-inkscape-font-specification:'Mesmerize Light'"
+         id="tspan32">C</tspan><tspan
+         style="font-weight:300;-inkscape-font-specification:'Mesmerize Light'"
+         id="tspan33">OMPUTAÇÃO</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     transform="matrix(0.75,0,0,0.75,71.971024,-50.457569)"
+     id="text53"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.3934px;line-height:1.05;font-family:Mesmerize;-inkscape-font-specification:Mesmerize;text-align:start;letter-spacing:0.15px;white-space:pre;shape-inside:url(#rect53);shape-padding:0;display:inline"
+     inkscape:label="texto.unemat.aia.roo.preto"
+     x="2.1629335e-06"
+     y="0"><tspan
+       x="89.810547"
+       y="241.37353"
+       id="tspan36"><tspan
+         style="font-weight:300;-inkscape-font-specification:'Mesmerize Light'"
+         id="tspan35">UNEMAT - Alto Araguaia &amp; Rondonópolis</tspan></tspan></text>
+</svg>

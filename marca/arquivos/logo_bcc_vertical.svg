@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   width="103.40056mm"
+   height="88.564842mm"
+   id="svg47"
+   viewBox="-10 -10 309.9368 265.46765"
+   sodipodi:docname="logo_bcc_vertical.svg"
+   inkscape:version="1.3 (0e150ed, 2023-07-21)"
+   inkscape:export-filename="logo_bcc_vertical_guias.pdf"
+   inkscape:export-xdpi="600"
+   inkscape:export-ydpi="600"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview47"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.9324125"
+     inkscape:cx="152.40017"
+     inkscape:cy="190.69428"
+     inkscape:window-width="1600"
+     inkscape:window-height="872"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="pt"
+     showguides="true"
+     labelstyle="default">
+    <sodipodi:guide
+       position="19.699451,265.46764"
+       orientation="0,390.80526"
+       id="guide1"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="309.93679,292.41866"
+       orientation="368.71631,0"
+       id="guide2"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="309.93679,1.4813235e-08"
+       orientation="0,-390.80526"
+       id="guide3"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-3.8476562e-08,1.4813235e-08"
+       orientation="-368.71631,0"
+       id="guide4"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="95.850602,42.755951"
+       orientation="0,-1"
+       id="guide5"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="130.7374,11.745462"
+       orientation="0,-1"
+       id="guide6"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="132.49936,64.60425"
+       orientation="0,-1"
+       id="guide7"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="343.23524,95.222965"
+       orientation="0,-1"
+       id="guide8"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="401.58524,83.552967"
+       orientation="0,-1"
+       id="guide9"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="142.01395,103.36736"
+       orientation="0,-1"
+       id="guide10"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="146.24265,50.860964"
+       orientation="0,-1"
+       id="guide11"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="9.1621901,10.688286"
+       orientation="1,0"
+       id="guide12"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="40.525072,9.6311102"
+       orientation="1,0"
+       id="guide13"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="47.925302,59.670762"
+       orientation="1,0"
+       id="guide14"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="80.34536,68.48056"
+       orientation="1,0"
+       id="guide15"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="230.46432,48.746612"
+       orientation="1,0"
+       id="guide16"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="263.23677,40.99399"
+       orientation="1,0"
+       id="guide17"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="176.88466,258.08034"
+       orientation="0,-1"
+       id="guide18"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <defs
+     id="defs24">
+    <rect
+       x="89.810699"
+       y="223.07819"
+       width="399.80246"
+       height="146.30452"
+       id="rect47" />
+    <linearGradient
+       id="grad3">
+      <stop
+         offset="0%"
+         stop-color="#009ee0"
+         stop-opacity="1.0000"
+         id="stop23" />
+      <stop
+         offset="100%"
+         stop-color="#95bf0b"
+         stop-opacity="1.0000"
+         id="stop24" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#grad3"
+       id="grad4"
+       x1="228.47086"
+       y1="216.19876"
+       x2="228.47086"
+       y2="361.23065"
+       gradientTransform="matrix(0.99999104,0,0,1.000009,-156.0157,-218.8958)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       id="grad1"
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="0">
+      <stop
+         offset="0%"
+         stop-color="#7cc242"
+         id="stop1" />
+      <stop
+         offset="100%"
+         stop-color="#00b0c9"
+         id="stop2" />
+    </linearGradient>
+    <rect
+       x="89.810699"
+       y="223.07819"
+       width="399.80246"
+       height="146.30452"
+       id="rect25" />
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="fundo.branco"
+     style="display:inline"
+     transform="translate(-1.3475494,-2.6951022)">
+    <rect
+       style="display:inline;fill:#f9f9f9;fill-rule:evenodd;stroke-width:0.793072"
+       id="rect20"
+       width="309.9368"
+       height="265.46765"
+       x="-8.6524506"
+       y="-7.3048978"
+       rx="28.40976"
+       ry="28.40976" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g4"
+     inkscape:label="fundo.preto"
+     style="display:none;fill:#000000"
+     transform="translate(-1.3475494,-2.6951022)">
+    <rect
+       style="display:none;fill:#000000;fill-rule:evenodd;stroke-width:0.793072"
+       id="rect4"
+       width="309.9368"
+       height="265.46765"
+       x="-8.6524506"
+       y="-7.3048978"
+       rx="28.40976"
+       ry="28.40976" />
+  </g>
+  <path
+     d="M 217.4837,-2.6951022 H 72.45309 V 142.3381 H 217.4837 Z M 106.3985,31.251198 H 183.538 V 108.3918 h -77.1395 z"
+     style="display:inline;fill:url(#grad4)"
+     id="path24"
+     inkscape:label="logo.externo" />
+  <defs
+     id="defs26">
+    <linearGradient
+       id="grad5"
+       gradientTransform="matrix(0.99996716,0,0,1.0000328,-156.01571,-218.8958)"
+       x1="270.54578"
+       y1="258.25952"
+       x2="331.4422"
+       y2="258.25952"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0%"
+         stop-color="#009ee0"
+         stop-opacity="1.0000"
+         id="stop25" />
+      <stop
+         offset="100%"
+         stop-color="#95bf0b"
+         stop-opacity="1.0000"
+         id="stop26" />
+    </linearGradient>
+  </defs>
+  <path
+     d="m 128.77379,53.626198 h 32.3889 v 32.3906 h -32.3889 z m -14.2526,46.644402 h 60.8944 V 39.372198 h -60.8944 z"
+     style="display:inline;fill:url(#grad5)"
+     id="path26"
+     inkscape:label="logo.interno" />
+  <text
+     xml:space="preserve"
+     transform="matrix(0.75,0,0,0.75,-72.670693,-17.212381)"
+     id="text47"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.3333px;line-height:1.05;font-family:Mesmerize;-inkscape-font-specification:Mesmerize;text-align:center;letter-spacing:0.15px;white-space:pre;shape-inside:url(#rect47);shape-padding:0;display:none"
+     inkscape:label="texto.ciencia.branco"
+     x="194.97443"
+     y="0"><tspan
+       x="143.87401"
+       y="277.54482"
+       id="tspan10"><tspan
+         style="font-weight:300;font-size:66.6667px;-inkscape-font-specification:'Mesmerize Light';fill:#f9f9f9"
+         id="tspan2">C</tspan><tspan
+         style="font-weight:300;-inkscape-font-specification:'Mesmerize Light';fill:#f9f9f9"
+         id="tspan5">IÊNCIA </tspan><tspan
+         style="font-weight:300;font-size:33.3333px;-inkscape-font-specification:'Mesmerize Light';fill:#f9f9f9"
+         id="tspan7">DA</tspan><tspan
+         style="fill:#f9f9f9"
+         id="tspan9"> </tspan></tspan><tspan
+       x="91.497522"
+       y="347.54485"
+       id="tspan23"><tspan
+         style="font-weight:300;font-size:66.6667px;-inkscape-font-specification:'Mesmerize Light';fill:#f9f9f9"
+         id="tspan11">C</tspan><tspan
+         style="font-weight:300;-inkscape-font-specification:'Mesmerize Light';fill:#f9f9f9"
+         id="tspan22">OMPUTAÇÃO</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     transform="matrix(0.75,0,0,0.75,-72.585567,-17.212381)"
+     id="text25"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.3333px;line-height:1.05;font-family:Mesmerize;-inkscape-font-specification:Mesmerize;text-align:center;letter-spacing:0.15px;white-space:pre;shape-inside:url(#rect25);shape-padding:0;display:inline"
+     inkscape:label="texto.ciencia.preto"
+     x="194.97443"
+     y="0"><tspan
+       x="143.87401"
+       y="277.54482"
+       id="tspan27"><tspan
+   style="font-weight:300;font-size:66.6667px;-inkscape-font-specification:'Mesmerize Light'"
+   id="tspan24">C</tspan><tspan
+   style="font-weight:300;-inkscape-font-specification:'Mesmerize Light'"
+   id="tspan25">IÊNCIA </tspan><tspan
+   style="font-weight:300;font-size:33.3333px;-inkscape-font-specification:'Mesmerize Light'"
+   id="tspan26">DA</tspan> </tspan><tspan
+       x="91.497522"
+       y="347.54485"
+       id="tspan30"><tspan
+         style="font-weight:300;font-size:66.6667px;-inkscape-font-specification:'Mesmerize Light'"
+         id="tspan28">C</tspan><tspan
+         style="font-weight:300;-inkscape-font-specification:'Mesmerize Light'"
+         id="tspan29">OMPUTAÇÃO</tspan></tspan></text>
+</svg>
