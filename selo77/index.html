@@ -1001,10 +1001,10 @@
 
       const DESTAQUES = {
         brasil77: {
-          brasaoSup: "RUF 2026 · CURSOS",
+          brasaoSup: "RUF 2026",
           brasaoNum: "77º",
           brasaoSub: "NO BRASIL",
-          infoTopo: "RUF 2026 · COMPUTAÇÃO  •  2º EM MT",
+          infoTopo: "RUF 2026 · COMPUTAÇÃO",
           avatarNum: "77º",
           avatarTerritorio: "BRASIL · RUF 2026",
           titulos: {
@@ -1028,10 +1028,10 @@
           }
         },
         mt2: {
-          brasaoSup: "RUF 2026 · CURSOS",
+          brasaoSup: "RUF 2026",
           brasaoNum: "2º",
           brasaoSub: "EM MATO GROSSO",
-          infoTopo: "RUF 2026 · COMPUTAÇÃO  •  77º BRASIL",
+          infoTopo: "RUF 2026 · MATO GROSSO",
           avatarNum: "2º",
           avatarTerritorio: "MATO GROSSO · RUF 2026",
           titulos: {
@@ -1055,10 +1055,10 @@
           }
         },
         sul1: {
-          brasaoSup: "RUF 2026 · CURSOS",
+          brasaoSup: "RUF 2026",
           brasaoNum: "1º",
           brasaoSub: "NA REGIÃO SUL DE MT",
-          infoTopo: "RUF 2026 · COMPUTAÇÃO  •  2º DE MT",
+          infoTopo: "RUF 2026 · SUL DE MT",
           avatarNum: "1º",
           avatarTerritorio: "SUL DE MT · RUF 2026",
           titulos: {
@@ -1418,10 +1418,10 @@
           ctx.fillStyle = isDark ? PALETA.branco : PALETA.preto;
           ctx.textAlign = "center";
           ctx.textBaseline = "middle";
-          ctx.font = `700 ${Math.round(28 * escala)}px "Aller", sans-serif`;
+          ctx.font = `700 ${Math.round(34 * escala)}px "Aller", sans-serif`;
           ctx.fillText("SUA FOTO APARECE AQUI", cx, cy + (circular ? 110 : 158) * escala);
-          ctx.font = `400 ${Math.round(21 * escala)}px "Aller", sans-serif`;
-          ctx.fillText("Toque em 'Escolher foto da galeria'", cx, cy + (circular ? 142 : 194) * escala);
+          ctx.font = `400 ${Math.round(26 * escala)}px "Aller", sans-serif`;
+          ctx.fillText("Toque em 'Escolher foto da galeria'", cx, cy + (circular ? 148 : 200) * escala);
         }
         ctx.restore();
       }
@@ -1447,18 +1447,18 @@
         ctx.textBaseline = "middle";
 
         ctx.fillStyle = PALETA.ciano;
-        ctx.font = `700 ${Math.max(13, Math.round(h * 0.068))}px "Aller", sans-serif`;
+        ctx.font = `700 ${Math.max(22, Math.round(h * 0.088))}px "Aller", sans-serif`;
         ctx.fillText(dest.brasaoSup, cx, y + h * 0.13, w - 24);
 
-        ctx.font = `700 ${Math.round(h * 0.36)}px "Aller", sans-serif`;
+        ctx.font = `700 ${Math.round(h * 0.34)}px "Aller", sans-serif`;
         ctx.fillText(dest.brasaoNum, cx, y + h * 0.36, w - 24);
 
         ctx.fillStyle = PALETA.verde;
-        ctx.font = `700 ${Math.max(15, Math.round(h * 0.092))}px "Aller", sans-serif`;
+        ctx.font = `700 ${Math.max(24, Math.round(h * 0.104))}px "Aller", sans-serif`;
         ctx.fillText("EM COMPUTAÇÃO", cx, y + h * 0.57, w - 22);
 
         ctx.fillStyle = PALETA.branco;
-        ctx.font = `700 ${Math.max(14, Math.round(h * 0.082))}px "Aller", sans-serif`;
+        ctx.font = `700 ${Math.max(22, Math.round(h * 0.094))}px "Aller", sans-serif`;
         ctx.fillText(dest.brasaoSub, cx, y + h * 0.71, w - 22);
 
         const estrelaR = h * 0.052;
@@ -1479,18 +1479,18 @@
         ctx.strokeStyle = isDark ? PALETA.ciano : "#C5D4E2";
         ctx.stroke();
 
-        const fsBase = Math.min(w * 0.056, h * 0.085);
+        const fsBase = Math.max(22, Math.min(w * 0.072, h * 0.102));
         ctx.textAlign = "left";
         ctx.textBaseline = "middle";
         ctx.fillStyle = isDark ? PALETA.verde : PALETA.preto;
         ctx.font = `700 ${Math.round(fsBase * 1.0)}px "Aller", sans-serif`;
-        ctx.fillText("COMPUTAÇÃO NO RUF (176º A 77º)", x + 16, y + h * 0.14, w - 32);
+        ctx.fillText("RUF COMPUTAÇÃO (176º A 77º)", x + 16, y + h * 0.13, w - 32);
 
         const plot = {
           x: x + w * 0.14,
-          y: y + h * 0.39,
+          y: y + h * 0.42,
           w: w * 0.72,
-          h: h * 0.33
+          h: h * 0.29
         };
 
         const pts = HISTORICO_RUF.map((d, i) => ({
@@ -1541,11 +1541,11 @@
           ctx.stroke();
 
           ctx.fillStyle = isDark ? (ultimo ? PALETA.verde : PALETA.branco) : PALETA.preto;
-          ctx.font = `700 ${Math.round(fsBase * (ultimo ? 1.25 : 1.05))}px "Aller", sans-serif`;
-          ctx.fillText(`${p.posicao}º`, p.px, p.py - (ultimo ? 19 : 16));
+          ctx.font = `700 ${Math.round(fsBase * (ultimo ? 1.24 : 1.04))}px "Aller", sans-serif`;
+          ctx.fillText(`${p.posicao}º`, p.px, p.py - (ultimo ? 22 : 20));
 
           ctx.fillStyle = isDark ? "#D6E1EC" : PALETA.preto;
-          ctx.font = `${ultimo ? "700" : "400"} ${Math.round(fsBase * 0.96)}px "Aller", sans-serif`;
+          ctx.font = `${ultimo ? "700" : "400"} ${Math.round(fsBase * 0.98)}px "Aller", sans-serif`;
           ctx.fillText(String(p.ano), p.px, y + h * 0.87);
         });
       }
@@ -1632,10 +1632,10 @@
 
       function obterRecortePorFormato(formato) {
         if (formato === "feed") {
-          return { x: 48, y: 108, w: 984, h: 632, r: 20 };
+          return { x: 48, y: 112, w: 984, h: 582, r: 20 };
         }
         if (formato === "stories") {
-          return { x: 56, y: 208, w: 968, h: 866, r: 22 };
+          return { x: 56, y: 212, w: 968, h: 830, r: 22 };
         }
         return { x: 24, y: 24, w: 1032, h: 1032, cx: 540, cy: 540, r: 516 };
       }
@@ -1669,17 +1669,17 @@
 
         if (formato === "feed") {
           // Faixa superior do perfil
-          const badgeY = 42;
+          const badgeY = 40;
           const badgeW = 984;
-          const badgeH = 50;
-          roundedRectPath(ctx, 48, badgeY, badgeW, badgeH, 25);
+          const badgeH = 56;
+          roundedRectPath(ctx, 48, badgeY, badgeW, badgeH, 28);
           ctx.fillStyle = state.perfil === "estudante" || state.perfil === "ptes" ? PALETA.verde : PALETA.ciano;
           ctx.fill();
 
           ctx.fillStyle = PALETA.preto;
           ctx.textAlign = "center";
           ctx.textBaseline = "middle";
-          ctx.font = '700 22px "Aller", sans-serif';
+          ctx.font = '700 28px "Aller", sans-serif';
           ctx.fillText(info.badge, W / 2, badgeY + badgeH / 2 + 1, badgeW - 32);
 
           const recorte = obterRecortePorFormato("feed");
@@ -1691,65 +1691,66 @@
           ctx.strokeStyle = isDark ? PALETA.ciano : PALETA.preto;
           ctx.stroke();
 
-          // Bloco informativo inferior
-          const infoTop = 760;
-          desenharBrasao77(ctx, 48, infoTop, 232, 248, isDark);
+          // Bloco informativo inferior (largura central ampliada para evitar corte de subtitulo)
+          const infoTop = 710;
+          desenharBrasao77(ctx, 48, infoTop, 236, 290, isDark);
 
           // Título e indicadores ao centro
           const midX = 300;
-          const midW = 384;
+          const midW = 398;
           ctx.textAlign = "left";
           ctx.textBaseline = "top";
           ctx.fillStyle = isDark ? PALETA.verde : PALETA.preto;
-          ctx.font = '700 18px "Aller", sans-serif';
-          ctx.fillText(info.dest.infoTopo, midX, infoTop + 4, midW);
+          ctx.font = '700 24px "Aller", sans-serif';
+          ctx.fillText(info.dest.infoTopo, midX, infoTop + 2, midW);
 
           ctx.fillStyle = isDark ? PALETA.branco : PALETA.preto;
-          ctx.font = '700 30px "Mesmerize", "Aller", sans-serif';
+          ctx.font = '700 34px "Mesmerize", "Aller", sans-serif';
           const linhasTit = quebrarTexto(ctx, info.titulo, midW).slice(0, 3);
           linhasTit.forEach((ln, idx) => {
-            ctx.fillText(ln, midX, infoTop + 34 + idx * 36, midW);
+            ctx.fillText(ln, midX, infoTop + 34 + idx * 39, midW);
           });
 
-          const subY = infoTop + 34 + linhasTit.length * 36 + 8;
+          const subY = infoTop + 34 + linhasTit.length * 39 + 8;
           ctx.fillStyle = isDark ? "#D6E1EC" : "#1F2937";
-          ctx.font = '400 21px "Aller", sans-serif';
-          const linhasSub = quebrarTexto(ctx, info.subtitulo, midW).slice(0, 3);
+          ctx.font = '400 24px "Aller", sans-serif';
+          const maxLinhasSub = linhasTit.length <= 2 ? 3 : 2;
+          const linhasSub = quebrarTexto(ctx, info.subtitulo, midW).slice(0, maxLinhasSub);
           linhasSub.forEach((ln, idx) => {
-            ctx.fillText(ln, midX, subY + idx * 25, midW);
+            ctx.fillText(ln, midX, subY + idx * 29, midW);
           });
 
           ctx.fillStyle = isDark ? PALETA.ciano : PALETA.preto;
-          ctx.font = '700 18px "Aller", sans-serif';
-          ctx.fillText(state.campus, midX, infoTop + 224, midW);
+          ctx.font = '700 24px "Aller", sans-serif';
+          ctx.fillText(state.campus, midX, infoTop + 260, midW);
 
           // Gráfico RUF à direita
-          desenharGraficoRUF(ctx, 702, infoTop, 330, 248, isDark);
+          desenharGraficoRUF(ctx, 714, infoTop, 318, 290, isDark);
 
           // Assinaturas oficiais ampliadas + barra obrigatória
-          desenharAssinaturas(ctx, 48, 1026, 984, 156, isDark);
+          desenharAssinaturas(ctx, 48, 1018, 984, 152, isDark);
 
-          roundedRectPath(ctx, 48, 1200, 984, 74, 16);
+          roundedRectPath(ctx, 48, 1188, 984, 80, 16);
           ctx.fillStyle = isDark ? PALETA.verde : PALETA.ciano;
           ctx.fill();
           ctx.fillStyle = PALETA.preto;
           ctx.textAlign = "center";
           ctx.textBaseline = "middle";
-          ctx.font = '700 23px "Aller", sans-serif';
-          ctx.fillText("UNIVERSIDADE PÚBLICA E GRATUITA. SEM MENSALIDADE.", W / 2, 1237);
+          ctx.font = '700 29px "Aller", sans-serif';
+          ctx.fillText("Universidade Pública e Gratuita. Sem Mensalidade.", W / 2, 1228, 944);
           return;
         }
 
         // STORIES 9:16 (safe zones >= 130px topo e >= 150px base)
         const sBadgeY = 136;
-        roundedRectPath(ctx, 56, sBadgeY, 968, 54, 27);
+        roundedRectPath(ctx, 56, sBadgeY, 968, 60, 30);
         ctx.fillStyle = state.perfil === "estudante" || state.perfil === "ptes" ? PALETA.verde : PALETA.ciano;
         ctx.fill();
         ctx.fillStyle = PALETA.preto;
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-        ctx.font = '700 23px "Aller", sans-serif';
-        ctx.fillText(info.badge, W / 2, sBadgeY + 28, 920);
+        ctx.font = '700 29px "Aller", sans-serif';
+        ctx.fillText(info.badge, W / 2, sBadgeY + 31, 920);
 
         const recSt = obterRecortePorFormato("stories");
         desenharMolduraFoto(ctx, recSt, isDark, false);
@@ -1759,36 +1760,36 @@
         ctx.stroke();
 
         // Faixa título + subtítulo abaixo da foto
-        const txtY = 1094;
+        const txtY = 1060;
         ctx.textAlign = "center";
         ctx.textBaseline = "top";
         ctx.fillStyle = isDark ? PALETA.branco : PALETA.preto;
-        ctx.font = '700 39px "Mesmerize", "Aller", sans-serif';
+        ctx.font = '700 44px "Mesmerize", "Aller", sans-serif';
         ctx.fillText(info.titulo, W / 2, txtY, 940);
 
         ctx.fillStyle = isDark ? "#D6E1EC" : "#1F2937";
-        ctx.font = '400 24px "Aller", sans-serif';
+        ctx.font = '400 30px "Aller", sans-serif';
         const subSt = quebrarTexto(ctx, info.subtitulo, 940).slice(0, 2);
         subSt.forEach((ln, idx) => {
-          ctx.fillText(ln, W / 2, txtY + 48 + idx * 30, 940);
+          ctx.fillText(ln, W / 2, txtY + 52 + idx * 36, 940);
         });
 
         // Linha intermediária: Brasão + Gráfico RUF
-        const cardY = 1216;
-        desenharBrasao77(ctx, 56, cardY, 340, 246, isDark);
-        desenharGraficoRUF(ctx, 416, cardY, 608, 246, isDark);
+        const cardY = 1196;
+        desenharBrasao77(ctx, 56, cardY, 356, 266, isDark);
+        desenharGraficoRUF(ctx, 430, cardY, 594, 266, isDark);
 
         // Assinaturas ampliadas + selo obrigatório dentro da safe zone (termina antes de y=1770)
-        desenharAssinaturas(ctx, 56, 1480, 968, 162, isDark);
+        desenharAssinaturas(ctx, 56, 1480, 968, 156, isDark);
 
-        roundedRectPath(ctx, 56, 1660, 968, 76, 16);
+        roundedRectPath(ctx, 56, 1654, 968, 82, 16);
         ctx.fillStyle = isDark ? PALETA.verde : PALETA.ciano;
         ctx.fill();
         ctx.fillStyle = PALETA.preto;
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-        ctx.font = '700 23px "Aller", sans-serif';
-        ctx.fillText("UNIVERSIDADE PÚBLICA E GRATUITA. SEM MENSALIDADE.", W / 2, 1698);
+        ctx.font = '700 29px "Aller", sans-serif';
+        ctx.fillText("Universidade Pública e Gratuita. Sem Mensalidade.", W / 2, 1695, 930);
       }
 
       function desenharAvatar(ctx, W, H, isDark, info) {
