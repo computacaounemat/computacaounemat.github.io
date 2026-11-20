@@ -201,6 +201,47 @@
       color: var(--branco);
     }
 
+    .hero-marcas {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+      background: var(--branco);
+      border: 3px solid var(--ciano);
+      border-radius: 14px;
+      padding: 12px 22px;
+      margin: 0 0 16px;
+      max-width: 100%;
+    }
+
+    .hero-marcas img {
+      height: 58px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .hero-marcas-sep {
+      width: 2px;
+      height: 48px;
+      background: #CBD5E1;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 600px) {
+      .hero-marcas {
+        gap: 12px;
+        padding: 10px 14px;
+      }
+      .hero-marcas img {
+        height: 42px;
+      }
+      .hero-marcas-sep {
+        height: 36px;
+      }
+    }
+
     .aviso-privacidade {
       background: var(--superficie);
       border-left: 4px solid var(--verde);
@@ -684,14 +725,20 @@
     </header>
 
     <section class="hero" aria-labelledby="titulo-principal">
+      <div class="hero-marcas" aria-label="Marcas oficiais da UNEMAT e Ciência da Computação">
+        <img src="./assets/unemat_aia_roo_transparente.png" alt="UNEMAT — Alto Araguaia e Rondonópolis">
+        <span class="hero-marcas-sep" aria-hidden="true"></span>
+        <img src="../marca/arquivos/logo_bcc_horizontal_fundo_transparente_texto_preto.png" alt="Ciência da Computação — UNEMAT">
+      </div>
       <span class="hero-tag">Ciência da Computação — UNEMAT</span>
       <h1 id="titulo-principal">Estúdio "Meu Selo 77"</h1>
       <p>
         Crie sua foto comemorativa em segundos para o Instagram, LinkedIn ou foto de perfil do WhatsApp.
-        Mostre seu rosto, sua caneca, seu laboratório ou sua turma nesta conquista histórica do curso.
+        Escolha o destaque oficial (77º no Brasil, 2º Melhor de MT ou 1º da Região Sul de MT) e mostre quem constrói essa conquista.
       </p>
       <ul class="hero-fatos" aria-label="Indicadores oficiais do curso">
-        <li><strong>77º no Brasil</strong> no RUF 2026 (2º de MT)</li>
+        <li><strong>77º no Brasil</strong> no RUF 2026</li>
+        <li><strong>2º melhor de Mato Grosso</strong> (1º da Região Sul de MT)</li>
         <li><strong>Evolução:</strong> 176º (2023) → 120º (2024) → 105º (2025) → 77º (2026)</li>
         <li><strong>4 estrelas</strong> no Guia da Faculdade (Estadão/Quero, ed. 2025)</li>
         <li><strong>Universidade Pública e Gratuita. Sem Mensalidade.</strong></li>
@@ -746,7 +793,25 @@
         </div>
 
         <fieldset>
-          <legend>2. Escolha o seu perfil no curso</legend>
+          <legend>2. Escolha o destaque da conquista (RUF 2026)</legend>
+          <div class="opcoes-grade" role="radiogroup">
+            <div class="opcao-radio">
+              <input type="radio" name="destaque" id="destaque-brasil77" value="brasil77" checked>
+              <label for="destaque-brasil77">77º no Brasil<small>Entre 592 instituições</small></label>
+            </div>
+            <div class="opcao-radio">
+              <input type="radio" name="destaque" id="destaque-mt2" value="mt2">
+              <label for="destaque-mt2">2º Melhor de MT<small>Em todo o Estado</small></label>
+            </div>
+            <div class="opcao-radio">
+              <input type="radio" name="destaque" id="destaque-sul1" value="sul1">
+              <label for="destaque-sul1">1º da Região Sul de MT<small>Liderança regional</small></label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>3. Escolha o seu perfil no curso</legend>
           <div class="opcoes-grade" role="radiogroup">
             <div class="opcao-radio">
               <input type="radio" name="perfil" id="perfil-docente" value="docente" checked>
@@ -797,7 +862,7 @@
         </fieldset>
 
         <fieldset>
-          <legend>3. Escolha o visual (100% Paleta BCC)</legend>
+          <legend>4. Escolha o visual (100% Paleta BCC)</legend>
           <div class="opcoes-grade">
             <div class="opcao-radio">
               <input type="radio" name="tema" id="tema-claro" value="claro" checked>
@@ -811,7 +876,7 @@
         </fieldset>
 
         <fieldset>
-          <legend>4. Escolha o formato da imagem</legend>
+          <legend>5. Escolha o formato da imagem</legend>
           <div class="opcoes-grade">
             <div class="opcao-radio">
               <input type="radio" name="formato" id="formato-feed" value="feed" checked>
@@ -829,7 +894,7 @@
         </fieldset>
 
         <div>
-          <h2 class="passo-titulo"><span class="passo-num" aria-hidden="true">5</span> Legenda pronta para copiar</h2>
+          <h2 class="passo-titulo"><span class="passo-num" aria-hidden="true">6</span> Legenda pronta para copiar</h2>
           <div class="campo-grupo">
             <label for="campoLegenda">Texto sugerido para sua postagem (você pode editar antes de copiar)</label>
             <textarea id="campoLegenda"></textarea>
@@ -904,7 +969,6 @@
       <p>
         <strong>Coordenação do Curso de Ciência da Computação — UNEMAT</strong><br>
         Campus Alto Araguaia | Campus Avançado de Rondonópolis<br>
-        Rondonópolis: Rua Fernando Corrêa da Costa, Setor Rodoviária, Rondonópolis - MT<br>
         <strong>Universidade Pública e Gratuita. Sem Mensalidade.</strong>
       </p>
     </footer>
@@ -935,50 +999,122 @@
         { ano: 2026, posicao: 77 }
       ];
 
+      const DESTAQUES = {
+        brasil77: {
+          brasaoSup: "RUF 2026",
+          brasaoNum: "77º",
+          brasaoSub: "NO BRASIL",
+          infoTopo: "2º EM MT  •  4 ESTRELAS GUIA DA FACULDADE",
+          avatarLinha1: "RUF 2026 • 2º EM MT",
+          avatarLinha2: "EU FAÇO PARTE DOS 77",
+          avatarNum: "77º",
+          avatarSub: "NO BRASIL",
+          titulos: {
+            docente: "EU FORMO O TOP 77 DO BRASIL",
+            estudante: "EU ESTUDO NO TOP 77 DO BRASIL",
+            egresso: "FORMADO NO TOP 77 DO BRASIL",
+            ptes: "MEU TRABALHO CONSTRÓI O TOP 77",
+            orgulho: "EU APOIO O TOP 77 DO BRASIL"
+          },
+          legendas: {
+            docente:
+              "Eu faço parte dos 77! 77º do Brasil no RUF 2026 e 2º de Mato Grosso. Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+            estudante:
+              "Eu faço parte dos 77! O curso é o 77º do Brasil no RUF 2026 e eu estou nele. Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu e marque 2 colegas: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+            egresso:
+              "Eu faço parte dos 77! Me formei na UNEMAT e levo essa história comigo. O curso é 77º do Brasil no RUF 2026. Universidade Pública e Gratuita. Sem Mensalidade. Marque a sua turma e faça o seu: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+            ptes:
+              "Eu faço parte dos 77! No apoio de todos os dias, ajudo a manter o curso de pé: 77º do Brasil no RUF 2026. Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+            orgulho:
+              "Eu tenho orgulho de fazer parte dos 77! Ciência da Computação da UNEMAT: 77º do Brasil no RUF 2026 e 2º de Mato Grosso. Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu: https://computacaounemat.github.io/selo77/ @computacao.unemataia"
+          }
+        },
+        mt2: {
+          brasaoSup: "RUF 2026",
+          brasaoNum: "2º",
+          brasaoSub: "MELHOR DE MT",
+          infoTopo: "77º DO BRASIL  •  4 ESTRELAS GUIA DA FACULDADE",
+          avatarLinha1: "RUF 2026 • 77º DO BRASIL",
+          avatarLinha2: "2º MELHOR DE MATO GROSSO",
+          avatarNum: "2º",
+          avatarSub: "EM MT",
+          titulos: {
+            docente: "EU FORMO O 2º MELHOR DE MT",
+            estudante: "EU ESTUDO NO 2º MELHOR DE MT",
+            egresso: "FORMADO NO 2º MELHOR DE MT",
+            ptes: "MEU TRABALHO FAZ O 2º DE MT",
+            orgulho: "EU APOIO O 2º MELHOR DE MT"
+          },
+          legendas: {
+            docente:
+              "Ciência da Computação da UNEMAT: 2º melhor curso de Mato Grosso e 77º do Brasil no RUF 2026! Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+            estudante:
+              "Estudo no 2º melhor curso de Computação de Mato Grosso (77º do Brasil no RUF 2026)! Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu e marque 2 colegas: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+            egresso:
+              "Me formei no 2º melhor curso de Computação de Mato Grosso (77º do Brasil no RUF 2026)! Universidade Pública e Gratuita. Sem Mensalidade. Marque sua turma: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+            ptes:
+              "Sustentamos no dia a dia o 2º melhor curso de Computação de Mato Grosso e 77º do Brasil no RUF 2026! Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+            orgulho:
+              "Orgulho da UNEMAT: 2º melhor curso de Computação de Mato Grosso e 77º do Brasil no RUF 2026! Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu: https://computacaounemat.github.io/selo77/ @computacao.unemataia"
+          }
+        },
+        sul1: {
+          brasaoSup: "RUF 2026",
+          brasaoNum: "1º",
+          brasaoSub: "SUL DE MT",
+          infoTopo: "2º DE MT  •  77º NO BRASIL  •  4 ESTRELAS",
+          avatarLinha1: "RUF 2026 • 2º MT • 77º BRASIL",
+          avatarLinha2: "1º DA REGIÃO SUL DE MT",
+          avatarNum: "1º",
+          avatarSub: "SUL DE MT",
+          titulos: {
+            docente: "EU FORMO O 1º DO SUL DE MT",
+            estudante: "EU ESTUDO NO 1º DO SUL DE MT",
+            egresso: "FORMADO NO 1º DO SUL DE MT",
+            ptes: "MEU TRABALHO FAZ O 1º DO SUL DE MT",
+            orgulho: "EU APOIO O 1º DO SUL DE MT"
+          },
+          legendas: {
+            docente:
+              "1º melhor curso de Computação da Região Sul de Mato Grosso (2º do Estado e 77º do Brasil no RUF 2026)! Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+            estudante:
+              "Estudo no 1º melhor curso de Computação da Região Sul de Mato Grosso (2º de MT e 77º do Brasil no RUF 2026)! Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu e marque 2 colegas: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+            egresso:
+              "Formado no 1º melhor curso de Computação da Região Sul de Mato Grosso (2º de MT e 77º do Brasil no RUF 2026)! Universidade Pública e Gratuita. Sem Mensalidade. Marque sua turma: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+            ptes:
+              "No trabalho diário de Alto Araguaia e Rondonópolis, construímos o 1º melhor curso de Computação da Região Sul de Mato Grosso (RUF 2026)! Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+            orgulho:
+              "Orgulho do polo de Alto Araguaia e Rondonópolis: 1º melhor curso de Computação da Região Sul de Mato Grosso no RUF 2026! Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu: https://computacaounemat.github.io/selo77/ @computacao.unemataia"
+          }
+        }
+      };
+
       const PERFIS = {
         docente: {
           rotulo: "Docente",
           badge: "DOCENTE  |  CIÊNCIA DA COMPUTAÇÃO",
-          titulo: "EU FORMO O TOP 77 DO BRASIL",
           subtitulo: "Cada aula, pesquisa e orientação constrói essa conquista."
         },
         estudante: {
           rotulo: "Estudante",
           badge: "ESTUDANTE  |  BCC UNEMAT",
-          titulo: "EU ESTUDO NO TOP 77 DO BRASIL",
           subtitulo: "Ciência da Computação pública, gratuita e de excelência."
         },
         egresso: {
           rotulo: "Egresso / Ex-aluno",
           badge: "EGRESSO  |  EX-ALUNO BCC",
-          titulo: "FORMADO NO TOP 77 DO BRASIL",
           subtitulo: "História iniciada em Alto Araguaia em 2004 e construída também em Rondonópolis."
         },
         ptes: {
           rotulo: "Técnico PTES",
           badge: "TÉCNICO  |  PTES UNEMAT",
-          titulo: "MEU TRABALHO CONSTRÓI O TOP 77",
           subtitulo: "Em cada processo, laboratório e atendimento, essa vitória é nossa."
         },
         orgulho: {
           rotulo: "Orgulho UNEMAT",
           badge: "ORGULHO UNEMAT  |  PARCEIRO",
-          titulo: "EU APOIO O TOP 77 DO BRASIL",
           subtitulo: "Ciência da Computação UNEMAT conectando universidade e sociedade."
         }
-      };
-
-      const LEGENDAS_APROVADAS = {
-        docente:
-          "Eu faço parte dos 77! 77º do Brasil no RUF 2026 e 2º de Mato Grosso. Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
-        estudante:
-          "Eu faço parte dos 77! O curso é o 77º do Brasil no RUF 2026 e eu estou nele. Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu e marque 2 colegas: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
-        egresso:
-          "Eu faço parte dos 77! Me formei na UNEMAT e levo essa história comigo. O curso é 77º do Brasil no RUF 2026. Universidade Pública e Gratuita. Sem Mensalidade. Marque a sua turma e faça o seu: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
-        ptes:
-          "Eu faço parte dos 77! No apoio de todos os dias, ajudo a manter o curso de pé: 77º do Brasil no RUF 2026. Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
-        orgulho:
-          "Eu tenho orgulho de fazer parte dos 77! Ciência da Computação da UNEMAT: 77º do Brasil no RUF 2026 e 2º de Mato Grosso. Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu: https://computacaounemat.github.io/selo77/ @computacao.unemataia"
       };
 
       const MANIFESTO_LOGOS = {
@@ -988,6 +1124,7 @@
       };
 
       const state = {
+        destaque: "brasil77",
         perfil: "docente",
         tema: "claro",
         formato: "feed",
@@ -1102,8 +1239,8 @@
         el.statusGeral.classList.toggle("erro", Boolean(isErro));
       }
 
-      function montarLegenda(perfil, turma, atuacao) {
-        const base = LEGENDAS_APROVADAS[perfil];
+      function montarLegenda(destaque, perfil, turma, atuacao) {
+        const base = DESTAQUES[destaque].legendas[perfil];
         if (perfil !== "egresso") return base;
         const detalhes = [
           turma.trim() ? `Turma/Ano: ${turma.trim()}` : "",
@@ -1114,7 +1251,7 @@
 
       function atualizarLegendaAutomatica() {
         if (!state.legendaEditadaManualmente) {
-          el.campoLegenda.value = montarLegenda(state.perfil, state.turma, state.atuacao);
+          el.campoLegenda.value = montarLegenda(state.destaque, state.perfil, state.turma, state.atuacao);
         }
       }
 
@@ -1295,6 +1432,7 @@
       }
 
       function desenharBrasao77(ctx, x, y, w, h, isDark) {
+        const dest = DESTAQUES[state.destaque];
         roundedRectPath(ctx, x, y, w, h, 18);
         ctx.fillStyle = PALETA.preto;
         ctx.fill();
@@ -1315,7 +1453,7 @@
 
         ctx.fillStyle = PALETA.ciano;
         ctx.font = `700 ${Math.round(h * 0.44)}px "Aller", sans-serif`;
-        ctx.fillText("77º", cx, y + h * 0.34);
+        ctx.fillText(dest.brasaoNum, cx, y + h * 0.34, w - 24);
 
         const estrelaR = h * 0.068;
         const esp = estrelaR * 2.55;
@@ -1327,8 +1465,8 @@
         }
 
         ctx.fillStyle = PALETA.branco;
-        ctx.font = `700 ${Math.round(h * 0.115)}px "Aller", sans-serif`;
-        ctx.fillText("NO BRASIL", cx, y + h * 0.84);
+        ctx.font = `700 ${Math.round(h * 0.11)}px "Aller", sans-serif`;
+        ctx.fillText(dest.brasaoSub, cx, y + h * 0.84, w - 26);
       }
 
       function desenharGraficoRUF(ctx, x, y, w, h, isDark) {
@@ -1414,14 +1552,15 @@
         if (!state.logos) return;
         const { unemat, bccPreto } = state.logos;
 
-        if (isDark) {
-          roundedRectPath(ctx, x, y, w, h, 14);
-          ctx.fillStyle = PALETA.branco;
-          ctx.fill();
-        }
+        roundedRectPath(ctx, x, y, w, h, 16);
+        ctx.fillStyle = PALETA.branco;
+        ctx.fill();
+        ctx.lineWidth = isDark ? 3 : 2;
+        ctx.strokeStyle = isDark ? PALETA.ciano : "#CBD5E1";
+        ctx.stroke();
 
-        const padX = 20;
-        const maxH = h * 0.74;
+        const padX = 18;
+        const maxH = h * 0.84;
         const uRatio = unemat.naturalWidth / unemat.naturalHeight;
         const bRatio = bccPreto.naturalWidth / bccPreto.naturalHeight;
 
@@ -1430,7 +1569,8 @@
         let bH = maxH * 0.96;
         let bW = bH * bRatio;
 
-        const espacoUtil = w - padX * 2 - 28;
+        const gap = 26;
+        const espacoUtil = w - padX * 2 - gap - 4;
         if (uW + bW > espacoUtil) {
           const fator = espacoUtil / (uW + bW);
           uW *= fator;
@@ -1439,7 +1579,7 @@
           bH *= fator;
         }
 
-        const totalW = uW + bW + 26;
+        const totalW = uW + bW + gap;
         const startX = x + (w - totalW) / 2;
         const cy = y + h / 2;
 
@@ -1448,9 +1588,9 @@
         ctx.drawImage(unemat, startX, cy - uH / 2, uW, uH);
 
         ctx.fillStyle = "#CBD5E1";
-        ctx.fillRect(startX + uW + 12, cy - maxH * 0.42, 2, maxH * 0.84);
+        ctx.fillRect(startX + uW + gap / 2 - 1, cy - maxH * 0.42, 2, maxH * 0.84);
 
-        ctx.drawImage(bccPreto, startX + uW + 26, cy - bH / 2, bW, bH);
+        ctx.drawImage(bccPreto, startX + uW + gap, cy - bH / 2, bW, bH);
       }
 
       function quebrarTexto(ctx, texto, maxWidth) {
@@ -1472,6 +1612,7 @@
 
       function obterDadosPerfil() {
         const base = PERFIS[state.perfil];
+        const dest = DESTAQUES[state.destaque];
         let badge = base.badge;
         let subtitulo = base.subtitulo;
 
@@ -1484,15 +1625,15 @@
         if (state.nome.trim()) {
           subtitulo = `${state.nome.trim()}  •  ${subtitulo}`;
         }
-        return { badge, titulo: base.titulo, subtitulo };
+        return { badge, titulo: dest.titulos[state.perfil], subtitulo, dest };
       }
 
       function obterRecortePorFormato(formato) {
         if (formato === "feed") {
-          return { x: 48, y: 112, w: 984, h: 668, r: 20 };
+          return { x: 48, y: 108, w: 984, h: 632, r: 20 };
         }
         if (formato === "stories") {
-          return { x: 56, y: 214, w: 968, h: 906, r: 22 };
+          return { x: 56, y: 208, w: 968, h: 866, r: 22 };
         }
         return { x: 24, y: 24, w: 1032, h: 1032, cx: 540, cy: 540, r: 516 };
       }
@@ -1526,18 +1667,18 @@
 
         if (formato === "feed") {
           // Faixa superior do perfil
-          const badgeY = 44;
+          const badgeY = 42;
           const badgeW = 984;
-          const badgeH = 52;
-          roundedRectPath(ctx, 48, badgeY, badgeW, badgeH, 26);
+          const badgeH = 50;
+          roundedRectPath(ctx, 48, badgeY, badgeW, badgeH, 25);
           ctx.fillStyle = state.perfil === "estudante" || state.perfil === "ptes" ? PALETA.verde : PALETA.ciano;
           ctx.fill();
 
           ctx.fillStyle = PALETA.preto;
           ctx.textAlign = "center";
           ctx.textBaseline = "middle";
-          ctx.font = '700 23px "Aller", sans-serif';
-          ctx.fillText(info.badge, W / 2, badgeY + badgeH / 2 + 1);
+          ctx.font = '700 22px "Aller", sans-serif';
+          ctx.fillText(info.badge, W / 2, badgeY + badgeH / 2 + 1, badgeW - 32);
 
           const recorte = obterRecortePorFormato("feed");
           desenharMolduraFoto(ctx, recorte, isDark, false);
@@ -1549,8 +1690,8 @@
           ctx.stroke();
 
           // Bloco informativo inferior
-          const infoTop = 804;
-          desenharBrasao77(ctx, 48, infoTop, 232, 260, isDark);
+          const infoTop = 760;
+          desenharBrasao77(ctx, 48, infoTop, 232, 248, isDark);
 
           // Título e indicadores ao centro
           const midX = 300;
@@ -1559,54 +1700,54 @@
           ctx.textBaseline = "top";
           ctx.fillStyle = isDark ? PALETA.verde : PALETA.preto;
           ctx.font = '700 18px "Aller", sans-serif';
-          ctx.fillText("2º EM MT  •  4 ESTRELAS GUIA DA FACULDADE", midX, infoTop + 6, midW);
+          ctx.fillText(info.dest.infoTopo, midX, infoTop + 4, midW);
 
           ctx.fillStyle = isDark ? PALETA.branco : PALETA.preto;
-          ctx.font = '700 31px "Mesmerize", "Aller", sans-serif';
+          ctx.font = '700 30px "Mesmerize", "Aller", sans-serif';
           const linhasTit = quebrarTexto(ctx, info.titulo, midW).slice(0, 3);
           linhasTit.forEach((ln, idx) => {
-            ctx.fillText(ln, midX, infoTop + 36 + idx * 37, midW);
+            ctx.fillText(ln, midX, infoTop + 34 + idx * 36, midW);
           });
 
-          const subY = infoTop + 36 + linhasTit.length * 37 + 10;
+          const subY = infoTop + 34 + linhasTit.length * 36 + 8;
           ctx.fillStyle = isDark ? "#D6E1EC" : "#1F2937";
           ctx.font = '400 21px "Aller", sans-serif';
           const linhasSub = quebrarTexto(ctx, info.subtitulo, midW).slice(0, 3);
           linhasSub.forEach((ln, idx) => {
-            ctx.fillText(ln, midX, subY + idx * 26, midW);
+            ctx.fillText(ln, midX, subY + idx * 25, midW);
           });
 
           ctx.fillStyle = isDark ? PALETA.ciano : PALETA.preto;
           ctx.font = '700 18px "Aller", sans-serif';
-          ctx.fillText(state.campus, midX, infoTop + 234, midW);
+          ctx.fillText(state.campus, midX, infoTop + 224, midW);
 
           // Gráfico RUF à direita
-          desenharGraficoRUF(ctx, 702, infoTop, 330, 260, isDark);
+          desenharGraficoRUF(ctx, 702, infoTop, 330, 248, isDark);
 
-          // Assinaturas oficiais + barra obrigatória
-          desenharAssinaturas(ctx, 48, 1084, 984, 120, isDark);
+          // Assinaturas oficiais ampliadas + barra obrigatória
+          desenharAssinaturas(ctx, 48, 1026, 984, 156, isDark);
 
-          roundedRectPath(ctx, 48, 1222, 984, 72, 16);
+          roundedRectPath(ctx, 48, 1200, 984, 74, 16);
           ctx.fillStyle = isDark ? PALETA.verde : PALETA.ciano;
           ctx.fill();
           ctx.fillStyle = PALETA.preto;
           ctx.textAlign = "center";
           ctx.textBaseline = "middle";
           ctx.font = '700 23px "Aller", sans-serif';
-          ctx.fillText("UNIVERSIDADE PÚBLICA E GRATUITA. SEM MENSALIDADE.", W / 2, 1258);
+          ctx.fillText("UNIVERSIDADE PÚBLICA E GRATUITA. SEM MENSALIDADE.", W / 2, 1237);
           return;
         }
 
         // STORIES 9:16 (safe zones >= 130px topo e >= 150px base)
         const sBadgeY = 136;
-        roundedRectPath(ctx, 56, sBadgeY, 968, 56, 28);
+        roundedRectPath(ctx, 56, sBadgeY, 968, 54, 27);
         ctx.fillStyle = state.perfil === "estudante" || state.perfil === "ptes" ? PALETA.verde : PALETA.ciano;
         ctx.fill();
         ctx.fillStyle = PALETA.preto;
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-        ctx.font = '700 24px "Aller", sans-serif';
-        ctx.fillText(info.badge, W / 2, sBadgeY + 29);
+        ctx.font = '700 23px "Aller", sans-serif';
+        ctx.fillText(info.badge, W / 2, sBadgeY + 28, 920);
 
         const recSt = obterRecortePorFormato("stories");
         desenharMolduraFoto(ctx, recSt, isDark, false);
@@ -1616,36 +1757,36 @@
         ctx.stroke();
 
         // Faixa título + subtítulo abaixo da foto
-        const txtY = 1144;
+        const txtY = 1094;
         ctx.textAlign = "center";
         ctx.textBaseline = "top";
         ctx.fillStyle = isDark ? PALETA.branco : PALETA.preto;
-        ctx.font = '700 40px "Mesmerize", "Aller", sans-serif';
-        ctx.fillText(info.titulo, W / 2, txtY);
+        ctx.font = '700 39px "Mesmerize", "Aller", sans-serif';
+        ctx.fillText(info.titulo, W / 2, txtY, 940);
 
         ctx.fillStyle = isDark ? "#D6E1EC" : "#1F2937";
         ctx.font = '400 24px "Aller", sans-serif';
         const subSt = quebrarTexto(ctx, info.subtitulo, 940).slice(0, 2);
         subSt.forEach((ln, idx) => {
-          ctx.fillText(ln, W / 2, txtY + 50 + idx * 30);
+          ctx.fillText(ln, W / 2, txtY + 48 + idx * 30, 940);
         });
 
-        // Linha intermediária: Brasão 77 + Gráfico RUF
-        const cardY = 1272;
-        desenharBrasao77(ctx, 56, cardY, 340, 260, isDark);
-        desenharGraficoRUF(ctx, 416, cardY, 608, 260, isDark);
+        // Linha intermediária: Brasão + Gráfico RUF
+        const cardY = 1216;
+        desenharBrasao77(ctx, 56, cardY, 340, 246, isDark);
+        desenharGraficoRUF(ctx, 416, cardY, 608, 246, isDark);
 
-        // Assinaturas + selo obrigatório dentro da safe zone (termina antes de y=1770)
-        desenharAssinaturas(ctx, 56, 1554, 968, 120, isDark);
+        // Assinaturas ampliadas + selo obrigatório dentro da safe zone (termina antes de y=1770)
+        desenharAssinaturas(ctx, 56, 1480, 968, 162, isDark);
 
-        roundedRectPath(ctx, 56, 1692, 968, 72, 16);
+        roundedRectPath(ctx, 56, 1660, 968, 76, 16);
         ctx.fillStyle = isDark ? PALETA.verde : PALETA.ciano;
         ctx.fill();
         ctx.fillStyle = PALETA.preto;
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
         ctx.font = '700 23px "Aller", sans-serif';
-        ctx.fillText("UNIVERSIDADE PÚBLICA E GRATUITA. SEM MENSALIDADE.", W / 2, 1728);
+        ctx.fillText("UNIVERSIDADE PÚBLICA E GRATUITA. SEM MENSALIDADE.", W / 2, 1698);
       }
 
       function desenharAvatar(ctx, W, H, isDark, info) {
@@ -1653,6 +1794,7 @@
         const cy = H / 2;
         const rExt = 532;
         const rFoto = 492;
+        const dest = info.dest;
 
         // Cantos transparentes fora do círculo (padrão botton)
         ctx.save();
@@ -1694,7 +1836,7 @@
         ctx.font = '700 18px "Aller", sans-serif';
         ctx.fillText(PERFIS[state.perfil].rotulo.toUpperCase() + "  •  BCC UNEMAT", cx, pillY + pillH / 2 + 1, pillW - 24);
 
-        // Bloco 77º na faixa inferior
+        // Bloco de destaque na faixa inferior
         const boxW = 176;
         const boxH = 148;
         const boxX = 216;
@@ -1708,7 +1850,7 @@
 
         ctx.fillStyle = PALETA.ciano;
         ctx.font = '700 64px "Aller", sans-serif';
-        ctx.fillText("77º", boxX + boxW / 2, boxY + 50);
+        ctx.fillText(dest.avatarNum, boxX + boxW / 2, boxY + 50, boxW - 20);
 
         ctx.fillStyle = PALETA.verde;
         for (let i = 0; i < 4; i++) {
@@ -1717,19 +1859,19 @@
 
         ctx.fillStyle = PALETA.branco;
         ctx.font = '700 17px "Aller", sans-serif';
-        ctx.fillText("NO BRASIL", boxX + boxW / 2, boxY + 128);
+        ctx.fillText(dest.avatarSub, boxX + boxW / 2, boxY + 128, boxW - 20);
 
         // Texto à direita do brasão (dentro do círculo seguro)
         const txtX = 414;
         const txtMax = 450;
         ctx.textAlign = "left";
         ctx.fillStyle = isDark ? PALETA.verde : PALETA.preto;
-        ctx.font = '700 24px "Aller", sans-serif';
-        ctx.fillText("RUF 2026 • 2º EM MT", txtX, 780, txtMax);
+        ctx.font = '700 23px "Aller", sans-serif';
+        ctx.fillText(dest.avatarLinha1, txtX, 780, txtMax);
 
         ctx.fillStyle = isDark ? PALETA.branco : PALETA.preto;
-        ctx.font = '700 28px "Aller", sans-serif';
-        ctx.fillText("EU FAÇO PARTE DOS 77", txtX, 818, txtMax);
+        ctx.font = '700 27px "Aller", sans-serif';
+        ctx.fillText(dest.avatarLinha2, txtX, 818, txtMax);
 
         ctx.fillStyle = isDark ? PALETA.ciano : "#1F2937";
         ctx.font = '700 20px "Aller", sans-serif';
@@ -1831,7 +1973,7 @@
           if (state.urlPNG) URL.revokeObjectURL(state.urlPNG);
           state.urlPNG = proximaURL;
 
-          const nomeArquivo = `meu-selo-77-${state.perfil}-${state.formato}-${state.tema}.png`;
+          const nomeArquivo = `meu-selo-${state.destaque}-${state.perfil}-${state.formato}-${state.tema}.png`;
           el.linkSalvar.href = state.urlPNG;
           el.linkSalvar.download = nomeArquivo;
           el.linkSalvar.removeAttribute("aria-disabled");
@@ -1918,6 +2060,15 @@
         sincronizarSliders();
         solicitarPrevia();
         agendarExportacao();
+      });
+
+      document.querySelectorAll('input[name="destaque"]').forEach(radio => {
+        radio.addEventListener("change", () => {
+          state.destaque = radio.value;
+          atualizarLegendaAutomatica();
+          solicitarPrevia();
+          agendarExportacao();
+        });
       });
 
       document.querySelectorAll('input[name="perfil"]').forEach(radio => {
