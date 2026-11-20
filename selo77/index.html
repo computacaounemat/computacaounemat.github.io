@@ -1,0 +1,2052 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Selo 77 — Ciência da Computação — UNEMAT</title>
+  <link rel="icon" type="image/svg+xml" href="../marca/arquivos/logo_bcc_vertical.svg">
+  <meta name="description" content="Crie sua foto comemorativa da campanha Eu Faço Parte dos 77 — Bacharelado em Ciência da Computação da UNEMAT (Alto Araguaia e Rondonópolis): 77º lugar no Brasil no RUF 2026.">
+  <style>
+    @font-face {
+      font-family: 'Aller';
+      src: url('./assets/fonts/Aller_Std_Lt.ttf') format('truetype');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Aller';
+      src: url('./assets/fonts/Aller_Std_Rg.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Aller';
+      src: url('./assets/fonts/Aller_Std_Bd.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Mesmerize';
+      src: url('../assets/fonts/mesmerize/mesmerize-light.ttf') format('truetype');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Mesmerize';
+      src: url('../assets/fonts/mesmerize/mesmerize-bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --preto: #000000;
+      --ciano: #009EE0;
+      --verde: #8DC63F;
+      --branco: #FFFFFF;
+      --bg: #000000;
+      --superficie: #0E141B;
+      --superficie-2: #161F29;
+      --borda: #2A3847;
+      --texto: #FFFFFF;
+      --texto-suave: #D6E1EC;
+      --foco: #8DC63F;
+      --radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--texto);
+      font-family: 'Aller', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid var(--foco);
+      outline-offset: 2px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: var(--verde);
+      color: var(--preto);
+      font-weight: 700;
+      padding: 12px 16px;
+      z-index: 100;
+      text-decoration: none;
+    }
+
+    .skip-link:focus {
+      left: 12px;
+      top: 12px;
+      border-radius: 8px;
+    }
+
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 16px 56px;
+    }
+
+    .topo {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--borda);
+    }
+
+    .topo-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .topo a {
+      color: var(--ciano);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .topo a:hover {
+      text-decoration: underline;
+    }
+
+    .topo-badge {
+      background: var(--verde);
+      color: var(--preto);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 6px 12px;
+      border-radius: 999px;
+    }
+
+    .hero {
+      padding: 28px 0 24px;
+      border-bottom: 1px solid var(--borda);
+      margin-bottom: 24px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: var(--ciano);
+      color: var(--preto);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 5px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-family: 'Mesmerize', 'Aller', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.75rem, 4.2vw, 2.75rem);
+      line-height: 1.15;
+      color: var(--branco);
+    }
+
+    .hero p {
+      margin: 0 0 14px;
+      max-width: 780px;
+      color: var(--texto-suave);
+      font-size: 1.03rem;
+    }
+
+    .hero-fatos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 0 14px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hero-fatos li {
+      background: var(--superficie-2);
+      border: 1px solid var(--borda);
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 0.92rem;
+      color: var(--branco);
+    }
+
+    .aviso-privacidade {
+      background: var(--superficie);
+      border-left: 4px solid var(--verde);
+      border-radius: 8px;
+      padding: 12px 16px;
+      max-width: 820px;
+      font-size: 0.95rem;
+      color: var(--branco);
+    }
+
+    .grid-estudio {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    @media (max-width: 920px) {
+      .grid-estudio {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .painel {
+      background: var(--superficie);
+      border: 1px solid var(--borda);
+      border-radius: var(--radius);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .passo-titulo {
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--branco);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .passo-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--ciano);
+      color: var(--preto);
+      font-weight: 700;
+      font-size: 0.92rem;
+      flex-shrink: 0;
+    }
+
+    fieldset {
+      border: 1px solid var(--borda);
+      border-radius: 12px;
+      padding: 14px;
+      margin: 0;
+    }
+
+    legend {
+      padding: 0 8px;
+      font-weight: 700;
+      font-size: 0.98rem;
+      color: var(--branco);
+    }
+
+    .opcoes-grade {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .opcao-radio {
+      position: relative;
+    }
+
+    .opcao-radio input {
+      position: absolute;
+      opacity: 0;
+      width: 1px;
+      height: 1px;
+    }
+
+    .opcao-radio label {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 48px;
+      padding: 10px 12px;
+      border: 2px solid var(--borda);
+      border-radius: 10px;
+      background: var(--superficie-2);
+      color: var(--branco);
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+
+    .opcao-radio label small {
+      font-weight: 400;
+      font-size: 0.8rem;
+      color: var(--texto-suave);
+      margin-top: 2px;
+    }
+
+    .opcao-radio input:checked + label {
+      border-color: var(--ciano);
+      background: var(--ciano);
+      color: var(--preto);
+    }
+
+    .opcao-radio input:checked + label small {
+      color: var(--preto);
+    }
+
+    .opcao-radio input:focus-visible + label {
+      outline: 3px solid var(--foco);
+      outline-offset: 2px;
+    }
+
+    .upload-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 18px;
+      border-radius: 10px;
+      border: 2px solid transparent;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 0.98rem;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      transition: transform 0.08s ease, opacity 0.15s ease;
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn-primario {
+      background: var(--ciano);
+      color: var(--preto);
+    }
+
+    .btn-verde {
+      background: var(--verde);
+      color: var(--preto);
+    }
+
+    .btn-secundario {
+      background: var(--superficie-2);
+      color: var(--branco);
+      border-color: var(--ciano);
+    }
+
+    .btn[aria-disabled="true"],
+    .btn:disabled {
+      opacity: 0.52;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .sr-only-file {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .campo-grupo {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .campo-grupo label {
+      font-weight: 700;
+      font-size: 0.93rem;
+      color: var(--branco);
+    }
+
+    .campo-grupo input[type="text"],
+    .campo-grupo select,
+    .campo-grupo textarea {
+      width: 100%;
+      min-height: 44px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--borda);
+      background: var(--preto);
+      color: var(--branco);
+      font-family: inherit;
+      font-size: 0.98rem;
+    }
+
+    .campo-grupo textarea {
+      min-height: 112px;
+      resize: vertical;
+      line-height: 1.45;
+    }
+
+    .sliders-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .slider-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .slider-topo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      min-height: 44px;
+      accent-color: var(--ciano);
+      cursor: pointer;
+    }
+
+    .ajuda-texto {
+      font-size: 0.88rem;
+      color: var(--texto-suave);
+      margin: 4px 0 0;
+    }
+
+    .campos-egresso {
+      border-left: 3px solid var(--ciano);
+      padding-left: 12px;
+      margin-top: 10px;
+    }
+
+    .campos-egresso[hidden] {
+      display: none;
+    }
+
+    .previa-coluna {
+      position: sticky;
+      top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    @media (max-width: 920px) {
+      .previa-coluna {
+        position: static;
+      }
+    }
+
+    .previa-moldura {
+      background: var(--superficie);
+      border: 1px solid var(--borda);
+      border-radius: var(--radius);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .previa-topo {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .previa-topo h2 {
+      margin: 0;
+      font-size: 1.08rem;
+      color: var(--branco);
+    }
+
+    .previa-dim {
+      font-size: 0.85rem;
+      font-weight: 700;
+      background: var(--superficie-2);
+      border: 1px solid var(--borda);
+      padding: 4px 10px;
+      border-radius: 999px;
+      color: var(--texto-suave);
+    }
+
+    .canvas-palco {
+      width: 100%;
+      max-width: 440px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: repeating-conic-gradient(#121922 0% 25%, #0b1016 0% 50%) 0 0 / 20px 20px;
+      border-radius: 12px;
+      padding: 10px;
+      border: 1px solid var(--borda);
+    }
+
+    #canvasPrevia {
+      display: block;
+      max-width: 100%;
+      border-radius: 8px;
+      touch-action: none;
+      cursor: grab;
+    }
+
+    #canvasPrevia:active {
+      cursor: grabbing;
+    }
+
+    .status-box {
+      width: 100%;
+      min-height: 24px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--verde);
+      text-align: center;
+    }
+
+    .status-box.erro {
+      color: #FF8A8A;
+      background: #3B0B0B;
+      border: 1px solid #FF8A8A;
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+
+    .acoes-exportacao {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .acoes-exportacao .btn {
+      flex: 1 1 200px;
+    }
+
+    .imagem-alternativa {
+      width: 100%;
+      background: var(--preto);
+      border: 2px solid var(--ciano);
+      border-radius: 12px;
+      padding: 14px;
+      text-align: center;
+    }
+
+    .imagem-alternativa[hidden] {
+      display: none;
+    }
+
+    .imagem-alternativa img {
+      max-width: 100%;
+      max-height: 380px;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    .imagem-alternativa p {
+      margin: 6px 0;
+      font-size: 0.92rem;
+      color: var(--branco);
+    }
+
+    .legenda-acoes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .mapa-egressos-card {
+      margin-top: 28px;
+      background: var(--superficie);
+      border: 2px solid var(--verde);
+      border-radius: var(--radius);
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .mapa-egressos-card h2 {
+      margin: 0 0 6px;
+      font-size: 1.2rem;
+      color: var(--branco);
+    }
+
+    .mapa-egressos-card p {
+      margin: 0;
+      max-width: 720px;
+      color: var(--texto-suave);
+    }
+
+    .mapa-egressos-destaque {
+      box-shadow: 0 0 0 3px var(--ciano);
+    }
+
+    .dicas-redes {
+      margin-top: 24px;
+      background: var(--superficie);
+      border: 1px solid var(--borda);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+    }
+
+    .dicas-redes h2 {
+      margin: 0 0 8px;
+      font-size: 1.1rem;
+    }
+
+    .dicas-redes ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--texto-suave);
+    }
+
+    .dicas-redes li {
+      margin-bottom: 6px;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding-top: 18px;
+      border-top: 1px solid var(--borda);
+      font-size: 0.9rem;
+      color: var(--texto-suave);
+    }
+
+    footer strong {
+      color: var(--branco);
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo-principal">Ir para o estúdio Meu Selo 77</a>
+
+  <div class="wrap">
+    <header class="topo">
+      <nav class="topo-links" aria-label="Navegação do site do curso">
+        <a href="../">← Site do curso</a>
+        <a href="../marca/">Marca e manual</a>
+      </nav>
+      <span class="topo-badge">Campanha Eu Faço Parte dos 77</span>
+    </header>
+
+    <section class="hero" aria-labelledby="titulo-principal">
+      <span class="hero-tag">Ciência da Computação — UNEMAT</span>
+      <h1 id="titulo-principal">Estúdio "Meu Selo 77"</h1>
+      <p>
+        Crie sua foto comemorativa em segundos para o Instagram, LinkedIn ou foto de perfil do WhatsApp.
+        Mostre seu rosto, sua caneca, seu laboratório ou sua turma nesta conquista histórica do curso.
+      </p>
+      <ul class="hero-fatos" aria-label="Indicadores oficiais do curso">
+        <li><strong>77º no Brasil</strong> no RUF 2026 (2º de MT)</li>
+        <li><strong>Evolução:</strong> 176º (2023) → 120º (2024) → 105º (2025) → 77º (2026)</li>
+        <li><strong>4 estrelas</strong> no Guia da Faculdade (Estadão/Quero, ed. 2025)</li>
+        <li><strong>Universidade Pública e Gratuita. Sem Mensalidade.</strong></li>
+      </ul>
+      <div class="aviso-privacidade" role="note">
+        <strong>Sua privacidade em primeiro lugar:</strong> sua foto não é enviada a nenhum servidor.
+        A montagem acontece direto no seu celular ou computador, sem cadastro e sem armazenamento.
+      </div>
+    </section>
+
+    <main id="conteudo-principal" class="grid-estudio">
+      <section class="painel" aria-label="Configuração da sua foto comemorativa">
+        <div>
+          <h2 class="passo-titulo"><span class="passo-num" aria-hidden="true">1</span> Escolher foto</h2>
+          <div class="upload-box">
+            <input id="inputFoto" class="sr-only-file" type="file" accept="image/jpeg,image/png,image/webp,image/*">
+            <label for="inputFoto" class="btn btn-primario" id="labelEscolherFoto">Escolher foto da galeria</label>
+            <button type="button" class="btn btn-secundario" id="btnCentralizar">Centralizar</button>
+          </div>
+          <p class="ajuda-texto" id="ajudaFoto">
+            Formatos recomendados: JPG, PNG ou WebP. Se sua foto vier em formato HEIC do iPhone e não abrir, salve como JPG ou use uma captura de tela.
+          </p>
+
+          <div class="sliders-grid">
+            <div class="slider-item">
+              <div class="slider-topo">
+                <label for="controleZoom">Aproximar foto</label>
+                <span id="valorZoom" aria-hidden="true">100%</span>
+              </div>
+              <input id="controleZoom" type="range" min="1" max="3" step="0.01" value="1" aria-describedby="ajudaAjuste">
+            </div>
+
+            <div class="slider-item">
+              <div class="slider-topo">
+                <label for="controleX">Mover foto para os lados</label>
+                <span id="valorX" aria-hidden="true">Centro</span>
+              </div>
+              <input id="controleX" type="range" min="-1" max="1" step="0.01" value="0" aria-describedby="ajudaAjuste">
+            </div>
+
+            <div class="slider-item">
+              <div class="slider-topo">
+                <label for="controleY">Mover foto para cima ou para baixo</label>
+                <span id="valorY" aria-hidden="true">Centro</span>
+              </div>
+              <input id="controleY" type="range" min="-1" max="1" step="0.01" value="0" aria-describedby="ajudaAjuste">
+            </div>
+          </div>
+          <p class="ajuda-texto" id="ajudaAjuste">
+            Você também pode arrastar a foto diretamente sobre a prévia ao lado (ou abaixo, no celular).
+          </p>
+        </div>
+
+        <fieldset>
+          <legend>2. Escolha o seu perfil no curso</legend>
+          <div class="opcoes-grade" role="radiogroup">
+            <div class="opcao-radio">
+              <input type="radio" name="perfil" id="perfil-docente" value="docente" checked>
+              <label for="perfil-docente">Docente<small>Professor do curso</small></label>
+            </div>
+            <div class="opcao-radio">
+              <input type="radio" name="perfil" id="perfil-estudante" value="estudante">
+              <label for="perfil-estudante">Estudante<small>Acadêmico BCC</small></label>
+            </div>
+            <div class="opcao-radio">
+              <input type="radio" name="perfil" id="perfil-egresso" value="egresso">
+              <label for="perfil-egresso">Egresso / Ex-aluno<small>Formado na UNEMAT</small></label>
+            </div>
+            <div class="opcao-radio">
+              <input type="radio" name="perfil" id="perfil-ptes" value="ptes">
+              <label for="perfil-ptes">Técnico PTES<small>Apoio e laboratórios</small></label>
+            </div>
+            <div class="opcao-radio">
+              <input type="radio" name="perfil" id="perfil-orgulho" value="orgulho">
+              <label for="perfil-orgulho">Orgulho UNEMAT<small>Parceiro e comunidade</small></label>
+            </div>
+          </div>
+
+          <div class="campo-grupo">
+            <label for="campoNome">Seu nome ou título (opcional)</label>
+            <input id="campoNome" type="text" maxlength="48" placeholder="Ex.: Prof. Dr. Carlos Sander ou Maria Silva">
+          </div>
+
+          <div class="campo-grupo">
+            <label for="campoCampus">Unidade que aparece na arte</label>
+            <select id="campoCampus">
+              <option value="Alto Araguaia &amp; Rondonópolis">Alto Araguaia &amp; Rondonópolis</option>
+              <option value="Câmpus de Alto Araguaia">Câmpus de Alto Araguaia</option>
+              <option value="Câmpus Avançado de Rondonópolis">Câmpus Avançado de Rondonópolis</option>
+            </select>
+          </div>
+
+          <div id="camposEgresso" class="campos-egresso" hidden>
+            <div class="campo-grupo">
+              <label for="campoTurma">Turma ou ano de formatura (opcional)</label>
+              <input id="campoTurma" type="text" maxlength="32" placeholder="Ex.: Turma 2016">
+            </div>
+            <div class="campo-grupo">
+              <label for="campoAtuacao">Onde você atua hoje (opcional)</label>
+              <input id="campoAtuacao" type="text" maxlength="52" placeholder="Ex.: Engenheira de Software • Cuiabá/MT">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>3. Escolha o visual (100% Paleta BCC)</legend>
+          <div class="opcoes-grade">
+            <div class="opcao-radio">
+              <input type="radio" name="tema" id="tema-claro" value="claro" checked>
+              <label for="tema-claro">Claro (Caneca e Porta-copos)<small>Fundo branco com selo preto</small></label>
+            </div>
+            <div class="opcao-radio">
+              <input type="radio" name="tema" id="tema-dark" value="dark">
+              <label for="tema-dark">Dark (Alto Contraste)<small>Fundo preto com bordas ciano e verde</small></label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>4. Escolha o formato da imagem</legend>
+          <div class="opcoes-grade">
+            <div class="opcao-radio">
+              <input type="radio" name="formato" id="formato-feed" value="feed" checked>
+              <label for="formato-feed">Feed / LinkedIn (4:5)<small>1080 × 1350 px</small></label>
+            </div>
+            <div class="opcao-radio">
+              <input type="radio" name="formato" id="formato-stories" value="stories">
+              <label for="formato-stories">Stories / Status (9:16)<small>1080 × 1920 px</small></label>
+            </div>
+            <div class="opcao-radio">
+              <input type="radio" name="formato" id="formato-avatar" value="avatar">
+              <label for="formato-avatar">Foto de Perfil (1:1)<small>1080 × 1080 px (círculo)</small></label>
+            </div>
+          </div>
+        </fieldset>
+
+        <div>
+          <h2 class="passo-titulo"><span class="passo-num" aria-hidden="true">5</span> Legenda pronta para copiar</h2>
+          <div class="campo-grupo">
+            <label for="campoLegenda">Texto sugerido para sua postagem (você pode editar antes de copiar)</label>
+            <textarea id="campoLegenda"></textarea>
+          </div>
+          <div class="legenda-acoes">
+            <button type="button" class="btn btn-verde" id="btnCopiarLegenda">Copiar legenda</button>
+            <span id="statusLegenda" class="ajuda-texto" role="status" aria-live="polite"></span>
+          </div>
+        </div>
+      </section>
+
+      <aside class="previa-coluna" aria-label="Prévia e exportação da imagem">
+        <div class="previa-moldura">
+          <div class="previa-topo">
+            <h2>Prévia em tempo real</h2>
+            <span id="previaDim" class="previa-dim">Feed 4:5 • 1080 × 1350</span>
+          </div>
+
+          <div class="canvas-palco">
+            <canvas
+              id="canvasPrevia"
+              role="img"
+              aria-label="Prévia da sua imagem com o Selo 77 da Ciência da Computação UNEMAT. Inclui posição 77º no Brasil no RUF 2026, evolução 176º para 77º, 4 estrelas no Guia da Faculdade e a mensagem Universidade Pública e Gratuita. Sem Mensalidade.">
+            </canvas>
+          </div>
+
+          <div id="statusGeral" class="status-box" role="status" aria-live="polite">
+            Carregando fontes e logomarcas oficiais...
+          </div>
+
+          <div class="acoes-exportacao">
+            <a id="linkSalvar" class="btn btn-primario" href="#linkSalvar" download="meu-selo-77.png" aria-disabled="true">
+              Salvar imagem (PNG)
+            </a>
+            <button type="button" class="btn btn-secundario" id="btnVerImagem" aria-disabled="true">
+              Ver imagem para salvar
+            </button>
+          </div>
+
+          <div id="containerAlternativo" class="imagem-alternativa" hidden>
+            <img id="imagemAlternativa" alt="Seu selo da campanha Eu Faço Parte dos 77">
+            <p><strong>No iPhone/iPad, toque e segure a imagem acima para Salvar em Fotos.</strong></p>
+            <p>Se o arquivo não baixar, abra a imagem para salvar:</p>
+            <a id="linkAbrirAba" class="btn btn-secundario" href="#linkAbrirAba" target="_blank" rel="noopener">
+              Abrir imagem em nova aba
+            </a>
+          </div>
+        </div>
+
+        <section class="dicas-redes" aria-label="Como postar e entrar na corrente">
+          <h2>Como participar em 3 passos</h2>
+          <ul>
+            <li>Salve sua imagem e copie a legenda ao lado.</li>
+            <li>Publique no Instagram (Feed ou Stories), LinkedIn ou WhatsApp e marque <strong>@computacao.unemataia</strong>.</li>
+            <li>Nos Stories do Instagram, você também pode adicionar o recurso nativo <strong>"Use a Sua"</strong> sobre a foto salva para puxar seus colegas e ex-colegas de turma.</li>
+          </ul>
+        </section>
+      </aside>
+    </main>
+
+    <section id="mapaEgressosCard" class="mapa-egressos-card" aria-labelledby="titulo-mapa-egressos">
+      <div>
+        <h2 id="titulo-mapa-egressos">Mapa de Egressos Top 77 (para ex-alunos desde 2004)</h2>
+        <p id="textoMapaEgressos">
+          Se você concluiu Ciência da Computação na UNEMAT (Alto Araguaia ou Rondonópolis), queremos saber por onde anda sua trajetória para fortalecer ainda mais o curso. A participação é voluntária e com consentimento explícito pela LGPD.
+        </p>
+      </div>
+      <div id="acaoMapaEgressos"></div>
+    </section>
+
+    <footer>
+      <p>
+        <strong>Coordenação do Curso de Ciência da Computação — UNEMAT</strong><br>
+        Campus Alto Araguaia | Campus Avançado de Rondonópolis<br>
+        Rondonópolis: Rua Fernando Corrêa da Costa, Setor Rodoviária, Rondonópolis - MT<br>
+        <strong>Universidade Pública e Gratuita. Sem Mensalidade.</strong>
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    (() => {
+      // Cole aqui a URL oficial do Google Forms quando for gerada com o script Mapa de Egressos Top 77.
+      const MAPA_EGRESSOS_FORM_URL = "";
+
+      const PALETA = {
+        preto: "#000000",
+        ciano: "#009EE0",
+        verde: "#8DC63F",
+        branco: "#FFFFFF"
+      };
+
+      const FORMATOS = {
+        feed: { nome: "Feed 4:5", largura: 1080, altura: 1350 },
+        stories: { nome: "Stories 9:16", largura: 1080, altura: 1920 },
+        avatar: { nome: "Avatar 1:1", largura: 1080, altura: 1080 }
+      };
+
+      const HISTORICO_RUF = [
+        { ano: 2023, posicao: 176 },
+        { ano: 2024, posicao: 120 },
+        { ano: 2025, posicao: 105 },
+        { ano: 2026, posicao: 77 }
+      ];
+
+      const PERFIS = {
+        docente: {
+          rotulo: "Docente",
+          badge: "DOCENTE  |  CIÊNCIA DA COMPUTAÇÃO",
+          titulo: "EU FORMO O TOP 77 DO BRASIL",
+          subtitulo: "Cada aula, pesquisa e orientação constrói essa conquista."
+        },
+        estudante: {
+          rotulo: "Estudante",
+          badge: "ESTUDANTE  |  BCC UNEMAT",
+          titulo: "EU ESTUDO NO TOP 77 DO BRASIL",
+          subtitulo: "Ciência da Computação pública, gratuita e de excelência."
+        },
+        egresso: {
+          rotulo: "Egresso / Ex-aluno",
+          badge: "EGRESSO  |  EX-ALUNO BCC",
+          titulo: "FORMADO NO TOP 77 DO BRASIL",
+          subtitulo: "História iniciada em Alto Araguaia em 2004 e construída também em Rondonópolis."
+        },
+        ptes: {
+          rotulo: "Técnico PTES",
+          badge: "TÉCNICO  |  PTES UNEMAT",
+          titulo: "MEU TRABALHO CONSTRÓI O TOP 77",
+          subtitulo: "Em cada processo, laboratório e atendimento, essa vitória é nossa."
+        },
+        orgulho: {
+          rotulo: "Orgulho UNEMAT",
+          badge: "ORGULHO UNEMAT  |  PARCEIRO",
+          titulo: "EU APOIO O TOP 77 DO BRASIL",
+          subtitulo: "Ciência da Computação UNEMAT conectando universidade e sociedade."
+        }
+      };
+
+      const LEGENDAS_APROVADAS = {
+        docente:
+          "Eu faço parte dos 77! 77º do Brasil no RUF 2026 e 2º de Mato Grosso. Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+        estudante:
+          "Eu faço parte dos 77! O curso é o 77º do Brasil no RUF 2026 e eu estou nele. Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu e marque 2 colegas: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+        egresso:
+          "Eu faço parte dos 77! Me formei na UNEMAT e levo essa história comigo. O curso é 77º do Brasil no RUF 2026. Universidade Pública e Gratuita. Sem Mensalidade. Marque a sua turma e faça o seu: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+        ptes:
+          "Eu faço parte dos 77! No apoio de todos os dias, ajudo a manter o curso de pé: 77º do Brasil no RUF 2026. Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+        orgulho:
+          "Eu tenho orgulho de fazer parte dos 77! Ciência da Computação da UNEMAT: 77º do Brasil no RUF 2026 e 2º de Mato Grosso. Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu: https://computacaounemat.github.io/selo77/ @computacao.unemataia"
+      };
+
+      const MANIFESTO_LOGOS = {
+        unemat: "./assets/unemat_aia_roo_transparente.png",
+        bccPreto: "../marca/arquivos/logo_bcc_horizontal_fundo_transparente_texto_preto.png",
+        bccBranco: "../marca/arquivos/logo_bcc_horizontal_fundo_transparente_texto_branco.png"
+      };
+
+      const state = {
+        perfil: "docente",
+        tema: "claro",
+        formato: "feed",
+        nome: "",
+        campus: "Alto Araguaia & Rondonópolis",
+        turma: "",
+        atuacao: "",
+        zoom: 1,
+        offsetX: 0,
+        offsetY: 0,
+        foto: null,
+        assetsProntos: false,
+        logos: null,
+        legendaEditadaManualmente: false,
+        urlPNG: null
+      };
+
+      const el = {
+        canvasPrevia: document.getElementById("canvasPrevia"),
+        previaDim: document.getElementById("previaDim"),
+        statusGeral: document.getElementById("statusGeral"),
+        inputFoto: document.getElementById("inputFoto"),
+        btnCentralizar: document.getElementById("btnCentralizar"),
+        controleZoom: document.getElementById("controleZoom"),
+        controleX: document.getElementById("controleX"),
+        controleY: document.getElementById("controleY"),
+        valorZoom: document.getElementById("valorZoom"),
+        valorX: document.getElementById("valorX"),
+        valorY: document.getElementById("valorY"),
+        campoNome: document.getElementById("campoNome"),
+        campoCampus: document.getElementById("campoCampus"),
+        camposEgresso: document.getElementById("camposEgresso"),
+        campoTurma: document.getElementById("campoTurma"),
+        campoAtuacao: document.getElementById("campoAtuacao"),
+        campoLegenda: document.getElementById("campoLegenda"),
+        btnCopiarLegenda: document.getElementById("btnCopiarLegenda"),
+        statusLegenda: document.getElementById("statusLegenda"),
+        linkSalvar: document.getElementById("linkSalvar"),
+        btnVerImagem: document.getElementById("btnVerImagem"),
+        containerAlternativo: document.getElementById("containerAlternativo"),
+        imagemAlternativa: document.getElementById("imagemAlternativa"),
+        linkAbrirAba: document.getElementById("linkAbrirAba"),
+        mapaEgressosCard: document.getElementById("mapaEgressosCard"),
+        acaoMapaEgressos: document.getElementById("acaoMapaEgressos")
+      };
+
+      const canvasExportacao = document.createElement("canvas");
+      let cargaFotoSeq = 0;
+      let renderSeq = 0;
+      let rafPrevia = 0;
+      let timerExportacao = 0;
+      let gesto = null;
+
+      const limitar = (v, min, max) => Math.max(min, Math.min(max, v));
+
+      function detectarSafariOuIOS() {
+        const ua = navigator.userAgent;
+        const ios = /iPad|iPhone|iPod/.test(ua) ||
+          (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+        const safari = /Safari/.test(ua) &&
+          !/Chrome|Chromium|CriOS|Edg|OPR|Android/.test(ua);
+        return ios || safari || !("download" in HTMLAnchorElement.prototype);
+      }
+
+      async function carregarLogo(caminho) {
+        const url = new URL(caminho, location.href);
+        const raizes = [
+          new URL("../marca/arquivos/", location.href).pathname,
+          new URL("./assets/", location.href).pathname
+        ];
+        if (url.origin !== location.origin || !raizes.some(r => url.pathname.startsWith(r))) {
+          throw new Error("Arquivo de marca fora das pastas permitidas.");
+        }
+        const img = new Image();
+        img.src = url.href;
+        await img.decode();
+        return img;
+      }
+
+      async function iniciarAssets() {
+        try {
+          await Promise.all([
+            document.fonts.load('400 16px "Aller"'),
+            document.fonts.load('700 16px "Aller"'),
+            document.fonts.load('300 16px "Mesmerize"'),
+            document.fonts.load('700 16px "Mesmerize"')
+          ]);
+          await document.fonts.ready;
+
+          if (!document.fonts.check('700 16px "Aller"') || !document.fonts.check('700 16px "Mesmerize"')) {
+            throw new Error("Não foi possível carregar as fontes oficiais.");
+          }
+
+          const [unemat, bccPreto, bccBranco] = await Promise.all([
+            carregarLogo(MANIFESTO_LOGOS.unemat),
+            carregarLogo(MANIFESTO_LOGOS.bccPreto),
+            carregarLogo(MANIFESTO_LOGOS.bccBranco)
+          ]);
+
+          state.logos = { unemat, bccPreto, bccBranco };
+          state.assetsProntos = true;
+          definirStatus("Escolha uma foto para personalizar sua montagem e baixar em alta resolução.", false);
+          solicitarPrevia();
+          agendarExportacao();
+        } catch (erro) {
+          definirStatus(erro.message || "Falha ao carregar identidade visual. Recarregue a página.", true);
+        }
+      }
+
+      function definirStatus(texto, isErro) {
+        el.statusGeral.textContent = texto;
+        el.statusGeral.classList.toggle("erro", Boolean(isErro));
+      }
+
+      function montarLegenda(perfil, turma, atuacao) {
+        const base = LEGENDAS_APROVADAS[perfil];
+        if (perfil !== "egresso") return base;
+        const detalhes = [
+          turma.trim() ? `Turma/Ano: ${turma.trim()}` : "",
+          atuacao.trim() ? `Atuo hoje em: ${atuacao.trim()}` : ""
+        ].filter(Boolean);
+        return detalhes.length ? `${detalhes.join(" | ")}\n${base}` : base;
+      }
+
+      function atualizarLegendaAutomatica() {
+        if (!state.legendaEditadaManualmente) {
+          el.campoLegenda.value = montarLegenda(state.perfil, state.turma, state.atuacao);
+        }
+      }
+
+      function atualizarBlocoMapaEgressos() {
+        el.mapaEgressosCard.classList.toggle("mapa-egressos-destaque", state.perfil === "egresso");
+        el.acaoMapaEgressos.textContent = "";
+
+        if (MAPA_EGRESSOS_FORM_URL.trim()) {
+          const a = document.createElement("a");
+          a.className = "btn btn-verde";
+          a.href = MAPA_EGRESSOS_FORM_URL.trim();
+          a.target = "_blank";
+          a.rel = "noopener";
+          a.textContent = "Responder ao Mapa de Egressos Top 77";
+          el.acaoMapaEgressos.appendChild(a);
+        } else {
+          const p = document.createElement("p");
+          p.className = "ajuda-texto";
+          p.textContent = "Formulário voluntário em ativação pela Coordenação. Você também pode enviar seu contato para computacao.aia@unemat.br ou marcar @computacao.unemataia.";
+          el.acaoMapaEgressos.appendChild(p);
+        }
+      }
+
+      async function abrirFoto(file) {
+        const seq = ++cargaFotoSeq;
+        if (!file) return;
+
+        const tiposPermitidos = ["image/jpeg", "image/png", "image/webp", "image/gif"];
+        const nomeBaixo = (file.name || "").toLowerCase();
+        if (nomeBaixo.endsWith(".heic") || nomeBaixo.endsWith(".heif")) {
+          throw new Error("O formato HEIC pode não abrir neste navegador. Salve a foto como JPG ou PNG e tente novamente.");
+        }
+        if (file.type && !tiposPermitidos.includes(file.type) && !file.type.startsWith("image/")) {
+          throw new Error("Escolha uma foto JPG, PNG ou WebP.");
+        }
+
+        let novaFoto = null;
+        if ("createImageBitmap" in window) {
+          try {
+            const bitmap = await createImageBitmap(file, { imageOrientation: "from-image" });
+            novaFoto = {
+              source: bitmap,
+              width: bitmap.width,
+              height: bitmap.height,
+              liberar: () => bitmap.close()
+            };
+          } catch {
+            // Alternativa pelo decodificador de imagem padrão
+          }
+        }
+
+        if (!novaFoto) {
+          const url = URL.createObjectURL(file);
+          try {
+            const img = new Image();
+            img.src = url;
+            await img.decode();
+            novaFoto = {
+              source: img,
+              width: img.naturalWidth,
+              height: img.naturalHeight,
+              liberar: () => URL.revokeObjectURL(url)
+            };
+          } catch {
+            URL.revokeObjectURL(url);
+            throw new Error("Não foi possível abrir esta foto. Escolha um arquivo JPG ou PNG.");
+          }
+        }
+
+        if (seq !== cargaFotoSeq) {
+          novaFoto.liberar();
+          return;
+        }
+
+        if (state.foto) {
+          state.foto.liberar();
+        }
+        state.foto = novaFoto;
+        state.zoom = 1;
+        state.offsetX = 0;
+        state.offsetY = 0;
+        sincronizarSliders();
+        definirStatus("Foto carregada. Ajuste o enquadramento ou salve sua imagem.", false);
+        solicitarPrevia();
+        agendarExportacao();
+      }
+
+      function geometriaFoto(foto, recorte) {
+        const escala = Math.max(recorte.w / foto.width, recorte.h / foto.height) * state.zoom;
+        const w = foto.width * escala;
+        const h = foto.height * escala;
+        const limiteX = (w - recorte.w) / 2;
+        const limiteY = (h - recorte.h) / 2;
+        return {
+          w,
+          h,
+          limiteX,
+          limiteY,
+          x: recorte.x + (recorte.w - w) / 2 + state.offsetX * limiteX,
+          y: recorte.y + (recorte.h - h) / 2 + state.offsetY * limiteY
+        };
+      }
+
+      function roundedRectPath(ctx, x, y, w, h, r) {
+        const raio = Math.min(r, w / 2, h / 2);
+        ctx.beginPath();
+        ctx.moveTo(x + raio, y);
+        ctx.lineTo(x + w - raio, y);
+        ctx.quadraticCurveTo(x + w, y, x + w, y + raio);
+        ctx.lineTo(x + w, y + h - raio);
+        ctx.quadraticCurveTo(x + w, y + h, x + w - raio, y + h);
+        ctx.lineTo(x + raio, y + h);
+        ctx.quadraticCurveTo(x, y + h, x, y + h - raio);
+        ctx.lineTo(x, y + raio);
+        ctx.quadraticCurveTo(x, y, x + raio, y);
+        ctx.closePath();
+      }
+
+      function desenharEstrela(ctx, cx, cy, raio) {
+        ctx.beginPath();
+        for (let i = 0; i < 10; i++) {
+          const angulo = -Math.PI / 2 + (i * Math.PI) / 5;
+          const r = i % 2 ? raio * 0.38196601125 : raio;
+          const x = cx + Math.cos(angulo) * r;
+          const y = cy + Math.sin(angulo) * r;
+          if (i === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.closePath();
+        ctx.fill();
+      }
+
+      function desenharMolduraFoto(ctx, recorte, isDark, circular) {
+        ctx.save();
+        if (circular) {
+          ctx.beginPath();
+          ctx.arc(recorte.cx, recorte.cy, recorte.r, 0, Math.PI * 2);
+          ctx.clip();
+        } else {
+          roundedRectPath(ctx, recorte.x, recorte.y, recorte.w, recorte.h, recorte.r);
+          ctx.clip();
+        }
+
+        if (state.foto) {
+          ctx.imageSmoothingEnabled = true;
+          ctx.imageSmoothingQuality = "high";
+          const g = geometriaFoto(state.foto, recorte);
+          ctx.drawImage(state.foto.source, g.x, g.y, g.w, g.h);
+        } else {
+          // Fundo de orientação antes do usuário escolher a foto
+          const grad = ctx.createLinearGradient(recorte.x, recorte.y, recorte.x + recorte.w, recorte.y + recorte.h);
+          grad.addColorStop(0, isDark ? "#0D1B2A" : "#E8F6FD");
+          grad.addColorStop(1, isDark ? "#13293D" : "#EEF7E2");
+          ctx.fillStyle = grad;
+          ctx.fillRect(recorte.x, recorte.y, recorte.w, recorte.h);
+
+          // Silhueta vetorial discreta
+          const cx = recorte.x + recorte.w / 2;
+          const cy = recorte.y + recorte.h * (circular ? 0.39 : 0.44);
+          const escala = Math.min(recorte.w, recorte.h) / 520;
+          ctx.fillStyle = isDark ? "rgba(0, 158, 224, 0.24)" : "rgba(0, 158, 224, 0.22)";
+          ctx.beginPath();
+          ctx.arc(cx, cy - 58 * escala, 66 * escala, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.beginPath();
+          ctx.ellipse(cx, cy + 88 * escala, 122 * escala, 74 * escala, 0, Math.PI, Math.PI * 2);
+          ctx.fill();
+
+          ctx.fillStyle = isDark ? PALETA.branco : PALETA.preto;
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          ctx.font = `700 ${Math.round(28 * escala)}px "Aller", sans-serif`;
+          ctx.fillText("SUA FOTO APARECE AQUI", cx, cy + (circular ? 110 : 158) * escala);
+          ctx.font = `400 ${Math.round(21 * escala)}px "Aller", sans-serif`;
+          ctx.fillText("Toque em 'Escolher foto da galeria'", cx, cy + (circular ? 142 : 194) * escala);
+        }
+        ctx.restore();
+      }
+
+      function desenharBrasao77(ctx, x, y, w, h, isDark) {
+        roundedRectPath(ctx, x, y, w, h, 18);
+        ctx.fillStyle = PALETA.preto;
+        ctx.fill();
+
+        // Borda externa ciano + filete interno verde (assinatura mimos v4)
+        ctx.lineWidth = 4;
+        ctx.strokeStyle = PALETA.ciano;
+        ctx.stroke();
+
+        roundedRectPath(ctx, x + 6, y + 6, w - 12, h - 12, 13);
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = PALETA.verde;
+        ctx.stroke();
+
+        const cx = x + w / 2;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+
+        ctx.fillStyle = PALETA.ciano;
+        ctx.font = `700 ${Math.round(h * 0.44)}px "Aller", sans-serif`;
+        ctx.fillText("77º", cx, y + h * 0.34);
+
+        const estrelaR = h * 0.068;
+        const esp = estrelaR * 2.55;
+        const iniX = cx - 1.5 * esp;
+        const estrelaY = y + h * 0.65;
+        ctx.fillStyle = PALETA.verde;
+        for (let i = 0; i < 4; i++) {
+          desenharEstrela(ctx, iniX + i * esp, estrelaY, estrelaR);
+        }
+
+        ctx.fillStyle = PALETA.branco;
+        ctx.font = `700 ${Math.round(h * 0.115)}px "Aller", sans-serif`;
+        ctx.fillText("NO BRASIL", cx, y + h * 0.84);
+      }
+
+      function desenharGraficoRUF(ctx, x, y, w, h, isDark) {
+        roundedRectPath(ctx, x, y, w, h, 14);
+        ctx.fillStyle = isDark ? "#0A1016" : "#F6F9FC";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = isDark ? PALETA.ciano : "#C5D4E2";
+        ctx.stroke();
+
+        const fsBase = Math.min(w * 0.056, h * 0.085);
+        ctx.textAlign = "left";
+        ctx.textBaseline = "middle";
+        ctx.fillStyle = isDark ? PALETA.verde : PALETA.preto;
+        ctx.font = `700 ${Math.round(fsBase * 1.0)}px "Aller", sans-serif`;
+        ctx.fillText("TRAJETÓRIA RUF (176º A 77º)", x + 16, y + h * 0.14, w - 32);
+
+        const plot = {
+          x: x + w * 0.14,
+          y: y + h * 0.39,
+          w: w * 0.72,
+          h: h * 0.33
+        };
+
+        const pts = HISTORICO_RUF.map((d, i) => ({
+          ...d,
+          px: plot.x + (i * plot.w) / 3,
+          py: plot.y + ((d.posicao - 77) * plot.h) / (176 - 77)
+        }));
+
+        // Linhas guia discretas
+        ctx.save();
+        ctx.strokeStyle = isDark ? "rgba(255,255,255,0.16)" : "rgba(0,0,0,0.12)";
+        ctx.lineWidth = 1.5;
+        ctx.setLineDash([5, 5]);
+        for (const frac of [0, 0.5, 1]) {
+          const ly = plot.y + plot.h * frac;
+          ctx.beginPath();
+          ctx.moveTo(plot.x - 10, ly);
+          ctx.lineTo(plot.x + plot.w + 10, ly);
+          ctx.stroke();
+        }
+        ctx.restore();
+
+        // Segmentos retos conectando os 4 pontos
+        const gradLinha = ctx.createLinearGradient(pts[0].px, 0, pts[3].px, 0);
+        gradLinha.addColorStop(0, isDark ? PALETA.branco : PALETA.preto);
+        gradLinha.addColorStop(0.45, PALETA.ciano);
+        gradLinha.addColorStop(1, PALETA.verde);
+        ctx.strokeStyle = gradLinha;
+        ctx.lineWidth = 5;
+        ctx.lineCap = "round";
+        ctx.lineJoin = "round";
+        ctx.beginPath();
+        pts.forEach((p, idx) => {
+          if (idx === 0) ctx.moveTo(p.px, p.py);
+          else ctx.lineTo(p.px, p.py);
+        });
+        ctx.stroke();
+
+        ctx.textAlign = "center";
+        pts.forEach((p, idx) => {
+          const ultimo = idx === 3;
+          ctx.beginPath();
+          ctx.arc(p.px, p.py, ultimo ? 8 : 5.5, 0, Math.PI * 2);
+          ctx.fillStyle = ultimo ? PALETA.verde : PALETA.ciano;
+          ctx.fill();
+          ctx.lineWidth = 2.5;
+          ctx.strokeStyle = PALETA.preto;
+          ctx.stroke();
+
+          ctx.fillStyle = isDark ? (ultimo ? PALETA.verde : PALETA.branco) : PALETA.preto;
+          ctx.font = `700 ${Math.round(fsBase * (ultimo ? 1.25 : 1.05))}px "Aller", sans-serif`;
+          ctx.fillText(`${p.posicao}º`, p.px, p.py - (ultimo ? 19 : 16));
+
+          ctx.fillStyle = isDark ? "#D6E1EC" : PALETA.preto;
+          ctx.font = `${ultimo ? "700" : "400"} ${Math.round(fsBase * 0.96)}px "Aller", sans-serif`;
+          ctx.fillText(String(p.ano), p.px, y + h * 0.87);
+        });
+      }
+
+      function desenharAssinaturas(ctx, x, y, w, h, isDark) {
+        if (!state.logos) return;
+        const { unemat, bccPreto } = state.logos;
+
+        if (isDark) {
+          roundedRectPath(ctx, x, y, w, h, 14);
+          ctx.fillStyle = PALETA.branco;
+          ctx.fill();
+        }
+
+        const padX = 20;
+        const maxH = h * 0.74;
+        const uRatio = unemat.naturalWidth / unemat.naturalHeight;
+        const bRatio = bccPreto.naturalWidth / bccPreto.naturalHeight;
+
+        let uH = maxH;
+        let uW = uH * uRatio;
+        let bH = maxH * 0.96;
+        let bW = bH * bRatio;
+
+        const espacoUtil = w - padX * 2 - 28;
+        if (uW + bW > espacoUtil) {
+          const fator = espacoUtil / (uW + bW);
+          uW *= fator;
+          uH *= fator;
+          bW *= fator;
+          bH *= fator;
+        }
+
+        const totalW = uW + bW + 26;
+        const startX = x + (w - totalW) / 2;
+        const cy = y + h / 2;
+
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = "high";
+        ctx.drawImage(unemat, startX, cy - uH / 2, uW, uH);
+
+        ctx.fillStyle = "#CBD5E1";
+        ctx.fillRect(startX + uW + 12, cy - maxH * 0.42, 2, maxH * 0.84);
+
+        ctx.drawImage(bccPreto, startX + uW + 26, cy - bH / 2, bW, bH);
+      }
+
+      function quebrarTexto(ctx, texto, maxWidth) {
+        const palavras = texto.trim().split(/\s+/);
+        const linhas = [];
+        let atual = "";
+        for (const p of palavras) {
+          const teste = atual ? `${atual} ${p}` : p;
+          if (ctx.measureText(teste).width <= maxWidth) {
+            atual = teste;
+          } else {
+            if (atual) linhas.push(atual);
+            atual = p;
+          }
+        }
+        if (atual) linhas.push(atual);
+        return linhas;
+      }
+
+      function obterDadosPerfil() {
+        const base = PERFIS[state.perfil];
+        let badge = base.badge;
+        let subtitulo = base.subtitulo;
+
+        if (state.perfil === "egresso" && state.turma.trim()) {
+          badge = `EGRESSO  |  ${state.turma.trim().toUpperCase()}  |  BCC`;
+        }
+        if (state.perfil === "egresso" && state.atuacao.trim()) {
+          subtitulo = state.atuacao.trim();
+        }
+        if (state.nome.trim()) {
+          subtitulo = `${state.nome.trim()}  •  ${subtitulo}`;
+        }
+        return { badge, titulo: base.titulo, subtitulo };
+      }
+
+      function obterRecortePorFormato(formato) {
+        if (formato === "feed") {
+          return { x: 48, y: 112, w: 984, h: 668, r: 20 };
+        }
+        if (formato === "stories") {
+          return { x: 56, y: 214, w: 968, h: 906, r: 22 };
+        }
+        return { x: 24, y: 24, w: 1032, h: 1032, cx: 540, cy: 540, r: 516 };
+      }
+
+      function desenharArte(ctx, formato) {
+        const { largura: W, altura: H } = FORMATOS[formato];
+        const isDark = state.tema === "dark";
+        const info = obterDadosPerfil();
+
+        ctx.clearRect(0, 0, W, H);
+
+        if (formato === "avatar") {
+          desenharAvatar(ctx, W, H, isDark, info);
+          return;
+        }
+
+        // Fundo base e moldura dupla 100% BCC (Porta-copos v4/v5)
+        ctx.fillStyle = isDark ? PALETA.preto : PALETA.branco;
+        ctx.fillRect(0, 0, W, H);
+
+        const padExt = formato === "stories" ? 22 : 18;
+        roundedRectPath(ctx, padExt, padExt, W - padExt * 2, H - padExt * 2, 28);
+        ctx.lineWidth = 6;
+        ctx.strokeStyle = PALETA.ciano;
+        ctx.stroke();
+
+        roundedRectPath(ctx, padExt + 9, padExt + 9, W - (padExt + 9) * 2, H - (padExt + 9) * 2, 22);
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = PALETA.verde;
+        ctx.stroke();
+
+        if (formato === "feed") {
+          // Faixa superior do perfil
+          const badgeY = 44;
+          const badgeW = 984;
+          const badgeH = 52;
+          roundedRectPath(ctx, 48, badgeY, badgeW, badgeH, 26);
+          ctx.fillStyle = state.perfil === "estudante" || state.perfil === "ptes" ? PALETA.verde : PALETA.ciano;
+          ctx.fill();
+
+          ctx.fillStyle = PALETA.preto;
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          ctx.font = '700 23px "Aller", sans-serif';
+          ctx.fillText(info.badge, W / 2, badgeY + badgeH / 2 + 1);
+
+          const recorte = obterRecortePorFormato("feed");
+          desenharMolduraFoto(ctx, recorte, isDark, false);
+
+          // Borda da janela da foto
+          roundedRectPath(ctx, recorte.x, recorte.y, recorte.w, recorte.h, recorte.r);
+          ctx.lineWidth = 4;
+          ctx.strokeStyle = isDark ? PALETA.ciano : PALETA.preto;
+          ctx.stroke();
+
+          // Bloco informativo inferior
+          const infoTop = 804;
+          desenharBrasao77(ctx, 48, infoTop, 232, 260, isDark);
+
+          // Título e indicadores ao centro
+          const midX = 300;
+          const midW = 384;
+          ctx.textAlign = "left";
+          ctx.textBaseline = "top";
+          ctx.fillStyle = isDark ? PALETA.verde : PALETA.preto;
+          ctx.font = '700 18px "Aller", sans-serif';
+          ctx.fillText("2º EM MT  •  4 ESTRELAS GUIA DA FACULDADE", midX, infoTop + 6, midW);
+
+          ctx.fillStyle = isDark ? PALETA.branco : PALETA.preto;
+          ctx.font = '700 31px "Mesmerize", "Aller", sans-serif';
+          const linhasTit = quebrarTexto(ctx, info.titulo, midW).slice(0, 3);
+          linhasTit.forEach((ln, idx) => {
+            ctx.fillText(ln, midX, infoTop + 36 + idx * 37, midW);
+          });
+
+          const subY = infoTop + 36 + linhasTit.length * 37 + 10;
+          ctx.fillStyle = isDark ? "#D6E1EC" : "#1F2937";
+          ctx.font = '400 21px "Aller", sans-serif';
+          const linhasSub = quebrarTexto(ctx, info.subtitulo, midW).slice(0, 3);
+          linhasSub.forEach((ln, idx) => {
+            ctx.fillText(ln, midX, subY + idx * 26, midW);
+          });
+
+          ctx.fillStyle = isDark ? PALETA.ciano : PALETA.preto;
+          ctx.font = '700 18px "Aller", sans-serif';
+          ctx.fillText(state.campus, midX, infoTop + 234, midW);
+
+          // Gráfico RUF à direita
+          desenharGraficoRUF(ctx, 702, infoTop, 330, 260, isDark);
+
+          // Assinaturas oficiais + barra obrigatória
+          desenharAssinaturas(ctx, 48, 1084, 984, 120, isDark);
+
+          roundedRectPath(ctx, 48, 1222, 984, 72, 16);
+          ctx.fillStyle = isDark ? PALETA.verde : PALETA.ciano;
+          ctx.fill();
+          ctx.fillStyle = PALETA.preto;
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          ctx.font = '700 23px "Aller", sans-serif';
+          ctx.fillText("UNIVERSIDADE PÚBLICA E GRATUITA. SEM MENSALIDADE.", W / 2, 1258);
+          return;
+        }
+
+        // STORIES 9:16 (safe zones >= 130px topo e >= 150px base)
+        const sBadgeY = 136;
+        roundedRectPath(ctx, 56, sBadgeY, 968, 56, 28);
+        ctx.fillStyle = state.perfil === "estudante" || state.perfil === "ptes" ? PALETA.verde : PALETA.ciano;
+        ctx.fill();
+        ctx.fillStyle = PALETA.preto;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.font = '700 24px "Aller", sans-serif';
+        ctx.fillText(info.badge, W / 2, sBadgeY + 29);
+
+        const recSt = obterRecortePorFormato("stories");
+        desenharMolduraFoto(ctx, recSt, isDark, false);
+        roundedRectPath(ctx, recSt.x, recSt.y, recSt.w, recSt.h, recSt.r);
+        ctx.lineWidth = 4;
+        ctx.strokeStyle = isDark ? PALETA.ciano : PALETA.preto;
+        ctx.stroke();
+
+        // Faixa título + subtítulo abaixo da foto
+        const txtY = 1144;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "top";
+        ctx.fillStyle = isDark ? PALETA.branco : PALETA.preto;
+        ctx.font = '700 40px "Mesmerize", "Aller", sans-serif';
+        ctx.fillText(info.titulo, W / 2, txtY);
+
+        ctx.fillStyle = isDark ? "#D6E1EC" : "#1F2937";
+        ctx.font = '400 24px "Aller", sans-serif';
+        const subSt = quebrarTexto(ctx, info.subtitulo, 940).slice(0, 2);
+        subSt.forEach((ln, idx) => {
+          ctx.fillText(ln, W / 2, txtY + 50 + idx * 30);
+        });
+
+        // Linha intermediária: Brasão 77 + Gráfico RUF
+        const cardY = 1272;
+        desenharBrasao77(ctx, 56, cardY, 340, 260, isDark);
+        desenharGraficoRUF(ctx, 416, cardY, 608, 260, isDark);
+
+        // Assinaturas + selo obrigatório dentro da safe zone (termina antes de y=1770)
+        desenharAssinaturas(ctx, 56, 1554, 968, 120, isDark);
+
+        roundedRectPath(ctx, 56, 1692, 968, 72, 16);
+        ctx.fillStyle = isDark ? PALETA.verde : PALETA.ciano;
+        ctx.fill();
+        ctx.fillStyle = PALETA.preto;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.font = '700 23px "Aller", sans-serif';
+        ctx.fillText("UNIVERSIDADE PÚBLICA E GRATUITA. SEM MENSALIDADE.", W / 2, 1728);
+      }
+
+      function desenharAvatar(ctx, W, H, isDark, info) {
+        const cx = W / 2;
+        const cy = H / 2;
+        const rExt = 532;
+        const rFoto = 492;
+
+        // Cantos transparentes fora do círculo (padrão botton)
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(cx, cy, rExt, 0, Math.PI * 2);
+        ctx.clip();
+
+        ctx.fillStyle = isDark ? PALETA.preto : PALETA.branco;
+        ctx.fillRect(0, 0, W, H);
+
+        // Foto dentro do círculo interno
+        desenharMolduraFoto(ctx, { x: cx - rFoto, y: cy - rFoto, w: rFoto * 2, h: rFoto * 2, cx, cy, r: rFoto }, isDark, true);
+
+        // Faixa inferior opaca segura (mantém >= 65% superiores livres para o rosto)
+        const cordaY = 724;
+        ctx.fillStyle = isDark ? PALETA.preto : PALETA.branco;
+        ctx.fillRect(0, cordaY, W, H - cordaY);
+
+        // Filete separador ciano + verde
+        ctx.fillStyle = PALETA.ciano;
+        ctx.fillRect(0, cordaY, W / 2, 7);
+        ctx.fillStyle = PALETA.verde;
+        ctx.fillRect(W / 2, cordaY, W / 2, 7);
+
+        // Pílula de perfil no topo (totalmente dentro da área circular segura)
+        const pillW = 324;
+        const pillH = 42;
+        const pillY = 86;
+        roundedRectPath(ctx, cx - pillW / 2, pillY, pillW, pillH, 21);
+        ctx.fillStyle = state.perfil === "estudante" || state.perfil === "ptes" ? PALETA.verde : PALETA.ciano;
+        ctx.fill();
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = PALETA.preto;
+        ctx.stroke();
+
+        ctx.fillStyle = PALETA.preto;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.font = '700 18px "Aller", sans-serif';
+        ctx.fillText(PERFIS[state.perfil].rotulo.toUpperCase() + "  •  BCC UNEMAT", cx, pillY + pillH / 2 + 1, pillW - 24);
+
+        // Bloco 77º na faixa inferior
+        const boxW = 176;
+        const boxH = 148;
+        const boxX = 216;
+        const boxY = 752;
+        roundedRectPath(ctx, boxX, boxY, boxW, boxH, 16);
+        ctx.fillStyle = PALETA.preto;
+        ctx.fill();
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = PALETA.ciano;
+        ctx.stroke();
+
+        ctx.fillStyle = PALETA.ciano;
+        ctx.font = '700 64px "Aller", sans-serif';
+        ctx.fillText("77º", boxX + boxW / 2, boxY + 50);
+
+        ctx.fillStyle = PALETA.verde;
+        for (let i = 0; i < 4; i++) {
+          desenharEstrela(ctx, boxX + 49 + i * 26, boxY + 98, 9.5);
+        }
+
+        ctx.fillStyle = PALETA.branco;
+        ctx.font = '700 17px "Aller", sans-serif';
+        ctx.fillText("NO BRASIL", boxX + boxW / 2, boxY + 128);
+
+        // Texto à direita do brasão (dentro do círculo seguro)
+        const txtX = 414;
+        const txtMax = 450;
+        ctx.textAlign = "left";
+        ctx.fillStyle = isDark ? PALETA.verde : PALETA.preto;
+        ctx.font = '700 24px "Aller", sans-serif';
+        ctx.fillText("RUF 2026 • 2º EM MT", txtX, 780, txtMax);
+
+        ctx.fillStyle = isDark ? PALETA.branco : PALETA.preto;
+        ctx.font = '700 28px "Aller", sans-serif';
+        ctx.fillText("EU FAÇO PARTE DOS 77", txtX, 818, txtMax);
+
+        ctx.fillStyle = isDark ? PALETA.ciano : "#1F2937";
+        ctx.font = '700 20px "Aller", sans-serif';
+        ctx.fillText("176º > 120º > 105º > 77º  |  4 ESTRELAS", txtX, 856, txtMax);
+
+        ctx.fillStyle = isDark ? "#D6E1EC" : PALETA.preto;
+        ctx.font = '400 18px "Aller", sans-serif';
+        const linhaExtra = state.perfil === "egresso" && state.turma.trim()
+          ? `${state.turma.trim()}  •  BCC UNEMAT`
+          : "Ciência da Computação — UNEMAT";
+        ctx.fillText(linhaExtra, txtX, 890, txtMax);
+
+        // Barra inferior obrigatória dentro da área circular segura
+        ctx.textAlign = "center";
+        ctx.fillStyle = isDark ? PALETA.verde : PALETA.preto;
+        ctx.font = '700 16px "Aller", sans-serif';
+        ctx.fillText("UNIVERSIDADE PÚBLICA E GRATUITA • SEM MENSALIDADE", cx, 948, 490);
+
+        // Anel externo ciano e anel interno verde estilo botton
+        ctx.beginPath();
+        ctx.arc(cx, cy, rExt - 6, 0, Math.PI * 2);
+        ctx.lineWidth = 12;
+        ctx.strokeStyle = PALETA.ciano;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(cx, cy, rFoto + 6, 0, Math.PI * 2);
+        ctx.lineWidth = 7;
+        ctx.strokeStyle = PALETA.verde;
+        ctx.stroke();
+
+        ctx.restore();
+      }
+
+      function prepararPrevia(canvas, larguraCSS, larguraArte, alturaArte) {
+        const alturaCSS = (larguraCSS * alturaArte) / larguraArte;
+        const dpr = Math.min(window.devicePixelRatio || 1, 3);
+        canvas.style.width = `${larguraCSS}px`;
+        canvas.style.height = `${alturaCSS}px`;
+        canvas.width = Math.round(larguraCSS * dpr);
+        canvas.height = Math.round(alturaCSS * dpr);
+        const ctx = canvas.getContext("2d");
+        ctx.setTransform(canvas.width / larguraArte, 0, 0, canvas.height / alturaArte, 0, 0);
+        return ctx;
+      }
+
+      function desenharPreviaAgora() {
+        const fmt = FORMATOS[state.formato];
+        el.previaDim.textContent = `${fmt.nome} • ${fmt.largura} × ${fmt.altura}`;
+        const palcoW = el.canvasPrevia.parentElement.clientWidth - 20;
+        const maxLarg = state.formato === "stories" ? 310 : 400;
+        const larguraCSS = Math.max(220, Math.min(palcoW > 0 ? palcoW : maxLarg, maxLarg));
+        const ctx = prepararPrevia(el.canvasPrevia, larguraCSS, fmt.largura, fmt.altura);
+        if (state.assetsProntos) {
+          desenharArte(ctx, state.formato);
+        }
+      }
+
+      function solicitarPrevia() {
+        if (rafPrevia) return;
+        rafPrevia = requestAnimationFrame(() => {
+          rafPrevia = 0;
+          desenharPreviaAgora();
+        });
+      }
+
+      function invalidarExportacao() {
+        el.linkSalvar.setAttribute("aria-disabled", "true");
+        el.btnVerImagem.setAttribute("aria-disabled", "true");
+      }
+
+      function gerarPNG(canvas) {
+        return new Promise((resolve, reject) => {
+          try {
+            canvas.toBlob(
+              blob => blob ? resolve(blob) : reject(new Error("Não foi possível preparar a imagem.")),
+              "image/png"
+            );
+          } catch (erro) {
+            reject(erro);
+          }
+        });
+      }
+
+      async function atualizarExportacao() {
+        if (!state.assetsProntos) return;
+        const seq = ++renderSeq;
+        const fmt = FORMATOS[state.formato];
+        canvasExportacao.width = fmt.largura;
+        canvasExportacao.height = fmt.altura;
+        const ctx = canvasExportacao.getContext("2d");
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        desenharArte(ctx, state.formato);
+
+        try {
+          const blob = await gerarPNG(canvasExportacao);
+          if (seq !== renderSeq) return;
+          const proximaURL = URL.createObjectURL(blob);
+          if (state.urlPNG) URL.revokeObjectURL(state.urlPNG);
+          state.urlPNG = proximaURL;
+
+          const nomeArquivo = `meu-selo-77-${state.perfil}-${state.formato}-${state.tema}.png`;
+          el.linkSalvar.href = state.urlPNG;
+          el.linkSalvar.download = nomeArquivo;
+          el.linkSalvar.removeAttribute("aria-disabled");
+          el.btnVerImagem.removeAttribute("aria-disabled");
+
+          el.imagemAlternativa.src = state.urlPNG;
+          el.linkAbrirAba.href = state.urlPNG;
+          if (detectarSafariOuIOS()) {
+            el.containerAlternativo.hidden = false;
+          }
+        } catch (erro) {
+          if (seq !== renderSeq) return;
+          definirStatus(erro.message || "Erro ao preparar imagem.", true);
+        }
+      }
+
+      function agendarExportacao() {
+        invalidarExportacao();
+        clearTimeout(timerExportacao);
+        timerExportacao = setTimeout(atualizarExportacao, 140);
+      }
+
+      function sincronizarSliders() {
+        el.controleZoom.value = state.zoom.toFixed(2);
+        el.controleX.value = state.offsetX.toFixed(2);
+        el.controleY.value = state.offsetY.toFixed(2);
+        el.valorZoom.textContent = `${Math.round(state.zoom * 100)}%`;
+        el.valorX.textContent = Math.abs(state.offsetX) < 0.04 ? "Centro" : `${Math.round(state.offsetX * 100)}%`;
+        el.valorY.textContent = Math.abs(state.offsetY) < 0.04 ? "Centro" : `${Math.round(state.offsetY * 100)}%`;
+      }
+
+      async function copiarLegenda() {
+        const texto = el.campoLegenda.value;
+        try {
+          if (!window.isSecureContext || !navigator.clipboard || !navigator.clipboard.writeText) {
+            throw new Error("Cópia automática indisponível.");
+          }
+          await navigator.clipboard.writeText(texto);
+          el.statusLegenda.textContent = "Legenda copiada.";
+        } catch {
+          el.campoLegenda.focus();
+          el.campoLegenda.select();
+          el.campoLegenda.setSelectionRange(0, texto.length);
+          el.statusLegenda.textContent = "Selecione a opção Copiar do seu aparelho para copiar a legenda.";
+        }
+      }
+
+      // Eventos de interface
+      el.inputFoto.addEventListener("change", async e => {
+        const file = e.target.files && e.target.files[0];
+        if (!file) return;
+        try {
+          await abrirFoto(file);
+        } catch (erro) {
+          definirStatus(erro.message || "Falha ao abrir a foto.", true);
+        }
+      });
+
+      el.btnCentralizar.addEventListener("click", () => {
+        state.zoom = 1;
+        state.offsetX = 0;
+        state.offsetY = 0;
+        sincronizarSliders();
+        solicitarPrevia();
+        agendarExportacao();
+      });
+
+      el.controleZoom.addEventListener("input", () => {
+        state.zoom = parseFloat(el.controleZoom.value);
+        sincronizarSliders();
+        solicitarPrevia();
+        agendarExportacao();
+      });
+
+      el.controleX.addEventListener("input", () => {
+        state.offsetX = parseFloat(el.controleX.value);
+        sincronizarSliders();
+        solicitarPrevia();
+        agendarExportacao();
+      });
+
+      el.controleY.addEventListener("input", () => {
+        state.offsetY = parseFloat(el.controleY.value);
+        sincronizarSliders();
+        solicitarPrevia();
+        agendarExportacao();
+      });
+
+      document.querySelectorAll('input[name="perfil"]').forEach(radio => {
+        radio.addEventListener("change", () => {
+          state.perfil = radio.value;
+          el.camposEgresso.hidden = state.perfil !== "egresso";
+          atualizarLegendaAutomatica();
+          atualizarBlocoMapaEgressos();
+          solicitarPrevia();
+          agendarExportacao();
+        });
+      });
+
+      document.querySelectorAll('input[name="tema"]').forEach(radio => {
+        radio.addEventListener("change", () => {
+          state.tema = radio.value;
+          solicitarPrevia();
+          agendarExportacao();
+        });
+      });
+
+      document.querySelectorAll('input[name="formato"]').forEach(radio => {
+        radio.addEventListener("change", () => {
+          state.formato = radio.value;
+          solicitarPrevia();
+          agendarExportacao();
+        });
+      });
+
+      el.campoNome.addEventListener("input", () => {
+        state.nome = el.campoNome.value;
+        solicitarPrevia();
+        agendarExportacao();
+      });
+
+      el.campoCampus.addEventListener("change", () => {
+        state.campus = el.campoCampus.value;
+        solicitarPrevia();
+        agendarExportacao();
+      });
+
+      el.campoTurma.addEventListener("input", () => {
+        state.turma = el.campoTurma.value;
+        atualizarLegendaAutomatica();
+        solicitarPrevia();
+        agendarExportacao();
+      });
+
+      el.campoAtuacao.addEventListener("input", () => {
+        state.atuacao = el.campoAtuacao.value;
+        atualizarLegendaAutomatica();
+        solicitarPrevia();
+        agendarExportacao();
+      });
+
+      el.campoLegenda.addEventListener("input", () => {
+        state.legendaEditadaManualmente = true;
+      });
+
+      el.btnCopiarLegenda.addEventListener("click", copiarLegenda);
+
+      el.linkSalvar.addEventListener("click", e => {
+        if (el.linkSalvar.getAttribute("aria-disabled") === "true") {
+          e.preventDefault();
+          return;
+        }
+        el.containerAlternativo.hidden = false;
+      });
+
+      el.btnVerImagem.addEventListener("click", () => {
+        if (el.btnVerImagem.getAttribute("aria-disabled") === "true") return;
+        el.containerAlternativo.hidden = false;
+        el.containerAlternativo.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      });
+
+      // Arraste unificado na prévia (toque e mouse)
+      el.canvasPrevia.addEventListener("pointerdown", e => {
+        if (!state.foto || !e.isPrimary || (e.pointerType === "mouse" && e.button !== 0)) return;
+        const recorte = obterRecortePorFormato(state.formato);
+        const g = geometriaFoto(state.foto, recorte);
+        gesto = {
+          id: e.pointerId,
+          x: e.clientX,
+          y: e.clientY,
+          ox: state.offsetX,
+          oy: state.offsetY,
+          g
+        };
+        el.canvasPrevia.setPointerCapture(e.pointerId);
+      });
+
+      el.canvasPrevia.addEventListener("pointermove", e => {
+        if (!gesto || gesto.id !== e.pointerId) return;
+        const rect = el.canvasPrevia.getBoundingClientRect();
+        const arte = FORMATOS[state.formato];
+        const dx = ((e.clientX - gesto.x) * arte.largura) / rect.width;
+        const dy = ((e.clientY - gesto.y) * arte.altura) / rect.height;
+
+        state.offsetX = gesto.g.limiteX ? limitar(gesto.ox + dx / gesto.g.limiteX, -1, 1) : 0;
+        state.offsetY = gesto.g.limiteY ? limitar(gesto.oy + dy / gesto.g.limiteY, -1, 1) : 0;
+        sincronizarSliders();
+        solicitarPrevia();
+      });
+
+      for (const ev of ["pointerup", "pointercancel", "lostpointercapture"]) {
+        el.canvasPrevia.addEventListener(ev, e => {
+          if (gesto && gesto.id === e.pointerId) {
+            gesto = null;
+            agendarExportacao();
+          }
+        });
+      }
+
+      if ("ResizeObserver" in window) {
+        new ResizeObserver(() => solicitarPrevia()).observe(el.canvasPrevia.parentElement);
+      } else {
+        window.addEventListener("resize", solicitarPrevia);
+      }
+
+      window.addEventListener("pagehide", () => {
+        if (state.urlPNG) URL.revokeObjectURL(state.urlPNG);
+        if (state.foto) state.foto.liberar();
+      });
+
+      sincronizarSliders();
+      atualizarLegendaAutomatica();
+      atualizarBlocoMapaEgressos();
+      iniciarAssets();
+    })();
+  </script>
+</body>
+</html>
