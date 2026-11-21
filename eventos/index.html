@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memória de Eventos — Ciência da Computação — UNEMAT</title>
+  <meta name="description" content="Histórico oficial das 24 edições comprovadas das séries SELCOMP, Workshop de Computação, SECOMP e ERI-MT no curso de Ciência da Computação da UNEMAT (Alto Araguaia e Rondonópolis, 2004–2026).">
+  <link rel="canonical" href="https://computacaounemat.github.io/eventos/">
+  <link rel="icon" type="image/svg+xml" href="../marca/arquivos/logo_bcc_vertical.svg">
+  <style>
+    @font-face {
+      font-family: 'Aller';
+      src: url('../selo77/assets/fonts/Aller_Std_Lt.ttf') format('truetype');
+      font-weight: 300; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Aller';
+      src: url('../selo77/assets/fonts/Aller_Std_Rg.ttf') format('truetype');
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Aller';
+      src: url('../selo77/assets/fonts/Aller_Std_Bd.ttf') format('truetype');
+      font-weight: 700; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Mesmerize';
+      src: url('../assets/fonts/mesmerize/mesmerize-light.ttf') format('truetype');
+      font-weight: 300; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Mesmerize';
+      src: url('../assets/fonts/mesmerize/mesmerize-bold.ttf') format('truetype');
+      font-weight: 700; font-style: normal; font-display: swap;
+    }
+
+    :root {
+      --bg: #0b0d0f;
+      --surface: #121820;
+      --surface-2: #161f29;
+      --border: #253242;
+      --cyan: #009EE0;
+      --green: #8DC63F;
+      --gold: #f59e0b;
+      --purple: #a78bfa;
+      --text: #f8fafc;
+      --text-soft: #cbd5e1;
+      --text-muted: #94a3b8;
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top right, rgba(0, 158, 224, 0.08), transparent 45%), var(--bg);
+      color: var(--text);
+      font-family: 'Aller', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+      outline: 3px solid var(--green);
+      outline-offset: 2px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: var(--green);
+      color: #000000;
+      font-weight: 700;
+      padding: 12px 16px;
+      z-index: 100;
+      text-decoration: none;
+    }
+    .skip-link:focus { left: 12px; top: 12px; border-radius: 8px; }
+
+    .wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 18px 64px;
+    }
+
+    .topo {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .topo a {
+      color: var(--cyan);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.96rem;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .topo a:hover { text-decoration: underline; }
+    .topo-badge {
+      background: rgba(141, 198, 63, 0.16);
+      color: var(--green);
+      border: 1px solid rgba(141, 198, 63, 0.45);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 6px 14px;
+      border-radius: 999px;
+    }
+
+    .hero {
+      padding: 28px 0 24px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+    .hero-marcas {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 18px;
+      background: #ffffff;
+      border: 3px solid var(--cyan);
+      border-radius: 14px;
+      padding: 10px 20px;
+      margin-bottom: 18px;
+      max-width: 100%;
+    }
+    .hero-marcas img {
+      height: 52px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .hero-marcas-sep {
+      width: 2px;
+      height: 42px;
+      background: #cbd5e1;
+      flex-shrink: 0;
+    }
+    .hero-tag {
+      display: inline-block;
+      background: var(--cyan);
+      color: #000000;
+      font-weight: 700;
+      font-size: 0.84rem;
+      padding: 5px 14px;
+      border-radius: 999px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .hero h1 {
+      margin: 0 0 10px;
+      font-family: 'Mesmerize', 'Aller', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.7rem, 4vw, 2.7rem);
+      line-height: 1.15;
+      color: var(--text);
+    }
+    .hero-lead {
+      margin: 0 0 20px;
+      max-width: 820px;
+      color: var(--text-soft);
+      font-size: 1.03rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--cyan);
+      margin-bottom: 4px;
+    }
+    .stat-val {
+      font-family: 'Mesmerize', 'Aller', sans-serif;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: var(--text);
+      line-height: 1.2;
+    }
+    .stat-sub {
+      font-size: 0.86rem;
+      color: var(--text-soft);
+      margin-top: 4px;
+    }
+
+    .filtros-painel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      margin-bottom: 20px;
+    }
+    .filtros-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      align-items: end;
+    }
+    .campo label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-soft);
+      margin-bottom: 6px;
+    }
+    .campo select, .campo input {
+      width: 100%;
+      min-height: 44px;
+      background: var(--surface-2);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 9px 12px;
+      font-family: inherit;
+      font-size: 0.94rem;
+    }
+    .filtros-barra-baixo {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+    .status-contagem {
+      font-size: 0.92rem;
+      color: var(--text-soft);
+      font-weight: 700;
+    }
+    .btn-limpar {
+      min-height: 40px;
+      padding: 8px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      color: var(--text);
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+    }
+    .btn-limpar:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+    }
+
+    /* Tabela Desktop (>= 960px) */
+    .tabela-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .ev-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+    .ev-table th {
+      background: var(--surface-2);
+      color: var(--text-soft);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      text-align: left;
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .ev-table td {
+      padding: 14px;
+      vertical-align: top;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.92rem;
+      overflow-wrap: break-word;
+    }
+    .ev-table tr:last-child td { border-bottom: none; }
+    .ev-table tr:hover td { background: rgba(0, 158, 224, 0.05); }
+    .col-ano { width: 124px; }
+    .col-ev { width: 25%; }
+    .col-coord { width: 19%; }
+    .col-comite { width: 25%; }
+    .col-fom { width: 21%; }
+
+    .ano-num {
+      display: block;
+      font-family: 'Mesmerize', 'Aller', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--text);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+    .serie-badge {
+      display: inline-block;
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      line-height: 1.25;
+    }
+    .badge-secomp {
+      background: rgba(0, 158, 224, 0.16);
+      color: #7dd3fc;
+      border-color: rgba(0, 158, 224, 0.45);
+    }
+    .badge-workshop {
+      background: rgba(141, 198, 63, 0.16);
+      color: #bef264;
+      border-color: rgba(141, 198, 63, 0.45);
+    }
+    .badge-selcomp {
+      background: rgba(245, 158, 11, 0.16);
+      color: #fde68a;
+      border-color: rgba(245, 158, 11, 0.45);
+    }
+    .badge-eri {
+      background: rgba(167, 139, 250, 0.18);
+      color: #ddd6fe;
+      border-color: rgba(167, 139, 250, 0.45);
+    }
+
+    .ev-titulo {
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+    .ev-meta {
+      font-size: 0.84rem;
+      color: var(--text-soft);
+    }
+    .coord-mod {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--purple);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 3px;
+    }
+    .coord-names {
+      font-weight: 700;
+      color: var(--text);
+    }
+    .muted-cell {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+    .fom-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 5px;
+    }
+    .tag-fom {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 7px;
+      background: rgba(148, 163, 184, 0.14);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      color: var(--text);
+    }
+    .tag-fom-destaque {
+      background: rgba(141, 198, 63, 0.18);
+      border-color: rgba(141, 198, 63, 0.5);
+      color: #d9f99d;
+    }
+    .tag-sbc {
+      background: rgba(167, 139, 250, 0.18);
+      border-color: rgba(167, 139, 250, 0.5);
+      color: #e9d5ff;
+    }
+    .reg-oficial {
+      font-size: 0.82rem;
+      color: var(--text-soft);
+    }
+
+    /* Cards Mobile / Tablet (< 960px) */
+    .ev-cards {
+      display: none;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .ev-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+    .ev-card-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .ev-card-top .ano-num { margin-bottom: 0; font-size: 1.15rem; }
+    .campus-pill {
+      margin-left: auto;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-soft);
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 2px 10px;
+    }
+    .ev-card-title {
+      margin: 0 0 4px;
+      font-size: 1.04rem;
+      color: var(--text);
+      line-height: 1.3;
+    }
+    .ev-card-meta {
+      margin: 0 0 12px;
+      font-size: 0.86rem;
+      color: var(--text-soft);
+    }
+    .ev-card-dl {
+      margin: 0;
+      display: grid;
+      gap: 10px;
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+    }
+    .ev-card-dl dt {
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--cyan);
+      margin-bottom: 2px;
+    }
+    .ev-card-dl dd {
+      margin: 0;
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+
+    .vazio {
+      display: none;
+      background: var(--surface);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      text-align: center;
+      color: var(--text-soft);
+      margin-top: 14px;
+    }
+
+    .rodape {
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      display: grid;
+      gap: 16px;
+    }
+    .nota-editorial {
+      background: var(--surface);
+      border-left: 4px solid var(--cyan);
+      border-radius: 10px;
+      padding: 14px 18px;
+      color: var(--text-soft);
+      font-size: 0.94rem;
+      margin: 0;
+    }
+    .faixa-publica {
+      background: var(--green);
+      color: #000000;
+      font-weight: 700;
+      font-size: 1rem;
+      text-align: center;
+      padding: 12px 18px;
+      border-radius: 12px;
+    }
+    .rodape-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .rodape-links a {
+      color: var(--cyan);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .rodape-links a:hover { text-decoration: underline; }
+
+    @media (max-width: 959px) {
+      .filtros-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .tabela-wrap { display: none; }
+      .ev-cards { display: grid; }
+    }
+    @media (max-width: 580px) {
+      .filtros-grid { grid-template-columns: 1fr; }
+      .hero-marcas img { height: 40px; }
+      .hero-marcas-sep { height: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <div class="wrap">
+    <nav class="topo" aria-label="Navegação superior">
+      <a href="../">← Site do curso</a>
+      <span class="topo-badge">Alto Araguaia &amp; Rondonópolis</span>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-marcas">
+        <img src="../selo77/assets/unemat_aia_roo_transparente.png" alt="UNEMAT — Câmpus de Alto Araguaia e Câmpus Avançado de Rondonópolis">
+        <div class="hero-marcas-sep" aria-hidden="true"></div>
+        <img src="../marca/arquivos/logo_bcc_horizontal_fundo_transparente_texto_preto.png" alt="Ciência da Computação UNEMAT">
+      </div>
+      <div>
+        <span class="hero-tag">Memória Institucional · 2004–2026</span>
+      </div>
+      <h1>Memória de Eventos — Ciência da Computação da UNEMAT</h1>
+      <p class="hero-lead">
+        Registro cronológico oficial das <strong>24 edições comprovadas</strong> realizadas pelo curso de Ciência da Computação em Alto Araguaia e Rondonópolis nas suas quatro séries históricas (SELCOMP, Workshop de Computação, SECOMP e ERI-MT), com crédito às coordenações gerais, comitês científicos e apoios de fomento.
+      </p>
+
+      <div class="stats-grid" aria-label="Resumo histórico">
+        <div class="stat-card">
+          <div class="stat-label">Trajetória Contínua</div>
+          <div class="stat-val">24 Edições Oficiais</div>
+          <div class="stat-sub">Mais de 20 anos de realização documentada (2004–2026)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Séries do Curso</div>
+          <div class="stat-val">4 Séries Históricas</div>
+          <div class="stat-sub">SELCOMP · Workshop de Computação · SECOMP · ERI-MT</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Abrangência Territorial</div>
+          <div class="stat-val">Dois Câmpus</div>
+          <div class="stat-sub">Alto Araguaia e Rondonópolis (e edições multicampi)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Fomento e Chancelas</div>
+          <div class="stat-val">Captação &amp; SBC</div>
+          <div class="stat-sub">PRPPG/UNEMAT (R$ 10.000,00), FAESPE (R$ 4.967,16), FAPEMAT, CNPq e SBC</div>
+        </div>
+      </div>
+    </header>
+
+    <main id="conteudo-principal">
+      <section class="filtros-painel" aria-label="Filtros da memória de eventos">
+        <div class="filtros-grid">
+          <div class="campo">
+            <label for="f-serie">Série do evento</label>
+            <select id="f-serie">
+              <option value="all">Todas as séries (24)</option>
+              <option value="SELCOMP">SELCOMP</option>
+              <option value="Workshop de Computação">Workshop de Computação</option>
+              <option value="SECOMP">SECOMP</option>
+              <option value="ERI-MT">ERI-MT</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="f-campus">Câmpus</label>
+            <select id="f-campus">
+              <option value="all">Todos os câmpus</option>
+              <option value="alto-araguaia">Alto Araguaia</option>
+              <option value="rondonopolis">Rondonópolis</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="f-ordem">Ordenação</label>
+            <select id="f-ordem">
+              <option value="recentes">Mais recentes (2026 → 2004)</option>
+              <option value="cronologica">Cronológica (2004 → 2026)</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="f-busca">Buscar na memória</label>
+            <input id="f-busca" type="search" placeholder="Edição, docente, comitê ou edital...">
+          </div>
+        </div>
+        <div class="filtros-barra-baixo">
+          <div id="status-contagem" class="status-contagem" aria-live="polite">
+            Exibindo 24 de 24 edições oficiais (2004–2026)
+          </div>
+          <button type="button" id="btn-limpar" class="btn-limpar">Limpar filtros</button>
+        </div>
+      </section>
+
+      <div class="tabela-wrap">
+        <table class="ev-table" aria-label="Quadro histórico de eventos de Ciência da Computação da UNEMAT">
+          <thead>
+            <tr>
+              <th scope="col" class="col-ano">Ano / Série</th>
+              <th scope="col" class="col-ev">Edição, Período e Local</th>
+              <th scope="col" class="col-coord">Coordenação Geral</th>
+              <th scope="col" class="col-comite">Comitê de Programa / Científico</th>
+              <th scope="col" class="col-fom">Fomento, Chancelas e Registro</th>
+            </tr>
+          </thead>
+          <tbody id="eventos-tbody">
+            <tr class="ev-row" data-numero="24" data-ano="2026" data-serie="SECOMP" data-campi="rondonopolis" data-search="2026 secomp vii secomp — conectando inteligências: do campus ao ecossistema global 06 a 11/06/2026 rondonópolis câmpus avançado de rondonópolis (rua fernando corrêa da costa, setor rodoviária, rondonópolis - mt) carlos alex sander juvêncio gulo adriana de oliveira dias (coordenadora do comitê científico) e ubirajara martin coelho (vice-coordenador do comitê científico) edital nº 026/2025 unemat/prppg — r$ 10.000,00 aprovados (4º lugar) chancela sbc edital nº 026/2025 unemat/prppg (resultado em 27/03/2026) · ofício nº 087/2026/secomp">
+  <td class="col-ano"><span class="ano-num">2026</span><span class="serie-badge badge-secomp">SECOMP</span></td>
+  <td class="col-ev"><div class="ev-titulo">VII SECOMP — Conectando Inteligências: Do Campus ao Ecossistema Global</div><div class="ev-meta">06 a 11/06/2026 · Câmpus Avançado de Rondonópolis (Rua Fernando Corrêa da Costa, Setor Rodoviária, Rondonópolis - MT)</div></td>
+  <td class="col-coord"><div class="coord-names">Carlos Alex Sander Juvêncio Gulo</div></td>
+  <td class="col-comite">Adriana de Oliveira Dias (Coordenadora do Comitê Científico) e Ubirajara Martin Coelho (Vice-Coordenador do Comitê Científico)</td>
+  <td class="col-fom"><div class="fom-wrap"><span class="tag-fom tag-fom-destaque">Edital nº 026/2025 UNEMAT/PRPPG — R$ 10.000,00 aprovados (4º lugar)</span><span class="tag-fom tag-sbc">Chancela SBC</span></div><div class="reg-oficial">Edital nº 026/2025 UNEMAT/PRPPG (resultado em 27/03/2026) · Ofício nº 087/2026/SECOMP</div></td>
+</tr>
+<tr class="ev-row" data-numero="23" data-ano="2025" data-serie="SECOMP" data-campi="alto-araguaia" data-search="2025 secomp vi secomp — inovação digital na educação: conectando o presente ao futuro 06 a 09/10/2025 alto araguaia câmpus de alto araguaia carlos alex sander juvêncio gulo  unemat/proec parecer nº 764/2025-proec (ev532-2025) · certificado nº 91916968">
+  <td class="col-ano"><span class="ano-num">2025</span><span class="serie-badge badge-secomp">SECOMP</span></td>
+  <td class="col-ev"><div class="ev-titulo">VI SECOMP — Inovação Digital na Educação: Conectando o Presente ao Futuro</div><div class="ev-meta">06 a 09/10/2025 · Câmpus de Alto Araguaia</div></td>
+  <td class="col-coord"><div class="coord-names">Carlos Alex Sander Juvêncio Gulo</div></td>
+  <td class="col-comite"><span class="muted-cell">Sem registro destacado nos documentos oficiais</span></td>
+  <td class="col-fom"><div class="fom-wrap"><span class="tag-fom">UNEMAT/PROEC</span></div><div class="reg-oficial">Parecer nº 764/2025-PROEC (EV532-2025) · Certificado nº 91916968</div></td>
+</tr>
+<tr class="ev-row" data-numero="22" data-ano="2025" data-serie="Workshop de Computação" data-campi="rondonopolis" data-search="2025 workshop de computação xiii workshop de computação — techxperience: explorando a diversidade da tecnologia 02, 04 e 05/06/2025 rondonópolis câmpus avançado de rondonópolis (npr) adriana de oliveira dias  unemat/proec registro proec / sigaa · certificado nº 91913536">
+  <td class="col-ano"><span class="ano-num">2025</span><span class="serie-badge badge-workshop">Workshop de Computação</span></td>
+  <td class="col-ev"><div class="ev-titulo">XIII Workshop de Computação — TechXperience: Explorando a diversidade da Tecnologia</div><div class="ev-meta">02, 04 e 05/06/2025 · Câmpus Avançado de Rondonópolis (NPR)</div></td>
+  <td class="col-coord"><div class="coord-names">Adriana de Oliveira Dias</div></td>
+  <td class="col-comite"><span class="muted-cell">Sem registro destacado nos documentos oficiais</span></td>
+  <td class="col-fom"><div class="fom-wrap"><span class="tag-fom">UNEMAT/PROEC</span></div><div class="reg-oficial">Registro PROEC / SIGAA · Certificado nº 91913536</div></td>
+</tr>
+<tr class="ev-row" data-numero="21" data-ano="2024" data-serie="ERI-MT" data-campi="alto-araguaia" data-search="2024 eri-mt xiii eri-mt — ecossistemas digitais na educação e no campo 07 e 08/11/2024 alto araguaia câmpus de alto araguaia ubirajara martin coelho, caio césar enside de abreu, adriana de oliveira dias carlos alex sander juvêncio gulo (alto araguaia), benevid félix (sinop), luciano zamperetti wolski (barra do bugres) e tiago andrade (cáceres) chancela sbc unemat/proec chancela sbc · registro institucional unemat/proec">
+  <td class="col-ano"><span class="ano-num">2024</span><span class="serie-badge badge-eri">ERI-MT</span></td>
+  <td class="col-ev"><div class="ev-titulo">XIII ERI-MT — Ecossistemas Digitais na Educação e no Campo</div><div class="ev-meta">07 e 08/11/2024 · Câmpus de Alto Araguaia</div></td>
+  <td class="col-coord"><div class="coord-mod">Coordenação Geral Conjunta</div><div class="coord-names">Ubirajara Martin Coelho, Caio César Enside de Abreu, Adriana de Oliveira Dias</div></td>
+  <td class="col-comite">Carlos Alex Sander Juvêncio Gulo (Alto Araguaia), Benevid Félix (Sinop), Luciano Zamperetti Wolski (Barra do Bugres) e Tiago Andrade (Cáceres)</td>
+  <td class="col-fom"><div class="fom-wrap"><span class="tag-fom tag-sbc">Chancela SBC</span><span class="tag-fom">UNEMAT/PROEC</span></div><div class="reg-oficial">Chancela SBC · Registro institucional UNEMAT/PROEC</div></td>
+</tr>
+<tr class="ev-row" data-numero="20" data-ano="2023" data-serie="Workshop de Computação" data-campi="alto-araguaia rondonopolis" data-search="2023 workshop de computação xi workshop de computação — desafios e possibilidades do cientista da computação 27 e 28/06/2023 alto araguaia e rondonópolis câmpus de alto araguaia e rondonópolis (ufr) adriana de oliveira dias  unemat/proec parecer nº 345/2023-proec (ev382-2023)">
+  <td class="col-ano"><span class="ano-num">2023</span><span class="serie-badge badge-workshop">Workshop de Computação</span></td>
+  <td class="col-ev"><div class="ev-titulo">XI Workshop de Computação — Desafios e possibilidades do cientista da computação</div><div class="ev-meta">27 e 28/06/2023 · Câmpus de Alto Araguaia e Rondonópolis (UFR)</div></td>
+  <td class="col-coord"><div class="coord-names">Adriana de Oliveira Dias</div></td>
+  <td class="col-comite"><span class="muted-cell">Sem registro destacado nos documentos oficiais</span></td>
+  <td class="col-fom"><div class="fom-wrap"><span class="tag-fom">UNEMAT/PROEC</span></div><div class="reg-oficial">Parecer nº 345/2023-PROEC (EV382-2023)</div></td>
+</tr>
+<tr class="ev-row" data-numero="19" data-ano="2022" data-serie="Workshop de Computação" data-campi="alto-araguaia rondonopolis" data-search="2022 workshop de computação x workshop de computação — compartilhando experiências: do remoto ao presencial 14/03 a 31/10/2022 alto araguaia e rondonópolis câmpus de alto araguaia e câmpus avançado de rondonópolis carlos alex sander juvêncio gulo coordenação local em alto araguaia: juvenal silva neto unemat/proec registro proec / sigaa · certificado nº 91846091">
+  <td class="col-ano"><span class="ano-num">2022</span><span class="serie-badge badge-workshop">Workshop de Computação</span></td>
+  <td class="col-ev"><div class="ev-titulo">X Workshop de Computação — Compartilhando experiências: do remoto ao presencial</div><div class="ev-meta">14/03 a 31/10/2022 · Câmpus de Alto Araguaia e Câmpus Avançado de Rondonópolis</div></td>
+  <td class="col-coord"><div class="coord-names">Carlos Alex Sander Juvêncio Gulo</div></td>
+  <td class="col-comite">Coordenação Local em Alto Araguaia: Juvenal Silva Neto</td>
+  <td class="col-fom"><div class="fom-wrap"><span class="tag-fom">UNEMAT/PROEC</span></div><div class="reg-oficial">Registro PROEC / SIGAA · Certificado nº 91846091</div></td>
+</tr>
+<tr class="ev-row" data-numero="18" data-ano="2019" data-serie="SECOMP" data-campi="rondonopolis" data-search="2019 secomp v secomp — semana de computação 06–08/03 e 15–17/04/2019 rondonópolis câmpus avançado de rondonópolis (npr / secitec-roo) carlos alex sander juvêncio gulo  unemat/proec parecer nº 054/2019-proec (proc. 83937/2019) · parecer nº 005/2019">
+  <td class="col-ano"><span class="ano-num">2019</span><span class="serie-badge badge-secomp">SECOMP</span></td>
+  <td class="col-ev"><div class="ev-titulo">V SECOMP — Semana de Computação</div><div class="ev-meta">06–08/03 e 15–17/04/2019 · Câmpus Avançado de Rondonópolis (NPR / SECITEC-ROO)</div></td>
+  <td class="col-coord"><div class="coord-names">Carlos Alex Sander Juvêncio Gulo</div></td>
+  <td class="col-comite"><span class="muted-cell">Sem registro destacado nos documentos oficiais</span></td>
+  <td class="col-fom"><div class="fom-wrap"><span class="tag-fom">UNEMAT/PROEC</span></div><div class="reg-oficial">Parecer nº 054/2019-PROEC (Proc. 83937/2019) · Parecer nº 005/2019</div></td>
+</tr>
+<tr class="ev-row" data-numero="17" data-ano="2018" data-serie="Workshop de Computação" data-campi="alto-araguaia" data-search="2018 workshop de computação viii workshop de computação — programação e tecnologias 14 a 18/05/2018 alto araguaia câmpus de alto araguaia adriana de oliveira dias comitê científico colegiado: adriana de oliveira dias, andré flederico pereira, caio césar enside de abreu, carlinho viana de sousa, dárley domingos de almeida, fernando yoiti obana, paula letícia santos lima e sérgio santos silva filho unemat/proec parecer nº 142/2018-proec">
+  <td class="col-ano"><span class="ano-num">2018</span><span class="serie-badge badge-workshop">Workshop de Computação</span></td>
+  <td class="col-ev"><div class="ev-titulo">VIII Workshop de Computação — Programação e Tecnologias</div><div class="ev-meta">14 a 18/05/2018 · Câmpus de Alto Araguaia</div></td>
+  <td class="col-coord"><div class="coord-names">Adriana de Oliveira Dias</div></td>
+  <td class="col-comite">Comitê Científico colegiado: Adriana de Oliveira Dias, André Flederico Pereira, Caio César Enside de Abreu, Carlinho Viana de Sousa, Dárley Domingos de Almeida, Fernando Yoiti Obana, Paula Letícia Santos Lima e Sérgio Santos Silva Filho</td>
+  <td class="col-fom"><div class="fom-wrap"><span class="tag-fom">UNEMAT/PROEC</span></div><div class="reg-oficial">Parecer nº 142/2018-PROEC</div></td>
+</tr>
+<tr class="ev-row" data-numero="16" data-ano="2017" data-serie="SECOMP" data-campi="alto-araguaia" data-search="2017 secomp iv secomp — tecnologias voltadas para o agronegócio 04 a 08/12/2017 alto araguaia câmpus de alto araguaia rafael falceti de azevedo   parecer ad referendum nº 030/2017 · ofício nº 107/2017">
+  <td class="col-ano"><span class="ano-num">2017</span><span class="serie-badge badge-secomp">SECOMP</span></td>
+  <td class="col-ev"><div class="ev-titulo">IV SECOMP — Tecnologias voltadas para o Agronegócio</div><div class="ev-meta">04 a 08/12/2017 · Câmpus de Alto Araguaia</div></td>
+  <td class="col-coord"><div class="coord-names">Rafael Falceti de Azevedo</div></td>
+  <td class="col-comite"><span class="muted-cell">Sem registro destacado nos documentos oficiais</span></td>
+  <td class="col-fom"><div class="fom-wrap"><span class="muted-cell">Realização institucional UNEMAT</span></div><div class="reg-oficial">Parecer Ad Referendum nº 030/2017 · Ofício nº 107/2017</div></td>
+</tr>
+<tr class="ev-row" data-numero="15" data-ano="2017" data-serie="Workshop de Computação" data-campi="alto-araguaia" data-search="2017 workshop de computação vii workshop de computação — computação aplicada à engenharia biomédica 26 a 30/06/2017 alto araguaia câmpus de alto araguaia (cepaia) fernando yoiti obana juvenal silva neto (presidente do comitê científico) fapemat parecer ad referendum nº 018/2017 · ofício nº 049/2017">
+  <td class="col-ano"><span class="ano-num">2017</span><span class="serie-badge badge-workshop">Workshop de Computação</span></td>
+  <td class="col-ev"><div class="ev-titulo">VII Workshop de Computação — Computação Aplicada à Engenharia Biomédica</div><div class="ev-meta">26 a 30/06/2017 · Câmpus de Alto Araguaia (CEPAIA)</div></td>
+  <td class="col-coord"><div class="coord-names">Fernando Yoiti Obana</div></td>
+  <td class="col-comite">Juvenal Silva Neto (Presidente do Comitê Científico)</td>
+  <td class="col-fom"><div class="fom-wrap"><span class="tag-fom">FAPEMAT</span></div><div class="reg-oficial">Parecer Ad Referendum nº 018/2017 · Ofício nº 049/2017</div></td>
+</tr>
+<tr class="ev-row" data-numero="14" data-ano="2016" data-serie="SECOMP" data-campi="alto-araguaia" data-search="2016 secomp iii secomp — jogos e sua influência na formação do profissional de computação 17 a 22/10/2016 alto araguaia câmpus de alto araguaia toni amorim de oliveira   parecer ad referendum nº 006/2016 · ofício nº 017/2016">
+  <td class="col-ano"><span class="ano-num">2016</span><span class="serie-badge badge-secomp">SECOMP</span></td>
+  <td class="col-ev"><div class="ev-titulo">III SECOMP — Jogos e sua Influência na Formação do Profissional de Computação</div><div class="ev-meta">17 a 22/10/2016 · Câmpus de Alto Araguaia</div></td>
+  <td class="col-coord"><div class="coord-names">Toni Amorim de Oliveira</div></td>
+  <td class="col-comite"><span class="muted-cell">Sem registro destacado nos documentos oficiais</span></td>
+  <td class="col-fom"><div class="fom-wrap"><span class="muted-cell">Realização institucional UNEMAT</span></div><div class="reg-oficial">Parecer Ad Referendum nº 006/2016 · Ofício nº 017/2016</div></td>
+</tr>
+<tr class="ev-row" data-numero="13" data-ano="2016" data-serie="Workshop de Computação" data-campi="alto-araguaia" data-search="2016 workshop de computação vi workshop de computação — profissionais do futuro 30/05 a 03/06/2016 alto araguaia câmpus de alto araguaia adriana de oliveira dias comitê científico colegiado: adriana de oliveira dias, caio césar enside de abreu, carlinho viana de sousa, lucas kriesel sperotto, sérgio santos silva filho e toni amorim de oliveira fapemat unemat/proec parecer nº 115/2016-proec (proc. 95046/2016)">
+  <td class="col-ano"><span class="ano-num">2016</span><span class="serie-badge badge-workshop">Workshop de Computação</span></td>
+  <td class="col-ev"><div class="ev-titulo">VI Workshop de Computação — Profissionais do Futuro</div><div class="ev-meta">30/05 a 03/06/2016 · Câmpus de Alto Araguaia</div></td>
+  <td class="col-coord"><div class="coord-names">Adriana de Oliveira Dias</div></td>
+  <td class="col-comite">Comitê Científico colegiado: Adriana de Oliveira Dias, Caio César Enside de Abreu, Carlinho Viana de Sousa, Lucas Kriesel Sperotto, Sérgio Santos Silva Filho e Toni Amorim de Oliveira</td>
+  <td class="col-fom"><div class="fom-wrap"><span class="tag-fom">FAPEMAT</span><span class="tag-fom">UNEMAT/PROEC</span></div><div class="reg-oficial">Parecer nº 115/2016-PROEC (Proc. 95046/2016)</div></td>
+</tr>
+<tr class="ev-row" data-numero="12" data-ano="2015" data-serie="Workshop de Computação" data-campi="alto-araguaia" data-search="2015 workshop de computação v workshop de computação — tecnologias e educação 26 e 27/11/2015 alto araguaia câmpus de alto araguaia (cepaia) carlinho viana de sousa programação científica integrada à ii secomp 2015 unemat/proec projeto e formulário institucional proec">
+  <td class="col-ano"><span class="ano-num">2015</span><span class="serie-badge badge-workshop">Workshop de Computação</span></td>
+  <td class="col-ev"><div class="ev-titulo">V Workshop de Computação — Tecnologias e Educação</div><div class="ev-meta">26 e 27/11/2015 · Câmpus de Alto Araguaia (CEPAIA)</div></td>
+  <td class="col-coord"><div class="coord-names">Carlinho Viana de Sousa</div></td>
+  <td class="col-comite">Programação científica integrada à II SECOMP 2015</td>
+  <td class="col-fom"><div class="fom-wrap"><span class="tag-fom">UNEMAT/PROEC</span></div><div class="reg-oficial">Projeto e formulário institucional PROEC</div></td>
+</tr>
+<tr class="ev-row" data-numero="11" data-ano="2015" data-serie="SECOMP" data-campi="alto-araguaia" data-search="2015 secomp ii secomp — ciência e inovação 23 a 27/11/2015 alto araguaia câmpus de alto araguaia (cepaia) wesley barbosa thereza wesley barbosa thereza (presidente, portaria nº 002/2015) / max robert marinho edital nº 001/2015 faespe/unemat — r$ 4.967,16 aprovados proposta fapemat portaria nº 002/2015 · proponente faespe: lucas kriesel sperotto">
+  <td class="col-ano"><span class="ano-num">2015</span><span class="serie-badge badge-secomp">SECOMP</span></td>
+  <td class="col-ev"><div class="ev-titulo">II SECOMP — Ciência e Inovação</div><div class="ev-meta">23 a 27/11/2015 · Câmpus de Alto Araguaia (CEPAIA)</div></td>
+  <td class="col-coord"><div class="coord-names">Wesley Barbosa Thereza</div></td>
+  <td class="col-comite">Wesley Barbosa Thereza (Presidente, Portaria nº 002/2015) / Max Robert Marinho</td>
+  <td class="col-fom"><div class="fom-wrap"><span class="tag-fom tag-fom-destaque">Edital nº 001/2015 FAESPE/UNEMAT — R$ 4.967,16 aprovados</span><span class="tag-fom">Proposta FAPEMAT</span></div><div class="reg-oficial">Portaria nº 002/2015 · Proponente FAESPE: Lucas Kriesel Sperotto</div></td>
+</tr>
+<tr class="ev-row" data-numero="10" data-ano="2014" data-serie="SECOMP" data-campi="alto-araguaia" data-search="2014 secomp i secomp — computação científica 24 a 28/11/2014 alto araguaia câmpus de alto araguaia lucas kriesel sperotto max robert marinho (coordenador do comitê científico) unemat/proec parecer nº 166/2014-proec (proc. 530130/2014)">
+  <td class="col-ano"><span class="ano-num">2014</span><span class="serie-badge badge-secomp">SECOMP</span></td>
+  <td class="col-ev"><div class="ev-titulo">I SECOMP — Computação Científica</div><div class="ev-meta">24 a 28/11/2014 · Câmpus de Alto Araguaia</div></td>
+  <td class="col-coord"><div class="coord-names">Lucas Kriesel Sperotto</div></td>
+  <td class="col-comite">Max Robert Marinho (Coordenador do Comitê Científico)</td>
+  <td class="col-fom"><div class="fom-wrap"><span class="tag-fom">UNEMAT/PROEC</span></div><div class="reg-oficial">Parecer nº 166/2014-PROEC (Proc. 530130/2014)</div></td>
+</tr>
+<tr class="ev-row" data-numero="9" data-ano="2013" data-serie="ERI-MT" data-campi="alto-araguaia" data-search="2013 eri-mt iv eri-mt — escola regional de informática de mato grosso (imagem: processamento e análise) 04 a 08/11/2013 alto araguaia câmpus de alto araguaia carlos alex sander juvêncio gulo gleber nelson marques (unemat — coordenação científica e sessão de pôsteres), joão manuel ribeiro da silva tavares (feup — co-coordenação e sessão oral) e alex fernando de araujo (feup — vice-coordenação) chancela sbc fapemat cnpq (protocolo 6596366562507529) unemat/proec parecer nº 024/2013-proec · sigproj 148107.486.22702.26032013 · portaria nº 001/2013">
+  <td class="col-ano"><span class="ano-num">2013</span><span class="serie-badge badge-eri">ERI-MT</span></td>
+  <td class="col-ev"><div class="ev-titulo">IV ERI-MT — Escola Regional de Informática de Mato Grosso (Imagem: Processamento e Análise)</div><div class="ev-meta">04 a 08/11/2013 · Câmpus de Alto Araguaia</div></td>
+  <td class="col-coord"><div class="coord-names">Carlos Alex Sander Juvêncio Gulo</div></td>
+  <td class="col-comite">Gleber Nelson Marques (UNEMAT — Coordenação Científica e Sessão de Pôsteres), João Manuel Ribeiro da Silva Tavares (FEUP — Co-coordenação e Sessão Oral) e Alex Fernando de Araujo (FEUP — Vice-Coordenação)</td>
+  <td class="col-fom"><div class="fom-wrap"><span class="tag-fom tag-sbc">Chancela SBC</span><span class="tag-fom">FAPEMAT</span><span class="tag-fom">CNPq (Protocolo 6596366562507529)</span><span class="tag-fom">UNEMAT/PROEC</span></div><div class="reg-oficial">Parecer nº 024/2013-PROEC · SIGProj 148107.486.22702.26032013 · Portaria nº 001/2013</div></td>
+</tr>
+<tr class="ev-row" data-numero="8" data-ano="2013" data-serie="Workshop de Computação" data-campi="alto-araguaia" data-search="2013 workshop de computação iii workshop de computação — pesquisa e atuação 12 a 14/06/2013 (20h) alto araguaia câmpus de alto araguaia max robert marinho   protocolo 1.5b/146/2013">
+  <td class="col-ano"><span class="ano-num">2013</span><span class="serie-badge badge-workshop">Workshop de Computação</span></td>
+  <td class="col-ev"><div class="ev-titulo">III Workshop de Computação — Pesquisa e Atuação</div><div class="ev-meta">12 a 14/06/2013 (20h) · Câmpus de Alto Araguaia</div></td>
+  <td class="col-coord"><div class="coord-names">Max Robert Marinho</div></td>
+  <td class="col-comite"><span class="muted-cell">Sem registro destacado nos documentos oficiais</span></td>
+  <td class="col-fom"><div class="fom-wrap"><span class="muted-cell">Realização institucional UNEMAT</span></div><div class="reg-oficial">Protocolo 1.5B/146/2013</div></td>
+</tr>
+<tr class="ev-row" data-numero="7" data-ano="2012" data-serie="Workshop de Computação" data-campi="alto-araguaia" data-search="2012 workshop de computação ii workshop de computação e sociedade 21 a 23/11/2012 alto araguaia câmpus de alto araguaia sérgio santos silva filho gleber nelson marques (chairman / comissão científica), max robert marinho e ubirajara martin coelho  certificados oficiais de coordenação geral e comissão científica">
+  <td class="col-ano"><span class="ano-num">2012</span><span class="serie-badge badge-workshop">Workshop de Computação</span></td>
+  <td class="col-ev"><div class="ev-titulo">II Workshop de Computação e Sociedade</div><div class="ev-meta">21 a 23/11/2012 · Câmpus de Alto Araguaia</div></td>
+  <td class="col-coord"><div class="coord-names">Sérgio Santos Silva Filho</div></td>
+  <td class="col-comite">Gleber Nelson Marques (Chairman / Comissão Científica), Max Robert Marinho e Ubirajara Martin Coelho</td>
+  <td class="col-fom"><div class="fom-wrap"><span class="muted-cell">Realização institucional UNEMAT</span></div><div class="reg-oficial">Certificados oficiais de coordenação geral e comissão científica</div></td>
+</tr>
+<tr class="ev-row" data-numero="6" data-ano="2010" data-serie="SELCOMP" data-campi="alto-araguaia" data-search="2010 selcomp vii selcomp — vii semana de licenciatura em computação 22 a 26/11/2010 alto araguaia câmpus de alto araguaia max robert marinho   certificados oficiais — departamento de computação (07/12/2010)">
+  <td class="col-ano"><span class="ano-num">2010</span><span class="serie-badge badge-selcomp">SELCOMP</span></td>
+  <td class="col-ev"><div class="ev-titulo">VII SELCOMP — VII Semana de Licenciatura em Computação</div><div class="ev-meta">22 a 26/11/2010 · Câmpus de Alto Araguaia</div></td>
+  <td class="col-coord"><div class="coord-names">Max Robert Marinho</div></td>
+  <td class="col-comite"><span class="muted-cell">Sem registro destacado nos documentos oficiais</span></td>
+  <td class="col-fom"><div class="fom-wrap"><span class="muted-cell">Realização institucional UNEMAT</span></div><div class="reg-oficial">Certificados oficiais — Departamento de Computação (07/12/2010)</div></td>
+</tr>
+<tr class="ev-row" data-numero="5" data-ano="2010" data-serie="Workshop de Computação" data-campi="alto-araguaia" data-search="2010 workshop de computação i workshop de computação e sociedade 18 a 22/08/2010 alto araguaia câmpus de alto araguaia toni amorim de oliveira comissão principal (portaria nº 006/2010): toni amorim de oliveira, benedito martins pereira, carlinho viana de sousa, gleber nelson marques e sérgio santos silva filho  portaria nº 006/2010 (09/06/2010)">
+  <td class="col-ano"><span class="ano-num">2010</span><span class="serie-badge badge-workshop">Workshop de Computação</span></td>
+  <td class="col-ev"><div class="ev-titulo">I Workshop de Computação e Sociedade</div><div class="ev-meta">18 a 22/08/2010 · Câmpus de Alto Araguaia</div></td>
+  <td class="col-coord"><div class="coord-names">Toni Amorim de Oliveira</div></td>
+  <td class="col-comite">Comissão Principal (Portaria nº 006/2010): Toni Amorim de Oliveira, Benedito Martins Pereira, Carlinho Viana de Sousa, Gleber Nelson Marques e Sérgio Santos Silva Filho</td>
+  <td class="col-fom"><div class="fom-wrap"><span class="muted-cell">Realização institucional UNEMAT</span></div><div class="reg-oficial">Portaria nº 006/2010 (09/06/2010)</div></td>
+</tr>
+<tr class="ev-row" data-numero="4" data-ano="2009" data-serie="SELCOMP" data-campi="alto-araguaia" data-search="2009 selcomp vi selcomp — profissionais da computação no século xxi 14 a 18/09/2009 alto araguaia câmpus de alto araguaia carlos alex sander juvêncio gulo  proposta fapemat unemat/proec registro unemat/proec · proposta fapemat (proponente: gleber nelson marques)">
+  <td class="col-ano"><span class="ano-num">2009</span><span class="serie-badge badge-selcomp">SELCOMP</span></td>
+  <td class="col-ev"><div class="ev-titulo">VI SELCOMP — Profissionais da Computação no Século XXI</div><div class="ev-meta">14 a 18/09/2009 · Câmpus de Alto Araguaia</div></td>
+  <td class="col-coord"><div class="coord-names">Carlos Alex Sander Juvêncio Gulo</div></td>
+  <td class="col-comite"><span class="muted-cell">Sem registro destacado nos documentos oficiais</span></td>
+  <td class="col-fom"><div class="fom-wrap"><span class="tag-fom">Proposta FAPEMAT</span><span class="tag-fom">UNEMAT/PROEC</span></div><div class="reg-oficial">Registro UNEMAT/PROEC · Proposta FAPEMAT (proponente: Gleber Nelson Marques)</div></td>
+</tr>
+<tr class="ev-row" data-numero="3" data-ano="2008" data-serie="SELCOMP" data-campi="alto-araguaia" data-search="2008 selcomp v selcomp — a informática a serviço da sociedade 10 a 14/11/2008 alto araguaia câmpus de alto araguaia hélio clementino dos santos   projeto e certificados oficiais v selcomp">
+  <td class="col-ano"><span class="ano-num">2008</span><span class="serie-badge badge-selcomp">SELCOMP</span></td>
+  <td class="col-ev"><div class="ev-titulo">V SELCOMP — A informática a serviço da sociedade</div><div class="ev-meta">10 a 14/11/2008 · Câmpus de Alto Araguaia</div></td>
+  <td class="col-coord"><div class="coord-names">Hélio Clementino dos Santos</div></td>
+  <td class="col-comite"><span class="muted-cell">Sem registro destacado nos documentos oficiais</span></td>
+  <td class="col-fom"><div class="fom-wrap"><span class="muted-cell">Realização institucional UNEMAT</span></div><div class="reg-oficial">Projeto e certificados oficiais V SELCOMP</div></td>
+</tr>
+<tr class="ev-row" data-numero="2" data-ano="2007" data-serie="SELCOMP" data-campi="alto-araguaia" data-search="2007 selcomp iv selcomp — tecnologia e educação 03 a 06/09/2007 alto araguaia câmpus de alto araguaia hélio clementino dos santos   material de divulgação e certificados oficiais — departamento de computação">
+  <td class="col-ano"><span class="ano-num">2007</span><span class="serie-badge badge-selcomp">SELCOMP</span></td>
+  <td class="col-ev"><div class="ev-titulo">IV SELCOMP — Tecnologia e Educação</div><div class="ev-meta">03 a 06/09/2007 · Câmpus de Alto Araguaia</div></td>
+  <td class="col-coord"><div class="coord-names">Hélio Clementino dos Santos</div></td>
+  <td class="col-comite"><span class="muted-cell">Sem registro destacado nos documentos oficiais</span></td>
+  <td class="col-fom"><div class="fom-wrap"><span class="muted-cell">Realização institucional UNEMAT</span></div><div class="reg-oficial">Material de divulgação e certificados oficiais — Departamento de Computação</div></td>
+</tr>
+<tr class="ev-row" data-numero="1" data-ano="2004" data-serie="SELCOMP" data-campi="alto-araguaia" data-search="2004 selcomp ii selcomp — ii semana de computação 21 a 23/10/2004 (40h) alto araguaia câmpus de alto araguaia sérgio santos silva filho   certificados oficiais — departamento de computação / unemat alto araguaia">
+  <td class="col-ano"><span class="ano-num">2004</span><span class="serie-badge badge-selcomp">SELCOMP</span></td>
+  <td class="col-ev"><div class="ev-titulo">II SELCOMP — II Semana de Computação</div><div class="ev-meta">21 a 23/10/2004 (40h) · Câmpus de Alto Araguaia</div></td>
+  <td class="col-coord"><div class="coord-names">Sérgio Santos Silva Filho</div></td>
+  <td class="col-comite"><span class="muted-cell">Sem registro destacado nos documentos oficiais</span></td>
+  <td class="col-fom"><div class="fom-wrap"><span class="muted-cell">Realização institucional UNEMAT</span></div><div class="reg-oficial">Certificados oficiais — Departamento de Computação / UNEMAT Alto Araguaia</div></td>
+</tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="eventos-cards" class="ev-cards" aria-label="Lista cronológica de eventos">
+        <article class="ev-card" data-numero="24" data-ano="2026" data-serie="SECOMP" data-campi="rondonopolis" data-search="2026 secomp vii secomp — conectando inteligências: do campus ao ecossistema global 06 a 11/06/2026 rondonópolis câmpus avançado de rondonópolis (rua fernando corrêa da costa, setor rodoviária, rondonópolis - mt) carlos alex sander juvêncio gulo adriana de oliveira dias (coordenadora do comitê científico) e ubirajara martin coelho (vice-coordenador do comitê científico) edital nº 026/2025 unemat/prppg — r$ 10.000,00 aprovados (4º lugar) chancela sbc edital nº 026/2025 unemat/prppg (resultado em 27/03/2026) · ofício nº 087/2026/secomp">
+  <header class="ev-card-top">
+    <span class="ano-num">2026</span>
+    <span class="serie-badge badge-secomp">SECOMP</span>
+    <span class="campus-pill">Rondonópolis</span>
+  </header>
+  <h3 class="ev-card-title">VII SECOMP — Conectando Inteligências: Do Campus ao Ecossistema Global</h3>
+  <p class="ev-card-meta">06 a 11/06/2026 · Câmpus Avançado de Rondonópolis (Rua Fernando Corrêa da Costa, Setor Rodoviária, Rondonópolis - MT)</p>
+  <dl class="ev-card-dl">
+    <div><dt>Coordenação Geral (Individual)</dt><dd>Carlos Alex Sander Juvêncio Gulo</dd></div>
+    <div><dt>Comitê de Programa / Científico</dt><dd>Adriana de Oliveira Dias (Coordenadora do Comitê Científico) e Ubirajara Martin Coelho (Vice-Coordenador do Comitê Científico)</dd></div>
+    <div><dt>Fomento, Chancelas e Registro</dt><dd><div class="fom-wrap"><span class="tag-fom tag-fom-destaque">Edital nº 026/2025 UNEMAT/PRPPG — R$ 10.000,00 aprovados (4º lugar)</span><span class="tag-fom tag-sbc">Chancela SBC</span></div><div class="reg-oficial">Edital nº 026/2025 UNEMAT/PRPPG (resultado em 27/03/2026) · Ofício nº 087/2026/SECOMP</div></dd></div>
+  </dl>
+</article>
+<article class="ev-card" data-numero="23" data-ano="2025" data-serie="SECOMP" data-campi="alto-araguaia" data-search="2025 secomp vi secomp — inovação digital na educação: conectando o presente ao futuro 06 a 09/10/2025 alto araguaia câmpus de alto araguaia carlos alex sander juvêncio gulo  unemat/proec parecer nº 764/2025-proec (ev532-2025) · certificado nº 91916968">
+  <header class="ev-card-top">
+    <span class="ano-num">2025</span>
+    <span class="serie-badge badge-secomp">SECOMP</span>
+    <span class="campus-pill">Alto Araguaia</span>
+  </header>
+  <h3 class="ev-card-title">VI SECOMP — Inovação Digital na Educação: Conectando o Presente ao Futuro</h3>
+  <p class="ev-card-meta">06 a 09/10/2025 · Câmpus de Alto Araguaia</p>
+  <dl class="ev-card-dl">
+    <div><dt>Coordenação Geral (Individual)</dt><dd>Carlos Alex Sander Juvêncio Gulo</dd></div>
+    <div><dt>Comitê de Programa / Científico</dt><dd><span class="muted-cell">Sem registro destacado nos documentos oficiais</span></dd></div>
+    <div><dt>Fomento, Chancelas e Registro</dt><dd><div class="fom-wrap"><span class="tag-fom">UNEMAT/PROEC</span></div><div class="reg-oficial">Parecer nº 764/2025-PROEC (EV532-2025) · Certificado nº 91916968</div></dd></div>
+  </dl>
+</article>
+<article class="ev-card" data-numero="22" data-ano="2025" data-serie="Workshop de Computação" data-campi="rondonopolis" data-search="2025 workshop de computação xiii workshop de computação — techxperience: explorando a diversidade da tecnologia 02, 04 e 05/06/2025 rondonópolis câmpus avançado de rondonópolis (npr) adriana de oliveira dias  unemat/proec registro proec / sigaa · certificado nº 91913536">
+  <header class="ev-card-top">
+    <span class="ano-num">2025</span>
+    <span class="serie-badge badge-workshop">Workshop de Computação</span>
+    <span class="campus-pill">Rondonópolis</span>
+  </header>
+  <h3 class="ev-card-title">XIII Workshop de Computação — TechXperience: Explorando a diversidade da Tecnologia</h3>
+  <p class="ev-card-meta">02, 04 e 05/06/2025 · Câmpus Avançado de Rondonópolis (NPR)</p>
+  <dl class="ev-card-dl">
+    <div><dt>Coordenação Geral (Individual)</dt><dd>Adriana de Oliveira Dias</dd></div>
+    <div><dt>Comitê de Programa / Científico</dt><dd><span class="muted-cell">Sem registro destacado nos documentos oficiais</span></dd></div>
+    <div><dt>Fomento, Chancelas e Registro</dt><dd><div class="fom-wrap"><span class="tag-fom">UNEMAT/PROEC</span></div><div class="reg-oficial">Registro PROEC / SIGAA · Certificado nº 91913536</div></dd></div>
+  </dl>
+</article>
+<article class="ev-card" data-numero="21" data-ano="2024" data-serie="ERI-MT" data-campi="alto-araguaia" data-search="2024 eri-mt xiii eri-mt — ecossistemas digitais na educação e no campo 07 e 08/11/2024 alto araguaia câmpus de alto araguaia ubirajara martin coelho, caio césar enside de abreu, adriana de oliveira dias carlos alex sander juvêncio gulo (alto araguaia), benevid félix (sinop), luciano zamperetti wolski (barra do bugres) e tiago andrade (cáceres) chancela sbc unemat/proec chancela sbc · registro institucional unemat/proec">
+  <header class="ev-card-top">
+    <span class="ano-num">2024</span>
+    <span class="serie-badge badge-eri">ERI-MT</span>
+    <span class="campus-pill">Alto Araguaia</span>
+  </header>
+  <h3 class="ev-card-title">XIII ERI-MT — Ecossistemas Digitais na Educação e no Campo</h3>
+  <p class="ev-card-meta">07 e 08/11/2024 · Câmpus de Alto Araguaia</p>
+  <dl class="ev-card-dl">
+    <div><dt>Coordenação Geral (Conjunta)</dt><dd>Ubirajara Martin Coelho, Caio César Enside de Abreu, Adriana de Oliveira Dias</dd></div>
+    <div><dt>Comitê de Programa / Científico</dt><dd>Carlos Alex Sander Juvêncio Gulo (Alto Araguaia), Benevid Félix (Sinop), Luciano Zamperetti Wolski (Barra do Bugres) e Tiago Andrade (Cáceres)</dd></div>
+    <div><dt>Fomento, Chancelas e Registro</dt><dd><div class="fom-wrap"><span class="tag-fom tag-sbc">Chancela SBC</span><span class="tag-fom">UNEMAT/PROEC</span></div><div class="reg-oficial">Chancela SBC · Registro institucional UNEMAT/PROEC</div></dd></div>
+  </dl>
+</article>
+<article class="ev-card" data-numero="20" data-ano="2023" data-serie="Workshop de Computação" data-campi="alto-araguaia rondonopolis" data-search="2023 workshop de computação xi workshop de computação — desafios e possibilidades do cientista da computação 27 e 28/06/2023 alto araguaia e rondonópolis câmpus de alto araguaia e rondonópolis (ufr) adriana de oliveira dias  unemat/proec parecer nº 345/2023-proec (ev382-2023)">
+  <header class="ev-card-top">
+    <span class="ano-num">2023</span>
+    <span class="serie-badge badge-workshop">Workshop de Computação</span>
+    <span class="campus-pill">Alto Araguaia e Rondonópolis</span>
+  </header>
+  <h3 class="ev-card-title">XI Workshop de Computação — Desafios e possibilidades do cientista da computação</h3>
+  <p class="ev-card-meta">27 e 28/06/2023 · Câmpus de Alto Araguaia e Rondonópolis (UFR)</p>
+  <dl class="ev-card-dl">
+    <div><dt>Coordenação Geral (Individual)</dt><dd>Adriana de Oliveira Dias</dd></div>
+    <div><dt>Comitê de Programa / Científico</dt><dd><span class="muted-cell">Sem registro destacado nos documentos oficiais</span></dd></div>
+    <div><dt>Fomento, Chancelas e Registro</dt><dd><div class="fom-wrap"><span class="tag-fom">UNEMAT/PROEC</span></div><div class="reg-oficial">Parecer nº 345/2023-PROEC (EV382-2023)</div></dd></div>
+  </dl>
+</article>
+<article class="ev-card" data-numero="19" data-ano="2022" data-serie="Workshop de Computação" data-campi="alto-araguaia rondonopolis" data-search="2022 workshop de computação x workshop de computação — compartilhando experiências: do remoto ao presencial 14/03 a 31/10/2022 alto araguaia e rondonópolis câmpus de alto araguaia e câmpus avançado de rondonópolis carlos alex sander juvêncio gulo coordenação local em alto araguaia: juvenal silva neto unemat/proec registro proec / sigaa · certificado nº 91846091">
+  <header class="ev-card-top">
+    <span class="ano-num">2022</span>
+    <span class="serie-badge badge-workshop">Workshop de Computação</span>
+    <span class="campus-pill">Alto Araguaia e Rondonópolis</span>
+  </header>
+  <h3 class="ev-card-title">X Workshop de Computação — Compartilhando experiências: do remoto ao presencial</h3>
+  <p class="ev-card-meta">14/03 a 31/10/2022 · Câmpus de Alto Araguaia e Câmpus Avançado de Rondonópolis</p>
+  <dl class="ev-card-dl">
+    <div><dt>Coordenação Geral (Individual)</dt><dd>Carlos Alex Sander Juvêncio Gulo</dd></div>
+    <div><dt>Comitê de Programa / Científico</dt><dd>Coordenação Local em Alto Araguaia: Juvenal Silva Neto</dd></div>
+    <div><dt>Fomento, Chancelas e Registro</dt><dd><div class="fom-wrap"><span class="tag-fom">UNEMAT/PROEC</span></div><div class="reg-oficial">Registro PROEC / SIGAA · Certificado nº 91846091</div></dd></div>
+  </dl>
+</article>
+<article class="ev-card" data-numero="18" data-ano="2019" data-serie="SECOMP" data-campi="rondonopolis" data-search="2019 secomp v secomp — semana de computação 06–08/03 e 15–17/04/2019 rondonópolis câmpus avançado de rondonópolis (npr / secitec-roo) carlos alex sander juvêncio gulo  unemat/proec parecer nº 054/2019-proec (proc. 83937/2019) · parecer nº 005/2019">
+  <header class="ev-card-top">
+    <span class="ano-num">2019</span>
+    <span class="serie-badge badge-secomp">SECOMP</span>
+    <span class="campus-pill">Rondonópolis</span>
+  </header>
+  <h3 class="ev-card-title">V SECOMP — Semana de Computação</h3>
+  <p class="ev-card-meta">06–08/03 e 15–17/04/2019 · Câmpus Avançado de Rondonópolis (NPR / SECITEC-ROO)</p>
+  <dl class="ev-card-dl">
+    <div><dt>Coordenação Geral (Individual)</dt><dd>Carlos Alex Sander Juvêncio Gulo</dd></div>
+    <div><dt>Comitê de Programa / Científico</dt><dd><span class="muted-cell">Sem registro destacado nos documentos oficiais</span></dd></div>
+    <div><dt>Fomento, Chancelas e Registro</dt><dd><div class="fom-wrap"><span class="tag-fom">UNEMAT/PROEC</span></div><div class="reg-oficial">Parecer nº 054/2019-PROEC (Proc. 83937/2019) · Parecer nº 005/2019</div></dd></div>
+  </dl>
+</article>
+<article class="ev-card" data-numero="17" data-ano="2018" data-serie="Workshop de Computação" data-campi="alto-araguaia" data-search="2018 workshop de computação viii workshop de computação — programação e tecnologias 14 a 18/05/2018 alto araguaia câmpus de alto araguaia adriana de oliveira dias comitê científico colegiado: adriana de oliveira dias, andré flederico pereira, caio césar enside de abreu, carlinho viana de sousa, dárley domingos de almeida, fernando yoiti obana, paula letícia santos lima e sérgio santos silva filho unemat/proec parecer nº 142/2018-proec">
+  <header class="ev-card-top">
+    <span class="ano-num">2018</span>
+    <span class="serie-badge badge-workshop">Workshop de Computação</span>
+    <span class="campus-pill">Alto Araguaia</span>
+  </header>
+  <h3 class="ev-card-title">VIII Workshop de Computação — Programação e Tecnologias</h3>
+  <p class="ev-card-meta">14 a 18/05/2018 · Câmpus de Alto Araguaia</p>
+  <dl class="ev-card-dl">
+    <div><dt>Coordenação Geral (Individual)</dt><dd>Adriana de Oliveira Dias</dd></div>
+    <div><dt>Comitê de Programa / Científico</dt><dd>Comitê Científico colegiado: Adriana de Oliveira Dias, André Flederico Pereira, Caio César Enside de Abreu, Carlinho Viana de Sousa, Dárley Domingos de Almeida, Fernando Yoiti Obana, Paula Letícia Santos Lima e Sérgio Santos Silva Filho</dd></div>
+    <div><dt>Fomento, Chancelas e Registro</dt><dd><div class="fom-wrap"><span class="tag-fom">UNEMAT/PROEC</span></div><div class="reg-oficial">Parecer nº 142/2018-PROEC</div></dd></div>
+  </dl>
+</article>
+<article class="ev-card" data-numero="16" data-ano="2017" data-serie="SECOMP" data-campi="alto-araguaia" data-search="2017 secomp iv secomp — tecnologias voltadas para o agronegócio 04 a 08/12/2017 alto araguaia câmpus de alto araguaia rafael falceti de azevedo   parecer ad referendum nº 030/2017 · ofício nº 107/2017">
+  <header class="ev-card-top">
+    <span class="ano-num">2017</span>
+    <span class="serie-badge badge-secomp">SECOMP</span>
+    <span class="campus-pill">Alto Araguaia</span>
+  </header>
+  <h3 class="ev-card-title">IV SECOMP — Tecnologias voltadas para o Agronegócio</h3>
+  <p class="ev-card-meta">04 a 08/12/2017 · Câmpus de Alto Araguaia</p>
+  <dl class="ev-card-dl">
+    <div><dt>Coordenação Geral (Individual)</dt><dd>Rafael Falceti de Azevedo</dd></div>
+    <div><dt>Comitê de Programa / Científico</dt><dd><span class="muted-cell">Sem registro destacado nos documentos oficiais</span></dd></div>
+    <div><dt>Fomento, Chancelas e Registro</dt><dd><div class="fom-wrap"><span class="muted-cell">Realização institucional UNEMAT</span></div><div class="reg-oficial">Parecer Ad Referendum nº 030/2017 · Ofício nº 107/2017</div></dd></div>
+  </dl>
+</article>
+<article class="ev-card" data-numero="15" data-ano="2017" data-serie="Workshop de Computação" data-campi="alto-araguaia" data-search="2017 workshop de computação vii workshop de computação — computação aplicada à engenharia biomédica 26 a 30/06/2017 alto araguaia câmpus de alto araguaia (cepaia) fernando yoiti obana juvenal silva neto (presidente do comitê científico) fapemat parecer ad referendum nº 018/2017 · ofício nº 049/2017">
+  <header class="ev-card-top">
+    <span class="ano-num">2017</span>
+    <span class="serie-badge badge-workshop">Workshop de Computação</span>
+    <span class="campus-pill">Alto Araguaia</span>
+  </header>
+  <h3 class="ev-card-title">VII Workshop de Computação — Computação Aplicada à Engenharia Biomédica</h3>
+  <p class="ev-card-meta">26 a 30/06/2017 · Câmpus de Alto Araguaia (CEPAIA)</p>
+  <dl class="ev-card-dl">
+    <div><dt>Coordenação Geral (Individual)</dt><dd>Fernando Yoiti Obana</dd></div>
+    <div><dt>Comitê de Programa / Científico</dt><dd>Juvenal Silva Neto (Presidente do Comitê Científico)</dd></div>
+    <div><dt>Fomento, Chancelas e Registro</dt><dd><div class="fom-wrap"><span class="tag-fom">FAPEMAT</span></div><div class="reg-oficial">Parecer Ad Referendum nº 018/2017 · Ofício nº 049/2017</div></dd></div>
+  </dl>
+</article>
+<article class="ev-card" data-numero="14" data-ano="2016" data-serie="SECOMP" data-campi="alto-araguaia" data-search="2016 secomp iii secomp — jogos e sua influência na formação do profissional de computação 17 a 22/10/2016 alto araguaia câmpus de alto araguaia toni amorim de oliveira   parecer ad referendum nº 006/2016 · ofício nº 017/2016">
+  <header class="ev-card-top">
+    <span class="ano-num">2016</span>
+    <span class="serie-badge badge-secomp">SECOMP</span>
+    <span class="campus-pill">Alto Araguaia</span>
+  </header>
+  <h3 class="ev-card-title">III SECOMP — Jogos e sua Influência na Formação do Profissional de Computação</h3>
+  <p class="ev-card-meta">17 a 22/10/2016 · Câmpus de Alto Araguaia</p>
+  <dl class="ev-card-dl">
+    <div><dt>Coordenação Geral (Individual)</dt><dd>Toni Amorim de Oliveira</dd></div>
+    <div><dt>Comitê de Programa / Científico</dt><dd><span class="muted-cell">Sem registro destacado nos documentos oficiais</span></dd></div>
+    <div><dt>Fomento, Chancelas e Registro</dt><dd><div class="fom-wrap"><span class="muted-cell">Realização institucional UNEMAT</span></div><div class="reg-oficial">Parecer Ad Referendum nº 006/2016 · Ofício nº 017/2016</div></dd></div>
+  </dl>
+</article>
+<article class="ev-card" data-numero="13" data-ano="2016" data-serie="Workshop de Computação" data-campi="alto-araguaia" data-search="2016 workshop de computação vi workshop de computação — profissionais do futuro 30/05 a 03/06/2016 alto araguaia câmpus de alto araguaia adriana de oliveira dias comitê científico colegiado: adriana de oliveira dias, caio césar enside de abreu, carlinho viana de sousa, lucas kriesel sperotto, sérgio santos silva filho e toni amorim de oliveira fapemat unemat/proec parecer nº 115/2016-proec (proc. 95046/2016)">
+  <header class="ev-card-top">
+    <span class="ano-num">2016</span>
+    <span class="serie-badge badge-workshop">Workshop de Computação</span>
+    <span class="campus-pill">Alto Araguaia</span>
+  </header>
+  <h3 class="ev-card-title">VI Workshop de Computação — Profissionais do Futuro</h3>
+  <p class="ev-card-meta">30/05 a 03/06/2016 · Câmpus de Alto Araguaia</p>
+  <dl class="ev-card-dl">
+    <div><dt>Coordenação Geral (Individual)</dt><dd>Adriana de Oliveira Dias</dd></div>
+    <div><dt>Comitê de Programa / Científico</dt><dd>Comitê Científico colegiado: Adriana de Oliveira Dias, Caio César Enside de Abreu, Carlinho Viana de Sousa, Lucas Kriesel Sperotto, Sérgio Santos Silva Filho e Toni Amorim de Oliveira</dd></div>
+    <div><dt>Fomento, Chancelas e Registro</dt><dd><div class="fom-wrap"><span class="tag-fom">FAPEMAT</span><span class="tag-fom">UNEMAT/PROEC</span></div><div class="reg-oficial">Parecer nº 115/2016-PROEC (Proc. 95046/2016)</div></dd></div>
+  </dl>
+</article>
+<article class="ev-card" data-numero="12" data-ano="2015" data-serie="Workshop de Computação" data-campi="alto-araguaia" data-search="2015 workshop de computação v workshop de computação — tecnologias e educação 26 e 27/11/2015 alto araguaia câmpus de alto araguaia (cepaia) carlinho viana de sousa programação científica integrada à ii secomp 2015 unemat/proec projeto e formulário institucional proec">
+  <header class="ev-card-top">
+    <span class="ano-num">2015</span>
+    <span class="serie-badge badge-workshop">Workshop de Computação</span>
+    <span class="campus-pill">Alto Araguaia</span>
+  </header>
+  <h3 class="ev-card-title">V Workshop de Computação — Tecnologias e Educação</h3>
+  <p class="ev-card-meta">26 e 27/11/2015 · Câmpus de Alto Araguaia (CEPAIA)</p>
+  <dl class="ev-card-dl">
+    <div><dt>Coordenação Geral (Individual)</dt><dd>Carlinho Viana de Sousa</dd></div>
+    <div><dt>Comitê de Programa / Científico</dt><dd>Programação científica integrada à II SECOMP 2015</dd></div>
+    <div><dt>Fomento, Chancelas e Registro</dt><dd><div class="fom-wrap"><span class="tag-fom">UNEMAT/PROEC</span></div><div class="reg-oficial">Projeto e formulário institucional PROEC</div></dd></div>
+  </dl>
+</article>
+<article class="ev-card" data-numero="11" data-ano="2015" data-serie="SECOMP" data-campi="alto-araguaia" data-search="2015 secomp ii secomp — ciência e inovação 23 a 27/11/2015 alto araguaia câmpus de alto araguaia (cepaia) wesley barbosa thereza wesley barbosa thereza (presidente, portaria nº 002/2015) / max robert marinho edital nº 001/2015 faespe/unemat — r$ 4.967,16 aprovados proposta fapemat portaria nº 002/2015 · proponente faespe: lucas kriesel sperotto">
+  <header class="ev-card-top">
+    <span class="ano-num">2015</span>
+    <span class="serie-badge badge-secomp">SECOMP</span>
+    <span class="campus-pill">Alto Araguaia</span>
+  </header>
+  <h3 class="ev-card-title">II SECOMP — Ciência e Inovação</h3>
+  <p class="ev-card-meta">23 a 27/11/2015 · Câmpus de Alto Araguaia (CEPAIA)</p>
+  <dl class="ev-card-dl">
+    <div><dt>Coordenação Geral (Individual)</dt><dd>Wesley Barbosa Thereza</dd></div>
+    <div><dt>Comitê de Programa / Científico</dt><dd>Wesley Barbosa Thereza (Presidente, Portaria nº 002/2015) / Max Robert Marinho</dd></div>
+    <div><dt>Fomento, Chancelas e Registro</dt><dd><div class="fom-wrap"><span class="tag-fom tag-fom-destaque">Edital nº 001/2015 FAESPE/UNEMAT — R$ 4.967,16 aprovados</span><span class="tag-fom">Proposta FAPEMAT</span></div><div class="reg-oficial">Portaria nº 002/2015 · Proponente FAESPE: Lucas Kriesel Sperotto</div></dd></div>
+  </dl>
+</article>
+<article class="ev-card" data-numero="10" data-ano="2014" data-serie="SECOMP" data-campi="alto-araguaia" data-search="2014 secomp i secomp — computação científica 24 a 28/11/2014 alto araguaia câmpus de alto araguaia lucas kriesel sperotto max robert marinho (coordenador do comitê científico) unemat/proec parecer nº 166/2014-proec (proc. 530130/2014)">
+  <header class="ev-card-top">
+    <span class="ano-num">2014</span>
+    <span class="serie-badge badge-secomp">SECOMP</span>
+    <span class="campus-pill">Alto Araguaia</span>
+  </header>
+  <h3 class="ev-card-title">I SECOMP — Computação Científica</h3>
+  <p class="ev-card-meta">24 a 28/11/2014 · Câmpus de Alto Araguaia</p>
+  <dl class="ev-card-dl">
+    <div><dt>Coordenação Geral (Individual)</dt><dd>Lucas Kriesel Sperotto</dd></div>
+    <div><dt>Comitê de Programa / Científico</dt><dd>Max Robert Marinho (Coordenador do Comitê Científico)</dd></div>
+    <div><dt>Fomento, Chancelas e Registro</dt><dd><div class="fom-wrap"><span class="tag-fom">UNEMAT/PROEC</span></div><div class="reg-oficial">Parecer nº 166/2014-PROEC (Proc. 530130/2014)</div></dd></div>
+  </dl>
+</article>
+<article class="ev-card" data-numero="9" data-ano="2013" data-serie="ERI-MT" data-campi="alto-araguaia" data-search="2013 eri-mt iv eri-mt — escola regional de informática de mato grosso (imagem: processamento e análise) 04 a 08/11/2013 alto araguaia câmpus de alto araguaia carlos alex sander juvêncio gulo gleber nelson marques (unemat — coordenação científica e sessão de pôsteres), joão manuel ribeiro da silva tavares (feup — co-coordenação e sessão oral) e alex fernando de araujo (feup — vice-coordenação) chancela sbc fapemat cnpq (protocolo 6596366562507529) unemat/proec parecer nº 024/2013-proec · sigproj 148107.486.22702.26032013 · portaria nº 001/2013">
+  <header class="ev-card-top">
+    <span class="ano-num">2013</span>
+    <span class="serie-badge badge-eri">ERI-MT</span>
+    <span class="campus-pill">Alto Araguaia</span>
+  </header>
+  <h3 class="ev-card-title">IV ERI-MT — Escola Regional de Informática de Mato Grosso (Imagem: Processamento e Análise)</h3>
+  <p class="ev-card-meta">04 a 08/11/2013 · Câmpus de Alto Araguaia</p>
+  <dl class="ev-card-dl">
+    <div><dt>Coordenação Geral (Individual)</dt><dd>Carlos Alex Sander Juvêncio Gulo</dd></div>
+    <div><dt>Comitê de Programa / Científico</dt><dd>Gleber Nelson Marques (UNEMAT — Coordenação Científica e Sessão de Pôsteres), João Manuel Ribeiro da Silva Tavares (FEUP — Co-coordenação e Sessão Oral) e Alex Fernando de Araujo (FEUP — Vice-Coordenação)</dd></div>
+    <div><dt>Fomento, Chancelas e Registro</dt><dd><div class="fom-wrap"><span class="tag-fom tag-sbc">Chancela SBC</span><span class="tag-fom">FAPEMAT</span><span class="tag-fom">CNPq (Protocolo 6596366562507529)</span><span class="tag-fom">UNEMAT/PROEC</span></div><div class="reg-oficial">Parecer nº 024/2013-PROEC · SIGProj 148107.486.22702.26032013 · Portaria nº 001/2013</div></dd></div>
+  </dl>
+</article>
+<article class="ev-card" data-numero="8" data-ano="2013" data-serie="Workshop de Computação" data-campi="alto-araguaia" data-search="2013 workshop de computação iii workshop de computação — pesquisa e atuação 12 a 14/06/2013 (20h) alto araguaia câmpus de alto araguaia max robert marinho   protocolo 1.5b/146/2013">
+  <header class="ev-card-top">
+    <span class="ano-num">2013</span>
+    <span class="serie-badge badge-workshop">Workshop de Computação</span>
+    <span class="campus-pill">Alto Araguaia</span>
+  </header>
+  <h3 class="ev-card-title">III Workshop de Computação — Pesquisa e Atuação</h3>
+  <p class="ev-card-meta">12 a 14/06/2013 (20h) · Câmpus de Alto Araguaia</p>
+  <dl class="ev-card-dl">
+    <div><dt>Coordenação Geral (Individual)</dt><dd>Max Robert Marinho</dd></div>
+    <div><dt>Comitê de Programa / Científico</dt><dd><span class="muted-cell">Sem registro destacado nos documentos oficiais</span></dd></div>
+    <div><dt>Fomento, Chancelas e Registro</dt><dd><div class="fom-wrap"><span class="muted-cell">Realização institucional UNEMAT</span></div><div class="reg-oficial">Protocolo 1.5B/146/2013</div></dd></div>
+  </dl>
+</article>
+<article class="ev-card" data-numero="7" data-ano="2012" data-serie="Workshop de Computação" data-campi="alto-araguaia" data-search="2012 workshop de computação ii workshop de computação e sociedade 21 a 23/11/2012 alto araguaia câmpus de alto araguaia sérgio santos silva filho gleber nelson marques (chairman / comissão científica), max robert marinho e ubirajara martin coelho  certificados oficiais de coordenação geral e comissão científica">
+  <header class="ev-card-top">
+    <span class="ano-num">2012</span>
+    <span class="serie-badge badge-workshop">Workshop de Computação</span>
+    <span class="campus-pill">Alto Araguaia</span>
+  </header>
+  <h3 class="ev-card-title">II Workshop de Computação e Sociedade</h3>
+  <p class="ev-card-meta">21 a 23/11/2012 · Câmpus de Alto Araguaia</p>
+  <dl class="ev-card-dl">
+    <div><dt>Coordenação Geral (Individual)</dt><dd>Sérgio Santos Silva Filho</dd></div>
+    <div><dt>Comitê de Programa / Científico</dt><dd>Gleber Nelson Marques (Chairman / Comissão Científica), Max Robert Marinho e Ubirajara Martin Coelho</dd></div>
+    <div><dt>Fomento, Chancelas e Registro</dt><dd><div class="fom-wrap"><span class="muted-cell">Realização institucional UNEMAT</span></div><div class="reg-oficial">Certificados oficiais de coordenação geral e comissão científica</div></dd></div>
+  </dl>
+</article>
+<article class="ev-card" data-numero="6" data-ano="2010" data-serie="SELCOMP" data-campi="alto-araguaia" data-search="2010 selcomp vii selcomp — vii semana de licenciatura em computação 22 a 26/11/2010 alto araguaia câmpus de alto araguaia max robert marinho   certificados oficiais — departamento de computação (07/12/2010)">
+  <header class="ev-card-top">
+    <span class="ano-num">2010</span>
+    <span class="serie-badge badge-selcomp">SELCOMP</span>
+    <span class="campus-pill">Alto Araguaia</span>
+  </header>
+  <h3 class="ev-card-title">VII SELCOMP — VII Semana de Licenciatura em Computação</h3>
+  <p class="ev-card-meta">22 a 26/11/2010 · Câmpus de Alto Araguaia</p>
+  <dl class="ev-card-dl">
+    <div><dt>Coordenação Geral (Individual)</dt><dd>Max Robert Marinho</dd></div>
+    <div><dt>Comitê de Programa / Científico</dt><dd><span class="muted-cell">Sem registro destacado nos documentos oficiais</span></dd></div>
+    <div><dt>Fomento, Chancelas e Registro</dt><dd><div class="fom-wrap"><span class="muted-cell">Realização institucional UNEMAT</span></div><div class="reg-oficial">Certificados oficiais — Departamento de Computação (07/12/2010)</div></dd></div>
+  </dl>
+</article>
+<article class="ev-card" data-numero="5" data-ano="2010" data-serie="Workshop de Computação" data-campi="alto-araguaia" data-search="2010 workshop de computação i workshop de computação e sociedade 18 a 22/08/2010 alto araguaia câmpus de alto araguaia toni amorim de oliveira comissão principal (portaria nº 006/2010): toni amorim de oliveira, benedito martins pereira, carlinho viana de sousa, gleber nelson marques e sérgio santos silva filho  portaria nº 006/2010 (09/06/2010)">
+  <header class="ev-card-top">
+    <span class="ano-num">2010</span>
+    <span class="serie-badge badge-workshop">Workshop de Computação</span>
+    <span class="campus-pill">Alto Araguaia</span>
+  </header>
+  <h3 class="ev-card-title">I Workshop de Computação e Sociedade</h3>
+  <p class="ev-card-meta">18 a 22/08/2010 · Câmpus de Alto Araguaia</p>
+  <dl class="ev-card-dl">
+    <div><dt>Coordenação Geral (Individual)</dt><dd>Toni Amorim de Oliveira</dd></div>
+    <div><dt>Comitê de Programa / Científico</dt><dd>Comissão Principal (Portaria nº 006/2010): Toni Amorim de Oliveira, Benedito Martins Pereira, Carlinho Viana de Sousa, Gleber Nelson Marques e Sérgio Santos Silva Filho</dd></div>
+    <div><dt>Fomento, Chancelas e Registro</dt><dd><div class="fom-wrap"><span class="muted-cell">Realização institucional UNEMAT</span></div><div class="reg-oficial">Portaria nº 006/2010 (09/06/2010)</div></dd></div>
+  </dl>
+</article>
+<article class="ev-card" data-numero="4" data-ano="2009" data-serie="SELCOMP" data-campi="alto-araguaia" data-search="2009 selcomp vi selcomp — profissionais da computação no século xxi 14 a 18/09/2009 alto araguaia câmpus de alto araguaia carlos alex sander juvêncio gulo  proposta fapemat unemat/proec registro unemat/proec · proposta fapemat (proponente: gleber nelson marques)">
+  <header class="ev-card-top">
+    <span class="ano-num">2009</span>
+    <span class="serie-badge badge-selcomp">SELCOMP</span>
+    <span class="campus-pill">Alto Araguaia</span>
+  </header>
+  <h3 class="ev-card-title">VI SELCOMP — Profissionais da Computação no Século XXI</h3>
+  <p class="ev-card-meta">14 a 18/09/2009 · Câmpus de Alto Araguaia</p>
+  <dl class="ev-card-dl">
+    <div><dt>Coordenação Geral (Individual)</dt><dd>Carlos Alex Sander Juvêncio Gulo</dd></div>
+    <div><dt>Comitê de Programa / Científico</dt><dd><span class="muted-cell">Sem registro destacado nos documentos oficiais</span></dd></div>
+    <div><dt>Fomento, Chancelas e Registro</dt><dd><div class="fom-wrap"><span class="tag-fom">Proposta FAPEMAT</span><span class="tag-fom">UNEMAT/PROEC</span></div><div class="reg-oficial">Registro UNEMAT/PROEC · Proposta FAPEMAT (proponente: Gleber Nelson Marques)</div></dd></div>
+  </dl>
+</article>
+<article class="ev-card" data-numero="3" data-ano="2008" data-serie="SELCOMP" data-campi="alto-araguaia" data-search="2008 selcomp v selcomp — a informática a serviço da sociedade 10 a 14/11/2008 alto araguaia câmpus de alto araguaia hélio clementino dos santos   projeto e certificados oficiais v selcomp">
+  <header class="ev-card-top">
+    <span class="ano-num">2008</span>
+    <span class="serie-badge badge-selcomp">SELCOMP</span>
+    <span class="campus-pill">Alto Araguaia</span>
+  </header>
+  <h3 class="ev-card-title">V SELCOMP — A informática a serviço da sociedade</h3>
+  <p class="ev-card-meta">10 a 14/11/2008 · Câmpus de Alto Araguaia</p>
+  <dl class="ev-card-dl">
+    <div><dt>Coordenação Geral (Individual)</dt><dd>Hélio Clementino dos Santos</dd></div>
+    <div><dt>Comitê de Programa / Científico</dt><dd><span class="muted-cell">Sem registro destacado nos documentos oficiais</span></dd></div>
+    <div><dt>Fomento, Chancelas e Registro</dt><dd><div class="fom-wrap"><span class="muted-cell">Realização institucional UNEMAT</span></div><div class="reg-oficial">Projeto e certificados oficiais V SELCOMP</div></dd></div>
+  </dl>
+</article>
+<article class="ev-card" data-numero="2" data-ano="2007" data-serie="SELCOMP" data-campi="alto-araguaia" data-search="2007 selcomp iv selcomp — tecnologia e educação 03 a 06/09/2007 alto araguaia câmpus de alto araguaia hélio clementino dos santos   material de divulgação e certificados oficiais — departamento de computação">
+  <header class="ev-card-top">
+    <span class="ano-num">2007</span>
+    <span class="serie-badge badge-selcomp">SELCOMP</span>
+    <span class="campus-pill">Alto Araguaia</span>
+  </header>
+  <h3 class="ev-card-title">IV SELCOMP — Tecnologia e Educação</h3>
+  <p class="ev-card-meta">03 a 06/09/2007 · Câmpus de Alto Araguaia</p>
+  <dl class="ev-card-dl">
+    <div><dt>Coordenação Geral (Individual)</dt><dd>Hélio Clementino dos Santos</dd></div>
+    <div><dt>Comitê de Programa / Científico</dt><dd><span class="muted-cell">Sem registro destacado nos documentos oficiais</span></dd></div>
+    <div><dt>Fomento, Chancelas e Registro</dt><dd><div class="fom-wrap"><span class="muted-cell">Realização institucional UNEMAT</span></div><div class="reg-oficial">Material de divulgação e certificados oficiais — Departamento de Computação</div></dd></div>
+  </dl>
+</article>
+<article class="ev-card" data-numero="1" data-ano="2004" data-serie="SELCOMP" data-campi="alto-araguaia" data-search="2004 selcomp ii selcomp — ii semana de computação 21 a 23/10/2004 (40h) alto araguaia câmpus de alto araguaia sérgio santos silva filho   certificados oficiais — departamento de computação / unemat alto araguaia">
+  <header class="ev-card-top">
+    <span class="ano-num">2004</span>
+    <span class="serie-badge badge-selcomp">SELCOMP</span>
+    <span class="campus-pill">Alto Araguaia</span>
+  </header>
+  <h3 class="ev-card-title">II SELCOMP — II Semana de Computação</h3>
+  <p class="ev-card-meta">21 a 23/10/2004 (40h) · Câmpus de Alto Araguaia</p>
+  <dl class="ev-card-dl">
+    <div><dt>Coordenação Geral (Individual)</dt><dd>Sérgio Santos Silva Filho</dd></div>
+    <div><dt>Comitê de Programa / Científico</dt><dd><span class="muted-cell">Sem registro destacado nos documentos oficiais</span></dd></div>
+    <div><dt>Fomento, Chancelas e Registro</dt><dd><div class="fom-wrap"><span class="muted-cell">Realização institucional UNEMAT</span></div><div class="reg-oficial">Certificados oficiais — Departamento de Computação / UNEMAT Alto Araguaia</div></dd></div>
+  </dl>
+</article>
+      </div>
+
+      <div id="estado-vazio" class="vazio">
+        Nenhuma edição encontrada para os filtros selecionados. Ajuste a busca ou clique em <strong>Limpar filtros</strong>.
+      </div>
+    </main>
+
+    <footer class="rodape">
+      <p class="nota-editorial">
+        Registro histórico elaborado a partir de documentos oficiais do curso e da UNEMAT (portarias, pareceres PROEC, propostas de fomento, chamadas e certificados institucionais de 2004 a 2026). Sugestões de complementação documental podem ser encaminhadas à Coordenação do curso.
+      </p>
+      <div class="faixa-publica">
+        Universidade Pública e Gratuita. Sem Mensalidade.
+      </div>
+      <div class="rodape-links">
+        <span>Ciência da Computação — UNEMAT · Alto Araguaia e Rondonópolis</span>
+        <a href="../">← Voltar ao portal do curso</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      const fSerie = document.getElementById("f-serie");
+      const fCampus = document.getElementById("f-campus");
+      const fOrdem = document.getElementById("f-ordem");
+      const fBusca = document.getElementById("f-busca");
+      const btnLimpar = document.getElementById("btn-limpar");
+      const statusEl = document.getElementById("status-contagem");
+      const emptyEl = document.getElementById("estado-vazio");
+      const tbody = document.getElementById("eventos-tbody");
+      const cardsWrap = document.getElementById("eventos-cards");
+
+      const rows = Array.from(tbody.querySelectorAll("tr.ev-row"));
+      const cards = Array.from(cardsWrap.querySelectorAll("article.ev-card"));
+      const total = rows.length;
+
+      function sortNodes(nodes, ordem) {
+        return nodes.slice().sort((a, b) => {
+          const na = Number(a.dataset.numero);
+          const nb = Number(b.dataset.numero);
+          return ordem === "cronologica" ? (na - nb) : (nb - na);
+        });
+      }
+
+      function applyFilters() {
+        const s = fSerie.value;
+        const c = fCampus.value;
+        const q = fBusca.value.trim().toLowerCase();
+        const ordem = fOrdem.value;
+
+        let visible = 0;
+        const sortedRows = sortNodes(rows, ordem);
+        const sortedCards = sortNodes(cards, ordem);
+
+        sortedRows.forEach((row) => {
+          const okSerie = s === "all" || row.dataset.serie === s;
+          const okCampus = c === "all" || row.dataset.campi.includes(c);
+          const okQuery = !q || row.dataset.search.includes(q);
+          const show = okSerie && okCampus && okQuery;
+          row.style.display = show ? "" : "none";
+          tbody.appendChild(row);
+          if (show) visible += 1;
+        });
+
+        sortedCards.forEach((card) => {
+          const okSerie = s === "all" || card.dataset.serie === s;
+          const okCampus = c === "all" || card.dataset.campi.includes(c);
+          const okQuery = !q || card.dataset.search.includes(q);
+          card.style.display = (okSerie && okCampus && okQuery) ? "" : "none";
+          cardsWrap.appendChild(card);
+        });
+
+        statusEl.textContent = "Exibindo " + visible + " de " + total + " edições oficiais (2004–2026)";
+        emptyEl.style.display = visible === 0 ? "block" : "none";
+      }
+
+      [fSerie, fCampus, fOrdem].forEach((el) => el.addEventListener("change", applyFilters));
+      fBusca.addEventListener("input", applyFilters);
+      btnLimpar.addEventListener("click", () => {
+        fSerie.value = "all";
+        fCampus.value = "all";
+        fOrdem.value = "recentes";
+        fBusca.value = "";
+        applyFilters();
+      });
+    })();
+  </script>
+</body>
+</html>

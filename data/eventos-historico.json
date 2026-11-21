@@ -1,0 +1,468 @@
+{
+  "titulo": "Memória de Eventos — Ciência da Computação da UNEMAT",
+  "subtitulo": "Histórico oficial das 24 edições comprovadas nas 4 séries do curso em Alto Araguaia e Rondonópolis (2004–2026)",
+  "periodo": "2004–2026",
+  "atualizado_em": "2026-11-20",
+  "total_edicoes": 24,
+  "series": [
+    "SELCOMP",
+    "Workshop de Computação",
+    "SECOMP",
+    "ERI-MT"
+  ],
+  "campi": [
+    "Alto Araguaia",
+    "Rondonópolis"
+  ],
+  "mensagem_institucional": "Universidade Pública e Gratuita. Sem Mensalidade.",
+  "eventos": [
+    {
+      "id": "2004-selcomp-2",
+      "numero": 1,
+      "ano": 2004,
+      "serie": "SELCOMP",
+      "titulo": "II SELCOMP — II Semana de Computação",
+      "periodo": "21 a 23/10/2004 (40h)",
+      "campus": "Alto Araguaia",
+      "local_detalhe": "Câmpus de Alto Araguaia",
+      "modalidade_coordenacao": "Individual",
+      "coordenacao_geral": [
+        "Sérgio Santos Silva Filho"
+      ],
+      "comite_programa": "",
+      "fomento_chancela": [],
+      "registro_oficial": "Certificados oficiais — Departamento de Computação / UNEMAT Alto Araguaia"
+    },
+    {
+      "id": "2007-selcomp-4",
+      "numero": 2,
+      "ano": 2007,
+      "serie": "SELCOMP",
+      "titulo": "IV SELCOMP — Tecnologia e Educação",
+      "periodo": "03 a 06/09/2007",
+      "campus": "Alto Araguaia",
+      "local_detalhe": "Câmpus de Alto Araguaia",
+      "modalidade_coordenacao": "Individual",
+      "coordenacao_geral": [
+        "Hélio Clementino dos Santos"
+      ],
+      "comite_programa": "",
+      "fomento_chancela": [],
+      "registro_oficial": "Material de divulgação e certificados oficiais — Departamento de Computação"
+    },
+    {
+      "id": "2008-selcomp-5",
+      "numero": 3,
+      "ano": 2008,
+      "serie": "SELCOMP",
+      "titulo": "V SELCOMP — A informática a serviço da sociedade",
+      "periodo": "10 a 14/11/2008",
+      "campus": "Alto Araguaia",
+      "local_detalhe": "Câmpus de Alto Araguaia",
+      "modalidade_coordenacao": "Individual",
+      "coordenacao_geral": [
+        "Hélio Clementino dos Santos"
+      ],
+      "comite_programa": "",
+      "fomento_chancela": [],
+      "registro_oficial": "Projeto e certificados oficiais V SELCOMP"
+    },
+    {
+      "id": "2009-selcomp-6",
+      "numero": 4,
+      "ano": 2009,
+      "serie": "SELCOMP",
+      "titulo": "VI SELCOMP — Profissionais da Computação no Século XXI",
+      "periodo": "14 a 18/09/2009",
+      "campus": "Alto Araguaia",
+      "local_detalhe": "Câmpus de Alto Araguaia",
+      "modalidade_coordenacao": "Individual",
+      "coordenacao_geral": [
+        "Carlos Alex Sander Juvêncio Gulo"
+      ],
+      "comite_programa": "",
+      "fomento_chancela": [
+        "Proposta FAPEMAT",
+        "UNEMAT/PROEC"
+      ],
+      "registro_oficial": "Registro UNEMAT/PROEC · Proposta FAPEMAT (proponente: Gleber Nelson Marques)"
+    },
+    {
+      "id": "2010-workshop-1",
+      "numero": 5,
+      "ano": 2010,
+      "serie": "Workshop de Computação",
+      "titulo": "I Workshop de Computação e Sociedade",
+      "periodo": "18 a 22/08/2010",
+      "campus": "Alto Araguaia",
+      "local_detalhe": "Câmpus de Alto Araguaia",
+      "modalidade_coordenacao": "Individual",
+      "coordenacao_geral": [
+        "Toni Amorim de Oliveira"
+      ],
+      "comite_programa": "Comissão Principal (Portaria nº 006/2010): Toni Amorim de Oliveira, Benedito Martins Pereira, Carlinho Viana de Sousa, Gleber Nelson Marques e Sérgio Santos Silva Filho",
+      "fomento_chancela": [],
+      "registro_oficial": "Portaria nº 006/2010 (09/06/2010)"
+    },
+    {
+      "id": "2010-selcomp-7",
+      "numero": 6,
+      "ano": 2010,
+      "serie": "SELCOMP",
+      "titulo": "VII SELCOMP — VII Semana de Licenciatura em Computação",
+      "periodo": "22 a 26/11/2010",
+      "campus": "Alto Araguaia",
+      "local_detalhe": "Câmpus de Alto Araguaia",
+      "modalidade_coordenacao": "Individual",
+      "coordenacao_geral": [
+        "Max Robert Marinho"
+      ],
+      "comite_programa": "",
+      "fomento_chancela": [],
+      "registro_oficial": "Certificados oficiais — Departamento de Computação (07/12/2010)"
+    },
+    {
+      "id": "2012-workshop-2",
+      "numero": 7,
+      "ano": 2012,
+      "serie": "Workshop de Computação",
+      "titulo": "II Workshop de Computação e Sociedade",
+      "periodo": "21 a 23/11/2012",
+      "campus": "Alto Araguaia",
+      "local_detalhe": "Câmpus de Alto Araguaia",
+      "modalidade_coordenacao": "Individual",
+      "coordenacao_geral": [
+        "Sérgio Santos Silva Filho"
+      ],
+      "comite_programa": "Gleber Nelson Marques (Chairman / Comissão Científica), Max Robert Marinho e Ubirajara Martin Coelho",
+      "fomento_chancela": [],
+      "registro_oficial": "Certificados oficiais de coordenação geral e comissão científica"
+    },
+    {
+      "id": "2013-workshop-3",
+      "numero": 8,
+      "ano": 2013,
+      "serie": "Workshop de Computação",
+      "titulo": "III Workshop de Computação — Pesquisa e Atuação",
+      "periodo": "12 a 14/06/2013 (20h)",
+      "campus": "Alto Araguaia",
+      "local_detalhe": "Câmpus de Alto Araguaia",
+      "modalidade_coordenacao": "Individual",
+      "coordenacao_geral": [
+        "Max Robert Marinho"
+      ],
+      "comite_programa": "",
+      "fomento_chancela": [],
+      "registro_oficial": "Protocolo 1.5B/146/2013"
+    },
+    {
+      "id": "2013-eri-mt-4",
+      "numero": 9,
+      "ano": 2013,
+      "serie": "ERI-MT",
+      "titulo": "IV ERI-MT — Escola Regional de Informática de Mato Grosso (Imagem: Processamento e Análise)",
+      "periodo": "04 a 08/11/2013",
+      "campus": "Alto Araguaia",
+      "local_detalhe": "Câmpus de Alto Araguaia",
+      "modalidade_coordenacao": "Individual",
+      "coordenacao_geral": [
+        "Carlos Alex Sander Juvêncio Gulo"
+      ],
+      "comite_programa": "Gleber Nelson Marques (UNEMAT — Coordenação Científica e Sessão de Pôsteres), João Manuel Ribeiro da Silva Tavares (FEUP — Co-coordenação e Sessão Oral) e Alex Fernando de Araujo (FEUP — Vice-Coordenação)",
+      "fomento_chancela": [
+        "Chancela SBC",
+        "FAPEMAT",
+        "CNPq (Protocolo 6596366562507529)",
+        "UNEMAT/PROEC"
+      ],
+      "registro_oficial": "Parecer nº 024/2013-PROEC · SIGProj 148107.486.22702.26032013 · Portaria nº 001/2013"
+    },
+    {
+      "id": "2014-secomp-1",
+      "numero": 10,
+      "ano": 2014,
+      "serie": "SECOMP",
+      "titulo": "I SECOMP — Computação Científica",
+      "periodo": "24 a 28/11/2014",
+      "campus": "Alto Araguaia",
+      "local_detalhe": "Câmpus de Alto Araguaia",
+      "modalidade_coordenacao": "Individual",
+      "coordenacao_geral": [
+        "Lucas Kriesel Sperotto"
+      ],
+      "comite_programa": "Max Robert Marinho (Coordenador do Comitê Científico)",
+      "fomento_chancela": [
+        "UNEMAT/PROEC"
+      ],
+      "registro_oficial": "Parecer nº 166/2014-PROEC (Proc. 530130/2014)"
+    },
+    {
+      "id": "2015-secomp-2",
+      "numero": 11,
+      "ano": 2015,
+      "serie": "SECOMP",
+      "titulo": "II SECOMP — Ciência e Inovação",
+      "periodo": "23 a 27/11/2015",
+      "campus": "Alto Araguaia",
+      "local_detalhe": "Câmpus de Alto Araguaia (CEPAIA)",
+      "modalidade_coordenacao": "Individual",
+      "coordenacao_geral": [
+        "Wesley Barbosa Thereza"
+      ],
+      "comite_programa": "Wesley Barbosa Thereza (Presidente, Portaria nº 002/2015) / Max Robert Marinho",
+      "fomento_chancela": [
+        "Edital nº 001/2015 FAESPE/UNEMAT — R$ 4.967,16 aprovados",
+        "Proposta FAPEMAT"
+      ],
+      "registro_oficial": "Portaria nº 002/2015 · Proponente FAESPE: Lucas Kriesel Sperotto"
+    },
+    {
+      "id": "2015-workshop-5",
+      "numero": 12,
+      "ano": 2015,
+      "serie": "Workshop de Computação",
+      "titulo": "V Workshop de Computação — Tecnologias e Educação",
+      "periodo": "26 e 27/11/2015",
+      "campus": "Alto Araguaia",
+      "local_detalhe": "Câmpus de Alto Araguaia (CEPAIA)",
+      "modalidade_coordenacao": "Individual",
+      "coordenacao_geral": [
+        "Carlinho Viana de Sousa"
+      ],
+      "comite_programa": "Programação científica integrada à II SECOMP 2015",
+      "fomento_chancela": [
+        "UNEMAT/PROEC"
+      ],
+      "registro_oficial": "Projeto e formulário institucional PROEC"
+    },
+    {
+      "id": "2016-workshop-6",
+      "numero": 13,
+      "ano": 2016,
+      "serie": "Workshop de Computação",
+      "titulo": "VI Workshop de Computação — Profissionais do Futuro",
+      "periodo": "30/05 a 03/06/2016",
+      "campus": "Alto Araguaia",
+      "local_detalhe": "Câmpus de Alto Araguaia",
+      "modalidade_coordenacao": "Individual",
+      "coordenacao_geral": [
+        "Adriana de Oliveira Dias"
+      ],
+      "comite_programa": "Comitê Científico colegiado: Adriana de Oliveira Dias, Caio César Enside de Abreu, Carlinho Viana de Sousa, Lucas Kriesel Sperotto, Sérgio Santos Silva Filho e Toni Amorim de Oliveira",
+      "fomento_chancela": [
+        "FAPEMAT",
+        "UNEMAT/PROEC"
+      ],
+      "registro_oficial": "Parecer nº 115/2016-PROEC (Proc. 95046/2016)"
+    },
+    {
+      "id": "2016-secomp-3",
+      "numero": 14,
+      "ano": 2016,
+      "serie": "SECOMP",
+      "titulo": "III SECOMP — Jogos e sua Influência na Formação do Profissional de Computação",
+      "periodo": "17 a 22/10/2016",
+      "campus": "Alto Araguaia",
+      "local_detalhe": "Câmpus de Alto Araguaia",
+      "modalidade_coordenacao": "Individual",
+      "coordenacao_geral": [
+        "Toni Amorim de Oliveira"
+      ],
+      "comite_programa": "",
+      "fomento_chancela": [],
+      "registro_oficial": "Parecer Ad Referendum nº 006/2016 · Ofício nº 017/2016"
+    },
+    {
+      "id": "2017-workshop-7",
+      "numero": 15,
+      "ano": 2017,
+      "serie": "Workshop de Computação",
+      "titulo": "VII Workshop de Computação — Computação Aplicada à Engenharia Biomédica",
+      "periodo": "26 a 30/06/2017",
+      "campus": "Alto Araguaia",
+      "local_detalhe": "Câmpus de Alto Araguaia (CEPAIA)",
+      "modalidade_coordenacao": "Individual",
+      "coordenacao_geral": [
+        "Fernando Yoiti Obana"
+      ],
+      "comite_programa": "Juvenal Silva Neto (Presidente do Comitê Científico)",
+      "fomento_chancela": [
+        "FAPEMAT"
+      ],
+      "registro_oficial": "Parecer Ad Referendum nº 018/2017 · Ofício nº 049/2017"
+    },
+    {
+      "id": "2017-secomp-4",
+      "numero": 16,
+      "ano": 2017,
+      "serie": "SECOMP",
+      "titulo": "IV SECOMP — Tecnologias voltadas para o Agronegócio",
+      "periodo": "04 a 08/12/2017",
+      "campus": "Alto Araguaia",
+      "local_detalhe": "Câmpus de Alto Araguaia",
+      "modalidade_coordenacao": "Individual",
+      "coordenacao_geral": [
+        "Rafael Falceti de Azevedo"
+      ],
+      "comite_programa": "",
+      "fomento_chancela": [],
+      "registro_oficial": "Parecer Ad Referendum nº 030/2017 · Ofício nº 107/2017"
+    },
+    {
+      "id": "2018-workshop-8",
+      "numero": 17,
+      "ano": 2018,
+      "serie": "Workshop de Computação",
+      "titulo": "VIII Workshop de Computação — Programação e Tecnologias",
+      "periodo": "14 a 18/05/2018",
+      "campus": "Alto Araguaia",
+      "local_detalhe": "Câmpus de Alto Araguaia",
+      "modalidade_coordenacao": "Individual",
+      "coordenacao_geral": [
+        "Adriana de Oliveira Dias"
+      ],
+      "comite_programa": "Comitê Científico colegiado: Adriana de Oliveira Dias, André Flederico Pereira, Caio César Enside de Abreu, Carlinho Viana de Sousa, Dárley Domingos de Almeida, Fernando Yoiti Obana, Paula Letícia Santos Lima e Sérgio Santos Silva Filho",
+      "fomento_chancela": [
+        "UNEMAT/PROEC"
+      ],
+      "registro_oficial": "Parecer nº 142/2018-PROEC"
+    },
+    {
+      "id": "2019-secomp-5",
+      "numero": 18,
+      "ano": 2019,
+      "serie": "SECOMP",
+      "titulo": "V SECOMP — Semana de Computação",
+      "periodo": "06–08/03 e 15–17/04/2019",
+      "campus": "Rondonópolis",
+      "local_detalhe": "Câmpus Avançado de Rondonópolis (NPR / SECITEC-ROO)",
+      "modalidade_coordenacao": "Individual",
+      "coordenacao_geral": [
+        "Carlos Alex Sander Juvêncio Gulo"
+      ],
+      "comite_programa": "",
+      "fomento_chancela": [
+        "UNEMAT/PROEC"
+      ],
+      "registro_oficial": "Parecer nº 054/2019-PROEC (Proc. 83937/2019) · Parecer nº 005/2019"
+    },
+    {
+      "id": "2022-workshop-10",
+      "numero": 19,
+      "ano": 2022,
+      "serie": "Workshop de Computação",
+      "titulo": "X Workshop de Computação — Compartilhando experiências: do remoto ao presencial",
+      "periodo": "14/03 a 31/10/2022",
+      "campus": "Alto Araguaia e Rondonópolis",
+      "local_detalhe": "Câmpus de Alto Araguaia e Câmpus Avançado de Rondonópolis",
+      "modalidade_coordenacao": "Individual",
+      "coordenacao_geral": [
+        "Carlos Alex Sander Juvêncio Gulo"
+      ],
+      "comite_programa": "Coordenação Local em Alto Araguaia: Juvenal Silva Neto",
+      "fomento_chancela": [
+        "UNEMAT/PROEC"
+      ],
+      "registro_oficial": "Registro PROEC / SIGAA · Certificado nº 91846091"
+    },
+    {
+      "id": "2023-workshop-11",
+      "numero": 20,
+      "ano": 2023,
+      "serie": "Workshop de Computação",
+      "titulo": "XI Workshop de Computação — Desafios e possibilidades do cientista da computação",
+      "periodo": "27 e 28/06/2023",
+      "campus": "Alto Araguaia e Rondonópolis",
+      "local_detalhe": "Câmpus de Alto Araguaia e Rondonópolis (UFR)",
+      "modalidade_coordenacao": "Individual",
+      "coordenacao_geral": [
+        "Adriana de Oliveira Dias"
+      ],
+      "comite_programa": "",
+      "fomento_chancela": [
+        "UNEMAT/PROEC"
+      ],
+      "registro_oficial": "Parecer nº 345/2023-PROEC (EV382-2023)"
+    },
+    {
+      "id": "2024-eri-mt-13",
+      "numero": 21,
+      "ano": 2024,
+      "serie": "ERI-MT",
+      "titulo": "XIII ERI-MT — Ecossistemas Digitais na Educação e no Campo",
+      "periodo": "07 e 08/11/2024",
+      "campus": "Alto Araguaia",
+      "local_detalhe": "Câmpus de Alto Araguaia",
+      "modalidade_coordenacao": "Conjunta",
+      "coordenacao_geral": [
+        "Ubirajara Martin Coelho",
+        "Caio César Enside de Abreu",
+        "Adriana de Oliveira Dias"
+      ],
+      "comite_programa": "Carlos Alex Sander Juvêncio Gulo (Alto Araguaia), Benevid Félix (Sinop), Luciano Zamperetti Wolski (Barra do Bugres) e Tiago Andrade (Cáceres)",
+      "fomento_chancela": [
+        "Chancela SBC",
+        "UNEMAT/PROEC"
+      ],
+      "registro_oficial": "Chancela SBC · Registro institucional UNEMAT/PROEC"
+    },
+    {
+      "id": "2025-workshop-13",
+      "numero": 22,
+      "ano": 2025,
+      "serie": "Workshop de Computação",
+      "titulo": "XIII Workshop de Computação — TechXperience: Explorando a diversidade da Tecnologia",
+      "periodo": "02, 04 e 05/06/2025",
+      "campus": "Rondonópolis",
+      "local_detalhe": "Câmpus Avançado de Rondonópolis (NPR)",
+      "modalidade_coordenacao": "Individual",
+      "coordenacao_geral": [
+        "Adriana de Oliveira Dias"
+      ],
+      "comite_programa": "",
+      "fomento_chancela": [
+        "UNEMAT/PROEC"
+      ],
+      "registro_oficial": "Registro PROEC / SIGAA · Certificado nº 91913536"
+    },
+    {
+      "id": "2025-secomp-6",
+      "numero": 23,
+      "ano": 2025,
+      "serie": "SECOMP",
+      "titulo": "VI SECOMP — Inovação Digital na Educação: Conectando o Presente ao Futuro",
+      "periodo": "06 a 09/10/2025",
+      "campus": "Alto Araguaia",
+      "local_detalhe": "Câmpus de Alto Araguaia",
+      "modalidade_coordenacao": "Individual",
+      "coordenacao_geral": [
+        "Carlos Alex Sander Juvêncio Gulo"
+      ],
+      "comite_programa": "",
+      "fomento_chancela": [
+        "UNEMAT/PROEC"
+      ],
+      "registro_oficial": "Parecer nº 764/2025-PROEC (EV532-2025) · Certificado nº 91916968"
+    },
+    {
+      "id": "2026-secomp-7",
+      "numero": 24,
+      "ano": 2026,
+      "serie": "SECOMP",
+      "titulo": "VII SECOMP — Conectando Inteligências: Do Campus ao Ecossistema Global",
+      "periodo": "06 a 11/06/2026",
+      "campus": "Rondonópolis",
+      "local_detalhe": "Câmpus Avançado de Rondonópolis (Rua Fernando Corrêa da Costa, Setor Rodoviária, Rondonópolis - MT)",
+      "modalidade_coordenacao": "Individual",
+      "coordenacao_geral": [
+        "Carlos Alex Sander Juvêncio Gulo"
+      ],
+      "comite_programa": "Adriana de Oliveira Dias (Coordenadora do Comitê Científico) e Ubirajara Martin Coelho (Vice-Coordenador do Comitê Científico)",
+      "fomento_chancela": [
+        "Edital nº 026/2025 UNEMAT/PRPPG — R$ 10.000,00 aprovados (4º lugar)",
+        "Chancela SBC"
+      ],
+      "registro_oficial": "Edital nº 026/2025 UNEMAT/PRPPG (resultado em 27/03/2026) · Ofício nº 087/2026/SECOMP"
+    }
+  ]
+}
