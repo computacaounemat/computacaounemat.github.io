@@ -3,9 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu Selo 77 — Ciência da Computação — UNEMAT</title>
+  <title>Meu Selo — Ciência da Computação — UNEMAT | RUF 2026</title>
   <link rel="icon" type="image/svg+xml" href="../marca/arquivos/logo_bcc_vertical.svg">
-  <meta name="description" content="Crie sua foto comemorativa da campanha Eu Faço Parte dos 77 — Bacharelado em Ciência da Computação da UNEMAT (Alto Araguaia e Rondonópolis): 77º lugar no Brasil no RUF 2026.">
+  <link rel="canonical" href="https://computacaounemat.github.io/selo77/">
+  <meta name="description" content="Crie sua foto ou avatar comemorativo da campanha Eu Faço Parte dos 77 — Ciência da Computação da UNEMAT: RUF 2026 — 77º em Computação no Brasil entre 592 instituições, 2º em Mato Grosso e 1º na Região Sul de MT.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Ciência da Computação — UNEMAT">
+  <meta property="og:title" content="Meu Selo — Ciência da Computação UNEMAT | RUF 2026">
+  <meta property="og:description" content="Personalize sua foto ou avatar da campanha Eu Faço Parte dos 77 em segundos, sem cadastro e com total privacidade no seu aparelho.">
+  <meta property="og:url" content="https://computacaounemat.github.io/selo77/">
+  <meta property="og:image" content="https://computacaounemat.github.io/selo77/assets/og-selo77.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Campanha Eu Faço Parte dos 77 — RUF 2026: UNEMAT em 77º em Computação no Brasil, 2º em MT e 1º no Sul de MT.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Meu Selo — Ciência da Computação UNEMAT | RUF 2026">
+  <meta name="twitter:description" content="Crie sua foto ou avatar comemorativo da campanha Eu Faço Parte dos 77 em segundos e sem cadastro.">
+  <meta name="twitter:image" content="https://computacaounemat.github.io/selo77/assets/og-selo77.png">
   <style>
     @font-face {
       font-family: 'Aller';
@@ -154,19 +169,6 @@
       margin-bottom: 24px;
     }
 
-    .hero-tag {
-      display: inline-block;
-      background: var(--ciano);
-      color: var(--preto);
-      font-weight: 700;
-      font-size: 0.85rem;
-      padding: 5px 12px;
-      border-radius: 999px;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
     .hero h1 {
       margin: 0 0 10px;
       font-family: 'Mesmerize', 'Aller', sans-serif;
@@ -202,15 +204,16 @@
     }
 
     .hero-marcas {
-      display: inline-flex;
+      display: flex;
+      width: fit-content;
       flex-wrap: wrap;
       align-items: center;
-      gap: 20px;
+      gap: 24px;
       background: var(--branco);
       border: 3px solid var(--ciano);
       border-radius: 14px;
-      padding: 12px 22px;
-      margin: 0 0 16px;
+      padding: 18px 32px;
+      margin: 0 0 22px;
       max-width: 100%;
     }
 
@@ -231,8 +234,8 @@
 
     @media (max-width: 600px) {
       .hero-marcas {
-        gap: 12px;
-        padding: 10px 14px;
+        gap: 14px;
+        padding: 14px 18px;
       }
       .hero-marcas img {
         height: 42px;
@@ -413,6 +416,12 @@
       border-color: var(--ciano);
     }
 
+    .btn-sm {
+      min-height: 40px;
+      padding: 8px 14px;
+      font-size: 0.88rem;
+    }
+
     .btn[aria-disabled="true"],
     .btn:disabled {
       opacity: 0.52;
@@ -505,8 +514,15 @@
       margin-top: 10px;
     }
 
-    .campos-egresso[hidden] {
+    .campos-egresso[hidden],
+    .bloco-estilo-avatar[hidden] {
       display: none;
+    }
+
+    .bloco-estilo-avatar {
+      border-left: 3px solid var(--verde);
+      padding-left: 12px;
+      margin-top: 12px;
     }
 
     .previa-coluna {
@@ -520,7 +536,39 @@
     @media (max-width: 920px) {
       .previa-coluna {
         position: static;
+        order: -1;
       }
+    }
+
+    .acoes-previa-rapida {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    @media (min-width: 921px) {
+      .acoes-previa-rapida {
+        display: none;
+      }
+    }
+
+    .acoes-previa-rapida .btn {
+      flex: 1 1 150px;
+    }
+
+    .aviso-comunidade {
+      width: 100%;
+      margin: 0;
+      font-size: 0.84rem;
+      line-height: 1.4;
+      color: var(--texto-suave);
+      text-align: center;
+      padding: 8px 10px;
+      border-radius: 8px;
+      background: var(--superficie-2);
+      border: 1px solid var(--borda);
     }
 
     .previa-moldura {
@@ -647,35 +695,6 @@
       margin-top: 10px;
     }
 
-    .mapa-egressos-card {
-      margin-top: 28px;
-      background: var(--superficie);
-      border: 2px solid var(--verde);
-      border-radius: var(--radius);
-      padding: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .mapa-egressos-card h2 {
-      margin: 0 0 6px;
-      font-size: 1.2rem;
-      color: var(--branco);
-    }
-
-    .mapa-egressos-card p {
-      margin: 0;
-      max-width: 720px;
-      color: var(--texto-suave);
-    }
-
-    .mapa-egressos-destaque {
-      box-shadow: 0 0 0 3px var(--ciano);
-    }
-
     .dicas-redes {
       margin-top: 24px;
       background: var(--superficie);
@@ -713,7 +732,7 @@
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#conteudo-principal">Ir para o estúdio Meu Selo 77</a>
+  <a class="skip-link" href="#conteudo-principal">Ir para o estúdio Meu Selo Computação UNEMAT</a>
 
   <div class="wrap">
     <header class="topo">
@@ -721,7 +740,7 @@
         <a href="../">← Site do curso</a>
         <a href="../marca/">Marca e manual</a>
       </nav>
-      <span class="topo-badge">Campanha Eu Faço Parte dos 77</span>
+      <span class="topo-badge">Campanha Eu Faço Parte dos 77 • RUF 2026</span>
     </header>
 
     <section class="hero" aria-labelledby="titulo-principal">
@@ -730,18 +749,16 @@
         <span class="hero-marcas-sep" aria-hidden="true"></span>
         <img src="../marca/arquivos/logo_bcc_horizontal_fundo_transparente_texto_preto.png" alt="Ciência da Computação — UNEMAT">
       </div>
-      <span class="hero-tag">Ciência da Computação — UNEMAT</span>
-      <h1 id="titulo-principal">Estúdio "Meu Selo Computação UNEMAT"</h1>
+      <h1 id="titulo-principal">Meu Selo — Ciência da Computação UNEMAT</h1>
       <p>
         Crie sua foto comemorativa em segundos para o Instagram, LinkedIn ou foto de perfil do WhatsApp.
-        Escolha o destaque oficial em Ciência da Computação (77º no Brasil, 2º em Mato Grosso ou 1º da Região Sul de MT) e mostre quem constrói essa conquista.
+        No RUF 2026 (Folha), a UNEMAT alcançou o 77º lugar em Computação no Brasil — conquista institucional dos 6 câmpus da área — e figura em 2º lugar em Mato Grosso e 1º na Região Sul de MT.
       </p>
-      <ul class="hero-fatos" aria-label="Indicadores oficiais do curso">
-        <li><strong>77º em Computação no Brasil</strong> (RUF 2026)</li>
+      <ul class="hero-fatos" aria-label="Indicadores oficiais em Computação">
+        <li><strong>77º em Computação no Brasil</strong> (entre 592 instituições • RUF 2026)</li>
         <li><strong>2º em Computação de MT</strong> (1º da Região Sul de MT)</li>
-        <li><strong>Evolução:</strong> 176º (2023) → 120º (2024) → 105º (2025) → 77º (2026)</li>
-        <li><strong>4 estrelas</strong> no Guia da Faculdade (Estadão/Quero, ed. 2025)</li>
-        <li><strong>Universidade Pública e Gratuita. Sem Mensalidade.</strong></li>
+        <li><strong>Evolução UNEMAT:</strong> 176º (2023) → 120º (2024) → 105º (2025) → 77º (2026)</li>
+        <li><strong>6 câmpus com Computação</strong> • Universidade Pública e Gratuita. Sem Mensalidade.</li>
       </ul>
       <div class="aviso-privacidade" role="note">
         <strong>Sua privacidade em primeiro lugar:</strong> sua foto não é enviada a nenhum servidor.
@@ -752,23 +769,24 @@
     <main id="conteudo-principal" class="grid-estudio">
       <section class="painel" aria-label="Configuração da sua foto comemorativa">
         <div>
-          <h2 class="passo-titulo"><span class="passo-num" aria-hidden="true">1</span> Escolher foto</h2>
+          <h2 class="passo-titulo"><span class="passo-num" aria-hidden="true">1</span> Escolher foto e ajustar enquadramento</h2>
           <div class="upload-box">
             <input id="inputFoto" class="sr-only-file" type="file" accept="image/jpeg,image/png,image/webp,image/*">
             <label for="inputFoto" class="btn btn-primario" id="labelEscolherFoto">Escolher foto da galeria</label>
+            <button type="button" class="btn btn-secundario" id="btnAjustarInteira">Ajustar foto inteira</button>
             <button type="button" class="btn btn-secundario" id="btnCentralizar">Centralizar</button>
           </div>
           <p class="ajuda-texto" id="ajudaFoto">
-            Formatos recomendados: JPG, PNG ou WebP. Se sua foto vier em formato HEIC do iPhone e não abrir, salve como JPG ou use uma captura de tela.
+            Aceita JPG, PNG, WebP ou imagens compatíveis do celular (até 30 MB). Se alguma imagem HEIC antiga do iPhone falhar neste navegador, salve como JPG ou use uma captura de tela.
           </p>
 
           <div class="sliders-grid">
             <div class="slider-item">
               <div class="slider-topo">
-                <label for="controleZoom">Aproximar foto</label>
+                <label for="controleZoom">Zoom da foto (aproximar ou afastar)</label>
                 <span id="valorZoom" aria-hidden="true">100%</span>
               </div>
-              <input id="controleZoom" type="range" min="1" max="3" step="0.01" value="1" aria-describedby="ajudaAjuste">
+              <input id="controleZoom" type="range" min="0.45" max="3" step="0.01" value="1" aria-describedby="ajudaAjuste">
             </div>
 
             <div class="slider-item">
@@ -788,7 +806,7 @@
             </div>
           </div>
           <p class="ajuda-texto" id="ajudaAjuste">
-            Você também pode arrastar a foto diretamente sobre a prévia ao lado (ou abaixo, no celular).
+            Reduza o zoom abaixo de 100% para afastar a imagem ou clique em "Ajustar foto inteira" para mostrar todos sem cortes. Você também pode arrastar a foto diretamente sobre a prévia.
           </p>
         </div>
 
@@ -837,7 +855,7 @@
 
           <div class="campo-grupo">
             <label for="campoNome">Seu nome ou título (opcional)</label>
-            <input id="campoNome" type="text" maxlength="48" placeholder="Ex.: Prof. Dr. Carlos Sander ou Maria Silva">
+            <input id="campoNome" type="text" maxlength="48" placeholder="Ex.: Profa. Dra. Ana Souza ou João Silva">
           </div>
 
           <div class="campo-grupo">
@@ -862,15 +880,15 @@
         </fieldset>
 
         <fieldset>
-          <legend>4. Escolha o visual (100% Paleta BCC)</legend>
+          <legend>4. Estilo visual</legend>
           <div class="opcoes-grade">
             <div class="opcao-radio">
               <input type="radio" name="tema" id="tema-claro" value="claro" checked>
-              <label for="tema-claro">Claro (Caneca e Porta-copos)<small>Fundo branco com selo preto</small></label>
+              <label for="tema-claro">Claro<small>Fundo branco com selo escuro</small></label>
             </div>
             <div class="opcao-radio">
               <input type="radio" name="tema" id="tema-dark" value="dark">
-              <label for="tema-dark">Dark (Alto Contraste)<small>Fundo preto com bordas ciano e verde</small></label>
+              <label for="tema-dark">Escuro (Alto Contraste)<small>Fundo preto com bordas ciano e verde</small></label>
             </div>
           </div>
         </fieldset>
@@ -889,6 +907,22 @@
             <div class="opcao-radio">
               <input type="radio" name="formato" id="formato-avatar" value="avatar">
               <label for="formato-avatar">Foto de Perfil (1:1)<small>1080 × 1080 px (círculo)</small></label>
+            </div>
+          </div>
+
+          <div id="blocoEstiloAvatar" class="bloco-estilo-avatar" hidden>
+            <div class="campo-grupo" style="margin-top: 4px;">
+              <label>Modelo do selo redondo (1:1)</label>
+              <div class="opcoes-grade" role="radiogroup" aria-label="Modelo do selo redondo">
+                <div class="opcao-radio">
+                  <input type="radio" name="modeloAvatar" id="avatar-faixa" value="faixa" checked>
+                  <label for="avatar-faixa">Faixa Inferior Clássica<small>63% livres no topo e barra de leitura</small></label>
+                </div>
+                <div class="opcao-radio">
+                  <input type="radio" name="modeloAvatar" id="avatar-aro" value="aro">
+                  <label for="avatar-aro">Aro Circular (Estilo Botton)<small>Foto centralizada no anel curvo UNEMAT</small></label>
+                </div>
+              </div>
             </div>
           </div>
         </fieldset>
@@ -913,17 +947,26 @@
             <span id="previaDim" class="previa-dim">Feed 4:5 • 1080 × 1350</span>
           </div>
 
+          <div class="acoes-previa-rapida">
+            <label for="inputFoto" class="btn btn-primario btn-sm" id="btnEscolherFotoPrevia">Escolher foto</label>
+            <button type="button" class="btn btn-secundario btn-sm" id="btnAjustarPrevia">Ajustar foto inteira</button>
+          </div>
+
           <div class="canvas-palco">
             <canvas
               id="canvasPrevia"
               role="img"
-              aria-label="Prévia da sua imagem com o Selo 77 da Ciência da Computação UNEMAT. Inclui posição 77º no Brasil no RUF 2026, evolução 176º para 77º, 4 estrelas no Guia da Faculdade e a mensagem Universidade Pública e Gratuita. Sem Mensalidade.">
+              aria-label="Prévia do seu selo comemorativo da Ciência da Computação UNEMAT com posição no RUF 2026, evolução 176º para 77º e a mensagem Universidade Pública e Gratuita. Sem Mensalidade.">
             </canvas>
           </div>
 
           <div id="statusGeral" class="status-box" role="status" aria-live="polite">
             Carregando fontes e logomarcas oficiais...
           </div>
+
+          <p class="aviso-comunidade">
+            Peça comemorativa de apoio da comunidade acadêmica e egressos — não substitui comunicações ou documentos oficiais da UNEMAT.
+          </p>
 
           <div class="acoes-exportacao">
             <a id="linkSalvar" class="btn btn-primario" href="#linkSalvar" download="meu-selo-77.png" aria-disabled="true">
@@ -955,20 +998,11 @@
       </aside>
     </main>
 
-    <section id="mapaEgressosCard" class="mapa-egressos-card" aria-labelledby="titulo-mapa-egressos">
-      <div>
-        <h2 id="titulo-mapa-egressos">Mapa de Egressos Top 77 (para ex-alunos desde 2004)</h2>
-        <p id="textoMapaEgressos">
-          Se você concluiu Ciência da Computação na UNEMAT (Alto Araguaia ou Rondonópolis), queremos saber por onde anda sua trajetória para fortalecer ainda mais o curso. A participação é voluntária e com consentimento explícito pela LGPD.
-        </p>
-      </div>
-      <div id="acaoMapaEgressos"></div>
-    </section>
-
     <footer>
       <p>
         <strong>Coordenação do Curso de Ciência da Computação — UNEMAT</strong><br>
-        Campus Alto Araguaia | Campus Avançado de Rondonópolis<br>
+        Câmpus de Alto Araguaia | Câmpus Avançado de Rondonópolis<br>
+        Dados RUF 2026 (Folha de S.Paulo) referentes ao desempenho institucional da UNEMAT em Computação nos 6 câmpus (Alto Araguaia, Rondonópolis, Barra do Bugres, Cáceres, Colíder e Sinop).<br>
         <strong>Universidade Pública e Gratuita. Sem Mensalidade.</strong>
       </p>
     </footer>
@@ -976,9 +1010,6 @@
 
   <script>
     (() => {
-      // Cole aqui a URL oficial do Google Forms quando for gerada com o script Mapa de Egressos Top 77.
-      const MAPA_EGRESSOS_FORM_URL = "";
-
       const PALETA = {
         preto: "#000000",
         ciano: "#009EE0",
@@ -1004,27 +1035,27 @@
           brasaoSup: "RUF 2026",
           brasaoNum: "77º",
           brasaoSub: "NO BRASIL",
-          infoTopo: "RUF 2026 · COMPUTAÇÃO",
+          infoTopo: "RUF 2026 · COMPUTAÇÃO UNEMAT",
           avatarNum: "77º",
           avatarTerritorio: "BRASIL · RUF 2026",
           titulos: {
-            docente: "EU FORMO 77º EM COMPUTAÇÃO NO BRASIL",
+            docente: "ENSINO NA COMPUTAÇÃO TOP 77 DO BRASIL",
             estudante: "ESTUDO COMPUTAÇÃO TOP 77 DO BRASIL",
-            egresso: "FORMADO NA COMPUTAÇÃO TOP 77",
-            ptes: "CONSTRUO A COMPUTAÇÃO TOP 77",
+            egresso: "FORMADO NA COMPUTAÇÃO TOP 77 DO BRASIL",
+            ptes: "CONSTRUO A COMPUTAÇÃO TOP 77 DO BRASIL",
             orgulho: "FAÇO PARTE DA COMPUTAÇÃO UNEMAT"
           },
           legendas: {
             docente:
-              "Faço parte do 77º melhor curso de Ciência da Computação do Brasil no RUF 2026 (Ranking de Cursos entre 592 instituições), 2º de Mato Grosso e 4 estrelas no Guia da Faculdade (ed. 2025)! Universidade Pública e Gratuita. Sem Mensalidade. Faça a sua foto: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+              "Tenho orgulho de ensinar na Ciência da Computação da UNEMAT! No RUF 2026 (Folha), a UNEMAT figura em 77º em Computação no Brasil (entre 592 instituições) e 2º em Mato Grosso — conquista coletiva dos 6 câmpus da instituição (Alto Araguaia, Rondonópolis, Barra do Bugres, Cáceres, Colíder e Sinop). Universidade Pública e Gratuita. Sem Mensalidade. Crie seu selo: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
             estudante:
-              "Estudo Ciência da Computação na UNEMAT: 77º no Brasil no RUF 2026 (Ranking de Cursos entre 592 instituições) e 4 estrelas no Guia da Faculdade (ed. 2025)! Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu e marque 2 colegas: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+              "Estudo Ciência da Computação na UNEMAT! No RUF 2026, a UNEMAT conquistou o 77º lugar em Computação no Brasil (entre 592 instituições) e o 2º lugar em Mato Grosso com a força dos seus 6 câmpus. Universidade Pública e Gratuita. Sem Mensalidade. Crie seu selo e marque 2 colegas: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
             egresso:
-              "Me formei em Ciência da Computação na UNEMAT! Hoje o curso é 77º do Brasil no RUF 2026 (Ranking de Cursos) e 4 estrelas no Guia da Faculdade (ed. 2025). Universidade Pública e Gratuita. Sem Mensalidade. Marque sua turma: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+              "Sou egresso de Ciência da Computação da UNEMAT! Hoje a UNEMAT está entre as Top 77 em Computação no Brasil no RUF 2026 (entre 592 instituições) e em 2º lugar em Mato Grosso, resultado construído pelos 6 câmpus. Universidade Pública e Gratuita. Sem Mensalidade. Crie seu selo e marque sua turma: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
             ptes:
-              "Construo no dia a dia o curso de Ciência da Computação da UNEMAT: 77º do Brasil no RUF 2026 e 4 estrelas no Guia da Faculdade (ed. 2025)! Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+              "Construo no dia a dia a Ciência da Computação da UNEMAT! No RUF 2026, a UNEMAT alcançou o 77º lugar em Computação no Brasil (entre 592 instituições) e o 2º em Mato Grosso com atuação nos 6 câmpus. Universidade Pública e Gratuita. Sem Mensalidade. Crie seu selo: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
             orgulho:
-              "Orgulho da Ciência da Computação da UNEMAT: 77º no Brasil no RUF 2026 (Ranking de Cursos), 2º de MT e 4 estrelas no Guia da Faculdade (ed. 2025)! Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu: https://computacaounemat.github.io/selo77/ @computacao.unemataia"
+              "Orgulho da Ciência da Computação da UNEMAT: 77º em Computação no Brasil no RUF 2026 (entre 592 instituições) e 2º em Mato Grosso, conquista coletiva dos 6 câmpus (Alto Araguaia, Rondonópolis, Barra do Bugres, Cáceres, Colíder e Sinop). Universidade Pública e Gratuita. Sem Mensalidade. Crie seu selo: https://computacaounemat.github.io/selo77/ @computacao.unemataia"
           }
         },
         mt2: {
@@ -1035,23 +1066,23 @@
           avatarNum: "2º",
           avatarTerritorio: "MATO GROSSO · RUF 2026",
           titulos: {
-            docente: "EU FORMO O 2º EM COMPUTAÇÃO DE MT",
-            estudante: "ESTUDO NO 2º EM COMPUTAÇÃO DE MT",
-            egresso: "FORMADO NO 2º EM COMPUTAÇÃO DE MT",
-            ptes: "CONSTRUO O 2º EM COMPUTAÇÃO DE MT",
-            orgulho: "FAÇO PARTE DA COMPUTAÇÃO DE MT"
+            docente: "ENSINO NO 2º LUGAR EM COMPUTAÇÃO DE MT",
+            estudante: "ESTUDO NO 2º LUGAR EM COMPUTAÇÃO DE MT",
+            egresso: "FORMADO NO 2º LUGAR EM COMPUTAÇÃO DE MT",
+            ptes: "CONSTRUO O 2º LUGAR EM COMPUTAÇÃO DE MT",
+            orgulho: "FAÇO PARTE DO 2º LUGAR DE MT"
           },
           legendas: {
             docente:
-              "Ciência da Computação da UNEMAT: 2º melhor curso de Computação de Mato Grosso, 77º do Brasil no RUF 2026 (592 instituições) e 4 estrelas no Guia da Faculdade (ed. 2025)! Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+              "Ensino na Ciência da Computação da UNEMAT: 2º lugar em Computação de Mato Grosso e 77º no Brasil no RUF 2026 (entre 592 instituições), conquista coletiva dos 6 câmpus da UNEMAT! Universidade Pública e Gratuita. Sem Mensalidade. Crie seu selo: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
             estudante:
-              "Estudo no 2º melhor curso de Ciência da Computação de Mato Grosso (77º do Brasil no RUF 2026 e 4 estrelas no Guia da Faculdade, ed. 2025)! Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu e marque 2 colegas: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+              "Estudo Ciência da Computação na UNEMAT: 2º lugar em Computação de Mato Grosso e 77º do Brasil no RUF 2026 (entre 592 instituições), conquista coletiva dos 6 câmpus! Universidade Pública e Gratuita. Sem Mensalidade. Crie o seu e marque 2 colegas: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
             egresso:
-              "Me formei no 2º melhor curso de Ciência da Computação de Mato Grosso (77º do Brasil no RUF 2026 e 4 estrelas no Guia da Faculdade, ed. 2025)! Universidade Pública e Gratuita. Sem Mensalidade. Marque sua turma: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+              "Me formei em Ciência da Computação na UNEMAT: hoje a instituição é 2º lugar em Computação de Mato Grosso e 77º do Brasil no RUF 2026, resultado coletivo dos 6 câmpus! Universidade Pública e Gratuita. Sem Mensalidade. Marque sua turma: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
             ptes:
-              "Sustentamos o 2º melhor curso de Ciência da Computação de Mato Grosso no RUF 2026 (4 estrelas no Guia da Faculdade, ed. 2025)! Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+              "Apoio diariamente a Ciência da Computação da UNEMAT: 2º lugar em Computação de Mato Grosso e 77º no Brasil no RUF 2026, construção conjunta dos 6 câmpus! Universidade Pública e Gratuita. Sem Mensalidade. Crie seu selo: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
             orgulho:
-              "Orgulho da Ciência da Computação da UNEMAT: 2º melhor de Mato Grosso e 77º do Brasil no RUF 2026 (4 estrelas no Guia da Faculdade, ed. 2025)! Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu: https://computacaounemat.github.io/selo77/ @computacao.unemataia"
+              "Orgulho da Ciência da Computação da UNEMAT: 2º em Mato Grosso e 77º no Brasil no RUF 2026 (entre 592 instituições), conquista dos 6 câmpus! Universidade Pública e Gratuita. Sem Mensalidade. Crie seu selo: https://computacaounemat.github.io/selo77/ @computacao.unemataia"
           }
         },
         sul1: {
@@ -1062,23 +1093,23 @@
           avatarNum: "1º",
           avatarTerritorio: "SUL DE MT · RUF 2026",
           titulos: {
-            docente: "EU FORMO O 1º EM COMPUTAÇÃO DO SUL DE MT",
+            docente: "ENSINO NO 1º EM COMPUTAÇÃO DO SUL DE MT",
             estudante: "ESTUDO NO 1º EM COMPUTAÇÃO DO SUL DE MT",
             egresso: "FORMADO NO 1º EM COMPUTAÇÃO DO SUL DE MT",
-            ptes: "CONSTRUO O 1º EM COMPUTAÇÃO DO SUL DE MT",
-            orgulho: "FAÇO PARTE DA COMPUTAÇÃO SUL DE MT"
+            ptes: "CONSTRUO O 1º DO SUL DE MT EM COMPUTAÇÃO",
+            orgulho: "ORGULHO DA COMPUTAÇÃO NO SUL DE MT"
           },
           legendas: {
             docente:
-              "1º melhor curso de Ciência da Computação da Região Sul de Mato Grosso (2º do Estado e 77º do Brasil no RUF 2026, 4 estrelas no Guia da Faculdade, ed. 2025)! Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+              "Em Alto Araguaia e Rondonópolis, somamos forças ao 1º lugar em Computação na Região Sul de MT entre as instituições avaliadas no RUF 2026 (2º de Mato Grosso e 77º do Brasil nos 6 câmpus da UNEMAT)! Universidade Pública e Gratuita. Sem Mensalidade. Crie seu selo: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
             estudante:
-              "Estudo no 1º melhor curso de Ciência da Computação da Região Sul de Mato Grosso (2º de MT e 77º do Brasil no RUF 2026, 4 estrelas no Guia da Faculdade, ed. 2025)! Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu e marque 2 colegas: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+              "Estudo Ciência da Computação em Alto Araguaia e Rondonópolis: 1º na Região Sul de Mato Grosso no RUF 2026, 2º de MT e 77º do Brasil (conquista coletiva dos 6 câmpus da UNEMAT)! Universidade Pública e Gratuita. Sem Mensalidade. Crie o seu e marque 2 colegas: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
             egresso:
-              "Formado no 1º melhor curso de Ciência da Computação da Região Sul de Mato Grosso (2º de MT e 77º do Brasil no RUF 2026, 4 estrelas no Guia da Faculdade, ed. 2025)! Universidade Pública e Gratuita. Sem Mensalidade. Marque sua turma: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+              "Formado em Ciência da Computação na UNEMAT — Alto Araguaia e Rondonópolis: 1º na Região Sul de Mato Grosso no RUF 2026, 2º de MT e 77º do Brasil nos 6 câmpus! Universidade Pública e Gratuita. Sem Mensalidade. Marque sua turma: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
             ptes:
-              "Em Alto Araguaia e Rondonópolis, construímos o 1º melhor curso de Ciência da Computação da Região Sul de Mato Grosso no RUF 2026 (4 estrelas no Guia da Faculdade, ed. 2025)! Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+              "Em Alto Araguaia e Rondonópolis, sustentamos o 1º lugar em Computação na Região Sul de Mato Grosso no RUF 2026 (2º de MT e 77º do Brasil na UNEMAT)! Universidade Pública e Gratuita. Sem Mensalidade. Crie seu selo: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
             orgulho:
-              "Orgulho de Alto Araguaia e Rondonópolis: 1º melhor curso de Ciência da Computação da Região Sul de Mato Grosso no RUF 2026 (4 estrelas no Guia da Faculdade, ed. 2025)! Universidade Pública e Gratuita. Sem Mensalidade. Faça o seu: https://computacaounemat.github.io/selo77/ @computacao.unemataia"
+              "Orgulho de Alto Araguaia e Rondonópolis: UNEMAT em 1º na Região Sul de MT em Computação no RUF 2026, 2º de MT e 77º do Brasil nos 6 câmpus! Universidade Pública e Gratuita. Sem Mensalidade. Crie seu selo: https://computacaounemat.github.io/selo77/ @computacao.unemataia"
           }
         }
       };
@@ -1123,6 +1154,7 @@
         perfil: "docente",
         tema: "claro",
         formato: "feed",
+        modeloAvatar: "faixa",
         nome: "",
         campus: "Alto Araguaia & Rondonópolis",
         turma: "",
@@ -1142,6 +1174,8 @@
         previaDim: document.getElementById("previaDim"),
         statusGeral: document.getElementById("statusGeral"),
         inputFoto: document.getElementById("inputFoto"),
+        btnAjustarInteira: document.getElementById("btnAjustarInteira"),
+        btnAjustarPrevia: document.getElementById("btnAjustarPrevia"),
         btnCentralizar: document.getElementById("btnCentralizar"),
         controleZoom: document.getElementById("controleZoom"),
         controleX: document.getElementById("controleX"),
@@ -1152,6 +1186,7 @@
         campoNome: document.getElementById("campoNome"),
         campoCampus: document.getElementById("campoCampus"),
         camposEgresso: document.getElementById("camposEgresso"),
+        blocoEstiloAvatar: document.getElementById("blocoEstiloAvatar"),
         campoTurma: document.getElementById("campoTurma"),
         campoAtuacao: document.getElementById("campoAtuacao"),
         campoLegenda: document.getElementById("campoLegenda"),
@@ -1161,9 +1196,7 @@
         btnVerImagem: document.getElementById("btnVerImagem"),
         containerAlternativo: document.getElementById("containerAlternativo"),
         imagemAlternativa: document.getElementById("imagemAlternativa"),
-        linkAbrirAba: document.getElementById("linkAbrirAba"),
-        mapaEgressosCard: document.getElementById("mapaEgressosCard"),
-        acaoMapaEgressos: document.getElementById("acaoMapaEgressos")
+        linkAbrirAba: document.getElementById("linkAbrirAba")
       };
 
       const canvasExportacao = document.createElement("canvas");
@@ -1221,12 +1254,18 @@
 
           state.logos = { unemat, bccPreto, bccBranco };
           state.assetsProntos = true;
-          definirStatus("Escolha uma foto para personalizar sua montagem e baixar em alta resolução.", false);
+          definirStatus("Escolha uma foto para personalizar sua montagem e baixar em PNG.", false);
+          invalidarExportacao();
           solicitarPrevia();
-          agendarExportacao();
         } catch (erro) {
           definirStatus(erro.message || "Falha ao carregar identidade visual. Recarregue a página.", true);
         }
+      }
+
+      function limparTexto(valor, maxLen) {
+        return String(valor || "")
+          .replace(/[\u0000-\u001F\u007F]/g, " ")
+          .slice(0, maxLen);
       }
 
       function definirStatus(texto, isErro) {
@@ -1250,37 +1289,21 @@
         }
       }
 
-      function atualizarBlocoMapaEgressos() {
-        el.mapaEgressosCard.classList.toggle("mapa-egressos-destaque", state.perfil === "egresso");
-        el.acaoMapaEgressos.textContent = "";
-
-        if (MAPA_EGRESSOS_FORM_URL.trim()) {
-          const a = document.createElement("a");
-          a.className = "btn btn-verde";
-          a.href = MAPA_EGRESSOS_FORM_URL.trim();
-          a.target = "_blank";
-          a.rel = "noopener";
-          a.textContent = "Responder ao Mapa de Egressos Top 77";
-          el.acaoMapaEgressos.appendChild(a);
-        } else {
-          const p = document.createElement("p");
-          p.className = "ajuda-texto";
-          p.textContent = "Formulário voluntário em ativação pela Coordenação. Você também pode enviar seu contato para computacao.aia@unemat.br ou marcar @computacao.unemataia.";
-          el.acaoMapaEgressos.appendChild(p);
-        }
-      }
-
       async function abrirFoto(file) {
         const seq = ++cargaFotoSeq;
         if (!file) return;
 
-        const tiposPermitidos = ["image/jpeg", "image/png", "image/webp", "image/gif"];
-        const nomeBaixo = (file.name || "").toLowerCase();
-        if (nomeBaixo.endsWith(".heic") || nomeBaixo.endsWith(".heif")) {
-          throw new Error("O formato HEIC pode não abrir neste navegador. Salve a foto como JPG ou PNG e tente novamente.");
+        const MAX_BYTES = 30 * 1024 * 1024;
+        if (file.size > MAX_BYTES) {
+          throw new Error("A imagem ultrapassa 30 MB. Escolha uma foto menor ou redimensionada.");
         }
-        if (file.type && !tiposPermitidos.includes(file.type) && !file.type.startsWith("image/")) {
-          throw new Error("Escolha uma foto JPG, PNG ou WebP.");
+
+        const nomeBaixo = (file.name || "").toLowerCase();
+        const ehHeic = nomeBaixo.endsWith(".heic") || nomeBaixo.endsWith(".heif") ||
+          file.type === "image/heic" || file.type === "image/heif";
+        const extensaoSuportada = /\.(jpe?g|png|webp|gif|heic|heif|avif)$/i.test(nomeBaixo);
+        if (file.type && !file.type.startsWith("image/") && !extensaoSuportada) {
+          throw new Error("Escolha uma foto JPG, PNG, WebP ou imagem compatível do celular.");
         }
 
         let novaFoto = null;
@@ -1294,7 +1317,7 @@
               liberar: () => bitmap.close()
             };
           } catch {
-            // Alternativa pelo decodificador de imagem padrão
+            // Tenta decodificação alternativa via Image
           }
         }
 
@@ -1312,7 +1335,11 @@
             };
           } catch {
             URL.revokeObjectURL(url);
-            throw new Error("Não foi possível abrir esta foto. Escolha um arquivo JPG ou PNG.");
+            throw new Error(
+              ehHeic
+                ? "Este navegador não decodificou o arquivo HEIC. No iPhone, exporte como JPG ou faça uma captura de tela."
+                : "Não foi possível abrir esta foto. Escolha um arquivo JPG, PNG ou WebP."
+            );
           }
         }
 
@@ -1335,11 +1362,12 @@
       }
 
       function geometriaFoto(foto, recorte) {
-        const escala = Math.max(recorte.w / foto.width, recorte.h / foto.height) * state.zoom;
+        const escalaCover = Math.max(recorte.w / foto.width, recorte.h / foto.height);
+        const escala = escalaCover * state.zoom;
         const w = foto.width * escala;
         const h = foto.height * escala;
-        const limiteX = (w - recorte.w) / 2;
-        const limiteY = (h - recorte.h) / 2;
+        const limiteX = Math.max(Math.abs(w - recorte.w) / 2, recorte.w * 0.35);
+        const limiteY = Math.max(Math.abs(h - recorte.h) / 2, recorte.h * 0.35);
         return {
           w,
           h,
@@ -1365,20 +1393,6 @@
         ctx.closePath();
       }
 
-      function desenharEstrela(ctx, cx, cy, raio) {
-        ctx.beginPath();
-        for (let i = 0; i < 10; i++) {
-          const angulo = -Math.PI / 2 + (i * Math.PI) / 5;
-          const r = i % 2 ? raio * 0.38196601125 : raio;
-          const x = cx + Math.cos(angulo) * r;
-          const y = cy + Math.sin(angulo) * r;
-          if (i === 0) ctx.moveTo(x, y);
-          else ctx.lineTo(x, y);
-        }
-        ctx.closePath();
-        ctx.fill();
-      }
-
       function desenharMolduraFoto(ctx, recorte, isDark, circular) {
         ctx.save();
         if (circular) {
@@ -1394,6 +1408,26 @@
           ctx.imageSmoothingEnabled = true;
           ctx.imageSmoothingQuality = "high";
           const g = geometriaFoto(state.foto, recorte);
+          const mostraFundo =
+            g.x > recorte.x + 0.5 ||
+            g.y > recorte.y + 0.5 ||
+            g.x + g.w < recorte.x + recorte.w - 0.5 ||
+            g.y + g.h < recorte.y + recorte.h - 0.5;
+          if (mostraFundo) {
+            const escFundo = Math.max(recorte.w / state.foto.width, recorte.h / state.foto.height) * 1.08;
+            const fw = state.foto.width * escFundo;
+            const fh = state.foto.height * escFundo;
+            const fx = recorte.x + (recorte.w - fw) / 2;
+            const fy = recorte.y + (recorte.h - fh) / 2;
+            ctx.save();
+            if ("filter" in ctx) {
+              ctx.filter = "blur(22px) saturate(1.12)";
+            }
+            ctx.drawImage(state.foto.source, fx, fy, fw, fh);
+            ctx.restore();
+            ctx.fillStyle = isDark ? "rgba(6, 13, 22, 0.48)" : "rgba(255, 255, 255, 0.36)";
+            ctx.fillRect(recorte.x, recorte.y, recorte.w, recorte.h);
+          }
           ctx.drawImage(state.foto.source, g.x, g.y, g.w, g.h);
         } else {
           // Fundo de orientação antes do usuário escolher a foto
@@ -1421,7 +1455,7 @@
           ctx.font = `700 ${Math.round(34 * escala)}px "Aller", sans-serif`;
           ctx.fillText("SUA FOTO APARECE AQUI", cx, cy + (circular ? 110 : 158) * escala);
           ctx.font = `400 ${Math.round(26 * escala)}px "Aller", sans-serif`;
-          ctx.fillText("Toque em 'Escolher foto da galeria'", cx, cy + (circular ? 148 : 200) * escala);
+          ctx.fillText("Toque em 'Escolher foto'", cx, cy + (circular ? 148 : 200) * escala);
         }
         ctx.restore();
       }
@@ -1432,7 +1466,6 @@
         ctx.fillStyle = PALETA.preto;
         ctx.fill();
 
-        // Borda externa ciano + filete interno verde (assinatura mimos v4)
         ctx.lineWidth = 4;
         ctx.strokeStyle = PALETA.ciano;
         ctx.stroke();
@@ -1447,28 +1480,19 @@
         ctx.textBaseline = "middle";
 
         ctx.fillStyle = PALETA.ciano;
-        ctx.font = `700 ${Math.max(22, Math.round(h * 0.088))}px "Aller", sans-serif`;
-        ctx.fillText(dest.brasaoSup, cx, y + h * 0.13, w - 24);
+        ctx.font = `700 ${Math.max(22, Math.round(h * 0.095))}px "Aller", sans-serif`;
+        ctx.fillText(dest.brasaoSup, cx, y + h * 0.16, w - 24);
 
-        ctx.font = `700 ${Math.round(h * 0.34)}px "Aller", sans-serif`;
-        ctx.fillText(dest.brasaoNum, cx, y + h * 0.36, w - 24);
+        ctx.font = `700 ${Math.round(h * 0.37)}px "Mesmerize", "Aller", sans-serif`;
+        ctx.fillText(dest.brasaoNum, cx, y + h * 0.43, w - 24);
 
         ctx.fillStyle = PALETA.verde;
-        ctx.font = `700 ${Math.max(24, Math.round(h * 0.104))}px "Aller", sans-serif`;
-        ctx.fillText("EM COMPUTAÇÃO", cx, y + h * 0.57, w - 22);
+        ctx.font = `700 ${Math.max(24, Math.round(h * 0.105))}px "Aller", sans-serif`;
+        ctx.fillText("EM COMPUTAÇÃO", cx, y + h * 0.68, w - 22);
 
         ctx.fillStyle = PALETA.branco;
-        ctx.font = `700 ${Math.max(22, Math.round(h * 0.094))}px "Aller", sans-serif`;
-        ctx.fillText(dest.brasaoSub, cx, y + h * 0.71, w - 22);
-
-        const estrelaR = h * 0.052;
-        const esp = estrelaR * 2.55;
-        const iniX = cx - 1.5 * esp;
-        const estrelaY = y + h * 0.86;
-        ctx.fillStyle = PALETA.verde;
-        for (let i = 0; i < 4; i++) {
-          desenharEstrela(ctx, iniX + i * esp, estrelaY, estrelaR);
-        }
+        ctx.font = `700 ${Math.max(22, Math.round(h * 0.095))}px "Aller", sans-serif`;
+        ctx.fillText(dest.brasaoSub, cx, y + h * 0.83, w - 22);
       }
 
       function desenharGraficoRUF(ctx, x, y, w, h, isDark) {
@@ -1637,7 +1661,10 @@
         if (formato === "stories") {
           return { x: 56, y: 212, w: 968, h: 830, r: 22 };
         }
-        return { x: 24, y: 24, w: 1032, h: 1032, cx: 540, cy: 540, r: 516 };
+        if (state.modeloAvatar === "aro") {
+          return { x: 158, y: 158, w: 764, h: 764, cx: 540, cy: 540, r: 382 };
+        }
+        return { x: 48, y: 48, w: 984, h: 984, cx: 540, cy: 540, r: 492 };
       }
 
       function desenharArte(ctx, formato) {
@@ -1652,7 +1679,7 @@
           return;
         }
 
-        // Fundo base e moldura dupla 100% BCC (Porta-copos v4/v5)
+        // Fundo base e moldura dupla institucional
         ctx.fillStyle = isDark ? PALETA.preto : PALETA.branco;
         ctx.fillRect(0, 0, W, H);
 
@@ -1792,12 +1819,102 @@
         ctx.fillText("Universidade Pública e Gratuita. Sem Mensalidade.", W / 2, 1695, 930);
       }
 
-      function desenharAvatar(ctx, W, H, isDark, info) {
+      function desenharTextoNoArco(ctx, texto, cx, cy, raio, anguloCentro, espacamento, sentidoInferior) {
+        const chars = Array.from(texto);
+        const widths = chars.map(ch => ctx.measureText(ch).width + espacamento);
+        const totalW = widths.reduce((acc, v) => acc + v, 0) - (chars.length ? espacamento : 0);
+        const totalAngle = totalW / raio;
+        let anguloAtual = sentidoInferior
+          ? anguloCentro + totalAngle / 2
+          : anguloCentro - totalAngle / 2;
+
+        ctx.save();
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        chars.forEach((ch, idx) => {
+          const glyphW = ctx.measureText(ch).width;
+          const passoMeio = glyphW / 2;
+          const a = sentidoInferior
+            ? anguloAtual - passoMeio / raio
+            : anguloAtual + passoMeio / raio;
+
+          ctx.save();
+          ctx.translate(cx + Math.cos(a) * raio, cy + Math.sin(a) * raio);
+          ctx.rotate(sentidoInferior ? a - Math.PI / 2 : a + Math.PI / 2);
+          ctx.fillText(ch, 0, 0);
+          ctx.restore();
+
+          anguloAtual += (sentidoInferior ? -1 : 1) * ((glyphW + espacamento) / raio);
+        });
+        ctx.restore();
+      }
+
+      function desenharAvatarAro(ctx, W, H, isDark, info) {
         const cx = W / 2;
         const cy = H / 2;
         const rExt = 532;
-        const rFoto = 492;
         const dest = info.dest;
+        const rec = obterRecortePorFormato("avatar");
+
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(cx, cy, rExt, 0, Math.PI * 2);
+        ctx.clip();
+
+        // Fundo anel externo em alto contraste (Claro ou Escuro)
+        ctx.fillStyle = isDark ? PALETA.preto : PALETA.branco;
+        ctx.fillRect(0, 0, W, H);
+
+        // Foto centralizada inteira no círculo interno sem faixa sobre o rosto
+        desenharMolduraFoto(ctx, rec, isDark, true);
+
+        // Borda interna verde + borda externa ciano delimitando o aro
+        ctx.beginPath();
+        ctx.arc(cx, cy, rec.r + 5, 0, Math.PI * 2);
+        ctx.lineWidth = 10;
+        ctx.strokeStyle = PALETA.verde;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(cx, cy, rExt - 7, 0, Math.PI * 2);
+        ctx.lineWidth = 14;
+        ctx.strokeStyle = PALETA.ciano;
+        ctx.stroke();
+
+        // Marcadores laterais às 3h e 9h separando arco superior e arco inferior
+        for (const aMark of [0, Math.PI]) {
+          const mx = cx + Math.cos(aMark) * 458;
+          const my = cy + Math.sin(aMark) * 458;
+          ctx.beginPath();
+          ctx.arc(mx, my, 10, 0, Math.PI * 2);
+          ctx.fillStyle = PALETA.verde;
+          ctx.fill();
+        }
+
+        // Arco superior: UNEMAT • COMPUTAÇÃO
+        ctx.fillStyle = isDark ? PALETA.verde : PALETA.preto;
+        ctx.font = '700 46px "Aller", sans-serif';
+        desenharTextoNoArco(ctx, "UNEMAT  •  COMPUTAÇÃO", cx, cy, 459, -Math.PI / 2, 4, false);
+
+        // Arco inferior: Posição RUF + território
+        ctx.fillStyle = isDark ? PALETA.branco : PALETA.preto;
+        ctx.font = '700 46px "Aller", sans-serif';
+        desenharTextoNoArco(ctx, `${dest.avatarNum} · ${dest.avatarTerritorio}`, cx, cy, 459, Math.PI / 2, 3, true);
+
+        ctx.restore();
+      }
+
+      function desenharAvatar(ctx, W, H, isDark, info) {
+        if (state.modeloAvatar === "aro") {
+          desenharAvatarAro(ctx, W, H, isDark, info);
+          return;
+        }
+
+        const cx = W / 2;
+        const cy = H / 2;
+        const rExt = 532;
+        const dest = info.dest;
+        const rec = obterRecortePorFormato("avatar");
 
         // Cantos transparentes fora do círculo (padrão botton)
         ctx.save();
@@ -1809,7 +1926,7 @@
         ctx.fillRect(0, 0, W, H);
 
         // Foto dentro do círculo interno (mais de 63% superiores livres para rostos)
-        desenharMolduraFoto(ctx, { x: cx - rFoto, y: cy - rFoto, w: rFoto * 2, h: rFoto * 2, cx, cy, r: rFoto }, isDark, true);
+        desenharMolduraFoto(ctx, rec, isDark, true);
 
         // Faixa inferior opaca de alta legibilidade mesmo em miniaturas 64 px
         const cordaY = 674;
@@ -1828,7 +1945,7 @@
         let numSize = 104;
         let compSize = 62;
         const maxChordW = 736;
-        let gap = 14;
+        const gap = 14;
         let wNum = 0;
         let wComp = 0;
         for (let tentativa = 0; tentativa < 6; tentativa++) {
@@ -1860,27 +1977,10 @@
         ctx.font = '700 40px "Aller", sans-serif';
         ctx.fillText(dest.avatarTerritorio, cx, 842, 660);
 
-        // Linha 3: UNEMAT + 4 estrelas verdes limpas (sem microtexto nem rótulo do Guia)
-        const unematStr = "UNEMAT";
-        ctx.font = '700 30px "Aller", sans-serif';
-        const wUnemat = ctx.measureText(unematStr).width;
-        const estR = 13;
-        const estEsp = 32;
-        const estGroupW = 3 * estEsp + estR * 2;
-        const gapU = 18;
-        const totU = wUnemat + gapU + estGroupW;
-        const xU = cx - totU / 2;
-        const yU = 918;
-
-        ctx.textAlign = "left";
-        ctx.fillStyle = isDark ? "#D6E1EC" : PALETA.preto;
-        ctx.fillText(unematStr, xU, yU);
-
-        ctx.fillStyle = PALETA.verde;
-        const xFirstStar = xU + wUnemat + gapU + estR;
-        for (let i = 0; i < 4; i++) {
-          desenharEstrela(ctx, xFirstStar + i * estEsp, yU, estR);
-        }
+        // Linha 3: Assinatura institucional UNEMAT limpa
+        ctx.fillStyle = isDark ? PALETA.branco : PALETA.preto;
+        ctx.font = '700 38px "Aller", sans-serif';
+        ctx.fillText("UNEMAT", cx, 922, 420);
 
         // Anel externo ciano e anel interno verde estilo botton
         ctx.beginPath();
@@ -1890,7 +1990,7 @@
         ctx.stroke();
 
         ctx.beginPath();
-        ctx.arc(cx, cy, rFoto + 6, 0, Math.PI * 2);
+        ctx.arc(cx, cy, rec.r + 6, 0, Math.PI * 2);
         ctx.lineWidth = 7;
         ctx.strokeStyle = PALETA.verde;
         ctx.stroke();
@@ -1910,9 +2010,25 @@
         return ctx;
       }
 
+      function atualizarAriaCanvas() {
+        const dest = DESTAQUES[state.destaque];
+        const perf = PERFIS[state.perfil];
+        const fmt = FORMATOS[state.formato];
+        const estilo = state.tema === "dark" ? "escuro" : "claro";
+        const avatarDesc = state.formato === "avatar"
+          ? `, modelo redondo ${state.modeloAvatar === "aro" ? "aro circular" : "faixa inferior"}`
+          : "";
+        const estadoFoto = state.foto ? "com foto carregada" : "aguardando sua foto";
+        el.canvasPrevia.setAttribute(
+          "aria-label",
+          `Prévia ${fmt.nome} (${estilo}${avatarDesc}) para ${perf.rotulo}, ${estadoFoto}. Selo RUF 2026: ${dest.brasaoNum} ${dest.brasaoSub}, evolução 176º para 77º na UNEMAT, Universidade Pública e Gratuita.`
+        );
+      }
+
       function desenharPreviaAgora() {
         const fmt = FORMATOS[state.formato];
         el.previaDim.textContent = `${fmt.nome} • ${fmt.largura} × ${fmt.altura}`;
+        atualizarAriaCanvas();
         const palcoW = el.canvasPrevia.parentElement.clientWidth - 20;
         const maxLarg = state.formato === "stories" ? 310 : 400;
         const larguraCSS = Math.max(220, Math.min(palcoW > 0 ? palcoW : maxLarg, maxLarg));
@@ -1949,7 +2065,11 @@
       }
 
       async function atualizarExportacao() {
-        if (!state.assetsProntos) return;
+        if (!state.assetsProntos || !state.foto) {
+          invalidarExportacao();
+          el.containerAlternativo.hidden = true;
+          return;
+        }
         const seq = ++renderSeq;
         const fmt = FORMATOS[state.formato];
         canvasExportacao.width = fmt.largura;
@@ -1965,7 +2085,8 @@
           if (state.urlPNG) URL.revokeObjectURL(state.urlPNG);
           state.urlPNG = proximaURL;
 
-          const nomeArquivo = `meu-selo-${state.destaque}-${state.perfil}-${state.formato}-${state.tema}.png`;
+          const sufixoAvatar = state.formato === "avatar" ? `-${state.modeloAvatar}` : "";
+          const nomeArquivo = `meu-selo-${state.destaque}-${state.perfil}-${state.formato}${sufixoAvatar}-${state.tema}.png`;
           el.linkSalvar.href = state.urlPNG;
           el.linkSalvar.download = nomeArquivo;
           el.linkSalvar.removeAttribute("aria-disabled");
@@ -1985,7 +2106,32 @@
       function agendarExportacao() {
         invalidarExportacao();
         clearTimeout(timerExportacao);
+        if (!state.foto) {
+          el.containerAlternativo.hidden = true;
+          return;
+        }
         timerExportacao = setTimeout(atualizarExportacao, 140);
+      }
+
+      function ajustarFotoInteira() {
+        if (!state.foto) {
+          definirStatus("Escolha uma foto primeiro para ajustar o zoom negativo.", false);
+          return;
+        }
+        const recorte = obterRecortePorFormato(state.formato);
+        const escalaCover = Math.max(recorte.w / state.foto.width, recorte.h / state.foto.height);
+        const escalaContain = Math.min(recorte.w / state.foto.width, recorte.h / state.foto.height);
+        const proporcaoFit = escalaContain / escalaCover;
+        state.zoom = limitar(Number(proporcaoFit.toFixed(2)), 0.45, 1);
+        state.offsetX = 0;
+        state.offsetY = 0;
+        sincronizarSliders();
+        solicitarPrevia();
+        agendarExportacao();
+      }
+
+      function atualizarBlocoAvatar() {
+        el.blocoEstiloAvatar.hidden = state.formato !== "avatar";
       }
 
       function sincronizarSliders() {
@@ -2023,6 +2169,9 @@
           definirStatus(erro.message || "Falha ao abrir a foto.", true);
         }
       });
+
+      el.btnAjustarInteira.addEventListener("click", ajustarFotoInteira);
+      el.btnAjustarPrevia.addEventListener("click", ajustarFotoInteira);
 
       el.btnCentralizar.addEventListener("click", () => {
         state.zoom = 1;
@@ -2076,7 +2225,6 @@
           state.perfil = radio.value;
           el.camposEgresso.hidden = state.perfil !== "egresso";
           atualizarLegendaAutomatica();
-          atualizarBlocoMapaEgressos();
           solicitarPrevia();
           agendarExportacao();
         });
@@ -2096,13 +2244,24 @@
           if (state.formato === "avatar" && !state.destaqueEscolhidoManualmente) {
             selecionarDestaque("sul1");
           }
+          atualizarBlocoAvatar();
+          solicitarPrevia();
+          agendarExportacao();
+        });
+      });
+
+      document.querySelectorAll('input[name="modeloAvatar"]').forEach(radio => {
+        radio.addEventListener("change", () => {
+          state.modeloAvatar = radio.value;
           solicitarPrevia();
           agendarExportacao();
         });
       });
 
       el.campoNome.addEventListener("input", () => {
-        state.nome = el.campoNome.value;
+        const limpo = limparTexto(el.campoNome.value, 48);
+        if (limpo !== el.campoNome.value) el.campoNome.value = limpo;
+        state.nome = limpo;
         solicitarPrevia();
         agendarExportacao();
       });
@@ -2114,14 +2273,18 @@
       });
 
       el.campoTurma.addEventListener("input", () => {
-        state.turma = el.campoTurma.value;
+        const limpo = limparTexto(el.campoTurma.value, 32);
+        if (limpo !== el.campoTurma.value) el.campoTurma.value = limpo;
+        state.turma = limpo;
         atualizarLegendaAutomatica();
         solicitarPrevia();
         agendarExportacao();
       });
 
       el.campoAtuacao.addEventListener("input", () => {
-        state.atuacao = el.campoAtuacao.value;
+        const limpo = limparTexto(el.campoAtuacao.value, 52);
+        if (limpo !== el.campoAtuacao.value) el.campoAtuacao.value = limpo;
+        state.atuacao = limpo;
         atualizarLegendaAutomatica();
         solicitarPrevia();
         agendarExportacao();
@@ -2197,8 +2360,8 @@
       });
 
       sincronizarSliders();
+      atualizarBlocoAvatar();
       atualizarLegendaAutomatica();
-      atualizarBlocoMapaEgressos();
       iniciarAssets();
     })();
   </script>
