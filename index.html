@@ -348,10 +348,10 @@
                 Guia do TCC
             </button>
 
-            <a href="marca/" class="w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-slate-400 hover:text-white hover:bg-slate-700/50 transition-all">
+            <button onclick="app.navigate('marca')" id="nav-marca" class="nav-item w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-slate-400 hover:text-white hover:bg-slate-700/50 transition-all">
                 <i class="fa-solid fa-palette w-5 text-center text-cyan-400"></i>
                 Marca do Curso
-            </a>
+            </button>
 
             <a href="https://sistema-unemat.vercel.app/" target="_blank" class="w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-slate-400 hover:text-brand-500 hover:bg-slate-700/50 transition-all group">
                 <i class="fa-solid fa-computer w-5 text-center text-slate-500 group-hover:text-brand-500"></i>
@@ -364,10 +364,10 @@
                 SECOMP 2026
             </button>
 
-            <a href="eventos/" class="w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-slate-400 hover:text-white hover:bg-slate-700/50 transition-all">
+            <button onclick="app.navigate('eventos')" id="nav-eventos" class="nav-item w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-slate-400 hover:text-white hover:bg-slate-700/50 transition-all">
                 <i class="fa-solid fa-clock-rotate-left w-5 text-center text-accent-green"></i>
                 Memória de Eventos
-            </a>
+            </button>
 
             <!-- NOVO MENU: Camiseta SECOMP 2026 -->
             <a href="https://ialxnder.fly.dev/camisetas" target="_blank" rel="noopener" class="w-full flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-lg text-slate-400 hover:text-white hover:bg-slate-700/50 transition-all group">
@@ -522,6 +522,45 @@
                     </div>
                 </div>
                 <iframe src="tcc/index.html" title="Guia do TCC" class="w-full h-[80vh] md:h-[85vh] rounded-2xl border border-slate-700 shadow-xl bg-dark-800"></iframe>
+            </div>
+
+            <!-- VIEW: MARCA DO CURSO (embutido no layout padrão) -->
+            <div id="view-marca" class="hidden max-w-6xl mx-auto animate-fade-in space-y-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-slate-800/90 p-4 sm:p-5 rounded-2xl border border-slate-700 shadow-lg">
+                    <div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-palette text-cyan-400"></i> Marca Oficial do Curso
+                        </h2>
+                        <p class="text-xs sm:text-sm text-slate-400 mt-1">Arquivos oficiais, versões para baixar, cores, tipografia e Manual de Identidade Visual (2025).</p>
+                    </div>
+                    <div class="flex items-center gap-2 shrink-0">
+                        <a href="marca/" target="_blank" class="px-3.5 py-2 bg-slate-700 hover:bg-slate-600 text-slate-200 text-xs font-semibold rounded-lg flex items-center gap-1.5 transition-colors border border-slate-600">
+                            <i class="fa-solid fa-up-right-from-square"></i> Abrir em Nova Aba
+                        </a>
+                        <a href="marca/arquivos/manual-identidade-visual-bcc.pdf" target="_blank" rel="noopener" class="px-4 py-2 bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold rounded-lg flex items-center gap-1.5 transition-colors shadow-md border border-brand-400">
+                            <i class="fa-solid fa-book-open"></i> Manual (PDF)
+                        </a>
+                    </div>
+                </div>
+                <iframe src="marca/index.html" title="Marca do Curso" loading="lazy" class="w-full h-[80vh] md:h-[85vh] rounded-2xl border border-slate-700 shadow-xl bg-dark-800"></iframe>
+            </div>
+
+            <!-- VIEW: MEMÓRIA DE EVENTOS (embutido no layout padrão) -->
+            <div id="view-eventos" class="hidden max-w-6xl mx-auto animate-fade-in space-y-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-slate-800/90 p-4 sm:p-5 rounded-2xl border border-slate-700 shadow-lg">
+                    <div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-clock-rotate-left text-accent-green"></i> Memória de Eventos (2004–2026)
+                        </h2>
+                        <p class="text-xs sm:text-sm text-slate-400 mt-1">Registro cronológico oficial das 24 edições do curso em Alto Araguaia e Rondonópolis (SELCOMP, Workshop, SECOMP e ERI-MT).</p>
+                    </div>
+                    <div class="flex items-center gap-2 shrink-0">
+                        <a href="eventos/" target="_blank" class="px-3.5 py-2 bg-slate-700 hover:bg-slate-600 text-slate-200 text-xs font-semibold rounded-lg flex items-center gap-1.5 transition-colors border border-slate-600">
+                            <i class="fa-solid fa-up-right-from-square"></i> Abrir em Nova Aba
+                        </a>
+                    </div>
+                </div>
+                <iframe src="eventos/index.html" title="Memória de Eventos" loading="lazy" class="w-full h-[80vh] md:h-[85vh] rounded-2xl border border-slate-700 shadow-xl bg-dark-800"></iframe>
             </div>
 
             <!-- VIEW: SECOMP 2026 LANDING PAGE -->
@@ -2897,6 +2936,10 @@
                     this.navigate('estagio', false);
                 } else if (cleanHash === 'secomp') {
                     this.navigate('secomp', false);
+                } else if (cleanHash === 'marca') {
+                    this.navigate('marca', false);
+                } else if (cleanHash === 'eventos') {
+                    this.navigate('eventos', false);
                 } else if (cleanHash.startsWith('schedule') || cleanHash === 'horarios' || cleanHash === 'grade') {
                     if (cleanHash.includes('grade') || cleanHash.includes('semanal') || cleanHash.includes('fase')) {
                         this.state.schView = 'fase';
@@ -3025,7 +3068,7 @@
             },
 
             updateView() {
-                const views = ['schedule', 'guide', 'secomp', 'estagio', 'tcc'];
+                const views = ['schedule', 'guide', 'secomp', 'estagio', 'tcc', 'marca', 'eventos'];
                 views.forEach(v => {
                     const el = document.getElementById('view-' + v);
                     if(el) el.classList.add('hidden');
@@ -3102,7 +3145,7 @@
                     app.state.schView = 'dia';
                 }
                 app.navigate('schedule', false);
-            } else if (['guide', 'guia', 'secomp', 'estagio', 'tcc'].includes(h)) {
+            } else if (['guide', 'guia', 'secomp', 'estagio', 'tcc', 'marca', 'eventos'].includes(h)) {
                 app.navigate(h === 'guia' ? 'guide' : h, false);
             }
         });
