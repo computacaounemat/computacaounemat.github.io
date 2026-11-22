@@ -134,7 +134,7 @@
       "coordenacao_geral": [
         "Sérgio Santos Silva Filho"
       ],
-      "comite_programa": "Gleber Nelson Marques (Chairman / Comissão Científica), Max Robert Marinho e Ubirajara Martin Coelho",
+      "comite_programa": "Gleber Nelson Marques (Chairman / Comissão Científica)",
       "fomento_chancela": [],
       "registro_oficial": "Certificados oficiais de coordenação geral e comissão científica"
     },
@@ -168,7 +168,7 @@
       "coordenacao_geral": [
         "Carlos Alex Sander Juvêncio Gulo"
       ],
-      "comite_programa": "Gleber Nelson Marques (UNEMAT — Coordenação Científica e Sessão de Pôsteres), João Manuel Ribeiro da Silva Tavares (FEUP — Co-coordenação e Sessão Oral) e Alex Fernando de Araujo (FEUP — Vice-Coordenação)",
+      "comite_programa": "Gleber Nelson Marques (UNEMAT — Coordenação Científica) e João Manuel Ribeiro da Silva Tavares (FEUP — Co-coordenação)",
       "fomento_chancela": [
         "Chancela SBC",
         "FAPEMAT",
@@ -209,7 +209,7 @@
       "coordenacao_geral": [
         "Wesley Barbosa Thereza"
       ],
-      "comite_programa": "Wesley Barbosa Thereza (Presidente, Portaria nº 002/2015) / Max Robert Marinho",
+      "comite_programa": "Wesley Barbosa Thereza (Presidente do Comitê Científico, Portaria nº 002/2015)",
       "fomento_chancela": [
         "Edital nº 001/2015 FAESPE/UNEMAT — R$ 4.967,16 aprovados",
         "Proposta FAPEMAT"
@@ -248,7 +248,7 @@
       "coordenacao_geral": [
         "Adriana de Oliveira Dias"
       ],
-      "comite_programa": "Comitê Científico colegiado: Adriana de Oliveira Dias, Caio César Enside de Abreu, Carlinho Viana de Sousa, Lucas Kriesel Sperotto, Sérgio Santos Silva Filho e Toni Amorim de Oliveira",
+      "comite_programa": "Comitê Científico colegiado (sem presidência destacada)",
       "fomento_chancela": [
         "FAPEMAT",
         "UNEMAT/PROEC"
@@ -321,7 +321,7 @@
       "coordenacao_geral": [
         "Adriana de Oliveira Dias"
       ],
-      "comite_programa": "Comitê Científico colegiado: Adriana de Oliveira Dias, André Flederico Pereira, Caio César Enside de Abreu, Carlinho Viana de Sousa, Dárley Domingos de Almeida, Fernando Yoiti Obana, Paula Letícia Santos Lima e Sérgio Santos Silva Filho",
+      "comite_programa": "Comitê Científico colegiado (sem presidência destacada)",
       "fomento_chancela": [
         "UNEMAT/PROEC"
       ],
@@ -355,11 +355,12 @@
       "periodo": "14/03 a 31/10/2022",
       "campus": "Alto Araguaia e Rondonópolis",
       "local_detalhe": "Câmpus de Alto Araguaia e Câmpus Avançado de Rondonópolis",
-      "modalidade_coordenacao": "Individual",
+      "modalidade_coordenacao": "Conjunta",
       "coordenacao_geral": [
-        "Carlos Alex Sander Juvêncio Gulo"
+        "Carlos Alex Sander Juvêncio Gulo",
+        "Juvenal Silva Neto"
       ],
-      "comite_programa": "Coordenação Local em Alto Araguaia: Juvenal Silva Neto",
+      "comite_programa": "",
       "fomento_chancela": [
         "UNEMAT/PROEC"
       ],
@@ -457,7 +458,7 @@
       "coordenacao_geral": [
         "Carlos Alex Sander Juvêncio Gulo"
       ],
-      "comite_programa": "Adriana de Oliveira Dias (Coordenadora do Comitê Científico) e Ubirajara Martin Coelho (Vice-Coordenador do Comitê Científico)",
+      "comite_programa": "Adriana de Oliveira Dias (Coordenadora do Comitê Científico)",
       "fomento_chancela": [
         "Edital nº 026/2025 UNEMAT/PRPPG — R$ 10.000,00 aprovados (4º lugar)",
         "Chancela SBC"
