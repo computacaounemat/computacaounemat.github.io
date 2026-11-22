@@ -521,22 +521,70 @@
     }
     @media (max-width: 580px) {
       .filtros-grid { grid-template-columns: 1fr; }
-      .hero-marcas img { height: 40px; }
-      .hero-marcas-sep { height: 32px; }
+      .hero-marcas { max-width: 100%; padding: 8px 12px; gap: 10px; }
+      .hero-marcas img { max-height: 34px; max-width: 44%; height: auto; }
+      .hero-marcas-sep { height: 28px; }
     }
   </style>
+<!-- BCC-PORTAL-HEAD:START -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="../assets/portal/portal-shell.css">
+<!-- BCC-PORTAL-HEAD:END -->
 </head>
 <body>
-  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
-
-  <div class="wrap">
-    <nav class="topo" aria-label="Navegação superior">
-      <a href="../">← Site do curso</a>
-      <span class="topo-badge">Alto Araguaia &amp; Rondonópolis</span>
+<!-- BCC-PORTAL-SHELL:START -->
+<a class="bcc-skip-link" href="#bcc-conteudo-principal">Pular para o conteúdo principal</a>
+<div id="bcc-sidebar-overlay" class="bcc-sidebar-overlay" aria-hidden="true"></div>
+<div class="bcc-shell">
+  <aside id="bcc-sidebar" class="bcc-sidebar" aria-label="Menu principal do curso">
+    <div class="bcc-sidebar-brand">
+      <button type="button" id="bcc-btn-close-sidebar" class="bcc-close-btn" aria-label="Fechar menu">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <a href="../" class="bcc-brand-link">
+        <img src="../marca/arquivos/logo_bcc_horizontal_fundo_transparente_texto_branco.png" alt="Ciência da Computação — UNEMAT" class="bcc-brand-logo">
+        <span class="bcc-brand-sub">UNEMAT · Alto Araguaia &amp; Rondonópolis</span>
+      </a>
+    </div>
+    <nav class="bcc-nav" aria-label="Navegação do portal">
+      <p class="bcc-nav-group-label">Menu Principal</p>
+      <ul class="bcc-nav-list">
+          <li><a href="../" class="bcc-nav-link"><i class="fa-solid fa-calendar-days bcc-nav-icon" style="color:#009EE0;" aria-hidden="true"></i><span>Horários 2026/2</span></a></li>
+          <li><a href="../guia/" class="bcc-nav-link"><i class="fa-solid fa-book-open bcc-nav-icon" style="color:#34d399;" aria-hidden="true"></i><span>Guia do Estudante</span></a></li>
+          <li><a href="../estagio/" class="bcc-nav-link"><i class="fa-solid fa-briefcase bcc-nav-icon" style="color:#38bdf8;" aria-hidden="true"></i><span>Guia do Estágio</span></a></li>
+          <li><a href="../tcc/" class="bcc-nav-link"><i class="fa-solid fa-graduation-cap bcc-nav-icon" style="color:#fbbf24;" aria-hidden="true"></i><span>Guia do TCC</span></a></li>
+          <li><a href="../marca/" class="bcc-nav-link"><i class="fa-solid fa-palette bcc-nav-icon" style="color:#22d3ee;" aria-hidden="true"></i><span>Marca do Curso</span></a></li>
+          <li><a href="https://sistema-unemat.vercel.app/" class="bcc-nav-link" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-computer bcc-nav-icon" style="color:#94a3b8;" aria-hidden="true"></i><span>Agenda de Laboratórios</span></a></li>
+          <li><a href="../secomp/" class="bcc-nav-link"><i class="fa-solid fa-microchip bcc-nav-icon" style="color:#c084fc;" aria-hidden="true"></i><span>SECOMP 2026</span></a></li>
+          <li><a href="../eventos/" class="bcc-nav-link is-active" aria-current="page"><i class="fa-solid fa-clock-rotate-left bcc-nav-icon" style="color:#8DC63F;" aria-hidden="true"></i><span>Memória de Eventos</span></a></li>
+          <li><a href="https://ialxnder.fly.dev/camisetas" class="bcc-nav-link" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-shirt bcc-nav-icon" style="color:#22d3ee;" aria-hidden="true"></i><span>Camiseta BCC</span><span class="bcc-nav-badge">R$ 35</span></a></li>
+      </ul>
+      <p class="bcc-nav-group-label">Links Externos</p>
+      <ul class="bcc-nav-list">
+          <li><a href="https://sigaa.unemat.br/sigaa/verTelaLogin.do" class="bcc-nav-link" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-building-columns bcc-nav-icon" style="color:#94a3b8;" aria-hidden="true"></i><span>SIGAA UNEMAT</span></a></li>
+          <li><a href="https://unemat.br/" class="bcc-nav-link" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-globe bcc-nav-icon" style="color:#94a3b8;" aria-hidden="true"></i><span>Portal UNEMAT</span></a></li>
+          <li><a href="https://bit.ly/iALXnderBETA" class="bcc-nav-link" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-robot bcc-nav-icon" style="color:#38bdf8;" aria-hidden="true"></i><span>Assistente Virtual</span><span class="bcc-nav-badge bcc-nav-badge--cyan">iALXnder</span></a></li>
+          <li><a href="https://www.instagram.com/computacao.unemataia/" class="bcc-nav-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram bcc-nav-icon" style="color:#34d399;" aria-hidden="true"></i><span>Instagram do Curso</span></a></li>
+      </ul>
     </nav>
-    <script>if (window.self !== window.top) { var t = document.querySelector('.topo'); if (t) t.style.display = 'none'; }</script>
-
-    <header class="hero">
+    <div class="bcc-sidebar-footer">
+      <p class="bcc-sidebar-footer-title">Coordenação do Curso</p>
+      <p class="bcc-sidebar-footer-row"><strong>Alto Araguaia:</strong> 07h–11h45 · <a href="mailto:computacao.aia@unemat.br">computacao.aia@unemat.br</a></p>
+      <p class="bcc-sidebar-footer-row"><strong>Rondonópolis:</strong> 08h–18h · <a href="mailto:computacao.roo@unemat.br">computacao.roo@unemat.br</a></p>
+    </div>
+  </aside>
+  <div class="bcc-main-col">
+    <div class="bcc-mobile-topbar">
+      <button type="button" id="bcc-btn-hamburger" class="bcc-hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="bcc-sidebar">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+      <a href="../" class="bcc-mobile-title">Memória de Eventos</a>
+      <span class="bcc-mobile-campus">UNEMAT BCC</span>
+    </div>
+    <div id="bcc-conteudo-principal" class="bcc-content" tabindex="-1">
+<!-- BCC-PORTAL-SHELL:END -->
+<div class="wrap">
+<header class="hero">
       <div class="hero-marcas">
         <img src="../selo77/assets/unemat_aia_roo_transparente.png" alt="UNEMAT — Câmpus de Alto Araguaia e Câmpus Avançado de Rondonópolis">
         <div class="hero-marcas-sep" aria-hidden="true"></div>
@@ -1152,8 +1200,7 @@
       </div>
       <div class="rodape-links">
         <span>Ciência da Computação — UNEMAT · Alto Araguaia e Rondonópolis</span>
-        <a href="../">← Voltar ao portal do curso</a>
-      </div>
+        </div>
     </footer>
   </div>
 
@@ -1224,5 +1271,11 @@
       });
     })();
   </script>
+<!-- BCC-PORTAL-SHELL:CLOSE-START -->
+    </div>
+  </div>
+</div>
+<script src="../assets/portal/portal-shell.js" defer></script>
+<!-- BCC-PORTAL-SHELL:CLOSE-END -->
 </body>
 </html>

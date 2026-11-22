@@ -1,0 +1,392 @@
+/* ==========================================================================
+   Portal BCC UNEMAT — Shell Compartilhado (Sidebar + Layout Responsivo)
+   Identidade Visual Oficial BCC (Manual 2025): #009EE0 (Ciano), #8DC63F (Verde)
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Mesmerize';
+  src: url('../fonts/mesmerize/mesmerize-light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mesmerize';
+  src: url('../fonts/mesmerize/mesmerize-bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bcc-cyan: #009EE0;
+  --bcc-cyan-dark: #007db2;
+  --bcc-green: #8DC63F;
+  --bcc-bg: #0b0d0f;
+  --bcc-surface: #16191c;
+  --bcc-surface-hover: rgba(51, 65, 85, 0.5);
+  --bcc-border: #334155;
+  --bcc-text: #f8fafc;
+  --bcc-text-soft: #cbd5e1;
+  --bcc-muted: #94a3b8;
+  --bcc-sidebar-w: 256px;
+}
+
+/* Skip link acessível por teclado */
+.bcc-skip-link {
+  position: fixed;
+  top: -100px;
+  left: 12px;
+  z-index: 1000;
+  background: var(--bcc-green);
+  color: #08100a;
+  font-family: 'Mesmerize', system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  transition: top 0.15s ease;
+}
+.bcc-skip-link:focus {
+  top: 12px;
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Foco visível em todos os controles do shell */
+.bcc-sidebar a:focus-visible,
+.bcc-sidebar button:focus-visible,
+.bcc-mobile-topbar button:focus-visible,
+.bcc-mobile-topbar a:focus-visible {
+  outline: 2px solid var(--bcc-cyan);
+  outline-offset: 2px;
+}
+
+/* Layout principal de 2 colunas com uma única rolagem da janela */
+html, body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.bcc-shell {
+  display: flex;
+  min-height: 100dvh;
+  width: 100%;
+  max-width: 100%;
+  background-color: var(--bcc-bg);
+}
+
+.bcc-main-col {
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+.bcc-content {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* Overlay mobile */
+.bcc-sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 90;
+}
+.bcc-sidebar-overlay.is-open {
+  display: block;
+}
+
+/* Sidebar */
+.bcc-sidebar {
+  width: var(--bcc-sidebar-w);
+  flex: 0 0 var(--bcc-sidebar-w);
+  background: var(--bcc-surface);
+  border-right: 1px solid var(--bcc-border);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  z-index: 100;
+  font-family: 'Mesmerize', system-ui, -apple-system, sans-serif;
+  font-weight: 300;
+  color: var(--bcc-text-soft);
+  box-sizing: border-box;
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.28);
+}
+
+.bcc-sidebar *,
+.bcc-mobile-topbar * {
+  box-sizing: border-box;
+}
+
+.bcc-sidebar-brand {
+  padding: 20px 18px;
+  border-bottom: 1px solid var(--bcc-border);
+  position: relative;
+}
+
+.bcc-brand-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  gap: 8px;
+}
+
+.bcc-brand-logo {
+  height: 52px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.bcc-brand-sub {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--bcc-muted);
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+
+.bcc-close-btn {
+  display: none;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid var(--bcc-border);
+  background: rgba(15, 23, 42, 0.65);
+  color: var(--bcc-text-soft);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+.bcc-close-btn:hover {
+  color: #ffffff;
+  border-color: var(--bcc-cyan);
+}
+
+.bcc-nav {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 14px 12px 18px;
+}
+
+.bcc-nav-group-label {
+  margin: 16px 0 6px;
+  padding: 0 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bcc-muted);
+}
+.bcc-nav-group-label:first-child {
+  margin-top: 2px;
+}
+
+.bcc-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.bcc-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 9px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #cbd5e1;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  line-height: 1.3;
+}
+
+.bcc-nav-link:hover {
+  background: var(--bcc-surface-hover);
+  color: #ffffff;
+}
+
+.bcc-nav-link.is-active,
+.bcc-nav-link[aria-current="page"] {
+  background: rgba(0, 158, 224, 0.16);
+  color: #38bdf8;
+  font-weight: 700;
+  box-shadow: inset -3px 0 0 var(--bcc-cyan);
+}
+
+.bcc-nav-icon {
+  width: 20px;
+  text-align: center;
+  flex-shrink: 0;
+  font-size: 14px;
+}
+
+.bcc-nav-badge {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: rgba(51, 65, 85, 0.9);
+  color: #e2e8f0;
+  letter-spacing: 0.02em;
+}
+.bcc-nav-badge--cyan {
+  background: #0284c7;
+  color: #ffffff;
+}
+.bcc-nav-badge--green {
+  background: #15803d;
+  color: #ffffff;
+}
+
+/* Rodapé de contato da sidebar */
+.bcc-sidebar-footer {
+  padding: 12px 14px;
+  border-top: 1px solid var(--bcc-border);
+  background: rgba(11, 13, 15, 0.55);
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: var(--bcc-muted);
+}
+
+.bcc-sidebar-footer-title {
+  font-weight: 700;
+  color: #e2e8f0;
+  margin: 0 0 6px;
+  font-size: 12px;
+}
+
+.bcc-sidebar-footer-row {
+  margin: 0 0 6px;
+}
+.bcc-sidebar-footer-row:last-child {
+  margin-bottom: 0;
+}
+
+.bcc-sidebar-footer a {
+  color: #38bdf8;
+  text-decoration: none;
+  word-break: break-all;
+}
+.bcc-sidebar-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Topbar mobile (oculta no desktop) */
+.bcc-mobile-topbar {
+  display: none;
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  background: rgba(22, 25, 28, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--bcc-border);
+  padding: 10px 14px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: 'Mesmerize', system-ui, -apple-system, sans-serif;
+}
+
+.bcc-hamburger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  border: 1px solid var(--bcc-border);
+  background: rgba(15, 23, 42, 0.8);
+  color: #f8fafc;
+  cursor: pointer;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+.bcc-hamburger:hover {
+  border-color: var(--bcc-cyan);
+  color: var(--bcc-cyan);
+}
+
+.bcc-mobile-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #f8fafc;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bcc-mobile-campus {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--bcc-cyan);
+  white-space: nowrap;
+}
+
+/* Ajuste de toolbars sticky internas quando dentro do shell */
+@media (max-width: 767.98px) {
+  .bcc-mobile-topbar {
+    display: flex;
+  }
+
+  .bcc-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100dvh;
+    transform: translateX(-100%);
+    transition: transform 0.24s ease;
+    visibility: hidden;
+  }
+
+  .bcc-sidebar.is-open {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  .bcc-close-btn {
+    display: inline-flex;
+  }
+
+  /* Evita sobreposição da toolbar sticky com a topbar mobile */
+  .bcc-main-col .toolbar {
+    top: 59px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .bcc-sidebar-overlay {
+    display: none !important;
+  }
+}
