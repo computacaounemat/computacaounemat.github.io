@@ -814,16 +814,16 @@
           <legend>2. Escolha o destaque em Computação (RUF 2026)</legend>
           <div class="opcoes-grade" role="radiogroup">
             <div class="opcao-radio">
-              <input type="radio" name="destaque" id="destaque-brasil77" value="brasil77" checked>
-              <label for="destaque-brasil77">77º em Computação — Brasil<small>Entre 592 instituições</small></label>
+              <input type="radio" name="destaque" id="destaque-sul1" value="sul1" checked>
+              <label for="destaque-sul1">1º em Computação — Sul de MT<small>Padrão • Região Sul de MT</small></label>
             </div>
             <div class="opcao-radio">
               <input type="radio" name="destaque" id="destaque-mt2" value="mt2">
               <label for="destaque-mt2">2º em Computação — MT<small>Em Mato Grosso</small></label>
             </div>
             <div class="opcao-radio">
-              <input type="radio" name="destaque" id="destaque-sul1" value="sul1">
-              <label for="destaque-sul1">1º em Computação — Sul de MT<small>Padrão no Avatar 1:1</small></label>
+              <input type="radio" name="destaque" id="destaque-brasil77" value="brasil77">
+              <label for="destaque-brasil77">77º em Computação — Brasil<small>Entre 592 instituições</small></label>
             </div>
           </div>
         </fieldset>
@@ -856,15 +856,9 @@
           <div class="campo-grupo">
             <label for="campoNome">Seu nome ou título (opcional)</label>
             <input id="campoNome" type="text" maxlength="48" placeholder="Ex.: Profa. Dra. Ana Souza ou João Silva">
-          </div>
-
-          <div class="campo-grupo">
-            <label for="campoCampus">Unidade que aparece na arte</label>
-            <select id="campoCampus">
-              <option value="Alto Araguaia &amp; Rondonópolis">Alto Araguaia &amp; Rondonópolis</option>
-              <option value="Câmpus de Alto Araguaia">Câmpus de Alto Araguaia</option>
-              <option value="Câmpus Avançado de Rondonópolis">Câmpus Avançado de Rondonópolis</option>
-            </select>
+            <p class="ajuda-texto" id="ajudaNome">
+              Aparece apenas nos formatos Feed (4:5) e Stories (9:16). Na Foto de Perfil (1:1), não é exibido para preservar a leitura do selo em miniatura.
+            </p>
           </div>
 
           <div id="camposEgresso" class="campos-egresso" hidden>
@@ -897,37 +891,51 @@
           <legend>5. Escolha o formato da imagem</legend>
           <div class="opcoes-grade">
             <div class="opcao-radio">
-              <input type="radio" name="formato" id="formato-feed" value="feed" checked>
+              <input type="radio" name="formato" id="formato-avatar" value="avatar" checked>
+              <label for="formato-avatar">Foto de Perfil (1:1)<small>1080 × 1080 px (círculo)</small></label>
+            </div>
+            <div class="opcao-radio">
+              <input type="radio" name="formato" id="formato-feed" value="feed">
               <label for="formato-feed">Feed / LinkedIn (4:5)<small>1080 × 1350 px</small></label>
             </div>
             <div class="opcao-radio">
               <input type="radio" name="formato" id="formato-stories" value="stories">
               <label for="formato-stories">Stories / Status (9:16)<small>1080 × 1920 px</small></label>
             </div>
-            <div class="opcao-radio">
-              <input type="radio" name="formato" id="formato-avatar" value="avatar">
-              <label for="formato-avatar">Foto de Perfil (1:1)<small>1080 × 1080 px (círculo)</small></label>
-            </div>
           </div>
 
-          <div id="blocoEstiloAvatar" class="bloco-estilo-avatar" hidden>
+          <div id="blocoEstiloAvatar" class="bloco-estilo-avatar">
             <div class="campo-grupo" style="margin-top: 4px;">
               <label>Modelo do selo redondo (1:1)</label>
               <div class="opcoes-grade" role="radiogroup" aria-label="Modelo do selo redondo">
                 <div class="opcao-radio">
-                  <input type="radio" name="modeloAvatar" id="avatar-faixa" value="faixa" checked>
-                  <label for="avatar-faixa">Faixa Inferior Clássica<small>63% livres no topo e barra de leitura</small></label>
+                  <input type="radio" name="modeloAvatar" id="avatar-aro" value="aro" checked>
+                  <label for="avatar-aro">Aro Circular (Estilo Botton)<small>Foto centralizada no anel curvo UNEMAT</small></label>
                 </div>
                 <div class="opcao-radio">
-                  <input type="radio" name="modeloAvatar" id="avatar-aro" value="aro">
-                  <label for="avatar-aro">Aro Circular (Estilo Botton)<small>Foto centralizada no anel curvo UNEMAT</small></label>
+                  <input type="radio" name="modeloAvatar" id="avatar-faixa" value="faixa">
+                  <label for="avatar-faixa">Faixa Inferior Clássica<small>63% livres no topo e barra de leitura</small></label>
+                </div>
+              </div>
+            </div>
+
+            <div class="campo-grupo" style="margin-top: 12px;">
+              <label>Identidade visual no selo redondo</label>
+              <div class="opcoes-grade" role="radiogroup" aria-label="Logo no selo redondo">
+                <div class="opcao-radio">
+                  <input type="radio" name="logoAvatar" id="logo-avatar-com" value="com" checked>
+                  <label for="logo-avatar-com">Com logo oficial<small>Brasão UNEMAT &amp; Computação</small></label>
+                </div>
+                <div class="opcao-radio">
+                  <input type="radio" name="logoAvatar" id="logo-avatar-sem" value="sem">
+                  <label for="logo-avatar-sem">Sem logo (apenas texto)<small>Anel tipográfico minimalista</small></label>
                 </div>
               </div>
             </div>
           </div>
         </fieldset>
 
-        <div>
+        <div id="blocoLegenda" hidden>
           <h2 class="passo-titulo"><span class="passo-num" aria-hidden="true">6</span> Legenda pronta para copiar</h2>
           <div class="campo-grupo">
             <label for="campoLegenda">Texto sugerido para sua postagem (você pode editar antes de copiar)</label>
@@ -944,7 +952,7 @@
         <div class="previa-moldura">
           <div class="previa-topo">
             <h2>Prévia em tempo real</h2>
-            <span id="previaDim" class="previa-dim">Feed 4:5 • 1080 × 1350</span>
+            <span id="previaDim" class="previa-dim">Avatar 1:1 • 1080 × 1080</span>
           </div>
 
           <div class="acoes-previa-rapida">
@@ -1107,7 +1115,7 @@
             egresso:
               "Formado em Ciência da Computação na UNEMAT — Alto Araguaia e Rondonópolis: 1º na Região Sul de Mato Grosso no RUF 2026, 2º de MT e 77º do Brasil nos 6 câmpus! Universidade Pública e Gratuita. Sem Mensalidade. Marque sua turma: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
             ptes:
-              "Em Alto Araguaia e Rondonópolis, sustentamos o 1º lugar em Computação na Região Sul de Mato Grosso no RUF 2026 (2º de MT e 77º do Brasil na UNEMAT)! Universidade Pública e Gratuita. Sem Mensalidade. Crie seu selo: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+              "Em Alto Araguaia e Rondonópolis, conquistamos o 1º lugar em Computação na Região Sul de Mato Grosso no RUF 2026 (2º de MT e 77º do Brasil na UNEMAT)! Universidade Pública e Gratuita. Sem Mensalidade. Crie seu selo: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
             orgulho:
               "Orgulho de Alto Araguaia e Rondonópolis: UNEMAT em 1º na Região Sul de MT em Computação no RUF 2026, 2º de MT e 77º do Brasil nos 6 câmpus! Universidade Pública e Gratuita. Sem Mensalidade. Crie seu selo: https://computacaounemat.github.io/selo77/ @computacao.unemataia"
           }
@@ -1149,12 +1157,13 @@
       };
 
       const state = {
-        destaque: "brasil77",
+        destaque: "sul1",
         destaqueEscolhidoManualmente: false,
         perfil: "docente",
         tema: "claro",
-        formato: "feed",
-        modeloAvatar: "faixa",
+        formato: "avatar",
+        modeloAvatar: "aro",
+        logoAvatar: "com",
         nome: "",
         campus: "Alto Araguaia & Rondonópolis",
         turma: "",
@@ -1184,9 +1193,10 @@
         valorX: document.getElementById("valorX"),
         valorY: document.getElementById("valorY"),
         campoNome: document.getElementById("campoNome"),
-        campoCampus: document.getElementById("campoCampus"),
+        ajudaNome: document.getElementById("ajudaNome"),
         camposEgresso: document.getElementById("camposEgresso"),
         blocoEstiloAvatar: document.getElementById("blocoEstiloAvatar"),
+        blocoLegenda: document.getElementById("blocoLegenda"),
         campoTurma: document.getElementById("campoTurma"),
         campoAtuacao: document.getElementById("campoAtuacao"),
         campoLegenda: document.getElementById("campoLegenda"),
@@ -1849,12 +1859,52 @@
         ctx.restore();
       }
 
+      function desenharCapsulaLogosAro(ctx, cx, cy, isDark) {
+        if (!state.logos) return;
+        const { unemat, bccPreto } = state.logos;
+        const pillW = 304;
+        const pillH = 74;
+        const px = cx - pillW / 2;
+        const py = cy - pillH / 2;
+
+        roundedRectPath(ctx, px, py, pillW, pillH, pillH / 2);
+        ctx.fillStyle = PALETA.branco;
+        ctx.fill();
+        ctx.lineWidth = 4;
+        ctx.strokeStyle = isDark ? PALETA.verde : PALETA.ciano;
+        ctx.stroke();
+
+        const maxH = 48;
+        const uRatio = unemat.naturalWidth / unemat.naturalHeight;
+        const bRatio = bccPreto.naturalWidth / bccPreto.naturalHeight;
+        let uH = maxH;
+        let uW = uH * uRatio;
+        let bH = maxH * 0.94;
+        let bW = bH * bRatio;
+        const gap = 14;
+        const disp = pillW - 32 - gap;
+        if (uW + bW > disp) {
+          const f = disp / (uW + bW);
+          uW *= f; uH *= f;
+          bW *= f; bH *= f;
+        }
+        const tot = uW + gap + bW;
+        const sx = cx - tot / 2;
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = "high";
+        ctx.drawImage(unemat, sx, cy - uH / 2, uW, uH);
+        ctx.fillStyle = "#CBD5E1";
+        ctx.fillRect(sx + uW + gap / 2 - 1, cy - 22, 2, 44);
+        ctx.drawImage(bccPreto, sx + uW + gap, cy - bH / 2, bW, bH);
+      }
+
       function desenharAvatarAro(ctx, W, H, isDark, info) {
         const cx = W / 2;
         const cy = H / 2;
         const rExt = 532;
         const dest = info.dest;
         const rec = obterRecortePorFormato("avatar");
+        const comLogo = state.logoAvatar === "com";
 
         ctx.save();
         ctx.beginPath();
@@ -1868,7 +1918,7 @@
         // Foto centralizada inteira no círculo interno sem faixa sobre o rosto
         desenharMolduraFoto(ctx, rec, isDark, true);
 
-        // Borda interna verde + borda externa ciano delimitando o aro
+        // Anel duplo institucional (verde interno + ciano externo)
         ctx.beginPath();
         ctx.arc(cx, cy, rec.r + 5, 0, Math.PI * 2);
         ctx.lineWidth = 10;
@@ -1881,20 +1931,25 @@
         ctx.strokeStyle = PALETA.ciano;
         ctx.stroke();
 
-        // Marcadores laterais às 3h e 9h separando arco superior e arco inferior
+        // Filete sutil de setorização no meio do aro
         for (const aMark of [0, Math.PI]) {
           const mx = cx + Math.cos(aMark) * 458;
           const my = cy + Math.sin(aMark) * 458;
           ctx.beginPath();
-          ctx.arc(mx, my, 10, 0, Math.PI * 2);
+          ctx.arc(mx, my, 9, 0, Math.PI * 2);
           ctx.fillStyle = PALETA.verde;
           ctx.fill();
         }
 
-        // Arco superior: UNEMAT • COMPUTAÇÃO
-        ctx.fillStyle = isDark ? PALETA.verde : PALETA.preto;
-        ctx.font = '700 46px "Aller", sans-serif';
-        desenharTextoNoArco(ctx, "UNEMAT  •  COMPUTAÇÃO", cx, cy, 459, -Math.PI / 2, 4, false);
+        if (comLogo) {
+          // Topo 12h: cápsula oficial UNEMAT + Ciência da Computação
+          desenharCapsulaLogosAro(ctx, cx, 86, isDark);
+        } else {
+          // Topo 12h sem logo: arco tipográfico limpo
+          ctx.fillStyle = isDark ? PALETA.verde : PALETA.preto;
+          ctx.font = '700 46px "Aller", sans-serif';
+          desenharTextoNoArco(ctx, "UNEMAT  •  COMPUTAÇÃO", cx, cy, 459, -Math.PI / 2, 4, false);
+        }
 
         // Arco inferior: Posição RUF + território
         ctx.fillStyle = isDark ? PALETA.branco : PALETA.preto;
@@ -1977,10 +2032,28 @@
         ctx.font = '700 40px "Aller", sans-serif';
         ctx.fillText(dest.avatarTerritorio, cx, 842, 660);
 
-        // Linha 3: Assinatura institucional UNEMAT limpa
-        ctx.fillStyle = isDark ? PALETA.branco : PALETA.preto;
-        ctx.font = '700 38px "Aller", sans-serif';
-        ctx.fillText("UNEMAT", cx, 922, 420);
+        // Linha 3: Assinatura institucional UNEMAT (com ou sem logo)
+        if (state.logoAvatar === "com" && state.logos) {
+          const u = state.logos.unemat;
+          const uH = 54;
+          const uW = uH * (u.naturalWidth / u.naturalHeight);
+          const pillW = uW + 34;
+          const pillH = 68;
+          const py = 928 - pillH / 2;
+          roundedRectPath(ctx, cx - pillW / 2, py, pillW, pillH, 16);
+          ctx.fillStyle = PALETA.branco;
+          ctx.fill();
+          if (!isDark) {
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = "#CBD5E1";
+            ctx.stroke();
+          }
+          ctx.drawImage(u, cx - uW / 2, 928 - uH / 2, uW, uH);
+        } else {
+          ctx.fillStyle = isDark ? PALETA.branco : PALETA.preto;
+          ctx.font = '700 38px "Aller", sans-serif';
+          ctx.fillText("UNEMAT", cx, 922, 420);
+        }
 
         // Anel externo ciano e anel interno verde estilo botton
         ctx.beginPath();
@@ -2130,8 +2203,13 @@
         agendarExportacao();
       }
 
-      function atualizarBlocoAvatar() {
-        el.blocoEstiloAvatar.hidden = state.formato !== "avatar";
+      function atualizarModoFormato() {
+        const isAvatar = state.formato === "avatar";
+        el.blocoEstiloAvatar.hidden = !isAvatar;
+        el.blocoLegenda.hidden = isAvatar;
+        el.ajudaNome.textContent = isAvatar
+          ? "No formato Foto de Perfil (1:1), este campo não é exibido na arte para manter leitura em miniatura; ele aparece ao escolher Feed (4:5) ou Stories (9:16)."
+          : "Exibição ativa: seu nome ou título aparece abaixo da chamada principal na montagem.";
       }
 
       function sincronizarSliders() {
@@ -2241,10 +2319,7 @@
       document.querySelectorAll('input[name="formato"]').forEach(radio => {
         radio.addEventListener("change", () => {
           state.formato = radio.value;
-          if (state.formato === "avatar" && !state.destaqueEscolhidoManualmente) {
-            selecionarDestaque("sul1");
-          }
-          atualizarBlocoAvatar();
+          atualizarModoFormato();
           solicitarPrevia();
           agendarExportacao();
         });
@@ -2258,16 +2333,18 @@
         });
       });
 
+      document.querySelectorAll('input[name="logoAvatar"]').forEach(radio => {
+        radio.addEventListener("change", () => {
+          state.logoAvatar = radio.value;
+          solicitarPrevia();
+          agendarExportacao();
+        });
+      });
+
       el.campoNome.addEventListener("input", () => {
         const limpo = limparTexto(el.campoNome.value, 48);
         if (limpo !== el.campoNome.value) el.campoNome.value = limpo;
         state.nome = limpo;
-        solicitarPrevia();
-        agendarExportacao();
-      });
-
-      el.campoCampus.addEventListener("change", () => {
-        state.campus = el.campoCampus.value;
         solicitarPrevia();
         agendarExportacao();
       });
@@ -2360,7 +2437,7 @@
       });
 
       sincronizarSliders();
-      atualizarBlocoAvatar();
+      atualizarModoFormato();
       atualizarLegendaAutomatica();
       iniciarAssets();
     })();
