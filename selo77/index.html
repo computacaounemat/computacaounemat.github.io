@@ -2034,48 +2034,97 @@
         ctx.fillStyle = PALETA.verde;
         ctx.fillRect(W / 2, cordaY, W / 2, 8);
 
-        // Linha 1 (lockup compacto gigante sem comprimir): NUMERO + "· COMPUTAÇÃO"
-        const numStr = dest.avatarNum;
-        const compStr = dest.triplice ? "" : "· COMPUTAÇÃO";
-        let numSize = 104;
-        let compSize = 62;
-        const maxChordW = 736;
-        const gap = compStr ? 14 : 0;
-        let wNum = 0;
-        let wComp = 0;
-        for (let tentativa = 0; tentativa < 6; tentativa++) {
+        if (dest.triplice) {
+          // Tríplice conquista: UNEMAT • COMPUTAÇÃO, três blocos coloridos e RUF 2026
+          ctx.textBaseline = "middle";
+          ctx.textAlign = "left";
+          ctx.font = '700 58px "Aller", sans-serif';
+          const parteA = "UNEMAT ";
+          const parteB = "• COMPUTAÇÃO";
+          const wA = ctx.measureText(parteA).width;
+          const wB = ctx.measureText(parteB).width;
+          const xTopo = cx - (wA + wB) / 2;
+          ctx.fillStyle = isDark ? PALETA.branco : PALETA.preto;
+          ctx.fillText(parteA, xTopo, 724);
+          ctx.fillStyle = isDark ? PALETA.verde : PALETA.preto;
+          ctx.fillText(parteB, xTopo + wA, 724);
+
+          const blocos = [
+            { num: "1º", rotulo: "SUL DE MT", fundo: PALETA.verde, cor: PALETA.preto },
+            { num: "2º", rotulo: "MATO GROSSO", fundo: PALETA.ciano, cor: PALETA.preto },
+            { num: "77º", rotulo: "BRASIL", fundo: isDark ? PALETA.branco : PALETA.preto, cor: isDark ? PALETA.preto : PALETA.branco }
+          ];
+          const bw = 212;
+          const bh = 124;
+          const bgap = 12;
+          const by = 762;
+          const bx0 = cx - (bw * 3 + bgap * 2) / 2;
+          ctx.textAlign = "center";
+          blocos.forEach((b, i) => {
+            const bx = bx0 + i * (bw + bgap);
+            roundedRectPath(ctx, bx, by, bw, bh, 16);
+            ctx.fillStyle = b.fundo;
+            ctx.fill();
+            ctx.fillStyle = b.cor;
+            ctx.font = '700 76px "Aller", sans-serif';
+            ctx.fillText(b.num, bx + bw / 2, by + 50);
+            let tam = 30;
+            ctx.font = `700 ${tam}px "Aller", sans-serif`;
+            while (tam > 18 && ctx.measureText(b.rotulo).width > bw - 22) {
+              tam -= 1;
+              ctx.font = `700 ${tam}px "Aller", sans-serif`;
+            }
+            ctx.fillText(b.rotulo, bx + bw / 2, by + 102);
+          });
+
+          ctx.fillStyle = isDark ? PALETA.branco : PALETA.preto;
+          ctx.font = '700 44px "Aller", sans-serif';
+          ctx.fillText("RUF 2026", cx, 934);
+        } else {
+          // Linha 1 (lockup compacto gigante sem comprimir): NUMERO + "· COMPUTAÇÃO"
+          const numStr = dest.avatarNum;
+          const compStr = "· COMPUTAÇÃO";
+          let numSize = 104;
+          let compSize = 62;
+          const maxChordW = 736;
+          const gap = 14;
+          let wNum = 0;
+          let wComp = 0;
+          for (let tentativa = 0; tentativa < 6; tentativa++) {
+            ctx.font = `700 ${numSize}px "Aller", sans-serif`;
+            wNum = ctx.measureText(numStr).width;
+            ctx.font = `700 ${compSize}px "Aller", sans-serif`;
+            wComp = ctx.measureText(compStr).width;
+            if (wNum + gap + wComp <= maxChordW) break;
+            numSize = Math.round(numSize * 0.94);
+            compSize = Math.round(compSize * 0.94);
+          }
+          const totalL1 = wNum + gap + wComp;
+          const startX1 = cx - totalL1 / 2;
+          const yL1 = 758;
+
+          ctx.textAlign = "left";
+          ctx.textBaseline = "middle";
+          ctx.fillStyle = PALETA.ciano;
           ctx.font = `700 ${numSize}px "Aller", sans-serif`;
-          wNum = ctx.measureText(numStr).width;
+          ctx.fillText(numStr, startX1, yL1);
+
+          ctx.fillStyle = isDark ? PALETA.branco : PALETA.preto;
           ctx.font = `700 ${compSize}px "Aller", sans-serif`;
-          wComp = ctx.measureText(compStr).width;
-          if (wNum + gap + wComp <= maxChordW) break;
-          numSize = Math.round(numSize * 0.94);
-          compSize = Math.round(compSize * 0.94);
+          ctx.fillText(compStr, startX1 + wNum + gap, yL1 + 3);
+
+          // Linha 2: Recorte territorial + RUF 2026 com alto contraste
+          ctx.textAlign = "center";
+          ctx.fillStyle = isDark ? PALETA.verde : PALETA.preto;
+          ctx.font = '700 40px "Aller", sans-serif';
+          ctx.fillText(dest.avatarTerritorio, cx, 842, 660);
+
+          // Linha 3: Assinatura institucional UNEMAT limpa
+          ctx.fillStyle = isDark ? PALETA.branco : PALETA.preto;
+          ctx.font = '700 38px "Aller", sans-serif';
+          ctx.fillText("UNEMAT", cx, 922, 420);
+
         }
-        const totalL1 = wNum + gap + wComp;
-        const startX1 = cx - totalL1 / 2;
-        const yL1 = 758;
-
-        ctx.textAlign = "left";
-        ctx.textBaseline = "middle";
-        ctx.fillStyle = PALETA.ciano;
-        ctx.font = `700 ${numSize}px "Aller", sans-serif`;
-        ctx.fillText(numStr, startX1, yL1);
-
-        ctx.fillStyle = isDark ? PALETA.branco : PALETA.preto;
-        ctx.font = `700 ${compSize}px "Aller", sans-serif`;
-        ctx.fillText(compStr, startX1 + wNum + gap, yL1 + 3);
-
-        // Linha 2: Recorte territorial + RUF 2026 com alto contraste
-        ctx.textAlign = "center";
-        ctx.fillStyle = isDark ? PALETA.verde : PALETA.preto;
-        ctx.font = '700 40px "Aller", sans-serif';
-        ctx.fillText(dest.avatarTerritorio, cx, 842, 660);
-
-        // Linha 3: Assinatura institucional UNEMAT limpa
-        ctx.fillStyle = isDark ? PALETA.branco : PALETA.preto;
-        ctx.font = '700 38px "Aller", sans-serif';
-        ctx.fillText(dest.triplice ? "UNEMAT · COMPUTAÇÃO" : "UNEMAT", cx, 922, dest.triplice ? 520 : 420);
 
         // Anel externo ciano e anel interno verde estilo botton
         ctx.beginPath();
