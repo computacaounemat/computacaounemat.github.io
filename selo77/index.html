@@ -1767,34 +1767,46 @@
           const infoTop = 710;
           desenharBrasao77(ctx, 48, infoTop, 236, 290, isDark);
 
-          // Título e indicadores ao centro
+          // Título, subtítulo e campus ao centro (sem a linha de cima; título maior, faixa tricolor e campus em destaque)
           const midX = 300;
           const midW = 398;
           ctx.textAlign = "left";
           ctx.textBaseline = "top";
-          ctx.fillStyle = isDark ? PALETA.verde : PALETA.preto;
-          ctx.font = '700 24px "Aller", sans-serif';
-          ctx.fillText(info.dest.infoTopo, midX, infoTop + 2, midW);
-
           ctx.fillStyle = isDark ? PALETA.branco : PALETA.preto;
           ctx.font = '700 34px "Mesmerize", "Aller", sans-serif';
           const linhasTit = quebrarTexto(ctx, info.titulo, midW).slice(0, 3);
           linhasTit.forEach((ln, idx) => {
-            ctx.fillText(ln, midX, infoTop + 34 + idx * 39, midW);
+            ctx.fillText(ln, midX, infoTop + 4 + idx * 38, midW);
           });
 
-          const subY = infoTop + 34 + linhasTit.length * 39 + 8;
+          // Faixa tricolor: uma cor por conquista
+          const faixaY = infoTop + 4 + linhasTit.length * 38 + 6;
+          [PALETA.verde, PALETA.ciano, isDark ? PALETA.branco : PALETA.preto].forEach((cor, idx) => {
+            roundedRectPath(ctx, midX + idx * 50, faixaY, 44, 7, 3);
+            ctx.fillStyle = cor;
+            ctx.fill();
+          });
+
+          // Campus em destaque, no rodapé da coluna
+          ctx.font = '700 34px "Aller", sans-serif';
+          const linhasCampus = quebrarTexto(ctx, state.campus, midW).slice(0, 2);
+          const campusTop = infoTop + 290 - linhasCampus.length * 38;
+          ctx.fillStyle = PALETA.verde;
+          ctx.fillRect(midX, campusTop - 10, midW, 2);
+          ctx.fillStyle = isDark ? PALETA.ciano : PALETA.preto;
+          linhasCampus.forEach((ln, idx) => {
+            ctx.fillText(ln, midX, campusTop + idx * 38, midW);
+          });
+
+          // Subtítulo entre a faixa tricolor e o campus
+          const subY = faixaY + 7 + 16;
           ctx.fillStyle = isDark ? "#D6E1EC" : "#1F2937";
           ctx.font = '400 24px "Aller", sans-serif';
-          const maxLinhasSub = linhasTit.length <= 2 ? 3 : 2;
+          const maxLinhasSub = Math.max(1, Math.floor((campusTop - 12 - subY) / 29));
           const linhasSub = quebrarTexto(ctx, info.subtitulo, midW).slice(0, maxLinhasSub);
           linhasSub.forEach((ln, idx) => {
             ctx.fillText(ln, midX, subY + idx * 29, midW);
           });
-
-          ctx.fillStyle = isDark ? PALETA.ciano : PALETA.preto;
-          ctx.font = '700 24px "Aller", sans-serif';
-          ctx.fillText(state.campus, midX, infoTop + 260, midW);
 
           // Gráfico RUF à direita
           desenharGraficoRUF(ctx, 714, infoTop, 318, 290, isDark);
