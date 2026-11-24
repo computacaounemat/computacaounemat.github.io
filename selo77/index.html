@@ -1886,14 +1886,24 @@
           ctx.fill();
         }
 
-        // Arco superior: UNEMAT • COMPUTAÇÃO
-        ctx.fillStyle = isDark ? PALETA.verde : PALETA.preto;
-        ctx.font = '700 46px "Aller", sans-serif';
-        desenharTextoNoArco(ctx, "UNEMAT  •  COMPUTAÇÃO", cx, cy, 459, -Math.PI / 2, 4, false);
+        // Arco superior em destaque (sem logos): UNEMAT e COMPUTAÇÃO em letras grandes
+        if (isDark) {
+          // Estilo escuro: UNEMAT em branco e COMPUTAÇÃO em verde, em dois trechos do arco
+          ctx.font = '700 78px "Aller", sans-serif';
+          ctx.fillStyle = PALETA.branco;
+          desenharTextoNoArco(ctx, "UNEMAT", cx, cy, 459, -Math.PI / 2 - 0.72, 4, false);
+          ctx.fillStyle = PALETA.verde;
+          desenharTextoNoArco(ctx, "COMPUTAÇÃO", cx, cy, 459, -Math.PI / 2 + 0.43, 4, false);
+        } else {
+          // Estilo claro: UNEMAT • COMPUTAÇÃO em um só arco, em preto
+          ctx.fillStyle = PALETA.preto;
+          ctx.font = '700 74px "Aller", sans-serif';
+          desenharTextoNoArco(ctx, "UNEMAT  •  COMPUTAÇÃO", cx, cy, 459, -Math.PI / 2, 5, false);
+        }
 
         // Arco inferior: Posição RUF + território
         ctx.fillStyle = isDark ? PALETA.branco : PALETA.preto;
-        ctx.font = '700 46px "Aller", sans-serif';
+        ctx.font = '700 54px "Aller", sans-serif';
         desenharTextoNoArco(ctx, `${dest.avatarNum} · ${dest.avatarTerritorio}`, cx, cy, 459, Math.PI / 2, 3, true);
 
         ctx.restore();
