@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -6,20 +6,20 @@
   <title>Meu Selo — Ciência da Computação — UNEMAT | RUF 2026</title>
   <link rel="icon" type="image/svg+xml" href="../marca/arquivos/logo_bcc_vertical.svg">
   <link rel="canonical" href="https://computacaounemat.github.io/selo77/">
-  <meta name="description" content="Crie sua foto ou avatar comemorativo da campanha Eu Faço Parte dos 77 — Ciência da Computação da UNEMAT: RUF 2026 — 77º em Computação no Brasil entre 592 instituições, 2º em Mato Grosso e 1º na Região Sul de MT.">
+  <meta name="description" content="Crie sua foto ou avatar comemorativo da campanha Orgulho Computação UNEMAT — RUF 2026: 1º na Região Sul de MT, 2º em Mato Grosso e 77º em Computação no Brasil entre 592 instituições.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Ciência da Computação — UNEMAT">
-  <meta property="og:title" content="Meu Selo — Ciência da Computação UNEMAT | RUF 2026">
-  <meta property="og:description" content="Personalize sua foto ou avatar da campanha Eu Faço Parte dos 77 em segundos, sem cadastro e com total privacidade no seu aparelho.">
+  <meta property="og:title" content="Meu Selo — Orgulho Computação UNEMAT | RUF 2026">
+  <meta property="og:description" content="Personalize sua foto ou avatar da campanha Orgulho Computação UNEMAT em segundos, sem cadastro e com total privacidade no seu aparelho.">
   <meta property="og:url" content="https://computacaounemat.github.io/selo77/">
   <meta property="og:image" content="https://computacaounemat.github.io/selo77/assets/og-selo77.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Campanha Eu Faço Parte dos 77 — RUF 2026: UNEMAT em 77º em Computação no Brasil, 2º em MT e 1º no Sul de MT.">
+  <meta property="og:image:alt" content="Campanha Orgulho Computação UNEMAT — RUF 2026: UNEMAT em 77º em Computação no Brasil, 2º em MT e 1º no Sul de MT.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Meu Selo — Ciência da Computação UNEMAT | RUF 2026">
-  <meta name="twitter:description" content="Crie sua foto ou avatar comemorativo da campanha Eu Faço Parte dos 77 em segundos e sem cadastro.">
+  <meta name="twitter:title" content="Meu Selo — Orgulho Computação UNEMAT | RUF 2026">
+  <meta name="twitter:description" content="Crie sua foto ou avatar comemorativo da campanha Orgulho Computação UNEMAT em segundos e sem cadastro.">
   <meta name="twitter:image" content="https://computacaounemat.github.io/selo77/assets/og-selo77.png">
   <style>
     @font-face {
@@ -740,7 +740,7 @@
         <a href="../">← Site do curso</a>
         <a href="../marca/">Marca e manual</a>
       </nav>
-      <span class="topo-badge">Campanha Eu Faço Parte dos 77 • RUF 2026</span>
+      <span class="topo-badge">Campanha Orgulho Computação UNEMAT • RUF 2026</span>
     </header>
 
     <section class="hero" aria-labelledby="titulo-principal">
@@ -986,7 +986,7 @@
           </div>
 
           <div id="containerAlternativo" class="imagem-alternativa" hidden>
-            <img id="imagemAlternativa" alt="Seu selo da campanha Eu Faço Parte dos 77">
+            <img id="imagemAlternativa" alt="Seu selo da campanha Orgulho Computação UNEMAT">
             <p><strong>No iPhone/iPad, toque e segure a imagem acima para Salvar em Fotos.</strong></p>
             <p>Se o arquivo não baixar, abra a imagem para salvar:</p>
             <a id="linkAbrirAba" class="btn btn-secundario" href="#linkAbrirAba" target="_blank" rel="noopener">
@@ -1862,8 +1862,8 @@
       function desenharCapsulaLogosAro(ctx, cx, cy, isDark) {
         if (!state.logos) return;
         const { unemat, bccPreto } = state.logos;
-        const pillW = 304;
-        const pillH = 74;
+        const pillW = 336;
+        const pillH = 82;
         const px = cx - pillW / 2;
         const py = cy - pillH / 2;
 
@@ -1874,7 +1874,7 @@
         ctx.strokeStyle = isDark ? PALETA.verde : PALETA.ciano;
         ctx.stroke();
 
-        const maxH = 48;
+        const maxH = 54;
         const uRatio = unemat.naturalWidth / unemat.naturalHeight;
         const bRatio = bccPreto.naturalWidth / bccPreto.naturalHeight;
         let uH = maxH;
@@ -1943,7 +1943,7 @@
 
         if (comLogo) {
           // Topo 12h: cápsula oficial UNEMAT + Ciência da Computação
-          desenharCapsulaLogosAro(ctx, cx, 86, isDark);
+          desenharCapsulaLogosAro(ctx, cx, 82, isDark);
         } else {
           // Topo 12h sem logo: arco tipográfico limpo
           ctx.fillStyle = isDark ? PALETA.verde : PALETA.preto;
