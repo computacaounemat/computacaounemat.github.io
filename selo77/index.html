@@ -814,8 +814,12 @@
           <legend>2. Escolha o destaque em Computação (RUF 2026)</legend>
           <div class="opcoes-grade" role="radiogroup">
             <div class="opcao-radio">
-              <input type="radio" name="destaque" id="destaque-sul1" value="sul1" checked>
-              <label for="destaque-sul1">1º em Computação — Sul de MT<small>Padrão • Região Sul de MT</small></label>
+              <input type="radio" name="destaque" id="destaque-triplice" value="triplice" checked>
+              <label for="destaque-triplice">Tríplice conquista<small>Padrão • 1º Sul de MT • 2º MT • 77º Brasil</small></label>
+            </div>
+            <div class="opcao-radio">
+              <input type="radio" name="destaque" id="destaque-sul1" value="sul1">
+              <label for="destaque-sul1">1º em Computação — Sul de MT<small>Região Sul de MT</small></label>
             </div>
             <div class="opcao-radio">
               <input type="radio" name="destaque" id="destaque-mt2" value="mt2">
@@ -824,10 +828,6 @@
             <div class="opcao-radio">
               <input type="radio" name="destaque" id="destaque-brasil77" value="brasil77">
               <label for="destaque-brasil77">77º em Computação — Brasil<small>Entre 592 instituições</small></label>
-            </div>
-            <div class="opcao-radio">
-              <input type="radio" name="destaque" id="destaque-triplice" value="triplice">
-              <label for="destaque-triplice">Tríplice conquista<small>1º Sul de MT • 2º MT • 77º Brasil</small></label>
             </div>
           </div>
         </fieldset>
@@ -1175,7 +1175,7 @@
       };
 
       const state = {
-        destaque: "sul1",
+        destaque: "triplice",
         destaqueEscolhidoManualmente: false,
         perfil: "docente",
         tema: "claro",
@@ -1905,6 +1905,12 @@
         ctx.restore();
       }
 
+      function larguraAngularArco(ctx, texto, raio, espacamento) {
+        const chars = Array.from(texto);
+        const total = chars.reduce((acc, ch) => acc + ctx.measureText(ch).width + espacamento, 0) - (chars.length ? espacamento : 0);
+        return total / raio;
+      }
+
       function desenharAvatarAro(ctx, W, H, isDark, info) {
         const cx = W / 2;
         const cy = H / 2;
@@ -1947,18 +1953,21 @@
           ctx.fill();
         }
 
-        // Arco superior em destaque (sem logos): UNEMAT e COMPUTAÇÃO em letras grandes
+        // Arco superior em destaque (sem logos): UNEMAT e COMPUTAÇÃO no maior tamanho que cabe
+        ctx.font = '700 94px "Aller", sans-serif';
         if (isDark) {
-          // Estilo escuro: UNEMAT em branco e COMPUTAÇÃO em verde, em dois trechos do arco
-          ctx.font = '700 92px "Aller", sans-serif';
+          // Estilo escuro: UNEMAT em branco e COMPUTAÇÃO em verde, o conjunto centralizado no topo
+          const wU = larguraAngularArco(ctx, "UNEMAT", 459, 4);
+          const wC = larguraAngularArco(ctx, "COMPUTAÇÃO", 459, 4);
+          const vao = 0.35;
+          const ini = -Math.PI / 2 - (wU + vao + wC) / 2;
           ctx.fillStyle = PALETA.branco;
-          desenharTextoNoArco(ctx, "UNEMAT", cx, cy, 459, -Math.PI / 2 - 0.855, 4, false);
+          desenharTextoNoArco(ctx, "UNEMAT", cx, cy, 459, ini + wU / 2, 4, false);
           ctx.fillStyle = PALETA.verde;
-          desenharTextoNoArco(ctx, "COMPUTAÇÃO", cx, cy, 459, -Math.PI / 2 + 0.567, 4, false);
+          desenharTextoNoArco(ctx, "COMPUTAÇÃO", cx, cy, 459, ini + wU + vao + wC / 2, 4, false);
         } else {
           // Estilo claro: UNEMAT • COMPUTAÇÃO em um só arco, em preto
           ctx.fillStyle = PALETA.preto;
-          ctx.font = '700 92px "Aller", sans-serif';
           desenharTextoNoArco(ctx, "UNEMAT  •  COMPUTAÇÃO", cx, cy, 459, -Math.PI / 2, 5, false);
         }
 
@@ -1972,7 +1981,7 @@
           const esp = 2;
           const pad = 0.063;
           const folga = 0.038;
-          ctx.font = '700 50px "Aller", sans-serif';
+          ctx.font = '700 66px "Aller", sans-serif';
           const larguras = itens.map(it => {
             const cs = Array.from(it.texto);
             return (cs.reduce((acc, ch) => acc + ctx.measureText(ch).width + esp, 0) - esp) / 459;
@@ -1988,7 +1997,7 @@
             ctx.fillStyle = it.fundo;
             ctx.fill();
             ctx.fillStyle = it.cor;
-            ctx.font = '700 50px "Aller", sans-serif';
+            ctx.font = '700 66px "Aller", sans-serif';
             desenharTextoNoArco(ctx, it.texto, cx, cy, 456, (aIni + aFim) / 2, esp, true);
             aIni = aFim - folga;
           });
@@ -2000,8 +2009,12 @@
         } else {
           // Arco inferior: Posição RUF + território
           ctx.fillStyle = isDark ? PALETA.branco : PALETA.preto;
+          const textoBaixo = `${dest.avatarNum} · ${dest.avatarTerritorio}`;
           ctx.font = '700 54px "Aller", sans-serif';
-          desenharTextoNoArco(ctx, `${dest.avatarNum} · ${dest.avatarTerritorio}`, cx, cy, 459, Math.PI / 2, 3, true);
+          const larg54 = larguraAngularArco(ctx, textoBaixo, 459, 3);
+          const tamBaixo = Math.min(76, Math.floor(54 * (140 * Math.PI / 180) / larg54));
+          ctx.font = `700 ${tamBaixo}px "Aller", sans-serif`;
+          desenharTextoNoArco(ctx, textoBaixo, cx, cy, 459, Math.PI / 2, 3, true);
         }
 
         ctx.restore();
