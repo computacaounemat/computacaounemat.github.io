@@ -1486,34 +1486,45 @@
 
         ctx.fillStyle = PALETA.ciano;
         ctx.font = `700 ${Math.max(22, Math.round(h * 0.095))}px "Aller", sans-serif`;
-        ctx.fillText(dest.brasaoSup, cx, y + h * 0.16, w - 24);
+        ctx.fillText(dest.brasaoSup, cx, y + h * (dest.triplice ? 0.13 : 0.16), w - 24);
 
         if (dest.triplice) {
-          // Tríplice conquista: três linhas (número em ciano + território em branco)
-          const linhas = [["1º", "SUL DE MT"], ["2º", "MT"], ["77º", "BRASIL"]];
-          let tam = Math.max(24, Math.round(h * 0.135));
-          const larguraMax = w - 30;
+          // Tríplice conquista: três barras empilhadas, uma cor por conquista (como no selo redondo)
+          const barras = [
+            { texto: "1º SUL DE MT", fundo: PALETA.verde },
+            { texto: "2º MT", fundo: PALETA.ciano },
+            { texto: "77º BRASIL", fundo: PALETA.branco }
+          ];
+          const margem = 18;
+          const bh = h * 0.16;
+          const folga = h * 0.035;
+          const y0 = y + h * 0.225;
+          let tam = Math.round(h * 0.115);
+          const larguraMax = w - 2 * margem - 24;
           const medir = t => {
             ctx.font = `700 ${t}px "Aller", sans-serif`;
-            return Math.max(...linhas.map(([n, l]) => ctx.measureText(`${n} ${l}`).width));
+            return Math.max(...barras.map(b => ctx.measureText(b.texto).width));
           };
-          while (tam > 18 && medir(tam) > larguraMax) tam -= 1;
+          while (tam > 16 && medir(tam) > larguraMax) tam -= 1;
           ctx.font = `700 ${tam}px "Aller", sans-serif`;
-          linhas.forEach(([n, l], i) => {
-            const wn = ctx.measureText(`${n} `).width;
-            const wl = ctx.measureText(l).width;
-            const x0 = cx - (wn + wl) / 2;
-            const yl = y + h * (0.355 + i * 0.165);
-            ctx.textAlign = "left";
-            ctx.fillStyle = PALETA.ciano;
-            ctx.fillText(n, x0, yl);
-            ctx.fillStyle = PALETA.branco;
-            ctx.fillText(l, x0 + wn, yl);
-          });
           ctx.textAlign = "center";
+          barras.forEach((b, i) => {
+            const by = y0 + i * (bh + folga);
+            roundedRectPath(ctx, x + margem, by, w - 2 * margem, bh, 10);
+            ctx.fillStyle = b.fundo;
+            ctx.fill();
+            ctx.fillStyle = PALETA.preto;
+            ctx.fillText(b.texto, cx, by + bh / 2 + 1);
+          });
+          // EM COMPUTAÇÃO: reduz o tamanho para caber, sem comprimir a largura
+          let tamBase = Math.max(22, Math.round(h * 0.095));
+          ctx.font = `700 ${tamBase}px "Aller", sans-serif`;
+          while (tamBase > 16 && ctx.measureText("EM COMPUTAÇÃO").width > w - 26) {
+            tamBase -= 1;
+            ctx.font = `700 ${tamBase}px "Aller", sans-serif`;
+          }
           ctx.fillStyle = PALETA.verde;
-          ctx.font = `700 ${Math.max(24, Math.round(h * 0.105))}px "Aller", sans-serif`;
-          ctx.fillText("EM COMPUTAÇÃO", cx, y + h * 0.88, w - 22);
+          ctx.fillText("EM COMPUTAÇÃO", cx, y + h * 0.915);
           return;
         }
 
