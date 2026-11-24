@@ -825,6 +825,10 @@
               <input type="radio" name="destaque" id="destaque-brasil77" value="brasil77">
               <label for="destaque-brasil77">77º em Computação — Brasil<small>Entre 592 instituições</small></label>
             </div>
+            <div class="opcao-radio">
+              <input type="radio" name="destaque" id="destaque-triplice" value="triplice">
+              <label for="destaque-triplice">Tríplice conquista<small>1º Sul de MT • 2º MT • 77º Brasil</small></label>
+            </div>
           </div>
         </fieldset>
 
@@ -1104,6 +1108,34 @@
               "Em Alto Araguaia e Rondonópolis, conquistamos o 1º lugar em Computação na Região Sul de Mato Grosso no RUF 2026 (2º de MT e 77º do Brasil na UNEMAT)! Universidade Pública e Gratuita. Sem Mensalidade. Crie seu selo: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
             orgulho:
               "Orgulho de Alto Araguaia e Rondonópolis: UNEMAT em 1º na Região Sul de MT em Computação no RUF 2026, 2º de MT e 77º do Brasil nos 6 câmpus! Universidade Pública e Gratuita. Sem Mensalidade. Crie seu selo: https://computacaounemat.github.io/selo77/ @computacao.unemataia"
+          }
+        },
+        triplice: {
+          triplice: true,
+          brasaoSup: "RUF 2026",
+          brasaoNum: "1º · 2º · 77º",
+          brasaoSub: "SUL DE MT · MT · BRASIL",
+          infoTopo: "RUF 2026 · TRÍPLICE CONQUISTA",
+          avatarNum: "1º · 2º · 77º",
+          avatarTerritorio: "SUL DE MT · MT · BRASIL · RUF 2026",
+          titulos: {
+            docente: "ENSINO NA TRÍPLICE CONQUISTA DA COMPUTAÇÃO",
+            estudante: "ESTUDO NA TRÍPLICE CONQUISTA DA COMPUTAÇÃO",
+            egresso: "FORMADO NA TRÍPLICE CONQUISTA DA COMPUTAÇÃO",
+            ptes: "CONSTRUO A TRÍPLICE CONQUISTA DA COMPUTAÇÃO",
+            orgulho: "ORGULHO DA TRÍPLICE CONQUISTA EM COMPUTAÇÃO"
+          },
+          legendas: {
+            docente:
+              "Ensino na Ciência da Computação da UNEMAT, tríplice conquista no RUF 2026: 1º na Região Sul de MT (Alto Araguaia e Rondonópolis), 2º de Mato Grosso e 77º do Brasil entre 592 instituições, resultado dos 6 câmpus! Universidade Pública e Gratuita. Sem Mensalidade. Crie seu selo: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+            estudante:
+              "Estudo Ciência da Computação na UNEMAT, tríplice conquista no RUF 2026: 1º na Região Sul de MT (Alto Araguaia e Rondonópolis), 2º de Mato Grosso e 77º do Brasil entre 592 instituições, conquista dos 6 câmpus! Universidade Pública e Gratuita. Sem Mensalidade. Crie o seu e marque 2 colegas: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+            egresso:
+              "Formado em Ciência da Computação na UNEMAT, tríplice conquista no RUF 2026: 1º na Região Sul de MT (Alto Araguaia e Rondonópolis), 2º de Mato Grosso e 77º do Brasil entre 592 instituições, resultado dos 6 câmpus! Universidade Pública e Gratuita. Sem Mensalidade. Marque sua turma: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+            ptes:
+              "Construo a Ciência da Computação da UNEMAT, tríplice conquista no RUF 2026: 1º na Região Sul de MT (Alto Araguaia e Rondonópolis), 2º de Mato Grosso e 77º do Brasil entre 592 instituições, resultado dos 6 câmpus! Universidade Pública e Gratuita. Sem Mensalidade. Crie seu selo: https://computacaounemat.github.io/selo77/ @computacao.unemataia",
+            orgulho:
+              "Orgulho da Ciência da Computação da UNEMAT: tríplice conquista no RUF 2026, com o 1º lugar na Região Sul de MT (Alto Araguaia e Rondonópolis), o 2º de Mato Grosso e o 77º do Brasil entre 592 instituições, resultado dos 6 câmpus! Universidade Pública e Gratuita. Sem Mensalidade. Crie seu selo: https://computacaounemat.github.io/selo77/ @computacao.unemataia"
           }
         }
       };
@@ -1477,6 +1509,35 @@
         ctx.fillStyle = PALETA.ciano;
         ctx.font = `700 ${Math.max(22, Math.round(h * 0.095))}px "Aller", sans-serif`;
         ctx.fillText(dest.brasaoSup, cx, y + h * 0.16, w - 24);
+
+        if (dest.triplice) {
+          // Tríplice conquista: três linhas (número em ciano + território em branco)
+          const linhas = [["1º", "SUL DE MT"], ["2º", "MT"], ["77º", "BRASIL"]];
+          let tam = Math.max(24, Math.round(h * 0.118));
+          const larguraMax = w - 30;
+          const medir = t => {
+            ctx.font = `700 ${t}px "Aller", sans-serif`;
+            return Math.max(...linhas.map(([n, l]) => ctx.measureText(`${n} ${l}`).width));
+          };
+          while (tam > 18 && medir(tam) > larguraMax) tam -= 1;
+          ctx.font = `700 ${tam}px "Aller", sans-serif`;
+          linhas.forEach(([n, l], i) => {
+            const wn = ctx.measureText(`${n} `).width;
+            const wl = ctx.measureText(l).width;
+            const x0 = cx - (wn + wl) / 2;
+            const yl = y + h * (0.355 + i * 0.165);
+            ctx.textAlign = "left";
+            ctx.fillStyle = PALETA.ciano;
+            ctx.fillText(n, x0, yl);
+            ctx.fillStyle = PALETA.branco;
+            ctx.fillText(l, x0 + wn, yl);
+          });
+          ctx.textAlign = "center";
+          ctx.fillStyle = PALETA.verde;
+          ctx.font = `700 ${Math.max(24, Math.round(h * 0.105))}px "Aller", sans-serif`;
+          ctx.fillText("EM COMPUTAÇÃO", cx, y + h * 0.88, w - 22);
+          return;
+        }
 
         ctx.font = `700 ${Math.round(h * 0.37)}px "Mesmerize", "Aller", sans-serif`;
         ctx.fillText(dest.brasaoNum, cx, y + h * 0.43, w - 24);
@@ -1877,7 +1938,7 @@
         ctx.stroke();
 
         // Filete sutil de setorização no meio do aro
-        for (const aMark of [0, Math.PI]) {
+        for (const aMark of (dest.triplice ? [] : [0, Math.PI])) {
           const mx = cx + Math.cos(aMark) * 458;
           const my = cy + Math.sin(aMark) * 458;
           ctx.beginPath();
@@ -1901,10 +1962,47 @@
           desenharTextoNoArco(ctx, "UNEMAT  •  COMPUTAÇÃO", cx, cy, 459, -Math.PI / 2, 5, false);
         }
 
-        // Arco inferior: Posição RUF + território
-        ctx.fillStyle = isDark ? PALETA.branco : PALETA.preto;
-        ctx.font = '700 54px "Aller", sans-serif';
-        desenharTextoNoArco(ctx, `${dest.avatarNum} · ${dest.avatarTerritorio}`, cx, cy, 459, Math.PI / 2, 3, true);
+        if (dest.triplice) {
+          // Tríplice conquista: três plaquetas no arco inferior (1º verde, 2º ciano, 77º preto/branco)
+          const itens = [
+            { texto: "1º SUL DE MT", fundo: PALETA.verde, cor: PALETA.preto },
+            { texto: "2º MT", fundo: PALETA.ciano, cor: PALETA.preto },
+            { texto: "77º BRASIL", fundo: isDark ? PALETA.branco : PALETA.preto, cor: isDark ? PALETA.preto : PALETA.branco }
+          ];
+          const esp = 2;
+          const pad = 0.063;
+          const folga = 0.038;
+          ctx.font = '700 50px "Aller", sans-serif';
+          const larguras = itens.map(it => {
+            const cs = Array.from(it.texto);
+            return (cs.reduce((acc, ch) => acc + ctx.measureText(ch).width + esp, 0) - esp) / 459;
+          });
+          const total = larguras.reduce((acc, v) => acc + v + 2 * pad, 0) + folga * (itens.length - 1);
+          let aIni = Math.PI / 2 + total / 2;
+          itens.forEach((it, i) => {
+            const aFim = aIni - (larguras[i] + 2 * pad);
+            ctx.beginPath();
+            ctx.arc(cx, cy, 513, aFim, aIni, false);
+            ctx.arc(cx, cy, 399, aIni, aFim, true);
+            ctx.closePath();
+            ctx.fillStyle = it.fundo;
+            ctx.fill();
+            ctx.fillStyle = it.cor;
+            ctx.font = '700 50px "Aller", sans-serif';
+            desenharTextoNoArco(ctx, it.texto, cx, cy, 456, (aIni + aFim) / 2, esp, true);
+            aIni = aFim - folga;
+          });
+          // RUF 2026 nas laterais
+          ctx.fillStyle = isDark ? PALETA.branco : PALETA.preto;
+          ctx.font = '700 38px "Aller", sans-serif';
+          desenharTextoNoArco(ctx, "RUF", cx, cy, 459, Math.PI, 3, false);
+          desenharTextoNoArco(ctx, "2026", cx, cy, 459, 0, 3, false);
+        } else {
+          // Arco inferior: Posição RUF + território
+          ctx.fillStyle = isDark ? PALETA.branco : PALETA.preto;
+          ctx.font = '700 54px "Aller", sans-serif';
+          desenharTextoNoArco(ctx, `${dest.avatarNum} · ${dest.avatarTerritorio}`, cx, cy, 459, Math.PI / 2, 3, true);
+        }
 
         ctx.restore();
       }
@@ -1946,11 +2044,11 @@
 
         // Linha 1 (lockup compacto gigante sem comprimir): NUMERO + "· COMPUTAÇÃO"
         const numStr = dest.avatarNum;
-        const compStr = "· COMPUTAÇÃO";
+        const compStr = dest.triplice ? "" : "· COMPUTAÇÃO";
         let numSize = 104;
         let compSize = 62;
         const maxChordW = 736;
-        const gap = 14;
+        const gap = compStr ? 14 : 0;
         let wNum = 0;
         let wComp = 0;
         for (let tentativa = 0; tentativa < 6; tentativa++) {
@@ -1985,7 +2083,7 @@
         // Linha 3: Assinatura institucional UNEMAT limpa
         ctx.fillStyle = isDark ? PALETA.branco : PALETA.preto;
         ctx.font = '700 38px "Aller", sans-serif';
-        ctx.fillText("UNEMAT", cx, 922, 420);
+        ctx.fillText(dest.triplice ? "UNEMAT · COMPUTAÇÃO" : "UNEMAT", cx, 922, dest.triplice ? 520 : 420);
 
         // Anel externo ciano e anel interno verde estilo botton
         ctx.beginPath();
@@ -2026,7 +2124,7 @@
         const estadoFoto = state.foto ? "com foto carregada" : "aguardando sua foto";
         el.canvasPrevia.setAttribute(
           "aria-label",
-          `Prévia ${fmt.nome} (${estilo}${avatarDesc}) para ${perf.rotulo}, ${estadoFoto}. Selo RUF 2026: ${dest.brasaoNum} ${dest.brasaoSub}, evolução 176º para 77º na UNEMAT, Universidade Pública e Gratuita.`
+          `Prévia ${fmt.nome} (${estilo}${avatarDesc}) para ${perf.rotulo}, ${estadoFoto}. Selo RUF 2026: ${dest.triplice ? "1º no Sul de MT, 2º em Mato Grosso e 77º no Brasil" : `${dest.brasaoNum} ${dest.brasaoSub}`}, evolução 176º para 77º na UNEMAT, Universidade Pública e Gratuita.`
         );
       }
 
