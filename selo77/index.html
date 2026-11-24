@@ -1889,15 +1889,15 @@
         // Arco superior em destaque (sem logos): UNEMAT e COMPUTAÇÃO em letras grandes
         if (isDark) {
           // Estilo escuro: UNEMAT em branco e COMPUTAÇÃO em verde, em dois trechos do arco
-          ctx.font = '700 78px "Aller", sans-serif';
+          ctx.font = '700 92px "Aller", sans-serif';
           ctx.fillStyle = PALETA.branco;
-          desenharTextoNoArco(ctx, "UNEMAT", cx, cy, 459, -Math.PI / 2 - 0.72, 4, false);
+          desenharTextoNoArco(ctx, "UNEMAT", cx, cy, 459, -Math.PI / 2 - 0.855, 4, false);
           ctx.fillStyle = PALETA.verde;
-          desenharTextoNoArco(ctx, "COMPUTAÇÃO", cx, cy, 459, -Math.PI / 2 + 0.43, 4, false);
+          desenharTextoNoArco(ctx, "COMPUTAÇÃO", cx, cy, 459, -Math.PI / 2 + 0.567, 4, false);
         } else {
           // Estilo claro: UNEMAT • COMPUTAÇÃO em um só arco, em preto
           ctx.fillStyle = PALETA.preto;
-          ctx.font = '700 74px "Aller", sans-serif';
+          ctx.font = '700 92px "Aller", sans-serif';
           desenharTextoNoArco(ctx, "UNEMAT  •  COMPUTAÇÃO", cx, cy, 459, -Math.PI / 2, 5, false);
         }
 
