@@ -34,6 +34,7 @@ class PageSpec:
 
 PAGES: list[PageSpec] = [
     PageSpec("index.html", "horarios", "./", "Horários 2026/2"),
+    PageSpec("horarios-2027-1/index.html", "horarios-2027-1", "../", "Horários 2027/1"),
     PageSpec("guia/index.html", "guia", "../", "Guia do Estudante"),
     PageSpec("estagio/index.html", "estagio", "../", "Guia do Estágio"),
     PageSpec("tcc/index.html", "tcc", "../", "Guia do TCC"),
@@ -88,6 +89,14 @@ def render_open(spec: PageSpec) -> str:
 
     internal_links = [
         nav_link(f"{p}", "fa-solid fa-calendar-days", "#009EE0", "Horários 2026/2", active=(a == "horarios")),
+        nav_link(
+            f"{p}horarios-2027-1/",
+            "fa-solid fa-calendar-days",
+            "#8DC63F",
+            "Horários 2027/1",
+            active=(a == "horarios-2027-1"),
+            badge=("Novo", "green"),
+        ),
         nav_link(f"{p}guia/", "fa-solid fa-book-open", "#34d399", "Guia do Estudante", active=(a == "guia")),
         nav_link(f"{p}estagio/", "fa-solid fa-briefcase", "#38bdf8", "Guia do Estágio", active=(a == "estagio")),
         nav_link(f"{p}tcc/", "fa-solid fa-graduation-cap", "#fbbf24", "Guia do TCC", active=(a == "tcc")),
