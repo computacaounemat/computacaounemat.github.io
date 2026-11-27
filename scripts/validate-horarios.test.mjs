@@ -4,7 +4,7 @@ import { test } from 'node:test';
 import vm from 'node:vm';
 import { readMapping, validateHorarios, validateIdentity, validateNoStaleFallback } from './validate-horarios.mjs';
 
-const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
+const html = readFileSync(new URL('../horarios-2026-2/index.html', import.meta.url), 'utf8');
 const payload = JSON.parse(readFileSync(new URL('../data/horarios.json', import.meta.url), 'utf8'));
 const { codes, year } = readMapping(html);
 

@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "index.html"
+      - "horarios-2026-2/index.html"
       - "data/horarios.json"
       - "scripts/validate-horarios.mjs"
       - "scripts/validate-horarios.test.mjs"
@@ -13,6 +14,7 @@ on:
   pull_request:
     paths:
       - "index.html"
+      - "horarios-2026-2/index.html"
       - "data/horarios.json"
       - "scripts/validate-horarios.mjs"
       - "scripts/validate-horarios.test.mjs"

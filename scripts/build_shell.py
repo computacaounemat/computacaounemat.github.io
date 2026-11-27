@@ -33,8 +33,8 @@ class PageSpec:
 
 
 PAGES: list[PageSpec] = [
-    PageSpec("index.html", "horarios", "./", "Horários 2026/2"),
-    PageSpec("horarios-2027-1/index.html", "horarios-2027-1", "../", "Horários 2027/1"),
+    PageSpec("index.html", "horarios-2027-1", "./", "Horários 2027/1"),
+    PageSpec("horarios-2026-2/index.html", "horarios-2026-2", "../", "Horários 2026/2"),
     PageSpec("guia/index.html", "guia", "../", "Guia do Estudante"),
     PageSpec("estagio/index.html", "estagio", "../", "Guia do Estágio"),
     PageSpec("tcc/index.html", "tcc", "../", "Guia do TCC"),
@@ -88,14 +88,20 @@ def render_open(spec: PageSpec) -> str:
     a = spec.page_id
 
     internal_links = [
-        nav_link(f"{p}", "fa-solid fa-calendar-days", "#009EE0", "Horários 2026/2", active=(a == "horarios")),
         nav_link(
-            f"{p}horarios-2027-1/",
+            f"{p}",
             "fa-solid fa-calendar-days",
             "#8DC63F",
             "Horários 2027/1",
             active=(a == "horarios-2027-1"),
-            badge=("Novo", "green"),
+            badge=("Atual", "green"),
+        ),
+        nav_link(
+            f"{p}horarios-2026-2/",
+            "fa-solid fa-calendar-days",
+            "#009EE0",
+            "Horários 2026/2",
+            active=(a == "horarios-2026-2"),
         ),
         nav_link(f"{p}guia/", "fa-solid fa-book-open", "#34d399", "Guia do Estudante", active=(a == "guia")),
         nav_link(f"{p}estagio/", "fa-solid fa-briefcase", "#38bdf8", "Guia do Estágio", active=(a == "estagio")),
@@ -179,9 +185,9 @@ def render_open(spec: PageSpec) -> str:
             "      </ul>",
             "    </nav>",
             '    <div class="bcc-sidebar-footer">',
-            '      <p class="bcc-sidebar-footer-title">Coordenação do Curso</p>',
-            '      <p class="bcc-sidebar-footer-row"><strong>Alto Araguaia:</strong> 07h–11h45 · <a href="mailto:computacao.aia@unemat.br">computacao.aia@unemat.br</a></p>',
-            '      <p class="bcc-sidebar-footer-row"><strong>Rondonópolis:</strong> 08h–18h · <a href="mailto:computacao.roo@unemat.br">computacao.roo@unemat.br</a></p>',
+            '      <p class="bcc-sidebar-footer-title">Secretaria Acadêmica</p>',
+            '      <p class="bcc-sidebar-footer-row"><strong>Alto Araguaia:</strong> 08h–11h / 13h30–17h30 · <a href="mailto:computacao.aia@unemat.br">computacao.aia@unemat.br</a></p>',
+            '      <p class="bcc-sidebar-footer-row"><strong>Rondonópolis:</strong> 08h–11h / 14h–21h30 · <a href="mailto:computacao.roo@unemat.br">computacao.roo@unemat.br</a></p>',
             "    </div>",
             "  </aside>",
             '  <div class="bcc-main-col">',

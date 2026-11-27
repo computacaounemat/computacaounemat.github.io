@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import vm from 'node:vm';
 
 const siteRoot = resolve(fileURLToPath(new URL('..', import.meta.url)));
-const defaultHtml = resolve(siteRoot, 'index.html');
+const defaultHtml = resolve(siteRoot, 'horarios-2026-2/index.html');
 const defaultJson = resolve(siteRoot, 'data/horarios.json');
 
 export function readMapping(html) {
