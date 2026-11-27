@@ -107,15 +107,39 @@ def render_open(spec: PageSpec) -> str:
         nav_link(f"{p}estagio/", "fa-solid fa-briefcase", "#38bdf8", "Guia do Estágio", active=(a == "estagio")),
         nav_link(f"{p}tcc/", "fa-solid fa-graduation-cap", "#fbbf24", "Guia do TCC", active=(a == "tcc")),
         nav_link(f"{p}marca/", "fa-solid fa-palette", "#22d3ee", "Marca do Curso", active=(a == "marca")),
-        nav_link(
-            "https://sistema-unemat.vercel.app/",
-            "fa-solid fa-computer",
-            "#94a3b8",
-            "Agenda de Laboratórios",
-            external=True,
-        ),
         nav_link(f"{p}secomp/", "fa-solid fa-microchip", "#c084fc", "SECOMP 2026", active=(a == "secomp")),
         nav_link(f"{p}eventos/", "fa-solid fa-clock-rotate-left", "#8DC63F", "Memória de Eventos", active=(a == "eventos")),
+    ]
+
+    online_systems_links = [
+        nav_link(
+            "https://ialxnder.fly.dev/mural",
+            "fa-solid fa-tv",
+            "#38bdf8",
+            "Mural Digital",
+            external=True,
+        ),
+        nav_link(
+            "https://ialxnder.fly.dev/estagio",
+            "fa-solid fa-file-signature",
+            "#38bdf8",
+            "Portal de Estágio",
+            external=True,
+        ),
+        nav_link(
+            "https://ialxnder.fly.dev/tcc",
+            "fa-solid fa-book-bookmark",
+            "#fbbf24",
+            "Portal de TCC",
+            external=True,
+        ),
+        nav_link(
+            "https://ialxnder.fly.dev/planos",
+            "fa-solid fa-clipboard-check",
+            "#34d399",
+            "Validador de Planos",
+            external=True,
+        ),
         nav_link(
             "https://ialxnder.fly.dev/camisetas",
             "fa-solid fa-shirt",
@@ -123,6 +147,21 @@ def render_open(spec: PageSpec) -> str:
             "Camiseta BCC",
             external=True,
             badge=("R$ 35", ""),
+        ),
+        nav_link(
+            "https://sistema-unemat.vercel.app/",
+            "fa-solid fa-computer",
+            "#94a3b8",
+            "Agenda de Laboratórios",
+            external=True,
+        ),
+        nav_link(
+            "https://ialxnder.fly.dev/mural/assistente",
+            "fa-solid fa-robot",
+            "#38bdf8",
+            "Assistente Virtual",
+            external=True,
+            badge=("iALXnder", "cyan"),
         ),
     ]
 
@@ -140,14 +179,6 @@ def render_open(spec: PageSpec) -> str:
             "#94a3b8",
             "Portal UNEMAT",
             external=True,
-        ),
-        nav_link(
-            "https://bit.ly/iALXnderBETA",
-            "fa-solid fa-robot",
-            "#38bdf8",
-            "Assistente Virtual",
-            external=True,
-            badge=("iALXnder", "cyan"),
         ),
         nav_link(
             "https://www.instagram.com/computacao.unemataia/",
@@ -178,6 +209,10 @@ def render_open(spec: PageSpec) -> str:
             '      <p class="bcc-nav-group-label">Menu Principal</p>',
             '      <ul class="bcc-nav-list">',
             *internal_links,
+            "      </ul>",
+            '      <p class="bcc-nav-group-label">Sistemas Online</p>',
+            '      <ul class="bcc-nav-list">',
+            *online_systems_links,
             "      </ul>",
             '      <p class="bcc-nav-group-label">Links Externos</p>',
             '      <ul class="bcc-nav-list">',

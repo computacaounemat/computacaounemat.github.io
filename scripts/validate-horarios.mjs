@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs';
+import { readFileSync, realpathSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import vm from 'node:vm';
@@ -128,7 +128,16 @@ export function validateNoStaleFallback(html) {
     : [];
 }
 
-if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+function isMainModule() {
+  if (!process.argv[1]) return false;
+  try {
+    return realpathSync(resolve(process.argv[1])) === realpathSync(fileURLToPath(import.meta.url));
+  } catch {
+    return resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+  }
+}
+
+if (isMainModule()) {
   const jsonPath = resolve(process.argv[2] || defaultJson);
   const htmlPath = resolve(process.argv[3] || defaultHtml);
   try {

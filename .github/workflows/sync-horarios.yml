@@ -1,4 +1,4 @@
-name: Sincronizar horarios.json com ialxnder
+name: Sincronizar snapshots públicos com iALXnder
 
 on:
   schedule:
@@ -23,16 +23,35 @@ jobs:
       - name: Verificar contrato de horários do site
         run: node --test scripts/validate-horarios.test.mjs
 
-      - name: Buscar e validar horários do iALXnder
+      - name: Buscar e validar horários do iALXnder (preservando último snapshot válido em caso de falha)
         run: |
-          curl -fsSL "https://ialxnder.fly.dev/v1/horarios" -o /tmp/horarios.json
-          node scripts/validate-horarios.mjs /tmp/horarios.json
-          mv /tmp/horarios.json data/horarios.json
+          if curl -fsSL --max-time 25 "https://ialxnder.fly.dev/v1/horarios" -o /tmp/horarios.json \
+            && node scripts/validate-horarios.mjs /tmp/horarios.json; then
+            mv /tmp/horarios.json data/horarios.json
+          else
+            echo "::warning::Falha ao atualizar data/horarios.json; preservando último snapshot válido."
+            rm -f /tmp/horarios.json
+          fi
+
+      - name: Buscar e validar avisos públicos do Mural (preservando último snapshot válido em caso de falha)
+        run: |
+          if curl -fsSL --max-time 25 "https://ialxnder.fly.dev/v1/mural/publico" -o /tmp/mural.json \
+            && node scripts/validate-mural.mjs /tmp/mural.json; then
+            mv /tmp/mural.json data/mural.json
+          else
+            echo "::warning::Falha ao atualizar data/mural.json; preservando último snapshot válido."
+            rm -f /tmp/mural.json
+          fi
+
+      - name: Validar snapshots finais no repositório
+        run: |
+          node scripts/validate-horarios.mjs data/horarios.json
+          node scripts/validate-mural.mjs data/mural.json
 
       - name: Detectar mudanças
         id: diff
         run: |
-          if git diff --quiet -- data/horarios.json; then
+          if git diff --quiet -- data/horarios.json data/mural.json && [ -z "$(git ls-files --others --exclude-standard -- data/horarios.json data/mural.json)" ]; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -43,6 +62,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/horarios.json
-          git commit -m "chore: sincronizar horarios.json com ialxnder"
+          git add data/horarios.json data/mural.json
+          git commit -m "chore: sincronizar snapshots de horários e mural com iALXnder"
           git push origin HEAD:main
